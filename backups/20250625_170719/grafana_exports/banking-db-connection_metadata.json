@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "type": "db",
+    "canSave": true,
+    "canEdit": true,
+    "canAdmin": true,
+    "canStar": true,
+    "canDelete": true,
+    "slug": "banking-database-connection-pool-dashboard",
+    "url": "/d/banking-db-connection/banking-database-connection-pool-dashboard",
+    "expires": "0001-01-01T00:00:00Z",
+    "created": "2025-06-25T05:05:19Z",
+    "updated": "2025-06-25T09:46:21Z",
+    "updatedBy": "admin",
+    "createdBy": "Anonymous",
+    "version": 7,
+    "hasAcl": false,
+    "isFolder": false,
+    "apiVersion": "v0alpha1",
+    "folderId": 0,
+    "folderUid": "",
+    "folderTitle": "General",
+    "folderUrl": "",
+    "provisioned": false,
+    "provisionedExternalId": "backup-20250625/db-connection-dashboard.json",
+    "annotationsPermissions": {
+      "dashboard": {
+        "canAdd": true,
+        "canEdit": true,
+        "canDelete": true
+      },
+      "organization": {
+        "canAdd": true,
+        "canEdit": true,
+        "canDelete": true
+      }
+    }
+  },
+  "uid": "banking-db-connection",
+  "version": 7
+}

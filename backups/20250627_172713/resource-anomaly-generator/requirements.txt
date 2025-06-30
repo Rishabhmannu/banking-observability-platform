@@ -1,0 +1,18 @@
+# Resource Anomaly Generator Dependencies
+# Flask for control API
+flask==2.3.2
+
+# Process and resource manipulation
+psutil==5.9.5
+
+# Prometheus metrics
+prometheus-client==0.17.0
+
+# Threading - using built-in concurrent.futures instead
+
+# Memory profiling
+memory-profiler==0.61.0
+
+# Utilities
+requests==2.31.0
+python-dotenv==1.0.0

@@ -1,0 +1,33 @@
+System Metrics Snapshot at: Wed Jun 18 15:06:04 IST 2025
+====================================
+
+🤖 DDoS Detection Score:
+   Fetching DDoS Score... "0.11076769649138743"
+
+🎯 Auto-Baselining Health:
+   Fetching Auto-Baselining... {
+  "algorithms": [
+    "rolling_statistics",
+    "quantile_based",
+    "isolation_forest",
+    "one_class_svm"
+  ],
+  "recommendations_count": 2,
+  "status": "healthy",
+  "timestamp": "2025-06-18T09:36:04.230917"
+}
+
+💰 Transaction Monitoring Stats:
+   Fetching Transaction Stats... {
+  "avg_duration": 0.42289417272727275,
+  "failure_count": 50,
+  "slow_counts": {
+    "0.5": 119,
+    "1.0": 32,
+    "2.0": 0
+  },
+  "total_count": 550
+}
+
+🔍 Transaction Tracing (Jaeger):
+Total services in Jaeger: 8

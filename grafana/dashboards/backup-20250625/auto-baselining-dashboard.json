@@ -1,0 +1,191 @@
+{
+  "dashboard": {
+    "id": null,
+    "title": "🎯 Auto-Baselining & Threshold Optimization",
+    "tags": ["auto-baselining", "thresholds", "ml", "optimization"],
+    "timezone": "browser",
+    "refresh": "1m",
+    "time": {
+      "from": "now-2h",
+      "to": "now"
+    },
+    "panels": [
+      {
+        "id": 1,
+        "title": "🧠 Algorithm Status",
+        "type": "stat",
+        "gridPos": {"h": 6, "w": 8, "x": 0, "y": 0},
+        "targets": [
+          {
+            "expr": "active_metrics_being_monitored",
+            "refId": "A",
+            "legendFormat": "Active Metrics"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "min": 0,
+            "color": {
+              "mode": "thresholds"
+            },
+            "thresholds": {
+              "steps": [
+                {"color": "red", "value": 0},
+                {"color": "yellow", "value": 1},
+                {"color": "green", "value": 4}
+              ]
+            }
+          }
+        }
+      },
+      {
+        "id": 2,
+        "title": "📊 Recommendations Generated",
+        "type": "stat",
+        "gridPos": {"h": 6, "w": 8, "x": 8, "y": 0},
+        "targets": [
+          {
+            "expr": "rate(threshold_recommendations_total[5m]) * 300",
+            "refId": "A",
+            "legendFormat": "Recommendations/5min"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "decimals": 1,
+            "color": {
+              "mode": "thresholds"
+            },
+            "thresholds": {
+              "steps": [
+                {"color": "red", "value": 0},
+                {"color": "yellow", "value": 1},
+                {"color": "green", "value": 5}
+              ]
+            }
+          }
+        }
+      },
+      {
+        "id": 3,
+        "title": "⚡ Algorithm Performance",
+        "type": "stat",
+        "gridPos": {"h": 6, "w": 8, "x": 16, "y": 0},
+        "targets": [
+          {
+            "expr": "avg(algorithm_execution_seconds)",
+            "refId": "A",
+            "legendFormat": "Avg Execution Time (s)"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "unit": "s",
+            "decimals": 3,
+            "thresholds": {
+              "steps": [
+                {"color": "green", "value": 0},
+                {"color": "yellow", "value": 1},
+                {"color": "red", "value": 5}
+              ]
+            }
+          }
+        }
+      },
+      {
+        "id": 4,
+        "title": "📈 Algorithm Execution Times",
+        "type": "timeseries",
+        "gridPos": {"h": 8, "w": 12, "x": 0, "y": 6},
+        "targets": [
+          {
+            "expr": "algorithm_execution_seconds",
+            "refId": "A",
+            "legendFormat": "{{algorithm}} execution time"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "unit": "s",
+            "custom": {
+              "drawStyle": "line",
+              "lineWidth": 1,
+              "fillOpacity": 20
+            }
+          }
+        }
+      },
+      {
+        "id": 5,
+        "title": "🎯 Active Metrics Monitoring",
+        "type": "timeseries",
+        "gridPos": {"h": 8, "w": 12, "x": 12, "y": 6},
+        "targets": [
+          {
+            "expr": "active_metrics_being_monitored",
+            "refId": "A",
+            "legendFormat": "Metrics Being Monitored"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "min": 0,
+            "custom": {
+              "drawStyle": "line",
+              "lineWidth": 2,
+              "fillOpacity": 30
+            }
+          }
+        }
+      },
+      {
+        "id": 6,
+        "title": "📊 Banking Metrics vs Thresholds",
+        "type": "timeseries",
+        "gridPos": {"h": 10, "w": 24, "x": 0, "y": 14},
+        "targets": [
+          {
+            "expr": "sum(rate(http_requests_total[1m]))",
+            "refId": "A",
+            "legendFormat": "API Request Rate (actual)"
+          },
+          {
+            "expr": "sum(rate(http_requests_total{status=~\"5..\"}[1m]))",
+            "refId": "B",
+            "legendFormat": "API Error Rate (actual)"
+          },
+          {
+            "expr": "histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket[1m])) by (le)) * 1000",
+            "refId": "C",
+            "legendFormat": "Response Time P95 (actual)"
+          },
+          {
+            "expr": "avg(100 - (avg by (instance) (rate(node_cpu_seconds_total{mode=\"idle\"}[1m])) * 100))",
+            "refId": "D",
+            "legendFormat": "CPU Usage % (actual)"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "custom": {
+              "drawStyle": "line",
+              "lineWidth": 1,
+              "fillOpacity": 10
+            }
+          },
+          "overrides": [
+            {
+              "matcher": {"id": "byRegexp", "options": ".*Error.*"},
+              "properties": [
+                {"id": "color", "value": {"mode": "fixed", "fixedColor": "red"}}
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "templating": {
+      "list": []
+    }
+  }
+}

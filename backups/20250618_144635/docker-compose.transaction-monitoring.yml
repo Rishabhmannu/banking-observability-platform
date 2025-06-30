@@ -1,0 +1,72 @@
+# Overlay file for transaction monitoring services
+# Use with: docker-compose -f docker-compose.yml -f docker-compose.transaction-monitoring.yml up -d
+
+services:
+  # Transaction Performance Monitor
+  transaction-monitor:
+    build:
+      context: ./transaction-monitor
+      dockerfile: Dockerfile
+    container_name: transaction-performance-monitor
+    ports:
+      - "5003:5003"
+    environment:
+      - PROMETHEUS_URL=http://prometheus:9090
+      - BANKING_API_URL=http://api-gateway:8080
+    depends_on:
+      - prometheus
+      - api-gateway
+    networks:
+      - banking-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5003/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    restart: unless-stopped
+
+  # Performance Aggregator
+  performance-aggregator:
+    build:
+      context: ./performance-aggregator
+      dockerfile: Dockerfile
+    container_name: performance-aggregator-service
+    ports:
+      - "5004:5004"
+    environment:
+      - PROMETHEUS_URL=http://prometheus:9090
+      - TRANSACTION_MONITOR_URL=http://transaction-monitor:5003
+    depends_on:
+      - prometheus
+      - transaction-monitor
+    networks:
+      - banking-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5004/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    restart: unless-stopped
+
+  # Anomaly Injector
+  anomaly-injector:
+    build:
+      context: ./anomaly-injector
+      dockerfile: Dockerfile
+    container_name: anomaly-injector-service
+    ports:
+      - "5005:5005"
+    depends_on:
+      - api-gateway
+      - transaction-monitor
+    networks:
+      - banking-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5005/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    restart: unless-stopped

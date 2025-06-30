@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "type": "db",
+    "canSave": true,
+    "canEdit": true,
+    "canAdmin": true,
+    "canStar": true,
+    "canDelete": true,
+    "slug": "transaction-monitoring-dashboard",
+    "url": "/d/7ca43a72-add6-4de5-b5ee-3fb05e431fb9/transaction-monitoring-dashboard",
+    "expires": "0001-01-01T00:00:00Z",
+    "created": "2025-06-10T08:44:52Z",
+    "updated": "2025-06-10T08:44:52Z",
+    "updatedBy": "admin",
+    "createdBy": "admin",
+    "version": 1,
+    "hasAcl": false,
+    "isFolder": false,
+    "apiVersion": "v0alpha1",
+    "folderId": 0,
+    "folderUid": "",
+    "folderTitle": "General",
+    "folderUrl": "",
+    "provisioned": false,
+    "provisionedExternalId": "",
+    "annotationsPermissions": {
+      "dashboard": {
+        "canAdd": true,
+        "canEdit": true,
+        "canDelete": true
+      },
+      "organization": {
+        "canAdd": true,
+        "canEdit": true,
+        "canDelete": true
+      }
+    }
+  },
+  "uid": "7ca43a72-add6-4de5-b5ee-3fb05e431fb9",
+  "version": 1
+}

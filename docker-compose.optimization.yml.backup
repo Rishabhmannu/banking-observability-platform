@@ -1,0 +1,122 @@
+# Docker Compose for Redis Cache and Container Optimization Services
+# Note: This assumes cAdvisor is already running in your main setup
+
+services:
+  # Redis Cache Server
+  banking-redis:
+    image: redis:7-alpine
+    container_name: banking-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./redis/redis.conf:/usr/local/etc/redis/redis.conf
+      - redis_data:/data
+    command: redis-server /usr/local/etc/redis/redis.conf
+    networks:
+      - banking-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Redis Exporter for Prometheus
+  redis-exporter:
+    image: oliver006/redis_exporter:latest
+    container_name: banking-redis-exporter
+    ports:
+      - "9121:9121"
+    environment:
+      REDIS_ADDR: "redis://banking-redis:6379"
+    depends_on:
+      - banking-redis
+    networks:
+      - banking-network
+
+  # Redis Cache Pattern Analyzer
+  cache-pattern-analyzer:
+    build: ./redis-cache-analyzer
+    container_name: banking-cache-analyzer
+    ports:
+      - "5012:5012"
+    environment:
+      REDIS_HOST: banking-redis
+      REDIS_PORT: 6379
+      LOG_LEVEL: INFO
+    depends_on:
+      - banking-redis
+    networks:
+      - banking-network
+    restart: unless-stopped
+
+  # Redis Cache Load Generator
+  cache-load-generator:
+    build: ./redis-cache-load-generator
+    container_name: banking-cache-load-generator
+    ports:
+      - "5013:5013"
+    environment:
+      REDIS_HOST: banking-redis
+      REDIS_PORT: 6379
+      LOG_LEVEL: INFO
+    depends_on:
+      - banking-redis
+    networks:
+      - banking-network
+    restart: unless-stopped
+
+  # Container Resource Monitor
+  # Note: This connects to the existing cAdvisor instance
+  container-resource-monitor:
+    build: ./container-resource-monitor
+    container_name: banking-container-monitor
+    ports:
+      - "5010:5010"
+    environment:
+      # Try container name first, fallback to host if needed
+      CADVISOR_URL: ${CADVISOR_URL:-http://cadvisor:8080}
+      LOG_LEVEL: INFO
+    networks:
+      - banking-network
+    restart: unless-stopped
+    # Removed depends_on cadvisor since it's running in another compose file
+
+  # Resource Anomaly Generator
+  resource-anomaly-generator:
+    build: ./resource-anomaly-generator
+    container_name: banking-resource-anomaly
+    ports:
+      - "5011:5011"
+    environment:
+      LOG_LEVEL: INFO
+    networks:
+      - banking-network
+    restart: unless-stopped
+    # Note: Running with more privileges for resource manipulation
+    cap_add:
+      - SYS_RESOURCE
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 2G
+
+  # k6 Load Testing Container (optional - for running tests)
+  k6-runner:
+    image: grafana/k6:latest
+    container_name: banking-k6-runner
+    volumes:
+      - ./k6-scripts:/scripts
+    networks:
+      - banking-network
+    profiles:
+      - testing
+    command: ["run", "/scripts/cache-load-test.js"]
+
+volumes:
+  redis_data:
+
+networks:
+  banking-network:
+    name: ddos-detection-system_banking-network
+    external: true

@@ -1,0 +1,554 @@
+#!/bin/bash
+
+echo "🔧 Manual Windows IIS Dashboard Import"
+echo "====================================="
+
+# Wait for Grafana to be ready
+echo "⏳ Waiting for Grafana to be ready..."
+while ! curl -s http://localhost:3000/api/health | grep -q "ok"; do
+    echo "Waiting for Grafana..."
+    sleep 5
+done
+
+echo "✅ Grafana is ready"
+
+# First, save the dashboard JSON file if it doesn't exist
+if [ ! -f "grafana/dashboards/windows-iis-dashboard.json" ]; then
+    echo "📝 Creating Windows IIS dashboard file..."
+    mkdir -p grafana/dashboards
+    
+    # Create the dashboard file with the proper format for file-based import
+    cat > grafana/dashboards/windows-iis-dashboard.json << 'EOF'
+{
+  "dashboard": {
+    "id": null,
+    "title": "🪟 Windows IIS Server Monitoring",
+    "tags": ["windows", "iis", "infrastructure", "banking"],
+    "timezone": "browser",
+    "refresh": "10s",
+    "time": {
+      "from": "now-1h",
+      "to": "now"
+    },
+    "panels": [
+      {
+        "id": 1,
+        "title": "📊 Request Volume",
+        "type": "stat",
+        "gridPos": { "h": 4, "w": 6, "x": 0, "y": 0 },
+        "targets": [
+          {
+            "expr": "sum(rate(windows_iis_requests_total[5m])) * 60",
+            "refId": "A",
+            "legendFormat": "Requests/min"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "decimals": 0,
+            "thresholds": {
+              "steps": [
+                { "color": "red", "value": 0 },
+                { "color": "yellow", "value": 3000 },
+                { "color": "green", "value": 6000 }
+              ]
+            },
+            "unit": "reqpm"
+          }
+        },
+        "options": {
+          "colorMode": "background",
+          "graphMode": "area",
+          "justifyMode": "center"
+        }
+      },
+      {
+        "id": 2,
+        "title": "🔄 Volume Surge Indicator",
+        "type": "stat",
+        "gridPos": { "h": 4, "w": 6, "x": 6, "y": 0 },
+        "targets": [
+          {
+            "expr": "(sum(rate(windows_iis_requests_total[5m])) / avg_over_time(sum(rate(windows_iis_requests_total[5m]))[30m:])) * 100 - 100",
+            "refId": "A",
+            "legendFormat": "% Change from baseline"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "decimals": 1,
+            "thresholds": {
+              "steps": [
+                { "color": "blue", "value": -50 },
+                { "color": "green", "value": -20 },
+                { "color": "yellow", "value": 50 },
+                { "color": "red", "value": 100 }
+              ]
+            },
+            "unit": "percent"
+          }
+        },
+        "options": {
+          "colorMode": "background",
+          "graphMode": "none",
+          "justifyMode": "center"
+        }
+      },
+      {
+        "id": 3,
+        "title": "⏱️ Response Time (P95)",
+        "type": "stat",
+        "gridPos": { "h": 4, "w": 6, "x": 12, "y": 0 },
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.95, sum(rate(windows_iis_request_execution_time_bucket[5m])) by (le))",
+            "refId": "A",
+            "legendFormat": "95th Percentile"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "decimals": 0,
+            "thresholds": {
+              "steps": [
+                { "color": "green", "value": 0 },
+                { "color": "yellow", "value": 100 },
+                { "color": "red", "value": 500 }
+              ]
+            },
+            "unit": "ms"
+          }
+        },
+        "options": {
+          "colorMode": "background",
+          "graphMode": "area",
+          "justifyMode": "center"
+        }
+      },
+      {
+        "id": 4,
+        "title": "✅ Success Rate",
+        "type": "gauge",
+        "gridPos": { "h": 4, "w": 6, "x": 18, "y": 0 },
+        "targets": [
+          {
+            "expr": "((sum(rate(windows_iis_requests_total[5m])) - sum(rate(windows_iis_server_errors_total[5m])) - sum(rate(windows_iis_client_errors_total[5m]))) / sum(rate(windows_iis_requests_total[5m]))) * 100",
+            "refId": "A",
+            "legendFormat": "Success %"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "min": 0,
+            "max": 100,
+            "unit": "percent",
+            "thresholds": {
+              "steps": [
+                { "color": "red", "value": 0 },
+                { "color": "yellow", "value": 95 },
+                { "color": "green", "value": 99 }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "id": 5,
+        "title": "📈 Request Volume Trend",
+        "type": "timeseries",
+        "gridPos": { "h": 8, "w": 12, "x": 0, "y": 4 },
+        "targets": [
+          {
+            "expr": "sum(rate(windows_iis_requests_total[1m])) * 60",
+            "refId": "A",
+            "legendFormat": "Total Requests/min"
+          },
+          {
+            "expr": "sum by(site) (rate(windows_iis_requests_total[1m])) * 60",
+            "refId": "B",
+            "legendFormat": "{{site}}"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "custom": {
+              "drawStyle": "line",
+              "lineWidth": 2,
+              "fillOpacity": 10
+            },
+            "unit": "reqpm"
+          }
+        }
+      },
+      {
+        "id": 6,
+        "title": "⚡ Response Time Degradation",
+        "type": "timeseries",
+        "gridPos": { "h": 8, "w": 12, "x": 12, "y": 4 },
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.50, sum(rate(windows_iis_request_execution_time_bucket[1m])) by (le))",
+            "refId": "A",
+            "legendFormat": "p50"
+          },
+          {
+            "expr": "histogram_quantile(0.95, sum(rate(windows_iis_request_execution_time_bucket[1m])) by (le))",
+            "refId": "B",
+            "legendFormat": "p95"
+          },
+          {
+            "expr": "histogram_quantile(0.99, sum(rate(windows_iis_request_execution_time_bucket[1m])) by (le))",
+            "refId": "C",
+            "legendFormat": "p99"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "custom": {
+              "drawStyle": "line",
+              "lineWidth": 2,
+              "fillOpacity": 10
+            },
+            "unit": "ms"
+          }
+        }
+      },
+      {
+        "id": 7,
+        "title": "❌ Technical Exceptions %",
+        "type": "stat",
+        "gridPos": { "h": 4, "w": 6, "x": 0, "y": 12 },
+        "targets": [
+          {
+            "expr": "(sum(rate(windows_netframework_exceptions_thrown_total[5m])) / sum(rate(windows_iis_requests_total[5m]))) * 100",
+            "refId": "A",
+            "legendFormat": "Exception Rate"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "decimals": 2,
+            "thresholds": {
+              "steps": [
+                { "color": "green", "value": 0 },
+                { "color": "yellow", "value": 0.5 },
+                { "color": "red", "value": 1 }
+              ]
+            },
+            "unit": "percent"
+          }
+        },
+        "options": {
+          "colorMode": "background",
+          "graphMode": "area",
+          "justifyMode": "center"
+        }
+      },
+      {
+        "id": 8,
+        "title": "🔢 HTTP Response Codes",
+        "type": "piechart",
+        "gridPos": { "h": 8, "w": 6, "x": 6, "y": 12 },
+        "targets": [
+          {
+            "expr": "sum(increase(windows_iis_requests_total[1h])) - sum(increase(windows_iis_client_errors_total[1h])) - sum(increase(windows_iis_server_errors_total[1h]))",
+            "refId": "A",
+            "legendFormat": "2xx Success"
+          },
+          {
+            "expr": "sum(increase(windows_iis_client_errors_total[1h]))",
+            "refId": "B",
+            "legendFormat": "4xx Client Errors"
+          },
+          {
+            "expr": "sum(increase(windows_iis_server_errors_total[1h]))",
+            "refId": "C",
+            "legendFormat": "5xx Server Errors"
+          }
+        ],
+        "options": {
+          "pieType": "donut",
+          "displayLabels": ["name", "percent"],
+          "legendDisplayMode": "list",
+          "legendPlacement": "bottom"
+        }
+      },
+      {
+        "id": 9,
+        "title": "🏷️ Custom Error Codes",
+        "type": "bargauge",
+        "gridPos": { "h": 8, "w": 6, "x": 12, "y": 12 },
+        "targets": [
+          {
+            "expr": "sum by(error_code) (increase(windows_custom_errors_total[1h]))",
+            "refId": "A",
+            "legendFormat": "{{error_code}}"
+          }
+        ],
+        "options": {
+          "displayMode": "gradient",
+          "orientation": "horizontal",
+          "showUnfilled": true
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "thresholds": {
+              "steps": [
+                { "color": "green", "value": 0 },
+                { "color": "yellow", "value": 10 },
+                { "color": "red", "value": 50 }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "id": 10,
+        "title": "📊 Success vs Failure Transactions",
+        "type": "timeseries",
+        "gridPos": { "h": 8, "w": 6, "x": 18, "y": 12 },
+        "targets": [
+          {
+            "expr": "sum(rate(windows_iis_requests_total[1m])) * 60 - (sum(rate(windows_iis_server_errors_total[1m])) + sum(rate(windows_iis_client_errors_total[1m]))) * 60",
+            "refId": "A",
+            "legendFormat": "Success Transactions/min"
+          },
+          {
+            "expr": "(sum(rate(windows_iis_server_errors_total[1m])) + sum(rate(windows_iis_client_errors_total[1m]))) * 60",
+            "refId": "B",
+            "legendFormat": "Failed Transactions/min"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "custom": {
+              "drawStyle": "line",
+              "lineWidth": 2,
+              "fillOpacity": 20
+            },
+            "unit": "reqpm"
+          },
+          "overrides": [
+            {
+              "matcher": { "id": "byName", "options": "Failed Transactions/min" },
+              "properties": [
+                {
+                  "id": "color",
+                  "value": { "mode": "fixed", "fixedColor": "red" }
+                }
+              ]
+            },
+            {
+              "matcher": { "id": "byName", "options": "Success Transactions/min" },
+              "properties": [
+                {
+                  "id": "color",
+                  "value": { "mode": "fixed", "fixedColor": "green" }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": 11,
+        "title": "🔍 Volume Surge/Dip Detection",
+        "type": "state-timeline",
+        "gridPos": { "h": 4, "w": 24, "x": 0, "y": 20 },
+        "targets": [
+          {
+            "expr": "(sum(rate(windows_iis_requests_total[5m])) > bool (avg_over_time(sum(rate(windows_iis_requests_total[5m]))[30m:]) * 2)) * 2 + (sum(rate(windows_iis_requests_total[5m])) < bool (avg_over_time(sum(rate(windows_iis_requests_total[5m]))[30m:]) * 0.5)) * 1",
+            "refId": "A",
+            "legendFormat": "Volume Status"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "custom": {
+              "fillOpacity": 70,
+              "lineWidth": 0
+            },
+            "mappings": [
+              {
+                "type": "value",
+                "value": "0",
+                "options": { 
+                  "text": "Normal",
+                  "color": "green"
+                }
+              },
+              {
+                "type": "value", 
+                "value": "1",
+                "options": { 
+                  "text": "Volume Dip",
+                  "color": "blue"
+                }
+              },
+              {
+                "type": "value",
+                "value": "2", 
+                "options": { 
+                  "text": "Volume Surge",
+                  "color": "red"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": 12,
+        "title": "💻 IIS Infrastructure Health",
+        "type": "table",
+        "gridPos": { "h": 8, "w": 12, "x": 0, "y": 24 },
+        "targets": [
+          {
+            "expr": "windows_iis_app_pool_state",
+            "format": "table",
+            "instant": true,
+            "refId": "A"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "custom": {
+              "align": "auto",
+              "cellOptions": {
+                "type": "color-background"
+              }
+            },
+            "mappings": [
+              {
+                "type": "value",
+                "value": "1",
+                "options": {
+                  "text": "Running",
+                  "color": "green"
+                }
+              },
+              {
+                "type": "value",
+                "value": "0",
+                "options": {
+                  "text": "Stopped",
+                  "color": "red"
+                }
+              }
+            ]
+          },
+          "overrides": [
+            {
+              "matcher": { "id": "byName", "options": "app_pool" },
+              "properties": [
+                { "id": "displayName", "value": "Application Pool" }
+              ]
+            },
+            {
+              "matcher": { "id": "byName", "options": "Value" },
+              "properties": [
+                { "id": "displayName", "value": "Status" }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": 13,
+        "title": "🔧 Worker Process Metrics",
+        "type": "bargauge",
+        "gridPos": { "h": 8, "w": 12, "x": 12, "y": 24 },
+        "targets": [
+          {
+            "expr": "sum by(app_pool) (windows_iis_worker_processes)",
+            "refId": "A",
+            "legendFormat": "{{app_pool}}"
+          }
+        ],
+        "options": {
+          "displayMode": "lcd",
+          "orientation": "horizontal",
+          "showUnfilled": true
+        },
+        "fieldConfig": {
+          "defaults": {
+            "min": 0,
+            "max": 10,
+            "unit": "short"
+          }
+        }
+      }
+    ],
+    "templating": {
+      "list": []
+    },
+    "annotations": {
+      "list": [
+        {
+          "name": "Volume Surges",
+          "datasource": "Prometheus",
+          "enable": true,
+          "expr": "sum(rate(windows_iis_requests_total[5m])) > avg_over_time(sum(rate(windows_iis_requests_total[5m]))[30m:]) * 2",
+          "iconColor": "red",
+          "titleFormat": "Volume Surge Detected",
+          "textFormat": "Traffic surge detected"
+        },
+        {
+          "name": "Response Degradation",
+          "datasource": "Prometheus",
+          "enable": true,
+          "expr": "histogram_quantile(0.95, sum(rate(windows_iis_request_execution_time_bucket[5m])) by (le)) > 500",
+          "iconColor": "orange",
+          "titleFormat": "Response Time Degradation",
+          "textFormat": "P95 response time > 500ms"
+        }
+      ]
+    }
+  },
+  "overwrite": true
+}
+EOF
+fi
+
+echo ""
+echo "📊 Importing Windows IIS Dashboard..."
+
+# Import Windows IIS Dashboard
+iis_response=$(curl -s -X POST \
+  -H "Content-Type: application/json" \
+  -u admin:bankingdemo \
+  http://localhost:3000/api/dashboards/db \
+  -d @grafana/dashboards/windows-iis-dashboard.json)
+
+if echo "$iis_response" | grep -q "success"; then
+    echo "✅ Windows IIS Dashboard imported successfully"
+    iis_url=$(echo "$iis_response" | jq -r '.url // "N/A"')
+    echo "   📍 URL: http://localhost:3000$iis_url"
+else
+    echo "❌ Failed to import Windows IIS Dashboard"
+    echo "   Error: $iis_response"
+fi
+
+echo ""
+echo "📋 Dashboard Import Summary:"
+echo "==========================="
+echo "✅ Windows IIS Monitoring: http://localhost:3000$iis_url"
+
+echo ""
+echo "🎯 Next Steps:"
+echo "============="
+echo "1. Visit the dashboard URL above"
+echo "2. Verify metrics are showing:"
+echo "   - Request Volume should show ~6000-12000 req/min during business hours"
+echo "   - Success Rate should be >99%"
+echo "   - Technical Exceptions should be <0.5%"
+echo "3. Wait 2-3 minutes to see:"
+echo "   - Volume surge indicators (random spikes)"
+echo "   - Response time variations"
+echo "   - Custom error codes appearing"
+
+echo ""
+echo "✨ Manual import complete!"

@@ -1,0 +1,19 @@
+Final Metrics Summary - Mon Jun 16 17:39:29 IST 2025
+==================================
+
+🤖 DDoS Detection Status:
+   Score: 0.3622963231703382
+
+🎯 Auto-Baselining Status:
+   Recommendations: 2
+
+💰 Transaction Monitoring:
+   Total transactions: 0
+
+🪟 Windows IIS Monitoring:
+   Request rate:  req/min
+   Success rate: %
+
+🔍 Transaction Tracing:
+   Total traces generated: 1235
+   Services being traced: 8

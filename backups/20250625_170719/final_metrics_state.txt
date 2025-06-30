@@ -1,0 +1,111 @@
+Final Metrics State - Wed Jun 25 17:07:19 IST 2025
+=============================
+
+Prometheus Targets:
+anomaly-injector: up
+auto-baselining: up
+banking-db-demo: up
+banking-kafka: up
+banking-message-consumer: up
+banking-message-producer: up
+banking-postgresql: up
+banking-rabbitmq: up
+banking-services: up
+banking-services: up
+banking-services: up
+banking-services: up
+banking-services: up
+banking-services: up
+cadvisor: up
+ddos-ml-detection: up
+node-exporter: up
+performance-aggregator: up
+prometheus: up
+trace-generator: up
+transaction-monitor: up
+windows-exporter: up
+
+Message Queue Stats:
+# HELP banking_messages_published_total Total messages published
+# TYPE banking_messages_published_total counter
+banking_messages_published_total{broker="rabbitmq",message_type="notification",queue_topic="notification_dispatch_q"} 9086.0
+banking_messages_published_total{broker="rabbitmq",message_type="fraud_check",queue_topic="fraud_check_q"} 5447.0
+banking_messages_published_total{broker="kafka",message_type="transaction_event",queue_topic="transaction-events"} 3751.0
+banking_messages_published_total{broker="rabbitmq",message_type="auth_token",queue_topic="auth_token_q"} 7262.0
+banking_messages_published_total{broker="rabbitmq",message_type="transaction",queue_topic="transaction_processing_q"} 12835.0
+banking_messages_published_total{broker="kafka",message_type="audit_log",queue_topic="audit-logs"} 1887.0
+
+Database Connection Pool:
+# HELP banking_db_pool_size Maximum size of the connection pool
+# TYPE banking_db_pool_size gauge
+banking_db_pool_size{service="db-demo"} 20.0
+# HELP banking_db_pool_connections_active Number of active connections in the pool
+# TYPE banking_db_pool_connections_active gauge
+banking_db_pool_connections_active{service="db-demo"} 0.0
+# HELP banking_db_pool_connections_idle Number of idle connections in the pool
+# TYPE banking_db_pool_connections_idle gauge
+banking_db_pool_connections_idle{service="db-demo"} 5.0
+# HELP banking_db_pool_utilization_percent Percentage of pool connections in use
+# TYPE banking_db_pool_utilization_percent gauge
+banking_db_pool_utilization_percent{service="db-demo"} 0.0
+# HELP banking_db_query_duration_seconds Database query execution time
+# TYPE banking_db_query_duration_seconds histogram
+banking_db_query_duration_seconds_bucket{le="0.005",query_type="update",service="db-demo"} 8120.0
+banking_db_query_duration_seconds_bucket{le="0.01",query_type="update",service="db-demo"} 8228.0
+banking_db_query_duration_seconds_bucket{le="0.025",query_type="update",service="db-demo"} 8252.0
+banking_db_query_duration_seconds_bucket{le="0.05",query_type="update",service="db-demo"} 8259.0
+banking_db_query_duration_seconds_bucket{le="0.075",query_type="update",service="db-demo"} 8264.0
+banking_db_query_duration_seconds_bucket{le="0.1",query_type="update",service="db-demo"} 8265.0
+banking_db_query_duration_seconds_bucket{le="0.25",query_type="update",service="db-demo"} 8267.0
+banking_db_query_duration_seconds_bucket{le="0.5",query_type="update",service="db-demo"} 8267.0
+banking_db_query_duration_seconds_bucket{le="0.75",query_type="update",service="db-demo"} 8267.0
+banking_db_query_duration_seconds_bucket{le="1.0",query_type="update",service="db-demo"} 8267.0
+banking_db_query_duration_seconds_bucket{le="2.5",query_type="update",service="db-demo"} 8267.0
+banking_db_query_duration_seconds_bucket{le="5.0",query_type="update",service="db-demo"} 8267.0
+banking_db_query_duration_seconds_bucket{le="7.5",query_type="update",service="db-demo"} 8267.0
+banking_db_query_duration_seconds_bucket{le="10.0",query_type="update",service="db-demo"} 8267.0
+banking_db_query_duration_seconds_bucket{le="+Inf",query_type="update",service="db-demo"} 8267.0
+banking_db_query_duration_seconds_count{query_type="update",service="db-demo"} 8267.0
+banking_db_query_duration_seconds_sum{query_type="update",service="db-demo"} 15.474785521087142
+banking_db_query_duration_seconds_bucket{le="0.005",query_type="select",service="db-demo"} 18523.0
+banking_db_query_duration_seconds_bucket{le="0.01",query_type="select",service="db-demo"} 18578.0
+banking_db_query_duration_seconds_bucket{le="0.025",query_type="select",service="db-demo"} 18608.0
+banking_db_query_duration_seconds_bucket{le="0.05",query_type="select",service="db-demo"} 18625.0
+banking_db_query_duration_seconds_bucket{le="0.075",query_type="select",service="db-demo"} 18630.0
+banking_db_query_duration_seconds_bucket{le="0.1",query_type="select",service="db-demo"} 18630.0
+banking_db_query_duration_seconds_bucket{le="0.25",query_type="select",service="db-demo"} 18631.0
+banking_db_query_duration_seconds_bucket{le="0.5",query_type="select",service="db-demo"} 18631.0
+banking_db_query_duration_seconds_bucket{le="0.75",query_type="select",service="db-demo"} 18631.0
+banking_db_query_duration_seconds_bucket{le="1.0",query_type="select",service="db-demo"} 18631.0
+banking_db_query_duration_seconds_bucket{le="2.5",query_type="select",service="db-demo"} 18631.0
+banking_db_query_duration_seconds_bucket{le="5.0",query_type="select",service="db-demo"} 18631.0
+banking_db_query_duration_seconds_bucket{le="7.5",query_type="select",service="db-demo"} 18631.0
+banking_db_query_duration_seconds_bucket{le="10.0",query_type="select",service="db-demo"} 18631.0
+banking_db_query_duration_seconds_bucket{le="+Inf",query_type="select",service="db-demo"} 18631.0
+banking_db_query_duration_seconds_count{query_type="select",service="db-demo"} 18631.0
+banking_db_query_duration_seconds_sum{query_type="select",service="db-demo"} 16.774365481140194
+banking_db_query_duration_seconds_bucket{le="0.005",query_type="insert",service="db-demo"} 16376.0
+banking_db_query_duration_seconds_bucket{le="0.01",query_type="insert",service="db-demo"} 16618.0
+banking_db_query_duration_seconds_bucket{le="0.025",query_type="insert",service="db-demo"} 16682.0
+banking_db_query_duration_seconds_bucket{le="0.05",query_type="insert",service="db-demo"} 16694.0
+banking_db_query_duration_seconds_bucket{le="0.075",query_type="insert",service="db-demo"} 16699.0
+banking_db_query_duration_seconds_bucket{le="0.1",query_type="insert",service="db-demo"} 16702.0
+banking_db_query_duration_seconds_bucket{le="0.25",query_type="insert",service="db-demo"} 16710.0
+banking_db_query_duration_seconds_bucket{le="0.5",query_type="insert",service="db-demo"} 16710.0
+banking_db_query_duration_seconds_bucket{le="0.75",query_type="insert",service="db-demo"} 16710.0
+banking_db_query_duration_seconds_bucket{le="1.0",query_type="insert",service="db-demo"} 16710.0
+banking_db_query_duration_seconds_bucket{le="2.5",query_type="insert",service="db-demo"} 16710.0
+banking_db_query_duration_seconds_bucket{le="5.0",query_type="insert",service="db-demo"} 16710.0
+banking_db_query_duration_seconds_bucket{le="7.5",query_type="insert",service="db-demo"} 16710.0
+banking_db_query_duration_seconds_bucket{le="10.0",query_type="insert",service="db-demo"} 16710.0
+banking_db_query_duration_seconds_bucket{le="+Inf",query_type="insert",service="db-demo"} 16710.0
+banking_db_query_duration_seconds_count{query_type="insert",service="db-demo"} 16710.0
+banking_db_query_duration_seconds_sum{query_type="insert",service="db-demo"} 32.804522739149434
+# HELP banking_db_query_duration_seconds_created Database query execution time
+# TYPE banking_db_query_duration_seconds_created gauge
+banking_db_query_duration_seconds_created{query_type="update",service="db-demo"} 1.7508283335182922e+09
+banking_db_query_duration_seconds_created{query_type="select",service="db-demo"} 1.7508283340968456e+09
+banking_db_query_duration_seconds_created{query_type="insert",service="db-demo"} 1.7508283391642618e+09
+
+Jaeger Traces:
+Jaeger not accessible

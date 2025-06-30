@@ -1,0 +1,8 @@
+flask==2.0.1
+psycopg2-binary==2.9.6
+psycopg2-pool==1.1
+prometheus-client==0.16.0
+prometheus-flask-exporter==0.21.0
+requests==2.31.0
+flask==2.0.1
+werkzeug==2.0.3

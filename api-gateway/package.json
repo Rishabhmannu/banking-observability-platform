@@ -1,0 +1,13 @@
+{
+  "name": "banking-api-gateway",
+  "version": "1.0.0",
+  "description": "API Gateway for Banking Demo",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "http-proxy-middleware": "^2.0.1",
+    "morgan": "^1.10.0",
+    "newrelic": "latest",
+    "prom-client": "^14.0.1"
+  }
+}

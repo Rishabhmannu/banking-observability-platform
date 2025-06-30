@@ -1,0 +1,64 @@
+# Prometheus configuration for DDoS Detection Integration
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+# Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
+rule_files:
+  - "ddos_alert_rules.yml"
+
+# Alertmanager configuration (optional for now)
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+          # - alertmanager:9093
+
+scrape_configs:
+  # Scrape Prometheus itself
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  # Banking API Gateway
+  - job_name: 'banking-api-gateway'
+    static_configs:
+      - targets: ['localhost:8080']
+    metrics_path: '/metrics'
+    scrape_interval: 5s
+
+  # Banking microservices (if they expose metrics)
+  - job_name: 'banking-services'
+    static_configs:
+      - targets: 
+        - 'localhost:8081'  # Account service
+        - 'localhost:8082'  # Transaction service  
+        - 'localhost:8083'  # Auth service
+        - 'localhost:8084'  # Notification service
+        - 'localhost:8085'  # Fraud detection
+    metrics_path: '/metrics'
+    scrape_interval: 10s
+
+  # ML DDoS Detection Service (CRITICAL - This was missing!)
+  - job_name: 'ddos-ml-detection'
+    static_configs:
+      - targets: ['localhost:5001']
+    metrics_path: '/metrics'
+    scrape_interval: 10s
+    scrape_timeout: 5s
+
+  # Node exporter for system metrics
+  - job_name: 'node-exporter'
+    static_configs:
+      - targets: ['localhost:9100']
+
+  # cAdvisor for container metrics  
+  - job_name: 'cadvisor'
+    static_configs:
+      - targets: ['localhost:8086']
+  # Auto-Baselining Service
+  - job_name: 'auto-baselining'
+    static_configs:
+      - targets: ['auto-baselining:5002']
+    scrape_interval: 30s
+    metrics_path: '/metrics'

@@ -1,0 +1,151 @@
+Metrics State Snapshot - Fri Jun 27 17:27:15 IST 2025
+================================
+
+Prometheus Targets:
+anomaly-injector: up
+auto-baselining: up
+banking-db-demo: up
+banking-kafka: up
+banking-message-consumer: up
+banking-message-producer: up
+banking-postgresql: up
+banking-rabbitmq: up
+banking-services: up
+banking-services: up
+banking-services: up
+banking-services: up
+banking-services: up
+banking-services: up
+cache-load-generator: up
+cache-pattern-analyzer: up
+cadvisor: up
+container-resource-monitor: up
+ddos-ml-detection: up
+node-exporter: up
+performance-aggregator: up
+prometheus: up
+rabbitmq-queue-monitor: up
+redis-exporter: up
+resource-anomaly-generator: up
+trace-generator: up
+transaction-monitor: up
+windows-exporter: up
+
+Redis Cache Status:
+{
+  "error": "'Gauge' object has no attribute '_value'"
+}
+
+Container Optimization Recommendations:
+{
+  "recommendations": {},
+  "timestamp": "2025-06-27T11:57:15.235887",
+  "total_potential_savings": 0
+}
+
+RabbitMQ Queue Monitor Status:
+{
+  "last_successful_poll": "2025-06-27T11:57:12.473407",
+  "monitored_queues": [
+    "transaction_processing_q",
+    "notification_dispatch_q",
+    "fraud_check_q",
+    "auth_token_q",
+    "core_banking_updates_q"
+  ],
+  "service": "rabbitmq-queue-monitor",
+  "status": "UP",
+  "timestamp": "2025-06-27T11:57:15.252354"
+}
+
+RabbitMQ Queue Depths (from Monitor):
+rabbitmq_queue_messages_ready{queue="auth_token_q",vhost="/"} 0.0
+rabbitmq_queue_messages_ready{queue="core_banking_updates_q",vhost="/"} 0.0
+rabbitmq_queue_messages_ready{queue="fraud_check_q",vhost="/"} 1.0
+rabbitmq_queue_messages_ready{queue="notification_dispatch_q",vhost="/"} 0.0
+rabbitmq_queue_messages_ready{queue="transaction_processing_q",vhost="/"} 0.0
+
+Message Queue Stats:
+# HELP banking_messages_published_total Total messages published
+# TYPE banking_messages_published_total counter
+banking_messages_published_total{broker="rabbitmq",message_type="transaction",queue_topic="transaction_processing_q"} 15943.0
+banking_messages_published_total{broker="rabbitmq",message_type="notification",queue_topic="notification_dispatch_q"} 11450.0
+banking_messages_published_total{broker="rabbitmq",message_type="fraud_check",queue_topic="fraud_check_q"} 6887.0
+banking_messages_published_total{broker="rabbitmq",message_type="auth_token",queue_topic="auth_token_q"} 8998.0
+banking_messages_published_total{broker="kafka",message_type="transaction_event",queue_topic="transaction-events"} 4576.0
+banking_messages_published_total{broker="kafka",message_type="audit_log",queue_topic="audit-logs"} 2258.0
+
+Database Connection Pool:
+# HELP banking_db_pool_size Maximum size of the connection pool
+# TYPE banking_db_pool_size gauge
+banking_db_pool_size{service="db-demo"} 20.0
+# HELP banking_db_pool_connections_active Number of active connections in the pool
+# TYPE banking_db_pool_connections_active gauge
+banking_db_pool_connections_active{service="db-demo"} 0.0
+# HELP banking_db_pool_connections_idle Number of idle connections in the pool
+# TYPE banking_db_pool_connections_idle gauge
+banking_db_pool_connections_idle{service="db-demo"} 5.0
+# HELP banking_db_pool_utilization_percent Percentage of pool connections in use
+# TYPE banking_db_pool_utilization_percent gauge
+banking_db_pool_utilization_percent{service="db-demo"} 0.0
+# HELP banking_db_query_duration_seconds Database query execution time
+# TYPE banking_db_query_duration_seconds histogram
+banking_db_query_duration_seconds_bucket{le="0.005",query_type="update",service="db-demo"} 9907.0
+banking_db_query_duration_seconds_bucket{le="0.01",query_type="update",service="db-demo"} 10131.0
+banking_db_query_duration_seconds_bucket{le="0.025",query_type="update",service="db-demo"} 10151.0
+banking_db_query_duration_seconds_bucket{le="0.05",query_type="update",service="db-demo"} 10157.0
+banking_db_query_duration_seconds_bucket{le="0.075",query_type="update",service="db-demo"} 10160.0
+banking_db_query_duration_seconds_bucket{le="0.1",query_type="update",service="db-demo"} 10160.0
+banking_db_query_duration_seconds_bucket{le="0.25",query_type="update",service="db-demo"} 10162.0
+banking_db_query_duration_seconds_bucket{le="0.5",query_type="update",service="db-demo"} 10162.0
+banking_db_query_duration_seconds_bucket{le="0.75",query_type="update",service="db-demo"} 10162.0
+banking_db_query_duration_seconds_bucket{le="1.0",query_type="update",service="db-demo"} 10162.0
+banking_db_query_duration_seconds_bucket{le="2.5",query_type="update",service="db-demo"} 10162.0
+banking_db_query_duration_seconds_bucket{le="5.0",query_type="update",service="db-demo"} 10162.0
+banking_db_query_duration_seconds_bucket{le="7.5",query_type="update",service="db-demo"} 10162.0
+banking_db_query_duration_seconds_bucket{le="10.0",query_type="update",service="db-demo"} 10162.0
+banking_db_query_duration_seconds_bucket{le="+Inf",query_type="update",service="db-demo"} 10162.0
+banking_db_query_duration_seconds_count{query_type="update",service="db-demo"} 10162.0
+banking_db_query_duration_seconds_sum{query_type="update",service="db-demo"} 22.46182816288382
+banking_db_query_duration_seconds_bucket{le="0.005",query_type="insert",service="db-demo"} 20115.0
+banking_db_query_duration_seconds_bucket{le="0.01",query_type="insert",service="db-demo"} 20552.0
+banking_db_query_duration_seconds_bucket{le="0.025",query_type="insert",service="db-demo"} 20607.0
+banking_db_query_duration_seconds_bucket{le="0.05",query_type="insert",service="db-demo"} 20625.0
+banking_db_query_duration_seconds_bucket{le="0.075",query_type="insert",service="db-demo"} 20629.0
+banking_db_query_duration_seconds_bucket{le="0.1",query_type="insert",service="db-demo"} 20634.0
+banking_db_query_duration_seconds_bucket{le="0.25",query_type="insert",service="db-demo"} 20634.0
+banking_db_query_duration_seconds_bucket{le="0.5",query_type="insert",service="db-demo"} 20635.0
+banking_db_query_duration_seconds_bucket{le="0.75",query_type="insert",service="db-demo"} 20635.0
+banking_db_query_duration_seconds_bucket{le="1.0",query_type="insert",service="db-demo"} 20635.0
+banking_db_query_duration_seconds_bucket{le="2.5",query_type="insert",service="db-demo"} 20635.0
+banking_db_query_duration_seconds_bucket{le="5.0",query_type="insert",service="db-demo"} 20635.0
+banking_db_query_duration_seconds_bucket{le="7.5",query_type="insert",service="db-demo"} 20635.0
+banking_db_query_duration_seconds_bucket{le="10.0",query_type="insert",service="db-demo"} 20635.0
+banking_db_query_duration_seconds_bucket{le="+Inf",query_type="insert",service="db-demo"} 20635.0
+banking_db_query_duration_seconds_count{query_type="insert",service="db-demo"} 20635.0
+banking_db_query_duration_seconds_sum{query_type="insert",service="db-demo"} 48.22035872289942
+banking_db_query_duration_seconds_bucket{le="0.005",query_type="select",service="db-demo"} 20497.0
+banking_db_query_duration_seconds_bucket{le="0.01",query_type="select",service="db-demo"} 20542.0
+banking_db_query_duration_seconds_bucket{le="0.025",query_type="select",service="db-demo"} 20561.0
+banking_db_query_duration_seconds_bucket{le="0.05",query_type="select",service="db-demo"} 20564.0
+banking_db_query_duration_seconds_bucket{le="0.075",query_type="select",service="db-demo"} 20565.0
+banking_db_query_duration_seconds_bucket{le="0.1",query_type="select",service="db-demo"} 20566.0
+banking_db_query_duration_seconds_bucket{le="0.25",query_type="select",service="db-demo"} 20566.0
+banking_db_query_duration_seconds_bucket{le="0.5",query_type="select",service="db-demo"} 20566.0
+banking_db_query_duration_seconds_bucket{le="0.75",query_type="select",service="db-demo"} 20566.0
+banking_db_query_duration_seconds_bucket{le="1.0",query_type="select",service="db-demo"} 20566.0
+banking_db_query_duration_seconds_bucket{le="2.5",query_type="select",service="db-demo"} 20566.0
+banking_db_query_duration_seconds_bucket{le="5.0",query_type="select",service="db-demo"} 20566.0
+banking_db_query_duration_seconds_bucket{le="7.5",query_type="select",service="db-demo"} 20566.0
+banking_db_query_duration_seconds_bucket{le="10.0",query_type="select",service="db-demo"} 20566.0
+banking_db_query_duration_seconds_bucket{le="+Inf",query_type="select",service="db-demo"} 20566.0
+banking_db_query_duration_seconds_count{query_type="select",service="db-demo"} 20566.0
+banking_db_query_duration_seconds_sum{query_type="select",service="db-demo"} 20.646939037233977
+# HELP banking_db_query_duration_seconds_created Database query execution time
+# TYPE banking_db_query_duration_seconds_created gauge
+banking_db_query_duration_seconds_created{query_type="update",service="db-demo"} 1.7509967941549492e+09
+banking_db_query_duration_seconds_created{query_type="insert",service="db-demo"} 1.7509967946662014e+09
+banking_db_query_duration_seconds_created{query_type="select",service="db-demo"} 1.7509967966125658e+09
+
+Jaeger Traces:
+Jaeger not accessible

@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "type": "db",
+    "canSave": true,
+    "canEdit": true,
+    "canAdmin": true,
+    "canStar": true,
+    "canDelete": true,
+    "slug": "transaction-monitoring",
+    "url": "/d/d479967e-303a-4cfa-b530-901ec9113e45/transaction-monitoring",
+    "expires": "0001-01-01T00:00:00Z",
+    "created": "2025-06-10T08:46:24Z",
+    "updated": "2025-06-10T08:46:24Z",
+    "updatedBy": "admin",
+    "createdBy": "admin",
+    "version": 1,
+    "hasAcl": false,
+    "isFolder": false,
+    "apiVersion": "v0alpha1",
+    "folderId": 0,
+    "folderUid": "",
+    "folderTitle": "General",
+    "folderUrl": "",
+    "provisioned": false,
+    "provisionedExternalId": "",
+    "annotationsPermissions": {
+      "dashboard": {
+        "canAdd": true,
+        "canEdit": true,
+        "canDelete": true
+      },
+      "organization": {
+        "canAdd": true,
+        "canEdit": true,
+        "canDelete": true
+      }
+    }
+  },
+  "uid": "d479967e-303a-4cfa-b530-901ec9113e45",
+  "version": 1
+}

@@ -1,0 +1,44 @@
+# Container Monitoring Services
+# This file only includes container resource monitoring services
+
+services:
+  # Container Resource Monitor
+  container-resource-monitor:
+    build: ./container-resource-monitor
+    container_name: banking-container-monitor
+    ports:
+      - "5010:5010"
+    environment:
+      # cAdvisor is running on port 8086 in your setup
+      CADVISOR_URL: http://cadvisor:8080  # Internal container port
+      LOG_LEVEL: INFO
+    networks:
+      - banking-network
+    restart: unless-stopped
+    extra_hosts:
+      # Fallback if cadvisor name doesn't resolve
+      - "host.docker.internal:host-gateway"
+
+  # Resource Anomaly Generator
+  resource-anomaly-generator:
+    build: ./resource-anomaly-generator
+    container_name: banking-resource-anomaly
+    ports:
+      - "5011:5011"
+    environment:
+      LOG_LEVEL: INFO
+    networks:
+      - banking-network
+    restart: unless-stopped
+    cap_add:
+      - SYS_RESOURCE
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 2G
+
+networks:
+  banking-network:
+    name: ddos-detection-system_banking-network
+    external: true

@@ -1,0 +1,119 @@
+Final Metrics State - Thu Jun 26 16:04:54 IST 2025
+=============================
+
+Prometheus Targets:
+anomaly-injector: up
+auto-baselining: up
+banking-db-demo: up
+banking-kafka: up
+banking-message-consumer: up
+banking-message-producer: up
+banking-postgresql: up
+banking-rabbitmq: up
+banking-services: up
+banking-services: up
+banking-services: up
+banking-services: up
+banking-services: up
+banking-services: up
+cadvisor: up
+ddos-ml-detection: up
+node-exporter: up
+performance-aggregator: up
+prometheus: up
+rabbitmq-queue-monitor: up
+trace-generator: up
+transaction-monitor: up
+windows-exporter: up
+
+RabbitMQ Queue Depths (from Monitor):
+rabbitmq_queue_messages_ready{queue="auth_token_q",vhost="/"} 0.0
+rabbitmq_queue_messages_ready{queue="core_banking_updates_q",vhost="/"} 0.0
+rabbitmq_queue_messages_ready{queue="fraud_check_q",vhost="/"} 1.0
+rabbitmq_queue_messages_ready{queue="notification_dispatch_q",vhost="/"} 0.0
+rabbitmq_queue_messages_ready{queue="transaction_processing_q",vhost="/"} 0.0
+
+Message Queue Stats:
+# HELP banking_messages_published_total Total messages published
+# TYPE banking_messages_published_total counter
+banking_messages_published_total{broker="rabbitmq",message_type="transaction",queue_topic="transaction_processing_q"} 6414.0
+banking_messages_published_total{broker="rabbitmq",message_type="auth_token",queue_topic="auth_token_q"} 3674.0
+banking_messages_published_total{broker="kafka",message_type="transaction_event",queue_topic="transaction-events"} 1866.0
+banking_messages_published_total{broker="rabbitmq",message_type="notification",queue_topic="notification_dispatch_q"} 4563.0
+banking_messages_published_total{broker="rabbitmq",message_type="fraud_check",queue_topic="fraud_check_q"} 2770.0
+banking_messages_published_total{broker="kafka",message_type="audit_log",queue_topic="audit-logs"} 910.0
+
+Database Connection Pool:
+# HELP banking_db_pool_size Maximum size of the connection pool
+# TYPE banking_db_pool_size gauge
+banking_db_pool_size{service="db-demo"} 20.0
+# HELP banking_db_pool_connections_active Number of active connections in the pool
+# TYPE banking_db_pool_connections_active gauge
+banking_db_pool_connections_active{service="db-demo"} 0.0
+# HELP banking_db_pool_connections_idle Number of idle connections in the pool
+# TYPE banking_db_pool_connections_idle gauge
+banking_db_pool_connections_idle{service="db-demo"} 5.0
+# HELP banking_db_pool_utilization_percent Percentage of pool connections in use
+# TYPE banking_db_pool_utilization_percent gauge
+banking_db_pool_utilization_percent{service="db-demo"} 0.0
+# HELP banking_db_query_duration_seconds Database query execution time
+# TYPE banking_db_query_duration_seconds histogram
+banking_db_query_duration_seconds_bucket{le="0.005",query_type="update",service="db-demo"} 4062.0
+banking_db_query_duration_seconds_bucket{le="0.01",query_type="update",service="db-demo"} 4116.0
+banking_db_query_duration_seconds_bucket{le="0.025",query_type="update",service="db-demo"} 4128.0
+banking_db_query_duration_seconds_bucket{le="0.05",query_type="update",service="db-demo"} 4129.0
+banking_db_query_duration_seconds_bucket{le="0.075",query_type="update",service="db-demo"} 4130.0
+banking_db_query_duration_seconds_bucket{le="0.1",query_type="update",service="db-demo"} 4131.0
+banking_db_query_duration_seconds_bucket{le="0.25",query_type="update",service="db-demo"} 4131.0
+banking_db_query_duration_seconds_bucket{le="0.5",query_type="update",service="db-demo"} 4131.0
+banking_db_query_duration_seconds_bucket{le="0.75",query_type="update",service="db-demo"} 4131.0
+banking_db_query_duration_seconds_bucket{le="1.0",query_type="update",service="db-demo"} 4131.0
+banking_db_query_duration_seconds_bucket{le="2.5",query_type="update",service="db-demo"} 4131.0
+banking_db_query_duration_seconds_bucket{le="5.0",query_type="update",service="db-demo"} 4131.0
+banking_db_query_duration_seconds_bucket{le="7.5",query_type="update",service="db-demo"} 4131.0
+banking_db_query_duration_seconds_bucket{le="10.0",query_type="update",service="db-demo"} 4131.0
+banking_db_query_duration_seconds_bucket{le="+Inf",query_type="update",service="db-demo"} 4131.0
+banking_db_query_duration_seconds_count{query_type="update",service="db-demo"} 4131.0
+banking_db_query_duration_seconds_sum{query_type="update",service="db-demo"} 8.05320733798726
+banking_db_query_duration_seconds_bucket{le="0.005",query_type="insert",service="db-demo"} 8361.0
+banking_db_query_duration_seconds_bucket{le="0.01",query_type="insert",service="db-demo"} 8510.0
+banking_db_query_duration_seconds_bucket{le="0.025",query_type="insert",service="db-demo"} 8522.0
+banking_db_query_duration_seconds_bucket{le="0.05",query_type="insert",service="db-demo"} 8526.0
+banking_db_query_duration_seconds_bucket{le="0.075",query_type="insert",service="db-demo"} 8527.0
+banking_db_query_duration_seconds_bucket{le="0.1",query_type="insert",service="db-demo"} 8528.0
+banking_db_query_duration_seconds_bucket{le="0.25",query_type="insert",service="db-demo"} 8528.0
+banking_db_query_duration_seconds_bucket{le="0.5",query_type="insert",service="db-demo"} 8528.0
+banking_db_query_duration_seconds_bucket{le="0.75",query_type="insert",service="db-demo"} 8528.0
+banking_db_query_duration_seconds_bucket{le="1.0",query_type="insert",service="db-demo"} 8528.0
+banking_db_query_duration_seconds_bucket{le="2.5",query_type="insert",service="db-demo"} 8528.0
+banking_db_query_duration_seconds_bucket{le="5.0",query_type="insert",service="db-demo"} 8528.0
+banking_db_query_duration_seconds_bucket{le="7.5",query_type="insert",service="db-demo"} 8528.0
+banking_db_query_duration_seconds_bucket{le="10.0",query_type="insert",service="db-demo"} 8528.0
+banking_db_query_duration_seconds_bucket{le="+Inf",query_type="insert",service="db-demo"} 8528.0
+banking_db_query_duration_seconds_count{query_type="insert",service="db-demo"} 8528.0
+banking_db_query_duration_seconds_sum{query_type="insert",service="db-demo"} 16.9777114770568
+banking_db_query_duration_seconds_bucket{le="0.005",query_type="select",service="db-demo"} 8336.0
+banking_db_query_duration_seconds_bucket{le="0.01",query_type="select",service="db-demo"} 8352.0
+banking_db_query_duration_seconds_bucket{le="0.025",query_type="select",service="db-demo"} 8358.0
+banking_db_query_duration_seconds_bucket{le="0.05",query_type="select",service="db-demo"} 8363.0
+banking_db_query_duration_seconds_bucket{le="0.075",query_type="select",service="db-demo"} 8364.0
+banking_db_query_duration_seconds_bucket{le="0.1",query_type="select",service="db-demo"} 8364.0
+banking_db_query_duration_seconds_bucket{le="0.25",query_type="select",service="db-demo"} 8366.0
+banking_db_query_duration_seconds_bucket{le="0.5",query_type="select",service="db-demo"} 8366.0
+banking_db_query_duration_seconds_bucket{le="0.75",query_type="select",service="db-demo"} 8366.0
+banking_db_query_duration_seconds_bucket{le="1.0",query_type="select",service="db-demo"} 8366.0
+banking_db_query_duration_seconds_bucket{le="2.5",query_type="select",service="db-demo"} 8366.0
+banking_db_query_duration_seconds_bucket{le="5.0",query_type="select",service="db-demo"} 8366.0
+banking_db_query_duration_seconds_bucket{le="7.5",query_type="select",service="db-demo"} 8366.0
+banking_db_query_duration_seconds_bucket{le="10.0",query_type="select",service="db-demo"} 8366.0
+banking_db_query_duration_seconds_bucket{le="+Inf",query_type="select",service="db-demo"} 8366.0
+banking_db_query_duration_seconds_count{query_type="select",service="db-demo"} 8366.0
+banking_db_query_duration_seconds_sum{query_type="select",service="db-demo"} 7.7520727770552185
+# HELP banking_db_query_duration_seconds_created Database query execution time
+# TYPE banking_db_query_duration_seconds_created gauge
+banking_db_query_duration_seconds_created{query_type="update",service="db-demo"} 1.750922407494817e+09
+banking_db_query_duration_seconds_created{query_type="insert",service="db-demo"} 1.750922407656826e+09
+banking_db_query_duration_seconds_created{query_type="select",service="db-demo"} 1.750922407773831e+09
+
+Jaeger Traces:
+Jaeger not accessible

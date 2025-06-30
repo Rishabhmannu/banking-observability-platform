@@ -1,0 +1,104 @@
+======================================
+WINDOWS IIS MONITORING IMPLEMENTATION
+======================================
+
+=== OVERVIEW ===
+
+Mock implementation of Windows Exporter for IIS monitoring in a macOS environment.
+Generates realistic Windows IIS metrics without requiring actual Windows infrastructure.
+
+=== METRICS GENERATED ===
+
+1. Request Metrics:
+   - windows_iis_requests_total{method, site}
+   - windows_iis_current_connections{site}
+
+2. Error Metrics:
+   - windows_iis_not_found_errors_total (404)
+   - windows_iis_server_errors_total (5xx)
+   - windows_iis_client_errors_total (4xx)
+   - windows_iis_locked_errors_total (423)
+
+3. Performance Metrics:
+   - windows_iis_request_wait_time (histogram)
+   - windows_iis_request_execution_time (histogram)
+
+4. Infrastructure Metrics:
+   - windows_iis_worker_processes{app_pool, state}
+   - windows_iis_app_pool_state{app_pool}
+   - windows_iis_app_pool_recycles_total
+
+5. Application Metrics:
+   - windows_netframework_exceptions_thrown_total
+   - windows_custom_errors_total{error_code}
+
+=== DERIVED BUSINESS METRICS ===
+
+1. Volume Surge/Dip:
+   - Formula: Current rate vs 30-min average
+   - Surge: >200% of average
+   - Dip: <50% of average
+
+2. Response Time Degradation:
+   - P95 response time >500ms
+   - Compared against baseline
+
+3. Success Rate:
+   - (Total - Errors) / Total * 100
+   - Target: >99%
+
+4. Technical Exception %:
+   - .NET exceptions / Total requests * 100
+   - Target: <0.5%
+
+=== ANOMALY TRIGGERS ===
+
+Available anomalies for testing:
+1. Volume Surge (3x traffic)
+2. Volume Dip (10% traffic)
+3. Response Degradation (5x slower)
+4. High Error Rate (10% errors)
+5. Technical Exceptions Spike
+6. Custom Error Burst
+7. App Pool Failure
+
+Trigger via: ./test_windows_iis_anomalies_v2.sh
+
+=== DATA GENERATION PATTERNS ===
+
+Base Configuration:
+- 100 requests/second base load
+- 3 IIS sites simulated
+- 3 application pools
+
+Time-based Variations:
+- Business hours (9-17): 2x-2.5x traffic
+- Night hours: 0.3x traffic
+- Random surges: 5% chance/minute
+
+Error Patterns:
+- Normal: 0.1% 5xx, 0.4% 404, 0.5% 4xx
+- High error mode: 5% 5xx, 3% 404, 2% 4xx
+
+Response Times:
+- Normal: Gaussian(50ms, σ=20ms)
+- Degraded: 3-5x multiplier
+
+=== INTEGRATION POINTS ===
+
+1. Prometheus Scraping:
+   - Job: windows-iis
+   - Target: mock-windows-exporter:9182
+   - Interval: 15s
+
+2. Grafana Dashboard:
+   - 13 panels total
+   - Real-time updates
+   - Anomaly annotations
+   - State timeline for surge/dip
+
+3. Alert Rules (can be added):
+   - Volume surge detected
+   - Response degradation
+   - High error rate
+   - App pool failures

@@ -1,0 +1,12 @@
+INFO:__main__:✅ Found Prometheus on port 9090
+INFO:__main__:✅ Model loaded successfully
+INFO:__main__:🔄 Starting detection loop...
+INFO:__main__:🚀 ML Detection Service started!
+INFO:__main__:🚀 Starting Simple DDoS Detection Service...
+INFO:__main__:Prometheus URL: http://localhost:9090
+INFO:__main__:Model loaded: True
+ * Serving Flask app 'simple_ml_detection_service'
+ * Debug mode: off
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+On macOS, try disabling the 'AirPlay Receiver' service from System Preferences -> General -> AirDrop & Handoff.

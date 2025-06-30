@@ -1,0 +1,20 @@
+# Additional scrape configs for transaction monitoring
+# Add these to your existing prometheus.yml scrape_configs section
+
+- job_name: 'transaction-monitor'
+  static_configs:
+    - targets: ['transaction-monitor:5003']
+  metrics_path: '/metrics'
+  scrape_interval: 10s
+
+- job_name: 'performance-aggregator'
+  static_configs:
+    - targets: ['performance-aggregator:5004']
+  metrics_path: '/metrics'
+  scrape_interval: 15s
+
+- job_name: 'anomaly-injector'
+  static_configs:
+    - targets: ['anomaly-injector:5005']
+  metrics_path: '/metrics'
+  scrape_interval: 10s

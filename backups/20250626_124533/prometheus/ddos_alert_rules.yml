@@ -1,0 +1,41 @@
+groups:
+- name: ddos_detection
+  rules:
+  
+  # High confidence DDoS detection
+  - alert: DDoSDetectedHighConfidence
+    expr: ddos_binary_prediction == 1 and ddos_confidence > 0.8
+    for: 30s
+    labels:
+      severity: critical
+      category: security
+      attack_type: ddos
+      service: banking_system
+    annotations:
+      summary: "🚨 High confidence DDoS attack detected by ML model"
+      description: "ML model detected DDoS attack with confidence {{ $value }}%"
+      
+  # Medium confidence DDoS detection  
+  - alert: DDoSDetectedMediumConfidence
+    expr: ddos_binary_prediction == 1 and ddos_confidence > 0.6 and ddos_confidence <= 0.8
+    for: 1m
+    labels:
+      severity: warning
+      category: security
+      attack_type: ddos
+      service: banking_system
+    annotations:
+      summary: "⚠️ Possible DDoS attack detected by ML model"
+      description: "ML model detected potential DDoS with confidence {{ $value }}%"
+      
+  # ML service health monitoring
+  - alert: MLDetectionServiceDown
+    expr: up{job="ddos-ml-detection"} == 0
+    for: 1m
+    labels:
+      severity: critical
+      category: infrastructure
+      service: ml_detection
+    annotations:
+      summary: "❌ DDoS ML Detection Service is down"
+      description: "The ML-based DDoS detection service is not responding"

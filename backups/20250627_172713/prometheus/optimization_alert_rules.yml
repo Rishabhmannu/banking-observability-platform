@@ -1,0 +1,191 @@
+groups:
+  - name: redis_cache_alerts
+    interval: 30s
+    rules:
+      # Cache performance alerts
+      - alert: RedisCacheHitRateLow
+        expr: redis_cache_hit_ratio{operation="overall"} < 0.7
+        for: 5m
+        labels:
+          severity: warning
+          service: redis-cache
+          category: performance
+        annotations:
+          summary: "Redis cache hit ratio is low"
+          description: "Cache hit ratio is {{ $value | humanizePercentage }} for {{ $labels.instance }}"
+          recommendation: "Review cache TTL settings and key patterns"
+      
+      - alert: RedisCacheHitRateCritical
+        expr: redis_cache_hit_ratio{operation="overall"} < 0.5
+        for: 5m
+        labels:
+          severity: critical
+          service: redis-cache
+          category: performance
+        annotations:
+          summary: "Redis cache hit ratio is critically low"
+          description: "Cache hit ratio is only {{ $value | humanizePercentage }}"
+          recommendation: "Immediate investigation required - possible cache stampede or misconfiguration"
+      
+      - alert: RedisHighEvictionRate
+        expr: redis_cache_eviction_rate > 100
+        for: 5m
+        labels:
+          severity: warning
+          service: redis-cache
+          category: capacity
+        annotations:
+          summary: "High Redis eviction rate detected"
+          description: "Evicting {{ $value }} keys per minute"
+          recommendation: "Consider increasing Redis memory limit or optimizing cache usage"
+      
+      - alert: RedisCacheEfficiencyLow
+        expr: redis_cache_efficiency_score < 70
+        for: 10m
+        labels:
+          severity: warning
+          service: redis-cache
+          category: efficiency
+        annotations:
+          summary: "Redis cache efficiency score is low"
+          description: "Cache efficiency score is {{ $value }}/100"
+          recommendation: "Review cache metrics dashboard for optimization opportunities"
+      
+      - alert: RedisMemoryPressure
+        expr: redis_memory_used_bytes / redis_memory_max_bytes > 0.9
+        for: 5m
+        labels:
+          severity: warning
+          service: redis-cache
+          category: capacity
+        annotations:
+          summary: "Redis memory usage is high"
+          description: "Redis is using {{ $value | humanizePercentage }} of max memory"
+          recommendation: "Monitor eviction rate and consider increasing memory limit"
+
+  - name: container_resource_alerts
+    interval: 30s
+    rules:
+      # Container optimization alerts
+      - alert: ContainerSeverelyOverprovisioned
+        expr: container_cpu_optimization_score > 70 or container_memory_waste_percent > 70
+        for: 30m
+        labels:
+          severity: warning
+          service: container-optimization
+          category: cost-optimization
+        annotations:
+          summary: "Container {{ $labels.container_name }} is severely overprovisioned"
+          description: "CPU waste: {{ $value }}% for {{ $labels.container_name }}"
+          recommendation: "Review container resource limits - potential for significant cost savings"
+      
+      - alert: ContainerHighCostSavingsPotential
+        expr: container_cost_savings_potential_dollars > 50
+        for: 30m
+        labels:
+          severity: info
+          service: container-optimization
+          category: cost-optimization
+        annotations:
+          summary: "High cost savings potential for {{ $labels.container_name }}"
+          description: "Potential monthly savings: ${{ $value }}"
+          recommendation: "Consider right-sizing this container based on recommendations"
+      
+      - alert: ContainerInstability
+        expr: container_stability_score < 50
+        for: 15m
+        labels:
+          severity: warning
+          service: container-optimization
+          category: stability
+        annotations:
+          summary: "Container {{ $labels.container_name }} is unstable"
+          description: "Stability score is {{ $value }}/100"
+          recommendation: "Check for OOM kills, restarts, or resource constraints"
+      
+      - alert: ContainerMemoryLeak
+        expr: |
+          (rate(container_memory_usage_bytes[5m]) > 0) 
+          and 
+          (predict_linear(container_memory_usage_bytes[30m], 3600) > container_memory_limit_bytes)
+        for: 10m
+        labels:
+          severity: warning
+          service: container-optimization
+          category: memory-leak
+        annotations:
+          summary: "Potential memory leak in {{ $labels.container_name }}"
+          description: "Memory usage is growing and will exceed limit in ~1 hour"
+          recommendation: "Investigate application for memory leaks"
+      
+      - alert: TotalOptimizationPotentialHigh
+        expr: container_total_optimization_potential_dollars > 500
+        for: 1h
+        labels:
+          severity: info
+          service: container-optimization
+          category: cost-optimization
+        annotations:
+          summary: "High total optimization potential across all containers"
+          description: "Total potential monthly savings: ${{ $value }}"
+          recommendation: "Review top optimization opportunities dashboard"
+
+  - name: cache_operation_alerts
+    interval: 30s
+    rules:
+      # Cache operation performance
+      - alert: CacheOperationSlow
+        expr: |
+          histogram_quantile(0.95, 
+            rate(banking_cache_operation_duration_seconds_bucket[5m])
+          ) > 0.1
+        for: 5m
+        labels:
+          severity: warning
+          service: cache-operations
+          category: performance
+        annotations:
+          summary: "Cache operations are slow"
+          description: "95th percentile latency is {{ $value }}s for {{ $labels.service }}"
+          recommendation: "Check Redis performance and network latency"
+      
+      - alert: CacheErrorRateHigh
+        expr: |
+          rate(banking_cache_errors_total[5m]) > 0.01
+        for: 5m
+        labels:
+          severity: warning
+          service: cache-operations
+          category: errors
+        annotations:
+          summary: "High cache error rate"
+          description: "{{ $value }} errors per second for {{ $labels.service }}"
+          recommendation: "Check Redis connectivity and error logs"
+
+  - name: resource_anomaly_alerts
+    interval: 30s
+    rules:
+      # Resource anomaly detection
+      - alert: ResourceAnomalyActive
+        expr: sum(resource_anomaly_active) > 0
+        for: 30m
+        labels:
+          severity: info
+          service: resource-anomaly
+          category: testing
+        annotations:
+          summary: "Resource anomaly patterns are active"
+          description: "{{ $value }} anomaly patterns are currently running"
+          recommendation: "This is expected during testing, but should not persist in production"
+      
+      - alert: AnomalyGeneratorHighCPU
+        expr: anomaly_generator_cpu_percent > 80
+        for: 5m
+        labels:
+          severity: warning
+          service: resource-anomaly
+          category: resource-usage
+        annotations:
+          summary: "Anomaly generator is using high CPU"
+          description: "CPU usage is {{ $value }}%"
+          recommendation: "Check active anomaly patterns and reduce intensity if needed"

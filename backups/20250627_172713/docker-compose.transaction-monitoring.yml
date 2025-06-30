@@ -1,0 +1,62 @@
+version: '3.8'
+
+services:
+  # Transaction Performance Monitor
+  transaction-monitor:
+    build: ./transaction-monitor
+    container_name: transaction-performance-monitor
+    ports:
+      - "5003:5003"
+    environment:
+      - PROMETHEUS_MULTIPROC_DIR=/tmp
+      - PYTHONUNBUFFERED=1
+    networks:
+      - banking-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5003/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Performance Aggregator Service
+  performance-aggregator:
+    build: ./performance-aggregator
+    container_name: performance-aggregator-service
+    ports:
+      - "5004:5004"
+    environment:
+      - PROMETHEUS_URL=http://prometheus:9090
+      - PYTHONUNBUFFERED=1
+    networks:
+      - banking-network
+    depends_on:
+      - transaction-monitor
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5004/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Anomaly Injection Service
+  anomaly-injector:
+    build: ./anomaly-injector
+    container_name: anomaly-injector-service
+    ports:
+      - "5005:5005"
+    environment:
+      - TARGET_SERVICES=transaction-service,account-service,auth-service
+      - PYTHONUNBUFFERED=1
+    networks:
+      - banking-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5005/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+# IMPORTANT: Define the network as external
+# This references the network created by the main docker-compose.yml
+networks:
+  banking-network:
+    name: ddos-detection-system_banking-network
+    external: true

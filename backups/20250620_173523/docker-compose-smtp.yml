@@ -1,0 +1,186 @@
+services:
+  # Database
+  mysql-db:
+    image: mysql:8.0
+    container_name: banking-mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=bankingdemo
+      - MYSQL_DATABASE=bankingdb
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./mysql-init:/docker-entrypoint-initdb.d
+    networks:
+      - banking-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  # Account Service
+  account-service:
+    build: ./account-service
+    container_name: banking-account-service
+    ports:
+      - "8081:8081"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-db:3306/accountdb
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=bankingdemo
+      - SIMULATE_SLOW_QUERY=false
+    depends_on:
+      mysql-db:
+        condition: service_healthy
+    networks:
+      - banking-network
+
+  # Transaction Service
+  transaction-service:
+    build: ./transaction-service
+    container_name: banking-transaction-service
+    ports:
+      - "8082:8082"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-db:3306/transactiondb
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=bankingdemo
+      - ACCOUNT_SERVICE_URL=http://account-service:8081
+      - SIMULATE_HIGH_LOAD=false
+    depends_on:
+      - mysql-db
+      - account-service
+    networks:
+      - banking-network
+
+  # Auth Service
+  auth-service:
+    build: ./auth-service
+    container_name: banking-auth-service
+    ports:
+      - "8083:8083"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-db:3306/authdb
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=bankingdemo
+      - SIMULATE_MEMORY_LEAK=false
+    depends_on:
+      - mysql-db
+    networks:
+      - banking-network
+
+  # Notification Service
+  notification-service:
+    build: ./notification-service
+    container_name: banking-notification-service
+    ports:
+      - "8084:8084"
+    environment:
+      - SIMULATE_LATENCY=false
+    networks:
+      - banking-network
+
+  # Fraud Detection Service
+  fraud-detection:
+    build: ./fraud-detection
+    container_name: banking-fraud-detection
+    ports:
+      - "8085:8085"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-db:3306/frauddb
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=bankingdemo
+      - SIMULATE_ALERT_STORM=false
+    depends_on:
+      - mysql-db
+    networks:
+      - banking-network
+
+  # API Gateway
+  api-gateway:
+    build: ./api-gateway
+    container_name: banking-api-gateway
+    ports:
+      - "8080:8080"
+    environment:
+      - ACCOUNT_SERVICE_URL=http://account-service:8081
+      - TRANSACTION_SERVICE_URL=http://transaction-service:8082
+      - AUTH_SERVICE_URL=http://auth-service:8083
+      - NOTIFICATION_SERVICE_URL=http://notification-service:8084
+      - FRAUD_SERVICE_URL=http://fraud-detection:8085
+    depends_on:
+      - account-service
+      - transaction-service
+      - auth-service
+      - notification-service
+      - fraud-detection
+    networks:
+      - banking-network
+
+  # ML Detection Service
+  ml-detection:
+    build:
+      context: .
+      dockerfile: Dockerfile.ml-service
+    container_name: ddos-ml-detection
+    ports:
+      - "5001:5001"
+    networks:
+      - banking-network
+    depends_on:
+      - prometheus
+
+  # Prometheus
+  prometheus:
+    image: prom/prometheus:v2.45.0
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./prometheus/ddos_alert_rules.yml:/etc/prometheus/ddos_alert_rules.yml
+      - prometheus-data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention.time=200h'
+      - '--web.enable-lifecycle'
+    networks:
+      - banking-network
+
+  # Grafana with SMTP Configuration
+  grafana:
+    image: grafana/grafana:10.0.0
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      # SMTP Configuration for Gmail
+      - GF_SMTP_ENABLED=true
+      - GF_SMTP_HOST=smtp.gmail.com:587
+      - GF_SMTP_USER=cmpunk.mannu@gmail.com
+      - GF_SMTP_PASSWORD=rmvbwmkrfguafwuk
+      - GF_SMTP_FROM_ADDRESS=cmpunk.mannu@gmail.com
+      - GF_SMTP_FROM_NAME=DDoS Detection System
+      - GF_SMTP_SKIP_VERIFY=false
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./grafana/datasources:/etc/grafana/provisioning/datasources
+      - ./grafana/dashboards:/etc/grafana/provisioning/dashboards
+    networks:
+      - banking-network
+    depends_on:
+      - prometheus
+
+networks:
+  banking-network:
+    driver: bridge
+
+volumes:
+  mysql-data:
+  prometheus-data:
+  grafana-data:

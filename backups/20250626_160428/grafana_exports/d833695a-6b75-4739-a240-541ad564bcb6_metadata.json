@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "type": "db",
+    "canSave": true,
+    "canEdit": true,
+    "canAdmin": true,
+    "canStar": true,
+    "canDelete": true,
+    "slug": "f09f9aa8-ddos-detection-and-security-monitoring",
+    "url": "/d/d833695a-6b75-4739-a240-541ad564bcb6/f09f9aa8-ddos-detection-and-security-monitoring",
+    "expires": "0001-01-01T00:00:00Z",
+    "created": "2025-06-25T05:47:20Z",
+    "updated": "2025-06-26T07:26:26Z",
+    "updatedBy": "admin",
+    "createdBy": "Anonymous",
+    "version": 2,
+    "hasAcl": false,
+    "isFolder": false,
+    "apiVersion": "v0alpha1",
+    "folderId": 0,
+    "folderUid": "",
+    "folderTitle": "General",
+    "folderUrl": "",
+    "provisioned": false,
+    "provisionedExternalId": "ddos-detection-dashboard.json",
+    "annotationsPermissions": {
+      "dashboard": {
+        "canAdd": true,
+        "canEdit": true,
+        "canDelete": true
+      },
+      "organization": {
+        "canAdd": true,
+        "canEdit": true,
+        "canDelete": true
+      }
+    }
+  },
+  "uid": "d833695a-6b75-4739-a240-541ad564bcb6",
+  "version": 2
+}

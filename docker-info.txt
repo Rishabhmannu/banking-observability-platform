@@ -1,0 +1,282 @@
+================================================================
+DOCKER ENVIRONMENT REPORT
+================================================================
+Generated on: 2025-06-30
+This report provides a comprehensive snapshot of the currently
+running Docker environment for the DDoS Detection System project.
+----------------------------------------------------------------
+================================================================
+1. RUNNING CONTAINERS
+================================================================
+A summary of all active containers.
+ID: 7fd9f3c5c8d0, Name: banking-cache-load-generator,       Image: ddos-detection-system-cache-load-generator,       Status: Up About an hour (healthy)
+
+ID: 9d8d33503455, Name: banking-resource-anomaly,         Image: ddos-detection-system-resource-anomaly-generator, Status: Up About an hour (healthy)
+
+ID: 91b11611dc9a, Name: trace-generator,                    Image: ddos-detection-system-trace-generator,            Status: Up About an hour (healthy)
+
+ID: 649b1fe5b586, Name: banking-load-generator,             Image: ddos-detection-system-load-generator,             Status: Up About an hour
+
+ID: de2f3cfd00d7, Name: banking-api-gateway,                Image: ddos-detection-system-api-gateway,                Status: Up About an hour
+
+ID: 130bd4c2af56, Name: performance-aggregator-service,     Image: ddos-detection-system-performance-aggregator,     Status: Up About an hour (healthy)
+
+ID: d56ee0d1fefa, Name: banking-transaction-service,        Image: ddos-detection-system-transaction-service,        Status: Up About an hour
+
+ID: 799f9a63d985, Name: banking-message-consumer,           Image: ddos-detection-system-message-consumer,           Status: Up About an hour (unhealthy)
+
+ID: 5c7c052366d4, Name: auto-baselining-service,            Image: ddos-detection-system-auto-baselining,            Status: Up About an hour (healthy)
+
+ID: 6bc47629458c, Name: transaction-performance-monitor,    Image: ddos-detection-system-transaction-monitor,        Status: Up About an hour (healthy)
+
+ID: 5d5d1d874d2a, Name: ddos-ml-detection,                  Image: ddos-detection-system-ddos-ml-detection,          Status: Up About an hour (healthy)
+
+ID: 2b533f8d20d1, Name: anomaly-injector-service,           Image: ddos-detection-system-anomaly-injector,           Status: Up About an hour (healthy)
+
+ID: f74a31814a38, Name: banking-cache-analyzer,             Image: ddos-detection-system-cache-pattern-analyzer,     Status: Up About an hour (healthy)
+
+ID: 3e41dc9741d7, Name: banking-notification-service,       Image: ddos-detection-system-notification-service,       Status: Up About an hour
+
+ID: 6328329d0e2c, Name: banking-auth-service,               Image: ddos-detection-system-auth-service,               Status: Up About an hour
+
+ID: 5adf21833663, Name: banking-db-connection-demo,         Image: ddos-detection-system-db-connection-demo,         Status: Up About an hour (unhealthy)
+
+ID: 105c2edb3dca, Name: mock-windows-exporter,              Image: ddos-detection-system-mock-windows-exporter,      Status: Up About an hour (healthy)
+
+ID: 0cbb8b96d1c8, Name: mock-iis-application,               Image: ddos-detection-system-mock-iis-application,       Status: Up About an hour (unhealthy)
+
+ID: c7ad952334de, Name: banking-fraud-detection,            Image: ddos-detection-system-fraud-detection,            Status: Up About an hour
+
+ID: 819eb2eb595d, Name: banking-message-producer,           Image: ddos-detection-system-message-producer,           Status: Up About an hour (unhealthy)
+
+ID: 6e87b3e63fff, Name: banking-account-service,            Image: ddos-detection-system-account-service,            Status: Up About an hour
+
+ID: 2c22b6b35061, Name: jaeger,                             Image: jaegertracing/all-in-one:1.45,                    Status: Up About an hour (unhealthy)
+
+ID: 4d427b21b63c, Name: banking-container-monitor,          Image: ddos-detection-system-container-resource-monitor, Status: Up About an hour (healthy)
+
+ID: d66fd281b6b4, Name: banking-rabbitmq-monitor,           Image: ddos-detection-system-rabbitmq-monitor,           Status: Up About an hour (unhealthy)
+
+ID: 10af117a3cb2, Name: banking-redis-exporter,             Image: oliver006/redis_exporter:latest,                  Status: Up About an hour
+
+ID: 318fdc1d4858, Name: banking-postgres-exporter,          Image: prometheuscommunity/postgres-exporter:latest,     Status: Up About an hour
+
+ID: 0ad1a03bbb31, Name: banking-kafka-exporter,             Image: danielqsj/kafka-exporter:latest,                  Status: Up About an hour
+
+ID: 62fa287fb1c3, Name: banking-rabbitmq,                   Image: rabbitmq:3.12-management,                         Status: Up About an hour (healthy)
+
+ID: 81cc9689e0dc, Name: banking-kafka,                      Image: confluentinc/cp-kafka:7.4.0,                      Status: Up About an hour (healthy)
+
+ID: 8172ea4ae2c1, Name: banking-zookeeper,                  Image: confluentinc/cp-zookeeper:7.4.0,                  Status: Up About an hour
+
+ID: 9511badcd154, Name: banking-postgres,                   Image: postgres:15-alpine,                               Status: Up About an hour (healthy)
+
+ID: aaea193c788f, Name: banking-redis,                      Image: redis:7-alpine,                                   Status: Up About an hour (healthy)
+
+ID: 46ff92b471d9, Name: banking-mysql,                      Image: mysql:8.0,                                        Status: Up About an hour (healthy)
+
+ID: 5257f02e94a1, Name: prometheus,                         Image: prom/prometheus:latest,                           Status: Up About an hour
+
+ID: a6e071569d99, Name: grafana,                            Image: grafana/grafana:latest,                           Status: Up About an hour
+
+ID: dc05e300e5ef, Name: cadvisor,                           Image: gcr.io/cadvisor/cadvisor:latest,                  Status: Up About an hour (healthy)
+
+ID: d8a99beac318, Name: node-exporter,                      Image: prom/node-exporter:latest,                        Status: Up About an hour
+
+================================================================
+2. PORT MAPPINGS
+================================================================
+List of all external ports mapped to internal container ports.
+Port        Service/Container Name
+
+2181        banking-zookeeper
+3000        grafana
+3306        banking-mysql
+4317-4318   jaeger
+5001        ddos-ml-detection
+5002        auto-baselining-service
+5003        transaction-performance-monitor
+5004        performance-aggregator-service
+5005        anomaly-injector-service
+5007        banking-message-producer
+5008        banking-message-consumer
+5009        banking-db-connection-demo
+5010        banking-container-monitor
+5011        banking-resource-anomaly
+5012        banking-cache-analyzer
+5013        banking-cache-load-generator
+5432        banking-postgres
+5672        banking-rabbitmq
+6379        banking-redis
+8080        banking-api-gateway
+8081        banking-account-service
+8082        banking-transaction-service
+8083        banking-auth-service
+8084        banking-notification-service
+8085        banking-fraud-detection
+8086        cadvisor
+8090        mock-iis-application
+9090        prometheus
+9092        banking-kafka
+9100        node-exporter
+9101        banking-kafka
+9121        banking-redis-exporter
+9182        mock-windows-exporter
+9187        banking-postgres-exporter
+9308        banking-kafka-exporter
+9414        trace-generator
+9415        banking-message-producer
+9416        banking-message-consumer
+9417        banking-db-connection-demo
+9418        banking-rabbitmq-monitor
+14250       jaeger
+14268       jaeger
+15672       banking-rabbitmq
+15692       banking-rabbitmq
+16686       jaeger
+
+================================================================
+3. IMAGE INVENTORY
+================================================================
+All Docker images currently available on the system.
+ddos-detection-system-container-resource-monitor:latest
+
+ddos-detection-system-resource-anomaly-generator:latest
+
+ddos-detection-system-cache-load-generator:latest
+
+ddos-detection-system-cache-pattern-analyzer:latest
+
+ddos-detection-system-rabbitmq-monitor:latest
+
+ddos-detection-system-db-connection-demo:latest
+
+ddos-detection-system-message-consumer:latest
+
+ddos-detection-system-message-producer:latest
+
+ddos-detection-system-trace-generator:latest
+
+ddos-detection-system-mock-windows-exporter:latest
+
+ddos-detection-system-mock-iis-application:latest
+
+curlimages/curl:latest
+
+ddos-detection-system-performance-aggregator:latest
+
+ddos-detection-system-anomaly-injector:latest
+
+ddos-detection-system-transaction-monitor:latest
+
+ddos-detection-system-auto-baselining:latest
+
+ddos-detection-system-load-generator:latest
+
+ddos-detection-system-ddos-ml-detection:latest
+
+ddos-detection-system-api-gateway:latest
+
+ddos-detection-system-transaction-service:latest
+
+ddos-detection-system-fraud-detection:latest
+
+ddos-detection-system-account-service:latest
+
+ddos-detection-system-auth-service:latest
+
+ddos-detection-system-notification-service:latest
+
+oliver006/redis_exporter:latest
+
+postgres:15-alpine
+
+prom/prometheus:latest
+
+alpine:latest
+
+redis:7-alpine
+
+grafana/grafana:latest
+
+mysql:8.0
+
+prom/node-exporter:latest
+
+prometheuscommunity/postgres-exporter:latest
+
+danielqsj/kafka-exporter:latest
+
+rabbitmq:3.12-management
+
+gcr.io/cadvisor/cadvisor:latest
+
+confluentinc/cp-kafka:7.4.0
+
+confluentinc/cp-zookeeper:7.4.0
+
+jaegertracing/all-in-one:1.45
+
+================================================================
+4. NETWORK CONFIGURATION
+================================================================
+List of Docker networks available.
+ID: ba778a381b9b,   Name: banking-network,                         Driver: bridge
+
+ID: 4ecac96c8fb2,   Name: bridge,                                  Driver: bridge
+
+ID: 218496e80dff,   Name: ddos-detection-system_banking-network,   Driver: bridge
+
+ID: c499c3b691f1,   Name: host,                                    Driver: host
+
+ID: 53aaf4d8c824,   Name: none,                                    Driver: null
+
+================================================================
+5. STORAGE VOLUMES
+================================================================
+List of Docker volumes for persistent data.
+--- Named Volumes ---
+ddos-detection-system_grafana-data
+
+ddos-detection-system_grafana-storage
+
+ddos-detection-system_kafka_data
+
+ddos-detection-system_mysql-data
+
+ddos-detection-system_postgres_data
+
+ddos-detection-system_prometheus-data
+
+ddos-detection-system_rabbitmq_data
+
+ddos-detection-system_redis_data
+
+ddos-detection-system_zookeeper_data
+
+ddos-detection-system_zookeeper_logs
+
+--- Anonymous Volumes (auto-generated) ---
+2c61a18edf67fde626c38542372c8287abe5fd5257e78fe00fe7efcbe0eeb2f9
+
+3d254456d3435b22694e9260558deb5c772b9942a2830216d2b7e72cd154bae8
+
+03ecccf63141c4c4da47d9e54ab42cb4c9c4ca3e776bd29fc28b48b8d5bf8d92
+
+(and 25+ other anonymous volumes)
+
+================================================================
+6. SYSTEM RESOURCE USAGE
+================================================================
+Overall disk space usage by Docker components.
+Images:          39 TOTAL, 37 ACTIVE,  11.13GB SIZE,  1.354GB RECLAIMABLE (12%)
+
+Containers:      37 TOTAL, 37 ACTIVE,  7.246MB SIZE,  0B RECLAIMABLE (0%)
+
+Local Volumes:   41 TOTAL, 12 ACTIVE,  2.503GB SIZE,  37.35MB RECLAIMABLE (1%)
+
+Build Cache:     67 TOTAL, 0  ACTIVE,  61.15MB SIZE,  61.15MB RECLAIMABLE
+
+================================================================
+END OF REPORT
+================================================================

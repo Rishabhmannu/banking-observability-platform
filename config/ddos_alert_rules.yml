@@ -1,0 +1,78 @@
+groups:
+- name: ddos_detection
+  rules:
+  
+  # High confidence DDoS detection
+  - alert: DDoSDetectedHighConfidence
+    expr: ddos_binary_prediction == 1 and ddos_confidence > 0.8
+    for: 30s
+    labels:
+      severity: critical
+      category: security
+      attack_type: ddos
+      service: banking_system
+    annotations:
+      summary: "🚨 High confidence DDoS attack detected by ML model"
+      description: "ML model detected DDoS attack with confidence {{ $value }}%. Detection score: {{ $labels.ddos_detection_score }}"
+      runbook_url: "https://your-wiki.com/ddos-response"
+      
+  # Medium confidence DDoS detection  
+  - alert: DDoSDetectedMediumConfidence
+    expr: ddos_binary_prediction == 1 and ddos_confidence > 0.6 and ddos_confidence <= 0.8
+    for: 1m
+    labels:
+      severity: warning
+      category: security
+      attack_type: ddos
+      service: banking_system
+    annotations:
+      summary: "⚠️ Possible DDoS attack detected by ML model"
+      description: "ML model detected potential DDoS with confidence {{ $value }}%. Requires investigation."
+      
+  # Sustained high detection score (even without binary prediction)
+  - alert: DDoSHighAnomalyScore
+    expr: ddos_detection_score > 0.7
+    for: 2m
+    labels:
+      severity: warning
+      category: security
+      service: banking_system
+    annotations:
+      summary: "📊 High anomaly score detected"
+      description: "DDoS detection score has been above 0.7 for 2+ minutes. Current score: {{ $value }}"
+      
+  # ML service health monitoring
+  - alert: MLDetectionServiceDown
+    expr: up{job="ddos-ml-detection"} == 0
+    for: 1m
+    labels:
+      severity: critical
+      category: infrastructure
+      service: ml_detection
+    annotations:
+      summary: "❌ DDoS ML Detection Service is down"
+      description: "The ML-based DDoS detection service is not responding. This leaves the system vulnerable."
+      
+  # Banking API high error rate (potential DDoS impact)
+  - alert: BankingAPIHighErrorRate
+    expr: sum(rate(http_requests_total{job="banking-api-gateway",status=~"5.."}[5m])) / sum(rate(http_requests_total{job="banking-api-gateway"}[5m])) > 0.1
+    for: 2m
+    labels:
+      severity: warning
+      category: performance
+      service: banking_api
+    annotations:
+      summary: "🏦 Banking API experiencing high error rate"
+      description: "Banking API error rate is {{ $value | humanizePercentage }}. This might indicate a DDoS attack impact."
+      
+  # Banking API high request rate (potential DDoS)
+  - alert: BankingAPIHighRequestRate
+    expr: sum(rate(http_requests_total{job="banking-api-gateway"}[1m])) > 100
+    for: 1m
+    labels:
+      severity: info
+      category: performance
+      service: banking_api
+    annotations:
+      summary: "📈 Banking API experiencing high request rate"
+      description: "Banking API receiving {{ $value }} requests/second. Monitor for potential DDoS activity."

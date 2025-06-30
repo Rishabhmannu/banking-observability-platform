@@ -1,0 +1,245 @@
+services:
+  # Core Infrastructure
+  mysql-db:
+    image: mysql:8.0
+    container_name: banking-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: bankingdemo
+      MYSQL_DATABASE: bankingdb
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./mysql-init:/docker-entrypoint-initdb.d
+    networks:
+      - banking-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+
+  # Banking Services
+  api-gateway:
+    build: ./api-gateway
+    container_name: banking-api-gateway
+    ports:
+      - "8080:8080"
+    environment:
+      - ACCOUNT_SERVICE_URL=http://account-service:8081
+      - TRANSACTION_SERVICE_URL=http://transaction-service:8082
+      - AUTH_SERVICE_URL=http://auth-service:8083
+      - NOTIFICATION_SERVICE_URL=http://notification-service:8084
+      - FRAUD_SERVICE_URL=http://fraud-detection:8085
+    depends_on:
+      - account-service
+      - transaction-service
+      - auth-service
+    networks:
+      - banking-network
+
+  account-service:
+    build: ./account-service
+    container_name: banking-account-service
+    ports:
+      - "8081:8081"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-db:3306/accountdb
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=bankingdemo
+    depends_on:
+      mysql-db:
+        condition: service_healthy
+    networks:
+      - banking-network
+
+  transaction-service:
+    build: ./transaction-service
+    container_name: banking-transaction-service
+    ports:
+      - "8082:8082"
+    environment:
+      - ACCOUNT_SERVICE_URL=http://account-service:8081
+    depends_on:
+      - account-service
+    networks:
+      - banking-network
+
+  auth-service:
+    build: ./auth-service
+    container_name: banking-auth-service
+    ports:
+      - "8083:8083"
+    networks:
+      - banking-network
+
+  notification-service:
+    build: ./notification-service
+    container_name: banking-notification-service
+    ports:
+      - "8084:8084"
+    networks:
+      - banking-network
+
+  fraud-detection:
+    build: ./fraud-detection
+    container_name: banking-fraud-detection
+    ports:
+      - "8085:8085"
+    networks:
+      - banking-network
+
+  # ML Services
+  ddos-ml-detection:
+    build:
+      context: .
+      dockerfile: Dockerfile.ml-service
+    container_name: ddos-ml-detection
+    ports:
+      - "5001:5001"
+    networks:
+      - banking-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  auto-baselining:
+    build:
+      context: .
+      dockerfile: Dockerfile.auto-baselining
+    container_name: auto-baselining-service
+    ports:
+      - "5002:5002"
+    environment:
+      - PROMETHEUS_URL=http://prometheus:9090
+    depends_on:
+      - prometheus
+    networks:
+      - banking-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5002/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  # Monitoring Stack
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus:/etc/prometheus
+      - prometheus-data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention.time=200h'
+      - '--web.enable-lifecycle'
+    networks:
+      - banking-network
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=bankingdemo
+      - GF_INSTALL_PLUGINS=
+    volumes:
+      - grafana-storage:/var/lib/grafana
+      - ./grafana/datasources:/etc/grafana/provisioning/datasources
+      - ./grafana/dashboards/dashboard.yml:/etc/grafana/provisioning/dashboards/dashboard.yml
+      - ./grafana/dashboards:/etc/grafana/provisioning/dashboards
+    networks:
+      - banking-network
+
+  # System Monitoring
+  node-exporter:
+    image: prom/node-exporter:latest
+    container_name: node-exporter
+    ports:
+      - "9100:9100"
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.rootfs=/rootfs'
+      - '--path.sysfs=/host/sys'
+      - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    networks:
+      - banking-network
+
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:latest
+    container_name: cadvisor
+    ports:
+      - "8086:8080"
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    networks:
+      - banking-network
+
+  # Load Generator
+  load-generator:
+    build: ./load-generator
+    container_name: banking-load-generator
+    environment:
+      - API_GATEWAY_URL=http://api-gateway:8080
+      - ENABLE_LOAD=true
+      - LOAD_INTENSITY=low
+    depends_on:
+      - api-gateway
+    networks:
+      - banking-network
+  
+  # Windows IIS Monitoring Services
+  mock-windows-exporter:
+    build: ./mock-windows-exporter
+    container_name: mock-windows-exporter
+    ports:
+      - "9182:9182"
+    networks:
+      - banking-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9182/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  mock-iis-application:
+    build: ./mock-iis-application
+    container_name: mock-iis-application
+    ports:
+      - "8090:8090"
+    networks:
+      - banking-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8090/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+
+
+networks:
+  banking-network:
+    driver: bridge
+
+volumes:
+  mysql-data:
+  prometheus-data:
+  grafana-storage:

@@ -1,0 +1,80 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+rule_files:
+  - "alert_rules.yml"
+
+scrape_configs:
+  # Core monitoring
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  - job_name: 'node-exporter'
+    static_configs:
+      - targets: ['node-exporter:9100']
+
+  - job_name: 'cadvisor'
+    static_configs:
+      - targets: ['cadvisor:8080']
+
+  # Banking services (with correct container names)
+  - job_name: 'banking-services'
+    static_configs:
+      - targets: 
+          - 'api-gateway:8080'
+          - 'account-service:8081'
+          - 'transaction-service:8082'
+          - 'auth-service:8083'
+          - 'notification-service:8084'
+          - 'fraud-detection:8085'
+    metrics_path: '/metrics'
+    scrape_interval: 10s
+
+  # Auto-baselining service
+  - job_name: 'auto-baselining'
+    static_configs:
+      - targets: ['auto-baselining:5002']
+    metrics_path: '/metrics'
+    scrape_interval: 15s
+
+  # DDoS ML Detection service (FIXED container name)
+  - job_name: 'ddos-ml-detection'
+    static_configs:
+      - targets: ['ddos-ml-detection:5001']
+    metrics_path: '/metrics'
+    scrape_interval: 15s
+
+  # Transaction monitoring services
+
+  - job_name: 'transaction-monitor'
+    static_configs:
+      - targets: ['transaction-performance-monitor:5003']
+    metrics_path: '/metrics'
+    scrape_interval: 10s
+
+  - job_name: 'performance-aggregator'
+    static_configs:
+      - targets: ['performance-aggregator-service:5004']
+    metrics_path: '/metrics'
+    scrape_interval: 15s
+
+  - job_name: 'anomaly-injector'
+    static_configs:
+      - targets: ['anomaly-injector-service:5005']
+    metrics_path: '/metrics'
+    scrape_interval: 10s
+
+  # Add this new job for trace-generator
+  - job_name: 'trace-generator'
+    static_configs:
+      - targets: ['trace-generator:9414']
+    metrics_path: '/metrics'
+    scrape_interval: 10s
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets: []
+

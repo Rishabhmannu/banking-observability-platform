@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "type": "db",
+    "canSave": true,
+    "canEdit": true,
+    "canAdmin": true,
+    "canStar": true,
+    "canDelete": true,
+    "slug": "f09f948d-transaction-tracing-analytics",
+    "url": "/d/2987c44e-5880-4ba2-9e26-31e0c2c91aab/f09f948d-transaction-tracing-analytics",
+    "expires": "0001-01-01T00:00:00Z",
+    "created": "2025-06-24T09:14:08Z",
+    "updated": "2025-06-24T09:14:08Z",
+    "updatedBy": "admin",
+    "createdBy": "admin",
+    "version": 1,
+    "hasAcl": false,
+    "isFolder": false,
+    "apiVersion": "v0alpha1",
+    "folderId": 0,
+    "folderUid": "",
+    "folderTitle": "General",
+    "folderUrl": "",
+    "provisioned": false,
+    "provisionedExternalId": "",
+    "annotationsPermissions": {
+      "dashboard": {
+        "canAdd": true,
+        "canEdit": true,
+        "canDelete": true
+      },
+      "organization": {
+        "canAdd": true,
+        "canEdit": true,
+        "canDelete": true
+      }
+    }
+  },
+  "uid": "2987c44e-5880-4ba2-9e26-31e0c2c91aab",
+  "version": 1
+}

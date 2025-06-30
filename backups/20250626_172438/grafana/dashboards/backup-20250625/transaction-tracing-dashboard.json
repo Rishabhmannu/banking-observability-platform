@@ -1,0 +1,197 @@
+{
+  "dashboard": {
+    "id": null,
+    "title": "🔍 Transaction Tracing Analytics",
+    "tags": ["tracing", "jaeger", "transactions", "banking"],
+    "timezone": "browser",
+    "refresh": "10s",
+    "time": {
+      "from": "now-1h",
+      "to": "now"
+    },
+    "panels": [
+      {
+        "id": 1,
+        "title": "📊 Traces Generated Per Minute",
+        "type": "graph",
+        "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 },
+        "targets": [
+          {
+            "expr": "sum by(trace_type) (rate(traces_generated_total[1m])) * 60",
+            "refId": "A",
+            "legendFormat": "{{trace_type}}"
+          }
+        ],
+        "yaxes": [
+          {
+            "format": "short",
+            "label": "Traces/min"
+          },
+          {
+            "format": "short"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "🎯 Trace Generation Status",
+        "type": "stat",
+        "gridPos": { "h": 4, "w": 6, "x": 12, "y": 0 },
+        "targets": [
+          {
+            "expr": "active_trace_generation",
+            "refId": "A"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [
+              {
+                "type": "value",
+                "value": "0",
+                "options": {
+                  "text": "Stopped"
+                }
+              },
+              {
+                "type": "value",
+                "value": "1",
+                "options": {
+                  "text": "Active"
+                }
+              }
+            ],
+            "thresholds": {
+              "steps": [
+                { "color": "red", "value": null },
+                { "color": "green", "value": 1 }
+              ]
+            },
+            "unit": "none"
+          }
+        }
+      },
+      {
+        "id": 3,
+        "title": "❌ Trace Generation Errors",
+        "type": "stat",
+        "gridPos": { "h": 4, "w": 6, "x": 18, "y": 0 },
+        "targets": [
+          {
+            "expr": "sum(rate(trace_generation_errors_total[5m])) * 300",
+            "refId": "A"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "decimals": 0,
+            "thresholds": {
+              "steps": [
+                { "color": "green", "value": null },
+                { "color": "red", "value": 1 }
+              ]
+            },
+            "unit": "short"
+          }
+        }
+      },
+      {
+        "id": 4,
+        "title": "📈 Trace Pattern Distribution",
+        "type": "piechart",
+        "gridPos": { "h": 8, "w": 8, "x": 12, "y": 4 },
+        "targets": [
+          {
+            "expr": "sum by(trace_type) (increase(traces_generated_total[1h]))",
+            "refId": "A",
+            "legendFormat": "{{trace_type}}"
+          }
+        ],
+        "options": {
+          "pieType": "donut",
+          "displayLabels": ["name", "percent"]
+        }
+      },
+      {
+        "id": 5,
+        "title": "🔄 Configured Trace Rates",
+        "type": "bargauge",
+        "gridPos": { "h": 8, "w": 4, "x": 20, "y": 4 },
+        "targets": [
+          {
+            "expr": "trace_patterns_per_minute",
+            "refId": "A",
+            "legendFormat": "{{pattern_type}}"
+          }
+        ],
+        "options": {
+          "displayMode": "gradient",
+          "orientation": "horizontal"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "unit": "short",
+            "max": 60
+          }
+        }
+      },
+      {
+        "id": 6,
+        "title": "🔗 Service Dependencies",
+        "type": "nodeGraph",
+        "gridPos": { "h": 12, "w": 12, "x": 0, "y": 8 },
+        "datasource": "Jaeger",
+        "targets": [
+          {
+            "queryType": "search",
+            "service": "api-gateway",
+            "limit": 100
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "title": "⏱️ Operation Latencies",
+        "type": "table",
+        "gridPos": { "h": 12, "w": 12, "x": 12, "y": 12 },
+        "datasource": "Jaeger",
+        "targets": [
+          {
+            "queryType": "search",
+            "service": "$service",
+            "operation": "$operation",
+            "limit": 20
+          }
+        ]
+      }
+    ],
+    "templating": {
+      "list": [
+        {
+          "name": "service",
+          "type": "query",
+          "datasource": "Jaeger",
+          "query": "services()",
+          "multi": false,
+          "includeAll": false,
+          "current": {
+            "text": "api-gateway",
+            "value": "api-gateway"
+          }
+        },
+        {
+          "name": "operation",
+          "type": "query",
+          "datasource": "Jaeger",
+          "query": "operations($service)",
+          "multi": false,
+          "includeAll": true,
+          "current": {
+            "text": "All",
+            "value": "$__all"
+          }
+        }
+      ]
+    }
+  }
+}

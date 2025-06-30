@@ -1,0 +1,18 @@
+# stop all the containers running and clean up
+docker compose down
+
+# clean up any orphaned containers/networks
+docker system prune -f
+
+# build the images
+docker compose build
+
+# start the containers
+docker compose up -d
+
+# wait for all services to fully initialise
+echo "Waiting for services to initialise"
+sleep 60
+
+# check all running processes
+docker compose ps

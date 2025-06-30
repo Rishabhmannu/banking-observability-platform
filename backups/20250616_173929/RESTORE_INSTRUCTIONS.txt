@@ -1,0 +1,42 @@
+System Backup - 20250616_173929
+=================================
+
+To restore this backup:
+1. Run: ./safe_restart3.sh
+2. When prompted, choose to restore from backup
+3. Select this backup: 20250616_173929
+
+Backup includes:
+- All Grafana dashboards (including Transaction Tracing)
+- Prometheus configuration
+- Service configurations
+- Transaction monitoring setup
+- Windows IIS monitoring setup
+- Trace generator configuration
+- Source code
+- Shell scripts
+
+Services running at shutdown:
+  - anomaly-injector
+  - auto-baselining
+  - account-service
+  - api-gateway
+  - auth-service
+  - fraud-detection
+  - load-generator
+  - mysql-db
+  - notification-service
+  - transaction-service
+  - cadvisor
+  - ddos-ml-detection
+  - grafana
+  - jaeger
+  - mock-iis-application
+  - mock-windows-exporter
+  - node-exporter
+  - performance-aggregator
+  - prometheus
+  - trace-generator
+  - transaction-monitor
+
+Final metrics summary available in: metrics_summary.txt

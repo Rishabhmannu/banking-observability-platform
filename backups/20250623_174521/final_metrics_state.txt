@@ -1,0 +1,37 @@
+System State at Shutdown - Mon Jun 23 17:45:21 IST 2025
+====================================
+
+🤖 DDoS Detection:
+0.8264882757323595
+
+🎯 Auto-Baselining:
+{
+  "algorithms": [
+    "rolling_statistics",
+    "quantile_based",
+    "isolation_forest",
+    "one_class_svm"
+  ],
+  "recommendations_count": 2,
+  "status": "healthy",
+  "timestamp": "2025-06-23T12:15:21.477033"
+}
+
+💰 Transaction Monitoring:
+{
+  "avg_duration": 0.3935830797546013,
+  "failure_count": 36,
+  "slow_counts": {
+    "0.5": 97,
+    "1.0": 19,
+    "2.0": 0
+  },
+  "total_count": 489
+}
+
+🪟 Windows IIS Metrics:
+Request rate: 
+
+🔍 Transaction Tracing:
+Total traces: 12965
+Services in Jaeger: 8

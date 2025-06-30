@@ -1,0 +1,7 @@
+date,start_idx,end_idx,attack_type,duration_minutes
+2024-01-19,26494,26518,volumetric_flood,25
+2024-01-23,32321,32400,application_layer,80
+2024-01-26,37205,37256,application_layer,52
+2024-01-27,37674,37710,volumetric_flood,37
+2024-02-04,49293,49336,volumetric_flood,44
+2024-02-11,59291,59306,volumetric_flood,16

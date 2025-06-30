@@ -1,0 +1,443 @@
+{
+  "dashboard": {
+    "id": null,
+    "title": "💰 Transaction Performance Monitoring",
+    "tags": ["transactions", "performance", "banking", "slo"],
+    "timezone": "browser",
+    "refresh": "10s",
+    "time": {
+      "from": "now-1h",
+      "to": "now"
+    },
+    "panels": [
+      {
+        "id": 1,
+        "title": "📊 Request Count",
+        "type": "stat",
+        "gridPos": { "h": 6, "w": 6, "x": 0, "y": 0 },
+        "targets": [
+          {
+            "expr": "sum(rate(transaction_requests_total[5m])) * 60",
+            "refId": "A",
+            "legendFormat": "Requests/min"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "decimals": 0,
+            "thresholds": {
+              "steps": [
+                { "color": "red", "value": 0 },
+                { "color": "yellow", "value": 50 },
+                { "color": "green", "value": 100 }
+              ]
+            },
+            "unit": "reqpm"
+          }
+        },
+        "options": {
+          "colorMode": "background",
+          "graphMode": "area",
+          "justifyMode": "center"
+        }
+      },
+      {
+        "id": 2,
+        "title": "❌ Request Failures",
+        "type": "stat",
+        "gridPos": { "h": 6, "w": 6, "x": 6, "y": 0 },
+        "targets": [
+          {
+            "expr": "(sum(rate(transaction_failures_total[5m])) / sum(rate(transaction_requests_total[5m]))) * 100",
+            "refId": "A",
+            "legendFormat": "Failure Rate %"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "decimals": 2,
+            "thresholds": {
+              "steps": [
+                { "color": "green", "value": 0 },
+                { "color": "yellow", "value": 1 },
+                { "color": "red", "value": 5 }
+              ]
+            },
+            "unit": "percent",
+            "max": 100
+          }
+        },
+        "options": {
+          "colorMode": "background",
+          "graphMode": "area",
+          "justifyMode": "center"
+        }
+      },
+      {
+        "id": 3,
+        "title": "⏱️ Avg Response Time",
+        "type": "stat",
+        "gridPos": { "h": 6, "w": 6, "x": 12, "y": 0 },
+        "targets": [
+          {
+            "expr": "avg(transaction_avg_response_time) * 1000",
+            "refId": "A",
+            "legendFormat": "Avg Response Time"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "decimals": 0,
+            "thresholds": {
+              "steps": [
+                { "color": "green", "value": 0 },
+                { "color": "yellow", "value": 500 },
+                { "color": "red", "value": 1000 }
+              ]
+            },
+            "unit": "ms"
+          }
+        },
+        "options": {
+          "colorMode": "background",
+          "graphMode": "area",
+          "justifyMode": "center"
+        }
+      },
+      {
+        "id": 4,
+        "title": "🐌 Slow Requests %",
+        "type": "stat",
+        "gridPos": { "h": 6, "w": 6, "x": 18, "y": 0 },
+        "targets": [
+          {
+            "expr": "slow_transaction_percentage{threshold=\"0.5s\"}",
+            "refId": "A",
+            "legendFormat": "Slow (>500ms)"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "decimals": 1,
+            "thresholds": {
+              "steps": [
+                { "color": "green", "value": 0 },
+                { "color": "yellow", "value": 5 },
+                { "color": "red", "value": 10 }
+              ]
+            },
+            "unit": "percent",
+            "max": 100
+          }
+        },
+        "options": {
+          "colorMode": "background",
+          "graphMode": "area",
+          "justifyMode": "center"
+        }
+      },
+      {
+        "id": 5,
+        "title": "📈 Request Count by Transaction Type",
+        "type": "timeseries",
+        "gridPos": { "h": 10, "w": 12, "x": 0, "y": 6 },
+        "targets": [
+          {
+            "expr": "sum by(type) (rate(transaction_requests_total[1m])) * 60",
+            "refId": "A",
+            "legendFormat": "{{type}}"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "custom": {
+              "drawStyle": "line",
+              "lineWidth": 2,
+              "fillOpacity": 20,
+              "stacking": {
+                "mode": "normal"
+              }
+            },
+            "unit": "reqpm"
+          }
+        }
+      },
+      {
+        "id": 6,
+        "title": "📉 Failure Rate Over Time",
+        "type": "timeseries",
+        "gridPos": { "h": 10, "w": 12, "x": 12, "y": 6 },
+        "targets": [
+          {
+            "expr": "(sum(rate(transaction_failures_total[1m])) / sum(rate(transaction_requests_total[1m]))) * 100",
+            "refId": "A",
+            "legendFormat": "Overall Failure Rate"
+          },
+          {
+            "expr": "(sum by(type) (rate(transaction_failures_total[1m])) / sum by(type) (rate(transaction_requests_total[1m]))) * 100",
+            "refId": "B",
+            "legendFormat": "{{type}}"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "custom": {
+              "drawStyle": "line",
+              "lineWidth": 2,
+              "fillOpacity": 10
+            },
+            "unit": "percent",
+            "min": 0,
+            "max": 100
+          },
+          "overrides": [
+            {
+              "matcher": { "id": "byName", "options": "Overall Failure Rate" },
+              "properties": [
+                { "id": "custom.lineWidth", "value": 3 },
+                {
+                  "id": "color",
+                  "value": { "mode": "fixed", "fixedColor": "red" }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": 7,
+        "title": "⏱️ Response Time Percentiles",
+        "type": "timeseries",
+        "gridPos": { "h": 10, "w": 12, "x": 0, "y": 16 },
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.50, sum(rate(transaction_duration_seconds_bucket[1m])) by (le)) * 1000",
+            "refId": "A",
+            "legendFormat": "p50"
+          },
+          {
+            "expr": "histogram_quantile(0.95, sum(rate(transaction_duration_seconds_bucket[1m])) by (le)) * 1000",
+            "refId": "B",
+            "legendFormat": "p95"
+          },
+          {
+            "expr": "histogram_quantile(0.99, sum(rate(transaction_duration_seconds_bucket[1m])) by (le)) * 1000",
+            "refId": "C",
+            "legendFormat": "p99"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "custom": {
+              "drawStyle": "line",
+              "lineWidth": 2,
+              "fillOpacity": 10
+            },
+            "unit": "ms"
+          }
+        }
+      },
+      {
+        "id": 8,
+        "title": "🐌 Slow Request Trend",
+        "type": "timeseries",
+        "gridPos": { "h": 10, "w": 12, "x": 12, "y": 16 },
+        "targets": [
+          {
+            "expr": "slow_transaction_percentage",
+            "refId": "A",
+            "legendFormat": "{{threshold}}"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "custom": {
+              "drawStyle": "line",
+              "lineWidth": 2,
+              "fillOpacity": 20
+            },
+            "unit": "percent",
+            "min": 0,
+            "max": 100
+          }
+        }
+      },
+      {
+        "id": 9,
+        "title": "🍕 Transaction Type Distribution",
+        "type": "piechart",
+        "gridPos": { "h": 8, "w": 8, "x": 0, "y": 26 },
+        "targets": [
+          {
+            "expr": "sum by(type) (increase(transaction_requests_total[1h]))",
+            "refId": "A",
+            "legendFormat": "{{type}}"
+          }
+        ],
+        "options": {
+          "pieType": "donut",
+          "displayLabels": ["name", "percent"],
+          "legendDisplayMode": "list",
+          "legendPlacement": "right"
+        }
+      },
+      {
+        "id": 10,
+        "title": "📊 Error Code Distribution",
+        "type": "bargauge",
+        "gridPos": { "h": 8, "w": 8, "x": 8, "y": 26 },
+        "targets": [
+          {
+            "expr": "sum by(error_code) (increase(transaction_failures_total[1h]))",
+            "refId": "A",
+            "legendFormat": "{{error_code}}"
+          }
+        ],
+        "options": {
+          "displayMode": "gradient",
+          "orientation": "horizontal",
+          "showUnfilled": true
+        }
+      },
+      {
+        "id": 11,
+        "title": "🎯 SLO Compliance",
+        "type": "gauge",
+        "gridPos": { "h": 8, "w": 8, "x": 16, "y": 26 },
+        "targets": [
+          {
+            "expr": "avg(slo_compliance_percentage)",
+            "refId": "A",
+            "legendFormat": "Overall SLO"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "min": 0,
+            "max": 100,
+            "unit": "percent",
+            "thresholds": {
+              "steps": [
+                { "color": "red", "value": 0 },
+                { "color": "yellow", "value": 95 },
+                { "color": "green", "value": 99 }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "id": 12,
+        "title": "🎭 Anomaly Detection",
+        "type": "timeseries",
+        "gridPos": { "h": 8, "w": 24, "x": 0, "y": 34 },
+        "targets": [
+          {
+            "expr": "transaction_anomaly_score",
+            "refId": "A",
+            "legendFormat": "Anomaly Score"
+          },
+          {
+            "expr": "active_anomalies",
+            "refId": "B",
+            "legendFormat": "Active Injections ({{type}})"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "custom": {
+              "drawStyle": "line",
+              "lineWidth": 2,
+              "fillOpacity": 20
+            },
+            "min": 0,
+            "max": 1
+          },
+          "overrides": [
+            {
+              "matcher": { "id": "byRegexp", "options": "Active.*" },
+              "properties": [
+                { "id": "custom.drawStyle", "value": "bars" },
+                { "id": "custom.fillOpacity", "value": 50 },
+                {
+                  "id": "color",
+                  "value": { "mode": "fixed", "fixedColor": "purple" }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": 13,
+        "title": "💼 Business vs Off-Hours Performance",
+        "type": "stat",
+        "gridPos": { "h": 6, "w": 12, "x": 0, "y": 42 },
+        "targets": [
+          {
+            "expr": "business_hour_transaction_rate",
+            "refId": "A",
+            "legendFormat": "Business Hours"
+          },
+          {
+            "expr": "off_hour_transaction_rate",
+            "refId": "B",
+            "legendFormat": "Off Hours"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "unit": "reqpm",
+            "decimals": 0
+          }
+        },
+        "options": {
+          "colorMode": "value",
+          "graphMode": "none",
+          "justifyMode": "center"
+        }
+      },
+      {
+        "id": 14,
+        "title": "📈 Performance Score",
+        "type": "timeseries",
+        "gridPos": { "h": 6, "w": 12, "x": 12, "y": 42 },
+        "targets": [
+          {
+            "expr": "transaction_performance_score",
+            "refId": "A",
+            "legendFormat": "{{category}}"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "custom": {
+              "drawStyle": "line",
+              "lineWidth": 2,
+              "fillOpacity": 10
+            },
+            "unit": "percent",
+            "min": 0,
+            "max": 100
+          }
+        }
+      }
+    ],
+    "templating": {
+      "list": []
+    },
+    "annotations": {
+      "list": [
+        {
+          "name": "Anomaly Injections",
+          "datasource": "Prometheus",
+          "enable": true,
+          "expr": "active_anomalies > 0",
+          "iconColor": "purple",
+          "titleFormat": "Anomaly Injection Active",
+          "textFormat": "Type: {{type}}"
+        }
+      ]
+    }
+  }
+}

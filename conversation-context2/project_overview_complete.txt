@@ -1,0 +1,128 @@
+===========================================
+COMPLETE DDOS DETECTION & MONITORING SYSTEM
+===========================================
+
+PROJECT NAME: Enterprise AIOps Banking System with DDoS Detection
+DEVELOPER: Rishabh Kumar
+LOCATION: /Users/rishabh/Downloads/Internship Related/DDoS_Detection/ddos-detection-system
+
+=== SYSTEM OVERVIEW ===
+
+This is a comprehensive monitoring and security system for a banking microservices architecture that includes:
+
+1. Banking Microservices (Core System)
+   - API Gateway (Port 8080)
+   - Account Service (Port 8081)
+   - Transaction Service (Port 8082)
+   - Auth Service (Port 8083)
+   - Notification Service (Port 8084)
+   - Fraud Detection Service (Port 8085)
+
+2. ML-Based Security Services
+   - DDoS ML Detection Service (Port 5001)
+   - Auto-Baselining Service (Port 5002)
+
+3. Transaction Monitoring Suite
+   - Transaction Performance Monitor (Port 5003)
+   - Performance Aggregator Service (Port 5004)
+   - Anomaly Injector Service (Port 5005)
+
+4. Windows IIS Monitoring (Mock Implementation)
+   - Mock Windows Exporter (Port 9182)
+   - Mock IIS Application (Port 8090)
+
+5. Monitoring Infrastructure
+   - Prometheus (Port 9090)
+   - Grafana (Port 3000)
+   - MySQL Database (Port 3306)
+   - Node Exporter (Port 9100)
+   - cAdvisor (Port 8086)
+
+=== KEY FEATURES ===
+
+1. DDoS Detection
+   - Real-time ML-based detection
+   - Confidence scoring
+   - Binary prediction (attack/normal)
+   - Integration with banking services
+
+2. Auto-Baselining
+   - 4 algorithms: Rolling Statistics, Quantile-Based, Isolation Forest, One-Class SVM
+   - Dynamic threshold recommendations
+   - Per-metric baseline calculation
+   - Historical data analysis
+
+3. Transaction Monitoring
+   - Real-time transaction tracking
+   - Performance metrics (response time, failure rate)
+   - SLO compliance monitoring
+   - Business hours analysis
+   - Anomaly detection
+
+4. Windows IIS Monitoring
+   - Simulates real Windows Exporter metrics
+   - Monitors 7 key areas:
+     * Volume Surge/Dip Detection
+     * Response Time Degradation
+     * Success/Failure Transactions
+     * Technical Exception Percentage
+     * Custom Error Codes
+     * HTTP Response Codes
+     * Infrastructure Health
+
+5. Anomaly Injection Testing
+   - Controlled anomaly simulation
+   - Multiple anomaly types (latency, failure, load)
+   - Validation of detection capabilities
+
+=== DASHBOARDS ===
+
+1. DDoS Detection Dashboard
+   - Real-time attack detection
+   - ML model confidence
+   - Historical attack patterns
+
+2. Auto-Baselining Dashboard
+   - Algorithm performance
+   - Threshold recommendations
+   - Metric baselines visualization
+
+3. Banking Overview Dashboard
+   - Service health status
+   - Transaction volumes
+   - System performance
+
+4. Transaction Performance Dashboard
+   - Request rates by type
+   - Failure analysis
+   - Response time percentiles
+   - SLO compliance
+
+5. Windows IIS Monitoring Dashboard
+   - Request volume trends
+   - Volume surge/dip detection
+   - Response time degradation
+   - Success rate monitoring
+   - Technical exceptions
+   - Custom error codes
+   - HTTP response code distribution
+
+=== DATA FLOW ===
+
+1. Banking services generate metrics → Prometheus scrapes → Grafana visualizes
+2. ML services analyze metrics → Generate predictions → Alert on anomalies
+3. Transaction monitor tracks → Aggregator computes → Dashboard displays
+4. Windows exporter simulates → IIS metrics exposed → Grafana monitors
+
+=== ACCESS POINTS ===
+
+- Banking API: http://localhost:8080
+- Prometheus: http://localhost:9090
+- Grafana: http://localhost:3000 (admin/bankingdemo)
+- All dashboards accessible via Grafana UI
+
+
+
+[Excellent work , now its all working
+
+ok now since the day is almost over I need you to prepare a comprehensive report for my work done, to present to my mentor. 1. the report should be comprehensive in the sense that it should cover all the aspects of my work. (read the contents from the knowledge base to enrich your memory, even though we have not performed that work in this chat conversation). 2. the report should not be lengthy, ie avoid heavy paragraphs. Short explainers are preferred. 3. Do not give code anywhere, if required, just explain what the code does in 2-3 lines. 4. The writing style of the report should be such that it does not immediately give off AI Generated content vibes. 5. If you feel that screenshots should complement the report , place appropriate placeholders for them and I will put the output which I have captured in the screenhots. 6. If you feel like using high level architectural diagrams will help to make a better report, use mermaid chart codes to create such diagrams. Give me the code for the mermaid chart and place appropriate placeholders for it. I will render it in a mermaid chart editor and place the diagram there. Are you clear with these instructions?]

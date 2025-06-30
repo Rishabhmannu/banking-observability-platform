@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "type": "db",
+    "canSave": true,
+    "canEdit": true,
+    "canAdmin": true,
+    "canStar": true,
+    "canDelete": true,
+    "slug": "banking-message-queue-dashboard",
+    "url": "/d/da19f3d9-19e0-410a-9ed1-2d8321d534d2/banking-message-queue-dashboard",
+    "expires": "0001-01-01T00:00:00Z",
+    "created": "2025-06-24T09:14:07Z",
+    "updated": "2025-06-24T09:14:07Z",
+    "updatedBy": "admin",
+    "createdBy": "admin",
+    "version": 1,
+    "hasAcl": false,
+    "isFolder": false,
+    "apiVersion": "v0alpha1",
+    "folderId": 0,
+    "folderUid": "",
+    "folderTitle": "General",
+    "folderUrl": "",
+    "provisioned": false,
+    "provisionedExternalId": "",
+    "annotationsPermissions": {
+      "dashboard": {
+        "canAdd": true,
+        "canEdit": true,
+        "canDelete": true
+      },
+      "organization": {
+        "canAdd": true,
+        "canEdit": true,
+        "canDelete": true
+      }
+    }
+  },
+  "uid": "da19f3d9-19e0-410a-9ed1-2d8321d534d2",
+  "version": 1
+}

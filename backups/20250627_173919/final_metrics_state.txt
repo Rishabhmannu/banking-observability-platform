@@ -1,0 +1,28 @@
+Final Metrics State - Fri Jun 27 17:39:21 IST 2025
+=============================
+
+### Prometheus ###
+Targets:
+  - Prometheus not accessible
+
+### Redis & Container Optimization ###
+Cache Status:
+{
+  "error": "'Gauge' object has no attribute '_value'"
+}
+
+Container Recommendations (Last Known):
+{
+  "recommendations": {},
+  "timestamp": "2025-06-27T12:09:22.003890",
+  "total_potential_savings": 0
+}
+
+### Message Queues ###
+RabbitMQ Queue Depths (from Monitor):
+rabbitmq_queue_messages_ready{queue="auth_token_q",vhost="/"} 0.0
+rabbitmq_queue_messages_ready{queue="core_banking_updates_q",vhost="/"} 0.0
+rabbitmq_queue_messages_ready{queue="fraud_check_q",vhost="/"} 0.0
+rabbitmq_queue_messages_ready{queue="notification_dispatch_q",vhost="/"} 0.0
+rabbitmq_queue_messages_ready{queue="transaction_processing_q",vhost="/"} 0.0
+

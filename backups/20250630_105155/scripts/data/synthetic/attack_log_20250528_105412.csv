@@ -1,0 +1,5 @@
+date,start_idx,end_idx,attack_type,duration_minutes
+2024-03-01,496,539,application_layer,44
+2024-03-02,1531,1551,protocol_attack,21
+2024-03-03,3197,3212,volumetric_flood,16
+2024-03-06,7455,7534,slow_rate,80

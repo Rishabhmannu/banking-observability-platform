@@ -1,0 +1,22 @@
+# Redis Cache Analyzer Dependencies
+# Flask for web server
+flask==2.3.2
+
+# Redis client
+redis==4.5.5
+hiredis==2.2.3  # C parser for better performance
+
+# Prometheus metrics
+prometheus-client==0.17.0
+
+# Background task scheduling
+apscheduler==3.10.1
+
+# HTTP requests for health checks
+requests==2.31.0
+
+# Logging
+python-json-logger==2.0.7
+
+# Environment variable management
+python-dotenv==1.0.0

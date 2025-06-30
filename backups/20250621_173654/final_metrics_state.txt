@@ -1,0 +1,28 @@
+System State at Shutdown - Sat Jun 21 17:36:55 IST 2025
+====================================
+
+🤖 DDoS Detection:
+0.38570018569696685
+
+🎯 Auto-Baselining:
+{
+  "algorithms": [
+    "rolling_statistics",
+    "quantile_based",
+    "isolation_forest",
+    "one_class_svm"
+  ],
+  "recommendations_count": 2,
+  "status": "healthy",
+  "timestamp": "2025-06-21T12:06:55.615870"
+}
+
+💰 Transaction Monitoring:
+{}
+
+🪟 Windows IIS Metrics:
+Request rate: 
+
+🔍 Transaction Tracing:
+Total traces: 17457
+Services in Jaeger: 8

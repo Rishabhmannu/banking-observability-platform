@@ -1,0 +1,5 @@
+Dashboard URLs after restart:
+- Banking Overview: http://localhost:3000/d/banking-overview
+- DDoS Detection: http://localhost:3000/d/ddos-detection  
+- Auto-Baselining: http://localhost:3000/d/auto-baselining
+- Transaction Performance: http://localhost:3000/d/transaction-performance

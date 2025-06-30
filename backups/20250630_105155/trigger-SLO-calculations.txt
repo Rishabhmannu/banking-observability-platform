@@ -1,0 +1,6 @@
+curl -X POST http://localhost:5004/trigger-calculation \
+     -H "Content-Type: application/json" \
+     -d '{"type": "all"}'
+
+checking 
+curl -s http://localhost:5004/metrics | grep -E "slo_compliance|business_hour|off_hour"

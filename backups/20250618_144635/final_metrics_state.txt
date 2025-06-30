@@ -1,0 +1,16 @@
+System State at Shutdown - Wed Jun 18 14:46:36 IST 2025
+====================================
+
+🤖 DDoS Detection:
+
+🎯 Auto-Baselining:
+
+💰 Transaction Monitoring:
+{}
+
+🪟 Windows IIS Metrics:
+Request rate: 
+
+🔍 Transaction Tracing:
+Total traces: 
+Services in Jaeger: 

@@ -1,0 +1,117 @@
+=====================================
+IMPLEMENTATION & OPERATIONS GUIDE
+=====================================
+
+=== INITIAL SETUP ===
+
+1. Prerequisites:
+   - Docker Desktop installed
+   - 8GB+ RAM available
+   - Ports 3000, 5001-5005, 8080-8086, 9090, 9100, 9182 free
+
+2. Clone/Setup Project:
+   cd "/Users/rishabh/Downloads/Internship Related/DDoS_Detection/ddos-detection-system"
+
+3. Start System:
+   ./safe_restart3.sh
+
+4. Import Dashboards (if needed):
+   ./import-transaction-dashboard.sh
+   ./import_windows_iis_dashboard.sh
+
+=== DAILY OPERATIONS ===
+
+1. System Status Check:
+   ./system_status3.sh
+
+2. Generate Traffic:
+   ./continuous-traffic-generator.sh
+
+3. Test Anomalies:
+   - Transaction anomalies: ./test-anomaly-injection.sh
+   - Windows IIS anomalies: ./test_windows_iis_anomalies_v2.sh
+
+4. View Logs:
+   docker compose logs -f [service-name]
+
+5. Access Dashboards:
+   http://localhost:3000 (admin/bankingdemo)
+
+=== TESTING PROCEDURES ===
+
+1. Windows IIS Anomaly Testing:
+   - Run: ./test_windows_iis_anomalies_v2.sh
+   - Select anomaly type (1-7)
+   - Watch dashboard for changes
+   - Anomalies auto-restore after duration
+
+2. Transaction Monitoring Testing:
+   - Inject latency: curl -X POST http://localhost:5005/inject/latency
+   - Inject failures: curl -X POST http://localhost:5005/inject/failure
+   - Inject load: curl -X POST http://localhost:5005/inject/load
+
+3. Verify Metrics:
+   - Prometheus: http://localhost:9090/targets
+   - Check all targets are UP
+   - Query specific metrics
+
+=== TROUBLESHOOTING ===
+
+1. Service Won't Start:
+   - Check logs: docker compose logs [service]
+   - Verify port not in use: lsof -i :[port]
+   - Restart service: docker compose restart [service]
+
+2. No Metrics Showing:
+   - Wait 2-3 minutes for initialization
+   - Check Prometheus targets
+   - Run traffic generator
+   - Verify service health endpoints
+
+3. Dashboard Missing:
+   - Run import scripts
+   - Check Grafana is running
+   - Verify credentials (admin/bankingdemo)
+
+4. High Resource Usage:
+   - Check container stats: docker stats
+   - Restart specific services
+   - Increase Docker memory allocation
+
+=== BACKUP & RESTORE ===
+
+1. Create Backup:
+   ./safe_shutdown3.sh
+   - Creates timestamped backup
+   - Saves all configurations
+   - Exports Grafana dashboards
+
+2. Restore from Backup:
+   ./safe_restart3.sh
+   - Select restore option
+   - Choose backup by timestamp
+   - Automatic configuration restore
+
+3. Backup Contents:
+   - Prometheus configs
+   - Grafana dashboards
+   - Service configurations
+   - Source code
+   - Metrics summary
+
+=== MAINTENANCE ===
+
+1. Update Services:
+   - Modify code in service directory
+   - Rebuild: docker compose build [service]
+   - Restart: docker compose up -d [service]
+
+2. Clean Up:
+   - Remove unused images: docker image prune
+   - Clear old volumes: docker volume prune
+   - Check disk space: df -h
+
+3. Performance Tuning:
+   - Adjust Prometheus retention
+   - Optimize query intervals
+   - Scale service replicas

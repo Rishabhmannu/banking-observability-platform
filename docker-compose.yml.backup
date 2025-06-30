@@ -1,0 +1,135 @@
+version: '3'
+
+services:
+  # API Gateway service
+  api-gateway:
+    build: ./api-gateway
+    container_name: banking-api-gateway
+    ports:
+      - "8080:8080"
+    environment:
+      - ACCOUNT_SERVICE_URL=http://account-service:8081
+      - TRANSACTION_SERVICE_URL=http://transaction-service:8082
+      - AUTH_SERVICE_URL=http://auth-service:8083
+      - NOTIFICATION_SERVICE_URL=http://notification-service:8084
+      - FRAUD_SERVICE_URL=http://fraud-detection:8085
+    depends_on:
+      - account-service
+      - transaction-service
+      - auth-service
+      - notification-service
+      - fraud-detection
+    networks:
+      - banking-network
+
+  # Account Service
+  account-service:
+    build: ./account-service
+    container_name: banking-account-service
+    ports:
+      - "8081:8081"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-db:3306/accountdb
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=bankingdemo
+      - SIMULATE_SLOW_QUERY=false
+    depends_on:
+      - mysql-db
+    networks:
+      - banking-network
+
+  # Transaction Processing Service
+  transaction-service:
+    build: ./transaction-service
+    container_name: banking-transaction-service
+    ports:
+      - "8082:8082"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-db:3306/transactiondb
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=bankingdemo
+      - ACCOUNT_SERVICE_URL=http://account-service:8081
+      - SIMULATE_HIGH_LOAD=false
+    depends_on:
+      - mysql-db
+      - account-service
+    networks:
+      - banking-network
+
+  # Authentication Service
+  auth-service:
+    build: ./auth-service
+    container_name: banking-auth-service
+    ports:
+      - "8083:8083"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-db:3306/authdb
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=bankingdemo
+      - SIMULATE_MEMORY_LEAK=false
+    depends_on:
+      - mysql-db
+    networks:
+      - banking-network
+
+  # Notification Service
+  notification-service:
+    build: ./notification-service
+    container_name: banking-notification-service
+    ports:
+      - "8084:8084"
+    environment:
+      - SIMULATE_LATENCY=false
+    networks:
+      - banking-network
+
+  # Fraud Detection Service
+  fraud-detection:
+    build: ./fraud-detection
+    container_name: banking-fraud-detection
+    ports:
+      - "8085:8085"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-db:3306/frauddb
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=bankingdemo
+      - SIMULATE_ALERT_STORM=false
+    depends_on:
+      - mysql-db
+    networks:
+      - banking-network
+
+  # Database
+  mysql-db:
+    image: mysql:8.0
+    container_name: banking-mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=bankingdemo
+      - MYSQL_DATABASE=bankingdb
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./mysql-init:/docker-entrypoint-initdb.d
+    networks:
+      - banking-network
+
+  # Load Generator
+  load-generator:
+    build: ./load-generator
+    container_name: banking-load-generator
+    environment:
+      - API_GATEWAY_URL=http://api-gateway:8080
+      - ENABLE_LOAD=true
+      - LOAD_INTENSITY=medium
+    depends_on:
+      - api-gateway
+    networks:
+      - banking-network
+
+networks:
+  banking-network:
+    driver: bridge
+
+volumes:
+  mysql-data:

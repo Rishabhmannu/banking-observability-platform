@@ -1,0 +1,111 @@
+#!/bin/bash
+
+echo "🛑 Stopping Enhanced DDoS Detection & Auto-Baselining System"
+echo "==========================================================="
+
+# Navigate to project directory
+cd /Users/rishabh/Downloads/Internship\ Related/DDoS_Detection/ddos-detection-system
+
+echo "📊 Current system status:"
+docker compose ps
+
+echo ""
+echo "🔄 Stopping all services gracefully..."
+docker compose stop
+
+echo ""
+echo "⏳ Waiting for graceful shutdown..."
+sleep 15
+
+echo ""
+echo "✅ Verification - Services should be stopped:"
+docker compose ps
+
+echo ""
+echo "🔍 Checking if ports are freed up:"
+echo "Port 8080 (Banking API): $(lsof -ti :8080 2>/dev/null | wc -l | tr -d ' ') processes"
+echo "Port 5001 (DDoS ML Detection): $(lsof -ti :5001 2>/dev/null | wc -l | tr -d ' ') processes"
+echo "Port 5002 (Auto-Baselining): $(lsof -ti :5002 2>/dev/null | wc -l | tr -d ' ') processes"
+echo "Port 9090 (Prometheus): $(lsof -ti :9090 2>/dev/null | wc -l | tr -d ' ') processes"
+echo "Port 3000 (Grafana): $(lsof -ti :3000 2>/dev/null | wc -l | tr -d ' ') processes"
+echo "Port 3306 (MySQL): $(lsof -ti :3306 2>/dev/null | wc -l | tr -d ' ') processes"
+
+echo ""
+echo "💾 Data & Configuration Status:"
+echo "==============================="
+echo "✅ Banking microservices data: PRESERVED"
+echo "✅ DDoS ML models: PRESERVED" 
+echo "✅ Auto-baselining algorithm data: PRESERVED"
+echo "✅ Threshold recommendations: PRESERVED"
+echo "✅ Grafana dashboards: PRESERVED"
+echo "✅ Prometheus configuration: PRESERVED"
+echo "✅ Alert rules: PRESERVED"
+echo "✅ MySQL banking data: PRESERVED"
+echo "✅ Docker images: PRESERVED"
+echo "✅ Historical metrics: PRESERVED"
+
+echo ""
+echo "📂 Preserved Directories:"
+echo "========================"
+echo "• ./data/models/ (ML models)"
+echo "• ./data/baselining/ (Auto-baselining data)"
+echo "• ./logs/baselining/ (Auto-baselining logs)"
+echo "• ./config/ (All configurations)"
+echo "• ./prometheus/ (Prometheus config)"
+
+echo ""
+echo "🚀 Restart Options:"
+echo "=================="
+echo "# Quick restart (recommended):"
+echo "docker compose up -d"
+echo ""
+echo "# Using your restart script:"
+echo "./restart_system.sh"
+echo ""
+echo "# Start specific services only:"
+echo "docker compose up -d auto-baselining prometheus"
+echo ""
+echo "# View logs when restarting:"
+echo "docker compose up -d && docker compose logs -f"
+
+echo ""
+echo "🧹 Cleanup Options (if needed):"
+echo "==============================="
+echo "# Remove containers but keep data:"
+echo "docker compose down"
+echo ""
+echo "# Remove everything including volumes (CAUTION!):"
+echo "docker compose down --volumes"
+echo ""
+echo "# Remove images (if you want to rebuild):"
+echo "docker compose down --rmi all"
+
+echo ""
+echo "🔍 Troubleshooting Commands:"
+echo "==========================="
+echo "# Check what's still running:"
+echo "docker ps"
+echo ""
+echo "# View recent logs:"
+echo "docker compose logs --tail=50 auto-baselining"
+echo ""
+echo "# Check port usage:"
+echo "lsof -i :5002"
+
+echo ""
+echo "🎯 System Features Available on Restart:"
+echo "========================================"
+echo "🏦 Banking Microservices (6 services)"
+echo "🤖 DDoS Detection with ML Models"
+echo "🎯 Auto-Baselining with 4 Algorithms:"
+echo "   • Rolling Statistics"
+echo "   • Quantile-based Thresholds"
+echo "   • Isolation Forest (ML)"
+echo "   • Local Outlier Factor (ML)"
+echo "📊 Prometheus + Grafana Monitoring"
+echo "🔧 Dynamic Threshold Recommendations"
+
+echo ""
+echo "🎯 System stopped successfully! All resources freed up."
+echo "💡 All your work is preserved and ready for next restart."
+echo "🚀 Both DDoS Detection and Auto-Baselining will resume when restarted!"

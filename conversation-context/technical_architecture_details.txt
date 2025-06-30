@@ -1,0 +1,325 @@
+TECHNICAL ARCHITECTURE & IMPLEMENTATION DETAILS
+==============================================
+
+PHASE 2 AUTO-BASELINING SERVICE - DETAILED TECHNICAL SPECIFICATIONS
+===================================================================
+
+SERVICE OVERVIEW:
+- File: src/services/auto_baselining_service.py
+- Port: 5002
+- Container: auto-baselining-service
+- Language: Python 3.9
+- Framework: Flask
+- Dependencies: scikit-learn, tensorflow, pandas, numpy, prometheus-client
+
+CORE ALGORITHMS IMPLEMENTED:
+=============================
+
+1. ROLLING STATISTICS BASELINING
+   - Class: RollingStatisticsBaselining
+   - Method: 3-sigma rule (mean + 3*std)
+   - Window: 24 hours (configurable)
+   - Confidence: Based on statistical stability
+   - Use Case: General purpose threshold calculation
+
+2. QUANTILE-BASED BASELINING
+   - Class: QuantileBaselining  
+   - Method: 95th percentile calculation
+   - Window: 168 hours (7 days)
+   - Confidence: Based on percentile value
+   - Use Case: Robust against outliers
+
+3. ISOLATION FOREST BASELINING
+   - Class: IsolationForestBaselining
+   - Method: ML anomaly detection
+   - Contamination: 0.05 (5% anomalies)
+   - Minimum Data: 100 points
+   - Use Case: Complex pattern detection
+
+4. LOCAL OUTLIER FACTOR (LOF) BASELINING
+   - Class: LOFBaselining
+   - Method: Density-based anomaly detection
+   - Neighbors: 20 (adaptive based on data size)
+   - Contamination: 0.05 (5% anomalies)
+   - Use Case: Local anomaly patterns
+
+METRICS MONITORED:
+==================
+
+BANKING SYSTEM METRICS:
+- API Request Rate: sum(rate(http_requests_total[1m]))
+- API Error Rate: sum(rate(http_requests_total{status=~"5.."}[1m]))
+- Response Time P95: histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket[1m])) by (le))
+- CPU Usage: avg(100 - (avg by (instance) (rate(node_cpu_seconds_total{mode="idle"}[1m])) * 100))
+
+AUTO-BASELINING METRICS:
+- threshold_recommendations{metric, algorithm} - Calculated threshold values
+- threshold_confidence{metric, algorithm} - Algorithm confidence scores
+- baselining_calculations_total - Total calculations performed
+- algorithm_performance{algorithm} - Algorithm performance metrics
+
+API ENDPOINTS:
+==============
+
+HEALTH CHECK:
+GET /health
+Response: {
+  "status": "healthy",
+  "service": "auto-baselining",
+  "algorithms": ["rolling_statistics", "quantile_based", "isolation_forest", "local_outlier_factor"],
+  "recommendations_count": 4,
+  "timestamp": "2025-05-30T..."
+}
+
+THRESHOLD CALCULATION:
+GET /calculate-threshold?metric=<prometheus_query>
+Example: /calculate-threshold?metric=sum(rate(http_requests_total[1m]))
+Response: {
+  "metric": "...",
+  "timestamp": "...",
+  "results": {
+    "rolling_statistics": {"threshold": 15.2, "confidence": 0.85, "method": "rolling_statistics"},
+    "quantile_based": {"threshold": 12.8, "confidence": 0.90, "method": "quantile_based"},
+    "isolation_forest": {"threshold": 18.1, "confidence": 0.75, "method": "isolation_forest"},
+    "local_outlier_factor": {"threshold": 14.5, "confidence": 0.70, "method": "local_outlier_factor"}
+  }
+}
+
+THRESHOLD RECOMMENDATIONS:
+GET /threshold-recommendations
+Response: {
+  "timestamp": "...",
+  "recommendations": {
+    "api_request_rate": { ... },
+    "api_error_rate": { ... },
+    "api_response_time_p95": { ... },
+    "cpu_usage_percent": { ... }
+  }
+}
+
+ENSEMBLE RECOMMENDATION:
+GET /ensemble-recommendation/<metric_name>
+Response: {
+  "metric": "api_request_rate",
+  "timestamp": "...",
+  "recommendation": {
+    "threshold": 14.6,
+    "confidence": 0.82,
+    "algorithms_used": ["rolling_statistics", "quantile_based"],
+    "individual_results": { ... }
+  }
+}
+
+PROMETHEUS METRICS ENDPOINT:
+GET /metrics
+Returns: Prometheus-formatted metrics for scraping
+
+BACKGROUND PROCESSING:
+======================
+
+THRESHOLD CALCULATION LOOP:
+- Frequency: Every 3600 seconds (1 hour)
+- Process: Collects historical data → Runs all algorithms → Updates recommendations
+- Data Window: 7 days lookback (168 hours)
+- Prometheus Query: Uses /api/v1/query_range endpoint
+
+DATA COLLECTION:
+- Source: Prometheus time-series database
+- Resolution: 1-minute intervals
+- Storage: In-memory processing (no persistent storage required)
+- Error Handling: Graceful degradation on data unavailability
+
+ALGORITHM ENSEMBLE:
+- Weighted Average: Based on confidence scores
+- Minimum Confidence: 0.3 threshold for inclusion
+- Fallback: Individual algorithm results if ensemble fails
+
+PHASE 1 DDoS DETECTION SERVICE - TECHNICAL DETAILS
+==================================================
+
+SERVICE OVERVIEW:
+- File: src/services/ml_detection_service.py (or minimal_ml_service.py)
+- Port: 5001
+- Container: ddos-ml-detection
+- Algorithms: Isolation Forest, Statistical Analysis
+
+METRICS EXPOSED:
+- ddos_binary_prediction - 0/1 attack detection
+- ddos_confidence - Prediction confidence (0-1)
+- ddos_detection_score - Anomaly score
+
+BANKING MICROSERVICES ARCHITECTURE
+==================================
+
+API GATEWAY (PORT 8080):
+- Technology: Node.js/Express
+- Role: Request routing and load balancing
+- Endpoints: Routes to all backend services
+- Health Check: /health
+
+ACCOUNT SERVICE (PORT 8081):
+- Technology: Python/Flask
+- Database: MySQL (accountdb)
+- Features: Account management, balance queries
+- Simulation: Slow query simulation capability
+
+TRANSACTION SERVICE (PORT 8082):
+- Technology: Python/Flask  
+- Database: MySQL (transactiondb)
+- Features: Transaction processing, history
+- Simulation: High load simulation capability
+
+AUTH SERVICE (PORT 8083):
+- Technology: Python/Flask
+- Database: MySQL (authdb)  
+- Features: Authentication, JWT tokens
+- Simulation: Memory leak simulation capability
+
+NOTIFICATION SERVICE (PORT 8084):
+- Technology: Python/Flask
+- Features: Email/SMS notifications
+- Simulation: Latency simulation capability
+
+FRAUD DETECTION SERVICE (PORT 8085):
+- Technology: Python/Flask
+- Database: MySQL (frauddb)
+- Features: Transaction fraud analysis
+- Simulation: Alert storm simulation capability
+
+MONITORING STACK CONFIGURATION
+==============================
+
+PROMETHEUS CONFIGURATION:
+File: prometheus/prometheus.yml
+Scrape Targets:
+- banking-services (5s interval)
+- auto-baselining (30s interval)  
+- ddos-ml-detection (10s interval)
+- node-exporter (15s interval)
+
+GRAFANA CONFIGURATION:
+- Admin: admin/bankingdemo
+- Datasource: Prometheus (http://prometheus:9090)
+- Dashboards: 3 pre-configured dashboards
+- Provisioning: Automatic dashboard import
+
+ALERT RULES:
+File: prometheus/alert_rules.yml
+- ServiceDown: Service unavailability
+- HighErrorRate: Error rate > 10%
+- DDoSAttackDetected: ML detection alerts
+
+DATABASE ARCHITECTURE
+=====================
+
+MYSQL CONFIGURATION:
+- Container: banking-mysql
+- Root Password: bankingdemo
+- Databases: accountdb, transactiondb, authdb, frauddb
+- Initialization: ./mysql-init/init.sql
+- Persistence: Docker volume (mysql-data)
+
+DOCKER ARCHITECTURE
+===================
+
+NETWORKING:
+- Network: banking-network (bridge)
+- Internal Communication: Service names as hostnames
+- External Access: Port mapping to localhost
+
+VOLUMES:
+- mysql-data: Database persistence
+- prometheus-data: Metrics storage
+- grafana-data: Dashboard configurations
+- Local binds: Configuration files and logs
+
+HEALTH CHECKS:
+- Auto-Baselining: curl http://localhost:5002/health
+- ML Detection: curl http://localhost:5001/health  
+- Prometheus: curl http://localhost:9090/-/healthy
+- Grafana: curl http://localhost:3000/api/health
+
+DEPLOYMENT ARCHITECTURE
+=======================
+
+DOCKER HUB IMAGES:
+- 9 custom images pushed to rishabhkumar2003/ddos-detection-banking-*
+- Base images: python:3.9-slim, node:16-alpine, mysql:8.0
+- Image sizes: Optimized for production deployment
+
+PRODUCTION DEPLOYMENT:
+- File: docker-compose.hub.yml
+- Source: Pre-built Docker Hub images
+- Startup Time: ~3 minutes (vs 30+ minutes build time)
+- Scalability: Ready for cloud deployment
+
+DISASTER RECOVERY:
+- Complete system restoration in 3 minutes
+- No local build dependencies required
+- Cloud-based image repository
+- Tested recovery procedures
+
+PERFORMANCE CHARACTERISTICS
+===========================
+
+AUTO-BASELINING PERFORMANCE:
+- Response Time: <50ms for health checks
+- Calculation Time: <15 seconds for threshold calculation
+- Memory Usage: ~200MB per container
+- CPU Usage: Low (periodic batch processing)
+
+SYSTEM SCALABILITY:
+- Horizontal: Multiple service instances supported
+- Vertical: Resource limits configurable
+- Cloud: Ready for Kubernetes deployment
+- Monitoring: Full observability stack
+
+SECURITY CONSIDERATIONS
+=======================
+
+NETWORK SECURITY:
+- Internal service communication
+- No external database access
+- Configurable port exposure
+
+DATA SECURITY:
+- No sensitive data in logs
+- Environment variable configuration
+- Database access controls
+
+CONTAINER SECURITY:
+- Non-root user execution
+- Minimal base images
+- Health check implementations
+
+TROUBLESHOOTING REFERENCE
+=========================
+
+COMMON ISSUES:
+1. Empty threshold recommendations → Need more historical data (wait 1-2 hours)
+2. Algorithm confidence low → Normal for limited data, improves over time
+3. Service not responding → Check Docker logs: docker-compose logs auto-baselining
+4. Prometheus connection issues → Verify network connectivity and service discovery
+
+DEBUGGING COMMANDS:
+- Service logs: docker-compose logs -f [service-name]
+- Container status: docker-compose ps
+- Resource usage: docker stats
+- Network connectivity: docker network inspect banking-network
+
+DEVELOPMENT ENVIRONMENT
+=======================
+
+LOCAL SETUP:
+- Docker Desktop for Mac (Apple Silicon compatible)
+- Python 3.9+ with virtual environment
+- Node.js 16+ for API Gateway
+- MySQL client for database access
+
+TESTING:
+- Unit tests: pytest framework
+- Integration tests: Custom scripts
+- Load testing: Built-in load generator
+- Performance monitoring: Grafana dashboards
+
+This technical architecture supports enterprise-grade banking applications with advanced ML-powered security and optimization capabilities.

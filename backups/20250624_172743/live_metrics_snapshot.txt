@@ -1,0 +1,77 @@
+System Metrics Snapshot at: Tue Jun 24 17:27:43 IST 2025
+====================================
+
+🤖 DDoS Detection:
+0.14165376247764033
+
+🎯 Auto-Baselining:
+{
+  "algorithms": [
+    "rolling_statistics",
+    "quantile_based",
+    "isolation_forest",
+    "one_class_svm"
+  ],
+  "recommendations_count": 2,
+  "status": "healthy",
+  "timestamp": "2025-06-24T11:57:43.800227"
+}
+
+💰 Transaction Monitoring:
+{
+  "avg_duration": 0,
+  "failure_count": 0,
+  "slow_counts": {
+    "0.5": 0,
+    "1.0": 0,
+    "2.0": 0
+  },
+  "total_count": 0
+}
+
+🪟 Windows IIS Metrics:
+Request rate: 
+
+🔍 Transaction Tracing:
+Total traces: 12396
+Services in Jaeger: 8
+
+📨 Message Queue Status:
+RabbitMQ Consumer Status: {
+  "auth_token_q": {
+    "consumers": 1,
+    "messages": 0
+  },
+  "fraud_check_q": {
+    "consumers": 1,
+    "messages": 0
+  },
+  "notification_dispatch_q": {
+    "consumers": 1,
+    "messages": 0
+  },
+  "transaction_processing_q": {
+    "consumers": 1,
+    "messages": 0
+  }
+}
+Messages Published (Prometheus): 19736
+Messages Consumed (Prometheus): 19735
+
+🗄️ Database Connection Pool:
+{
+  "database": {
+    "states": {
+      "active": 1,
+      "idle": 5
+    },
+    "total_connections": 6
+  },
+  "pool": {
+    "active_connections": 0,
+    "idle_connections": 5,
+    "max_size": 20,
+    "min_size": 5,
+    "utilization_percent": 0.0
+  }
+}

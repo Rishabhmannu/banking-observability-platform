@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "type": "db",
+    "canSave": true,
+    "canEdit": true,
+    "canAdmin": true,
+    "canStar": true,
+    "canDelete": true,
+    "slug": "windows-iis-server-full-metrics",
+    "url": "/d/52488d5e-6d8a-4017-b65e-f7802b938309/windows-iis-server-full-metrics",
+    "expires": "0001-01-01T00:00:00Z",
+    "created": "2025-06-27T05:23:17Z",
+    "updated": "2025-06-27T05:23:17Z",
+    "updatedBy": "admin",
+    "createdBy": "admin",
+    "version": 1,
+    "hasAcl": false,
+    "isFolder": false,
+    "apiVersion": "v0alpha1",
+    "folderId": 0,
+    "folderUid": "",
+    "folderTitle": "General",
+    "folderUrl": "",
+    "provisioned": false,
+    "provisionedExternalId": "",
+    "annotationsPermissions": {
+      "dashboard": {
+        "canAdd": true,
+        "canEdit": true,
+        "canDelete": true
+      },
+      "organization": {
+        "canAdd": true,
+        "canEdit": true,
+        "canDelete": true
+      }
+    }
+  },
+  "uid": "52488d5e-6d8a-4017-b65e-f7802b938309",
+  "version": 1
+}

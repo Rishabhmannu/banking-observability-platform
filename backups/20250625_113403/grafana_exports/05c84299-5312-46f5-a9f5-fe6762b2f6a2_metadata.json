@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "type": "db",
+    "canSave": true,
+    "canEdit": true,
+    "canAdmin": true,
+    "canStar": true,
+    "canDelete": true,
+    "slug": "f09f92b0-transaction-performance-monitoring",
+    "url": "/d/05c84299-5312-46f5-a9f5-fe6762b2f6a2/f09f92b0-transaction-performance-monitoring",
+    "expires": "0001-01-01T00:00:00Z",
+    "created": "2025-06-25T05:47:20Z",
+    "updated": "2025-06-25T05:47:20Z",
+    "updatedBy": "Anonymous",
+    "createdBy": "Anonymous",
+    "version": 1,
+    "hasAcl": false,
+    "isFolder": false,
+    "apiVersion": "v0alpha1",
+    "folderId": 0,
+    "folderUid": "",
+    "folderTitle": "General",
+    "folderUrl": "",
+    "provisioned": false,
+    "provisionedExternalId": "transaction-performance-dashboard.json",
+    "annotationsPermissions": {
+      "dashboard": {
+        "canAdd": true,
+        "canEdit": true,
+        "canDelete": true
+      },
+      "organization": {
+        "canAdd": true,
+        "canEdit": true,
+        "canDelete": true
+      }
+    }
+  },
+  "uid": "05c84299-5312-46f5-a9f5-fe6762b2f6a2",
+  "version": 1
+}

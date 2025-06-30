@@ -1,0 +1,152 @@
+=========================================
+TECHNICAL ARCHITECTURE & IMPLEMENTATION
+=========================================
+
+=== TECHNOLOGY STACK ===
+
+Backend Services:
+- Python 3.9 (Flask-based microservices)
+- Node.js (API Gateway)
+- MySQL 8.0 (Database)
+
+ML/AI Stack:
+- scikit-learn (Auto-baselining algorithms)
+- numpy/pandas (Data processing)
+- Isolation Forest, One-Class SVM
+
+Monitoring Stack:
+- Prometheus (Metrics collection)
+- Grafana (Visualization)
+- Prometheus Python Client (Metric exposure)
+
+Containerization:
+- Docker & Docker Compose
+- Multi-stage builds for optimization
+- Health checks for all services
+
+=== SERVICE ARCHITECTURE ===
+
+1. BANKING MICROSERVICES
+   Each service exposes:
+   - /health endpoint
+   - /metrics endpoint (Prometheus format)
+   - Business logic endpoints
+
+2. ML SERVICES ARCHITECTURE
+
+   DDoS ML Detection:
+   - Collects metrics from Prometheus
+   - Engineers features in real-time
+   - Runs inference on trained model
+   - Exposes predictions as metrics
+
+   Auto-Baselining:
+   - Queries historical data (1-24 hours)
+   - Runs 4 parallel algorithms
+   - Generates threshold recommendations
+   - Updates every 5 minutes
+
+3. TRANSACTION MONITORING
+
+   Transaction Monitor:
+   - Tracks individual transactions
+   - Calculates performance metrics
+   - Maintains in-memory statistics
+   - Exposes detailed histograms
+
+   Performance Aggregator:
+   - Aggregates from multiple sources
+   - Computes SLOs and SLAs
+   - Detects anomalies
+   - Provides business insights
+
+4. WINDOWS IIS MONITORING
+
+   Mock Windows Exporter:
+   - Simulates Windows Performance Counters
+   - Generates realistic IIS metrics
+   - Implements time-based patterns
+   - Responds to anomaly triggers
+
+   Metric Generation:
+   - Base load: 100 req/sec
+   - Business hours: 2-2.5x multiplier
+   - Error rates: 0.1% 5xx, 0.4% 404
+   - Response time: Gaussian(50ms, 20ms)
+
+=== PROMETHEUS CONFIGURATION ===
+
+Scrape Jobs:
+- prometheus (self-monitoring)
+- node-exporter (system metrics)
+- cadvisor (container metrics)
+- banking-services (all 6 services)
+- auto-baselining
+- ddos-ml-detection
+- transaction-monitor
+- performance-aggregator
+- anomaly-injector
+- windows-iis (mock exporter)
+
+Scrape Intervals:
+- Banking services: 10s
+- ML services: 15s
+- Windows IIS: 15s
+- Default: 15s
+
+=== METRIC SCHEMAS ===
+
+DDoS Metrics:
+- ddos_detection_score (Gauge, 0-1)
+- ddos_confidence (Gauge, 0-1)
+- ddos_binary_prediction (Gauge, 0/1)
+- ddos_model_predictions_total (Counter)
+
+Transaction Metrics:
+- transaction_requests_total{type, status}
+- transaction_duration_seconds{type} (Histogram)
+- transaction_failures_total{type, error_code}
+- slow_transactions_total{threshold, type}
+- transaction_performance_score (Gauge, 0-100)
+
+Windows IIS Metrics:
+- windows_iis_requests_total{method, site}
+- windows_iis_current_connections{site}
+- windows_iis_*_errors_total{site}
+- windows_iis_request_execution_time{site} (Histogram)
+- windows_iis_app_pool_state{app_pool}
+- windows_netframework_exceptions_thrown_total{app_name, exception_type}
+- windows_custom_errors_total{error_code, app_name}
+
+=== DOCKER COMPOSE STRUCTURE ===
+
+Networks:
+- banking-network (bridge driver)
+- All services on same network
+
+Volumes:
+- mysql-data (database persistence)
+- prometheus-data (metrics retention)
+- grafana-data (dashboard persistence)
+
+Dependencies:
+1. mysql-db (no deps)
+2. prometheus, grafana, monitoring (depend on mysql-db)
+3. banking services (depend on mysql-db)
+4. api-gateway (depends on all banking services)
+5. ML services (depend on prometheus)
+6. load-generator (depends on api-gateway)
+
+=== DERIVED METRICS (PROMQL) ===
+
+Volume Surge Detection:
+rate(windows_iis_requests_total[5m]) > avg_over_time(rate(windows_iis_requests_total[5m])[30m:]) * 2
+
+Success Rate:
+((sum(rate(windows_iis_requests_total[5m])) - sum(rate(windows_iis_server_errors_total[5m])) - sum(rate(windows_iis_client_errors_total[5m]))) / sum(rate(windows_iis_requests_total[5m]))) * 100
+
+Technical Exception %:
+(sum(rate(windows_netframework_exceptions_thrown_total[5m])) / sum(rate(windows_iis_requests_total[5m]))) * 100
+
+Response Time P95:
+histogram_quantile(0.95, sum(rate(windows_iis_request_execution_time_bucket[5m])) by (le))

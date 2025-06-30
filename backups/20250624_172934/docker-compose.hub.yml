@@ -1,0 +1,246 @@
+version: '3.8'
+
+services:
+  # Core Infrastructure
+  mysql-db:
+    image: mysql:8.0
+    container_name: banking-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: bankingdemo
+      MYSQL_DATABASE: bankingdb
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./mysql-init:/docker-entrypoint-initdb.d
+    networks:
+      - banking-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+
+  # Banking Services
+  api-gateway:
+    image: rishabhkumar2003/ddos-detection-banking-api-gateway:latest
+    container_name: banking-api-gateway
+    ports:
+      - "8080:8080"
+    environment:
+      - ACCOUNT_SERVICE_URL=http://account-service:8081
+      - TRANSACTION_SERVICE_URL=http://transaction-service:8082
+      - AUTH_SERVICE_URL=http://auth-service:8083
+      - NOTIFICATION_SERVICE_URL=http://notification-service:8084
+      - FRAUD_SERVICE_URL=http://fraud-detection:8085
+    depends_on:
+      - account-service
+      - transaction-service
+      - auth-service
+    networks:
+      - banking-network
+
+  account-service:
+    image: rishabhkumar2003/ddos-detection-banking-account-service:latest
+    container_name: banking-account-service
+    ports:
+      - "8081:8081"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-db:3306/accountdb
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=bankingdemo
+    depends_on:
+      mysql-db:
+        condition: service_healthy
+    networks:
+      - banking-network
+
+  transaction-service:
+    image: rishabhkumar2003/ddos-detection-banking-transaction-service:latest
+    container_name: banking-transaction-service
+    ports:
+      - "8082:8082"
+    environment:
+      - ACCOUNT_SERVICE_URL=http://account-service:8081
+    depends_on:
+      - account-service
+    networks:
+      - banking-network
+
+  auth-service:
+    image: rishabhkumar2003/ddos-detection-banking-auth-service:latest
+    container_name: banking-auth-service
+    ports:
+      - "8083:8083"
+    networks:
+      - banking-network
+
+  notification-service:
+    image: rishabhkumar2003/ddos-detection-banking-notification-service:latest
+    container_name: banking-notification-service
+    ports:
+      - "8084:8084"
+    networks:
+      - banking-network
+
+  fraud-detection:
+    image: rishabhkumar2003/ddos-detection-banking-fraud-detection:latest
+    container_name: banking-fraud-detection
+    ports:
+      - "8085:8085"
+    networks:
+      - banking-network
+
+  # ML Services
+  ddos-ml-detection:
+    image: rishabhkumar2003/ddos-detection-banking-ml-detection:latest
+    container_name: ddos-ml-detection
+    ports:
+      - "5001:5001"
+    networks:
+      - banking-network
+
+  auto-baselining:
+    image: rishabhkumar2003/ddos-detection-banking-auto-baselining:latest
+    container_name: auto-baselining-service
+    ports:
+      - "5002:5002"
+    environment:
+      - PROMETHEUS_URL=http://prometheus:9090
+    depends_on:
+      - prometheus
+    networks:
+      - banking-network
+
+  # Transaction Monitoring
+  transaction-monitor:
+    image: rishabhkumar2003/ddos-detection-banking-transaction-monitor:latest
+    container_name: transaction-performance-monitor
+    ports:
+      - "5003:5003"
+    environment:
+      - PROMETHEUS_URL=http://prometheus:9090
+      - BANKING_API_URL=http://api-gateway:8080
+    depends_on:
+      - prometheus
+      - api-gateway
+    networks:
+      - banking-network
+
+  performance-aggregator:
+    image: rishabhkumar2003/ddos-detection-banking-performance-aggregator:latest
+    container_name: performance-aggregator-service
+    ports:
+      - "5004:5004"
+    environment:
+      - PROMETHEUS_URL=http://prometheus:9090
+      - TRANSACTION_MONITOR_URL=http://transaction-monitor:5003
+    depends_on:
+      - prometheus
+      - transaction-monitor
+    networks:
+      - banking-network
+
+  anomaly-injector:
+    image: rishabhkumar2003/ddos-detection-banking-anomaly-injector:latest
+    container_name: anomaly-injector-service
+    ports:
+      - "5005:5005"
+    depends_on:
+      - api-gateway
+      - transaction-monitor
+    networks:
+      - banking-network
+
+  # Windows IIS Monitoring
+  mock-windows-exporter:
+    image: rishabhkumar2003/ddos-detection-banking-mock-windows-exporter:latest
+    container_name: mock-windows-exporter
+    ports:
+      - "9182:9182"
+    networks:
+      - banking-network
+
+  mock-iis-application:
+    image: rishabhkumar2003/ddos-detection-banking-mock-iis-application:latest
+    container_name: mock-iis-application
+    ports:
+      - "8090:8090"
+    networks:
+      - banking-network
+
+  # Monitoring Stack
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus:/etc/prometheus
+      - prometheus-data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention.time=200h'
+      - '--web.enable-lifecycle'
+    networks:
+      - banking-network
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=bankingdemo
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning
+    networks:
+      - banking-network
+
+  # System Monitoring
+  node-exporter:
+    image: prom/node-exporter:latest
+    container_name: node-exporter
+    ports:
+      - "9100:9100"
+    networks:
+      - banking-network
+
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:latest
+    container_name: cadvisor
+    ports:
+      - "8086:8080"
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    networks:
+      - banking-network
+
+  # Load Generator
+  load-generator:
+    image: rishabhkumar2003/ddos-detection-banking-load-generator:latest
+    container_name: banking-load-generator
+    environment:
+      - API_GATEWAY_URL=http://api-gateway:8080
+      - ENABLE_LOAD=true
+      - LOAD_INTENSITY=low
+    depends_on:
+      - api-gateway
+    networks:
+      - banking-network
+
+networks:
+  banking-network:
+    driver: bridge
+
+volumes:
+  mysql-data:
+  prometheus-data:
+  grafana-data:

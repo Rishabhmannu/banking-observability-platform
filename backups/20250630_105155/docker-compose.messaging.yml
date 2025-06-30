@@ -1,0 +1,167 @@
+version: '3.8'
+
+services:
+  # RabbitMQ - Primary Message Broker
+  rabbitmq:
+    image: rabbitmq:3.12-management
+    container_name: banking-rabbitmq
+    restart: unless-stopped
+    ports:
+      - "5672:5672"      # AMQP port
+      - "15672:15672"    # Management UI
+      - "15692:15692"    # Prometheus metrics
+    environment:
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: bankingdemo
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    networks:
+      - banking-network
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  # Zookeeper (Required for Kafka)
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.4.0
+    container_name: banking-zookeeper
+    restart: unless-stopped
+    ports:
+      - "2181:2181"
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    volumes:
+      - zookeeper_data:/var/lib/zookeeper/data
+      - zookeeper_logs:/var/lib/zookeeper/log
+    networks:
+      - banking-network
+
+  # Kafka - Event Streaming (Moderate Use)
+  kafka:
+    image: confluentinc/cp-kafka:7.4.0
+    container_name: banking-kafka
+    restart: unless-stopped
+    depends_on:
+      - zookeeper
+    ports:
+      - "9092:9092"
+      - "9101:9101"  # JMX port for metrics
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_INTERNAL:PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092,PLAINTEXT_INTERNAL://kafka:29092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_JMX_PORT: 9101
+      KAFKA_JMX_HOSTNAME: localhost
+      # Create default topics on startup
+      KAFKA_CREATE_TOPICS: "transaction.events:1:1,audit.logs:1:1"
+    volumes:
+      - kafka_data:/var/lib/kafka/data
+    networks:
+      - banking-network
+    healthcheck:
+      test: ["CMD", "kafka-topics", "--bootstrap-server", "localhost:9092", "--list"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  # Kafka Exporter for Prometheus
+  kafka-exporter:
+    image: danielqsj/kafka-exporter:latest
+    container_name: banking-kafka-exporter
+    restart: unless-stopped
+    depends_on:
+      - kafka
+    ports:
+      - "9308:9308"
+    command:
+      - '--kafka.server=kafka:29092'
+    networks:
+      - banking-network
+
+  # Message Producer Service
+  message-producer:
+    build: ./message-producer
+    container_name: banking-message-producer
+    restart: unless-stopped
+    ports:
+      - "5007:5007"    # Flask app
+      - "9415:9415"    # Metrics port
+    environment:
+      PYTHONUNBUFFERED: 1
+      PROMETHEUS_MULTIPROC_DIR: /tmp
+    networks:
+      - banking-network
+    depends_on:
+      - rabbitmq
+      - kafka
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5007/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Message Consumer Service
+  message-consumer:
+    build: ./message-consumer
+    container_name: banking-message-consumer
+    restart: unless-stopped
+    ports:
+      - "5008:5008"    # Flask app
+      - "9416:9416"    # Metrics port
+    environment:
+      PYTHONUNBUFFERED: 1
+      PROMETHEUS_MULTIPROC_DIR: /tmp
+    networks:
+      - banking-network
+    depends_on:
+      - rabbitmq
+      - kafka
+      - message-producer
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5008/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+# RabbitMQ Queue Monitor Service
+  rabbitmq-monitor:
+    build: ./rabbitmq-monitor
+    container_name: banking-rabbitmq-monitor
+    restart: unless-stopped
+    ports:
+      - "9418:9418"    # Metrics port
+    environment:
+      RABBITMQ_HOST: banking-rabbitmq
+      RABBITMQ_USER: admin
+      RABBITMQ_PASS: bankingdemo
+      RABBITMQ_MGMT_PORT: 15672
+      POLL_INTERVAL: 10
+      PYTHONUNBUFFERED: 1
+    networks:
+      - banking-network
+    depends_on:
+      - rabbitmq
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9418/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  rabbitmq_data:
+  zookeeper_data:
+  zookeeper_logs:
+  kafka_data:
+
+networks:
+  banking-network:
+    name: ddos-detection-system_banking-network
+    external: true

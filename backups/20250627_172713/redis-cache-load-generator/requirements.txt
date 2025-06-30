@@ -1,0 +1,22 @@
+# Redis Cache Load Generator Dependencies
+# Flask for web server and API
+flask==2.3.2
+
+# Redis client
+redis==4.5.5
+
+# Async support for load generation
+asyncio-throttle==1.0.2
+
+# Faker for generating realistic banking data
+faker==18.11.2
+
+# Prometheus metrics
+prometheus-client==0.17.0
+
+# Scheduling
+apscheduler==3.10.1
+
+# Utilities
+requests==2.31.0
+python-dotenv==1.0.0

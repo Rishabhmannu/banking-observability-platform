@@ -1,0 +1,71 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: banking-postgres
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: bankinguser
+      POSTGRES_PASSWORD: bankingpass
+      POSTGRES_DB: bankingdb
+      # Performance tuning for demo
+      POSTGRES_INITDB_ARGS: "--encoding=UTF8"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./db-connection-demo/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    networks:
+      - banking-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U bankinguser -d bankingdb"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # PostgreSQL Exporter for Prometheus
+  postgres-exporter:
+    image: prometheuscommunity/postgres-exporter:latest
+    container_name: banking-postgres-exporter
+    restart: unless-stopped
+    ports:
+      - "9187:9187"
+    environment:
+      DATA_SOURCE_NAME: "postgresql://bankinguser:bankingpass@postgres:5432/bankingdb?sslmode=disable"
+    networks:
+      - banking-network
+    depends_on:
+      - postgres
+
+  # DB Connection Demo Service
+  db-connection-demo:
+    build: ./db-connection-demo
+    container_name: banking-db-connection-demo
+    restart: unless-stopped
+    ports:
+      - "5009:5006"    # Flask app port # changed port 5009:5006
+      - "9417:9417"    # Metrics port
+    environment:
+      DATABASE_URL: "postgresql://bankinguser:bankingpass@postgres:5432/bankingdb"
+      POOL_MIN_SIZE: 5
+      POOL_MAX_SIZE: 20
+      PYTHONUNBUFFERED: 1
+    networks:
+      - banking-network
+    depends_on:
+      - postgres
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5006/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  postgres_data:
+
+networks:
+  banking-network:
+    name: ddos-detection-system_banking-network
+    external: true

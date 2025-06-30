@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "type": "db",
+    "canSave": true,
+    "canEdit": true,
+    "canAdmin": true,
+    "canStar": true,
+    "canDelete": true,
+    "slug": "f09faa9f-windows-iis-server-monitoring",
+    "url": "/d/98da661f-c2e0-40c1-804b-1497935df6e0/f09faa9f-windows-iis-server-monitoring",
+    "expires": "0001-01-01T00:00:00Z",
+    "created": "2025-06-16T05:33:27Z",
+    "updated": "2025-06-16T05:33:27Z",
+    "updatedBy": "admin",
+    "createdBy": "admin",
+    "version": 1,
+    "hasAcl": false,
+    "isFolder": false,
+    "apiVersion": "v0alpha1",
+    "folderId": 0,
+    "folderUid": "",
+    "folderTitle": "General",
+    "folderUrl": "",
+    "provisioned": false,
+    "provisionedExternalId": "",
+    "annotationsPermissions": {
+      "dashboard": {
+        "canAdd": true,
+        "canEdit": true,
+        "canDelete": true
+      },
+      "organization": {
+        "canAdd": true,
+        "canEdit": true,
+        "canDelete": true
+      }
+    }
+  },
+  "uid": "98da661f-c2e0-40c1-804b-1497935df6e0",
+  "version": 1
+}
