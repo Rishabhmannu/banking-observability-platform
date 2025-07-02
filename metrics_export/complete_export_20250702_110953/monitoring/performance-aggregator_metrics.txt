@@ -1,0 +1,105 @@
+# Metrics for performance-aggregator
+# Job: performance-aggregator
+# Category: monitoring
+# Exported at: 2025-07-02T11:09:53.954913
+# Total metrics: 44
+# Unique metric types: 27
+
+## aggregation_calculations_created
+aggregation_calculations_created{instance="performance-aggregator-service:5004",job="performance-aggregator"} 1751429118.3767467
+
+## aggregation_calculations_total
+aggregation_calculations_total{instance="performance-aggregator-service:5004",job="performance-aggregator"} 0
+
+## aggregation_processing_time_seconds_bucket
+aggregation_processing_time_seconds_bucket{instance="performance-aggregator-service:5004",job="performance-aggregator",le="0.1"} 0
+aggregation_processing_time_seconds_bucket{instance="performance-aggregator-service:5004",job="performance-aggregator",le="0.5"} 0
+aggregation_processing_time_seconds_bucket{instance="performance-aggregator-service:5004",job="performance-aggregator",le="1.0"} 0
+aggregation_processing_time_seconds_bucket{instance="performance-aggregator-service:5004",job="performance-aggregator",le="2.5"} 0
+aggregation_processing_time_seconds_bucket{instance="performance-aggregator-service:5004",job="performance-aggregator",le="5.0"} 0
+aggregation_processing_time_seconds_bucket{instance="performance-aggregator-service:5004",job="performance-aggregator",le="10.0"} 0
+aggregation_processing_time_seconds_bucket{instance="performance-aggregator-service:5004",job="performance-aggregator",le="+Inf"} 0
+
+## aggregation_processing_time_seconds_count
+aggregation_processing_time_seconds_count{instance="performance-aggregator-service:5004",job="performance-aggregator"} 0
+
+## aggregation_processing_time_seconds_created
+aggregation_processing_time_seconds_created{instance="performance-aggregator-service:5004",job="performance-aggregator"} 1751429118.3767772
+
+## aggregation_processing_time_seconds_sum
+aggregation_processing_time_seconds_sum{instance="performance-aggregator-service:5004",job="performance-aggregator"} 0
+
+## avg_transactions_per_user
+avg_transactions_per_user{instance="performance-aggregator-service:5004",job="performance-aggregator"} 0
+
+## business_hour_transaction_rate
+business_hour_transaction_rate{instance="performance-aggregator-service:5004",job="performance-aggregator"} 0
+
+## off_hour_transaction_rate
+off_hour_transaction_rate{instance="performance-aggregator-service:5004",job="performance-aggregator"} 0
+
+## process_cpu_seconds_total
+process_cpu_seconds_total{instance="performance-aggregator-service:5004",job="performance-aggregator"} 12.41
+
+## process_max_fds
+process_max_fds{instance="performance-aggregator-service:5004",job="performance-aggregator"} 1048576
+
+## process_open_fds
+process_open_fds{instance="performance-aggregator-service:5004",job="performance-aggregator"} 6
+
+## process_resident_memory_bytes
+process_resident_memory_bytes{instance="performance-aggregator-service:5004",job="performance-aggregator"} 143958016
+
+## process_start_time_seconds
+process_start_time_seconds{instance="performance-aggregator-service:5004",job="performance-aggregator"} 1751429114.85
+
+## process_virtual_memory_bytes
+process_virtual_memory_bytes{instance="performance-aggregator-service:5004",job="performance-aggregator"} 1160585216
+
+## python_gc_collections_total
+python_gc_collections_total{generation="0",instance="performance-aggregator-service:5004",job="performance-aggregator"} 320
+python_gc_collections_total{generation="1",instance="performance-aggregator-service:5004",job="performance-aggregator"} 29
+python_gc_collections_total{generation="2",instance="performance-aggregator-service:5004",job="performance-aggregator"} 2
+
+## python_gc_objects_collected_total
+python_gc_objects_collected_total{generation="0",instance="performance-aggregator-service:5004",job="performance-aggregator"} 3988
+python_gc_objects_collected_total{generation="1",instance="performance-aggregator-service:5004",job="performance-aggregator"} 825
+python_gc_objects_collected_total{generation="2",instance="performance-aggregator-service:5004",job="performance-aggregator"} 0
+
+## python_gc_objects_uncollectable_total
+python_gc_objects_uncollectable_total{generation="0",instance="performance-aggregator-service:5004",job="performance-aggregator"} 0
+python_gc_objects_uncollectable_total{generation="1",instance="performance-aggregator-service:5004",job="performance-aggregator"} 0
+python_gc_objects_uncollectable_total{generation="2",instance="performance-aggregator-service:5004",job="performance-aggregator"} 0
+
+## python_info
+python_info{implementation="CPython",instance="performance-aggregator-service:5004",job="performance-aggregator",major="3",minor="9",patchlevel="23",version="3.9.23"} 1
+
+## scrape_duration_seconds
+scrape_duration_seconds{instance="performance-aggregator-service:5004",job="performance-aggregator"} 0.041637875
+
+## scrape_samples_post_metric_relabeling
+scrape_samples_post_metric_relabeling{instance="performance-aggregator-service:5004",job="performance-aggregator"} 39
+
+## scrape_samples_scraped
+scrape_samples_scraped{instance="performance-aggregator-service:5004",job="performance-aggregator"} 39
+
+## scrape_series_added
+scrape_series_added{instance="performance-aggregator-service:5004",job="performance-aggregator"} 0
+
+## slo_compliance_percentage
+slo_compliance_percentage{instance="performance-aggregator-service:5004",job="performance-aggregator",slo_type="response_time_p95"} 0
+slo_compliance_percentage{instance="performance-aggregator-service:5004",job="performance-aggregator",slo_type="error_rate"} 100
+slo_compliance_percentage{instance="performance-aggregator-service:5004",job="performance-aggregator",slo_type="availability"} 100
+
+## transaction_anomaly_score
+transaction_anomaly_score{instance="performance-aggregator-service:5004",job="performance-aggregator"} 0
+
+## transaction_performance_score
+transaction_performance_score{category="latency",instance="performance-aggregator-service:5004",job="performance-aggregator"} 0
+transaction_performance_score{category="reliability",instance="performance-aggregator-service:5004",job="performance-aggregator"} 0
+transaction_performance_score{category="throughput",instance="performance-aggregator-service:5004",job="performance-aggregator"} 0
+transaction_performance_score{category="overall",instance="performance-aggregator-service:5004",job="performance-aggregator"} 0
+
+## up
+up{instance="performance-aggregator-service:5004",job="performance-aggregator"} 1
+

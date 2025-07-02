@@ -1,0 +1,1328 @@
+# Metrics for redis-exporter
+# Job: redis-exporter
+# Category: cache
+# Exported at: 2025-07-02T11:09:53.994813
+# Total metrics: 675
+# Unique metric types: 323
+
+## go_cgo_go_to_c_calls_calls_total
+go_cgo_go_to_c_calls_calls_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_cpu_classes_gc_mark_assist_cpu_seconds_total
+go_cpu_classes_gc_mark_assist_cpu_seconds_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0.130576836
+
+## go_cpu_classes_gc_mark_dedicated_cpu_seconds_total
+go_cpu_classes_gc_mark_dedicated_cpu_seconds_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 1.234097636
+
+## go_cpu_classes_gc_mark_idle_cpu_seconds_total
+go_cpu_classes_gc_mark_idle_cpu_seconds_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0.198071343
+
+## go_cpu_classes_gc_pause_cpu_seconds_total
+go_cpu_classes_gc_pause_cpu_seconds_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 4.353269825
+
+## go_cpu_classes_gc_total_cpu_seconds_total
+go_cpu_classes_gc_total_cpu_seconds_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 5.91601564
+
+## go_cpu_classes_idle_cpu_seconds_total
+go_cpu_classes_idle_cpu_seconds_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 57029.447124714
+
+## go_cpu_classes_scavenge_assist_cpu_seconds_total
+go_cpu_classes_scavenge_assist_cpu_seconds_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 2.09e-07
+
+## go_cpu_classes_scavenge_background_cpu_seconds_total
+go_cpu_classes_scavenge_background_cpu_seconds_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0.122932185
+
+## go_cpu_classes_scavenge_total_cpu_seconds_total
+go_cpu_classes_scavenge_total_cpu_seconds_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0.122932394
+
+## go_cpu_classes_total_cpu_seconds_total
+go_cpu_classes_total_cpu_seconds_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 57050.85656931
+
+## go_cpu_classes_user_cpu_seconds_total
+go_cpu_classes_user_cpu_seconds_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 15.370496562
+
+## go_gc_cycles_automatic_gc_cycles_total
+go_gc_cycles_automatic_gc_cycles_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 329
+
+## go_gc_cycles_forced_gc_cycles_total
+go_gc_cycles_forced_gc_cycles_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_gc_cycles_total_gc_cycles_total
+go_gc_cycles_total_gc_cycles_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 329
+
+## go_gc_duration_seconds
+go_gc_duration_seconds{instance="banking-redis-exporter:9121",job="redis-exporter",quantile="0.0"} 0.000083625
+go_gc_duration_seconds{instance="banking-redis-exporter:9121",job="redis-exporter",quantile="0.25"} 0.000633583
+go_gc_duration_seconds{instance="banking-redis-exporter:9121",job="redis-exporter",quantile="0.5"} 0.001003334
+go_gc_duration_seconds{instance="banking-redis-exporter:9121",job="redis-exporter",quantile="0.75"} 0.001566792
+go_gc_duration_seconds{instance="banking-redis-exporter:9121",job="redis-exporter",quantile="1.0"} 0.008956625
+
+## go_gc_duration_seconds_count
+go_gc_duration_seconds_count{instance="banking-redis-exporter:9121",job="redis-exporter"} 329
+
+## go_gc_duration_seconds_sum
+go_gc_duration_seconds_sum{instance="banking-redis-exporter:9121",job="redis-exporter"} 0.460950136
+
+## go_gc_gogc_percent
+go_gc_gogc_percent{instance="banking-redis-exporter:9121",job="redis-exporter"} 100
+
+## go_gc_gomemlimit_bytes
+go_gc_gomemlimit_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 9223372036854776000
+
+## go_gc_heap_allocs_by_size_bytes_bucket
+go_gc_heap_allocs_by_size_bytes_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="8.999999999999998"} 163468
+go_gc_heap_allocs_by_size_bytes_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="24.999999999999996"} 1821562
+go_gc_heap_allocs_by_size_bytes_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="64.99999999999999"} 2542653
+go_gc_heap_allocs_by_size_bytes_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="144.99999999999997"} 3041064
+go_gc_heap_allocs_by_size_bytes_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="320.99999999999994"} 3080904
+go_gc_heap_allocs_by_size_bytes_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="704.9999999999999"} 3093410
+go_gc_heap_allocs_by_size_bytes_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="1536.9999999999998"} 3101148
+go_gc_heap_allocs_by_size_bytes_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="3200.9999999999995"} 3105331
+go_gc_heap_allocs_by_size_bytes_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="6528.999999999999"} 3111173
+go_gc_heap_allocs_by_size_bytes_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="13568.999999999998"} 3114242
+go_gc_heap_allocs_by_size_bytes_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="27264.999999999996"} 3115378
+go_gc_heap_allocs_by_size_bytes_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="+Inf"} 3116788
+
+## go_gc_heap_allocs_by_size_bytes_count
+go_gc_heap_allocs_by_size_bytes_count{instance="banking-redis-exporter:9121",job="redis-exporter"} 3116788
+
+## go_gc_heap_allocs_by_size_bytes_sum
+go_gc_heap_allocs_by_size_bytes_sum{instance="banking-redis-exporter:9121",job="redis-exporter"} 468570352
+
+## go_gc_heap_allocs_bytes_total
+go_gc_heap_allocs_bytes_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 468570352
+
+## go_gc_heap_allocs_objects_total
+go_gc_heap_allocs_objects_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 3116788
+
+## go_gc_heap_frees_by_size_bytes_bucket
+go_gc_heap_frees_by_size_bytes_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="8.999999999999998"} 163009
+go_gc_heap_frees_by_size_bytes_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="24.999999999999996"} 1817361
+go_gc_heap_frees_by_size_bytes_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="64.99999999999999"} 2535174
+go_gc_heap_frees_by_size_bytes_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="144.99999999999997"} 3031220
+go_gc_heap_frees_by_size_bytes_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="320.99999999999994"} 3070822
+go_gc_heap_frees_by_size_bytes_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="704.9999999999999"} 3082935
+go_gc_heap_frees_by_size_bytes_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="1536.9999999999998"} 3090490
+go_gc_heap_frees_by_size_bytes_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="3200.9999999999995"} 3094626
+go_gc_heap_frees_by_size_bytes_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="6528.999999999999"} 3100444
+go_gc_heap_frees_by_size_bytes_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="13568.999999999998"} 3103493
+go_gc_heap_frees_by_size_bytes_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="27264.999999999996"} 3104625
+go_gc_heap_frees_by_size_bytes_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="+Inf"} 3106023
+
+## go_gc_heap_frees_by_size_bytes_count
+go_gc_heap_frees_by_size_bytes_count{instance="banking-redis-exporter:9121",job="redis-exporter"} 3106023
+
+## go_gc_heap_frees_by_size_bytes_sum
+go_gc_heap_frees_by_size_bytes_sum{instance="banking-redis-exporter:9121",job="redis-exporter"} 464655576
+
+## go_gc_heap_frees_bytes_total
+go_gc_heap_frees_bytes_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 464655576
+
+## go_gc_heap_frees_objects_total
+go_gc_heap_frees_objects_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 3106023
+
+## go_gc_heap_goal_bytes
+go_gc_heap_goal_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 6391586
+
+## go_gc_heap_live_bytes
+go_gc_heap_live_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 3052400
+
+## go_gc_heap_objects_objects
+go_gc_heap_objects_objects{instance="banking-redis-exporter:9121",job="redis-exporter"} 10765
+
+## go_gc_heap_tiny_allocs_objects_total
+go_gc_heap_tiny_allocs_objects_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 445935
+
+## go_gc_limiter_last_enabled_gc_cycle
+go_gc_limiter_last_enabled_gc_cycle{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_gc_pauses_seconds_bucket
+go_gc_pauses_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="6.399999999999999e-08"} 0
+go_gc_pauses_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="6.399999999999999e-07"} 0
+go_gc_pauses_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="7.167999999999999e-06"} 17
+go_gc_pauses_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="8.191999999999999e-05"} 210
+go_gc_pauses_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="0.0009175039999999999"} 486
+go_gc_pauses_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="0.010485759999999998"} 658
+go_gc_pauses_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="0.11744051199999998"} 658
+go_gc_pauses_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="+Inf"} 658
+
+## go_gc_pauses_seconds_count
+go_gc_pauses_seconds_count{instance="banking-redis-exporter:9121",job="redis-exporter"} 658
+
+## go_gc_pauses_seconds_sum
+go_gc_pauses_seconds_sum{instance="banking-redis-exporter:9121",job="redis-exporter"} 0.181814912
+
+## go_gc_scan_globals_bytes
+go_gc_scan_globals_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 269570
+
+## go_gc_scan_heap_bytes
+go_gc_scan_heap_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 1473768
+
+## go_gc_scan_stack_bytes
+go_gc_scan_stack_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 17216
+
+## go_gc_scan_total_bytes
+go_gc_scan_total_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 1760554
+
+## go_gc_stack_starting_size_bytes
+go_gc_stack_starting_size_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 2048
+
+## go_godebug_non_default_behavior_asynctimerchan_events_total
+go_godebug_non_default_behavior_asynctimerchan_events_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_godebug_non_default_behavior_execerrdot_events_total
+go_godebug_non_default_behavior_execerrdot_events_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_godebug_non_default_behavior_gocachehash_events_total
+go_godebug_non_default_behavior_gocachehash_events_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_godebug_non_default_behavior_gocachetest_events_total
+go_godebug_non_default_behavior_gocachetest_events_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_godebug_non_default_behavior_gocacheverify_events_total
+go_godebug_non_default_behavior_gocacheverify_events_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_godebug_non_default_behavior_gotestjsonbuildtext_events_total
+go_godebug_non_default_behavior_gotestjsonbuildtext_events_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_godebug_non_default_behavior_gotypesalias_events_total
+go_godebug_non_default_behavior_gotypesalias_events_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_godebug_non_default_behavior_http2client_events_total
+go_godebug_non_default_behavior_http2client_events_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_godebug_non_default_behavior_http2server_events_total
+go_godebug_non_default_behavior_http2server_events_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_godebug_non_default_behavior_httplaxcontentlength_events_total
+go_godebug_non_default_behavior_httplaxcontentlength_events_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_godebug_non_default_behavior_httpmuxgo121_events_total
+go_godebug_non_default_behavior_httpmuxgo121_events_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_godebug_non_default_behavior_httpservecontentkeepheaders_events_total
+go_godebug_non_default_behavior_httpservecontentkeepheaders_events_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_godebug_non_default_behavior_installgoroot_events_total
+go_godebug_non_default_behavior_installgoroot_events_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_godebug_non_default_behavior_multipartmaxheaders_events_total
+go_godebug_non_default_behavior_multipartmaxheaders_events_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_godebug_non_default_behavior_multipartmaxparts_events_total
+go_godebug_non_default_behavior_multipartmaxparts_events_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_godebug_non_default_behavior_multipathtcp_events_total
+go_godebug_non_default_behavior_multipathtcp_events_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 1
+
+## go_godebug_non_default_behavior_netedns0_events_total
+go_godebug_non_default_behavior_netedns0_events_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_godebug_non_default_behavior_panicnil_events_total
+go_godebug_non_default_behavior_panicnil_events_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_godebug_non_default_behavior_randautoseed_events_total
+go_godebug_non_default_behavior_randautoseed_events_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_godebug_non_default_behavior_randseednop_events_total
+go_godebug_non_default_behavior_randseednop_events_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_godebug_non_default_behavior_rsa1024min_events_total
+go_godebug_non_default_behavior_rsa1024min_events_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_godebug_non_default_behavior_tarinsecurepath_events_total
+go_godebug_non_default_behavior_tarinsecurepath_events_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_godebug_non_default_behavior_tls10server_events_total
+go_godebug_non_default_behavior_tls10server_events_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_godebug_non_default_behavior_tls3des_events_total
+go_godebug_non_default_behavior_tls3des_events_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_godebug_non_default_behavior_tlsmaxrsasize_events_total
+go_godebug_non_default_behavior_tlsmaxrsasize_events_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_godebug_non_default_behavior_tlsrsakex_events_total
+go_godebug_non_default_behavior_tlsrsakex_events_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_godebug_non_default_behavior_tlsunsafeekm_events_total
+go_godebug_non_default_behavior_tlsunsafeekm_events_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_godebug_non_default_behavior_winreadlinkvolume_events_total
+go_godebug_non_default_behavior_winreadlinkvolume_events_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_godebug_non_default_behavior_winsymlink_events_total
+go_godebug_non_default_behavior_winsymlink_events_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_godebug_non_default_behavior_x509keypairleaf_events_total
+go_godebug_non_default_behavior_x509keypairleaf_events_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_godebug_non_default_behavior_x509negativeserial_events_total
+go_godebug_non_default_behavior_x509negativeserial_events_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_godebug_non_default_behavior_x509rsacrt_events_total
+go_godebug_non_default_behavior_x509rsacrt_events_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_godebug_non_default_behavior_x509usefallbackroots_events_total
+go_godebug_non_default_behavior_x509usefallbackroots_events_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_godebug_non_default_behavior_x509usepolicies_events_total
+go_godebug_non_default_behavior_x509usepolicies_events_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_godebug_non_default_behavior_zipinsecurepath_events_total
+go_godebug_non_default_behavior_zipinsecurepath_events_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_goroutines
+go_goroutines{instance="banking-redis-exporter:9121",job="redis-exporter"} 8
+
+## go_info
+go_info{instance="banking-redis-exporter:9121",job="redis-exporter",version="go1.24.4"} 1
+
+## go_memory_classes_heap_free_bytes
+go_memory_classes_heap_free_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 1482752
+
+## go_memory_classes_heap_objects_bytes
+go_memory_classes_heap_objects_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 3914776
+
+## go_memory_classes_heap_released_bytes
+go_memory_classes_heap_released_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 4022272
+
+## go_memory_classes_heap_stacks_bytes
+go_memory_classes_heap_stacks_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 1114112
+
+## go_memory_classes_heap_unused_bytes
+go_memory_classes_heap_unused_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 2049000
+
+## go_memory_classes_metadata_mcache_free_bytes
+go_memory_classes_metadata_mcache_free_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 3624
+
+## go_memory_classes_metadata_mcache_inuse_bytes
+go_memory_classes_metadata_mcache_inuse_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 12080
+
+## go_memory_classes_metadata_mspan_free_bytes
+go_memory_classes_metadata_mspan_free_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 39680
+
+## go_memory_classes_metadata_mspan_inuse_bytes
+go_memory_classes_metadata_mspan_inuse_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 172480
+
+## go_memory_classes_metadata_other_bytes
+go_memory_classes_metadata_other_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 3019496
+
+## go_memory_classes_os_stacks_bytes
+go_memory_classes_os_stacks_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_memory_classes_other_bytes
+go_memory_classes_other_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 1687193
+
+## go_memory_classes_profiling_buckets_bytes
+go_memory_classes_profiling_buckets_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 4215
+
+## go_memory_classes_total_bytes
+go_memory_classes_total_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 17521680
+
+## go_memstats_alloc_bytes
+go_memstats_alloc_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 3914776
+
+## go_memstats_alloc_bytes_total
+go_memstats_alloc_bytes_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 468570352
+
+## go_memstats_buck_hash_sys_bytes
+go_memstats_buck_hash_sys_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 4215
+
+## go_memstats_frees_total
+go_memstats_frees_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 3551958
+
+## go_memstats_gc_sys_bytes
+go_memstats_gc_sys_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 3019496
+
+## go_memstats_heap_alloc_bytes
+go_memstats_heap_alloc_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 3914776
+
+## go_memstats_heap_idle_bytes
+go_memstats_heap_idle_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 5505024
+
+## go_memstats_heap_inuse_bytes
+go_memstats_heap_inuse_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 5963776
+
+## go_memstats_heap_objects
+go_memstats_heap_objects{instance="banking-redis-exporter:9121",job="redis-exporter"} 10765
+
+## go_memstats_heap_released_bytes
+go_memstats_heap_released_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 4022272
+
+## go_memstats_heap_sys_bytes
+go_memstats_heap_sys_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 11468800
+
+## go_memstats_last_gc_time_seconds
+go_memstats_last_gc_time_seconds{instance="banking-redis-exporter:9121",job="redis-exporter"} 1751434777.3046308
+
+## go_memstats_mallocs_total
+go_memstats_mallocs_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 3562723
+
+## go_memstats_mcache_inuse_bytes
+go_memstats_mcache_inuse_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 12080
+
+## go_memstats_mcache_sys_bytes
+go_memstats_mcache_sys_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 15704
+
+## go_memstats_mspan_inuse_bytes
+go_memstats_mspan_inuse_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 172480
+
+## go_memstats_mspan_sys_bytes
+go_memstats_mspan_sys_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 212160
+
+## go_memstats_next_gc_bytes
+go_memstats_next_gc_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 6391586
+
+## go_memstats_other_sys_bytes
+go_memstats_other_sys_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 1687193
+
+## go_memstats_stack_inuse_bytes
+go_memstats_stack_inuse_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 1114112
+
+## go_memstats_stack_sys_bytes
+go_memstats_stack_sys_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 1114112
+
+## go_memstats_sys_bytes
+go_memstats_sys_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 17521680
+
+## go_sched_gomaxprocs_threads
+go_sched_gomaxprocs_threads{instance="banking-redis-exporter:9121",job="redis-exporter"} 10
+
+## go_sched_goroutines_goroutines
+go_sched_goroutines_goroutines{instance="banking-redis-exporter:9121",job="redis-exporter"} 9
+
+## go_sched_latencies_seconds_bucket
+go_sched_latencies_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="6.399999999999999e-08"} 5313
+go_sched_latencies_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="6.399999999999999e-07"} 5993
+go_sched_latencies_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="7.167999999999999e-06"} 6554
+go_sched_latencies_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="8.191999999999999e-05"} 7554
+go_sched_latencies_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="0.0009175039999999999"} 8344
+go_sched_latencies_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="0.010485759999999998"} 8556
+go_sched_latencies_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="0.11744051199999998"} 8556
+go_sched_latencies_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="+Inf"} 8556
+
+## go_sched_latencies_seconds_count
+go_sched_latencies_seconds_count{instance="banking-redis-exporter:9121",job="redis-exporter"} 8556
+
+## go_sched_latencies_seconds_sum
+go_sched_latencies_seconds_sum{instance="banking-redis-exporter:9121",job="redis-exporter"} 0.266798208
+
+## go_sched_pauses_stopping_gc_seconds_bucket
+go_sched_pauses_stopping_gc_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="6.399999999999999e-08"} 0
+go_sched_pauses_stopping_gc_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="6.399999999999999e-07"} 0
+go_sched_pauses_stopping_gc_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="7.167999999999999e-06"} 96
+go_sched_pauses_stopping_gc_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="8.191999999999999e-05"} 386
+go_sched_pauses_stopping_gc_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="0.0009175039999999999"} 637
+go_sched_pauses_stopping_gc_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="0.010485759999999998"} 658
+go_sched_pauses_stopping_gc_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="0.11744051199999998"} 658
+go_sched_pauses_stopping_gc_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="+Inf"} 658
+
+## go_sched_pauses_stopping_gc_seconds_count
+go_sched_pauses_stopping_gc_seconds_count{instance="banking-redis-exporter:9121",job="redis-exporter"} 658
+
+## go_sched_pauses_stopping_gc_seconds_sum
+go_sched_pauses_stopping_gc_seconds_sum{instance="banking-redis-exporter:9121",job="redis-exporter"} 0.041969664
+
+## go_sched_pauses_stopping_other_seconds_bucket
+go_sched_pauses_stopping_other_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="6.399999999999999e-08"} 0
+go_sched_pauses_stopping_other_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="6.399999999999999e-07"} 0
+go_sched_pauses_stopping_other_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="7.167999999999999e-06"} 0
+go_sched_pauses_stopping_other_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="8.191999999999999e-05"} 0
+go_sched_pauses_stopping_other_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="0.0009175039999999999"} 0
+go_sched_pauses_stopping_other_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="0.010485759999999998"} 0
+go_sched_pauses_stopping_other_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="0.11744051199999998"} 0
+go_sched_pauses_stopping_other_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="+Inf"} 0
+
+## go_sched_pauses_stopping_other_seconds_count
+go_sched_pauses_stopping_other_seconds_count{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_sched_pauses_stopping_other_seconds_sum
+go_sched_pauses_stopping_other_seconds_sum{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_sched_pauses_total_gc_seconds_bucket
+go_sched_pauses_total_gc_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="6.399999999999999e-08"} 0
+go_sched_pauses_total_gc_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="6.399999999999999e-07"} 0
+go_sched_pauses_total_gc_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="7.167999999999999e-06"} 17
+go_sched_pauses_total_gc_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="8.191999999999999e-05"} 210
+go_sched_pauses_total_gc_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="0.0009175039999999999"} 486
+go_sched_pauses_total_gc_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="0.010485759999999998"} 658
+go_sched_pauses_total_gc_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="0.11744051199999998"} 658
+go_sched_pauses_total_gc_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="+Inf"} 658
+
+## go_sched_pauses_total_gc_seconds_count
+go_sched_pauses_total_gc_seconds_count{instance="banking-redis-exporter:9121",job="redis-exporter"} 658
+
+## go_sched_pauses_total_gc_seconds_sum
+go_sched_pauses_total_gc_seconds_sum{instance="banking-redis-exporter:9121",job="redis-exporter"} 0.181814912
+
+## go_sched_pauses_total_other_seconds_bucket
+go_sched_pauses_total_other_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="6.399999999999999e-08"} 0
+go_sched_pauses_total_other_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="6.399999999999999e-07"} 0
+go_sched_pauses_total_other_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="7.167999999999999e-06"} 0
+go_sched_pauses_total_other_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="8.191999999999999e-05"} 0
+go_sched_pauses_total_other_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="0.0009175039999999999"} 0
+go_sched_pauses_total_other_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="0.010485759999999998"} 0
+go_sched_pauses_total_other_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="0.11744051199999998"} 0
+go_sched_pauses_total_other_seconds_bucket{instance="banking-redis-exporter:9121",job="redis-exporter",le="+Inf"} 0
+
+## go_sched_pauses_total_other_seconds_count
+go_sched_pauses_total_other_seconds_count{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_sched_pauses_total_other_seconds_sum
+go_sched_pauses_total_other_seconds_sum{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## go_sync_mutex_wait_total_seconds_total
+go_sync_mutex_wait_total_seconds_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0.212834184
+
+## go_threads
+go_threads{instance="banking-redis-exporter:9121",job="redis-exporter"} 15
+
+## process_cpu_seconds_total
+process_cpu_seconds_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 14.23
+
+## process_max_fds
+process_max_fds{instance="banking-redis-exporter:9121",job="redis-exporter"} 1048576
+
+## process_network_receive_bytes_total
+process_network_receive_bytes_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 6882729
+
+## process_network_transmit_bytes_total
+process_network_transmit_bytes_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 5798394
+
+## process_open_fds
+process_open_fds{instance="banking-redis-exporter:9121",job="redis-exporter"} 7
+
+## process_resident_memory_bytes
+process_resident_memory_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 19587072
+
+## process_start_time_seconds
+process_start_time_seconds{instance="banking-redis-exporter:9121",job="redis-exporter"} 1751429071.66
+
+## process_virtual_memory_bytes
+process_virtual_memory_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 1265270784
+
+## process_virtual_memory_max_bytes
+process_virtual_memory_max_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 18446744073709552000
+
+## redis_acl_access_denied_auth_total
+redis_acl_access_denied_auth_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_acl_access_denied_channel_total
+redis_acl_access_denied_channel_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_acl_access_denied_cmd_total
+redis_acl_access_denied_cmd_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_acl_access_denied_key_total
+redis_acl_access_denied_key_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_active_defrag_running
+redis_active_defrag_running{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_allocator_active_bytes
+redis_allocator_active_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 14155776
+
+## redis_allocator_allocated_bytes
+redis_allocator_allocated_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 3556912
+
+## redis_allocator_frag_bytes
+redis_allocator_frag_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 7509200
+
+## redis_allocator_frag_ratio
+redis_allocator_frag_ratio{instance="banking-redis-exporter:9121",job="redis-exporter"} 5.89
+
+## redis_allocator_muzzy_bytes
+redis_allocator_muzzy_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_allocator_resident_bytes
+redis_allocator_resident_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 16777216
+
+## redis_allocator_rss_bytes
+redis_allocator_rss_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 2621440
+
+## redis_allocator_rss_ratio
+redis_allocator_rss_ratio{instance="banking-redis-exporter:9121",job="redis-exporter"} 1.19
+
+## redis_aof_current_rewrite_duration_sec
+redis_aof_current_rewrite_duration_sec{instance="banking-redis-exporter:9121",job="redis-exporter"} -1
+
+## redis_aof_enabled
+redis_aof_enabled{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_aof_last_bgrewrite_status
+redis_aof_last_bgrewrite_status{instance="banking-redis-exporter:9121",job="redis-exporter"} 1
+
+## redis_aof_last_cow_size_bytes
+redis_aof_last_cow_size_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_aof_last_rewrite_duration_sec
+redis_aof_last_rewrite_duration_sec{instance="banking-redis-exporter:9121",job="redis-exporter"} -1
+
+## redis_aof_last_write_status
+redis_aof_last_write_status{instance="banking-redis-exporter:9121",job="redis-exporter"} 1
+
+## redis_aof_rewrite_in_progress
+redis_aof_rewrite_in_progress{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_aof_rewrite_scheduled
+redis_aof_rewrite_scheduled{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_async_loading
+redis_async_loading{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_blocked_clients
+redis_blocked_clients{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_client_output_buffer_limit_disconnections_total
+redis_client_output_buffer_limit_disconnections_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_client_query_buffer_limit_disconnections_total
+redis_client_query_buffer_limit_disconnections_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_client_recent_max_input_buffer_bytes
+redis_client_recent_max_input_buffer_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 20480
+
+## redis_client_recent_max_output_buffer_bytes
+redis_client_recent_max_output_buffer_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_clients_in_timeout_table
+redis_clients_in_timeout_table{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_cluster_connections
+redis_cluster_connections{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_cluster_enabled
+redis_cluster_enabled{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_commands_duration_seconds_total
+redis_commands_duration_seconds_total{cmd="client|setname",instance="banking-redis-exporter:9121",job="redis-exporter"} 0.012217
+redis_commands_duration_seconds_total{cmd="config|get",instance="banking-redis-exporter:9121",job="redis-exporter"} 0.200611
+redis_commands_duration_seconds_total{cmd="ping",instance="banking-redis-exporter:9121",job="redis-exporter"} 0.013029
+redis_commands_duration_seconds_total{cmd="info",instance="banking-redis-exporter:9121",job="redis-exporter"} 0.361637
+redis_commands_duration_seconds_total{cmd="latency|histogram",instance="banking-redis-exporter:9121",job="redis-exporter"} 0.103762
+redis_commands_duration_seconds_total{cmd="latency|latest",instance="banking-redis-exporter:9121",job="redis-exporter"} 0.00804
+redis_commands_duration_seconds_total{cmd="slowlog|get",instance="banking-redis-exporter:9121",job="redis-exporter"} 0.006976
+redis_commands_duration_seconds_total{cmd="slowlog|len",instance="banking-redis-exporter:9121",job="redis-exporter"} 0.006236
+redis_commands_duration_seconds_total{cmd="scan",instance="banking-redis-exporter:9121",job="redis-exporter"} 0.008356
+redis_commands_duration_seconds_total{cmd="keys",instance="banking-redis-exporter:9121",job="redis-exporter"} 0.031668
+redis_commands_duration_seconds_total{cmd="get",instance="banking-redis-exporter:9121",job="redis-exporter"} 0.04934
+redis_commands_duration_seconds_total{cmd="setex",instance="banking-redis-exporter:9121",job="redis-exporter"} 0.002655
+
+## redis_commands_failed_calls_total
+redis_commands_failed_calls_total{cmd="client|setname",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_commands_failed_calls_total{cmd="config|get",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_commands_failed_calls_total{cmd="ping",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_commands_failed_calls_total{cmd="info",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_commands_failed_calls_total{cmd="latency|histogram",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_commands_failed_calls_total{cmd="latency|latest",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_commands_failed_calls_total{cmd="slowlog|get",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_commands_failed_calls_total{cmd="slowlog|len",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_commands_failed_calls_total{cmd="scan",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_commands_failed_calls_total{cmd="keys",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_commands_failed_calls_total{cmd="get",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_commands_failed_calls_total{cmd="setex",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_commands_latencies_usec_bucket
+redis_commands_latencies_usec_bucket{cmd="client|setname",instance="banking-redis-exporter:9121",job="redis-exporter",le="33.0"} 293
+redis_commands_latencies_usec_bucket{cmd="client|setname",instance="banking-redis-exporter:9121",job="redis-exporter",le="+Inf"} 382
+redis_commands_latencies_usec_bucket{cmd="config|get",instance="banking-redis-exporter:9121",job="redis-exporter",le="528.0"} 295
+redis_commands_latencies_usec_bucket{cmd="config|get",instance="banking-redis-exporter:9121",job="redis-exporter",le="+Inf"} 382
+redis_commands_latencies_usec_bucket{cmd="info",instance="banking-redis-exporter:9121",job="redis-exporter",le="528.0"} 731
+redis_commands_latencies_usec_bucket{cmd="info",instance="banking-redis-exporter:9121",job="redis-exporter",le="+Inf"} 952
+redis_commands_latencies_usec_bucket{cmd="latency|latest",instance="banking-redis-exporter:9121",job="redis-exporter",le="264.0"} 379
+redis_commands_latencies_usec_bucket{cmd="latency|latest",instance="banking-redis-exporter:9121",job="redis-exporter",le="+Inf"} 382
+redis_commands_latencies_usec_bucket{cmd="ping",instance="banking-redis-exporter:9121",job="redis-exporter",le="1.0"} 132
+redis_commands_latencies_usec_bucket{cmd="ping",instance="banking-redis-exporter:9121",job="redis-exporter",le="16.0"} 373
+redis_commands_latencies_usec_bucket{cmd="ping",instance="banking-redis-exporter:9121",job="redis-exporter",le="33.0"} 514
+redis_commands_latencies_usec_bucket{cmd="ping",instance="banking-redis-exporter:9121",job="redis-exporter",le="66.0"} 539
+redis_commands_latencies_usec_bucket{cmd="ping",instance="banking-redis-exporter:9121",job="redis-exporter",le="132.0"} 558
+redis_commands_latencies_usec_bucket{cmd="ping",instance="banking-redis-exporter:9121",job="redis-exporter",le="264.0"} 577
+redis_commands_latencies_usec_bucket{cmd="ping",instance="banking-redis-exporter:9121",job="redis-exporter",le="+Inf"} 581
+redis_commands_latencies_usec_bucket{cmd="client|setname",instance="banking-redis-exporter:9121",job="redis-exporter",le="132.0"} 368
+redis_commands_latencies_usec_bucket{cmd="config|get",instance="banking-redis-exporter:9121",job="redis-exporter",le="1056.0"} 353
+redis_commands_latencies_usec_bucket{cmd="info",instance="banking-redis-exporter:9121",job="redis-exporter",le="1056.0"} 902
+redis_commands_latencies_usec_bucket{cmd="latency|histogram",instance="banking-redis-exporter:9121",job="redis-exporter",le="132.0"} 1
+redis_commands_latencies_usec_bucket{cmd="latency|histogram",instance="banking-redis-exporter:9121",job="redis-exporter",le="+Inf"} 381
+redis_commands_latencies_usec_bucket{cmd="latency|latest",instance="banking-redis-exporter:9121",job="redis-exporter",le="33.0"} 347
+redis_commands_latencies_usec_bucket{cmd="slowlog|get",instance="banking-redis-exporter:9121",job="redis-exporter",le="8.0"} 67
+redis_commands_latencies_usec_bucket{cmd="slowlog|get",instance="banking-redis-exporter:9121",job="redis-exporter",le="+Inf"} 381
+redis_commands_latencies_usec_bucket{cmd="slowlog|len",instance="banking-redis-exporter:9121",job="redis-exporter",le="33.0"} 360
+redis_commands_latencies_usec_bucket{cmd="slowlog|len",instance="banking-redis-exporter:9121",job="redis-exporter",le="+Inf"} 381
+redis_commands_latencies_usec_bucket{cmd="client|setname",instance="banking-redis-exporter:9121",job="redis-exporter",le="16.0"} 184
+redis_commands_latencies_usec_bucket{cmd="latency|histogram",instance="banking-redis-exporter:9121",job="redis-exporter",le="528.0"} 373
+redis_commands_latencies_usec_bucket{cmd="latency|latest",instance="banking-redis-exporter:9121",job="redis-exporter",le="16.0"} 277
+redis_commands_latencies_usec_bucket{cmd="ping",instance="banking-redis-exporter:9121",job="redis-exporter",le="2.0"} 164
+redis_commands_latencies_usec_bucket{cmd="slowlog|get",instance="banking-redis-exporter:9121",job="redis-exporter",le="264.0"} 380
+redis_commands_latencies_usec_bucket{cmd="slowlog|len",instance="banking-redis-exporter:9121",job="redis-exporter",le="264.0"} 381
+redis_commands_latencies_usec_bucket{cmd="client|setname",instance="banking-redis-exporter:9121",job="redis-exporter",le="528.0"} 381
+redis_commands_latencies_usec_bucket{cmd="config|get",instance="banking-redis-exporter:9121",job="redis-exporter",le="2113.0"} 375
+redis_commands_latencies_usec_bucket{cmd="info",instance="banking-redis-exporter:9121",job="redis-exporter",le="33.0"} 242
+redis_commands_latencies_usec_bucket{cmd="latency|histogram",instance="banking-redis-exporter:9121",job="redis-exporter",le="264.0"} 240
+redis_commands_latencies_usec_bucket{cmd="latency|latest",instance="banking-redis-exporter:9121",job="redis-exporter",le="66.0"} 367
+redis_commands_latencies_usec_bucket{cmd="scan",instance="banking-redis-exporter:9121",job="redis-exporter",le="1.0"} 516
+redis_commands_latencies_usec_bucket{cmd="scan",instance="banking-redis-exporter:9121",job="redis-exporter",le="1056.0"} 950
+redis_commands_latencies_usec_bucket{cmd="scan",instance="banking-redis-exporter:9121",job="redis-exporter",le="+Inf"} 950
+redis_commands_latencies_usec_bucket{cmd="slowlog|len",instance="banking-redis-exporter:9121",job="redis-exporter",le="16.0"} 290
+redis_commands_latencies_usec_bucket{cmd="slowlog|get",instance="banking-redis-exporter:9121",job="redis-exporter",le="16.0"} 271
+redis_commands_latencies_usec_bucket{cmd="info",instance="banking-redis-exporter:9121",job="redis-exporter",le="16.0"} 57
+redis_commands_latencies_usec_bucket{cmd="info",instance="banking-redis-exporter:9121",job="redis-exporter",le="264.0"} 453
+redis_commands_latencies_usec_bucket{cmd="scan",instance="banking-redis-exporter:9121",job="redis-exporter",le="66.0"} 938
+redis_commands_latencies_usec_bucket{cmd="slowlog|get",instance="banking-redis-exporter:9121",job="redis-exporter",le="33.0"} 359
+redis_commands_latencies_usec_bucket{cmd="client|setname",instance="banking-redis-exporter:9121",job="redis-exporter",le="4.0"} 66
+redis_commands_latencies_usec_bucket{cmd="config|get",instance="banking-redis-exporter:9121",job="redis-exporter",le="264.0"} 55
+redis_commands_latencies_usec_bucket{cmd="info",instance="banking-redis-exporter:9121",job="redis-exporter",le="66.0"} 354
+redis_commands_latencies_usec_bucket{cmd="keys",instance="banking-redis-exporter:9121",job="redis-exporter",le="16.0"} 2862
+redis_commands_latencies_usec_bucket{cmd="keys",instance="banking-redis-exporter:9121",job="redis-exporter",le="+Inf"} 3277
+redis_commands_latencies_usec_bucket{cmd="latency|latest",instance="banking-redis-exporter:9121",job="redis-exporter",le="2.0"} 4
+redis_commands_latencies_usec_bucket{cmd="ping",instance="banking-redis-exporter:9121",job="redis-exporter",le="8.0"} 244
+redis_commands_latencies_usec_bucket{cmd="scan",instance="banking-redis-exporter:9121",job="redis-exporter",le="2.0"} 676
+redis_commands_latencies_usec_bucket{cmd="scan",instance="banking-redis-exporter:9121",job="redis-exporter",le="132.0"} 943
+redis_commands_latencies_usec_bucket{cmd="get",instance="banking-redis-exporter:9121",job="redis-exporter",le="8.0"} 265
+redis_commands_latencies_usec_bucket{cmd="get",instance="banking-redis-exporter:9121",job="redis-exporter",le="16.0"} 489
+redis_commands_latencies_usec_bucket{cmd="get",instance="banking-redis-exporter:9121",job="redis-exporter",le="66.0"} 953
+redis_commands_latencies_usec_bucket{cmd="get",instance="banking-redis-exporter:9121",job="redis-exporter",le="1056.0"} 1142
+redis_commands_latencies_usec_bucket{cmd="get",instance="banking-redis-exporter:9121",job="redis-exporter",le="+Inf"} 1143
+redis_commands_latencies_usec_bucket{cmd="setex",instance="banking-redis-exporter:9121",job="redis-exporter",le="33.0"} 23
+redis_commands_latencies_usec_bucket{cmd="setex",instance="banking-redis-exporter:9121",job="redis-exporter",le="+Inf"} 45
+redis_commands_latencies_usec_bucket{cmd="slowlog|get",instance="banking-redis-exporter:9121",job="redis-exporter",le="2.0"} 20
+redis_commands_latencies_usec_bucket{cmd="slowlog|len",instance="banking-redis-exporter:9121",job="redis-exporter",le="1.0"} 7
+redis_commands_latencies_usec_bucket{cmd="keys",instance="banking-redis-exporter:9121",job="redis-exporter",le="1.0"} 1331
+redis_commands_latencies_usec_bucket{cmd="keys",instance="banking-redis-exporter:9121",job="redis-exporter",le="4.0"} 2320
+redis_commands_latencies_usec_bucket{cmd="scan",instance="banking-redis-exporter:9121",job="redis-exporter",le="4.0"} 743
+redis_commands_latencies_usec_bucket{cmd="scan",instance="banking-redis-exporter:9121",job="redis-exporter",le="33.0"} 915
+redis_commands_latencies_usec_bucket{cmd="get",instance="banking-redis-exporter:9121",job="redis-exporter",le="4.0"} 76
+redis_commands_latencies_usec_bucket{cmd="keys",instance="banking-redis-exporter:9121",job="redis-exporter",le="2.0"} 1901
+redis_commands_latencies_usec_bucket{cmd="keys",instance="banking-redis-exporter:9121",job="redis-exporter",le="132.0"} 3253
+redis_commands_latencies_usec_bucket{cmd="get",instance="banking-redis-exporter:9121",job="redis-exporter",le="528.0"} 1134
+redis_commands_latencies_usec_bucket{cmd="keys",instance="banking-redis-exporter:9121",job="redis-exporter",le="33.0"} 3070
+redis_commands_latencies_usec_bucket{cmd="keys",instance="banking-redis-exporter:9121",job="redis-exporter",le="66.0"} 3217
+redis_commands_latencies_usec_bucket{cmd="scan",instance="banking-redis-exporter:9121",job="redis-exporter",le="16.0"} 811
+redis_commands_latencies_usec_bucket{cmd="get",instance="banking-redis-exporter:9121",job="redis-exporter",le="33.0"} 721
+redis_commands_latencies_usec_bucket{cmd="get",instance="banking-redis-exporter:9121",job="redis-exporter",le="132.0"} 1092
+redis_commands_latencies_usec_bucket{cmd="info",instance="banking-redis-exporter:9121",job="redis-exporter",le="2113.0"} 938
+redis_commands_latencies_usec_bucket{cmd="scan",instance="banking-redis-exporter:9121",job="redis-exporter",le="264.0"} 948
+redis_commands_latencies_usec_bucket{cmd="slowlog|len",instance="banking-redis-exporter:9121",job="redis-exporter",le="66.0"} 372
+redis_commands_latencies_usec_bucket{cmd="client|setname",instance="banking-redis-exporter:9121",job="redis-exporter",le="8.0"} 111
+redis_commands_latencies_usec_bucket{cmd="info",instance="banking-redis-exporter:9121",job="redis-exporter",le="4227.0"} 950
+redis_commands_latencies_usec_bucket{cmd="keys",instance="banking-redis-exporter:9121",job="redis-exporter",le="8.0"} 2645
+redis_commands_latencies_usec_bucket{cmd="setex",instance="banking-redis-exporter:9121",job="redis-exporter",le="264.0"} 43
+redis_commands_latencies_usec_bucket{cmd="client|setname",instance="banking-redis-exporter:9121",job="redis-exporter",le="66.0"} 348
+redis_commands_latencies_usec_bucket{cmd="slowlog|get",instance="banking-redis-exporter:9121",job="redis-exporter",le="66.0"} 370
+redis_commands_latencies_usec_bucket{cmd="get",instance="banking-redis-exporter:9121",job="redis-exporter",le="264.0"} 1125
+redis_commands_latencies_usec_bucket{cmd="slowlog|len",instance="banking-redis-exporter:9121",job="redis-exporter",le="132.0"} 377
+redis_commands_latencies_usec_bucket{cmd="slowlog|len",instance="banking-redis-exporter:9121",job="redis-exporter",le="8.0"} 73
+redis_commands_latencies_usec_bucket{cmd="latency|histogram",instance="banking-redis-exporter:9121",job="redis-exporter",le="1056.0"} 378
+redis_commands_latencies_usec_bucket{cmd="slowlog|get",instance="banking-redis-exporter:9121",job="redis-exporter",le="132.0"} 378
+redis_commands_latencies_usec_bucket{cmd="keys",instance="banking-redis-exporter:9121",job="redis-exporter",le="264.0"} 3266
+redis_commands_latencies_usec_bucket{cmd="client|setname",instance="banking-redis-exporter:9121",job="redis-exporter",le="2.0"} 24
+redis_commands_latencies_usec_bucket{cmd="latency|latest",instance="banking-redis-exporter:9121",job="redis-exporter",le="8.0"} 60
+redis_commands_latencies_usec_bucket{cmd="latency|latest",instance="banking-redis-exporter:9121",job="redis-exporter",le="4.0"} 11
+redis_commands_latencies_usec_bucket{cmd="slowlog|get",instance="banking-redis-exporter:9121",job="redis-exporter",le="4.0"} 34
+redis_commands_latencies_usec_bucket{cmd="slowlog|len",instance="banking-redis-exporter:9121",job="redis-exporter",le="4.0"} 14
+redis_commands_latencies_usec_bucket{cmd="client|setname",instance="banking-redis-exporter:9121",job="redis-exporter",le="1.0"} 1
+redis_commands_latencies_usec_bucket{cmd="info",instance="banking-redis-exporter:9121",job="redis-exporter",le="132.0"} 379
+redis_commands_latencies_usec_bucket{cmd="setex",instance="banking-redis-exporter:9121",job="redis-exporter",le="66.0"} 39
+redis_commands_latencies_usec_bucket{cmd="keys",instance="banking-redis-exporter:9121",job="redis-exporter",le="528.0"} 3274
+redis_commands_latencies_usec_bucket{cmd="ping",instance="banking-redis-exporter:9121",job="redis-exporter",le="4.0"} 185
+redis_commands_latencies_usec_bucket{cmd="scan",instance="banking-redis-exporter:9121",job="redis-exporter",le="8.0"} 758
+redis_commands_latencies_usec_bucket{cmd="setex",instance="banking-redis-exporter:9121",job="redis-exporter",le="528.0"} 45
+redis_commands_latencies_usec_bucket{cmd="slowlog|get",instance="banking-redis-exporter:9121",job="redis-exporter",le="1.0"} 4
+redis_commands_latencies_usec_bucket{cmd="keys",instance="banking-redis-exporter:9121",job="redis-exporter",le="1056.0"} 3276
+redis_commands_latencies_usec_bucket{cmd="client|setname",instance="banking-redis-exporter:9121",job="redis-exporter",le="1056.0"} 382
+redis_commands_latencies_usec_bucket{cmd="latency|latest",instance="banking-redis-exporter:9121",job="redis-exporter",le="132.0"} 375
+redis_commands_latencies_usec_bucket{cmd="config|get",instance="banking-redis-exporter:9121",job="redis-exporter",le="4227.0"} 381
+redis_commands_latencies_usec_bucket{cmd="info",instance="banking-redis-exporter:9121",job="redis-exporter",le="33816.0"} 952
+redis_commands_latencies_usec_bucket{cmd="latency|latest",instance="banking-redis-exporter:9121",job="redis-exporter",le="1056.0"} 382
+redis_commands_latencies_usec_bucket{cmd="get",instance="banking-redis-exporter:9121",job="redis-exporter",le="2.0"} 4
+redis_commands_latencies_usec_bucket{cmd="setex",instance="banking-redis-exporter:9121",job="redis-exporter",le="16.0"} 2
+redis_commands_latencies_usec_bucket{cmd="client|setname",instance="banking-redis-exporter:9121",job="redis-exporter",le="264.0"} 377
+redis_commands_latencies_usec_bucket{cmd="latency|latest",instance="banking-redis-exporter:9121",job="redis-exporter",le="528.0"} 381
+redis_commands_latencies_usec_bucket{cmd="keys",instance="banking-redis-exporter:9121",job="redis-exporter",le="2113.0"} 3277
+redis_commands_latencies_usec_bucket{cmd="info",instance="banking-redis-exporter:9121",job="redis-exporter",le="8454.0"} 951
+redis_commands_latencies_usec_bucket{cmd="latency|histogram",instance="banking-redis-exporter:9121",job="redis-exporter",le="2113.0"} 380
+redis_commands_latencies_usec_bucket{cmd="ping",instance="banking-redis-exporter:9121",job="redis-exporter",le="528.0"} 581
+redis_commands_latencies_usec_bucket{cmd="setex",instance="banking-redis-exporter:9121",job="redis-exporter",le="132.0"} 41
+redis_commands_latencies_usec_bucket{cmd="slowlog|len",instance="banking-redis-exporter:9121",job="redis-exporter",le="2.0"} 8
+redis_commands_latencies_usec_bucket{cmd="get",instance="banking-redis-exporter:9121",job="redis-exporter",le="2113.0"} 1143
+redis_commands_latencies_usec_bucket{cmd="latency|latest",instance="banking-redis-exporter:9121",job="redis-exporter",le="1.0"} 2
+redis_commands_latencies_usec_bucket{cmd="slowlog|get",instance="banking-redis-exporter:9121",job="redis-exporter",le="1056.0"} 381
+redis_commands_latencies_usec_bucket{cmd="config|get",instance="banking-redis-exporter:9121",job="redis-exporter",le="16908.0"} 382
+redis_commands_latencies_usec_bucket{cmd="latency|histogram",instance="banking-redis-exporter:9121",job="redis-exporter",le="4227.0"} 381
+
+## redis_commands_latencies_usec_count
+redis_commands_latencies_usec_count{cmd="client|setname",instance="banking-redis-exporter:9121",job="redis-exporter"} 382
+redis_commands_latencies_usec_count{cmd="config|get",instance="banking-redis-exporter:9121",job="redis-exporter"} 382
+redis_commands_latencies_usec_count{cmd="info",instance="banking-redis-exporter:9121",job="redis-exporter"} 952
+redis_commands_latencies_usec_count{cmd="latency|latest",instance="banking-redis-exporter:9121",job="redis-exporter"} 382
+redis_commands_latencies_usec_count{cmd="ping",instance="banking-redis-exporter:9121",job="redis-exporter"} 581
+redis_commands_latencies_usec_count{cmd="latency|histogram",instance="banking-redis-exporter:9121",job="redis-exporter"} 381
+redis_commands_latencies_usec_count{cmd="slowlog|get",instance="banking-redis-exporter:9121",job="redis-exporter"} 381
+redis_commands_latencies_usec_count{cmd="slowlog|len",instance="banking-redis-exporter:9121",job="redis-exporter"} 381
+redis_commands_latencies_usec_count{cmd="scan",instance="banking-redis-exporter:9121",job="redis-exporter"} 950
+redis_commands_latencies_usec_count{cmd="keys",instance="banking-redis-exporter:9121",job="redis-exporter"} 3277
+redis_commands_latencies_usec_count{cmd="get",instance="banking-redis-exporter:9121",job="redis-exporter"} 1143
+redis_commands_latencies_usec_count{cmd="setex",instance="banking-redis-exporter:9121",job="redis-exporter"} 45
+
+## redis_commands_latencies_usec_sum
+redis_commands_latencies_usec_sum{cmd="client|setname",instance="banking-redis-exporter:9121",job="redis-exporter"} 12217
+redis_commands_latencies_usec_sum{cmd="config|get",instance="banking-redis-exporter:9121",job="redis-exporter"} 200611
+redis_commands_latencies_usec_sum{cmd="info",instance="banking-redis-exporter:9121",job="redis-exporter"} 361637
+redis_commands_latencies_usec_sum{cmd="latency|latest",instance="banking-redis-exporter:9121",job="redis-exporter"} 8040
+redis_commands_latencies_usec_sum{cmd="ping",instance="banking-redis-exporter:9121",job="redis-exporter"} 13029
+redis_commands_latencies_usec_sum{cmd="latency|histogram",instance="banking-redis-exporter:9121",job="redis-exporter"} 103762
+redis_commands_latencies_usec_sum{cmd="slowlog|get",instance="banking-redis-exporter:9121",job="redis-exporter"} 6976
+redis_commands_latencies_usec_sum{cmd="slowlog|len",instance="banking-redis-exporter:9121",job="redis-exporter"} 6236
+redis_commands_latencies_usec_sum{cmd="scan",instance="banking-redis-exporter:9121",job="redis-exporter"} 8356
+redis_commands_latencies_usec_sum{cmd="keys",instance="banking-redis-exporter:9121",job="redis-exporter"} 31668
+redis_commands_latencies_usec_sum{cmd="get",instance="banking-redis-exporter:9121",job="redis-exporter"} 49340
+redis_commands_latencies_usec_sum{cmd="setex",instance="banking-redis-exporter:9121",job="redis-exporter"} 2655
+
+## redis_commands_processed_total
+redis_commands_processed_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 9235
+
+## redis_commands_rejected_calls_total
+redis_commands_rejected_calls_total{cmd="client|setname",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_commands_rejected_calls_total{cmd="config|get",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_commands_rejected_calls_total{cmd="ping",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_commands_rejected_calls_total{cmd="info",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_commands_rejected_calls_total{cmd="latency|histogram",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_commands_rejected_calls_total{cmd="latency|latest",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_commands_rejected_calls_total{cmd="slowlog|get",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_commands_rejected_calls_total{cmd="slowlog|len",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_commands_rejected_calls_total{cmd="scan",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_commands_rejected_calls_total{cmd="keys",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_commands_rejected_calls_total{cmd="get",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_commands_rejected_calls_total{cmd="setex",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_commands_total
+redis_commands_total{cmd="client|setname",instance="banking-redis-exporter:9121",job="redis-exporter"} 382
+redis_commands_total{cmd="config|get",instance="banking-redis-exporter:9121",job="redis-exporter"} 382
+redis_commands_total{cmd="ping",instance="banking-redis-exporter:9121",job="redis-exporter"} 581
+redis_commands_total{cmd="info",instance="banking-redis-exporter:9121",job="redis-exporter"} 951
+redis_commands_total{cmd="latency|histogram",instance="banking-redis-exporter:9121",job="redis-exporter"} 381
+redis_commands_total{cmd="latency|latest",instance="banking-redis-exporter:9121",job="redis-exporter"} 381
+redis_commands_total{cmd="slowlog|get",instance="banking-redis-exporter:9121",job="redis-exporter"} 381
+redis_commands_total{cmd="slowlog|len",instance="banking-redis-exporter:9121",job="redis-exporter"} 381
+redis_commands_total{cmd="scan",instance="banking-redis-exporter:9121",job="redis-exporter"} 950
+redis_commands_total{cmd="keys",instance="banking-redis-exporter:9121",job="redis-exporter"} 3277
+redis_commands_total{cmd="get",instance="banking-redis-exporter:9121",job="redis-exporter"} 1143
+redis_commands_total{cmd="setex",instance="banking-redis-exporter:9121",job="redis-exporter"} 45
+
+## redis_config_client_output_buffer_limit_bytes
+redis_config_client_output_buffer_limit_bytes{class="normal",instance="banking-redis-exporter:9121",job="redis-exporter",limit="hard"} 0
+redis_config_client_output_buffer_limit_bytes{class="normal",instance="banking-redis-exporter:9121",job="redis-exporter",limit="soft"} 0
+redis_config_client_output_buffer_limit_bytes{class="pubsub",instance="banking-redis-exporter:9121",job="redis-exporter",limit="hard"} 33554432
+redis_config_client_output_buffer_limit_bytes{class="pubsub",instance="banking-redis-exporter:9121",job="redis-exporter",limit="soft"} 8388608
+redis_config_client_output_buffer_limit_bytes{class="slave",instance="banking-redis-exporter:9121",job="redis-exporter",limit="hard"} 268435456
+redis_config_client_output_buffer_limit_bytes{class="slave",instance="banking-redis-exporter:9121",job="redis-exporter",limit="soft"} 67108864
+
+## redis_config_client_output_buffer_limit_overcome_seconds
+redis_config_client_output_buffer_limit_overcome_seconds{class="normal",instance="banking-redis-exporter:9121",job="redis-exporter",limit="soft"} 0
+redis_config_client_output_buffer_limit_overcome_seconds{class="pubsub",instance="banking-redis-exporter:9121",job="redis-exporter",limit="soft"} 60
+redis_config_client_output_buffer_limit_overcome_seconds{class="slave",instance="banking-redis-exporter:9121",job="redis-exporter",limit="soft"} 60
+
+## redis_config_io_threads
+redis_config_io_threads{instance="banking-redis-exporter:9121",job="redis-exporter"} 1
+
+## redis_config_maxclients
+redis_config_maxclients{instance="banking-redis-exporter:9121",job="redis-exporter"} 10000
+
+## redis_config_maxmemory
+redis_config_maxmemory{instance="banking-redis-exporter:9121",job="redis-exporter"} 1073741824
+
+## redis_configured_hz
+redis_configured_hz{instance="banking-redis-exporter:9121",job="redis-exporter"} 10
+
+## redis_connected_clients
+redis_connected_clients{instance="banking-redis-exporter:9121",job="redis-exporter"} 3
+
+## redis_connected_slaves
+redis_connected_slaves{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_connections_received_total
+redis_connections_received_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 963
+
+## redis_cpu_sys_children_seconds_total
+redis_cpu_sys_children_seconds_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0.001845
+
+## redis_cpu_sys_main_thread_seconds_total
+redis_cpu_sys_main_thread_seconds_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 5.14357
+
+## redis_cpu_sys_seconds_total
+redis_cpu_sys_seconds_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 5.14602
+
+## redis_cpu_user_children_seconds_total
+redis_cpu_user_children_seconds_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0.001113
+
+## redis_cpu_user_main_thread_seconds_total
+redis_cpu_user_main_thread_seconds_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 35.391178
+
+## redis_cpu_user_seconds_total
+redis_cpu_user_seconds_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 35.39481
+
+## redis_current_eviction_exceeded_time_ms
+redis_current_eviction_exceeded_time_ms{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_db_keys
+redis_db_keys{db="db0",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_db_keys{db="db1",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_db_keys{db="db10",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_db_keys{db="db11",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_db_keys{db="db12",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_db_keys{db="db13",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_db_keys{db="db14",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_db_keys{db="db15",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_db_keys{db="db2",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_db_keys{db="db3",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_db_keys{db="db4",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_db_keys{db="db5",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_db_keys{db="db6",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_db_keys{db="db7",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_db_keys{db="db8",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_db_keys{db="db9",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_db_keys_expiring
+redis_db_keys_expiring{db="db0",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_db_keys_expiring{db="db1",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_db_keys_expiring{db="db10",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_db_keys_expiring{db="db11",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_db_keys_expiring{db="db12",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_db_keys_expiring{db="db13",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_db_keys_expiring{db="db14",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_db_keys_expiring{db="db15",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_db_keys_expiring{db="db2",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_db_keys_expiring{db="db3",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_db_keys_expiring{db="db4",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_db_keys_expiring{db="db5",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_db_keys_expiring{db="db6",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_db_keys_expiring{db="db7",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_db_keys_expiring{db="db8",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+redis_db_keys_expiring{db="db9",instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_defrag_hits
+redis_defrag_hits{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_defrag_key_hits
+redis_defrag_key_hits{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_defrag_key_misses
+redis_defrag_key_misses{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_defrag_misses
+redis_defrag_misses{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_dump_payload_sanitizations
+redis_dump_payload_sanitizations{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_evicted_clients_total
+redis_evicted_clients_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_evicted_keys_total
+redis_evicted_keys_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_evicted_scripts_total
+redis_evicted_scripts_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_eviction_exceeded_time_ms_total
+redis_eviction_exceeded_time_ms_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_expire_cycle_cpu_time_ms_total
+redis_expire_cycle_cpu_time_ms_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 313
+
+## redis_expired_keys_total
+redis_expired_keys_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 45
+
+## redis_expired_stale_percentage
+redis_expired_stale_percentage{instance="banking-redis-exporter:9121",job="redis-exporter"} 2.99
+
+## redis_expired_subkeys_total
+redis_expired_subkeys_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_expired_time_cap_reached_total
+redis_expired_time_cap_reached_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_exporter_build_info
+redis_exporter_build_info{commit_sha="009602959fd20c5a78de639490745c8bbc7b2e06",golang_version="go1.24.4",instance="banking-redis-exporter:9121",job="redis-exporter",version="v1.74.0"} 1
+
+## redis_exporter_last_scrape_connect_time_seconds
+redis_exporter_last_scrape_connect_time_seconds{instance="banking-redis-exporter:9121",job="redis-exporter"} 0.011193125
+
+## redis_exporter_last_scrape_duration_seconds
+redis_exporter_last_scrape_duration_seconds{instance="banking-redis-exporter:9121",job="redis-exporter"} 0.025806458
+
+## redis_exporter_last_scrape_error
+redis_exporter_last_scrape_error{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_exporter_scrape_duration_seconds_count
+redis_exporter_scrape_duration_seconds_count{instance="banking-redis-exporter:9121",job="redis-exporter"} 382
+
+## redis_exporter_scrape_duration_seconds_sum
+redis_exporter_scrape_duration_seconds_sum{instance="banking-redis-exporter:9121",job="redis-exporter"} 5.083345289999995
+
+## redis_exporter_scrapes_total
+redis_exporter_scrapes_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 382
+
+## redis_hz
+redis_hz{instance="banking-redis-exporter:9121",job="redis-exporter"} 10
+
+## redis_instance_info
+redis_instance_info{instance="banking-redis-exporter:9121",job="redis-exporter",master_replid="159f1ccc4fccd27f1087e1c1750d1775e85680ee",maxmemory_policy="allkeys-lru",os="Linux 6.10.14-linuxkit aarch64",process_id="1",redis_build_id="b61818b61036ef01",redis_mode="standalone",redis_version="7.4.4",role="master",run_id="3657def1bebf1cfc2a90486c705a1d6c639c4ed3",tcp_port="6379"} 1
+
+## redis_io_threaded_reads_processed
+redis_io_threaded_reads_processed{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_io_threaded_writes_processed
+redis_io_threaded_writes_processed{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_io_threads_active
+redis_io_threads_active{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_keyspace_hits_total
+redis_keyspace_hits_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 1098
+
+## redis_keyspace_misses_total
+redis_keyspace_misses_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 45
+
+## redis_last_key_groups_scrape_duration_milliseconds
+redis_last_key_groups_scrape_duration_milliseconds{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_last_slow_execution_duration_seconds
+redis_last_slow_execution_duration_seconds{instance="banking-redis-exporter:9121",job="redis-exporter"} 0.017357
+
+## redis_latency_percentiles_usec
+redis_latency_percentiles_usec{cmd="client|setname",instance="banking-redis-exporter:9121",job="redis-exporter",quantile="50.0"} 17.023
+redis_latency_percentiles_usec{cmd="client|setname",instance="banking-redis-exporter:9121",job="redis-exporter",quantile="99.0"} 315.391
+redis_latency_percentiles_usec{cmd="client|setname",instance="banking-redis-exporter:9121",job="redis-exporter",quantile="99.9"} 720.895
+redis_latency_percentiles_usec{cmd="config|get",instance="banking-redis-exporter:9121",job="redis-exporter",quantile="50.0"} 372.735
+redis_latency_percentiles_usec{cmd="config|get",instance="banking-redis-exporter:9121",job="redis-exporter",quantile="99.0"} 2621.439
+redis_latency_percentiles_usec{cmd="config|get",instance="banking-redis-exporter:9121",job="redis-exporter",quantile="99.9"} 9699.327
+redis_latency_percentiles_usec{cmd="ping",instance="banking-redis-exporter:9121",job="redis-exporter",quantile="50.0"} 12.031
+redis_latency_percentiles_usec{cmd="ping",instance="banking-redis-exporter:9121",job="redis-exporter",quantile="99.0"} 203.775
+redis_latency_percentiles_usec{cmd="ping",instance="banking-redis-exporter:9121",job="redis-exporter",quantile="99.9"} 423.935
+redis_latency_percentiles_usec{cmd="info",instance="banking-redis-exporter:9121",job="redis-exporter",quantile="50.0"} 294.911
+redis_latency_percentiles_usec{cmd="info",instance="banking-redis-exporter:9121",job="redis-exporter",quantile="99.0"} 2211.839
+redis_latency_percentiles_usec{cmd="info",instance="banking-redis-exporter:9121",job="redis-exporter",quantile="99.9"} 6717.439
+redis_latency_percentiles_usec{cmd="latency|histogram",instance="banking-redis-exporter:9121",job="redis-exporter",quantile="50.0"} 235.519
+redis_latency_percentiles_usec{cmd="latency|histogram",instance="banking-redis-exporter:9121",job="redis-exporter",quantile="99.0"} 790.527
+redis_latency_percentiles_usec{cmd="latency|histogram",instance="banking-redis-exporter:9121",job="redis-exporter",quantile="99.9"} 2129.919
+redis_latency_percentiles_usec{cmd="latency|latest",instance="banking-redis-exporter:9121",job="redis-exporter",quantile="50.0"} 13.055
+redis_latency_percentiles_usec{cmd="latency|latest",instance="banking-redis-exporter:9121",job="redis-exporter",quantile="99.0"} 221.183
+redis_latency_percentiles_usec{cmd="latency|latest",instance="banking-redis-exporter:9121",job="redis-exporter",quantile="99.9"} 536.575
+redis_latency_percentiles_usec{cmd="slowlog|get",instance="banking-redis-exporter:9121",job="redis-exporter",quantile="50.0"} 13.055
+redis_latency_percentiles_usec{cmd="slowlog|get",instance="banking-redis-exporter:9121",job="redis-exporter",quantile="99.0"} 108.031
+redis_latency_percentiles_usec{cmd="slowlog|get",instance="banking-redis-exporter:9121",job="redis-exporter",quantile="99.9"} 823.295
+redis_latency_percentiles_usec{cmd="slowlog|len",instance="banking-redis-exporter:9121",job="redis-exporter",quantile="50.0"} 12.031
+redis_latency_percentiles_usec{cmd="slowlog|len",instance="banking-redis-exporter:9121",job="redis-exporter",quantile="99.0"} 92.159
+redis_latency_percentiles_usec{cmd="slowlog|len",instance="banking-redis-exporter:9121",job="redis-exporter",quantile="99.9"} 224.255
+redis_latency_percentiles_usec{cmd="scan",instance="banking-redis-exporter:9121",job="redis-exporter",quantile="50.0"} 1.003
+redis_latency_percentiles_usec{cmd="scan",instance="banking-redis-exporter:9121",job="redis-exporter",quantile="99.0"} 75.263
+redis_latency_percentiles_usec{cmd="scan",instance="banking-redis-exporter:9121",job="redis-exporter",quantile="99.9"} 700.415
+redis_latency_percentiles_usec{cmd="keys",instance="banking-redis-exporter:9121",job="redis-exporter",quantile="50.0"} 2.007
+redis_latency_percentiles_usec{cmd="keys",instance="banking-redis-exporter:9121",job="redis-exporter",quantile="99.0"} 96.255
+redis_latency_percentiles_usec{cmd="keys",instance="banking-redis-exporter:9121",job="redis-exporter",quantile="99.9"} 477.183
+redis_latency_percentiles_usec{cmd="get",instance="banking-redis-exporter:9121",job="redis-exporter",quantile="50.0"} 21.119
+redis_latency_percentiles_usec{cmd="get",instance="banking-redis-exporter:9121",job="redis-exporter",quantile="99.0"} 411.647
+redis_latency_percentiles_usec{cmd="get",instance="banking-redis-exporter:9121",job="redis-exporter",quantile="99.9"} 782.335
+redis_latency_percentiles_usec{cmd="setex",instance="banking-redis-exporter:9121",job="redis-exporter",quantile="50.0"} 33.023
+redis_latency_percentiles_usec{cmd="setex",instance="banking-redis-exporter:9121",job="redis-exporter",quantile="99.0"} 458.751
+redis_latency_percentiles_usec{cmd="setex",instance="banking-redis-exporter:9121",job="redis-exporter",quantile="99.9"} 458.751
+
+## redis_latency_percentiles_usec_count
+redis_latency_percentiles_usec_count{cmd="client|setname",instance="banking-redis-exporter:9121",job="redis-exporter"} 382
+redis_latency_percentiles_usec_count{cmd="config|get",instance="banking-redis-exporter:9121",job="redis-exporter"} 382
+redis_latency_percentiles_usec_count{cmd="ping",instance="banking-redis-exporter:9121",job="redis-exporter"} 581
+redis_latency_percentiles_usec_count{cmd="info",instance="banking-redis-exporter:9121",job="redis-exporter"} 951
+redis_latency_percentiles_usec_count{cmd="latency|histogram",instance="banking-redis-exporter:9121",job="redis-exporter"} 381
+redis_latency_percentiles_usec_count{cmd="latency|latest",instance="banking-redis-exporter:9121",job="redis-exporter"} 381
+redis_latency_percentiles_usec_count{cmd="slowlog|get",instance="banking-redis-exporter:9121",job="redis-exporter"} 381
+redis_latency_percentiles_usec_count{cmd="slowlog|len",instance="banking-redis-exporter:9121",job="redis-exporter"} 381
+redis_latency_percentiles_usec_count{cmd="scan",instance="banking-redis-exporter:9121",job="redis-exporter"} 950
+redis_latency_percentiles_usec_count{cmd="keys",instance="banking-redis-exporter:9121",job="redis-exporter"} 3277
+redis_latency_percentiles_usec_count{cmd="get",instance="banking-redis-exporter:9121",job="redis-exporter"} 1143
+redis_latency_percentiles_usec_count{cmd="setex",instance="banking-redis-exporter:9121",job="redis-exporter"} 45
+
+## redis_latency_percentiles_usec_sum
+redis_latency_percentiles_usec_sum{cmd="client|setname",instance="banking-redis-exporter:9121",job="redis-exporter"} 12217
+redis_latency_percentiles_usec_sum{cmd="config|get",instance="banking-redis-exporter:9121",job="redis-exporter"} 200611
+redis_latency_percentiles_usec_sum{cmd="ping",instance="banking-redis-exporter:9121",job="redis-exporter"} 13029
+redis_latency_percentiles_usec_sum{cmd="info",instance="banking-redis-exporter:9121",job="redis-exporter"} 361637
+redis_latency_percentiles_usec_sum{cmd="latency|histogram",instance="banking-redis-exporter:9121",job="redis-exporter"} 103762
+redis_latency_percentiles_usec_sum{cmd="latency|latest",instance="banking-redis-exporter:9121",job="redis-exporter"} 8040
+redis_latency_percentiles_usec_sum{cmd="slowlog|get",instance="banking-redis-exporter:9121",job="redis-exporter"} 6976
+redis_latency_percentiles_usec_sum{cmd="slowlog|len",instance="banking-redis-exporter:9121",job="redis-exporter"} 6236
+redis_latency_percentiles_usec_sum{cmd="scan",instance="banking-redis-exporter:9121",job="redis-exporter"} 8356
+redis_latency_percentiles_usec_sum{cmd="keys",instance="banking-redis-exporter:9121",job="redis-exporter"} 31668
+redis_latency_percentiles_usec_sum{cmd="get",instance="banking-redis-exporter:9121",job="redis-exporter"} 49340
+redis_latency_percentiles_usec_sum{cmd="setex",instance="banking-redis-exporter:9121",job="redis-exporter"} 2655
+
+## redis_latest_fork_seconds
+redis_latest_fork_seconds{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_lazyfree_pending_objects
+redis_lazyfree_pending_objects{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_lazyfreed_objects
+redis_lazyfreed_objects{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_loading_dump_file
+redis_loading_dump_file{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_master_repl_offset
+redis_master_repl_offset{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_max_clients
+redis_max_clients{instance="banking-redis-exporter:9121",job="redis-exporter"} 10000
+
+## redis_mem_aof_buffer_bytes
+redis_mem_aof_buffer_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_mem_clients_normal
+redis_mem_clients_normal{instance="banking-redis-exporter:9121",job="redis-exporter"} 24328
+
+## redis_mem_clients_slaves
+redis_mem_clients_slaves{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_mem_cluster_links_bytes
+redis_mem_cluster_links_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_mem_fragmentation_bytes
+redis_mem_fragmentation_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 13640928
+
+## redis_mem_fragmentation_ratio
+redis_mem_fragmentation_ratio{instance="banking-redis-exporter:9121",job="redis-exporter"} 11.48
+
+## redis_mem_not_counted_for_eviction_bytes
+redis_mem_not_counted_for_eviction_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_mem_overhead_db_hashtable_rehashing_bytes
+redis_mem_overhead_db_hashtable_rehashing_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_mem_replication_backlog_bytes
+redis_mem_replication_backlog_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_mem_total_replication_buffers_bytes
+redis_mem_total_replication_buffers_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_memory_max_bytes
+redis_memory_max_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 1073741824
+
+## redis_memory_used_bytes
+redis_memory_used_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 1341488
+
+## redis_memory_used_dataset_bytes
+redis_memory_used_dataset_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 337456
+
+## redis_memory_used_functions_bytes
+redis_memory_used_functions_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 192
+
+## redis_memory_used_lua_bytes
+redis_memory_used_lua_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 31744
+
+## redis_memory_used_overhead_bytes
+redis_memory_used_overhead_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 1004032
+
+## redis_memory_used_peak_bytes
+redis_memory_used_peak_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 1367264
+
+## redis_memory_used_rss_bytes
+redis_memory_used_rss_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 14942208
+
+## redis_memory_used_scripts_bytes
+redis_memory_used_scripts_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 192
+
+## redis_memory_used_scripts_eval_bytes
+redis_memory_used_scripts_eval_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_memory_used_startup_bytes
+redis_memory_used_startup_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 978888
+
+## redis_memory_used_vm_eval_bytes
+redis_memory_used_vm_eval_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 31744
+
+## redis_memory_used_vm_functions_bytes
+redis_memory_used_vm_functions_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 32768
+
+## redis_memory_used_vm_total
+redis_memory_used_vm_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 64512
+
+## redis_migrate_cached_sockets_total
+redis_migrate_cached_sockets_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_module_fork_in_progress
+redis_module_fork_in_progress{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_module_fork_last_cow_size
+redis_module_fork_last_cow_size{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_net_input_bytes_total
+redis_net_input_bytes_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 480492
+
+## redis_net_output_bytes_total
+redis_net_output_bytes_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 9829317
+
+## redis_net_repl_input_bytes_total
+redis_net_repl_input_bytes_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_net_repl_output_bytes_total
+redis_net_repl_output_bytes_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_number_of_cached_scripts
+redis_number_of_cached_scripts{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_number_of_functions
+redis_number_of_functions{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_number_of_libraries
+redis_number_of_libraries{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_process_id
+redis_process_id{instance="banking-redis-exporter:9121",job="redis-exporter"} 1
+
+## redis_pubsub_channels
+redis_pubsub_channels{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_pubsub_clients
+redis_pubsub_clients{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_pubsub_patterns
+redis_pubsub_patterns{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_pubsubshard_channels
+redis_pubsubshard_channels{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_rdb_bgsave_in_progress
+redis_rdb_bgsave_in_progress{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_rdb_changes_since_last_save
+redis_rdb_changes_since_last_save{instance="banking-redis-exporter:9121",job="redis-exporter"} 45
+
+## redis_rdb_current_bgsave_duration_sec
+redis_rdb_current_bgsave_duration_sec{instance="banking-redis-exporter:9121",job="redis-exporter"} -1
+
+## redis_rdb_last_bgsave_duration_sec
+redis_rdb_last_bgsave_duration_sec{instance="banking-redis-exporter:9121",job="redis-exporter"} -1
+
+## redis_rdb_last_bgsave_status
+redis_rdb_last_bgsave_status{instance="banking-redis-exporter:9121",job="redis-exporter"} 1
+
+## redis_rdb_last_cow_size_bytes
+redis_rdb_last_cow_size_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_rdb_last_load_expired_keys
+redis_rdb_last_load_expired_keys{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_rdb_last_load_loaded_keys
+redis_rdb_last_load_loaded_keys{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_rdb_last_save_timestamp_seconds
+redis_rdb_last_save_timestamp_seconds{instance="banking-redis-exporter:9121",job="redis-exporter"} 1751428973
+
+## redis_rdb_saves_total
+redis_rdb_saves_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_rejected_connections_total
+redis_rejected_connections_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_repl_backlog_first_byte_offset
+redis_repl_backlog_first_byte_offset{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_repl_backlog_history_bytes
+redis_repl_backlog_history_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_repl_backlog_is_active
+redis_repl_backlog_is_active{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_replica_partial_resync_accepted
+redis_replica_partial_resync_accepted{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_replica_partial_resync_denied
+redis_replica_partial_resync_denied{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_replica_resyncs_full
+redis_replica_resyncs_full{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_replication_backlog_bytes
+redis_replication_backlog_bytes{instance="banking-redis-exporter:9121",job="redis-exporter"} 1048576
+
+## redis_reply_buffer_expands_total
+redis_reply_buffer_expands_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 920
+
+## redis_reply_buffer_shrinks_total
+redis_reply_buffer_shrinks_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 924
+
+## redis_second_repl_offset
+redis_second_repl_offset{instance="banking-redis-exporter:9121",job="redis-exporter"} -1
+
+## redis_slave_expires_tracked_keys
+redis_slave_expires_tracked_keys{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_slowlog_last_id
+redis_slowlog_last_id{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_slowlog_length
+redis_slowlog_length{instance="banking-redis-exporter:9121",job="redis-exporter"} 1
+
+## redis_start_time_seconds
+redis_start_time_seconds{instance="banking-redis-exporter:9121",job="redis-exporter"} 1751428973
+
+## redis_target_scrape_request_errors_total
+redis_target_scrape_request_errors_total{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_total_blocking_keys
+redis_total_blocking_keys{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_total_blocking_keys_on_nokey
+redis_total_blocking_keys_on_nokey{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_total_error_replies
+redis_total_error_replies{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_total_reads_processed
+redis_total_reads_processed{instance="banking-redis-exporter:9121",job="redis-exporter"} 10195
+
+## redis_total_watched_keys
+redis_total_watched_keys{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_total_writes_processed
+redis_total_writes_processed{instance="banking-redis-exporter:9121",job="redis-exporter"} 9235
+
+## redis_tracking_clients
+redis_tracking_clients{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_tracking_total_items
+redis_tracking_total_items{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_tracking_total_keys
+redis_tracking_total_keys{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_tracking_total_prefixes
+redis_tracking_total_prefixes{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_unexpected_error_replies
+redis_unexpected_error_replies{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## redis_up
+redis_up{instance="banking-redis-exporter:9121",job="redis-exporter"} 1
+
+## redis_uptime_in_seconds
+redis_uptime_in_seconds{instance="banking-redis-exporter:9121",job="redis-exporter"} 5819
+
+## redis_watching_clients
+redis_watching_clients{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## scrape_duration_seconds
+scrape_duration_seconds{instance="banking-redis-exporter:9121",job="redis-exporter"} 0.040580125
+
+## scrape_samples_post_metric_relabeling
+scrape_samples_post_metric_relabeling{instance="banking-redis-exporter:9121",job="redis-exporter"} 670
+
+## scrape_samples_scraped
+scrape_samples_scraped{instance="banking-redis-exporter:9121",job="redis-exporter"} 670
+
+## scrape_series_added
+scrape_series_added{instance="banking-redis-exporter:9121",job="redis-exporter"} 0
+
+## up
+up{instance="banking-redis-exporter:9121",job="redis-exporter"} 1
+

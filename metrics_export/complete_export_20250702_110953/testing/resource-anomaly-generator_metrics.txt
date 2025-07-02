@@ -1,0 +1,75 @@
+# Metrics for resource-anomaly-generator
+# Job: resource-anomaly-generator
+# Category: testing
+# Exported at: 2025-07-02T11:09:54.030650
+# Total metrics: 30
+# Unique metric types: 19
+
+## anomaly_generator_cpu_percent
+anomaly_generator_cpu_percent{instance="banking-resource-anomaly:5011",job="resource-anomaly-generator"} 1.8
+
+## anomaly_generator_memory_mb
+anomaly_generator_memory_mb{instance="banking-resource-anomaly:5011",job="resource-anomaly-generator"} 3604.875
+
+## anomaly_generator_memory_percent
+anomaly_generator_memory_percent{instance="banking-resource-anomaly:5011",job="resource-anomaly-generator"} 49.1
+
+## process_cpu_seconds_total
+process_cpu_seconds_total{instance="banking-resource-anomaly:5011",job="resource-anomaly-generator"} 8.459999999999999
+
+## process_max_fds
+process_max_fds{instance="banking-resource-anomaly:5011",job="resource-anomaly-generator"} 1048576
+
+## process_open_fds
+process_open_fds{instance="banking-resource-anomaly:5011",job="resource-anomaly-generator"} 6
+
+## process_resident_memory_bytes
+process_resident_memory_bytes{instance="banking-resource-anomaly:5011",job="resource-anomaly-generator"} 33693696
+
+## process_start_time_seconds
+process_start_time_seconds{instance="banking-resource-anomaly:5011",job="resource-anomaly-generator"} 1751429183.33
+
+## process_virtual_memory_bytes
+process_virtual_memory_bytes{instance="banking-resource-anomaly:5011",job="resource-anomaly-generator"} 190029824
+
+## python_gc_collections_total
+python_gc_collections_total{generation="0",instance="banking-resource-anomaly:5011",job="resource-anomaly-generator"} 89
+python_gc_collections_total{generation="1",instance="banking-resource-anomaly:5011",job="resource-anomaly-generator"} 8
+python_gc_collections_total{generation="2",instance="banking-resource-anomaly:5011",job="resource-anomaly-generator"} 0
+
+## python_gc_objects_collected_total
+python_gc_objects_collected_total{generation="0",instance="banking-resource-anomaly:5011",job="resource-anomaly-generator"} 3780
+python_gc_objects_collected_total{generation="1",instance="banking-resource-anomaly:5011",job="resource-anomaly-generator"} 615
+python_gc_objects_collected_total{generation="2",instance="banking-resource-anomaly:5011",job="resource-anomaly-generator"} 0
+
+## python_gc_objects_uncollectable_total
+python_gc_objects_uncollectable_total{generation="0",instance="banking-resource-anomaly:5011",job="resource-anomaly-generator"} 0
+python_gc_objects_uncollectable_total{generation="1",instance="banking-resource-anomaly:5011",job="resource-anomaly-generator"} 0
+python_gc_objects_uncollectable_total{generation="2",instance="banking-resource-anomaly:5011",job="resource-anomaly-generator"} 0
+
+## python_info
+python_info{implementation="CPython",instance="banking-resource-anomaly:5011",job="resource-anomaly-generator",major="3",minor="9",patchlevel="23",version="3.9.23"} 1
+
+## resource_anomaly_active
+resource_anomaly_active{instance="banking-resource-anomaly:5011",job="resource-anomaly-generator",pattern="memory_leak"} 0
+resource_anomaly_active{instance="banking-resource-anomaly:5011",job="resource-anomaly-generator",pattern="cpu_spike"} 0
+resource_anomaly_active{instance="banking-resource-anomaly:5011",job="resource-anomaly-generator",pattern="memory_churn"} 0
+resource_anomaly_active{instance="banking-resource-anomaly:5011",job="resource-anomaly-generator",pattern="restart_trigger"} 0
+resource_anomaly_active{instance="banking-resource-anomaly:5011",job="resource-anomaly-generator",pattern="io_intensive"} 0
+resource_anomaly_active{instance="banking-resource-anomaly:5011",job="resource-anomaly-generator",pattern="fluctuation"} 0
+
+## scrape_duration_seconds
+scrape_duration_seconds{instance="banking-resource-anomaly:5011",job="resource-anomaly-generator"} 1.025432417
+
+## scrape_samples_post_metric_relabeling
+scrape_samples_post_metric_relabeling{instance="banking-resource-anomaly:5011",job="resource-anomaly-generator"} 25
+
+## scrape_samples_scraped
+scrape_samples_scraped{instance="banking-resource-anomaly:5011",job="resource-anomaly-generator"} 25
+
+## scrape_series_added
+scrape_series_added{instance="banking-resource-anomaly:5011",job="resource-anomaly-generator"} 0
+
+## up
+up{instance="banking-resource-anomaly:5011",job="resource-anomaly-generator"} 1
+

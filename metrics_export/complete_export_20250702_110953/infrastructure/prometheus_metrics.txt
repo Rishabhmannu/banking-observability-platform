@@ -1,0 +1,1935 @@
+# Metrics for prometheus
+# Job: prometheus
+# Category: infrastructure
+# Exported at: 2025-07-02T11:09:54.033614
+# Total metrics: 1342
+# Unique metric types: 293
+
+## go_gc_cycles_automatic_gc_cycles_total
+go_gc_cycles_automatic_gc_cycles_total{instance="localhost:9090",job="prometheus"} 165
+
+## go_gc_cycles_forced_gc_cycles_total
+go_gc_cycles_forced_gc_cycles_total{instance="localhost:9090",job="prometheus"} 0
+
+## go_gc_cycles_total_gc_cycles_total
+go_gc_cycles_total_gc_cycles_total{instance="localhost:9090",job="prometheus"} 165
+
+## go_gc_duration_seconds
+go_gc_duration_seconds{instance="localhost:9090",job="prometheus",quantile="0.0"} 0.000035416
+go_gc_duration_seconds{instance="localhost:9090",job="prometheus",quantile="0.25"} 0.00100525
+go_gc_duration_seconds{instance="localhost:9090",job="prometheus",quantile="0.5"} 0.001336875
+go_gc_duration_seconds{instance="localhost:9090",job="prometheus",quantile="0.75"} 0.002027792
+go_gc_duration_seconds{instance="localhost:9090",job="prometheus",quantile="1.0"} 0.044946208
+
+## go_gc_duration_seconds_count
+go_gc_duration_seconds_count{instance="localhost:9090",job="prometheus"} 165
+
+## go_gc_duration_seconds_sum
+go_gc_duration_seconds_sum{instance="localhost:9090",job="prometheus"} 0.328043833
+
+## go_gc_gogc_percent
+go_gc_gogc_percent{instance="localhost:9090",job="prometheus"} 75
+
+## go_gc_gomemlimit_bytes
+go_gc_gomemlimit_bytes{instance="localhost:9090",job="prometheus"} 7396230758
+
+## go_gc_heap_allocs_by_size_bytes_bucket
+go_gc_heap_allocs_by_size_bytes_bucket{instance="localhost:9090",job="prometheus",le="8.999999999999998"} 262540
+go_gc_heap_allocs_by_size_bytes_bucket{instance="localhost:9090",job="prometheus",le="24.999999999999996"} 3036354
+go_gc_heap_allocs_by_size_bytes_bucket{instance="localhost:9090",job="prometheus",le="64.99999999999999"} 5683949
+go_gc_heap_allocs_by_size_bytes_bucket{instance="localhost:9090",job="prometheus",le="144.99999999999997"} 7341050
+go_gc_heap_allocs_by_size_bytes_bucket{instance="localhost:9090",job="prometheus",le="320.99999999999994"} 7822584
+go_gc_heap_allocs_by_size_bytes_bucket{instance="localhost:9090",job="prometheus",le="704.9999999999999"} 7980530
+go_gc_heap_allocs_by_size_bytes_bucket{instance="localhost:9090",job="prometheus",le="1536.9999999999998"} 8066797
+go_gc_heap_allocs_by_size_bytes_bucket{instance="localhost:9090",job="prometheus",le="3200.9999999999995"} 8089631
+go_gc_heap_allocs_by_size_bytes_bucket{instance="localhost:9090",job="prometheus",le="6528.999999999999"} 8132599
+go_gc_heap_allocs_by_size_bytes_bucket{instance="localhost:9090",job="prometheus",le="13568.999999999998"} 8138479
+go_gc_heap_allocs_by_size_bytes_bucket{instance="localhost:9090",job="prometheus",le="27264.999999999996"} 8141770
+go_gc_heap_allocs_by_size_bytes_bucket{instance="localhost:9090",job="prometheus",le="+Inf"} 8154263
+
+## go_gc_heap_allocs_by_size_bytes_count
+go_gc_heap_allocs_by_size_bytes_count{instance="localhost:9090",job="prometheus"} 8154263
+
+## go_gc_heap_allocs_by_size_bytes_sum
+go_gc_heap_allocs_by_size_bytes_sum{instance="localhost:9090",job="prometheus"} 4159776848
+
+## go_gc_heap_allocs_bytes_total
+go_gc_heap_allocs_bytes_total{instance="localhost:9090",job="prometheus"} 4159776848
+
+## go_gc_heap_allocs_objects_total
+go_gc_heap_allocs_objects_total{instance="localhost:9090",job="prometheus"} 8154263
+
+## go_gc_heap_frees_by_size_bytes_bucket
+go_gc_heap_frees_by_size_bytes_bucket{instance="localhost:9090",job="prometheus",le="8.999999999999998"} 258936
+go_gc_heap_frees_by_size_bytes_bucket{instance="localhost:9090",job="prometheus",le="24.999999999999996"} 3009765
+go_gc_heap_frees_by_size_bytes_bucket{instance="localhost:9090",job="prometheus",le="64.99999999999999"} 5494654
+go_gc_heap_frees_by_size_bytes_bucket{instance="localhost:9090",job="prometheus",le="144.99999999999997"} 7091357
+go_gc_heap_frees_by_size_bytes_bucket{instance="localhost:9090",job="prometheus",le="320.99999999999994"} 7546373
+go_gc_heap_frees_by_size_bytes_bucket{instance="localhost:9090",job="prometheus",le="704.9999999999999"} 7700690
+go_gc_heap_frees_by_size_bytes_bucket{instance="localhost:9090",job="prometheus",le="1536.9999999999998"} 7786002
+go_gc_heap_frees_by_size_bytes_bucket{instance="localhost:9090",job="prometheus",le="3200.9999999999995"} 7808372
+go_gc_heap_frees_by_size_bytes_bucket{instance="localhost:9090",job="prometheus",le="6528.999999999999"} 7851019
+go_gc_heap_frees_by_size_bytes_bucket{instance="localhost:9090",job="prometheus",le="13568.999999999998"} 7856588
+go_gc_heap_frees_by_size_bytes_bucket{instance="localhost:9090",job="prometheus",le="27264.999999999996"} 7859779
+go_gc_heap_frees_by_size_bytes_bucket{instance="localhost:9090",job="prometheus",le="+Inf"} 7872200
+
+## go_gc_heap_frees_by_size_bytes_count
+go_gc_heap_frees_by_size_bytes_count{instance="localhost:9090",job="prometheus"} 7872200
+
+## go_gc_heap_frees_by_size_bytes_sum
+go_gc_heap_frees_by_size_bytes_sum{instance="localhost:9090",job="prometheus"} 4113451840
+
+## go_gc_heap_frees_bytes_total
+go_gc_heap_frees_bytes_total{instance="localhost:9090",job="prometheus"} 4113451840
+
+## go_gc_heap_frees_objects_total
+go_gc_heap_frees_objects_total{instance="localhost:9090",job="prometheus"} 7872200
+
+## go_gc_heap_goal_bytes
+go_gc_heap_goal_bytes{instance="localhost:9090",job="prometheus"} 76394215
+
+## go_gc_heap_live_bytes
+go_gc_heap_live_bytes{instance="localhost:9090",job="prometheus"} 43360968
+
+## go_gc_heap_objects_objects
+go_gc_heap_objects_objects{instance="localhost:9090",job="prometheus"} 282063
+
+## go_gc_heap_tiny_allocs_objects_total
+go_gc_heap_tiny_allocs_objects_total{instance="localhost:9090",job="prometheus"} 609946
+
+## go_gc_limiter_last_enabled_gc_cycle
+go_gc_limiter_last_enabled_gc_cycle{instance="localhost:9090",job="prometheus"} 0
+
+## go_gc_pauses_seconds_bucket
+go_gc_pauses_seconds_bucket{instance="localhost:9090",job="prometheus",le="6.399999999999999e-08"} 0
+go_gc_pauses_seconds_bucket{instance="localhost:9090",job="prometheus",le="6.399999999999999e-07"} 0
+go_gc_pauses_seconds_bucket{instance="localhost:9090",job="prometheus",le="7.167999999999999e-06"} 34
+go_gc_pauses_seconds_bucket{instance="localhost:9090",job="prometheus",le="8.191999999999999e-05"} 148
+go_gc_pauses_seconds_bucket{instance="localhost:9090",job="prometheus",le="0.0009175039999999999"} 201
+go_gc_pauses_seconds_bucket{instance="localhost:9090",job="prometheus",le="0.010485759999999998"} 329
+go_gc_pauses_seconds_bucket{instance="localhost:9090",job="prometheus",le="0.11744051199999998"} 330
+go_gc_pauses_seconds_bucket{instance="localhost:9090",job="prometheus",le="+Inf"} 330
+
+## go_gc_pauses_seconds_count
+go_gc_pauses_seconds_count{instance="localhost:9090",job="prometheus"} 330
+
+## go_gc_pauses_seconds_sum
+go_gc_pauses_seconds_sum{instance="localhost:9090",job="prometheus"} 0.133106944
+
+## go_gc_scan_globals_bytes
+go_gc_scan_globals_bytes{instance="localhost:9090",job="prometheus"} 583554
+
+## go_gc_scan_heap_bytes
+go_gc_scan_heap_bytes{instance="localhost:9090",job="prometheus"} 18588928
+
+## go_gc_scan_stack_bytes
+go_gc_scan_stack_bytes{instance="localhost:9090",job="prometheus"} 99808
+
+## go_gc_scan_total_bytes
+go_gc_scan_total_bytes{instance="localhost:9090",job="prometheus"} 19272290
+
+## go_gc_stack_starting_size_bytes
+go_gc_stack_starting_size_bytes{instance="localhost:9090",job="prometheus"} 2048
+
+## go_goroutines
+go_goroutines{instance="localhost:9090",job="prometheus"} 100
+
+## go_info
+go_info{instance="localhost:9090",job="prometheus",version="go1.24.3"} 1
+
+## go_memstats_alloc_bytes
+go_memstats_alloc_bytes{instance="localhost:9090",job="prometheus"} 46325008
+
+## go_memstats_alloc_bytes_total
+go_memstats_alloc_bytes_total{instance="localhost:9090",job="prometheus"} 4159776848
+
+## go_memstats_buck_hash_sys_bytes
+go_memstats_buck_hash_sys_bytes{instance="localhost:9090",job="prometheus"} 1708273
+
+## go_memstats_frees_total
+go_memstats_frees_total{instance="localhost:9090",job="prometheus"} 8482146
+
+## go_memstats_gc_sys_bytes
+go_memstats_gc_sys_bytes{instance="localhost:9090",job="prometheus"} 4524280
+
+## go_memstats_heap_alloc_bytes
+go_memstats_heap_alloc_bytes{instance="localhost:9090",job="prometheus"} 46325008
+
+## go_memstats_heap_idle_bytes
+go_memstats_heap_idle_bytes{instance="localhost:9090",job="prometheus"} 53633024
+
+## go_memstats_heap_inuse_bytes
+go_memstats_heap_inuse_bytes{instance="localhost:9090",job="prometheus"} 56893440
+
+## go_memstats_heap_objects
+go_memstats_heap_objects{instance="localhost:9090",job="prometheus"} 282063
+
+## go_memstats_heap_released_bytes
+go_memstats_heap_released_bytes{instance="localhost:9090",job="prometheus"} 24698880
+
+## go_memstats_heap_sys_bytes
+go_memstats_heap_sys_bytes{instance="localhost:9090",job="prometheus"} 110526464
+
+## go_memstats_last_gc_time_seconds
+go_memstats_last_gc_time_seconds{instance="localhost:9090",job="prometheus"} 1751434782.6462636
+
+## go_memstats_mallocs_total
+go_memstats_mallocs_total{instance="localhost:9090",job="prometheus"} 8764209
+
+## go_memstats_mcache_inuse_bytes
+go_memstats_mcache_inuse_bytes{instance="localhost:9090",job="prometheus"} 12080
+
+## go_memstats_mcache_sys_bytes
+go_memstats_mcache_sys_bytes{instance="localhost:9090",job="prometheus"} 15704
+
+## go_memstats_mspan_inuse_bytes
+go_memstats_mspan_inuse_bytes{instance="localhost:9090",job="prometheus"} 806080
+
+## go_memstats_mspan_sys_bytes
+go_memstats_mspan_sys_bytes{instance="localhost:9090",job="prometheus"} 1028160
+
+## go_memstats_next_gc_bytes
+go_memstats_next_gc_bytes{instance="localhost:9090",job="prometheus"} 76394215
+
+## go_memstats_other_sys_bytes
+go_memstats_other_sys_bytes{instance="localhost:9090",job="prometheus"} 2054551
+
+## go_memstats_stack_inuse_bytes
+go_memstats_stack_inuse_bytes{instance="localhost:9090",job="prometheus"} 2719744
+
+## go_memstats_stack_sys_bytes
+go_memstats_stack_sys_bytes{instance="localhost:9090",job="prometheus"} 2719744
+
+## go_memstats_sys_bytes
+go_memstats_sys_bytes{instance="localhost:9090",job="prometheus"} 122577176
+
+## go_sched_gomaxprocs_threads
+go_sched_gomaxprocs_threads{instance="localhost:9090",job="prometheus"} 10
+
+## go_sched_goroutines_goroutines
+go_sched_goroutines_goroutines{instance="localhost:9090",job="prometheus"} 100
+
+## go_sched_latencies_seconds_bucket
+go_sched_latencies_seconds_bucket{instance="localhost:9090",job="prometheus",le="6.399999999999999e-08"} 60754
+go_sched_latencies_seconds_bucket{instance="localhost:9090",job="prometheus",le="6.399999999999999e-07"} 68490
+go_sched_latencies_seconds_bucket{instance="localhost:9090",job="prometheus",le="7.167999999999999e-06"} 80926
+go_sched_latencies_seconds_bucket{instance="localhost:9090",job="prometheus",le="8.191999999999999e-05"} 104597
+go_sched_latencies_seconds_bucket{instance="localhost:9090",job="prometheus",le="0.0009175039999999999"} 107514
+go_sched_latencies_seconds_bucket{instance="localhost:9090",job="prometheus",le="0.010485759999999998"} 107923
+go_sched_latencies_seconds_bucket{instance="localhost:9090",job="prometheus",le="0.11744051199999998"} 107929
+go_sched_latencies_seconds_bucket{instance="localhost:9090",job="prometheus",le="+Inf"} 107929
+
+## go_sched_latencies_seconds_count
+go_sched_latencies_seconds_count{instance="localhost:9090",job="prometheus"} 107929
+
+## go_sched_latencies_seconds_sum
+go_sched_latencies_seconds_sum{instance="localhost:9090",job="prometheus"} 0.855262208
+
+## go_sched_pauses_stopping_gc_seconds_bucket
+go_sched_pauses_stopping_gc_seconds_bucket{instance="localhost:9090",job="prometheus",le="6.399999999999999e-08"} 0
+go_sched_pauses_stopping_gc_seconds_bucket{instance="localhost:9090",job="prometheus",le="6.399999999999999e-07"} 0
+go_sched_pauses_stopping_gc_seconds_bucket{instance="localhost:9090",job="prometheus",le="7.167999999999999e-06"} 181
+go_sched_pauses_stopping_gc_seconds_bucket{instance="localhost:9090",job="prometheus",le="8.191999999999999e-05"} 264
+go_sched_pauses_stopping_gc_seconds_bucket{instance="localhost:9090",job="prometheus",le="0.0009175039999999999"} 318
+go_sched_pauses_stopping_gc_seconds_bucket{instance="localhost:9090",job="prometheus",le="0.010485759999999998"} 330
+go_sched_pauses_stopping_gc_seconds_bucket{instance="localhost:9090",job="prometheus",le="0.11744051199999998"} 330
+go_sched_pauses_stopping_gc_seconds_bucket{instance="localhost:9090",job="prometheus",le="+Inf"} 330
+
+## go_sched_pauses_stopping_gc_seconds_count
+go_sched_pauses_stopping_gc_seconds_count{instance="localhost:9090",job="prometheus"} 330
+
+## go_sched_pauses_stopping_gc_seconds_sum
+go_sched_pauses_stopping_gc_seconds_sum{instance="localhost:9090",job="prometheus"} 0.016144512
+
+## go_sched_pauses_stopping_other_seconds_bucket
+go_sched_pauses_stopping_other_seconds_bucket{instance="localhost:9090",job="prometheus",le="6.399999999999999e-08"} 0
+go_sched_pauses_stopping_other_seconds_bucket{instance="localhost:9090",job="prometheus",le="6.399999999999999e-07"} 0
+go_sched_pauses_stopping_other_seconds_bucket{instance="localhost:9090",job="prometheus",le="7.167999999999999e-06"} 0
+go_sched_pauses_stopping_other_seconds_bucket{instance="localhost:9090",job="prometheus",le="8.191999999999999e-05"} 0
+go_sched_pauses_stopping_other_seconds_bucket{instance="localhost:9090",job="prometheus",le="0.0009175039999999999"} 0
+go_sched_pauses_stopping_other_seconds_bucket{instance="localhost:9090",job="prometheus",le="0.010485759999999998"} 0
+go_sched_pauses_stopping_other_seconds_bucket{instance="localhost:9090",job="prometheus",le="0.11744051199999998"} 0
+go_sched_pauses_stopping_other_seconds_bucket{instance="localhost:9090",job="prometheus",le="+Inf"} 0
+
+## go_sched_pauses_stopping_other_seconds_count
+go_sched_pauses_stopping_other_seconds_count{instance="localhost:9090",job="prometheus"} 0
+
+## go_sched_pauses_stopping_other_seconds_sum
+go_sched_pauses_stopping_other_seconds_sum{instance="localhost:9090",job="prometheus"} 0
+
+## go_sched_pauses_total_gc_seconds_bucket
+go_sched_pauses_total_gc_seconds_bucket{instance="localhost:9090",job="prometheus",le="6.399999999999999e-08"} 0
+go_sched_pauses_total_gc_seconds_bucket{instance="localhost:9090",job="prometheus",le="6.399999999999999e-07"} 0
+go_sched_pauses_total_gc_seconds_bucket{instance="localhost:9090",job="prometheus",le="7.167999999999999e-06"} 34
+go_sched_pauses_total_gc_seconds_bucket{instance="localhost:9090",job="prometheus",le="8.191999999999999e-05"} 148
+go_sched_pauses_total_gc_seconds_bucket{instance="localhost:9090",job="prometheus",le="0.0009175039999999999"} 201
+go_sched_pauses_total_gc_seconds_bucket{instance="localhost:9090",job="prometheus",le="0.010485759999999998"} 329
+go_sched_pauses_total_gc_seconds_bucket{instance="localhost:9090",job="prometheus",le="0.11744051199999998"} 330
+go_sched_pauses_total_gc_seconds_bucket{instance="localhost:9090",job="prometheus",le="+Inf"} 330
+
+## go_sched_pauses_total_gc_seconds_count
+go_sched_pauses_total_gc_seconds_count{instance="localhost:9090",job="prometheus"} 330
+
+## go_sched_pauses_total_gc_seconds_sum
+go_sched_pauses_total_gc_seconds_sum{instance="localhost:9090",job="prometheus"} 0.133106944
+
+## go_sched_pauses_total_other_seconds_bucket
+go_sched_pauses_total_other_seconds_bucket{instance="localhost:9090",job="prometheus",le="6.399999999999999e-08"} 0
+go_sched_pauses_total_other_seconds_bucket{instance="localhost:9090",job="prometheus",le="6.399999999999999e-07"} 0
+go_sched_pauses_total_other_seconds_bucket{instance="localhost:9090",job="prometheus",le="7.167999999999999e-06"} 0
+go_sched_pauses_total_other_seconds_bucket{instance="localhost:9090",job="prometheus",le="8.191999999999999e-05"} 0
+go_sched_pauses_total_other_seconds_bucket{instance="localhost:9090",job="prometheus",le="0.0009175039999999999"} 0
+go_sched_pauses_total_other_seconds_bucket{instance="localhost:9090",job="prometheus",le="0.010485759999999998"} 0
+go_sched_pauses_total_other_seconds_bucket{instance="localhost:9090",job="prometheus",le="0.11744051199999998"} 0
+go_sched_pauses_total_other_seconds_bucket{instance="localhost:9090",job="prometheus",le="+Inf"} 0
+
+## go_sched_pauses_total_other_seconds_count
+go_sched_pauses_total_other_seconds_count{instance="localhost:9090",job="prometheus"} 0
+
+## go_sched_pauses_total_other_seconds_sum
+go_sched_pauses_total_other_seconds_sum{instance="localhost:9090",job="prometheus"} 0
+
+## go_sync_mutex_wait_total_seconds_total
+go_sync_mutex_wait_total_seconds_total{instance="localhost:9090",job="prometheus"} 0.469692352
+
+## go_threads
+go_threads{instance="localhost:9090",job="prometheus"} 16
+
+## net_conntrack_dialer_conn_attempted_total
+net_conntrack_dialer_conn_attempted_total{dialer_name="alertmanager",instance="localhost:9090",job="prometheus"} 0
+net_conntrack_dialer_conn_attempted_total{dialer_name="anomaly-injector",instance="localhost:9090",job="prometheus"} 584
+net_conntrack_dialer_conn_attempted_total{dialer_name="auto-baselining",instance="localhost:9090",job="prometheus"} 389
+net_conntrack_dialer_conn_attempted_total{dialer_name="banking-db-demo",instance="localhost:9090",job="prometheus"} 389
+net_conntrack_dialer_conn_attempted_total{dialer_name="banking-kafka",instance="localhost:9090",job="prometheus"} 8
+net_conntrack_dialer_conn_attempted_total{dialer_name="banking-message-consumer",instance="localhost:9090",job="prometheus"} 390
+net_conntrack_dialer_conn_attempted_total{dialer_name="banking-message-producer",instance="localhost:9090",job="prometheus"} 389
+net_conntrack_dialer_conn_attempted_total{dialer_name="banking-postgresql",instance="localhost:9090",job="prometheus"} 9
+net_conntrack_dialer_conn_attempted_total{dialer_name="banking-rabbitmq",instance="localhost:9090",job="prometheus"} 390
+net_conntrack_dialer_conn_attempted_total{dialer_name="banking-services",instance="localhost:9090",job="prometheus"} 3501
+net_conntrack_dialer_conn_attempted_total{dialer_name="cache-load-generator",instance="localhost:9090",job="prometheus"} 389
+net_conntrack_dialer_conn_attempted_total{dialer_name="cache-pattern-analyzer",instance="localhost:9090",job="prometheus"} 389
+net_conntrack_dialer_conn_attempted_total{dialer_name="cache-proxy",instance="localhost:9090",job="prometheus"} 194
+net_conntrack_dialer_conn_attempted_total{dialer_name="cadvisor",instance="localhost:9090",job="prometheus"} 11
+net_conntrack_dialer_conn_attempted_total{dialer_name="container-resource-monitor",instance="localhost:9090",job="prometheus"} 194
+net_conntrack_dialer_conn_attempted_total{dialer_name="ddos-ml-detection",instance="localhost:9090",job="prometheus"} 389
+net_conntrack_dialer_conn_attempted_total{dialer_name="default",instance="localhost:9090",job="prometheus"} 0
+net_conntrack_dialer_conn_attempted_total{dialer_name="node-exporter",instance="localhost:9090",job="prometheus"} 1
+net_conntrack_dialer_conn_attempted_total{dialer_name="performance-aggregator",instance="localhost:9090",job="prometheus"} 390
+net_conntrack_dialer_conn_attempted_total{dialer_name="prometheus",instance="localhost:9090",job="prometheus"} 1
+net_conntrack_dialer_conn_attempted_total{dialer_name="rabbitmq-queue-monitor",instance="localhost:9090",job="prometheus"} 389
+net_conntrack_dialer_conn_attempted_total{dialer_name="redis-exporter",instance="localhost:9090",job="prometheus"} 9
+net_conntrack_dialer_conn_attempted_total{dialer_name="resource-anomaly-generator",instance="localhost:9090",job="prometheus"} 389
+net_conntrack_dialer_conn_attempted_total{dialer_name="trace-generator",instance="localhost:9090",job="prometheus"} 584
+net_conntrack_dialer_conn_attempted_total{dialer_name="transaction-monitor",instance="localhost:9090",job="prometheus"} 584
+net_conntrack_dialer_conn_attempted_total{dialer_name="windows-exporter",instance="localhost:9090",job="prometheus"} 389
+
+## net_conntrack_dialer_conn_closed_total
+net_conntrack_dialer_conn_closed_total{dialer_name="alertmanager",instance="localhost:9090",job="prometheus"} 0
+net_conntrack_dialer_conn_closed_total{dialer_name="anomaly-injector",instance="localhost:9090",job="prometheus"} 567
+net_conntrack_dialer_conn_closed_total{dialer_name="auto-baselining",instance="localhost:9090",job="prometheus"} 378
+net_conntrack_dialer_conn_closed_total{dialer_name="banking-db-demo",instance="localhost:9090",job="prometheus"} 377
+net_conntrack_dialer_conn_closed_total{dialer_name="banking-kafka",instance="localhost:9090",job="prometheus"} 0
+net_conntrack_dialer_conn_closed_total{dialer_name="banking-message-consumer",instance="localhost:9090",job="prometheus"} 377
+net_conntrack_dialer_conn_closed_total{dialer_name="banking-message-producer",instance="localhost:9090",job="prometheus"} 377
+net_conntrack_dialer_conn_closed_total{dialer_name="banking-postgresql",instance="localhost:9090",job="prometheus"} 0
+net_conntrack_dialer_conn_closed_total{dialer_name="banking-rabbitmq",instance="localhost:9090",job="prometheus"} 382
+net_conntrack_dialer_conn_closed_total{dialer_name="banking-services",instance="localhost:9090",job="prometheus"} 3397
+net_conntrack_dialer_conn_closed_total{dialer_name="cache-load-generator",instance="localhost:9090",job="prometheus"} 373
+net_conntrack_dialer_conn_closed_total{dialer_name="cache-pattern-analyzer",instance="localhost:9090",job="prometheus"} 378
+net_conntrack_dialer_conn_closed_total{dialer_name="cache-proxy",instance="localhost:9090",job="prometheus"} 187
+net_conntrack_dialer_conn_closed_total{dialer_name="cadvisor",instance="localhost:9090",job="prometheus"} 2
+net_conntrack_dialer_conn_closed_total{dialer_name="container-resource-monitor",instance="localhost:9090",job="prometheus"} 160
+net_conntrack_dialer_conn_closed_total{dialer_name="ddos-ml-detection",instance="localhost:9090",job="prometheus"} 378
+net_conntrack_dialer_conn_closed_total{dialer_name="default",instance="localhost:9090",job="prometheus"} 0
+net_conntrack_dialer_conn_closed_total{dialer_name="node-exporter",instance="localhost:9090",job="prometheus"} 0
+net_conntrack_dialer_conn_closed_total{dialer_name="performance-aggregator",instance="localhost:9090",job="prometheus"} 378
+net_conntrack_dialer_conn_closed_total{dialer_name="prometheus",instance="localhost:9090",job="prometheus"} 0
+net_conntrack_dialer_conn_closed_total{dialer_name="rabbitmq-queue-monitor",instance="localhost:9090",job="prometheus"} 381
+net_conntrack_dialer_conn_closed_total{dialer_name="redis-exporter",instance="localhost:9090",job="prometheus"} 0
+net_conntrack_dialer_conn_closed_total{dialer_name="resource-anomaly-generator",instance="localhost:9090",job="prometheus"} 373
+net_conntrack_dialer_conn_closed_total{dialer_name="trace-generator",instance="localhost:9090",job="prometheus"} 560
+net_conntrack_dialer_conn_closed_total{dialer_name="transaction-monitor",instance="localhost:9090",job="prometheus"} 567
+net_conntrack_dialer_conn_closed_total{dialer_name="windows-exporter",instance="localhost:9090",job="prometheus"} 378
+
+## net_conntrack_dialer_conn_established_total
+net_conntrack_dialer_conn_established_total{dialer_name="alertmanager",instance="localhost:9090",job="prometheus"} 0
+net_conntrack_dialer_conn_established_total{dialer_name="anomaly-injector",instance="localhost:9090",job="prometheus"} 567
+net_conntrack_dialer_conn_established_total{dialer_name="auto-baselining",instance="localhost:9090",job="prometheus"} 378
+net_conntrack_dialer_conn_established_total{dialer_name="banking-db-demo",instance="localhost:9090",job="prometheus"} 377
+net_conntrack_dialer_conn_established_total{dialer_name="banking-kafka",instance="localhost:9090",job="prometheus"} 1
+net_conntrack_dialer_conn_established_total{dialer_name="banking-message-consumer",instance="localhost:9090",job="prometheus"} 377
+net_conntrack_dialer_conn_established_total{dialer_name="banking-message-producer",instance="localhost:9090",job="prometheus"} 377
+net_conntrack_dialer_conn_established_total{dialer_name="banking-postgresql",instance="localhost:9090",job="prometheus"} 1
+net_conntrack_dialer_conn_established_total{dialer_name="banking-rabbitmq",instance="localhost:9090",job="prometheus"} 383
+net_conntrack_dialer_conn_established_total{dialer_name="banking-services",instance="localhost:9090",job="prometheus"} 3397
+net_conntrack_dialer_conn_established_total{dialer_name="cache-load-generator",instance="localhost:9090",job="prometheus"} 373
+net_conntrack_dialer_conn_established_total{dialer_name="cache-pattern-analyzer",instance="localhost:9090",job="prometheus"} 378
+net_conntrack_dialer_conn_established_total{dialer_name="cache-proxy",instance="localhost:9090",job="prometheus"} 187
+net_conntrack_dialer_conn_established_total{dialer_name="cadvisor",instance="localhost:9090",job="prometheus"} 3
+net_conntrack_dialer_conn_established_total{dialer_name="container-resource-monitor",instance="localhost:9090",job="prometheus"} 160
+net_conntrack_dialer_conn_established_total{dialer_name="ddos-ml-detection",instance="localhost:9090",job="prometheus"} 378
+net_conntrack_dialer_conn_established_total{dialer_name="default",instance="localhost:9090",job="prometheus"} 0
+net_conntrack_dialer_conn_established_total{dialer_name="node-exporter",instance="localhost:9090",job="prometheus"} 1
+net_conntrack_dialer_conn_established_total{dialer_name="performance-aggregator",instance="localhost:9090",job="prometheus"} 378
+net_conntrack_dialer_conn_established_total{dialer_name="prometheus",instance="localhost:9090",job="prometheus"} 1
+net_conntrack_dialer_conn_established_total{dialer_name="rabbitmq-queue-monitor",instance="localhost:9090",job="prometheus"} 381
+net_conntrack_dialer_conn_established_total{dialer_name="redis-exporter",instance="localhost:9090",job="prometheus"} 1
+net_conntrack_dialer_conn_established_total{dialer_name="resource-anomaly-generator",instance="localhost:9090",job="prometheus"} 373
+net_conntrack_dialer_conn_established_total{dialer_name="trace-generator",instance="localhost:9090",job="prometheus"} 560
+net_conntrack_dialer_conn_established_total{dialer_name="transaction-monitor",instance="localhost:9090",job="prometheus"} 567
+net_conntrack_dialer_conn_established_total{dialer_name="windows-exporter",instance="localhost:9090",job="prometheus"} 378
+
+## net_conntrack_dialer_conn_failed_total
+net_conntrack_dialer_conn_failed_total{dialer_name="alertmanager",instance="localhost:9090",job="prometheus",reason="refused"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="alertmanager",instance="localhost:9090",job="prometheus",reason="resolution"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="alertmanager",instance="localhost:9090",job="prometheus",reason="timeout"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="alertmanager",instance="localhost:9090",job="prometheus",reason="unknown"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="anomaly-injector",instance="localhost:9090",job="prometheus",reason="refused"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="anomaly-injector",instance="localhost:9090",job="prometheus",reason="resolution"} 17
+net_conntrack_dialer_conn_failed_total{dialer_name="anomaly-injector",instance="localhost:9090",job="prometheus",reason="timeout"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="anomaly-injector",instance="localhost:9090",job="prometheus",reason="unknown"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="auto-baselining",instance="localhost:9090",job="prometheus",reason="refused"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="auto-baselining",instance="localhost:9090",job="prometheus",reason="resolution"} 11
+net_conntrack_dialer_conn_failed_total{dialer_name="auto-baselining",instance="localhost:9090",job="prometheus",reason="timeout"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="auto-baselining",instance="localhost:9090",job="prometheus",reason="unknown"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="banking-db-demo",instance="localhost:9090",job="prometheus",reason="refused"} 1
+net_conntrack_dialer_conn_failed_total{dialer_name="banking-db-demo",instance="localhost:9090",job="prometheus",reason="resolution"} 11
+net_conntrack_dialer_conn_failed_total{dialer_name="banking-db-demo",instance="localhost:9090",job="prometheus",reason="timeout"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="banking-db-demo",instance="localhost:9090",job="prometheus",reason="unknown"} 1
+net_conntrack_dialer_conn_failed_total{dialer_name="banking-kafka",instance="localhost:9090",job="prometheus",reason="refused"} 1
+net_conntrack_dialer_conn_failed_total{dialer_name="banking-kafka",instance="localhost:9090",job="prometheus",reason="resolution"} 6
+net_conntrack_dialer_conn_failed_total{dialer_name="banking-kafka",instance="localhost:9090",job="prometheus",reason="timeout"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="banking-kafka",instance="localhost:9090",job="prometheus",reason="unknown"} 1
+net_conntrack_dialer_conn_failed_total{dialer_name="banking-message-consumer",instance="localhost:9090",job="prometheus",reason="refused"} 1
+net_conntrack_dialer_conn_failed_total{dialer_name="banking-message-consumer",instance="localhost:9090",job="prometheus",reason="resolution"} 12
+net_conntrack_dialer_conn_failed_total{dialer_name="banking-message-consumer",instance="localhost:9090",job="prometheus",reason="timeout"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="banking-message-consumer",instance="localhost:9090",job="prometheus",reason="unknown"} 1
+net_conntrack_dialer_conn_failed_total{dialer_name="banking-message-producer",instance="localhost:9090",job="prometheus",reason="refused"} 1
+net_conntrack_dialer_conn_failed_total{dialer_name="banking-message-producer",instance="localhost:9090",job="prometheus",reason="resolution"} 11
+net_conntrack_dialer_conn_failed_total{dialer_name="banking-message-producer",instance="localhost:9090",job="prometheus",reason="timeout"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="banking-message-producer",instance="localhost:9090",job="prometheus",reason="unknown"} 1
+net_conntrack_dialer_conn_failed_total{dialer_name="banking-postgresql",instance="localhost:9090",job="prometheus",reason="refused"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="banking-postgresql",instance="localhost:9090",job="prometheus",reason="resolution"} 8
+net_conntrack_dialer_conn_failed_total{dialer_name="banking-postgresql",instance="localhost:9090",job="prometheus",reason="timeout"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="banking-postgresql",instance="localhost:9090",job="prometheus",reason="unknown"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="banking-rabbitmq",instance="localhost:9090",job="prometheus",reason="refused"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="banking-rabbitmq",instance="localhost:9090",job="prometheus",reason="resolution"} 7
+net_conntrack_dialer_conn_failed_total{dialer_name="banking-rabbitmq",instance="localhost:9090",job="prometheus",reason="timeout"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="banking-rabbitmq",instance="localhost:9090",job="prometheus",reason="unknown"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="banking-services",instance="localhost:9090",job="prometheus",reason="refused"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="banking-services",instance="localhost:9090",job="prometheus",reason="resolution"} 104
+net_conntrack_dialer_conn_failed_total{dialer_name="banking-services",instance="localhost:9090",job="prometheus",reason="timeout"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="banking-services",instance="localhost:9090",job="prometheus",reason="unknown"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="cache-load-generator",instance="localhost:9090",job="prometheus",reason="refused"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="cache-load-generator",instance="localhost:9090",job="prometheus",reason="resolution"} 16
+net_conntrack_dialer_conn_failed_total{dialer_name="cache-load-generator",instance="localhost:9090",job="prometheus",reason="timeout"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="cache-load-generator",instance="localhost:9090",job="prometheus",reason="unknown"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="cache-pattern-analyzer",instance="localhost:9090",job="prometheus",reason="refused"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="cache-pattern-analyzer",instance="localhost:9090",job="prometheus",reason="resolution"} 11
+net_conntrack_dialer_conn_failed_total{dialer_name="cache-pattern-analyzer",instance="localhost:9090",job="prometheus",reason="timeout"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="cache-pattern-analyzer",instance="localhost:9090",job="prometheus",reason="unknown"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="cache-proxy",instance="localhost:9090",job="prometheus",reason="refused"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="cache-proxy",instance="localhost:9090",job="prometheus",reason="resolution"} 7
+net_conntrack_dialer_conn_failed_total{dialer_name="cache-proxy",instance="localhost:9090",job="prometheus",reason="timeout"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="cache-proxy",instance="localhost:9090",job="prometheus",reason="unknown"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="cadvisor",instance="localhost:9090",job="prometheus",reason="refused"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="cadvisor",instance="localhost:9090",job="prometheus",reason="resolution"} 8
+net_conntrack_dialer_conn_failed_total{dialer_name="cadvisor",instance="localhost:9090",job="prometheus",reason="timeout"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="cadvisor",instance="localhost:9090",job="prometheus",reason="unknown"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="container-resource-monitor",instance="localhost:9090",job="prometheus",reason="refused"} 3
+net_conntrack_dialer_conn_failed_total{dialer_name="container-resource-monitor",instance="localhost:9090",job="prometheus",reason="resolution"} 31
+net_conntrack_dialer_conn_failed_total{dialer_name="container-resource-monitor",instance="localhost:9090",job="prometheus",reason="timeout"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="container-resource-monitor",instance="localhost:9090",job="prometheus",reason="unknown"} 3
+net_conntrack_dialer_conn_failed_total{dialer_name="ddos-ml-detection",instance="localhost:9090",job="prometheus",reason="refused"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="ddos-ml-detection",instance="localhost:9090",job="prometheus",reason="resolution"} 11
+net_conntrack_dialer_conn_failed_total{dialer_name="ddos-ml-detection",instance="localhost:9090",job="prometheus",reason="timeout"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="ddos-ml-detection",instance="localhost:9090",job="prometheus",reason="unknown"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="default",instance="localhost:9090",job="prometheus",reason="refused"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="default",instance="localhost:9090",job="prometheus",reason="resolution"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="default",instance="localhost:9090",job="prometheus",reason="timeout"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="default",instance="localhost:9090",job="prometheus",reason="unknown"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="node-exporter",instance="localhost:9090",job="prometheus",reason="refused"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="node-exporter",instance="localhost:9090",job="prometheus",reason="resolution"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="node-exporter",instance="localhost:9090",job="prometheus",reason="timeout"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="node-exporter",instance="localhost:9090",job="prometheus",reason="unknown"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="performance-aggregator",instance="localhost:9090",job="prometheus",reason="refused"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="performance-aggregator",instance="localhost:9090",job="prometheus",reason="resolution"} 12
+net_conntrack_dialer_conn_failed_total{dialer_name="performance-aggregator",instance="localhost:9090",job="prometheus",reason="timeout"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="performance-aggregator",instance="localhost:9090",job="prometheus",reason="unknown"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="prometheus",instance="localhost:9090",job="prometheus",reason="refused"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="prometheus",instance="localhost:9090",job="prometheus",reason="resolution"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="prometheus",instance="localhost:9090",job="prometheus",reason="timeout"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="prometheus",instance="localhost:9090",job="prometheus",reason="unknown"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="rabbitmq-queue-monitor",instance="localhost:9090",job="prometheus",reason="refused"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="rabbitmq-queue-monitor",instance="localhost:9090",job="prometheus",reason="resolution"} 8
+net_conntrack_dialer_conn_failed_total{dialer_name="rabbitmq-queue-monitor",instance="localhost:9090",job="prometheus",reason="timeout"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="rabbitmq-queue-monitor",instance="localhost:9090",job="prometheus",reason="unknown"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="redis-exporter",instance="localhost:9090",job="prometheus",reason="refused"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="redis-exporter",instance="localhost:9090",job="prometheus",reason="resolution"} 8
+net_conntrack_dialer_conn_failed_total{dialer_name="redis-exporter",instance="localhost:9090",job="prometheus",reason="timeout"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="redis-exporter",instance="localhost:9090",job="prometheus",reason="unknown"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="resource-anomaly-generator",instance="localhost:9090",job="prometheus",reason="refused"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="resource-anomaly-generator",instance="localhost:9090",job="prometheus",reason="resolution"} 16
+net_conntrack_dialer_conn_failed_total{dialer_name="resource-anomaly-generator",instance="localhost:9090",job="prometheus",reason="timeout"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="resource-anomaly-generator",instance="localhost:9090",job="prometheus",reason="unknown"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="trace-generator",instance="localhost:9090",job="prometheus",reason="refused"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="trace-generator",instance="localhost:9090",job="prometheus",reason="resolution"} 24
+net_conntrack_dialer_conn_failed_total{dialer_name="trace-generator",instance="localhost:9090",job="prometheus",reason="timeout"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="trace-generator",instance="localhost:9090",job="prometheus",reason="unknown"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="transaction-monitor",instance="localhost:9090",job="prometheus",reason="refused"} 1
+net_conntrack_dialer_conn_failed_total{dialer_name="transaction-monitor",instance="localhost:9090",job="prometheus",reason="resolution"} 16
+net_conntrack_dialer_conn_failed_total{dialer_name="transaction-monitor",instance="localhost:9090",job="prometheus",reason="timeout"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="transaction-monitor",instance="localhost:9090",job="prometheus",reason="unknown"} 1
+net_conntrack_dialer_conn_failed_total{dialer_name="windows-exporter",instance="localhost:9090",job="prometheus",reason="refused"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="windows-exporter",instance="localhost:9090",job="prometheus",reason="resolution"} 11
+net_conntrack_dialer_conn_failed_total{dialer_name="windows-exporter",instance="localhost:9090",job="prometheus",reason="timeout"} 0
+net_conntrack_dialer_conn_failed_total{dialer_name="windows-exporter",instance="localhost:9090",job="prometheus",reason="unknown"} 0
+
+## net_conntrack_listener_conn_accepted_total
+net_conntrack_listener_conn_accepted_total{instance="localhost:9090",job="prometheus",listener_name="http"} 1782
+
+## net_conntrack_listener_conn_closed_total
+net_conntrack_listener_conn_closed_total{instance="localhost:9090",job="prometheus",listener_name="http"} 1781
+
+## process_cpu_seconds_total
+process_cpu_seconds_total{instance="localhost:9090",job="prometheus"} 96.39
+
+## process_max_fds
+process_max_fds{instance="localhost:9090",job="prometheus"} 1048576
+
+## process_network_receive_bytes_total
+process_network_receive_bytes_total{instance="localhost:9090",job="prometheus"} 104817201
+
+## process_network_transmit_bytes_total
+process_network_transmit_bytes_total{instance="localhost:9090",job="prometheus"} 40120300
+
+## process_open_fds
+process_open_fds{instance="localhost:9090",job="prometheus"} 44
+
+## process_resident_memory_bytes
+process_resident_memory_bytes{instance="localhost:9090",job="prometheus"} 174301184
+
+## process_start_time_seconds
+process_start_time_seconds{instance="localhost:9090",job="prometheus"} 1751428941.77
+
+## process_virtual_memory_bytes
+process_virtual_memory_bytes{instance="localhost:9090",job="prometheus"} 1893859328
+
+## process_virtual_memory_max_bytes
+process_virtual_memory_max_bytes{instance="localhost:9090",job="prometheus"} 18446744073709552000
+
+## prometheus_api_notification_active_subscribers
+prometheus_api_notification_active_subscribers{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_api_notification_updates_dropped_total
+prometheus_api_notification_updates_dropped_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_api_notification_updates_sent_total
+prometheus_api_notification_updates_sent_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_build_info
+prometheus_build_info{branch="HEAD",goarch="arm64",goos="linux",goversion="go1.24.3",instance="localhost:9090",job="prometheus",revision="aea6503d9bbaad6c5faff3ecf6f1025213356c92",tags="netgo,builtinassets,stringlabels",version="3.4.1"} 1
+
+## prometheus_config_last_reload_success_timestamp_seconds
+prometheus_config_last_reload_success_timestamp_seconds{instance="localhost:9090",job="prometheus"} 1751428943.174824
+
+## prometheus_config_last_reload_successful
+prometheus_config_last_reload_successful{instance="localhost:9090",job="prometheus"} 1
+
+## prometheus_engine_queries
+prometheus_engine_queries{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_engine_queries_concurrent_max
+prometheus_engine_queries_concurrent_max{instance="localhost:9090",job="prometheus"} 20
+
+## prometheus_engine_query_duration_seconds
+prometheus_engine_query_duration_seconds{instance="localhost:9090",job="prometheus",quantile="0.5",slice="inner_eval"} 0.000261375
+prometheus_engine_query_duration_seconds{instance="localhost:9090",job="prometheus",quantile="0.9",slice="inner_eval"} 0.002602667
+prometheus_engine_query_duration_seconds{instance="localhost:9090",job="prometheus",quantile="0.99",slice="inner_eval"} 0.0208305
+prometheus_engine_query_duration_seconds{instance="localhost:9090",job="prometheus",quantile="0.5",slice="prepare_time"} 0.000038334
+prometheus_engine_query_duration_seconds{instance="localhost:9090",job="prometheus",quantile="0.9",slice="prepare_time"} 0.000177959
+prometheus_engine_query_duration_seconds{instance="localhost:9090",job="prometheus",quantile="0.99",slice="prepare_time"} 0.001129292
+prometheus_engine_query_duration_seconds{instance="localhost:9090",job="prometheus",quantile="0.5",slice="queue_time"} 0.000016959
+prometheus_engine_query_duration_seconds{instance="localhost:9090",job="prometheus",quantile="0.9",slice="queue_time"} 0.00029925
+prometheus_engine_query_duration_seconds{instance="localhost:9090",job="prometheus",quantile="0.99",slice="queue_time"} 0.002763791
+prometheus_engine_query_duration_seconds{instance="localhost:9090",job="prometheus",quantile="0.5",slice="result_sort"} 4.17e-07
+prometheus_engine_query_duration_seconds{instance="localhost:9090",job="prometheus",quantile="0.9",slice="result_sort"} 0.0000065
+prometheus_engine_query_duration_seconds{instance="localhost:9090",job="prometheus",quantile="0.99",slice="result_sort"} 0.000014167
+
+## prometheus_engine_query_duration_seconds_count
+prometheus_engine_query_duration_seconds_count{instance="localhost:9090",job="prometheus",slice="inner_eval"} 3516
+prometheus_engine_query_duration_seconds_count{instance="localhost:9090",job="prometheus",slice="prepare_time"} 3516
+prometheus_engine_query_duration_seconds_count{instance="localhost:9090",job="prometheus",slice="queue_time"} 7032
+prometheus_engine_query_duration_seconds_count{instance="localhost:9090",job="prometheus",slice="result_sort"} 2237
+
+## prometheus_engine_query_duration_seconds_sum
+prometheus_engine_query_duration_seconds_sum{instance="localhost:9090",job="prometheus",slice="inner_eval"} 2.5905346380000003
+prometheus_engine_query_duration_seconds_sum{instance="localhost:9090",job="prometheus",slice="prepare_time"} 0.29048407099999957
+prometheus_engine_query_duration_seconds_sum{instance="localhost:9090",job="prometheus",slice="queue_time"} 0.5208490739999989
+prometheus_engine_query_duration_seconds_sum{instance="localhost:9090",job="prometheus",slice="result_sort"} 0.003107158999999986
+
+## prometheus_engine_query_log_enabled
+prometheus_engine_query_log_enabled{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_engine_query_log_failures_total
+prometheus_engine_query_log_failures_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_engine_query_samples_total
+prometheus_engine_query_samples_total{instance="localhost:9090",job="prometheus"} 12409201
+
+## prometheus_http_request_duration_seconds_bucket
+prometheus_http_request_duration_seconds_bucket{handler="/metrics",instance="localhost:9090",job="prometheus",le="0.1"} 389
+prometheus_http_request_duration_seconds_bucket{handler="/metrics",instance="localhost:9090",job="prometheus",le="0.2"} 389
+prometheus_http_request_duration_seconds_bucket{handler="/metrics",instance="localhost:9090",job="prometheus",le="0.4"} 389
+prometheus_http_request_duration_seconds_bucket{handler="/metrics",instance="localhost:9090",job="prometheus",le="1.0"} 389
+prometheus_http_request_duration_seconds_bucket{handler="/metrics",instance="localhost:9090",job="prometheus",le="3.0"} 389
+prometheus_http_request_duration_seconds_bucket{handler="/metrics",instance="localhost:9090",job="prometheus",le="8.0"} 389
+prometheus_http_request_duration_seconds_bucket{handler="/metrics",instance="localhost:9090",job="prometheus",le="20.0"} 389
+prometheus_http_request_duration_seconds_bucket{handler="/metrics",instance="localhost:9090",job="prometheus",le="60.0"} 389
+prometheus_http_request_duration_seconds_bucket{handler="/metrics",instance="localhost:9090",job="prometheus",le="120.0"} 389
+prometheus_http_request_duration_seconds_bucket{handler="/metrics",instance="localhost:9090",job="prometheus",le="+Inf"} 389
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/query_range",instance="localhost:9090",job="prometheus",le="0.1"} 2237
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/query_range",instance="localhost:9090",job="prometheus",le="0.2"} 2237
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/query_range",instance="localhost:9090",job="prometheus",le="0.4"} 2237
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/query_range",instance="localhost:9090",job="prometheus",le="1.0"} 2237
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/query_range",instance="localhost:9090",job="prometheus",le="3.0"} 2237
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/query_range",instance="localhost:9090",job="prometheus",le="8.0"} 2237
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/query_range",instance="localhost:9090",job="prometheus",le="20.0"} 2237
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/query_range",instance="localhost:9090",job="prometheus",le="60.0"} 2237
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/query_range",instance="localhost:9090",job="prometheus",le="120.0"} 2237
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/query_range",instance="localhost:9090",job="prometheus",le="+Inf"} 2237
+prometheus_http_request_duration_seconds_bucket{handler="/-/healthy",instance="localhost:9090",job="prometheus",le="0.1"} 1
+prometheus_http_request_duration_seconds_bucket{handler="/-/healthy",instance="localhost:9090",job="prometheus",le="0.2"} 1
+prometheus_http_request_duration_seconds_bucket{handler="/-/healthy",instance="localhost:9090",job="prometheus",le="0.4"} 1
+prometheus_http_request_duration_seconds_bucket{handler="/-/healthy",instance="localhost:9090",job="prometheus",le="1.0"} 1
+prometheus_http_request_duration_seconds_bucket{handler="/-/healthy",instance="localhost:9090",job="prometheus",le="3.0"} 1
+prometheus_http_request_duration_seconds_bucket{handler="/-/healthy",instance="localhost:9090",job="prometheus",le="8.0"} 1
+prometheus_http_request_duration_seconds_bucket{handler="/-/healthy",instance="localhost:9090",job="prometheus",le="20.0"} 1
+prometheus_http_request_duration_seconds_bucket{handler="/-/healthy",instance="localhost:9090",job="prometheus",le="60.0"} 1
+prometheus_http_request_duration_seconds_bucket{handler="/-/healthy",instance="localhost:9090",job="prometheus",le="120.0"} 1
+prometheus_http_request_duration_seconds_bucket{handler="/-/healthy",instance="localhost:9090",job="prometheus",le="+Inf"} 1
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/notifications/live",instance="localhost:9090",job="prometheus",le="0.1"} 0
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/notifications/live",instance="localhost:9090",job="prometheus",le="0.2"} 0
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/notifications/live",instance="localhost:9090",job="prometheus",le="0.4"} 2
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/notifications/live",instance="localhost:9090",job="prometheus",le="1.0"} 12
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/notifications/live",instance="localhost:9090",job="prometheus",le="3.0"} 15
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/notifications/live",instance="localhost:9090",job="prometheus",le="8.0"} 21
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/notifications/live",instance="localhost:9090",job="prometheus",le="20.0"} 24
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/notifications/live",instance="localhost:9090",job="prometheus",le="60.0"} 25
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/notifications/live",instance="localhost:9090",job="prometheus",le="120.0"} 27
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/notifications/live",instance="localhost:9090",job="prometheus",le="+Inf"} 28
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/scrape_pools",instance="localhost:9090",job="prometheus",le="0.1"} 10
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/scrape_pools",instance="localhost:9090",job="prometheus",le="0.2"} 10
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/scrape_pools",instance="localhost:9090",job="prometheus",le="0.4"} 10
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/scrape_pools",instance="localhost:9090",job="prometheus",le="1.0"} 10
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/scrape_pools",instance="localhost:9090",job="prometheus",le="3.0"} 10
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/scrape_pools",instance="localhost:9090",job="prometheus",le="8.0"} 10
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/scrape_pools",instance="localhost:9090",job="prometheus",le="20.0"} 10
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/scrape_pools",instance="localhost:9090",job="prometheus",le="60.0"} 10
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/scrape_pools",instance="localhost:9090",job="prometheus",le="120.0"} 10
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/scrape_pools",instance="localhost:9090",job="prometheus",le="+Inf"} 10
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/targets",instance="localhost:9090",job="prometheus",le="0.1"} 12
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/targets",instance="localhost:9090",job="prometheus",le="0.2"} 12
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/targets",instance="localhost:9090",job="prometheus",le="0.4"} 12
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/targets",instance="localhost:9090",job="prometheus",le="1.0"} 12
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/targets",instance="localhost:9090",job="prometheus",le="3.0"} 12
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/targets",instance="localhost:9090",job="prometheus",le="8.0"} 12
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/targets",instance="localhost:9090",job="prometheus",le="20.0"} 12
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/targets",instance="localhost:9090",job="prometheus",le="60.0"} 12
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/targets",instance="localhost:9090",job="prometheus",le="120.0"} 12
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/targets",instance="localhost:9090",job="prometheus",le="+Inf"} 12
+prometheus_http_request_duration_seconds_bucket{handler="/assets/*filepath",instance="localhost:9090",job="prometheus",le="0.1"} 18
+prometheus_http_request_duration_seconds_bucket{handler="/assets/*filepath",instance="localhost:9090",job="prometheus",le="0.2"} 18
+prometheus_http_request_duration_seconds_bucket{handler="/assets/*filepath",instance="localhost:9090",job="prometheus",le="0.4"} 18
+prometheus_http_request_duration_seconds_bucket{handler="/assets/*filepath",instance="localhost:9090",job="prometheus",le="1.0"} 18
+prometheus_http_request_duration_seconds_bucket{handler="/assets/*filepath",instance="localhost:9090",job="prometheus",le="3.0"} 18
+prometheus_http_request_duration_seconds_bucket{handler="/assets/*filepath",instance="localhost:9090",job="prometheus",le="8.0"} 18
+prometheus_http_request_duration_seconds_bucket{handler="/assets/*filepath",instance="localhost:9090",job="prometheus",le="20.0"} 18
+prometheus_http_request_duration_seconds_bucket{handler="/assets/*filepath",instance="localhost:9090",job="prometheus",le="60.0"} 18
+prometheus_http_request_duration_seconds_bucket{handler="/assets/*filepath",instance="localhost:9090",job="prometheus",le="120.0"} 18
+prometheus_http_request_duration_seconds_bucket{handler="/assets/*filepath",instance="localhost:9090",job="prometheus",le="+Inf"} 18
+prometheus_http_request_duration_seconds_bucket{handler="/favicon.svg",instance="localhost:9090",job="prometheus",le="0.1"} 9
+prometheus_http_request_duration_seconds_bucket{handler="/favicon.svg",instance="localhost:9090",job="prometheus",le="0.2"} 9
+prometheus_http_request_duration_seconds_bucket{handler="/favicon.svg",instance="localhost:9090",job="prometheus",le="0.4"} 9
+prometheus_http_request_duration_seconds_bucket{handler="/favicon.svg",instance="localhost:9090",job="prometheus",le="1.0"} 9
+prometheus_http_request_duration_seconds_bucket{handler="/favicon.svg",instance="localhost:9090",job="prometheus",le="3.0"} 9
+prometheus_http_request_duration_seconds_bucket{handler="/favicon.svg",instance="localhost:9090",job="prometheus",le="8.0"} 9
+prometheus_http_request_duration_seconds_bucket{handler="/favicon.svg",instance="localhost:9090",job="prometheus",le="20.0"} 9
+prometheus_http_request_duration_seconds_bucket{handler="/favicon.svg",instance="localhost:9090",job="prometheus",le="60.0"} 9
+prometheus_http_request_duration_seconds_bucket{handler="/favicon.svg",instance="localhost:9090",job="prometheus",le="120.0"} 9
+prometheus_http_request_duration_seconds_bucket{handler="/favicon.svg",instance="localhost:9090",job="prometheus",le="+Inf"} 9
+prometheus_http_request_duration_seconds_bucket{handler="/targets",instance="localhost:9090",job="prometheus",le="0.1"} 9
+prometheus_http_request_duration_seconds_bucket{handler="/targets",instance="localhost:9090",job="prometheus",le="0.2"} 9
+prometheus_http_request_duration_seconds_bucket{handler="/targets",instance="localhost:9090",job="prometheus",le="0.4"} 9
+prometheus_http_request_duration_seconds_bucket{handler="/targets",instance="localhost:9090",job="prometheus",le="1.0"} 9
+prometheus_http_request_duration_seconds_bucket{handler="/targets",instance="localhost:9090",job="prometheus",le="3.0"} 9
+prometheus_http_request_duration_seconds_bucket{handler="/targets",instance="localhost:9090",job="prometheus",le="8.0"} 9
+prometheus_http_request_duration_seconds_bucket{handler="/targets",instance="localhost:9090",job="prometheus",le="20.0"} 9
+prometheus_http_request_duration_seconds_bucket{handler="/targets",instance="localhost:9090",job="prometheus",le="60.0"} 9
+prometheus_http_request_duration_seconds_bucket{handler="/targets",instance="localhost:9090",job="prometheus",le="120.0"} 9
+prometheus_http_request_duration_seconds_bucket{handler="/targets",instance="localhost:9090",job="prometheus",le="+Inf"} 9
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/query",instance="localhost:9090",job="prometheus",le="0.1"} 112
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/query",instance="localhost:9090",job="prometheus",le="0.2"} 112
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/query",instance="localhost:9090",job="prometheus",le="0.4"} 112
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/query",instance="localhost:9090",job="prometheus",le="1.0"} 112
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/query",instance="localhost:9090",job="prometheus",le="3.0"} 112
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/query",instance="localhost:9090",job="prometheus",le="8.0"} 112
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/query",instance="localhost:9090",job="prometheus",le="20.0"} 112
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/query",instance="localhost:9090",job="prometheus",le="60.0"} 112
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/query",instance="localhost:9090",job="prometheus",le="120.0"} 112
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/query",instance="localhost:9090",job="prometheus",le="+Inf"} 112
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/label/:name/values",instance="localhost:9090",job="prometheus",le="0.1"} 6
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/label/:name/values",instance="localhost:9090",job="prometheus",le="0.2"} 6
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/label/:name/values",instance="localhost:9090",job="prometheus",le="0.4"} 6
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/label/:name/values",instance="localhost:9090",job="prometheus",le="1.0"} 6
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/label/:name/values",instance="localhost:9090",job="prometheus",le="3.0"} 6
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/label/:name/values",instance="localhost:9090",job="prometheus",le="8.0"} 6
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/label/:name/values",instance="localhost:9090",job="prometheus",le="20.0"} 6
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/label/:name/values",instance="localhost:9090",job="prometheus",le="60.0"} 6
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/label/:name/values",instance="localhost:9090",job="prometheus",le="120.0"} 6
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/label/:name/values",instance="localhost:9090",job="prometheus",le="+Inf"} 6
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/rules",instance="localhost:9090",job="prometheus",le="0.1"} 1
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/rules",instance="localhost:9090",job="prometheus",le="0.2"} 1
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/rules",instance="localhost:9090",job="prometheus",le="0.4"} 1
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/rules",instance="localhost:9090",job="prometheus",le="1.0"} 1
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/rules",instance="localhost:9090",job="prometheus",le="3.0"} 1
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/rules",instance="localhost:9090",job="prometheus",le="8.0"} 1
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/rules",instance="localhost:9090",job="prometheus",le="20.0"} 1
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/rules",instance="localhost:9090",job="prometheus",le="60.0"} 1
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/rules",instance="localhost:9090",job="prometheus",le="120.0"} 1
+prometheus_http_request_duration_seconds_bucket{handler="/api/v1/rules",instance="localhost:9090",job="prometheus",le="+Inf"} 1
+
+## prometheus_http_request_duration_seconds_count
+prometheus_http_request_duration_seconds_count{handler="/metrics",instance="localhost:9090",job="prometheus"} 389
+prometheus_http_request_duration_seconds_count{handler="/api/v1/query_range",instance="localhost:9090",job="prometheus"} 2237
+prometheus_http_request_duration_seconds_count{handler="/-/healthy",instance="localhost:9090",job="prometheus"} 1
+prometheus_http_request_duration_seconds_count{handler="/api/v1/notifications/live",instance="localhost:9090",job="prometheus"} 28
+prometheus_http_request_duration_seconds_count{handler="/api/v1/scrape_pools",instance="localhost:9090",job="prometheus"} 10
+prometheus_http_request_duration_seconds_count{handler="/api/v1/targets",instance="localhost:9090",job="prometheus"} 12
+prometheus_http_request_duration_seconds_count{handler="/assets/*filepath",instance="localhost:9090",job="prometheus"} 18
+prometheus_http_request_duration_seconds_count{handler="/favicon.svg",instance="localhost:9090",job="prometheus"} 9
+prometheus_http_request_duration_seconds_count{handler="/targets",instance="localhost:9090",job="prometheus"} 9
+prometheus_http_request_duration_seconds_count{handler="/api/v1/query",instance="localhost:9090",job="prometheus"} 112
+prometheus_http_request_duration_seconds_count{handler="/api/v1/label/:name/values",instance="localhost:9090",job="prometheus"} 6
+prometheus_http_request_duration_seconds_count{handler="/api/v1/rules",instance="localhost:9090",job="prometheus"} 1
+
+## prometheus_http_request_duration_seconds_sum
+prometheus_http_request_duration_seconds_sum{handler="/metrics",instance="localhost:9090",job="prometheus"} 4.209225332000001
+prometheus_http_request_duration_seconds_sum{handler="/api/v1/query_range",instance="localhost:9090",job="prometheus"} 8.153632237999993
+prometheus_http_request_duration_seconds_sum{handler="/-/healthy",instance="localhost:9090",job="prometheus"} 0.000551125
+prometheus_http_request_duration_seconds_sum{handler="/api/v1/notifications/live",instance="localhost:9090",job="prometheus"} 807.1134970769999
+prometheus_http_request_duration_seconds_sum{handler="/api/v1/scrape_pools",instance="localhost:9090",job="prometheus"} 0.020927249
+prometheus_http_request_duration_seconds_sum{handler="/api/v1/targets",instance="localhost:9090",job="prometheus"} 0.050961543
+prometheus_http_request_duration_seconds_sum{handler="/assets/*filepath",instance="localhost:9090",job="prometheus"} 0.6184501250000002
+prometheus_http_request_duration_seconds_sum{handler="/favicon.svg",instance="localhost:9090",job="prometheus"} 0.005123625000000001
+prometheus_http_request_duration_seconds_sum{handler="/targets",instance="localhost:9090",job="prometheus"} 0.028751043
+prometheus_http_request_duration_seconds_sum{handler="/api/v1/query",instance="localhost:9090",job="prometheus"} 0.6509242500000001
+prometheus_http_request_duration_seconds_sum{handler="/api/v1/label/:name/values",instance="localhost:9090",job="prometheus"} 0.022260293000000004
+prometheus_http_request_duration_seconds_sum{handler="/api/v1/rules",instance="localhost:9090",job="prometheus"} 0.020462792
+
+## prometheus_http_requests_total
+prometheus_http_requests_total{code="200",handler="/",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/-/healthy",instance="localhost:9090",job="prometheus"} 1
+prometheus_http_requests_total{code="200",handler="/-/quit",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/-/ready",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/-/reload",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/alertmanager-discovery",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/alerts",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/api/v1/*path",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/api/v1/admin/tsdb/clean_tombstones",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/api/v1/admin/tsdb/delete_series",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/api/v1/admin/tsdb/snapshot",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/api/v1/alertmanagers",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/api/v1/alerts",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/api/v1/format_query",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/api/v1/label/:name/values",instance="localhost:9090",job="prometheus"} 6
+prometheus_http_requests_total{code="200",handler="/api/v1/labels",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/api/v1/metadata",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/api/v1/notifications",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/api/v1/notifications/live",instance="localhost:9090",job="prometheus"} 28
+prometheus_http_requests_total{code="200",handler="/api/v1/otlp/v1/metrics",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/api/v1/parse_query",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/api/v1/query",instance="localhost:9090",job="prometheus"} 112
+prometheus_http_requests_total{code="200",handler="/api/v1/query_exemplars",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/api/v1/query_range",instance="localhost:9090",job="prometheus"} 2237
+prometheus_http_requests_total{code="200",handler="/api/v1/read",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/api/v1/rules",instance="localhost:9090",job="prometheus"} 1
+prometheus_http_requests_total{code="200",handler="/api/v1/scrape_pools",instance="localhost:9090",job="prometheus"} 10
+prometheus_http_requests_total{code="200",handler="/api/v1/series",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/api/v1/status/buildinfo",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/api/v1/status/config",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/api/v1/status/flags",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/api/v1/status/runtimeinfo",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/api/v1/status/tsdb",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/api/v1/status/walreplay",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/api/v1/targets",instance="localhost:9090",job="prometheus"} 12
+prometheus_http_requests_total{code="200",handler="/api/v1/targets/metadata",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/api/v1/write",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/assets/*filepath",instance="localhost:9090",job="prometheus"} 18
+prometheus_http_requests_total{code="200",handler="/classic/static/*filepath",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/config",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/consoles/*filepath",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/debug/*subpath",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/favicon.ico",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/favicon.svg",instance="localhost:9090",job="prometheus"} 9
+prometheus_http_requests_total{code="200",handler="/federate",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/flags",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/graph",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/manifest.json",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/metrics",instance="localhost:9090",job="prometheus"} 389
+prometheus_http_requests_total{code="200",handler="/query",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/rules",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/service-discovery",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/status",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/targets",instance="localhost:9090",job="prometheus"} 9
+prometheus_http_requests_total{code="200",handler="/tsdb-status",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_requests_total{code="200",handler="/version",instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_http_response_size_bytes_bucket
+prometheus_http_response_size_bytes_bucket{handler="/metrics",instance="localhost:9090",job="prometheus",le="100.0"} 0
+prometheus_http_response_size_bytes_bucket{handler="/metrics",instance="localhost:9090",job="prometheus",le="1000.0"} 0
+prometheus_http_response_size_bytes_bucket{handler="/metrics",instance="localhost:9090",job="prometheus",le="10000.0"} 0
+prometheus_http_response_size_bytes_bucket{handler="/metrics",instance="localhost:9090",job="prometheus",le="100000.0"} 389
+prometheus_http_response_size_bytes_bucket{handler="/metrics",instance="localhost:9090",job="prometheus",le="1e+06"} 389
+prometheus_http_response_size_bytes_bucket{handler="/metrics",instance="localhost:9090",job="prometheus",le="1e+07"} 389
+prometheus_http_response_size_bytes_bucket{handler="/metrics",instance="localhost:9090",job="prometheus",le="1e+08"} 389
+prometheus_http_response_size_bytes_bucket{handler="/metrics",instance="localhost:9090",job="prometheus",le="1e+09"} 389
+prometheus_http_response_size_bytes_bucket{handler="/metrics",instance="localhost:9090",job="prometheus",le="+Inf"} 389
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/query_range",instance="localhost:9090",job="prometheus",le="100.0"} 1031
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/query_range",instance="localhost:9090",job="prometheus",le="1000.0"} 2134
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/query_range",instance="localhost:9090",job="prometheus",le="10000.0"} 2233
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/query_range",instance="localhost:9090",job="prometheus",le="100000.0"} 2237
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/query_range",instance="localhost:9090",job="prometheus",le="1e+06"} 2237
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/query_range",instance="localhost:9090",job="prometheus",le="1e+07"} 2237
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/query_range",instance="localhost:9090",job="prometheus",le="1e+08"} 2237
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/query_range",instance="localhost:9090",job="prometheus",le="1e+09"} 2237
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/query_range",instance="localhost:9090",job="prometheus",le="+Inf"} 2237
+prometheus_http_response_size_bytes_bucket{handler="/-/healthy",instance="localhost:9090",job="prometheus",le="100.0"} 1
+prometheus_http_response_size_bytes_bucket{handler="/-/healthy",instance="localhost:9090",job="prometheus",le="1000.0"} 1
+prometheus_http_response_size_bytes_bucket{handler="/-/healthy",instance="localhost:9090",job="prometheus",le="10000.0"} 1
+prometheus_http_response_size_bytes_bucket{handler="/-/healthy",instance="localhost:9090",job="prometheus",le="100000.0"} 1
+prometheus_http_response_size_bytes_bucket{handler="/-/healthy",instance="localhost:9090",job="prometheus",le="1e+06"} 1
+prometheus_http_response_size_bytes_bucket{handler="/-/healthy",instance="localhost:9090",job="prometheus",le="1e+07"} 1
+prometheus_http_response_size_bytes_bucket{handler="/-/healthy",instance="localhost:9090",job="prometheus",le="1e+08"} 1
+prometheus_http_response_size_bytes_bucket{handler="/-/healthy",instance="localhost:9090",job="prometheus",le="1e+09"} 1
+prometheus_http_response_size_bytes_bucket{handler="/-/healthy",instance="localhost:9090",job="prometheus",le="+Inf"} 1
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/notifications/live",instance="localhost:9090",job="prometheus",le="100.0"} 28
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/notifications/live",instance="localhost:9090",job="prometheus",le="1000.0"} 28
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/notifications/live",instance="localhost:9090",job="prometheus",le="10000.0"} 28
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/notifications/live",instance="localhost:9090",job="prometheus",le="100000.0"} 28
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/notifications/live",instance="localhost:9090",job="prometheus",le="1e+06"} 28
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/notifications/live",instance="localhost:9090",job="prometheus",le="1e+07"} 28
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/notifications/live",instance="localhost:9090",job="prometheus",le="1e+08"} 28
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/notifications/live",instance="localhost:9090",job="prometheus",le="1e+09"} 28
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/notifications/live",instance="localhost:9090",job="prometheus",le="+Inf"} 28
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/scrape_pools",instance="localhost:9090",job="prometheus",le="100.0"} 0
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/scrape_pools",instance="localhost:9090",job="prometheus",le="1000.0"} 10
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/scrape_pools",instance="localhost:9090",job="prometheus",le="10000.0"} 10
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/scrape_pools",instance="localhost:9090",job="prometheus",le="100000.0"} 10
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/scrape_pools",instance="localhost:9090",job="prometheus",le="1e+06"} 10
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/scrape_pools",instance="localhost:9090",job="prometheus",le="1e+07"} 10
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/scrape_pools",instance="localhost:9090",job="prometheus",le="1e+08"} 10
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/scrape_pools",instance="localhost:9090",job="prometheus",le="1e+09"} 10
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/scrape_pools",instance="localhost:9090",job="prometheus",le="+Inf"} 10
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/targets",instance="localhost:9090",job="prometheus",le="100.0"} 0
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/targets",instance="localhost:9090",job="prometheus",le="1000.0"} 2
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/targets",instance="localhost:9090",job="prometheus",le="10000.0"} 12
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/targets",instance="localhost:9090",job="prometheus",le="100000.0"} 12
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/targets",instance="localhost:9090",job="prometheus",le="1e+06"} 12
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/targets",instance="localhost:9090",job="prometheus",le="1e+07"} 12
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/targets",instance="localhost:9090",job="prometheus",le="1e+08"} 12
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/targets",instance="localhost:9090",job="prometheus",le="1e+09"} 12
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/targets",instance="localhost:9090",job="prometheus",le="+Inf"} 12
+prometheus_http_response_size_bytes_bucket{handler="/assets/*filepath",instance="localhost:9090",job="prometheus",le="100.0"} 0
+prometheus_http_response_size_bytes_bucket{handler="/assets/*filepath",instance="localhost:9090",job="prometheus",le="1000.0"} 0
+prometheus_http_response_size_bytes_bucket{handler="/assets/*filepath",instance="localhost:9090",job="prometheus",le="10000.0"} 0
+prometheus_http_response_size_bytes_bucket{handler="/assets/*filepath",instance="localhost:9090",job="prometheus",le="100000.0"} 0
+prometheus_http_response_size_bytes_bucket{handler="/assets/*filepath",instance="localhost:9090",job="prometheus",le="1e+06"} 9
+prometheus_http_response_size_bytes_bucket{handler="/assets/*filepath",instance="localhost:9090",job="prometheus",le="1e+07"} 18
+prometheus_http_response_size_bytes_bucket{handler="/assets/*filepath",instance="localhost:9090",job="prometheus",le="1e+08"} 18
+prometheus_http_response_size_bytes_bucket{handler="/assets/*filepath",instance="localhost:9090",job="prometheus",le="1e+09"} 18
+prometheus_http_response_size_bytes_bucket{handler="/assets/*filepath",instance="localhost:9090",job="prometheus",le="+Inf"} 18
+prometheus_http_response_size_bytes_bucket{handler="/favicon.svg",instance="localhost:9090",job="prometheus",le="100.0"} 0
+prometheus_http_response_size_bytes_bucket{handler="/favicon.svg",instance="localhost:9090",job="prometheus",le="1000.0"} 0
+prometheus_http_response_size_bytes_bucket{handler="/favicon.svg",instance="localhost:9090",job="prometheus",le="10000.0"} 9
+prometheus_http_response_size_bytes_bucket{handler="/favicon.svg",instance="localhost:9090",job="prometheus",le="100000.0"} 9
+prometheus_http_response_size_bytes_bucket{handler="/favicon.svg",instance="localhost:9090",job="prometheus",le="1e+06"} 9
+prometheus_http_response_size_bytes_bucket{handler="/favicon.svg",instance="localhost:9090",job="prometheus",le="1e+07"} 9
+prometheus_http_response_size_bytes_bucket{handler="/favicon.svg",instance="localhost:9090",job="prometheus",le="1e+08"} 9
+prometheus_http_response_size_bytes_bucket{handler="/favicon.svg",instance="localhost:9090",job="prometheus",le="1e+09"} 9
+prometheus_http_response_size_bytes_bucket{handler="/favicon.svg",instance="localhost:9090",job="prometheus",le="+Inf"} 9
+prometheus_http_response_size_bytes_bucket{handler="/targets",instance="localhost:9090",job="prometheus",le="100.0"} 0
+prometheus_http_response_size_bytes_bucket{handler="/targets",instance="localhost:9090",job="prometheus",le="1000.0"} 0
+prometheus_http_response_size_bytes_bucket{handler="/targets",instance="localhost:9090",job="prometheus",le="10000.0"} 9
+prometheus_http_response_size_bytes_bucket{handler="/targets",instance="localhost:9090",job="prometheus",le="100000.0"} 9
+prometheus_http_response_size_bytes_bucket{handler="/targets",instance="localhost:9090",job="prometheus",le="1e+06"} 9
+prometheus_http_response_size_bytes_bucket{handler="/targets",instance="localhost:9090",job="prometheus",le="1e+07"} 9
+prometheus_http_response_size_bytes_bucket{handler="/targets",instance="localhost:9090",job="prometheus",le="1e+08"} 9
+prometheus_http_response_size_bytes_bucket{handler="/targets",instance="localhost:9090",job="prometheus",le="1e+09"} 9
+prometheus_http_response_size_bytes_bucket{handler="/targets",instance="localhost:9090",job="prometheus",le="+Inf"} 9
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/query",instance="localhost:9090",job="prometheus",le="100.0"} 30
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/query",instance="localhost:9090",job="prometheus",le="1000.0"} 112
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/query",instance="localhost:9090",job="prometheus",le="10000.0"} 112
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/query",instance="localhost:9090",job="prometheus",le="100000.0"} 112
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/query",instance="localhost:9090",job="prometheus",le="1e+06"} 112
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/query",instance="localhost:9090",job="prometheus",le="1e+07"} 112
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/query",instance="localhost:9090",job="prometheus",le="1e+08"} 112
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/query",instance="localhost:9090",job="prometheus",le="1e+09"} 112
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/query",instance="localhost:9090",job="prometheus",le="+Inf"} 112
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/label/:name/values",instance="localhost:9090",job="prometheus",le="100.0"} 5
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/label/:name/values",instance="localhost:9090",job="prometheus",le="1000.0"} 6
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/label/:name/values",instance="localhost:9090",job="prometheus",le="10000.0"} 6
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/label/:name/values",instance="localhost:9090",job="prometheus",le="100000.0"} 6
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/label/:name/values",instance="localhost:9090",job="prometheus",le="1e+06"} 6
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/label/:name/values",instance="localhost:9090",job="prometheus",le="1e+07"} 6
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/label/:name/values",instance="localhost:9090",job="prometheus",le="1e+08"} 6
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/label/:name/values",instance="localhost:9090",job="prometheus",le="1e+09"} 6
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/label/:name/values",instance="localhost:9090",job="prometheus",le="+Inf"} 6
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/rules",instance="localhost:9090",job="prometheus",le="100.0"} 0
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/rules",instance="localhost:9090",job="prometheus",le="1000.0"} 1
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/rules",instance="localhost:9090",job="prometheus",le="10000.0"} 1
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/rules",instance="localhost:9090",job="prometheus",le="100000.0"} 1
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/rules",instance="localhost:9090",job="prometheus",le="1e+06"} 1
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/rules",instance="localhost:9090",job="prometheus",le="1e+07"} 1
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/rules",instance="localhost:9090",job="prometheus",le="1e+08"} 1
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/rules",instance="localhost:9090",job="prometheus",le="1e+09"} 1
+prometheus_http_response_size_bytes_bucket{handler="/api/v1/rules",instance="localhost:9090",job="prometheus",le="+Inf"} 1
+
+## prometheus_http_response_size_bytes_count
+prometheus_http_response_size_bytes_count{handler="/metrics",instance="localhost:9090",job="prometheus"} 389
+prometheus_http_response_size_bytes_count{handler="/api/v1/query_range",instance="localhost:9090",job="prometheus"} 2237
+prometheus_http_response_size_bytes_count{handler="/-/healthy",instance="localhost:9090",job="prometheus"} 1
+prometheus_http_response_size_bytes_count{handler="/api/v1/notifications/live",instance="localhost:9090",job="prometheus"} 28
+prometheus_http_response_size_bytes_count{handler="/api/v1/scrape_pools",instance="localhost:9090",job="prometheus"} 10
+prometheus_http_response_size_bytes_count{handler="/api/v1/targets",instance="localhost:9090",job="prometheus"} 12
+prometheus_http_response_size_bytes_count{handler="/assets/*filepath",instance="localhost:9090",job="prometheus"} 18
+prometheus_http_response_size_bytes_count{handler="/favicon.svg",instance="localhost:9090",job="prometheus"} 9
+prometheus_http_response_size_bytes_count{handler="/targets",instance="localhost:9090",job="prometheus"} 9
+prometheus_http_response_size_bytes_count{handler="/api/v1/query",instance="localhost:9090",job="prometheus"} 112
+prometheus_http_response_size_bytes_count{handler="/api/v1/label/:name/values",instance="localhost:9090",job="prometheus"} 6
+prometheus_http_response_size_bytes_count{handler="/api/v1/rules",instance="localhost:9090",job="prometheus"} 1
+
+## prometheus_http_response_size_bytes_sum
+prometheus_http_response_size_bytes_sum{handler="/metrics",instance="localhost:9090",job="prometheus"} 6645957
+prometheus_http_response_size_bytes_sum{handler="/api/v1/query_range",instance="localhost:9090",job="prometheus"} 816849
+prometheus_http_response_size_bytes_sum{handler="/-/healthy",instance="localhost:9090",job="prometheus"} 30
+prometheus_http_response_size_bytes_sum{handler="/api/v1/notifications/live",instance="localhost:9090",job="prometheus"} 0
+prometheus_http_response_size_bytes_sum{handler="/api/v1/scrape_pools",instance="localhost:9090",job="prometheus"} 2890
+prometheus_http_response_size_bytes_sum{handler="/api/v1/targets",instance="localhost:9090",job="prometheus"} 20648
+prometheus_http_response_size_bytes_sum{handler="/assets/*filepath",instance="localhost:9090",job="prometheus"} 26246385
+prometheus_http_response_size_bytes_sum{handler="/favicon.svg",instance="localhost:9090",job="prometheus"} 24993
+prometheus_http_response_size_bytes_sum{handler="/targets",instance="localhost:9090",job="prometheus"} 15768
+prometheus_http_response_size_bytes_sum{handler="/api/v1/query",instance="localhost:9090",job="prometheus"} 42093
+prometheus_http_response_size_bytes_sum{handler="/api/v1/label/:name/values",instance="localhost:9090",job="prometheus"} 518
+prometheus_http_response_size_bytes_sum{handler="/api/v1/rules",instance="localhost:9090",job="prometheus"} 565
+
+## prometheus_notifications_alertmanagers_discovered
+prometheus_notifications_alertmanagers_discovered{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_notifications_dropped_total
+prometheus_notifications_dropped_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_notifications_queue_capacity
+prometheus_notifications_queue_capacity{instance="localhost:9090",job="prometheus"} 10000
+
+## prometheus_notifications_queue_length
+prometheus_notifications_queue_length{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_ready
+prometheus_ready{instance="localhost:9090",job="prometheus"} 1
+
+## prometheus_remote_read_handler_queries
+prometheus_remote_read_handler_queries{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_remote_storage_exemplars_in_total
+prometheus_remote_storage_exemplars_in_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_remote_storage_highest_timestamp_in_seconds
+prometheus_remote_storage_highest_timestamp_in_seconds{instance="localhost:9090",job="prometheus"} 1751434784
+
+## prometheus_remote_storage_histograms_in_total
+prometheus_remote_storage_histograms_in_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_remote_storage_samples_in_total
+prometheus_remote_storage_samples_in_total{instance="localhost:9090",job="prometheus"} 4086899
+
+## prometheus_remote_storage_string_interner_zero_reference_releases_total
+prometheus_remote_storage_string_interner_zero_reference_releases_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_rule_evaluation_duration_seconds
+prometheus_rule_evaluation_duration_seconds{instance="localhost:9090",job="prometheus",quantile="0.5"} 0.000733583
+prometheus_rule_evaluation_duration_seconds{instance="localhost:9090",job="prometheus",quantile="0.9"} 0.0033585
+prometheus_rule_evaluation_duration_seconds{instance="localhost:9090",job="prometheus",quantile="0.99"} 0.014810542
+
+## prometheus_rule_evaluation_duration_seconds_count
+prometheus_rule_evaluation_duration_seconds_count{instance="localhost:9090",job="prometheus"} 1167
+
+## prometheus_rule_evaluation_duration_seconds_sum
+prometheus_rule_evaluation_duration_seconds_sum{instance="localhost:9090",job="prometheus"} 1.5199627889999991
+
+## prometheus_rule_evaluation_failures_total
+prometheus_rule_evaluation_failures_total{instance="localhost:9090",job="prometheus",rule_group="/etc/prometheus/alert_rules.yml;ddos_detection"} 0
+
+## prometheus_rule_evaluations_total
+prometheus_rule_evaluations_total{instance="localhost:9090",job="prometheus",rule_group="/etc/prometheus/alert_rules.yml;ddos_detection"} 1167
+
+## prometheus_rule_group_duration_seconds
+prometheus_rule_group_duration_seconds{instance="localhost:9090",job="prometheus",quantile="0.01"} 0.000808125
+prometheus_rule_group_duration_seconds{instance="localhost:9090",job="prometheus",quantile="0.05"} 0.000951042
+prometheus_rule_group_duration_seconds{instance="localhost:9090",job="prometheus",quantile="0.5"} 0.002960208
+prometheus_rule_group_duration_seconds{instance="localhost:9090",job="prometheus",quantile="0.9"} 0.011226792
+prometheus_rule_group_duration_seconds{instance="localhost:9090",job="prometheus",quantile="0.99"} 0.045090125
+
+## prometheus_rule_group_duration_seconds_count
+prometheus_rule_group_duration_seconds_count{instance="localhost:9090",job="prometheus"} 389
+
+## prometheus_rule_group_duration_seconds_sum
+prometheus_rule_group_duration_seconds_sum{instance="localhost:9090",job="prometheus"} 1.7635811680000002
+
+## prometheus_rule_group_interval_seconds
+prometheus_rule_group_interval_seconds{instance="localhost:9090",job="prometheus",rule_group="/etc/prometheus/alert_rules.yml;ddos_detection"} 15
+
+## prometheus_rule_group_iterations_missed_total
+prometheus_rule_group_iterations_missed_total{instance="localhost:9090",job="prometheus",rule_group="/etc/prometheus/alert_rules.yml;ddos_detection"} 20
+
+## prometheus_rule_group_iterations_total
+prometheus_rule_group_iterations_total{instance="localhost:9090",job="prometheus",rule_group="/etc/prometheus/alert_rules.yml;ddos_detection"} 409
+
+## prometheus_rule_group_last_duration_seconds
+prometheus_rule_group_last_duration_seconds{instance="localhost:9090",job="prometheus",rule_group="/etc/prometheus/alert_rules.yml;ddos_detection"} 0.007046959
+
+## prometheus_rule_group_last_evaluation_samples
+prometheus_rule_group_last_evaluation_samples{instance="localhost:9090",job="prometheus",rule_group="/etc/prometheus/alert_rules.yml;ddos_detection"} 0
+
+## prometheus_rule_group_last_evaluation_timestamp_seconds
+prometheus_rule_group_last_evaluation_timestamp_seconds{instance="localhost:9090",job="prometheus",rule_group="/etc/prometheus/alert_rules.yml;ddos_detection"} 1751434776.259452
+
+## prometheus_rule_group_last_restore_duration_seconds
+prometheus_rule_group_last_restore_duration_seconds{instance="localhost:9090",job="prometheus",rule_group="/etc/prometheus/alert_rules.yml;ddos_detection"} 0.000004875
+
+## prometheus_rule_group_last_rule_duration_sum_seconds
+prometheus_rule_group_last_rule_duration_sum_seconds{instance="localhost:9090",job="prometheus",rule_group="/etc/prometheus/alert_rules.yml;ddos_detection"} 0.005569958
+
+## prometheus_rule_group_rules
+prometheus_rule_group_rules{instance="localhost:9090",job="prometheus",rule_group="/etc/prometheus/alert_rules.yml;ddos_detection"} 3
+
+## prometheus_sd_azure_cache_hit_total
+prometheus_sd_azure_cache_hit_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_sd_azure_failures_total
+prometheus_sd_azure_failures_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_sd_consul_rpc_duration_seconds
+prometheus_sd_consul_rpc_duration_seconds{call="service",endpoint="catalog",instance="localhost:9090",job="prometheus",quantile="0.5"} NaN
+prometheus_sd_consul_rpc_duration_seconds{call="service",endpoint="catalog",instance="localhost:9090",job="prometheus",quantile="0.9"} NaN
+prometheus_sd_consul_rpc_duration_seconds{call="service",endpoint="catalog",instance="localhost:9090",job="prometheus",quantile="0.99"} NaN
+prometheus_sd_consul_rpc_duration_seconds{call="services",endpoint="catalog",instance="localhost:9090",job="prometheus",quantile="0.5"} NaN
+prometheus_sd_consul_rpc_duration_seconds{call="services",endpoint="catalog",instance="localhost:9090",job="prometheus",quantile="0.9"} NaN
+prometheus_sd_consul_rpc_duration_seconds{call="services",endpoint="catalog",instance="localhost:9090",job="prometheus",quantile="0.99"} NaN
+
+## prometheus_sd_consul_rpc_duration_seconds_count
+prometheus_sd_consul_rpc_duration_seconds_count{call="service",endpoint="catalog",instance="localhost:9090",job="prometheus"} 0
+prometheus_sd_consul_rpc_duration_seconds_count{call="services",endpoint="catalog",instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_sd_consul_rpc_duration_seconds_sum
+prometheus_sd_consul_rpc_duration_seconds_sum{call="service",endpoint="catalog",instance="localhost:9090",job="prometheus"} 0
+prometheus_sd_consul_rpc_duration_seconds_sum{call="services",endpoint="catalog",instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_sd_consul_rpc_failures_total
+prometheus_sd_consul_rpc_failures_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_sd_discovered_targets
+prometheus_sd_discovered_targets{config="anomaly-injector",instance="localhost:9090",job="prometheus",name="scrape"} 1
+prometheus_sd_discovered_targets{config="auto-baselining",instance="localhost:9090",job="prometheus",name="scrape"} 1
+prometheus_sd_discovered_targets{config="banking-db-demo",instance="localhost:9090",job="prometheus",name="scrape"} 1
+prometheus_sd_discovered_targets{config="banking-kafka",instance="localhost:9090",job="prometheus",name="scrape"} 1
+prometheus_sd_discovered_targets{config="banking-message-consumer",instance="localhost:9090",job="prometheus",name="scrape"} 1
+prometheus_sd_discovered_targets{config="banking-message-producer",instance="localhost:9090",job="prometheus",name="scrape"} 1
+prometheus_sd_discovered_targets{config="banking-postgresql",instance="localhost:9090",job="prometheus",name="scrape"} 1
+prometheus_sd_discovered_targets{config="banking-rabbitmq",instance="localhost:9090",job="prometheus",name="scrape"} 1
+prometheus_sd_discovered_targets{config="banking-services",instance="localhost:9090",job="prometheus",name="scrape"} 6
+prometheus_sd_discovered_targets{config="cache-load-generator",instance="localhost:9090",job="prometheus",name="scrape"} 1
+prometheus_sd_discovered_targets{config="cache-pattern-analyzer",instance="localhost:9090",job="prometheus",name="scrape"} 1
+prometheus_sd_discovered_targets{config="cache-proxy",instance="localhost:9090",job="prometheus",name="scrape"} 1
+prometheus_sd_discovered_targets{config="cadvisor",instance="localhost:9090",job="prometheus",name="scrape"} 1
+prometheus_sd_discovered_targets{config="config-0",instance="localhost:9090",job="prometheus",name="notify"} 0
+prometheus_sd_discovered_targets{config="container-resource-monitor",instance="localhost:9090",job="prometheus",name="scrape"} 1
+prometheus_sd_discovered_targets{config="ddos-ml-detection",instance="localhost:9090",job="prometheus",name="scrape"} 1
+prometheus_sd_discovered_targets{config="node-exporter",instance="localhost:9090",job="prometheus",name="scrape"} 1
+prometheus_sd_discovered_targets{config="performance-aggregator",instance="localhost:9090",job="prometheus",name="scrape"} 1
+prometheus_sd_discovered_targets{config="prometheus",instance="localhost:9090",job="prometheus",name="scrape"} 1
+prometheus_sd_discovered_targets{config="rabbitmq-queue-monitor",instance="localhost:9090",job="prometheus",name="scrape"} 1
+prometheus_sd_discovered_targets{config="redis-exporter",instance="localhost:9090",job="prometheus",name="scrape"} 1
+prometheus_sd_discovered_targets{config="resource-anomaly-generator",instance="localhost:9090",job="prometheus",name="scrape"} 1
+prometheus_sd_discovered_targets{config="trace-generator",instance="localhost:9090",job="prometheus",name="scrape"} 1
+prometheus_sd_discovered_targets{config="transaction-monitor",instance="localhost:9090",job="prometheus",name="scrape"} 1
+prometheus_sd_discovered_targets{config="windows-exporter",instance="localhost:9090",job="prometheus",name="scrape"} 1
+
+## prometheus_sd_dns_lookup_failures_total
+prometheus_sd_dns_lookup_failures_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_sd_dns_lookups_total
+prometheus_sd_dns_lookups_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_sd_failed_configs
+prometheus_sd_failed_configs{instance="localhost:9090",job="prometheus",name="notify"} 0
+prometheus_sd_failed_configs{instance="localhost:9090",job="prometheus",name="scrape"} 0
+
+## prometheus_sd_file_read_errors_total
+prometheus_sd_file_read_errors_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_sd_file_scan_duration_seconds
+prometheus_sd_file_scan_duration_seconds{instance="localhost:9090",job="prometheus",quantile="0.5"} NaN
+prometheus_sd_file_scan_duration_seconds{instance="localhost:9090",job="prometheus",quantile="0.9"} NaN
+prometheus_sd_file_scan_duration_seconds{instance="localhost:9090",job="prometheus",quantile="0.99"} NaN
+
+## prometheus_sd_file_scan_duration_seconds_count
+prometheus_sd_file_scan_duration_seconds_count{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_sd_file_scan_duration_seconds_sum
+prometheus_sd_file_scan_duration_seconds_sum{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_sd_file_watcher_errors_total
+prometheus_sd_file_watcher_errors_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_sd_http_failures_total
+prometheus_sd_http_failures_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_sd_kubernetes_events_total
+prometheus_sd_kubernetes_events_total{event="add",instance="localhost:9090",job="prometheus",role="endpoints"} 0
+prometheus_sd_kubernetes_events_total{event="add",instance="localhost:9090",job="prometheus",role="endpointslice"} 0
+prometheus_sd_kubernetes_events_total{event="add",instance="localhost:9090",job="prometheus",role="ingress"} 0
+prometheus_sd_kubernetes_events_total{event="add",instance="localhost:9090",job="prometheus",role="node"} 0
+prometheus_sd_kubernetes_events_total{event="add",instance="localhost:9090",job="prometheus",role="pod"} 0
+prometheus_sd_kubernetes_events_total{event="add",instance="localhost:9090",job="prometheus",role="service"} 0
+prometheus_sd_kubernetes_events_total{event="delete",instance="localhost:9090",job="prometheus",role="endpoints"} 0
+prometheus_sd_kubernetes_events_total{event="delete",instance="localhost:9090",job="prometheus",role="endpointslice"} 0
+prometheus_sd_kubernetes_events_total{event="delete",instance="localhost:9090",job="prometheus",role="ingress"} 0
+prometheus_sd_kubernetes_events_total{event="delete",instance="localhost:9090",job="prometheus",role="node"} 0
+prometheus_sd_kubernetes_events_total{event="delete",instance="localhost:9090",job="prometheus",role="pod"} 0
+prometheus_sd_kubernetes_events_total{event="delete",instance="localhost:9090",job="prometheus",role="service"} 0
+prometheus_sd_kubernetes_events_total{event="update",instance="localhost:9090",job="prometheus",role="endpoints"} 0
+prometheus_sd_kubernetes_events_total{event="update",instance="localhost:9090",job="prometheus",role="endpointslice"} 0
+prometheus_sd_kubernetes_events_total{event="update",instance="localhost:9090",job="prometheus",role="ingress"} 0
+prometheus_sd_kubernetes_events_total{event="update",instance="localhost:9090",job="prometheus",role="node"} 0
+prometheus_sd_kubernetes_events_total{event="update",instance="localhost:9090",job="prometheus",role="pod"} 0
+prometheus_sd_kubernetes_events_total{event="update",instance="localhost:9090",job="prometheus",role="service"} 0
+
+## prometheus_sd_kubernetes_failures_total
+prometheus_sd_kubernetes_failures_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_sd_kuma_fetch_duration_seconds
+prometheus_sd_kuma_fetch_duration_seconds{instance="localhost:9090",job="prometheus",quantile="0.5"} NaN
+prometheus_sd_kuma_fetch_duration_seconds{instance="localhost:9090",job="prometheus",quantile="0.9"} NaN
+prometheus_sd_kuma_fetch_duration_seconds{instance="localhost:9090",job="prometheus",quantile="0.99"} NaN
+
+## prometheus_sd_kuma_fetch_duration_seconds_count
+prometheus_sd_kuma_fetch_duration_seconds_count{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_sd_kuma_fetch_duration_seconds_sum
+prometheus_sd_kuma_fetch_duration_seconds_sum{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_sd_kuma_fetch_failures_total
+prometheus_sd_kuma_fetch_failures_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_sd_kuma_fetch_skipped_updates_total
+prometheus_sd_kuma_fetch_skipped_updates_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_sd_linode_failures_total
+prometheus_sd_linode_failures_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_sd_nomad_failures_total
+prometheus_sd_nomad_failures_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_sd_received_updates_total
+prometheus_sd_received_updates_total{instance="localhost:9090",job="prometheus",name="notify"} 2
+prometheus_sd_received_updates_total{instance="localhost:9090",job="prometheus",name="scrape"} 48
+
+## prometheus_sd_updates_delayed_total
+prometheus_sd_updates_delayed_total{instance="localhost:9090",job="prometheus",name="notify"} 0
+prometheus_sd_updates_delayed_total{instance="localhost:9090",job="prometheus",name="scrape"} 0
+
+## prometheus_sd_updates_total
+prometheus_sd_updates_total{instance="localhost:9090",job="prometheus",name="notify"} 1
+prometheus_sd_updates_total{instance="localhost:9090",job="prometheus",name="scrape"} 1
+
+## prometheus_target_interval_length_seconds
+prometheus_target_interval_length_seconds{instance="localhost:9090",interval="10s",job="prometheus",quantile="0.01"} 9.99209488
+prometheus_target_interval_length_seconds{instance="localhost:9090",interval="10s",job="prometheus",quantile="0.05"} 9.996269379
+prometheus_target_interval_length_seconds{instance="localhost:9090",interval="10s",job="prometheus",quantile="0.5"} 9.999991422
+prometheus_target_interval_length_seconds{instance="localhost:9090",interval="10s",job="prometheus",quantile="0.9"} 10.002401463
+prometheus_target_interval_length_seconds{instance="localhost:9090",interval="10s",job="prometheus",quantile="0.99"} 10.007115671
+prometheus_target_interval_length_seconds{instance="localhost:9090",interval="15s",job="prometheus",quantile="0.01"} 14.992559674
+prometheus_target_interval_length_seconds{instance="localhost:9090",interval="15s",job="prometheus",quantile="0.05"} 14.996831714
+prometheus_target_interval_length_seconds{instance="localhost:9090",interval="15s",job="prometheus",quantile="0.5"} 15.000129799
+prometheus_target_interval_length_seconds{instance="localhost:9090",interval="15s",job="prometheus",quantile="0.9"} 15.002236049
+prometheus_target_interval_length_seconds{instance="localhost:9090",interval="15s",job="prometheus",quantile="0.99"} 15.008567965
+prometheus_target_interval_length_seconds{instance="localhost:9090",interval="30s",job="prometheus",quantile="0.01"} 29.992485222
+prometheus_target_interval_length_seconds{instance="localhost:9090",interval="30s",job="prometheus",quantile="0.05"} 29.995053431
+prometheus_target_interval_length_seconds{instance="localhost:9090",interval="30s",job="prometheus",quantile="0.5"} 30.000042722
+prometheus_target_interval_length_seconds{instance="localhost:9090",interval="30s",job="prometheus",quantile="0.9"} 30.003441638
+prometheus_target_interval_length_seconds{instance="localhost:9090",interval="30s",job="prometheus",quantile="0.99"} 30.008104305
+
+## prometheus_target_interval_length_seconds_count
+prometheus_target_interval_length_seconds_count{instance="localhost:9090",interval="10s",job="prometheus"} 5244
+prometheus_target_interval_length_seconds_count{instance="localhost:9090",interval="15s",job="prometheus"} 6989
+prometheus_target_interval_length_seconds_count{instance="localhost:9090",interval="30s",job="prometheus"} 386
+
+## prometheus_target_interval_length_seconds_sum
+prometheus_target_interval_length_seconds_sum{instance="localhost:9090",interval="10s",job="prometheus"} 52440.17175786691
+prometheus_target_interval_length_seconds_sum{instance="localhost:9090",interval="15s",job="prometheus"} 104835.27001078088
+prometheus_target_interval_length_seconds_sum{instance="localhost:9090",interval="30s",job="prometheus"} 11580.025113063004
+
+## prometheus_target_metadata_cache_bytes
+prometheus_target_metadata_cache_bytes{instance="localhost:9090",job="prometheus",scrape_job="anomaly-injector"} 590
+prometheus_target_metadata_cache_bytes{instance="localhost:9090",job="prometheus",scrape_job="auto-baselining"} 605
+prometheus_target_metadata_cache_bytes{instance="localhost:9090",job="prometheus",scrape_job="banking-db-demo"} 992
+prometheus_target_metadata_cache_bytes{instance="localhost:9090",job="prometheus",scrape_job="banking-kafka"} 4948
+prometheus_target_metadata_cache_bytes{instance="localhost:9090",job="prometheus",scrape_job="banking-message-consumer"} 334
+prometheus_target_metadata_cache_bytes{instance="localhost:9090",job="prometheus",scrape_job="banking-message-producer"} 243
+prometheus_target_metadata_cache_bytes{instance="localhost:9090",job="prometheus",scrape_job="banking-postgresql"} 22801
+prometheus_target_metadata_cache_bytes{instance="localhost:9090",job="prometheus",scrape_job="banking-rabbitmq"} 13446
+prometheus_target_metadata_cache_bytes{instance="localhost:9090",job="prometheus",scrape_job="banking-services"} 3819
+prometheus_target_metadata_cache_bytes{instance="localhost:9090",job="prometheus",scrape_job="cache-load-generator"} 576
+prometheus_target_metadata_cache_bytes{instance="localhost:9090",job="prometheus",scrape_job="cache-pattern-analyzer"} 730
+prometheus_target_metadata_cache_bytes{instance="localhost:9090",job="prometheus",scrape_job="cache-proxy"} 694
+prometheus_target_metadata_cache_bytes{instance="localhost:9090",job="prometheus",scrape_job="cadvisor"} 4547
+prometheus_target_metadata_cache_bytes{instance="localhost:9090",job="prometheus",scrape_job="container-resource-monitor"} 811
+prometheus_target_metadata_cache_bytes{instance="localhost:9090",job="prometheus",scrape_job="ddos-ml-detection"} 652
+prometheus_target_metadata_cache_bytes{instance="localhost:9090",job="prometheus",scrape_job="node-exporter"} 16690
+prometheus_target_metadata_cache_bytes{instance="localhost:9090",job="prometheus",scrape_job="performance-aggregator"} 888
+prometheus_target_metadata_cache_bytes{instance="localhost:9090",job="prometheus",scrape_job="prometheus"} 20395
+prometheus_target_metadata_cache_bytes{instance="localhost:9090",job="prometheus",scrape_job="rabbitmq-queue-monitor"} 763
+prometheus_target_metadata_cache_bytes{instance="localhost:9090",job="prometheus",scrape_job="redis-exporter"} 29377
+prometheus_target_metadata_cache_bytes{instance="localhost:9090",job="prometheus",scrape_job="resource-anomaly-generator"} 607
+prometheus_target_metadata_cache_bytes{instance="localhost:9090",job="prometheus",scrape_job="trace-generator"} 655
+prometheus_target_metadata_cache_bytes{instance="localhost:9090",job="prometheus",scrape_job="transaction-monitor"} 853
+prometheus_target_metadata_cache_bytes{instance="localhost:9090",job="prometheus",scrape_job="windows-exporter"} 1241
+
+## prometheus_target_metadata_cache_entries
+prometheus_target_metadata_cache_entries{instance="localhost:9090",job="prometheus",scrape_job="anomaly-injector"} 14
+prometheus_target_metadata_cache_entries{instance="localhost:9090",job="prometheus",scrape_job="auto-baselining"} 14
+prometheus_target_metadata_cache_entries{instance="localhost:9090",job="prometheus",scrape_job="banking-db-demo"} 22
+prometheus_target_metadata_cache_entries{instance="localhost:9090",job="prometheus",scrape_job="banking-kafka"} 56
+prometheus_target_metadata_cache_entries{instance="localhost:9090",job="prometheus",scrape_job="banking-message-consumer"} 8
+prometheus_target_metadata_cache_entries{instance="localhost:9090",job="prometheus",scrape_job="banking-message-producer"} 6
+prometheus_target_metadata_cache_entries{instance="localhost:9090",job="prometheus",scrape_job="banking-postgresql"} 374
+prometheus_target_metadata_cache_entries{instance="localhost:9090",job="prometheus",scrape_job="banking-rabbitmq"} 223
+prometheus_target_metadata_cache_entries{instance="localhost:9090",job="prometheus",scrape_job="banking-services"} 82
+prometheus_target_metadata_cache_entries{instance="localhost:9090",job="prometheus",scrape_job="cache-load-generator"} 14
+prometheus_target_metadata_cache_entries{instance="localhost:9090",job="prometheus",scrape_job="cache-pattern-analyzer"} 18
+prometheus_target_metadata_cache_entries{instance="localhost:9090",job="prometheus",scrape_job="cache-proxy"} 18
+prometheus_target_metadata_cache_entries{instance="localhost:9090",job="prometheus",scrape_job="cadvisor"} 93
+prometheus_target_metadata_cache_entries{instance="localhost:9090",job="prometheus",scrape_job="container-resource-monitor"} 21
+prometheus_target_metadata_cache_entries{instance="localhost:9090",job="prometheus",scrape_job="ddos-ml-detection"} 17
+prometheus_target_metadata_cache_entries{instance="localhost:9090",job="prometheus",scrape_job="node-exporter"} 310
+prometheus_target_metadata_cache_entries{instance="localhost:9090",job="prometheus",scrape_job="performance-aggregator"} 21
+prometheus_target_metadata_cache_entries{instance="localhost:9090",job="prometheus",scrape_job="prometheus"} 236
+prometheus_target_metadata_cache_entries{instance="localhost:9090",job="prometheus",scrape_job="rabbitmq-queue-monitor"} 18
+prometheus_target_metadata_cache_entries{instance="localhost:9090",job="prometheus",scrape_job="redis-exporter"} 297
+prometheus_target_metadata_cache_entries{instance="localhost:9090",job="prometheus",scrape_job="resource-anomaly-generator"} 15
+prometheus_target_metadata_cache_entries{instance="localhost:9090",job="prometheus",scrape_job="trace-generator"} 15
+prometheus_target_metadata_cache_entries{instance="localhost:9090",job="prometheus",scrape_job="transaction-monitor"} 20
+prometheus_target_metadata_cache_entries{instance="localhost:9090",job="prometheus",scrape_job="windows-exporter"} 33
+
+## prometheus_target_scrape_pool_exceeded_label_limits_total
+prometheus_target_scrape_pool_exceeded_label_limits_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_target_scrape_pool_exceeded_target_limit_total
+prometheus_target_scrape_pool_exceeded_target_limit_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_target_scrape_pool_reloads_failed_total
+prometheus_target_scrape_pool_reloads_failed_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_target_scrape_pool_reloads_total
+prometheus_target_scrape_pool_reloads_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_target_scrape_pool_symboltable_items
+prometheus_target_scrape_pool_symboltable_items{instance="localhost:9090",job="prometheus",scrape_job="anomaly-injector"} 0
+prometheus_target_scrape_pool_symboltable_items{instance="localhost:9090",job="prometheus",scrape_job="auto-baselining"} 0
+prometheus_target_scrape_pool_symboltable_items{instance="localhost:9090",job="prometheus",scrape_job="banking-db-demo"} 0
+prometheus_target_scrape_pool_symboltable_items{instance="localhost:9090",job="prometheus",scrape_job="banking-kafka"} 0
+prometheus_target_scrape_pool_symboltable_items{instance="localhost:9090",job="prometheus",scrape_job="banking-message-consumer"} 0
+prometheus_target_scrape_pool_symboltable_items{instance="localhost:9090",job="prometheus",scrape_job="banking-message-producer"} 0
+prometheus_target_scrape_pool_symboltable_items{instance="localhost:9090",job="prometheus",scrape_job="banking-postgresql"} 0
+prometheus_target_scrape_pool_symboltable_items{instance="localhost:9090",job="prometheus",scrape_job="banking-rabbitmq"} 0
+prometheus_target_scrape_pool_symboltable_items{instance="localhost:9090",job="prometheus",scrape_job="banking-services"} 0
+prometheus_target_scrape_pool_symboltable_items{instance="localhost:9090",job="prometheus",scrape_job="cache-load-generator"} 0
+prometheus_target_scrape_pool_symboltable_items{instance="localhost:9090",job="prometheus",scrape_job="cache-pattern-analyzer"} 0
+prometheus_target_scrape_pool_symboltable_items{instance="localhost:9090",job="prometheus",scrape_job="cache-proxy"} 0
+prometheus_target_scrape_pool_symboltable_items{instance="localhost:9090",job="prometheus",scrape_job="cadvisor"} 0
+prometheus_target_scrape_pool_symboltable_items{instance="localhost:9090",job="prometheus",scrape_job="container-resource-monitor"} 0
+prometheus_target_scrape_pool_symboltable_items{instance="localhost:9090",job="prometheus",scrape_job="ddos-ml-detection"} 0
+prometheus_target_scrape_pool_symboltable_items{instance="localhost:9090",job="prometheus",scrape_job="node-exporter"} 0
+prometheus_target_scrape_pool_symboltable_items{instance="localhost:9090",job="prometheus",scrape_job="performance-aggregator"} 0
+prometheus_target_scrape_pool_symboltable_items{instance="localhost:9090",job="prometheus",scrape_job="prometheus"} 0
+prometheus_target_scrape_pool_symboltable_items{instance="localhost:9090",job="prometheus",scrape_job="rabbitmq-queue-monitor"} 0
+prometheus_target_scrape_pool_symboltable_items{instance="localhost:9090",job="prometheus",scrape_job="redis-exporter"} 0
+prometheus_target_scrape_pool_symboltable_items{instance="localhost:9090",job="prometheus",scrape_job="resource-anomaly-generator"} 0
+prometheus_target_scrape_pool_symboltable_items{instance="localhost:9090",job="prometheus",scrape_job="trace-generator"} 0
+prometheus_target_scrape_pool_symboltable_items{instance="localhost:9090",job="prometheus",scrape_job="transaction-monitor"} 0
+prometheus_target_scrape_pool_symboltable_items{instance="localhost:9090",job="prometheus",scrape_job="windows-exporter"} 0
+
+## prometheus_target_scrape_pool_sync_total
+prometheus_target_scrape_pool_sync_total{instance="localhost:9090",job="prometheus",scrape_job="anomaly-injector"} 1
+prometheus_target_scrape_pool_sync_total{instance="localhost:9090",job="prometheus",scrape_job="auto-baselining"} 1
+prometheus_target_scrape_pool_sync_total{instance="localhost:9090",job="prometheus",scrape_job="banking-db-demo"} 1
+prometheus_target_scrape_pool_sync_total{instance="localhost:9090",job="prometheus",scrape_job="banking-kafka"} 1
+prometheus_target_scrape_pool_sync_total{instance="localhost:9090",job="prometheus",scrape_job="banking-message-consumer"} 1
+prometheus_target_scrape_pool_sync_total{instance="localhost:9090",job="prometheus",scrape_job="banking-message-producer"} 1
+prometheus_target_scrape_pool_sync_total{instance="localhost:9090",job="prometheus",scrape_job="banking-postgresql"} 1
+prometheus_target_scrape_pool_sync_total{instance="localhost:9090",job="prometheus",scrape_job="banking-rabbitmq"} 1
+prometheus_target_scrape_pool_sync_total{instance="localhost:9090",job="prometheus",scrape_job="banking-services"} 1
+prometheus_target_scrape_pool_sync_total{instance="localhost:9090",job="prometheus",scrape_job="cache-load-generator"} 1
+prometheus_target_scrape_pool_sync_total{instance="localhost:9090",job="prometheus",scrape_job="cache-pattern-analyzer"} 1
+prometheus_target_scrape_pool_sync_total{instance="localhost:9090",job="prometheus",scrape_job="cache-proxy"} 1
+prometheus_target_scrape_pool_sync_total{instance="localhost:9090",job="prometheus",scrape_job="cadvisor"} 1
+prometheus_target_scrape_pool_sync_total{instance="localhost:9090",job="prometheus",scrape_job="container-resource-monitor"} 1
+prometheus_target_scrape_pool_sync_total{instance="localhost:9090",job="prometheus",scrape_job="ddos-ml-detection"} 1
+prometheus_target_scrape_pool_sync_total{instance="localhost:9090",job="prometheus",scrape_job="node-exporter"} 1
+prometheus_target_scrape_pool_sync_total{instance="localhost:9090",job="prometheus",scrape_job="performance-aggregator"} 1
+prometheus_target_scrape_pool_sync_total{instance="localhost:9090",job="prometheus",scrape_job="prometheus"} 1
+prometheus_target_scrape_pool_sync_total{instance="localhost:9090",job="prometheus",scrape_job="rabbitmq-queue-monitor"} 1
+prometheus_target_scrape_pool_sync_total{instance="localhost:9090",job="prometheus",scrape_job="redis-exporter"} 1
+prometheus_target_scrape_pool_sync_total{instance="localhost:9090",job="prometheus",scrape_job="resource-anomaly-generator"} 1
+prometheus_target_scrape_pool_sync_total{instance="localhost:9090",job="prometheus",scrape_job="trace-generator"} 1
+prometheus_target_scrape_pool_sync_total{instance="localhost:9090",job="prometheus",scrape_job="transaction-monitor"} 1
+prometheus_target_scrape_pool_sync_total{instance="localhost:9090",job="prometheus",scrape_job="windows-exporter"} 1
+
+## prometheus_target_scrape_pool_target_limit
+prometheus_target_scrape_pool_target_limit{instance="localhost:9090",job="prometheus",scrape_job="anomaly-injector"} 0
+prometheus_target_scrape_pool_target_limit{instance="localhost:9090",job="prometheus",scrape_job="auto-baselining"} 0
+prometheus_target_scrape_pool_target_limit{instance="localhost:9090",job="prometheus",scrape_job="banking-db-demo"} 0
+prometheus_target_scrape_pool_target_limit{instance="localhost:9090",job="prometheus",scrape_job="banking-kafka"} 0
+prometheus_target_scrape_pool_target_limit{instance="localhost:9090",job="prometheus",scrape_job="banking-message-consumer"} 0
+prometheus_target_scrape_pool_target_limit{instance="localhost:9090",job="prometheus",scrape_job="banking-message-producer"} 0
+prometheus_target_scrape_pool_target_limit{instance="localhost:9090",job="prometheus",scrape_job="banking-postgresql"} 0
+prometheus_target_scrape_pool_target_limit{instance="localhost:9090",job="prometheus",scrape_job="banking-rabbitmq"} 0
+prometheus_target_scrape_pool_target_limit{instance="localhost:9090",job="prometheus",scrape_job="banking-services"} 0
+prometheus_target_scrape_pool_target_limit{instance="localhost:9090",job="prometheus",scrape_job="cache-load-generator"} 0
+prometheus_target_scrape_pool_target_limit{instance="localhost:9090",job="prometheus",scrape_job="cache-pattern-analyzer"} 0
+prometheus_target_scrape_pool_target_limit{instance="localhost:9090",job="prometheus",scrape_job="cache-proxy"} 0
+prometheus_target_scrape_pool_target_limit{instance="localhost:9090",job="prometheus",scrape_job="cadvisor"} 0
+prometheus_target_scrape_pool_target_limit{instance="localhost:9090",job="prometheus",scrape_job="container-resource-monitor"} 0
+prometheus_target_scrape_pool_target_limit{instance="localhost:9090",job="prometheus",scrape_job="ddos-ml-detection"} 0
+prometheus_target_scrape_pool_target_limit{instance="localhost:9090",job="prometheus",scrape_job="node-exporter"} 0
+prometheus_target_scrape_pool_target_limit{instance="localhost:9090",job="prometheus",scrape_job="performance-aggregator"} 0
+prometheus_target_scrape_pool_target_limit{instance="localhost:9090",job="prometheus",scrape_job="prometheus"} 0
+prometheus_target_scrape_pool_target_limit{instance="localhost:9090",job="prometheus",scrape_job="rabbitmq-queue-monitor"} 0
+prometheus_target_scrape_pool_target_limit{instance="localhost:9090",job="prometheus",scrape_job="redis-exporter"} 0
+prometheus_target_scrape_pool_target_limit{instance="localhost:9090",job="prometheus",scrape_job="resource-anomaly-generator"} 0
+prometheus_target_scrape_pool_target_limit{instance="localhost:9090",job="prometheus",scrape_job="trace-generator"} 0
+prometheus_target_scrape_pool_target_limit{instance="localhost:9090",job="prometheus",scrape_job="transaction-monitor"} 0
+prometheus_target_scrape_pool_target_limit{instance="localhost:9090",job="prometheus",scrape_job="windows-exporter"} 0
+
+## prometheus_target_scrape_pool_targets
+prometheus_target_scrape_pool_targets{instance="localhost:9090",job="prometheus",scrape_job="anomaly-injector"} 1
+prometheus_target_scrape_pool_targets{instance="localhost:9090",job="prometheus",scrape_job="auto-baselining"} 1
+prometheus_target_scrape_pool_targets{instance="localhost:9090",job="prometheus",scrape_job="banking-db-demo"} 1
+prometheus_target_scrape_pool_targets{instance="localhost:9090",job="prometheus",scrape_job="banking-kafka"} 1
+prometheus_target_scrape_pool_targets{instance="localhost:9090",job="prometheus",scrape_job="banking-message-consumer"} 1
+prometheus_target_scrape_pool_targets{instance="localhost:9090",job="prometheus",scrape_job="banking-message-producer"} 1
+prometheus_target_scrape_pool_targets{instance="localhost:9090",job="prometheus",scrape_job="banking-postgresql"} 1
+prometheus_target_scrape_pool_targets{instance="localhost:9090",job="prometheus",scrape_job="banking-rabbitmq"} 1
+prometheus_target_scrape_pool_targets{instance="localhost:9090",job="prometheus",scrape_job="banking-services"} 6
+prometheus_target_scrape_pool_targets{instance="localhost:9090",job="prometheus",scrape_job="cache-load-generator"} 1
+prometheus_target_scrape_pool_targets{instance="localhost:9090",job="prometheus",scrape_job="cache-pattern-analyzer"} 1
+prometheus_target_scrape_pool_targets{instance="localhost:9090",job="prometheus",scrape_job="cache-proxy"} 1
+prometheus_target_scrape_pool_targets{instance="localhost:9090",job="prometheus",scrape_job="cadvisor"} 1
+prometheus_target_scrape_pool_targets{instance="localhost:9090",job="prometheus",scrape_job="container-resource-monitor"} 1
+prometheus_target_scrape_pool_targets{instance="localhost:9090",job="prometheus",scrape_job="ddos-ml-detection"} 1
+prometheus_target_scrape_pool_targets{instance="localhost:9090",job="prometheus",scrape_job="node-exporter"} 1
+prometheus_target_scrape_pool_targets{instance="localhost:9090",job="prometheus",scrape_job="performance-aggregator"} 1
+prometheus_target_scrape_pool_targets{instance="localhost:9090",job="prometheus",scrape_job="prometheus"} 1
+prometheus_target_scrape_pool_targets{instance="localhost:9090",job="prometheus",scrape_job="rabbitmq-queue-monitor"} 1
+prometheus_target_scrape_pool_targets{instance="localhost:9090",job="prometheus",scrape_job="redis-exporter"} 1
+prometheus_target_scrape_pool_targets{instance="localhost:9090",job="prometheus",scrape_job="resource-anomaly-generator"} 1
+prometheus_target_scrape_pool_targets{instance="localhost:9090",job="prometheus",scrape_job="trace-generator"} 1
+prometheus_target_scrape_pool_targets{instance="localhost:9090",job="prometheus",scrape_job="transaction-monitor"} 1
+prometheus_target_scrape_pool_targets{instance="localhost:9090",job="prometheus",scrape_job="windows-exporter"} 1
+
+## prometheus_target_scrape_pools_failed_total
+prometheus_target_scrape_pools_failed_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_target_scrape_pools_total
+prometheus_target_scrape_pools_total{instance="localhost:9090",job="prometheus"} 24
+
+## prometheus_target_scrapes_cache_flush_forced_total
+prometheus_target_scrapes_cache_flush_forced_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_target_scrapes_exceeded_body_size_limit_total
+prometheus_target_scrapes_exceeded_body_size_limit_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_target_scrapes_exceeded_native_histogram_bucket_limit_total
+prometheus_target_scrapes_exceeded_native_histogram_bucket_limit_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_target_scrapes_exceeded_sample_limit_total
+prometheus_target_scrapes_exceeded_sample_limit_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_target_scrapes_exemplar_out_of_order_total
+prometheus_target_scrapes_exemplar_out_of_order_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_target_scrapes_sample_duplicate_timestamp_total
+prometheus_target_scrapes_sample_duplicate_timestamp_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_target_scrapes_sample_out_of_bounds_total
+prometheus_target_scrapes_sample_out_of_bounds_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_target_scrapes_sample_out_of_order_total
+prometheus_target_scrapes_sample_out_of_order_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_target_sync_failed_total
+prometheus_target_sync_failed_total{instance="localhost:9090",job="prometheus",scrape_job="anomaly-injector"} 0
+prometheus_target_sync_failed_total{instance="localhost:9090",job="prometheus",scrape_job="auto-baselining"} 0
+prometheus_target_sync_failed_total{instance="localhost:9090",job="prometheus",scrape_job="banking-db-demo"} 0
+prometheus_target_sync_failed_total{instance="localhost:9090",job="prometheus",scrape_job="banking-kafka"} 0
+prometheus_target_sync_failed_total{instance="localhost:9090",job="prometheus",scrape_job="banking-message-consumer"} 0
+prometheus_target_sync_failed_total{instance="localhost:9090",job="prometheus",scrape_job="banking-message-producer"} 0
+prometheus_target_sync_failed_total{instance="localhost:9090",job="prometheus",scrape_job="banking-postgresql"} 0
+prometheus_target_sync_failed_total{instance="localhost:9090",job="prometheus",scrape_job="banking-rabbitmq"} 0
+prometheus_target_sync_failed_total{instance="localhost:9090",job="prometheus",scrape_job="banking-services"} 0
+prometheus_target_sync_failed_total{instance="localhost:9090",job="prometheus",scrape_job="cache-load-generator"} 0
+prometheus_target_sync_failed_total{instance="localhost:9090",job="prometheus",scrape_job="cache-pattern-analyzer"} 0
+prometheus_target_sync_failed_total{instance="localhost:9090",job="prometheus",scrape_job="cache-proxy"} 0
+prometheus_target_sync_failed_total{instance="localhost:9090",job="prometheus",scrape_job="cadvisor"} 0
+prometheus_target_sync_failed_total{instance="localhost:9090",job="prometheus",scrape_job="container-resource-monitor"} 0
+prometheus_target_sync_failed_total{instance="localhost:9090",job="prometheus",scrape_job="ddos-ml-detection"} 0
+prometheus_target_sync_failed_total{instance="localhost:9090",job="prometheus",scrape_job="node-exporter"} 0
+prometheus_target_sync_failed_total{instance="localhost:9090",job="prometheus",scrape_job="performance-aggregator"} 0
+prometheus_target_sync_failed_total{instance="localhost:9090",job="prometheus",scrape_job="prometheus"} 0
+prometheus_target_sync_failed_total{instance="localhost:9090",job="prometheus",scrape_job="rabbitmq-queue-monitor"} 0
+prometheus_target_sync_failed_total{instance="localhost:9090",job="prometheus",scrape_job="redis-exporter"} 0
+prometheus_target_sync_failed_total{instance="localhost:9090",job="prometheus",scrape_job="resource-anomaly-generator"} 0
+prometheus_target_sync_failed_total{instance="localhost:9090",job="prometheus",scrape_job="trace-generator"} 0
+prometheus_target_sync_failed_total{instance="localhost:9090",job="prometheus",scrape_job="transaction-monitor"} 0
+prometheus_target_sync_failed_total{instance="localhost:9090",job="prometheus",scrape_job="windows-exporter"} 0
+
+## prometheus_target_sync_length_seconds
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.01",scrape_job="anomaly-injector"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.05",scrape_job="anomaly-injector"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.5",scrape_job="anomaly-injector"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.9",scrape_job="anomaly-injector"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.99",scrape_job="anomaly-injector"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.01",scrape_job="auto-baselining"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.05",scrape_job="auto-baselining"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.5",scrape_job="auto-baselining"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.9",scrape_job="auto-baselining"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.99",scrape_job="auto-baselining"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.01",scrape_job="banking-db-demo"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.05",scrape_job="banking-db-demo"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.5",scrape_job="banking-db-demo"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.9",scrape_job="banking-db-demo"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.99",scrape_job="banking-db-demo"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.01",scrape_job="banking-kafka"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.05",scrape_job="banking-kafka"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.5",scrape_job="banking-kafka"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.9",scrape_job="banking-kafka"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.99",scrape_job="banking-kafka"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.01",scrape_job="banking-message-consumer"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.05",scrape_job="banking-message-consumer"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.5",scrape_job="banking-message-consumer"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.9",scrape_job="banking-message-consumer"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.99",scrape_job="banking-message-consumer"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.01",scrape_job="banking-message-producer"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.05",scrape_job="banking-message-producer"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.5",scrape_job="banking-message-producer"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.9",scrape_job="banking-message-producer"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.99",scrape_job="banking-message-producer"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.01",scrape_job="banking-postgresql"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.05",scrape_job="banking-postgresql"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.5",scrape_job="banking-postgresql"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.9",scrape_job="banking-postgresql"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.99",scrape_job="banking-postgresql"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.01",scrape_job="banking-rabbitmq"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.05",scrape_job="banking-rabbitmq"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.5",scrape_job="banking-rabbitmq"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.9",scrape_job="banking-rabbitmq"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.99",scrape_job="banking-rabbitmq"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.01",scrape_job="banking-services"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.05",scrape_job="banking-services"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.5",scrape_job="banking-services"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.9",scrape_job="banking-services"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.99",scrape_job="banking-services"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.01",scrape_job="cache-load-generator"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.05",scrape_job="cache-load-generator"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.5",scrape_job="cache-load-generator"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.9",scrape_job="cache-load-generator"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.99",scrape_job="cache-load-generator"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.01",scrape_job="cache-pattern-analyzer"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.05",scrape_job="cache-pattern-analyzer"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.5",scrape_job="cache-pattern-analyzer"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.9",scrape_job="cache-pattern-analyzer"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.99",scrape_job="cache-pattern-analyzer"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.01",scrape_job="cache-proxy"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.05",scrape_job="cache-proxy"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.5",scrape_job="cache-proxy"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.9",scrape_job="cache-proxy"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.99",scrape_job="cache-proxy"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.01",scrape_job="cadvisor"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.05",scrape_job="cadvisor"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.5",scrape_job="cadvisor"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.9",scrape_job="cadvisor"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.99",scrape_job="cadvisor"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.01",scrape_job="container-resource-monitor"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.05",scrape_job="container-resource-monitor"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.5",scrape_job="container-resource-monitor"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.9",scrape_job="container-resource-monitor"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.99",scrape_job="container-resource-monitor"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.01",scrape_job="ddos-ml-detection"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.05",scrape_job="ddos-ml-detection"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.5",scrape_job="ddos-ml-detection"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.9",scrape_job="ddos-ml-detection"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.99",scrape_job="ddos-ml-detection"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.01",scrape_job="node-exporter"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.05",scrape_job="node-exporter"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.5",scrape_job="node-exporter"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.9",scrape_job="node-exporter"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.99",scrape_job="node-exporter"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.01",scrape_job="performance-aggregator"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.05",scrape_job="performance-aggregator"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.5",scrape_job="performance-aggregator"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.9",scrape_job="performance-aggregator"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.99",scrape_job="performance-aggregator"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.01",scrape_job="prometheus"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.05",scrape_job="prometheus"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.5",scrape_job="prometheus"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.9",scrape_job="prometheus"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.99",scrape_job="prometheus"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.01",scrape_job="rabbitmq-queue-monitor"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.05",scrape_job="rabbitmq-queue-monitor"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.5",scrape_job="rabbitmq-queue-monitor"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.9",scrape_job="rabbitmq-queue-monitor"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.99",scrape_job="rabbitmq-queue-monitor"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.01",scrape_job="redis-exporter"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.05",scrape_job="redis-exporter"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.5",scrape_job="redis-exporter"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.9",scrape_job="redis-exporter"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.99",scrape_job="redis-exporter"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.01",scrape_job="resource-anomaly-generator"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.05",scrape_job="resource-anomaly-generator"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.5",scrape_job="resource-anomaly-generator"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.9",scrape_job="resource-anomaly-generator"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.99",scrape_job="resource-anomaly-generator"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.01",scrape_job="trace-generator"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.05",scrape_job="trace-generator"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.5",scrape_job="trace-generator"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.9",scrape_job="trace-generator"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.99",scrape_job="trace-generator"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.01",scrape_job="transaction-monitor"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.05",scrape_job="transaction-monitor"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.5",scrape_job="transaction-monitor"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.9",scrape_job="transaction-monitor"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.99",scrape_job="transaction-monitor"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.01",scrape_job="windows-exporter"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.05",scrape_job="windows-exporter"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.5",scrape_job="windows-exporter"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.9",scrape_job="windows-exporter"} NaN
+prometheus_target_sync_length_seconds{instance="localhost:9090",job="prometheus",quantile="0.99",scrape_job="windows-exporter"} NaN
+
+## prometheus_target_sync_length_seconds_count
+prometheus_target_sync_length_seconds_count{instance="localhost:9090",job="prometheus",scrape_job="anomaly-injector"} 1
+prometheus_target_sync_length_seconds_count{instance="localhost:9090",job="prometheus",scrape_job="auto-baselining"} 1
+prometheus_target_sync_length_seconds_count{instance="localhost:9090",job="prometheus",scrape_job="banking-db-demo"} 1
+prometheus_target_sync_length_seconds_count{instance="localhost:9090",job="prometheus",scrape_job="banking-kafka"} 1
+prometheus_target_sync_length_seconds_count{instance="localhost:9090",job="prometheus",scrape_job="banking-message-consumer"} 1
+prometheus_target_sync_length_seconds_count{instance="localhost:9090",job="prometheus",scrape_job="banking-message-producer"} 1
+prometheus_target_sync_length_seconds_count{instance="localhost:9090",job="prometheus",scrape_job="banking-postgresql"} 1
+prometheus_target_sync_length_seconds_count{instance="localhost:9090",job="prometheus",scrape_job="banking-rabbitmq"} 1
+prometheus_target_sync_length_seconds_count{instance="localhost:9090",job="prometheus",scrape_job="banking-services"} 1
+prometheus_target_sync_length_seconds_count{instance="localhost:9090",job="prometheus",scrape_job="cache-load-generator"} 1
+prometheus_target_sync_length_seconds_count{instance="localhost:9090",job="prometheus",scrape_job="cache-pattern-analyzer"} 1
+prometheus_target_sync_length_seconds_count{instance="localhost:9090",job="prometheus",scrape_job="cache-proxy"} 1
+prometheus_target_sync_length_seconds_count{instance="localhost:9090",job="prometheus",scrape_job="cadvisor"} 1
+prometheus_target_sync_length_seconds_count{instance="localhost:9090",job="prometheus",scrape_job="container-resource-monitor"} 1
+prometheus_target_sync_length_seconds_count{instance="localhost:9090",job="prometheus",scrape_job="ddos-ml-detection"} 1
+prometheus_target_sync_length_seconds_count{instance="localhost:9090",job="prometheus",scrape_job="node-exporter"} 1
+prometheus_target_sync_length_seconds_count{instance="localhost:9090",job="prometheus",scrape_job="performance-aggregator"} 1
+prometheus_target_sync_length_seconds_count{instance="localhost:9090",job="prometheus",scrape_job="prometheus"} 1
+prometheus_target_sync_length_seconds_count{instance="localhost:9090",job="prometheus",scrape_job="rabbitmq-queue-monitor"} 1
+prometheus_target_sync_length_seconds_count{instance="localhost:9090",job="prometheus",scrape_job="redis-exporter"} 1
+prometheus_target_sync_length_seconds_count{instance="localhost:9090",job="prometheus",scrape_job="resource-anomaly-generator"} 1
+prometheus_target_sync_length_seconds_count{instance="localhost:9090",job="prometheus",scrape_job="trace-generator"} 1
+prometheus_target_sync_length_seconds_count{instance="localhost:9090",job="prometheus",scrape_job="transaction-monitor"} 1
+prometheus_target_sync_length_seconds_count{instance="localhost:9090",job="prometheus",scrape_job="windows-exporter"} 1
+
+## prometheus_target_sync_length_seconds_sum
+prometheus_target_sync_length_seconds_sum{instance="localhost:9090",job="prometheus",scrape_job="anomaly-injector"} 0.000506334
+prometheus_target_sync_length_seconds_sum{instance="localhost:9090",job="prometheus",scrape_job="auto-baselining"} 0.000589542
+prometheus_target_sync_length_seconds_sum{instance="localhost:9090",job="prometheus",scrape_job="banking-db-demo"} 0.0005085
+prometheus_target_sync_length_seconds_sum{instance="localhost:9090",job="prometheus",scrape_job="banking-kafka"} 0.000419459
+prometheus_target_sync_length_seconds_sum{instance="localhost:9090",job="prometheus",scrape_job="banking-message-consumer"} 0.000310708
+prometheus_target_sync_length_seconds_sum{instance="localhost:9090",job="prometheus",scrape_job="banking-message-producer"} 0.0000725
+prometheus_target_sync_length_seconds_sum{instance="localhost:9090",job="prometheus",scrape_job="banking-postgresql"} 0.000084083
+prometheus_target_sync_length_seconds_sum{instance="localhost:9090",job="prometheus",scrape_job="banking-rabbitmq"} 0.000163375
+prometheus_target_sync_length_seconds_sum{instance="localhost:9090",job="prometheus",scrape_job="banking-services"} 0.000587375
+prometheus_target_sync_length_seconds_sum{instance="localhost:9090",job="prometheus",scrape_job="cache-load-generator"} 0.00041775
+prometheus_target_sync_length_seconds_sum{instance="localhost:9090",job="prometheus",scrape_job="cache-pattern-analyzer"} 0.000194958
+prometheus_target_sync_length_seconds_sum{instance="localhost:9090",job="prometheus",scrape_job="cache-proxy"} 0.000315209
+prometheus_target_sync_length_seconds_sum{instance="localhost:9090",job="prometheus",scrape_job="cadvisor"} 0.000102583
+prometheus_target_sync_length_seconds_sum{instance="localhost:9090",job="prometheus",scrape_job="container-resource-monitor"} 0.000458459
+prometheus_target_sync_length_seconds_sum{instance="localhost:9090",job="prometheus",scrape_job="ddos-ml-detection"} 0.00030625
+prometheus_target_sync_length_seconds_sum{instance="localhost:9090",job="prometheus",scrape_job="node-exporter"} 0.000436875
+prometheus_target_sync_length_seconds_sum{instance="localhost:9090",job="prometheus",scrape_job="performance-aggregator"} 0.00021575
+prometheus_target_sync_length_seconds_sum{instance="localhost:9090",job="prometheus",scrape_job="prometheus"} 0.000374542
+prometheus_target_sync_length_seconds_sum{instance="localhost:9090",job="prometheus",scrape_job="rabbitmq-queue-monitor"} 0.00051875
+prometheus_target_sync_length_seconds_sum{instance="localhost:9090",job="prometheus",scrape_job="redis-exporter"} 0.000337958
+prometheus_target_sync_length_seconds_sum{instance="localhost:9090",job="prometheus",scrape_job="resource-anomaly-generator"} 0.000269916
+prometheus_target_sync_length_seconds_sum{instance="localhost:9090",job="prometheus",scrape_job="trace-generator"} 0.000248708
+prometheus_target_sync_length_seconds_sum{instance="localhost:9090",job="prometheus",scrape_job="transaction-monitor"} 0.0002305
+prometheus_target_sync_length_seconds_sum{instance="localhost:9090",job="prometheus",scrape_job="windows-exporter"} 0.000247417
+
+## prometheus_template_text_expansion_failures_total
+prometheus_template_text_expansion_failures_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_template_text_expansions_total
+prometheus_template_text_expansions_total{instance="localhost:9090",job="prometheus"} 1139
+
+## prometheus_treecache_watcher_goroutines
+prometheus_treecache_watcher_goroutines{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_treecache_zookeeper_failures_total
+prometheus_treecache_zookeeper_failures_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_tsdb_blocks_loaded
+prometheus_tsdb_blocks_loaded{instance="localhost:9090",job="prometheus"} 12
+
+## prometheus_tsdb_checkpoint_creations_failed_total
+prometheus_tsdb_checkpoint_creations_failed_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_tsdb_checkpoint_creations_total
+prometheus_tsdb_checkpoint_creations_total{instance="localhost:9090",job="prometheus"} 1
+
+## prometheus_tsdb_checkpoint_deletions_failed_total
+prometheus_tsdb_checkpoint_deletions_failed_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_tsdb_checkpoint_deletions_total
+prometheus_tsdb_checkpoint_deletions_total{instance="localhost:9090",job="prometheus"} 1
+
+## prometheus_tsdb_clean_start
+prometheus_tsdb_clean_start{instance="localhost:9090",job="prometheus"} 1
+
+## prometheus_tsdb_compaction_chunk_range_seconds_bucket
+prometheus_tsdb_compaction_chunk_range_seconds_bucket{instance="localhost:9090",job="prometheus",le="100.0"} 18
+prometheus_tsdb_compaction_chunk_range_seconds_bucket{instance="localhost:9090",job="prometheus",le="400.0"} 18
+prometheus_tsdb_compaction_chunk_range_seconds_bucket{instance="localhost:9090",job="prometheus",le="1600.0"} 18
+prometheus_tsdb_compaction_chunk_range_seconds_bucket{instance="localhost:9090",job="prometheus",le="6400.0"} 18
+prometheus_tsdb_compaction_chunk_range_seconds_bucket{instance="localhost:9090",job="prometheus",le="25600.0"} 41
+prometheus_tsdb_compaction_chunk_range_seconds_bucket{instance="localhost:9090",job="prometheus",le="102400.0"} 90
+prometheus_tsdb_compaction_chunk_range_seconds_bucket{instance="localhost:9090",job="prometheus",le="409600.0"} 134
+prometheus_tsdb_compaction_chunk_range_seconds_bucket{instance="localhost:9090",job="prometheus",le="1.6384e+06"} 13196
+prometheus_tsdb_compaction_chunk_range_seconds_bucket{instance="localhost:9090",job="prometheus",le="6.5536e+06"} 45216
+prometheus_tsdb_compaction_chunk_range_seconds_bucket{instance="localhost:9090",job="prometheus",le="2.62144e+07"} 45341
+prometheus_tsdb_compaction_chunk_range_seconds_bucket{instance="localhost:9090",job="prometheus",le="+Inf"} 45341
+
+## prometheus_tsdb_compaction_chunk_range_seconds_count
+prometheus_tsdb_compaction_chunk_range_seconds_count{instance="localhost:9090",job="prometheus"} 45341
+
+## prometheus_tsdb_compaction_chunk_range_seconds_sum
+prometheus_tsdb_compaction_chunk_range_seconds_sum{instance="localhost:9090",job="prometheus"} 75765092666
+
+## prometheus_tsdb_compaction_chunk_samples_bucket
+prometheus_tsdb_compaction_chunk_samples_bucket{instance="localhost:9090",job="prometheus",le="4.0"} 67
+prometheus_tsdb_compaction_chunk_samples_bucket{instance="localhost:9090",job="prometheus",le="6.0"} 84
+prometheus_tsdb_compaction_chunk_samples_bucket{instance="localhost:9090",job="prometheus",le="9.0"} 107
+prometheus_tsdb_compaction_chunk_samples_bucket{instance="localhost:9090",job="prometheus",le="13.5"} 134
+prometheus_tsdb_compaction_chunk_samples_bucket{instance="localhost:9090",job="prometheus",le="20.25"} 139
+prometheus_tsdb_compaction_chunk_samples_bucket{instance="localhost:9090",job="prometheus",le="30.375"} 150
+prometheus_tsdb_compaction_chunk_samples_bucket{instance="localhost:9090",job="prometheus",le="45.5625"} 150
+prometheus_tsdb_compaction_chunk_samples_bucket{instance="localhost:9090",job="prometheus",le="68.34375"} 174
+prometheus_tsdb_compaction_chunk_samples_bucket{instance="localhost:9090",job="prometheus",le="102.515625"} 11060
+prometheus_tsdb_compaction_chunk_samples_bucket{instance="localhost:9090",job="prometheus",le="153.7734375"} 45222
+prometheus_tsdb_compaction_chunk_samples_bucket{instance="localhost:9090",job="prometheus",le="230.66015625"} 45341
+prometheus_tsdb_compaction_chunk_samples_bucket{instance="localhost:9090",job="prometheus",le="345.990234375"} 45341
+prometheus_tsdb_compaction_chunk_samples_bucket{instance="localhost:9090",job="prometheus",le="+Inf"} 45341
+
+## prometheus_tsdb_compaction_chunk_samples_count
+prometheus_tsdb_compaction_chunk_samples_count{instance="localhost:9090",job="prometheus"} 45341
+
+## prometheus_tsdb_compaction_chunk_samples_sum
+prometheus_tsdb_compaction_chunk_samples_sum{instance="localhost:9090",job="prometheus"} 5108289
+
+## prometheus_tsdb_compaction_chunk_size_bytes_bucket
+prometheus_tsdb_compaction_chunk_size_bytes_bucket{instance="localhost:9090",job="prometheus",le="32.0"} 53
+prometheus_tsdb_compaction_chunk_size_bytes_bucket{instance="localhost:9090",job="prometheus",le="48.0"} 67
+prometheus_tsdb_compaction_chunk_size_bytes_bucket{instance="localhost:9090",job="prometheus",le="72.0"} 92
+prometheus_tsdb_compaction_chunk_size_bytes_bucket{instance="localhost:9090",job="prometheus",le="108.0"} 119
+prometheus_tsdb_compaction_chunk_size_bytes_bucket{instance="localhost:9090",job="prometheus",le="162.0"} 202
+prometheus_tsdb_compaction_chunk_size_bytes_bucket{instance="localhost:9090",job="prometheus",le="243.0"} 24631
+prometheus_tsdb_compaction_chunk_size_bytes_bucket{instance="localhost:9090",job="prometheus",le="364.5"} 39226
+prometheus_tsdb_compaction_chunk_size_bytes_bucket{instance="localhost:9090",job="prometheus",le="546.75"} 42969
+prometheus_tsdb_compaction_chunk_size_bytes_bucket{instance="localhost:9090",job="prometheus",le="820.125"} 43978
+prometheus_tsdb_compaction_chunk_size_bytes_bucket{instance="localhost:9090",job="prometheus",le="1230.1875"} 45341
+prometheus_tsdb_compaction_chunk_size_bytes_bucket{instance="localhost:9090",job="prometheus",le="1845.28125"} 45341
+prometheus_tsdb_compaction_chunk_size_bytes_bucket{instance="localhost:9090",job="prometheus",le="2767.921875"} 45341
+prometheus_tsdb_compaction_chunk_size_bytes_bucket{instance="localhost:9090",job="prometheus",le="+Inf"} 45341
+
+## prometheus_tsdb_compaction_chunk_size_bytes_count
+prometheus_tsdb_compaction_chunk_size_bytes_count{instance="localhost:9090",job="prometheus"} 45341
+
+## prometheus_tsdb_compaction_chunk_size_bytes_sum
+prometheus_tsdb_compaction_chunk_size_bytes_sum{instance="localhost:9090",job="prometheus"} 12912271
+
+## prometheus_tsdb_compaction_duration_seconds_bucket
+prometheus_tsdb_compaction_duration_seconds_bucket{instance="localhost:9090",job="prometheus",le="1.0"} 1
+prometheus_tsdb_compaction_duration_seconds_bucket{instance="localhost:9090",job="prometheus",le="2.0"} 1
+prometheus_tsdb_compaction_duration_seconds_bucket{instance="localhost:9090",job="prometheus",le="4.0"} 1
+prometheus_tsdb_compaction_duration_seconds_bucket{instance="localhost:9090",job="prometheus",le="8.0"} 1
+prometheus_tsdb_compaction_duration_seconds_bucket{instance="localhost:9090",job="prometheus",le="16.0"} 1
+prometheus_tsdb_compaction_duration_seconds_bucket{instance="localhost:9090",job="prometheus",le="32.0"} 1
+prometheus_tsdb_compaction_duration_seconds_bucket{instance="localhost:9090",job="prometheus",le="64.0"} 1
+prometheus_tsdb_compaction_duration_seconds_bucket{instance="localhost:9090",job="prometheus",le="128.0"} 1
+prometheus_tsdb_compaction_duration_seconds_bucket{instance="localhost:9090",job="prometheus",le="256.0"} 1
+prometheus_tsdb_compaction_duration_seconds_bucket{instance="localhost:9090",job="prometheus",le="512.0"} 1
+prometheus_tsdb_compaction_duration_seconds_bucket{instance="localhost:9090",job="prometheus",le="1024.0"} 1
+prometheus_tsdb_compaction_duration_seconds_bucket{instance="localhost:9090",job="prometheus",le="2048.0"} 1
+prometheus_tsdb_compaction_duration_seconds_bucket{instance="localhost:9090",job="prometheus",le="4096.0"} 1
+prometheus_tsdb_compaction_duration_seconds_bucket{instance="localhost:9090",job="prometheus",le="8192.0"} 1
+prometheus_tsdb_compaction_duration_seconds_bucket{instance="localhost:9090",job="prometheus",le="+Inf"} 1
+
+## prometheus_tsdb_compaction_duration_seconds_count
+prometheus_tsdb_compaction_duration_seconds_count{instance="localhost:9090",job="prometheus"} 1
+
+## prometheus_tsdb_compaction_duration_seconds_sum
+prometheus_tsdb_compaction_duration_seconds_sum{instance="localhost:9090",job="prometheus"} 0.177947958
+
+## prometheus_tsdb_compaction_populating_block
+prometheus_tsdb_compaction_populating_block{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_tsdb_compactions_failed_total
+prometheus_tsdb_compactions_failed_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_tsdb_compactions_skipped_total
+prometheus_tsdb_compactions_skipped_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_tsdb_compactions_total
+prometheus_tsdb_compactions_total{instance="localhost:9090",job="prometheus"} 1
+
+## prometheus_tsdb_compactions_triggered_total
+prometheus_tsdb_compactions_triggered_total{instance="localhost:9090",job="prometheus"} 98
+
+## prometheus_tsdb_data_replay_duration_seconds
+prometheus_tsdb_data_replay_duration_seconds{instance="localhost:9090",job="prometheus"} 0.572787709
+
+## prometheus_tsdb_exemplar_exemplars_appended_total
+prometheus_tsdb_exemplar_exemplars_appended_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_tsdb_exemplar_exemplars_in_storage
+prometheus_tsdb_exemplar_exemplars_in_storage{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_tsdb_exemplar_last_exemplars_timestamp_seconds
+prometheus_tsdb_exemplar_last_exemplars_timestamp_seconds{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_tsdb_exemplar_max_exemplars
+prometheus_tsdb_exemplar_max_exemplars{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_tsdb_exemplar_out_of_order_exemplars_total
+prometheus_tsdb_exemplar_out_of_order_exemplars_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_tsdb_exemplar_series_with_exemplars_in_storage
+prometheus_tsdb_exemplar_series_with_exemplars_in_storage{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_tsdb_head_active_appenders
+prometheus_tsdb_head_active_appenders{instance="localhost:9090",job="prometheus"} 2
+
+## prometheus_tsdb_head_chunks
+prometheus_tsdb_head_chunks{instance="localhost:9090",job="prometheus"} 36886
+
+## prometheus_tsdb_head_chunks_created_total
+prometheus_tsdb_head_chunks_created_total{instance="localhost:9090",job="prometheus"} 82227
+
+## prometheus_tsdb_head_chunks_removed_total
+prometheus_tsdb_head_chunks_removed_total{instance="localhost:9090",job="prometheus"} 45341
+
+## prometheus_tsdb_head_chunks_storage_size_bytes
+prometheus_tsdb_head_chunks_storage_size_bytes{instance="localhost:9090",job="prometheus"} 8388115
+
+## prometheus_tsdb_head_gc_duration_seconds_count
+prometheus_tsdb_head_gc_duration_seconds_count{instance="localhost:9090",job="prometheus"} 1
+
+## prometheus_tsdb_head_gc_duration_seconds_sum
+prometheus_tsdb_head_gc_duration_seconds_sum{instance="localhost:9090",job="prometheus"} 0.025097333
+
+## prometheus_tsdb_head_max_time
+prometheus_tsdb_head_max_time{instance="localhost:9090",job="prometheus"} 1751434784915
+
+## prometheus_tsdb_head_max_time_seconds
+prometheus_tsdb_head_max_time_seconds{instance="localhost:9090",job="prometheus"} 1751434784
+
+## prometheus_tsdb_head_min_time
+prometheus_tsdb_head_min_time{instance="localhost:9090",job="prometheus"} 1751425348531
+
+## prometheus_tsdb_head_min_time_seconds
+prometheus_tsdb_head_min_time_seconds{instance="localhost:9090",job="prometheus"} 1751425348
+
+## prometheus_tsdb_head_out_of_order_samples_appended_total
+prometheus_tsdb_head_out_of_order_samples_appended_total{instance="localhost:9090",job="prometheus",type="float"} 0
+prometheus_tsdb_head_out_of_order_samples_appended_total{instance="localhost:9090",job="prometheus",type="histogram"} 0
+
+## prometheus_tsdb_head_samples_appended_total
+prometheus_tsdb_head_samples_appended_total{instance="localhost:9090",job="prometheus",type="float"} 4059947
+prometheus_tsdb_head_samples_appended_total{instance="localhost:9090",job="prometheus",type="histogram"} 0
+
+## prometheus_tsdb_head_series
+prometheus_tsdb_head_series{instance="localhost:9090",job="prometheus"} 12536
+
+## prometheus_tsdb_head_series_created_total
+prometheus_tsdb_head_series_created_total{instance="localhost:9090",job="prometheus"} 25374
+
+## prometheus_tsdb_head_series_not_found_total
+prometheus_tsdb_head_series_not_found_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_tsdb_head_series_removed_total
+prometheus_tsdb_head_series_removed_total{instance="localhost:9090",job="prometheus"} 12838
+
+## prometheus_tsdb_head_truncations_failed_total
+prometheus_tsdb_head_truncations_failed_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_tsdb_head_truncations_total
+prometheus_tsdb_head_truncations_total{instance="localhost:9090",job="prometheus"} 1
+
+## prometheus_tsdb_isolation_high_watermark
+prometheus_tsdb_isolation_high_watermark{instance="localhost:9090",job="prometheus"} 13815
+
+## prometheus_tsdb_isolation_low_watermark
+prometheus_tsdb_isolation_low_watermark{instance="localhost:9090",job="prometheus"} 13814
+
+## prometheus_tsdb_lowest_timestamp
+prometheus_tsdb_lowest_timestamp{instance="localhost:9090",job="prometheus"} 1750658739781
+
+## prometheus_tsdb_lowest_timestamp_seconds
+prometheus_tsdb_lowest_timestamp_seconds{instance="localhost:9090",job="prometheus"} 1750658739
+
+## prometheus_tsdb_mmap_chunk_corruptions_total
+prometheus_tsdb_mmap_chunk_corruptions_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_tsdb_mmap_chunks_total
+prometheus_tsdb_mmap_chunks_total{instance="localhost:9090",job="prometheus"} 24350
+
+## prometheus_tsdb_out_of_bound_samples_total
+prometheus_tsdb_out_of_bound_samples_total{instance="localhost:9090",job="prometheus",type="float"} 0
+
+## prometheus_tsdb_out_of_order_samples_total
+prometheus_tsdb_out_of_order_samples_total{instance="localhost:9090",job="prometheus",type="float"} 0
+prometheus_tsdb_out_of_order_samples_total{instance="localhost:9090",job="prometheus",type="histogram"} 0
+
+## prometheus_tsdb_reloads_failures_total
+prometheus_tsdb_reloads_failures_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_tsdb_reloads_total
+prometheus_tsdb_reloads_total{instance="localhost:9090",job="prometheus"} 99
+
+## prometheus_tsdb_retention_limit_bytes
+prometheus_tsdb_retention_limit_bytes{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_tsdb_retention_limit_seconds
+prometheus_tsdb_retention_limit_seconds{instance="localhost:9090",job="prometheus"} 720000
+
+## prometheus_tsdb_size_retentions_total
+prometheus_tsdb_size_retentions_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_tsdb_snapshot_replay_error_total
+prometheus_tsdb_snapshot_replay_error_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_tsdb_storage_blocks_bytes
+prometheus_tsdb_storage_blocks_bytes{instance="localhost:9090",job="prometheus"} 325924434
+
+## prometheus_tsdb_symbol_table_size_bytes
+prometheus_tsdb_symbol_table_size_bytes{instance="localhost:9090",job="prometheus"} 8024
+
+## prometheus_tsdb_time_retentions_total
+prometheus_tsdb_time_retentions_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_tsdb_tombstone_cleanup_seconds_bucket
+prometheus_tsdb_tombstone_cleanup_seconds_bucket{instance="localhost:9090",job="prometheus",le="+Inf"} 0
+
+## prometheus_tsdb_tombstone_cleanup_seconds_count
+prometheus_tsdb_tombstone_cleanup_seconds_count{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_tsdb_tombstone_cleanup_seconds_sum
+prometheus_tsdb_tombstone_cleanup_seconds_sum{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_tsdb_too_old_samples_total
+prometheus_tsdb_too_old_samples_total{instance="localhost:9090",job="prometheus",type="float"} 0
+
+## prometheus_tsdb_vertical_compactions_total
+prometheus_tsdb_vertical_compactions_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_tsdb_wal_completed_pages_total
+prometheus_tsdb_wal_completed_pages_total{instance="localhost:9090",job="prometheus"} 699
+
+## prometheus_tsdb_wal_corruptions_total
+prometheus_tsdb_wal_corruptions_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_tsdb_wal_fsync_duration_seconds
+prometheus_tsdb_wal_fsync_duration_seconds{instance="localhost:9090",job="prometheus",quantile="0.5"} NaN
+prometheus_tsdb_wal_fsync_duration_seconds{instance="localhost:9090",job="prometheus",quantile="0.9"} NaN
+prometheus_tsdb_wal_fsync_duration_seconds{instance="localhost:9090",job="prometheus",quantile="0.99"} NaN
+
+## prometheus_tsdb_wal_fsync_duration_seconds_count
+prometheus_tsdb_wal_fsync_duration_seconds_count{instance="localhost:9090",job="prometheus"} 1
+
+## prometheus_tsdb_wal_fsync_duration_seconds_sum
+prometheus_tsdb_wal_fsync_duration_seconds_sum{instance="localhost:9090",job="prometheus"} 0.001073125
+
+## prometheus_tsdb_wal_page_flushes_total
+prometheus_tsdb_wal_page_flushes_total{instance="localhost:9090",job="prometheus"} 13647
+
+## prometheus_tsdb_wal_record_bytes_saved_total
+prometheus_tsdb_wal_record_bytes_saved_total{compression="snappy",instance="localhost:9090",job="prometheus"} 24681927
+
+## prometheus_tsdb_wal_record_part_writes_total
+prometheus_tsdb_wal_record_part_writes_total{instance="localhost:9090",job="prometheus"} 13646
+
+## prometheus_tsdb_wal_record_parts_bytes_written_total
+prometheus_tsdb_wal_record_parts_bytes_written_total{instance="localhost:9090",job="prometheus"} 22882729
+
+## prometheus_tsdb_wal_segment_current
+prometheus_tsdb_wal_segment_current{instance="localhost:9090",job="prometheus"} 113
+
+## prometheus_tsdb_wal_storage_size_bytes
+prometheus_tsdb_wal_storage_size_bytes{instance="localhost:9090",job="prometheus"} 37038439
+
+## prometheus_tsdb_wal_truncate_duration_seconds_count
+prometheus_tsdb_wal_truncate_duration_seconds_count{instance="localhost:9090",job="prometheus"} 1
+
+## prometheus_tsdb_wal_truncate_duration_seconds_sum
+prometheus_tsdb_wal_truncate_duration_seconds_sum{instance="localhost:9090",job="prometheus"} 0.281896792
+
+## prometheus_tsdb_wal_truncations_failed_total
+prometheus_tsdb_wal_truncations_failed_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_tsdb_wal_truncations_total
+prometheus_tsdb_wal_truncations_total{instance="localhost:9090",job="prometheus"} 1
+
+## prometheus_tsdb_wal_writes_failed_total
+prometheus_tsdb_wal_writes_failed_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_web_federation_errors_total
+prometheus_web_federation_errors_total{instance="localhost:9090",job="prometheus"} 0
+
+## prometheus_web_federation_warnings_total
+prometheus_web_federation_warnings_total{instance="localhost:9090",job="prometheus"} 0
+
+## promhttp_metric_handler_requests_in_flight
+promhttp_metric_handler_requests_in_flight{instance="localhost:9090",job="prometheus"} 1
+
+## promhttp_metric_handler_requests_total
+promhttp_metric_handler_requests_total{code="200",instance="localhost:9090",job="prometheus"} 389
+promhttp_metric_handler_requests_total{code="500",instance="localhost:9090",job="prometheus"} 0
+promhttp_metric_handler_requests_total{code="503",instance="localhost:9090",job="prometheus"} 0
+
+## scrape_duration_seconds
+scrape_duration_seconds{instance="localhost:9090",job="prometheus"} 0.010905125
+
+## scrape_samples_post_metric_relabeling
+scrape_samples_post_metric_relabeling{instance="localhost:9090",job="prometheus"} 1337
+
+## scrape_samples_scraped
+scrape_samples_scraped{instance="localhost:9090",job="prometheus"} 1337
+
+## scrape_series_added
+scrape_series_added{instance="localhost:9090",job="prometheus"} 0
+
+## up
+up{instance="localhost:9090",job="prometheus"} 1
+

@@ -1,0 +1,48 @@
+COMPREHENSIVE METRICS EXPORT SUMMARY
+==================================================
+Export Date: 2025-07-02T11:09:54.036423
+Total Services: 29
+Total Metrics: 11936
+
+METRICS BY CATEGORY:
+------------------------------
+BANKING: 6 services, 1866 metrics
+CACHE: 4 services, 863 metrics
+DATABASE: 2 services, 750 metrics
+INFRASTRUCTURE: 1 services, 1342 metrics
+MESSAGING: 5 services, 2651 metrics
+ML_DETECTION: 3 services, 77 metrics
+MONITORING: 6 services, 4323 metrics
+TESTING: 2 services, 64 metrics
+
+DETAILED RESULTS:
+------------------------------
+✅ account-service: 311 metrics (banking)
+✅ anomaly-injector: 21 metrics (ml_detection)
+✅ api-gateway: 311 metrics (banking)
+✅ auth-service: 311 metrics (banking)
+✅ auto-baselining: 28 metrics (ml_detection)
+✅ banking-db-demo: 121 metrics (database)
+✅ banking-kafka: 432 metrics (messaging)
+✅ banking-message-consumer: 152 metrics (messaging)
+✅ banking-message-producer: 134 metrics (messaging)
+✅ banking-postgresql: 629 metrics (database)
+✅ banking-rabbitmq: 1883 metrics (messaging)
+✅ cache-load-generator: 22 metrics (cache)
+✅ cache-pattern-analyzer: 32 metrics (cache)
+✅ cache-proxy: 134 metrics (cache)
+✅ cadvisor: 1384 metrics (monitoring)
+✅ container-resource-monitor: 150 metrics (monitoring)
+✅ ddos-ml-detection: 28 metrics (ml_detection)
+✅ fraud-detection: 311 metrics (banking)
+✅ node-exporter: 2478 metrics (monitoring)
+✅ notification-service: 311 metrics (banking)
+✅ performance-aggregator: 44 metrics (monitoring)
+✅ prometheus: 1342 metrics (infrastructure)
+✅ rabbitmq-queue-monitor: 50 metrics (messaging)
+✅ redis-exporter: 675 metrics (cache)
+✅ resource-anomaly-generator: 30 metrics (testing)
+✅ trace-generator: 34 metrics (testing)
+✅ transaction-monitor: 52 metrics (monitoring)
+✅ transaction-service: 311 metrics (banking)
+✅ windows-exporter: 215 metrics (monitoring)

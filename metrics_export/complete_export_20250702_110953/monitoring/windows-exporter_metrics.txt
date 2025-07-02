@@ -1,0 +1,302 @@
+# Metrics for windows-exporter
+# Job: windows-exporter
+# Category: monitoring
+# Exported at: 2025-07-02T11:09:53.976023
+# Total metrics: 215
+# Unique metric types: 40
+
+## process_cpu_seconds_total
+process_cpu_seconds_total{instance="mock-windows-exporter:9182",job="windows-exporter"} 18.43
+
+## process_max_fds
+process_max_fds{instance="mock-windows-exporter:9182",job="windows-exporter"} 1048576
+
+## process_open_fds
+process_open_fds{instance="mock-windows-exporter:9182",job="windows-exporter"} 6
+
+## process_resident_memory_bytes
+process_resident_memory_bytes{instance="mock-windows-exporter:9182",job="windows-exporter"} 32178176
+
+## process_start_time_seconds
+process_start_time_seconds{instance="mock-windows-exporter:9182",job="windows-exporter"} 1751429114.17
+
+## process_virtual_memory_bytes
+process_virtual_memory_bytes{instance="mock-windows-exporter:9182",job="windows-exporter"} 416845824
+
+## python_gc_collections_total
+python_gc_collections_total{generation="0",instance="mock-windows-exporter:9182",job="windows-exporter"} 94
+python_gc_collections_total{generation="1",instance="mock-windows-exporter:9182",job="windows-exporter"} 8
+python_gc_collections_total{generation="2",instance="mock-windows-exporter:9182",job="windows-exporter"} 0
+
+## python_gc_objects_collected_total
+python_gc_objects_collected_total{generation="0",instance="mock-windows-exporter:9182",job="windows-exporter"} 4195
+python_gc_objects_collected_total{generation="1",instance="mock-windows-exporter:9182",job="windows-exporter"} 697
+python_gc_objects_collected_total{generation="2",instance="mock-windows-exporter:9182",job="windows-exporter"} 0
+
+## python_gc_objects_uncollectable_total
+python_gc_objects_uncollectable_total{generation="0",instance="mock-windows-exporter:9182",job="windows-exporter"} 0
+python_gc_objects_uncollectable_total{generation="1",instance="mock-windows-exporter:9182",job="windows-exporter"} 0
+python_gc_objects_uncollectable_total{generation="2",instance="mock-windows-exporter:9182",job="windows-exporter"} 0
+
+## python_info
+python_info{implementation="CPython",instance="mock-windows-exporter:9182",job="windows-exporter",major="3",minor="9",patchlevel="23",version="3.9.23"} 1
+
+## scrape_duration_seconds
+scrape_duration_seconds{instance="mock-windows-exporter:9182",job="windows-exporter"} 0.02497775
+
+## scrape_samples_post_metric_relabeling
+scrape_samples_post_metric_relabeling{instance="mock-windows-exporter:9182",job="windows-exporter"} 210
+
+## scrape_samples_scraped
+scrape_samples_scraped{instance="mock-windows-exporter:9182",job="windows-exporter"} 210
+
+## scrape_series_added
+scrape_series_added{instance="mock-windows-exporter:9182",job="windows-exporter"} 0
+
+## up
+up{instance="mock-windows-exporter:9182",job="windows-exporter"} 1
+
+## windows_custom_errors_created
+windows_custom_errors_created{app_name="BankingApp_App",error_code="ERR_VALIDATION_001",instance="mock-windows-exporter:9182",job="windows-exporter"} 1751429123.6425042
+windows_custom_errors_created{app_name="BankingApp_App",error_code="ERR_AUTH_002",instance="mock-windows-exporter:9182",job="windows-exporter"} 1751429124.6468647
+windows_custom_errors_created{app_name="Default Web Site_App",error_code="ERR_VALIDATION_001",instance="mock-windows-exporter:9182",job="windows-exporter"} 1751429129.6712503
+windows_custom_errors_created{app_name="Default Web Site_App",error_code="ERR_DATA_004",instance="mock-windows-exporter:9182",job="windows-exporter"} 1751429190.8755012
+windows_custom_errors_created{app_name="API Portal_App",error_code="ERR_BUSINESS_003",instance="mock-windows-exporter:9182",job="windows-exporter"} 1751429190.8762288
+windows_custom_errors_created{app_name="API Portal_App",error_code="ERR_AUTH_002",instance="mock-windows-exporter:9182",job="windows-exporter"} 1751429197.9076817
+windows_custom_errors_created{app_name="API Portal_App",error_code="ERR_VALIDATION_001",instance="mock-windows-exporter:9182",job="windows-exporter"} 1751429220.9829047
+windows_custom_errors_created{app_name="Default Web Site_App",error_code="ERR_AUTH_002",instance="mock-windows-exporter:9182",job="windows-exporter"} 1751429285.1885772
+windows_custom_errors_created{app_name="BankingApp_App",error_code="ERR_DATA_004",instance="mock-windows-exporter:9182",job="windows-exporter"} 1751429298.238225
+windows_custom_errors_created{app_name="API Portal_App",error_code="ERR_DATA_004",instance="mock-windows-exporter:9182",job="windows-exporter"} 1751429299.2425609
+windows_custom_errors_created{app_name="Default Web Site_App",error_code="ERR_BUSINESS_003",instance="mock-windows-exporter:9182",job="windows-exporter"} 1751429324.3475819
+windows_custom_errors_created{app_name="BankingApp_App",error_code="ERR_BUSINESS_003",instance="mock-windows-exporter:9182",job="windows-exporter"} 1751429494.8961315
+
+## windows_custom_errors_total
+windows_custom_errors_total{app_name="BankingApp_App",error_code="ERR_VALIDATION_001",instance="mock-windows-exporter:9182",job="windows-exporter"} 67
+windows_custom_errors_total{app_name="BankingApp_App",error_code="ERR_AUTH_002",instance="mock-windows-exporter:9182",job="windows-exporter"} 44
+windows_custom_errors_total{app_name="Default Web Site_App",error_code="ERR_VALIDATION_001",instance="mock-windows-exporter:9182",job="windows-exporter"} 46
+windows_custom_errors_total{app_name="Default Web Site_App",error_code="ERR_DATA_004",instance="mock-windows-exporter:9182",job="windows-exporter"} 49
+windows_custom_errors_total{app_name="API Portal_App",error_code="ERR_BUSINESS_003",instance="mock-windows-exporter:9182",job="windows-exporter"} 36
+windows_custom_errors_total{app_name="API Portal_App",error_code="ERR_AUTH_002",instance="mock-windows-exporter:9182",job="windows-exporter"} 50
+windows_custom_errors_total{app_name="API Portal_App",error_code="ERR_VALIDATION_001",instance="mock-windows-exporter:9182",job="windows-exporter"} 59
+windows_custom_errors_total{app_name="Default Web Site_App",error_code="ERR_AUTH_002",instance="mock-windows-exporter:9182",job="windows-exporter"} 51
+windows_custom_errors_total{app_name="BankingApp_App",error_code="ERR_DATA_004",instance="mock-windows-exporter:9182",job="windows-exporter"} 59
+windows_custom_errors_total{app_name="API Portal_App",error_code="ERR_DATA_004",instance="mock-windows-exporter:9182",job="windows-exporter"} 46
+windows_custom_errors_total{app_name="Default Web Site_App",error_code="ERR_BUSINESS_003",instance="mock-windows-exporter:9182",job="windows-exporter"} 45
+windows_custom_errors_total{app_name="BankingApp_App",error_code="ERR_BUSINESS_003",instance="mock-windows-exporter:9182",job="windows-exporter"} 40
+
+## windows_iis_app_pool_recycles_created
+windows_iis_app_pool_recycles_created{app_pool="DefaultAppPool",instance="mock-windows-exporter:9182",job="windows-exporter"} 1751430622.2325766
+
+## windows_iis_app_pool_recycles_total
+windows_iis_app_pool_recycles_total{app_pool="DefaultAppPool",instance="mock-windows-exporter:9182",job="windows-exporter"} 1
+
+## windows_iis_app_pool_state
+windows_iis_app_pool_state{app_pool="DefaultAppPool",instance="mock-windows-exporter:9182",job="windows-exporter"} 1
+windows_iis_app_pool_state{app_pool="BankingAppPool",instance="mock-windows-exporter:9182",job="windows-exporter"} 1
+windows_iis_app_pool_state{app_pool="APIPool",instance="mock-windows-exporter:9182",job="windows-exporter"} 1
+
+## windows_iis_client_errors_created
+windows_iis_client_errors_created{instance="mock-windows-exporter:9182",job="windows-exporter",site="Default Web Site"} 1751429115.6132495
+windows_iis_client_errors_created{instance="mock-windows-exporter:9182",job="windows-exporter",site="API Portal"} 1751429123.6426766
+windows_iis_client_errors_created{instance="mock-windows-exporter:9182",job="windows-exporter",site="BankingApp"} 1751429129.6721628
+
+## windows_iis_client_errors_total
+windows_iis_client_errors_total{instance="mock-windows-exporter:9182",job="windows-exporter",site="Default Web Site"} 313
+windows_iis_client_errors_total{instance="mock-windows-exporter:9182",job="windows-exporter",site="API Portal"} 285
+windows_iis_client_errors_total{instance="mock-windows-exporter:9182",job="windows-exporter",site="BankingApp"} 288
+
+## windows_iis_current_connections
+windows_iis_current_connections{instance="mock-windows-exporter:9182",job="windows-exporter",site="Default Web Site"} 3
+windows_iis_current_connections{instance="mock-windows-exporter:9182",job="windows-exporter",site="BankingApp"} 3
+windows_iis_current_connections{instance="mock-windows-exporter:9182",job="windows-exporter",site="API Portal"} 2
+
+## windows_iis_not_found_errors_created
+windows_iis_not_found_errors_created{instance="mock-windows-exporter:9182",job="windows-exporter",site="Default Web Site"} 1751429116.6161346
+windows_iis_not_found_errors_created{instance="mock-windows-exporter:9182",job="windows-exporter",site="API Portal"} 1751429165.7834554
+windows_iis_not_found_errors_created{instance="mock-windows-exporter:9182",job="windows-exporter",site="BankingApp"} 1751429193.8908691
+
+## windows_iis_not_found_errors_total
+windows_iis_not_found_errors_total{instance="mock-windows-exporter:9182",job="windows-exporter",site="Default Web Site"} 222
+windows_iis_not_found_errors_total{instance="mock-windows-exporter:9182",job="windows-exporter",site="API Portal"} 224
+windows_iis_not_found_errors_total{instance="mock-windows-exporter:9182",job="windows-exporter",site="BankingApp"} 234
+
+## windows_iis_request_execution_time_bucket
+windows_iis_request_execution_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="5.0",site="Default Web Site"} 804
+windows_iis_request_execution_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="10.0",site="Default Web Site"} 1443
+windows_iis_request_execution_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="25.0",site="Default Web Site"} 6603
+windows_iis_request_execution_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="50.0",site="Default Web Site"} 30625
+windows_iis_request_execution_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="100.0",site="Default Web Site"} 60739
+windows_iis_request_execution_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="250.0",site="Default Web Site"} 62155
+windows_iis_request_execution_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="500.0",site="Default Web Site"} 62220
+windows_iis_request_execution_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="1000.0",site="Default Web Site"} 62220
+windows_iis_request_execution_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="2500.0",site="Default Web Site"} 62220
+windows_iis_request_execution_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="5000.0",site="Default Web Site"} 62220
+windows_iis_request_execution_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="10000.0",site="Default Web Site"} 62220
+windows_iis_request_execution_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="+Inf",site="Default Web Site"} 62220
+windows_iis_request_execution_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="5.0",site="BankingApp"} 760
+windows_iis_request_execution_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="10.0",site="BankingApp"} 1364
+windows_iis_request_execution_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="25.0",site="BankingApp"} 6471
+windows_iis_request_execution_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="50.0",site="BankingApp"} 30521
+windows_iis_request_execution_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="100.0",site="BankingApp"} 60707
+windows_iis_request_execution_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="250.0",site="BankingApp"} 62144
+windows_iis_request_execution_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="500.0",site="BankingApp"} 62220
+windows_iis_request_execution_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="1000.0",site="BankingApp"} 62220
+windows_iis_request_execution_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="2500.0",site="BankingApp"} 62220
+windows_iis_request_execution_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="5000.0",site="BankingApp"} 62220
+windows_iis_request_execution_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="10000.0",site="BankingApp"} 62220
+windows_iis_request_execution_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="+Inf",site="BankingApp"} 62220
+windows_iis_request_execution_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="5.0",site="API Portal"} 706
+windows_iis_request_execution_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="10.0",site="API Portal"} 1316
+windows_iis_request_execution_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="25.0",site="API Portal"} 6372
+windows_iis_request_execution_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="50.0",site="API Portal"} 30410
+windows_iis_request_execution_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="100.0",site="API Portal"} 60708
+windows_iis_request_execution_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="250.0",site="API Portal"} 62160
+windows_iis_request_execution_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="500.0",site="API Portal"} 62220
+windows_iis_request_execution_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="1000.0",site="API Portal"} 62220
+windows_iis_request_execution_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="2500.0",site="API Portal"} 62220
+windows_iis_request_execution_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="5000.0",site="API Portal"} 62220
+windows_iis_request_execution_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="10000.0",site="API Portal"} 62220
+windows_iis_request_execution_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="+Inf",site="API Portal"} 62220
+
+## windows_iis_request_execution_time_count
+windows_iis_request_execution_time_count{instance="mock-windows-exporter:9182",job="windows-exporter",site="Default Web Site"} 62220
+windows_iis_request_execution_time_count{instance="mock-windows-exporter:9182",job="windows-exporter",site="BankingApp"} 62220
+windows_iis_request_execution_time_count{instance="mock-windows-exporter:9182",job="windows-exporter",site="API Portal"} 62220
+
+## windows_iis_request_execution_time_created
+windows_iis_request_execution_time_created{instance="mock-windows-exporter:9182",job="windows-exporter",site="Default Web Site"} 1751429115.6130612
+windows_iis_request_execution_time_created{instance="mock-windows-exporter:9182",job="windows-exporter",site="BankingApp"} 1751429115.6134584
+windows_iis_request_execution_time_created{instance="mock-windows-exporter:9182",job="windows-exporter",site="API Portal"} 1751429115.6136646
+
+## windows_iis_request_execution_time_sum
+windows_iis_request_execution_time_sum{instance="mock-windows-exporter:9182",job="windows-exporter",site="Default Web Site"} 3244197.760047758
+windows_iis_request_execution_time_sum{instance="mock-windows-exporter:9182",job="windows-exporter",site="BankingApp"} 3246762.685197282
+windows_iis_request_execution_time_sum{instance="mock-windows-exporter:9182",job="windows-exporter",site="API Portal"} 3260338.5685424586
+
+## windows_iis_request_wait_time_bucket
+windows_iis_request_wait_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="5.0",site="Default Web Site"} 9661
+windows_iis_request_wait_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="10.0",site="Default Web Site"} 30340
+windows_iis_request_wait_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="25.0",site="Default Web Site"} 60959
+windows_iis_request_wait_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="50.0",site="Default Web Site"} 61546
+windows_iis_request_wait_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="100.0",site="Default Web Site"} 62176
+windows_iis_request_wait_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="250.0",site="Default Web Site"} 62220
+windows_iis_request_wait_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="500.0",site="Default Web Site"} 62220
+windows_iis_request_wait_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="1000.0",site="Default Web Site"} 62220
+windows_iis_request_wait_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="2500.0",site="Default Web Site"} 62220
+windows_iis_request_wait_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="5000.0",site="Default Web Site"} 62220
+windows_iis_request_wait_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="10000.0",site="Default Web Site"} 62220
+windows_iis_request_wait_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="+Inf",site="Default Web Site"} 62220
+windows_iis_request_wait_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="5.0",site="BankingApp"} 9615
+windows_iis_request_wait_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="10.0",site="BankingApp"} 30590
+windows_iis_request_wait_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="25.0",site="BankingApp"} 60939
+windows_iis_request_wait_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="50.0",site="BankingApp"} 61482
+windows_iis_request_wait_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="100.0",site="BankingApp"} 62174
+windows_iis_request_wait_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="250.0",site="BankingApp"} 62220
+windows_iis_request_wait_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="500.0",site="BankingApp"} 62220
+windows_iis_request_wait_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="1000.0",site="BankingApp"} 62220
+windows_iis_request_wait_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="2500.0",site="BankingApp"} 62220
+windows_iis_request_wait_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="5000.0",site="BankingApp"} 62220
+windows_iis_request_wait_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="10000.0",site="BankingApp"} 62220
+windows_iis_request_wait_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="+Inf",site="BankingApp"} 62220
+windows_iis_request_wait_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="5.0",site="API Portal"} 9734
+windows_iis_request_wait_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="10.0",site="API Portal"} 30473
+windows_iis_request_wait_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="25.0",site="API Portal"} 60936
+windows_iis_request_wait_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="50.0",site="API Portal"} 61502
+windows_iis_request_wait_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="100.0",site="API Portal"} 62193
+windows_iis_request_wait_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="250.0",site="API Portal"} 62220
+windows_iis_request_wait_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="500.0",site="API Portal"} 62220
+windows_iis_request_wait_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="1000.0",site="API Portal"} 62220
+windows_iis_request_wait_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="2500.0",site="API Portal"} 62220
+windows_iis_request_wait_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="5000.0",site="API Portal"} 62220
+windows_iis_request_wait_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="10000.0",site="API Portal"} 62220
+windows_iis_request_wait_time_bucket{instance="mock-windows-exporter:9182",job="windows-exporter",le="+Inf",site="API Portal"} 62220
+
+## windows_iis_request_wait_time_count
+windows_iis_request_wait_time_count{instance="mock-windows-exporter:9182",job="windows-exporter",site="Default Web Site"} 62220
+windows_iis_request_wait_time_count{instance="mock-windows-exporter:9182",job="windows-exporter",site="BankingApp"} 62220
+windows_iis_request_wait_time_count{instance="mock-windows-exporter:9182",job="windows-exporter",site="API Portal"} 62220
+
+## windows_iis_request_wait_time_created
+windows_iis_request_wait_time_created{instance="mock-windows-exporter:9182",job="windows-exporter",site="Default Web Site"} 1751429115.6130245
+windows_iis_request_wait_time_created{instance="mock-windows-exporter:9182",job="windows-exporter",site="BankingApp"} 1751429115.613416
+windows_iis_request_wait_time_created{instance="mock-windows-exporter:9182",job="windows-exporter",site="API Portal"} 1751429115.6136305
+
+## windows_iis_request_wait_time_sum
+windows_iis_request_wait_time_sum{instance="mock-windows-exporter:9182",job="windows-exporter",site="Default Web Site"} 683043.1207723111
+windows_iis_request_wait_time_sum{instance="mock-windows-exporter:9182",job="windows-exporter",site="BankingApp"} 683745.9865598242
+windows_iis_request_wait_time_sum{instance="mock-windows-exporter:9182",job="windows-exporter",site="API Portal"} 682804.2700643475
+
+## windows_iis_requests_created
+windows_iis_requests_created{instance="mock-windows-exporter:9182",job="windows-exporter",method="GET",site="Default Web Site"} 1751429115.612897
+windows_iis_requests_created{instance="mock-windows-exporter:9182",job="windows-exporter",method="POST",site="Default Web Site"} 1751429115.6130936
+windows_iis_requests_created{instance="mock-windows-exporter:9182",job="windows-exporter",method="DELETE",site="Default Web Site"} 1751429115.6132157
+windows_iis_requests_created{instance="mock-windows-exporter:9182",job="windows-exporter",method="GET",site="BankingApp"} 1751429115.6133993
+windows_iis_requests_created{instance="mock-windows-exporter:9182",job="windows-exporter",method="POST",site="BankingApp"} 1751429115.613507
+windows_iis_requests_created{instance="mock-windows-exporter:9182",job="windows-exporter",method="DELETE",site="BankingApp"} 1751429115.6135747
+windows_iis_requests_created{instance="mock-windows-exporter:9182",job="windows-exporter",method="GET",site="API Portal"} 1751429115.6136215
+windows_iis_requests_created{instance="mock-windows-exporter:9182",job="windows-exporter",method="POST",site="API Portal"} 1751429115.6136892
+windows_iis_requests_created{instance="mock-windows-exporter:9182",job="windows-exporter",method="PUT",site="Default Web Site"} 1751429116.6162739
+windows_iis_requests_created{instance="mock-windows-exporter:9182",job="windows-exporter",method="PUT",site="BankingApp"} 1751429116.616566
+windows_iis_requests_created{instance="mock-windows-exporter:9182",job="windows-exporter",method="PUT",site="API Portal"} 1751429116.6167803
+windows_iis_requests_created{instance="mock-windows-exporter:9182",job="windows-exporter",method="DELETE",site="API Portal"} 1751429117.6196144
+
+## windows_iis_requests_total
+windows_iis_requests_total{instance="mock-windows-exporter:9182",job="windows-exporter",method="GET",site="Default Web Site"} 43431
+windows_iis_requests_total{instance="mock-windows-exporter:9182",job="windows-exporter",method="POST",site="Default Web Site"} 12523
+windows_iis_requests_total{instance="mock-windows-exporter:9182",job="windows-exporter",method="DELETE",site="Default Web Site"} 3120
+windows_iis_requests_total{instance="mock-windows-exporter:9182",job="windows-exporter",method="GET",site="BankingApp"} 43674
+windows_iis_requests_total{instance="mock-windows-exporter:9182",job="windows-exporter",method="POST",site="BankingApp"} 12420
+windows_iis_requests_total{instance="mock-windows-exporter:9182",job="windows-exporter",method="DELETE",site="BankingApp"} 3099
+windows_iis_requests_total{instance="mock-windows-exporter:9182",job="windows-exporter",method="GET",site="API Portal"} 43660
+windows_iis_requests_total{instance="mock-windows-exporter:9182",job="windows-exporter",method="POST",site="API Portal"} 12484
+windows_iis_requests_total{instance="mock-windows-exporter:9182",job="windows-exporter",method="PUT",site="Default Web Site"} 3146
+windows_iis_requests_total{instance="mock-windows-exporter:9182",job="windows-exporter",method="PUT",site="BankingApp"} 3027
+windows_iis_requests_total{instance="mock-windows-exporter:9182",job="windows-exporter",method="PUT",site="API Portal"} 2984
+windows_iis_requests_total{instance="mock-windows-exporter:9182",job="windows-exporter",method="DELETE",site="API Portal"} 3092
+
+## windows_iis_server_errors_created
+windows_iis_server_errors_created{instance="mock-windows-exporter:9182",job="windows-exporter",site="BankingApp"} 1751429152.74432
+windows_iis_server_errors_created{instance="mock-windows-exporter:9182",job="windows-exporter",site="API Portal"} 1751429214.9582148
+windows_iis_server_errors_created{instance="mock-windows-exporter:9182",job="windows-exporter",site="Default Web Site"} 1751429244.0671902
+
+## windows_iis_server_errors_total
+windows_iis_server_errors_total{instance="mock-windows-exporter:9182",job="windows-exporter",site="BankingApp"} 60
+windows_iis_server_errors_total{instance="mock-windows-exporter:9182",job="windows-exporter",site="API Portal"} 66
+windows_iis_server_errors_total{instance="mock-windows-exporter:9182",job="windows-exporter",site="Default Web Site"} 64
+
+## windows_iis_worker_processes
+windows_iis_worker_processes{app_pool="DefaultAppPool",instance="mock-windows-exporter:9182",job="windows-exporter",state="running"} 4
+windows_iis_worker_processes{app_pool="DefaultAppPool",instance="mock-windows-exporter:9182",job="windows-exporter",state="idle"} 1
+windows_iis_worker_processes{app_pool="BankingAppPool",instance="mock-windows-exporter:9182",job="windows-exporter",state="running"} 3
+windows_iis_worker_processes{app_pool="BankingAppPool",instance="mock-windows-exporter:9182",job="windows-exporter",state="idle"} 2
+windows_iis_worker_processes{app_pool="APIPool",instance="mock-windows-exporter:9182",job="windows-exporter",state="running"} 3
+windows_iis_worker_processes{app_pool="APIPool",instance="mock-windows-exporter:9182",job="windows-exporter",state="idle"} 1
+
+## windows_netframework_exceptions_thrown_created
+windows_netframework_exceptions_thrown_created{app_name="BankingApp_App",exception_type="System.ArgumentException",instance="mock-windows-exporter:9182",job="windows-exporter"} 1751429123.6425989
+windows_netframework_exceptions_thrown_created{app_name="Default Web Site_App",exception_type="System.NullReferenceException",instance="mock-windows-exporter:9182",job="windows-exporter"} 1751429134.6886985
+windows_netframework_exceptions_thrown_created{app_name="API Portal_App",exception_type="System.ArgumentException",instance="mock-windows-exporter:9182",job="windows-exporter"} 1751429135.689568
+windows_netframework_exceptions_thrown_created{app_name="BankingApp_App",exception_type="System.NullReferenceException",instance="mock-windows-exporter:9182",job="windows-exporter"} 1751429152.744346
+windows_netframework_exceptions_thrown_created{app_name="BankingApp_App",exception_type="System.InvalidOperationException",instance="mock-windows-exporter:9182",job="windows-exporter"} 1751429155.7550726
+windows_netframework_exceptions_thrown_created{app_name="API Portal_App",exception_type="System.Data.SqlException",instance="mock-windows-exporter:9182",job="windows-exporter"} 1751429164.781421
+windows_netframework_exceptions_thrown_created{app_name="Default Web Site_App",exception_type="System.ArgumentException",instance="mock-windows-exporter:9182",job="windows-exporter"} 1751429167.792467
+windows_netframework_exceptions_thrown_created{app_name="API Portal_App",exception_type="System.InvalidOperationException",instance="mock-windows-exporter:9182",job="windows-exporter"} 1751429214.9581208
+windows_netframework_exceptions_thrown_created{app_name="Default Web Site_App",exception_type="System.InvalidOperationException",instance="mock-windows-exporter:9182",job="windows-exporter"} 1751429233.0276217
+windows_netframework_exceptions_thrown_created{app_name="Default Web Site_App",exception_type="System.Data.SqlException",instance="mock-windows-exporter:9182",job="windows-exporter"} 1751429265.1269863
+windows_netframework_exceptions_thrown_created{app_name="API Portal_App",exception_type="System.NullReferenceException",instance="mock-windows-exporter:9182",job="windows-exporter"} 1751429316.3179793
+windows_netframework_exceptions_thrown_created{app_name="BankingApp_App",exception_type="System.Data.SqlException",instance="mock-windows-exporter:9182",job="windows-exporter"} 1751429707.6879725
+
+## windows_netframework_exceptions_thrown_total
+windows_netframework_exceptions_thrown_total{app_name="BankingApp_App",exception_type="System.ArgumentException",instance="mock-windows-exporter:9182",job="windows-exporter"} 34
+windows_netframework_exceptions_thrown_total{app_name="Default Web Site_App",exception_type="System.NullReferenceException",instance="mock-windows-exporter:9182",job="windows-exporter"} 26
+windows_netframework_exceptions_thrown_total{app_name="API Portal_App",exception_type="System.ArgumentException",instance="mock-windows-exporter:9182",job="windows-exporter"} 38
+windows_netframework_exceptions_thrown_total{app_name="BankingApp_App",exception_type="System.NullReferenceException",instance="mock-windows-exporter:9182",job="windows-exporter"} 33
+windows_netframework_exceptions_thrown_total{app_name="BankingApp_App",exception_type="System.InvalidOperationException",instance="mock-windows-exporter:9182",job="windows-exporter"} 30
+windows_netframework_exceptions_thrown_total{app_name="API Portal_App",exception_type="System.Data.SqlException",instance="mock-windows-exporter:9182",job="windows-exporter"} 34
+windows_netframework_exceptions_thrown_total{app_name="Default Web Site_App",exception_type="System.ArgumentException",instance="mock-windows-exporter:9182",job="windows-exporter"} 37
+windows_netframework_exceptions_thrown_total{app_name="API Portal_App",exception_type="System.InvalidOperationException",instance="mock-windows-exporter:9182",job="windows-exporter"} 28
+windows_netframework_exceptions_thrown_total{app_name="Default Web Site_App",exception_type="System.InvalidOperationException",instance="mock-windows-exporter:9182",job="windows-exporter"} 24
+windows_netframework_exceptions_thrown_total{app_name="Default Web Site_App",exception_type="System.Data.SqlException",instance="mock-windows-exporter:9182",job="windows-exporter"} 35
+windows_netframework_exceptions_thrown_total{app_name="API Portal_App",exception_type="System.NullReferenceException",instance="mock-windows-exporter:9182",job="windows-exporter"} 46
+windows_netframework_exceptions_thrown_total{app_name="BankingApp_App",exception_type="System.Data.SqlException",instance="mock-windows-exporter:9182",job="windows-exporter"} 35
+

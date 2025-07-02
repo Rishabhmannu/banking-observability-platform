@@ -1,0 +1,193 @@
+# Metrics for banking-message-consumer
+# Job: banking-message-consumer
+# Category: messaging
+# Exported at: 2025-07-02T11:09:54.013355
+# Total metrics: 152
+# Unique metric types: 17
+
+## banking_active_consumers
+banking_active_consumers{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",pid="1",queue_topic="transaction_processing_q"} 1
+banking_active_consumers{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",pid="1",queue_topic="notification_dispatch_q"} 1
+banking_active_consumers{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",pid="1",queue_topic="fraud_check_q"} 1
+banking_active_consumers{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",pid="1",queue_topic="auth_token_q"} 1
+banking_active_consumers{broker="kafka",instance="banking-message-consumer:5008",job="banking-message-consumer",pid="1",queue_topic="transaction-events"} 1
+banking_active_consumers{broker="kafka",instance="banking-message-consumer:5008",job="banking-message-consumer",pid="1",queue_topic="audit-logs"} 1
+
+## banking_message_processing_duration_seconds_bucket
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.005",message_type="auth_token",queue_topic="auth_token_q"} 0
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.01",message_type="auth_token",queue_topic="auth_token_q"} 0
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.025",message_type="auth_token",queue_topic="auth_token_q"} 0
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.05",message_type="auth_token",queue_topic="auth_token_q"} 0
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.075",message_type="auth_token",queue_topic="auth_token_q"} 835
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.1",message_type="auth_token",queue_topic="auth_token_q"} 1742
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.25",message_type="auth_token",queue_topic="auth_token_q"} 1807
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.5",message_type="auth_token",queue_topic="auth_token_q"} 1808
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.75",message_type="auth_token",queue_topic="auth_token_q"} 1808
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="1.0",message_type="auth_token",queue_topic="auth_token_q"} 1808
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="2.5",message_type="auth_token",queue_topic="auth_token_q"} 1808
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="5.0",message_type="auth_token",queue_topic="auth_token_q"} 1808
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="7.5",message_type="auth_token",queue_topic="auth_token_q"} 1808
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="10.0",message_type="auth_token",queue_topic="auth_token_q"} 1808
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="+Inf",message_type="auth_token",queue_topic="auth_token_q"} 1808
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.005",message_type="fraud_check",queue_topic="fraud_check_q"} 0
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.01",message_type="fraud_check",queue_topic="fraud_check_q"} 0
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.025",message_type="fraud_check",queue_topic="fraud_check_q"} 0
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.05",message_type="fraud_check",queue_topic="fraud_check_q"} 0
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.075",message_type="fraud_check",queue_topic="fraud_check_q"} 0
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.1",message_type="fraud_check",queue_topic="fraud_check_q"} 0
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.25",message_type="fraud_check",queue_topic="fraud_check_q"} 0
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.5",message_type="fraud_check",queue_topic="fraud_check_q"} 0
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.75",message_type="fraud_check",queue_topic="fraud_check_q"} 220
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="1.0",message_type="fraud_check",queue_topic="fraud_check_q"} 448
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="2.5",message_type="fraud_check",queue_topic="fraud_check_q"} 1298
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="5.0",message_type="fraud_check",queue_topic="fraud_check_q"} 1298
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="7.5",message_type="fraud_check",queue_topic="fraud_check_q"} 1298
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="10.0",message_type="fraud_check",queue_topic="fraud_check_q"} 1298
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="+Inf",message_type="fraud_check",queue_topic="fraud_check_q"} 1298
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.005",message_type="transaction",queue_topic="transaction_q"} 0
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.01",message_type="transaction",queue_topic="transaction_q"} 0
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.025",message_type="transaction",queue_topic="transaction_q"} 0
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.05",message_type="transaction",queue_topic="transaction_q"} 0
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.075",message_type="transaction",queue_topic="transaction_q"} 0
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.1",message_type="transaction",queue_topic="transaction_q"} 0
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.25",message_type="transaction",queue_topic="transaction_q"} 1124
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.5",message_type="transaction",queue_topic="transaction_q"} 3104
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.75",message_type="transaction",queue_topic="transaction_q"} 3123
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="1.0",message_type="transaction",queue_topic="transaction_q"} 3123
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="2.5",message_type="transaction",queue_topic="transaction_q"} 3123
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="5.0",message_type="transaction",queue_topic="transaction_q"} 3123
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="7.5",message_type="transaction",queue_topic="transaction_q"} 3123
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="10.0",message_type="transaction",queue_topic="transaction_q"} 3123
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="+Inf",message_type="transaction",queue_topic="transaction_q"} 3123
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.005",message_type="notification",queue_topic="notification_q"} 0
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.01",message_type="notification",queue_topic="notification_q"} 0
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.025",message_type="notification",queue_topic="notification_q"} 0
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.05",message_type="notification",queue_topic="notification_q"} 0
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.075",message_type="notification",queue_topic="notification_q"} 339
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.1",message_type="notification",queue_topic="notification_q"} 757
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.25",message_type="notification",queue_topic="notification_q"} 2253
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.5",message_type="notification",queue_topic="notification_q"} 2256
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.75",message_type="notification",queue_topic="notification_q"} 2256
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="1.0",message_type="notification",queue_topic="notification_q"} 2256
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="2.5",message_type="notification",queue_topic="notification_q"} 2256
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="5.0",message_type="notification",queue_topic="notification_q"} 2256
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="7.5",message_type="notification",queue_topic="notification_q"} 2256
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="10.0",message_type="notification",queue_topic="notification_q"} 2256
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="+Inf",message_type="notification",queue_topic="notification_q"} 2256
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.005",message_type="audit_log",queue_topic="audit_log_q"} 0
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.01",message_type="audit_log",queue_topic="audit_log_q"} 0
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.025",message_type="audit_log",queue_topic="audit_log_q"} 147
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.05",message_type="audit_log",queue_topic="audit_log_q"} 410
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.075",message_type="audit_log",queue_topic="audit_log_q"} 427
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.1",message_type="audit_log",queue_topic="audit_log_q"} 427
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.25",message_type="audit_log",queue_topic="audit_log_q"} 427
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.5",message_type="audit_log",queue_topic="audit_log_q"} 427
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.75",message_type="audit_log",queue_topic="audit_log_q"} 427
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="1.0",message_type="audit_log",queue_topic="audit_log_q"} 427
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="2.5",message_type="audit_log",queue_topic="audit_log_q"} 427
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="5.0",message_type="audit_log",queue_topic="audit_log_q"} 427
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="7.5",message_type="audit_log",queue_topic="audit_log_q"} 427
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="10.0",message_type="audit_log",queue_topic="audit_log_q"} 427
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="+Inf",message_type="audit_log",queue_topic="audit_log_q"} 427
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.005",message_type="transaction_event",queue_topic="transaction_event_q"} 0
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.01",message_type="transaction_event",queue_topic="transaction_event_q"} 0
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.025",message_type="transaction_event",queue_topic="transaction_event_q"} 0
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.05",message_type="transaction_event",queue_topic="transaction_event_q"} 0
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.075",message_type="transaction_event",queue_topic="transaction_event_q"} 0
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.1",message_type="transaction_event",queue_topic="transaction_event_q"} 0
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.25",message_type="transaction_event",queue_topic="transaction_event_q"} 332
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.5",message_type="transaction_event",queue_topic="transaction_event_q"} 901
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.75",message_type="transaction_event",queue_topic="transaction_event_q"} 906
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="1.0",message_type="transaction_event",queue_topic="transaction_event_q"} 906
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="2.5",message_type="transaction_event",queue_topic="transaction_event_q"} 906
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="5.0",message_type="transaction_event",queue_topic="transaction_event_q"} 906
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="7.5",message_type="transaction_event",queue_topic="transaction_event_q"} 906
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="10.0",message_type="transaction_event",queue_topic="transaction_event_q"} 906
+banking_message_processing_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",le="+Inf",message_type="transaction_event",queue_topic="transaction_event_q"} 906
+
+## banking_message_processing_duration_seconds_count
+banking_message_processing_duration_seconds_count{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",message_type="auth_token",queue_topic="auth_token_q"} 1808
+banking_message_processing_duration_seconds_count{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",message_type="fraud_check",queue_topic="fraud_check_q"} 1298
+banking_message_processing_duration_seconds_count{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",message_type="transaction",queue_topic="transaction_q"} 3123
+banking_message_processing_duration_seconds_count{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",message_type="notification",queue_topic="notification_q"} 2256
+banking_message_processing_duration_seconds_count{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",message_type="audit_log",queue_topic="audit_log_q"} 427
+banking_message_processing_duration_seconds_count{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",message_type="transaction_event",queue_topic="transaction_event_q"} 906
+
+## banking_message_processing_duration_seconds_sum
+banking_message_processing_duration_seconds_sum{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",message_type="auth_token",queue_topic="auth_token_q"} 139.1543747470047
+banking_message_processing_duration_seconds_sum{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",message_type="fraud_check",queue_topic="fraud_check_q"} 1618.0466320890005
+banking_message_processing_duration_seconds_sum{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",message_type="transaction",queue_topic="transaction_q"} 949.5742418780002
+banking_message_processing_duration_seconds_sum{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",message_type="notification",queue_topic="notification_q"} 283.15909545099
+banking_message_processing_duration_seconds_sum{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",message_type="audit_log",queue_topic="audit_log_q"} 13.481924726995942
+banking_message_processing_duration_seconds_sum{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",message_type="transaction_event",queue_topic="transaction_event_q"} 274.06021152300633
+
+## banking_messages_consumed_total
+banking_messages_consumed_total{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",message_type="auth_token",queue_topic="auth_token_q",status="success"} 1720
+banking_messages_consumed_total{broker="kafka",instance="banking-message-consumer:5008",job="banking-message-consumer",message_type="audit_log",queue_topic="audit-logs",status="success"} 401
+banking_messages_consumed_total{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",message_type="transaction",queue_topic="transaction_processing_q",status="success"} 2975
+banking_messages_consumed_total{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",message_type="notification",queue_topic="notification_dispatch_q",status="success"} 2142
+banking_messages_consumed_total{broker="kafka",instance="banking-message-consumer:5008",job="banking-message-consumer",message_type="transaction_event",queue_topic="transaction-events",status="success"} 866
+banking_messages_consumed_total{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",message_type="fraud_check",queue_topic="fraud_check_q",status="success"} 1239
+banking_messages_consumed_total{broker="kafka",instance="banking-message-consumer:5008",job="banking-message-consumer",message_type="audit_log",queue_topic="audit-logs",status="failed"} 26
+banking_messages_consumed_total{broker="kafka",instance="banking-message-consumer:5008",job="banking-message-consumer",message_type="transaction_event",queue_topic="transaction-events",status="failed"} 40
+banking_messages_consumed_total{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",message_type="fraud_check",queue_topic="fraud_check_q",status="failed"} 59
+banking_messages_consumed_total{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",message_type="auth_token",queue_topic="auth_token_q",status="failed"} 88
+banking_messages_consumed_total{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",message_type="notification",queue_topic="notification_dispatch_q",status="failed"} 114
+banking_messages_consumed_total{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",message_type="transaction",queue_topic="transaction_processing_q",status="failed"} 148
+
+## banking_queue_consumer_lag
+banking_queue_consumer_lag{broker="kafka",instance="banking-message-consumer:5008",job="banking-message-consumer",pid="1",queue_topic="audit-logs"} 0
+banking_queue_consumer_lag{broker="kafka",instance="banking-message-consumer:5008",job="banking-message-consumer",pid="1",queue_topic="transaction-events"} 0
+banking_queue_consumer_lag{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",pid="1",queue_topic="fraud_check_q"} 1
+
+## banking_unprocessed_messages
+banking_unprocessed_messages{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",pid="1",queue_topic="auth_token_q"} 0
+banking_unprocessed_messages{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",pid="1",queue_topic="transaction_processing_q"} 0
+banking_unprocessed_messages{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",pid="1",queue_topic="notification_dispatch_q"} 0
+banking_unprocessed_messages{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",pid="1",queue_topic="fraud_check_q"} 0
+banking_unprocessed_messages{broker="rabbitmq",instance="banking-message-consumer:5008",job="banking-message-consumer",pid="1",queue_topic="core_banking_updates_q"} 0
+
+## message_consumer_exporter_info
+message_consumer_exporter_info{instance="banking-message-consumer:5008",job="banking-message-consumer",version="0.21.0"} 1
+
+## message_consumer_http_request_duration_seconds_bucket
+message_consumer_http_request_duration_seconds_bucket{instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.005",method="GET",path="/health",status="200"} 1
+message_consumer_http_request_duration_seconds_bucket{instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.01",method="GET",path="/health",status="200"} 1
+message_consumer_http_request_duration_seconds_bucket{instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.025",method="GET",path="/health",status="200"} 1
+message_consumer_http_request_duration_seconds_bucket{instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.05",method="GET",path="/health",status="200"} 1
+message_consumer_http_request_duration_seconds_bucket{instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.075",method="GET",path="/health",status="200"} 1
+message_consumer_http_request_duration_seconds_bucket{instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.1",method="GET",path="/health",status="200"} 1
+message_consumer_http_request_duration_seconds_bucket{instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.25",method="GET",path="/health",status="200"} 1
+message_consumer_http_request_duration_seconds_bucket{instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.5",method="GET",path="/health",status="200"} 1
+message_consumer_http_request_duration_seconds_bucket{instance="banking-message-consumer:5008",job="banking-message-consumer",le="0.75",method="GET",path="/health",status="200"} 1
+message_consumer_http_request_duration_seconds_bucket{instance="banking-message-consumer:5008",job="banking-message-consumer",le="1.0",method="GET",path="/health",status="200"} 1
+message_consumer_http_request_duration_seconds_bucket{instance="banking-message-consumer:5008",job="banking-message-consumer",le="2.5",method="GET",path="/health",status="200"} 1
+message_consumer_http_request_duration_seconds_bucket{instance="banking-message-consumer:5008",job="banking-message-consumer",le="5.0",method="GET",path="/health",status="200"} 1
+message_consumer_http_request_duration_seconds_bucket{instance="banking-message-consumer:5008",job="banking-message-consumer",le="7.5",method="GET",path="/health",status="200"} 1
+message_consumer_http_request_duration_seconds_bucket{instance="banking-message-consumer:5008",job="banking-message-consumer",le="10.0",method="GET",path="/health",status="200"} 1
+message_consumer_http_request_duration_seconds_bucket{instance="banking-message-consumer:5008",job="banking-message-consumer",le="+Inf",method="GET",path="/health",status="200"} 1
+
+## message_consumer_http_request_duration_seconds_count
+message_consumer_http_request_duration_seconds_count{instance="banking-message-consumer:5008",job="banking-message-consumer",method="GET",path="/health",status="200"} 1
+
+## message_consumer_http_request_duration_seconds_sum
+message_consumer_http_request_duration_seconds_sum{instance="banking-message-consumer:5008",job="banking-message-consumer",method="GET",path="/health",status="200"} 0.0007904169999619626
+
+## message_consumer_http_request_total
+message_consumer_http_request_total{instance="banking-message-consumer:5008",job="banking-message-consumer",method="GET",status="200"} 1
+
+## scrape_duration_seconds
+scrape_duration_seconds{instance="banking-message-consumer:5008",job="banking-message-consumer"} 0.0290795
+
+## scrape_samples_post_metric_relabeling
+scrape_samples_post_metric_relabeling{instance="banking-message-consumer:5008",job="banking-message-consumer"} 147
+
+## scrape_samples_scraped
+scrape_samples_scraped{instance="banking-message-consumer:5008",job="banking-message-consumer"} 147
+
+## scrape_series_added
+scrape_series_added{instance="banking-message-consumer:5008",job="banking-message-consumer"} 0
+
+## up
+up{instance="banking-message-consumer:5008",job="banking-message-consumer"} 1
+

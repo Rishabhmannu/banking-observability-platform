@@ -1,0 +1,83 @@
+# Metrics for cache-pattern-analyzer
+# Job: cache-pattern-analyzer
+# Category: cache
+# Exported at: 2025-07-02T11:09:53.978269
+# Total metrics: 32
+# Unique metric types: 22
+
+## process_cpu_seconds_total
+process_cpu_seconds_total{instance="banking-cache-analyzer:5012",job="cache-pattern-analyzer"} 10.52
+
+## process_max_fds
+process_max_fds{instance="banking-cache-analyzer:5012",job="cache-pattern-analyzer"} 1048576
+
+## process_open_fds
+process_open_fds{instance="banking-cache-analyzer:5012",job="cache-pattern-analyzer"} 7
+
+## process_resident_memory_bytes
+process_resident_memory_bytes{instance="banking-cache-analyzer:5012",job="cache-pattern-analyzer"} 47329280
+
+## process_start_time_seconds
+process_start_time_seconds{instance="banking-cache-analyzer:5012",job="cache-pattern-analyzer"} 1751429114.25
+
+## process_virtual_memory_bytes
+process_virtual_memory_bytes{instance="banking-cache-analyzer:5012",job="cache-pattern-analyzer"} 353026048
+
+## python_gc_collections_total
+python_gc_collections_total{generation="0",instance="banking-cache-analyzer:5012",job="cache-pattern-analyzer"} 141
+python_gc_collections_total{generation="1",instance="banking-cache-analyzer:5012",job="cache-pattern-analyzer"} 12
+python_gc_collections_total{generation="2",instance="banking-cache-analyzer:5012",job="cache-pattern-analyzer"} 1
+
+## python_gc_objects_collected_total
+python_gc_objects_collected_total{generation="0",instance="banking-cache-analyzer:5012",job="cache-pattern-analyzer"} 23176
+python_gc_objects_collected_total{generation="1",instance="banking-cache-analyzer:5012",job="cache-pattern-analyzer"} 4294
+python_gc_objects_collected_total{generation="2",instance="banking-cache-analyzer:5012",job="cache-pattern-analyzer"} 1013
+
+## python_gc_objects_uncollectable_total
+python_gc_objects_uncollectable_total{generation="0",instance="banking-cache-analyzer:5012",job="cache-pattern-analyzer"} 0
+python_gc_objects_uncollectable_total{generation="1",instance="banking-cache-analyzer:5012",job="cache-pattern-analyzer"} 0
+python_gc_objects_uncollectable_total{generation="2",instance="banking-cache-analyzer:5012",job="cache-pattern-analyzer"} 0
+
+## python_info
+python_info{implementation="CPython",instance="banking-cache-analyzer:5012",job="cache-pattern-analyzer",major="3",minor="9",patchlevel="23",version="3.9.23"} 1
+
+## redis_cache_analysis_errors_created
+redis_cache_analysis_errors_created{instance="banking-cache-analyzer:5012",job="cache-pattern-analyzer"} 1751429116.716713
+
+## redis_cache_analysis_errors_total
+redis_cache_analysis_errors_total{instance="banking-cache-analyzer:5012",job="cache-pattern-analyzer"} 0
+
+## redis_cache_efficiency_score
+redis_cache_efficiency_score{instance="banking-cache-analyzer:5012",job="cache-pattern-analyzer"} 88.01236749116609
+
+## redis_cache_eviction_rate
+redis_cache_eviction_rate{instance="banking-cache-analyzer:5012",job="cache-pattern-analyzer"} 0
+
+## redis_cache_hit_ratio
+redis_cache_hit_ratio{instance="banking-cache-analyzer:5012",job="cache-pattern-analyzer",operation="overall"} 0.9602473498233216
+
+## redis_cache_key_count
+redis_cache_key_count{instance="banking-cache-analyzer:5012",job="cache-pattern-analyzer",pattern="account_balance"} 0
+redis_cache_key_count{instance="banking-cache-analyzer:5012",job="cache-pattern-analyzer",pattern="customer_profile"} 0
+redis_cache_key_count{instance="banking-cache-analyzer:5012",job="cache-pattern-analyzer",pattern="transaction_history"} 0
+redis_cache_key_count{instance="banking-cache-analyzer:5012",job="cache-pattern-analyzer",pattern="auth_session"} 0
+redis_cache_key_count{instance="banking-cache-analyzer:5012",job="cache-pattern-analyzer",pattern="fraud_score"} 0
+
+## redis_cache_memory_usage_bytes
+redis_cache_memory_usage_bytes{instance="banking-cache-analyzer:5012",job="cache-pattern-analyzer"} 1324880
+
+## scrape_duration_seconds
+scrape_duration_seconds{instance="banking-cache-analyzer:5012",job="cache-pattern-analyzer"} 0.015978459
+
+## scrape_samples_post_metric_relabeling
+scrape_samples_post_metric_relabeling{instance="banking-cache-analyzer:5012",job="cache-pattern-analyzer"} 27
+
+## scrape_samples_scraped
+scrape_samples_scraped{instance="banking-cache-analyzer:5012",job="cache-pattern-analyzer"} 27
+
+## scrape_series_added
+scrape_series_added{instance="banking-cache-analyzer:5012",job="cache-pattern-analyzer"} 0
+
+## up
+up{instance="banking-cache-analyzer:5012",job="cache-pattern-analyzer"} 1
+

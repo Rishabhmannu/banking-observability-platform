@@ -1,0 +1,73 @@
+# Metrics for auto-baselining
+# Job: auto-baselining
+# Category: ml_detection
+# Exported at: 2025-07-02T11:09:53.944898
+# Total metrics: 28
+# Unique metric types: 19
+
+## active_metrics_being_monitored
+active_metrics_being_monitored{instance="auto-baselining:5002",job="auto-baselining"} 2
+
+## algorithm_execution_seconds
+algorithm_execution_seconds{algorithm="rolling_statistics",instance="auto-baselining:5002",job="auto-baselining"} 0.00006794929504394531
+algorithm_execution_seconds{algorithm="quantile_based",instance="auto-baselining:5002",job="auto-baselining"} 0.00011277198791503906
+algorithm_execution_seconds{algorithm="isolation_forest",instance="auto-baselining:5002",job="auto-baselining"} 0.08167052268981934
+algorithm_execution_seconds{algorithm="one_class_svm",instance="auto-baselining:5002",job="auto-baselining"} 0.0008170604705810547
+
+## process_cpu_seconds_total
+process_cpu_seconds_total{instance="auto-baselining:5002",job="auto-baselining"} 30.01
+
+## process_max_fds
+process_max_fds{instance="auto-baselining:5002",job="auto-baselining"} 1048576
+
+## process_open_fds
+process_open_fds{instance="auto-baselining:5002",job="auto-baselining"} 6
+
+## process_resident_memory_bytes
+process_resident_memory_bytes{instance="auto-baselining:5002",job="auto-baselining"} 144920576
+
+## process_start_time_seconds
+process_start_time_seconds{instance="auto-baselining:5002",job="auto-baselining"} 1751429114.21
+
+## process_virtual_memory_bytes
+process_virtual_memory_bytes{instance="auto-baselining:5002",job="auto-baselining"} 1158811648
+
+## python_gc_collections_total
+python_gc_collections_total{generation="0",instance="auto-baselining:5002",job="auto-baselining"} 462
+python_gc_collections_total{generation="1",instance="auto-baselining:5002",job="auto-baselining"} 42
+python_gc_collections_total{generation="2",instance="auto-baselining:5002",job="auto-baselining"} 3
+
+## python_gc_objects_collected_total
+python_gc_objects_collected_total{generation="0",instance="auto-baselining:5002",job="auto-baselining"} 4186
+python_gc_objects_collected_total{generation="1",instance="auto-baselining:5002",job="auto-baselining"} 4568
+python_gc_objects_collected_total{generation="2",instance="auto-baselining:5002",job="auto-baselining"} 150
+
+## python_gc_objects_uncollectable_total
+python_gc_objects_uncollectable_total{generation="0",instance="auto-baselining:5002",job="auto-baselining"} 0
+python_gc_objects_uncollectable_total{generation="1",instance="auto-baselining:5002",job="auto-baselining"} 0
+python_gc_objects_uncollectable_total{generation="2",instance="auto-baselining:5002",job="auto-baselining"} 0
+
+## python_info
+python_info{implementation="CPython",instance="auto-baselining:5002",job="auto-baselining",major="3",minor="9",patchlevel="23",version="3.9.23"} 1
+
+## scrape_duration_seconds
+scrape_duration_seconds{instance="auto-baselining:5002",job="auto-baselining"} 0.005686083
+
+## scrape_samples_post_metric_relabeling
+scrape_samples_post_metric_relabeling{instance="auto-baselining:5002",job="auto-baselining"} 23
+
+## scrape_samples_scraped
+scrape_samples_scraped{instance="auto-baselining:5002",job="auto-baselining"} 23
+
+## scrape_series_added
+scrape_series_added{instance="auto-baselining:5002",job="auto-baselining"} 0
+
+## threshold_recommendations_created
+threshold_recommendations_created{instance="auto-baselining:5002",job="auto-baselining"} 1751429118.317826
+
+## threshold_recommendations_total
+threshold_recommendations_total{instance="auto-baselining:5002",job="auto-baselining"} 186
+
+## up
+up{instance="auto-baselining:5002",job="auto-baselining"} 1
+

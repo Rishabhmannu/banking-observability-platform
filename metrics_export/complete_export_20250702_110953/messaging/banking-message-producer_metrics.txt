@@ -1,0 +1,171 @@
+# Metrics for banking-message-producer
+# Job: banking-message-producer
+# Category: messaging
+# Exported at: 2025-07-02T11:09:54.013507
+# Total metrics: 134
+# Unique metric types: 15
+
+## banking_active_publishers
+banking_active_publishers{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",pid="1"} 1
+banking_active_publishers{broker="kafka",instance="banking-message-producer:5007",job="banking-message-producer",pid="1"} 1
+
+## banking_messages_published_total
+banking_messages_published_total{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",message_type="transaction",queue_topic="transaction_processing_q"} 3124
+banking_messages_published_total{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",message_type="fraud_check",queue_topic="fraud_check_q"} 1299
+banking_messages_published_total{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",message_type="auth_token",queue_topic="auth_token_q"} 1809
+banking_messages_published_total{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",message_type="notification",queue_topic="notification_dispatch_q"} 2257
+banking_messages_published_total{broker="kafka",instance="banking-message-producer:5007",job="banking-message-producer",message_type="transaction_event",queue_topic="transaction-events"} 900
+banking_messages_published_total{broker="kafka",instance="banking-message-producer:5007",job="banking-message-producer",message_type="audit_log",queue_topic="audit-logs"} 423
+
+## banking_queue_publish_duration_seconds_bucket
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="0.005",queue_topic="transaction_processing_q"} 3037
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="0.01",queue_topic="transaction_processing_q"} 3095
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="0.025",queue_topic="transaction_processing_q"} 3115
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="0.05",queue_topic="transaction_processing_q"} 3120
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="0.075",queue_topic="transaction_processing_q"} 3120
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="0.1",queue_topic="transaction_processing_q"} 3123
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="0.25",queue_topic="transaction_processing_q"} 3124
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="0.5",queue_topic="transaction_processing_q"} 3124
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="0.75",queue_topic="transaction_processing_q"} 3124
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="1.0",queue_topic="transaction_processing_q"} 3124
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="2.5",queue_topic="transaction_processing_q"} 3124
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="5.0",queue_topic="transaction_processing_q"} 3124
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="7.5",queue_topic="transaction_processing_q"} 3124
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="10.0",queue_topic="transaction_processing_q"} 3124
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="+Inf",queue_topic="transaction_processing_q"} 3124
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="0.005",queue_topic="fraud_check_q"} 1294
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="0.01",queue_topic="fraud_check_q"} 1299
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="0.025",queue_topic="fraud_check_q"} 1299
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="0.05",queue_topic="fraud_check_q"} 1299
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="0.075",queue_topic="fraud_check_q"} 1299
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="0.1",queue_topic="fraud_check_q"} 1299
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="0.25",queue_topic="fraud_check_q"} 1299
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="0.5",queue_topic="fraud_check_q"} 1299
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="0.75",queue_topic="fraud_check_q"} 1299
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="1.0",queue_topic="fraud_check_q"} 1299
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="2.5",queue_topic="fraud_check_q"} 1299
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="5.0",queue_topic="fraud_check_q"} 1299
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="7.5",queue_topic="fraud_check_q"} 1299
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="10.0",queue_topic="fraud_check_q"} 1299
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="+Inf",queue_topic="fraud_check_q"} 1299
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="0.005",queue_topic="auth_token_q"} 1804
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="0.01",queue_topic="auth_token_q"} 1807
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="0.025",queue_topic="auth_token_q"} 1809
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="0.05",queue_topic="auth_token_q"} 1809
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="0.075",queue_topic="auth_token_q"} 1809
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="0.1",queue_topic="auth_token_q"} 1809
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="0.25",queue_topic="auth_token_q"} 1809
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="0.5",queue_topic="auth_token_q"} 1809
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="0.75",queue_topic="auth_token_q"} 1809
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="1.0",queue_topic="auth_token_q"} 1809
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="2.5",queue_topic="auth_token_q"} 1809
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="5.0",queue_topic="auth_token_q"} 1809
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="7.5",queue_topic="auth_token_q"} 1809
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="10.0",queue_topic="auth_token_q"} 1809
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="+Inf",queue_topic="auth_token_q"} 1809
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="0.005",queue_topic="notification_dispatch_q"} 2236
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="0.01",queue_topic="notification_dispatch_q"} 2249
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="0.025",queue_topic="notification_dispatch_q"} 2255
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="0.05",queue_topic="notification_dispatch_q"} 2256
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="0.075",queue_topic="notification_dispatch_q"} 2257
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="0.1",queue_topic="notification_dispatch_q"} 2257
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="0.25",queue_topic="notification_dispatch_q"} 2257
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="0.5",queue_topic="notification_dispatch_q"} 2257
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="0.75",queue_topic="notification_dispatch_q"} 2257
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="1.0",queue_topic="notification_dispatch_q"} 2257
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="2.5",queue_topic="notification_dispatch_q"} 2257
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="5.0",queue_topic="notification_dispatch_q"} 2257
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="7.5",queue_topic="notification_dispatch_q"} 2257
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="10.0",queue_topic="notification_dispatch_q"} 2257
+banking_queue_publish_duration_seconds_bucket{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",le="+Inf",queue_topic="notification_dispatch_q"} 2257
+banking_queue_publish_duration_seconds_bucket{broker="kafka",instance="banking-message-producer:5007",job="banking-message-producer",le="0.005",queue_topic="transaction-events"} 495
+banking_queue_publish_duration_seconds_bucket{broker="kafka",instance="banking-message-producer:5007",job="banking-message-producer",le="0.01",queue_topic="transaction-events"} 763
+banking_queue_publish_duration_seconds_bucket{broker="kafka",instance="banking-message-producer:5007",job="banking-message-producer",le="0.025",queue_topic="transaction-events"} 881
+banking_queue_publish_duration_seconds_bucket{broker="kafka",instance="banking-message-producer:5007",job="banking-message-producer",le="0.05",queue_topic="transaction-events"} 896
+banking_queue_publish_duration_seconds_bucket{broker="kafka",instance="banking-message-producer:5007",job="banking-message-producer",le="0.075",queue_topic="transaction-events"} 897
+banking_queue_publish_duration_seconds_bucket{broker="kafka",instance="banking-message-producer:5007",job="banking-message-producer",le="0.1",queue_topic="transaction-events"} 897
+banking_queue_publish_duration_seconds_bucket{broker="kafka",instance="banking-message-producer:5007",job="banking-message-producer",le="0.25",queue_topic="transaction-events"} 899
+banking_queue_publish_duration_seconds_bucket{broker="kafka",instance="banking-message-producer:5007",job="banking-message-producer",le="0.5",queue_topic="transaction-events"} 900
+banking_queue_publish_duration_seconds_bucket{broker="kafka",instance="banking-message-producer:5007",job="banking-message-producer",le="0.75",queue_topic="transaction-events"} 900
+banking_queue_publish_duration_seconds_bucket{broker="kafka",instance="banking-message-producer:5007",job="banking-message-producer",le="1.0",queue_topic="transaction-events"} 900
+banking_queue_publish_duration_seconds_bucket{broker="kafka",instance="banking-message-producer:5007",job="banking-message-producer",le="2.5",queue_topic="transaction-events"} 900
+banking_queue_publish_duration_seconds_bucket{broker="kafka",instance="banking-message-producer:5007",job="banking-message-producer",le="5.0",queue_topic="transaction-events"} 900
+banking_queue_publish_duration_seconds_bucket{broker="kafka",instance="banking-message-producer:5007",job="banking-message-producer",le="7.5",queue_topic="transaction-events"} 900
+banking_queue_publish_duration_seconds_bucket{broker="kafka",instance="banking-message-producer:5007",job="banking-message-producer",le="10.0",queue_topic="transaction-events"} 900
+banking_queue_publish_duration_seconds_bucket{broker="kafka",instance="banking-message-producer:5007",job="banking-message-producer",le="+Inf",queue_topic="transaction-events"} 900
+banking_queue_publish_duration_seconds_bucket{broker="kafka",instance="banking-message-producer:5007",job="banking-message-producer",le="0.005",queue_topic="audit-logs"} 260
+banking_queue_publish_duration_seconds_bucket{broker="kafka",instance="banking-message-producer:5007",job="banking-message-producer",le="0.01",queue_topic="audit-logs"} 369
+banking_queue_publish_duration_seconds_bucket{broker="kafka",instance="banking-message-producer:5007",job="banking-message-producer",le="0.025",queue_topic="audit-logs"} 415
+banking_queue_publish_duration_seconds_bucket{broker="kafka",instance="banking-message-producer:5007",job="banking-message-producer",le="0.05",queue_topic="audit-logs"} 421
+banking_queue_publish_duration_seconds_bucket{broker="kafka",instance="banking-message-producer:5007",job="banking-message-producer",le="0.075",queue_topic="audit-logs"} 421
+banking_queue_publish_duration_seconds_bucket{broker="kafka",instance="banking-message-producer:5007",job="banking-message-producer",le="0.1",queue_topic="audit-logs"} 421
+banking_queue_publish_duration_seconds_bucket{broker="kafka",instance="banking-message-producer:5007",job="banking-message-producer",le="0.25",queue_topic="audit-logs"} 421
+banking_queue_publish_duration_seconds_bucket{broker="kafka",instance="banking-message-producer:5007",job="banking-message-producer",le="0.5",queue_topic="audit-logs"} 423
+banking_queue_publish_duration_seconds_bucket{broker="kafka",instance="banking-message-producer:5007",job="banking-message-producer",le="0.75",queue_topic="audit-logs"} 423
+banking_queue_publish_duration_seconds_bucket{broker="kafka",instance="banking-message-producer:5007",job="banking-message-producer",le="1.0",queue_topic="audit-logs"} 423
+banking_queue_publish_duration_seconds_bucket{broker="kafka",instance="banking-message-producer:5007",job="banking-message-producer",le="2.5",queue_topic="audit-logs"} 423
+banking_queue_publish_duration_seconds_bucket{broker="kafka",instance="banking-message-producer:5007",job="banking-message-producer",le="5.0",queue_topic="audit-logs"} 423
+banking_queue_publish_duration_seconds_bucket{broker="kafka",instance="banking-message-producer:5007",job="banking-message-producer",le="7.5",queue_topic="audit-logs"} 423
+banking_queue_publish_duration_seconds_bucket{broker="kafka",instance="banking-message-producer:5007",job="banking-message-producer",le="10.0",queue_topic="audit-logs"} 423
+banking_queue_publish_duration_seconds_bucket{broker="kafka",instance="banking-message-producer:5007",job="banking-message-producer",le="+Inf",queue_topic="audit-logs"} 423
+
+## banking_queue_publish_duration_seconds_count
+banking_queue_publish_duration_seconds_count{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",queue_topic="transaction_processing_q"} 3124
+banking_queue_publish_duration_seconds_count{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",queue_topic="fraud_check_q"} 1299
+banking_queue_publish_duration_seconds_count{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",queue_topic="auth_token_q"} 1809
+banking_queue_publish_duration_seconds_count{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",queue_topic="notification_dispatch_q"} 2257
+banking_queue_publish_duration_seconds_count{broker="kafka",instance="banking-message-producer:5007",job="banking-message-producer",queue_topic="transaction-events"} 900
+banking_queue_publish_duration_seconds_count{broker="kafka",instance="banking-message-producer:5007",job="banking-message-producer",queue_topic="audit-logs"} 423
+
+## banking_queue_publish_duration_seconds_sum
+banking_queue_publish_duration_seconds_sum{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",queue_topic="transaction_processing_q"} 4.053079378013138
+banking_queue_publish_duration_seconds_sum{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",queue_topic="fraud_check_q"} 0.5074622270075793
+banking_queue_publish_duration_seconds_sum{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",queue_topic="auth_token_q"} 0.622269215998017
+banking_queue_publish_duration_seconds_sum{broker="rabbitmq",instance="banking-message-producer:5007",job="banking-message-producer",queue_topic="notification_dispatch_q"} 1.3288970290112445
+banking_queue_publish_duration_seconds_sum{broker="kafka",instance="banking-message-producer:5007",job="banking-message-producer",queue_topic="transaction-events"} 6.202080052011013
+banking_queue_publish_duration_seconds_sum{broker="kafka",instance="banking-message-producer:5007",job="banking-message-producer",queue_topic="audit-logs"} 2.987610551999637
+
+## message_producer_exporter_info
+message_producer_exporter_info{instance="banking-message-producer:5007",job="banking-message-producer",version="0.21.0"} 1
+
+## message_producer_http_request_duration_seconds_bucket
+message_producer_http_request_duration_seconds_bucket{instance="banking-message-producer:5007",job="banking-message-producer",le="0.005",method="GET",path="/health",status="200"} 1
+message_producer_http_request_duration_seconds_bucket{instance="banking-message-producer:5007",job="banking-message-producer",le="0.01",method="GET",path="/health",status="200"} 1
+message_producer_http_request_duration_seconds_bucket{instance="banking-message-producer:5007",job="banking-message-producer",le="0.025",method="GET",path="/health",status="200"} 1
+message_producer_http_request_duration_seconds_bucket{instance="banking-message-producer:5007",job="banking-message-producer",le="0.05",method="GET",path="/health",status="200"} 1
+message_producer_http_request_duration_seconds_bucket{instance="banking-message-producer:5007",job="banking-message-producer",le="0.075",method="GET",path="/health",status="200"} 1
+message_producer_http_request_duration_seconds_bucket{instance="banking-message-producer:5007",job="banking-message-producer",le="0.1",method="GET",path="/health",status="200"} 1
+message_producer_http_request_duration_seconds_bucket{instance="banking-message-producer:5007",job="banking-message-producer",le="0.25",method="GET",path="/health",status="200"} 1
+message_producer_http_request_duration_seconds_bucket{instance="banking-message-producer:5007",job="banking-message-producer",le="0.5",method="GET",path="/health",status="200"} 1
+message_producer_http_request_duration_seconds_bucket{instance="banking-message-producer:5007",job="banking-message-producer",le="0.75",method="GET",path="/health",status="200"} 1
+message_producer_http_request_duration_seconds_bucket{instance="banking-message-producer:5007",job="banking-message-producer",le="1.0",method="GET",path="/health",status="200"} 1
+message_producer_http_request_duration_seconds_bucket{instance="banking-message-producer:5007",job="banking-message-producer",le="2.5",method="GET",path="/health",status="200"} 1
+message_producer_http_request_duration_seconds_bucket{instance="banking-message-producer:5007",job="banking-message-producer",le="5.0",method="GET",path="/health",status="200"} 1
+message_producer_http_request_duration_seconds_bucket{instance="banking-message-producer:5007",job="banking-message-producer",le="7.5",method="GET",path="/health",status="200"} 1
+message_producer_http_request_duration_seconds_bucket{instance="banking-message-producer:5007",job="banking-message-producer",le="10.0",method="GET",path="/health",status="200"} 1
+message_producer_http_request_duration_seconds_bucket{instance="banking-message-producer:5007",job="banking-message-producer",le="+Inf",method="GET",path="/health",status="200"} 1
+
+## message_producer_http_request_duration_seconds_count
+message_producer_http_request_duration_seconds_count{instance="banking-message-producer:5007",job="banking-message-producer",method="GET",path="/health",status="200"} 1
+
+## message_producer_http_request_duration_seconds_sum
+message_producer_http_request_duration_seconds_sum{instance="banking-message-producer:5007",job="banking-message-producer",method="GET",path="/health",status="200"} 0.0006503749999637876
+
+## message_producer_http_request_total
+message_producer_http_request_total{instance="banking-message-producer:5007",job="banking-message-producer",method="GET",status="200"} 1
+
+## scrape_duration_seconds
+scrape_duration_seconds{instance="banking-message-producer:5007",job="banking-message-producer"} 0.012221625
+
+## scrape_samples_post_metric_relabeling
+scrape_samples_post_metric_relabeling{instance="banking-message-producer:5007",job="banking-message-producer"} 129
+
+## scrape_samples_scraped
+scrape_samples_scraped{instance="banking-message-producer:5007",job="banking-message-producer"} 129
+
+## scrape_series_added
+scrape_series_added{instance="banking-message-producer:5007",job="banking-message-producer"} 0
+
+## up
+up{instance="banking-message-producer:5007",job="banking-message-producer"} 1
+

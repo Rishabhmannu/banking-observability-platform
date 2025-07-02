@@ -65,21 +65,21 @@ services:
       - banking-network
     restart: unless-stopped
 
-  # Container Resource Monitor
-  # Note: This connects to the existing cAdvisor instance
+# Container Resource Monitor
   container-resource-monitor:
     build: ./container-resource-monitor
     container_name: banking-container-monitor
     ports:
       - "5010:5010"
     environment:
-      # Try container name first, fallback to host if needed
-      CADVISOR_URL: ${CADVISOR_URL:-http://cadvisor:8080}
       LOG_LEVEL: INFO
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:rw    # ← Changed to read-write
     networks:
       - banking-network
     restart: unless-stopped
-    # Removed depends_on cadvisor since it's running in another compose file
+    user: root                                          # ← Run as root to access Docker socket
+    privileged: true                                    # ← Give privileged access
 
   # Resource Anomaly Generator
   resource-anomaly-generator:
@@ -112,6 +112,7 @@ services:
     profiles:
       - testing
     command: ["run", "/scripts/cache-load-test.js"]
+
 
 volumes:
   redis_data:

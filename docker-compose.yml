@@ -18,6 +18,32 @@ services:
       timeout: 20s
       retries: 10
 
+  cache-proxy-service:
+      build: ./cache-proxy-service
+      container_name: cache-proxy-service
+      ports:
+        - "5020:5020"
+      environment:
+        - SERVICE_PORT=5020
+        - REDIS_HOST=banking-redis
+        - REDIS_PORT=6379
+        - ACCOUNT_SERVICE_URL=http://account-service:8081
+        - TRANSACTION_SERVICE_URL=http://transaction-service:8082
+        - AUTH_SERVICE_URL=http://auth-service:8083
+        - NOTIFICATION_SERVICE_URL=http://notification-service:8084
+        - FRAUD_SERVICE_URL=http://fraud-detection:8085
+        - LOG_LEVEL=INFO
+
+      networks:
+        - banking-network
+      depends_on:
+        - account-service
+        - transaction-service
+
+
+      restart: unless-stopped
+
+
   # Banking Services
   api-gateway:
     build: ./api-gateway
@@ -30,10 +56,15 @@ services:
       - AUTH_SERVICE_URL=http://auth-service:8083
       - NOTIFICATION_SERVICE_URL=http://notification-service:8084
       - FRAUD_SERVICE_URL=http://fraud-detection:8085
+      - USE_CACHE_PROXY=true
+      - CACHE_PROXY_URL=http://cache-proxy-service:5020
     depends_on:
       - account-service
       - transaction-service
       - auth-service
+      - cache-proxy-service  # Now we can add this dependency!
+
+
     networks:
       - banking-network
 
@@ -186,11 +217,20 @@ services:
       - "8086:8080"
     volumes:
       - /:/rootfs:ro
-      - /var/run:/var/run:rw
+      - /var/run/docker.sock:/var/run/docker.sock:ro    # ← macOS Docker Desktop fix
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
+      - /dev/disk/:/dev/disk:ro                         # ← Additional mount for macOS
     networks:
       - banking-network
+    privileged: true                                    # ← Required for macOS Docker Desktop
+    devices:
+      - /dev/kmsg:/dev/kmsg
+    command:
+      - '/usr/bin/cadvisor'
+      - '-logtostderr'
+      - '-docker_only=true'                             # ← Focus only on Docker containers
+      - '-housekeeping_interval=30s'                    # ← Optimize collection interval
 
   # Load Generator
   load-generator:

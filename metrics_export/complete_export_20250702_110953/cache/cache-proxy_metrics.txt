@@ -1,0 +1,189 @@
+# Metrics for cache-proxy
+# Job: cache-proxy
+# Category: cache
+# Exported at: 2025-07-02T11:09:53.984191
+# Total metrics: 134
+# Unique metric types: 24
+
+## banking_cache_active_entries
+banking_cache_active_entries{instance="cache-proxy-service:5020",job="cache-proxy"} 1
+
+## banking_cache_hits_created
+banking_cache_hits_created{endpoint="/fraud/alerts",instance="cache-proxy-service:5020",job="cache-proxy",method="GET",operation="fraud_check",service="fraud"} 1751429187.664223
+
+## banking_cache_hits_total
+banking_cache_hits_total{endpoint="/fraud/alerts",instance="cache-proxy-service:5020",job="cache-proxy",method="GET",operation="fraud_check",service="fraud"} 1097
+
+## banking_cache_misses_created
+banking_cache_misses_created{endpoint="/fraud/alerts",instance="cache-proxy-service:5020",job="cache-proxy",method="GET",operation="fraud_check",service="fraud"} 1751429185.619225
+
+## banking_cache_misses_total
+banking_cache_misses_total{endpoint="/fraud/alerts",instance="cache-proxy-service:5020",job="cache-proxy",method="GET",operation="fraud_check",service="fraud"} 45
+
+## banking_proxy_request_duration_seconds_bucket
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="0.005",method="POST",service="auth"} 2
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="0.01",method="POST",service="auth"} 2
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="0.025",method="POST",service="auth"} 3
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="0.05",method="POST",service="auth"} 3
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="0.075",method="POST",service="auth"} 3
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="0.1",method="POST",service="auth"} 3
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="0.25",method="POST",service="auth"} 3
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="0.5",method="POST",service="auth"} 3
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="0.75",method="POST",service="auth"} 3
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="1.0",method="POST",service="auth"} 3
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="2.5",method="POST",service="auth"} 3
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="5.0",method="POST",service="auth"} 3
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="7.5",method="POST",service="auth"} 3
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="10.0",method="POST",service="auth"} 3
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="+Inf",method="POST",service="auth"} 3
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="0.005",method="GET",service="accounts"} 1275
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="0.01",method="GET",service="accounts"} 2029
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="0.025",method="GET",service="accounts"} 2201
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="0.05",method="GET",service="accounts"} 2233
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="0.075",method="GET",service="accounts"} 2235
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="0.1",method="GET",service="accounts"} 2235
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="0.25",method="GET",service="accounts"} 2236
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="0.5",method="GET",service="accounts"} 2236
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="0.75",method="GET",service="accounts"} 2236
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="1.0",method="GET",service="accounts"} 2236
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="2.5",method="GET",service="accounts"} 2236
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="5.0",method="GET",service="accounts"} 2236
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="7.5",method="GET",service="accounts"} 2236
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="10.0",method="GET",service="accounts"} 2236
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="+Inf",method="GET",service="accounts"} 2236
+banking_proxy_request_duration_seconds_bucket{cache_status="miss-stored",instance="cache-proxy-service:5020",job="cache-proxy",le="0.005",method="GET",service="fraud"} 5
+banking_proxy_request_duration_seconds_bucket{cache_status="miss-stored",instance="cache-proxy-service:5020",job="cache-proxy",le="0.01",method="GET",service="fraud"} 36
+banking_proxy_request_duration_seconds_bucket{cache_status="miss-stored",instance="cache-proxy-service:5020",job="cache-proxy",le="0.025",method="GET",service="fraud"} 45
+banking_proxy_request_duration_seconds_bucket{cache_status="miss-stored",instance="cache-proxy-service:5020",job="cache-proxy",le="0.05",method="GET",service="fraud"} 45
+banking_proxy_request_duration_seconds_bucket{cache_status="miss-stored",instance="cache-proxy-service:5020",job="cache-proxy",le="0.075",method="GET",service="fraud"} 45
+banking_proxy_request_duration_seconds_bucket{cache_status="miss-stored",instance="cache-proxy-service:5020",job="cache-proxy",le="0.1",method="GET",service="fraud"} 45
+banking_proxy_request_duration_seconds_bucket{cache_status="miss-stored",instance="cache-proxy-service:5020",job="cache-proxy",le="0.25",method="GET",service="fraud"} 45
+banking_proxy_request_duration_seconds_bucket{cache_status="miss-stored",instance="cache-proxy-service:5020",job="cache-proxy",le="0.5",method="GET",service="fraud"} 45
+banking_proxy_request_duration_seconds_bucket{cache_status="miss-stored",instance="cache-proxy-service:5020",job="cache-proxy",le="0.75",method="GET",service="fraud"} 45
+banking_proxy_request_duration_seconds_bucket{cache_status="miss-stored",instance="cache-proxy-service:5020",job="cache-proxy",le="1.0",method="GET",service="fraud"} 45
+banking_proxy_request_duration_seconds_bucket{cache_status="miss-stored",instance="cache-proxy-service:5020",job="cache-proxy",le="2.5",method="GET",service="fraud"} 45
+banking_proxy_request_duration_seconds_bucket{cache_status="miss-stored",instance="cache-proxy-service:5020",job="cache-proxy",le="5.0",method="GET",service="fraud"} 45
+banking_proxy_request_duration_seconds_bucket{cache_status="miss-stored",instance="cache-proxy-service:5020",job="cache-proxy",le="7.5",method="GET",service="fraud"} 45
+banking_proxy_request_duration_seconds_bucket{cache_status="miss-stored",instance="cache-proxy-service:5020",job="cache-proxy",le="10.0",method="GET",service="fraud"} 45
+banking_proxy_request_duration_seconds_bucket{cache_status="miss-stored",instance="cache-proxy-service:5020",job="cache-proxy",le="+Inf",method="GET",service="fraud"} 45
+banking_proxy_request_duration_seconds_bucket{cache_status="hit",instance="cache-proxy-service:5020",job="cache-proxy",le="0.005",method="GET",service="fraud"} 1077
+banking_proxy_request_duration_seconds_bucket{cache_status="hit",instance="cache-proxy-service:5020",job="cache-proxy",le="0.01",method="GET",service="fraud"} 1094
+banking_proxy_request_duration_seconds_bucket{cache_status="hit",instance="cache-proxy-service:5020",job="cache-proxy",le="0.025",method="GET",service="fraud"} 1097
+banking_proxy_request_duration_seconds_bucket{cache_status="hit",instance="cache-proxy-service:5020",job="cache-proxy",le="0.05",method="GET",service="fraud"} 1097
+banking_proxy_request_duration_seconds_bucket{cache_status="hit",instance="cache-proxy-service:5020",job="cache-proxy",le="0.075",method="GET",service="fraud"} 1097
+banking_proxy_request_duration_seconds_bucket{cache_status="hit",instance="cache-proxy-service:5020",job="cache-proxy",le="0.1",method="GET",service="fraud"} 1097
+banking_proxy_request_duration_seconds_bucket{cache_status="hit",instance="cache-proxy-service:5020",job="cache-proxy",le="0.25",method="GET",service="fraud"} 1097
+banking_proxy_request_duration_seconds_bucket{cache_status="hit",instance="cache-proxy-service:5020",job="cache-proxy",le="0.5",method="GET",service="fraud"} 1097
+banking_proxy_request_duration_seconds_bucket{cache_status="hit",instance="cache-proxy-service:5020",job="cache-proxy",le="0.75",method="GET",service="fraud"} 1097
+banking_proxy_request_duration_seconds_bucket{cache_status="hit",instance="cache-proxy-service:5020",job="cache-proxy",le="1.0",method="GET",service="fraud"} 1097
+banking_proxy_request_duration_seconds_bucket{cache_status="hit",instance="cache-proxy-service:5020",job="cache-proxy",le="2.5",method="GET",service="fraud"} 1097
+banking_proxy_request_duration_seconds_bucket{cache_status="hit",instance="cache-proxy-service:5020",job="cache-proxy",le="5.0",method="GET",service="fraud"} 1097
+banking_proxy_request_duration_seconds_bucket{cache_status="hit",instance="cache-proxy-service:5020",job="cache-proxy",le="7.5",method="GET",service="fraud"} 1097
+banking_proxy_request_duration_seconds_bucket{cache_status="hit",instance="cache-proxy-service:5020",job="cache-proxy",le="10.0",method="GET",service="fraud"} 1097
+banking_proxy_request_duration_seconds_bucket{cache_status="hit",instance="cache-proxy-service:5020",job="cache-proxy",le="+Inf",method="GET",service="fraud"} 1097
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="0.005",method="GET",service="transactions"} 625
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="0.01",method="GET",service="transactions"} 977
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="0.025",method="GET",service="transactions"} 1073
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="0.05",method="GET",service="transactions"} 1084
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="0.075",method="GET",service="transactions"} 1084
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="0.1",method="GET",service="transactions"} 1084
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="0.25",method="GET",service="transactions"} 1085
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="0.5",method="GET",service="transactions"} 1085
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="0.75",method="GET",service="transactions"} 1085
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="1.0",method="GET",service="transactions"} 1085
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="2.5",method="GET",service="transactions"} 1085
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="5.0",method="GET",service="transactions"} 1085
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="7.5",method="GET",service="transactions"} 1085
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="10.0",method="GET",service="transactions"} 1085
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="+Inf",method="GET",service="transactions"} 1085
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="0.005",method="POST",service="transactions"} 365
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="0.01",method="POST",service="transactions"} 896
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="0.025",method="POST",service="transactions"} 1012
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="0.05",method="POST",service="transactions"} 1026
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="0.075",method="POST",service="transactions"} 1028
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="0.1",method="POST",service="transactions"} 1028
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="0.25",method="POST",service="transactions"} 1030
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="0.5",method="POST",service="transactions"} 1030
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="0.75",method="POST",service="transactions"} 1030
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="1.0",method="POST",service="transactions"} 1030
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="2.5",method="POST",service="transactions"} 1030
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="5.0",method="POST",service="transactions"} 1030
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="7.5",method="POST",service="transactions"} 1030
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="10.0",method="POST",service="transactions"} 1030
+banking_proxy_request_duration_seconds_bucket{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",le="+Inf",method="POST",service="transactions"} 1030
+
+## banking_proxy_request_duration_seconds_count
+banking_proxy_request_duration_seconds_count{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",method="POST",service="auth"} 3
+banking_proxy_request_duration_seconds_count{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",method="GET",service="accounts"} 2236
+banking_proxy_request_duration_seconds_count{cache_status="miss-stored",instance="cache-proxy-service:5020",job="cache-proxy",method="GET",service="fraud"} 45
+banking_proxy_request_duration_seconds_count{cache_status="hit",instance="cache-proxy-service:5020",job="cache-proxy",method="GET",service="fraud"} 1097
+banking_proxy_request_duration_seconds_count{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",method="GET",service="transactions"} 1085
+banking_proxy_request_duration_seconds_count{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",method="POST",service="transactions"} 1030
+
+## banking_proxy_request_duration_seconds_created
+banking_proxy_request_duration_seconds_created{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",method="POST",service="auth"} 1751429184.572253
+banking_proxy_request_duration_seconds_created{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",method="GET",service="accounts"} 1751429184.6068666
+banking_proxy_request_duration_seconds_created{cache_status="miss-stored",instance="cache-proxy-service:5020",job="cache-proxy",method="GET",service="fraud"} 1751429185.6248887
+banking_proxy_request_duration_seconds_created{cache_status="hit",instance="cache-proxy-service:5020",job="cache-proxy",method="GET",service="fraud"} 1751429187.6642704
+banking_proxy_request_duration_seconds_created{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",method="GET",service="transactions"} 1751429193.8066301
+banking_proxy_request_duration_seconds_created{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",method="POST",service="transactions"} 1751429199.9172022
+
+## banking_proxy_request_duration_seconds_sum
+banking_proxy_request_duration_seconds_sum{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",method="POST",service="auth"} 0.018948078155517578
+banking_proxy_request_duration_seconds_sum{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",method="GET",service="accounts"} 13.342278718948364
+banking_proxy_request_duration_seconds_sum{cache_status="miss-stored",instance="cache-proxy-service:5020",job="cache-proxy",method="GET",service="fraud"} 0.3969688415527344
+banking_proxy_request_duration_seconds_sum{cache_status="hit",instance="cache-proxy-service:5020",job="cache-proxy",method="GET",service="fraud"} 1.293133020401001
+banking_proxy_request_duration_seconds_sum{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",method="GET",service="transactions"} 6.578694820404053
+banking_proxy_request_duration_seconds_sum{cache_status="bypass",instance="cache-proxy-service:5020",job="cache-proxy",method="POST",service="transactions"} 7.433440446853638
+
+## process_cpu_seconds_total
+process_cpu_seconds_total{instance="cache-proxy-service:5020",job="cache-proxy"} 34.96
+
+## process_max_fds
+process_max_fds{instance="cache-proxy-service:5020",job="cache-proxy"} 1048576
+
+## process_open_fds
+process_open_fds{instance="cache-proxy-service:5020",job="cache-proxy"} 7
+
+## process_resident_memory_bytes
+process_resident_memory_bytes{instance="cache-proxy-service:5020",job="cache-proxy"} 39624704
+
+## process_start_time_seconds
+process_start_time_seconds{instance="cache-proxy-service:5020",job="cache-proxy"} 1751429162.08
+
+## process_virtual_memory_bytes
+process_virtual_memory_bytes{instance="cache-proxy-service:5020",job="cache-proxy"} 196325376
+
+## python_gc_collections_total
+python_gc_collections_total{generation="0",instance="cache-proxy-service:5020",job="cache-proxy"} 191
+python_gc_collections_total{generation="1",instance="cache-proxy-service:5020",job="cache-proxy"} 17
+python_gc_collections_total{generation="2",instance="cache-proxy-service:5020",job="cache-proxy"} 1
+
+## python_gc_objects_collected_total
+python_gc_objects_collected_total{generation="0",instance="cache-proxy-service:5020",job="cache-proxy"} 42555
+python_gc_objects_collected_total{generation="1",instance="cache-proxy-service:5020",job="cache-proxy"} 4079
+python_gc_objects_collected_total{generation="2",instance="cache-proxy-service:5020",job="cache-proxy"} 480
+
+## python_gc_objects_uncollectable_total
+python_gc_objects_uncollectable_total{generation="0",instance="cache-proxy-service:5020",job="cache-proxy"} 0
+python_gc_objects_uncollectable_total{generation="1",instance="cache-proxy-service:5020",job="cache-proxy"} 0
+python_gc_objects_uncollectable_total{generation="2",instance="cache-proxy-service:5020",job="cache-proxy"} 0
+
+## python_info
+python_info{implementation="CPython",instance="cache-proxy-service:5020",job="cache-proxy",major="3",minor="9",patchlevel="23",version="3.9.23"} 1
+
+## scrape_duration_seconds
+scrape_duration_seconds{instance="cache-proxy-service:5020",job="cache-proxy"} 0.007818042
+
+## scrape_samples_post_metric_relabeling
+scrape_samples_post_metric_relabeling{instance="cache-proxy-service:5020",job="cache-proxy"} 129
+
+## scrape_samples_scraped
+scrape_samples_scraped{instance="cache-proxy-service:5020",job="cache-proxy"} 129
+
+## scrape_series_added
+scrape_series_added{instance="cache-proxy-service:5020",job="cache-proxy"} 0
+
+## up
+up{instance="cache-proxy-service:5020",job="cache-proxy"} 1
+

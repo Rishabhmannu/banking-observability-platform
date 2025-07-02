@@ -1,0 +1,200 @@
+# Metrics for banking-db-demo
+# Job: banking-db-demo
+# Category: database
+# Exported at: 2025-07-02T11:09:53.994684
+# Total metrics: 121
+# Unique metric types: 36
+
+## banking_db_connection_acquisition_duration_seconds_bucket
+banking_db_connection_acquisition_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.001",operation="acquire",service="db-demo"} 10157
+banking_db_connection_acquisition_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.005",operation="acquire",service="db-demo"} 10183
+banking_db_connection_acquisition_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.01",operation="acquire",service="db-demo"} 10187
+banking_db_connection_acquisition_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.025",operation="acquire",service="db-demo"} 10189
+banking_db_connection_acquisition_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.05",operation="acquire",service="db-demo"} 10192
+banking_db_connection_acquisition_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.1",operation="acquire",service="db-demo"} 10192
+banking_db_connection_acquisition_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.25",operation="acquire",service="db-demo"} 10192
+banking_db_connection_acquisition_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.5",operation="acquire",service="db-demo"} 10192
+banking_db_connection_acquisition_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="1.0",operation="acquire",service="db-demo"} 10192
+banking_db_connection_acquisition_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="2.5",operation="acquire",service="db-demo"} 10192
+banking_db_connection_acquisition_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="5.0",operation="acquire",service="db-demo"} 10192
+banking_db_connection_acquisition_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="+Inf",operation="acquire",service="db-demo"} 10192
+
+## banking_db_connection_acquisition_duration_seconds_count
+banking_db_connection_acquisition_duration_seconds_count{instance="banking-db-connection-demo:5006",job="banking-db-demo",operation="acquire",service="db-demo"} 10192
+
+## banking_db_connection_acquisition_duration_seconds_created
+banking_db_connection_acquisition_duration_seconds_created{instance="banking-db-connection-demo:5006",job="banking-db-demo",operation="acquire",service="db-demo"} 1751429130.888677
+
+## banking_db_connection_acquisition_duration_seconds_sum
+banking_db_connection_acquisition_duration_seconds_sum{instance="banking-db-connection-demo:5006",job="banking-db-demo",operation="acquire",service="db-demo"} 0.6362771987915039
+
+## banking_db_pool_connections_active
+banking_db_pool_connections_active{instance="banking-db-connection-demo:5006",job="banking-db-demo",service="db-demo"} 0
+
+## banking_db_pool_connections_idle
+banking_db_pool_connections_idle{instance="banking-db-connection-demo:5006",job="banking-db-demo",service="db-demo"} 5
+
+## banking_db_pool_size
+banking_db_pool_size{instance="banking-db-connection-demo:5006",job="banking-db-demo",service="db-demo"} 20
+
+## banking_db_pool_utilization_percent
+banking_db_pool_utilization_percent{instance="banking-db-connection-demo:5006",job="banking-db-demo",service="db-demo"} 0
+
+## banking_db_queries_created
+banking_db_queries_created{instance="banking-db-connection-demo:5006",job="banking-db-demo",query_type="select",service="db-demo",status="success"} 1751429130.8948488
+banking_db_queries_created{instance="banking-db-connection-demo:5006",job="banking-db-demo",query_type="insert",service="db-demo",status="success"} 1751429132.0065792
+banking_db_queries_created{instance="banking-db-connection-demo:5006",job="banking-db-demo",query_type="update",service="db-demo",status="success"} 1751429134.9574726
+
+## banking_db_queries_total
+banking_db_queries_total{instance="banking-db-connection-demo:5006",job="banking-db-demo",query_type="select",service="db-demo",status="success"} 4118
+banking_db_queries_total{instance="banking-db-connection-demo:5006",job="banking-db-demo",query_type="insert",service="db-demo",status="success"} 4069
+banking_db_queries_total{instance="banking-db-connection-demo:5006",job="banking-db-demo",query_type="update",service="db-demo",status="success"} 2005
+
+## banking_db_query_duration_seconds_bucket
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.005",query_type="select",service="db-demo"} 4030
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.01",query_type="select",service="db-demo"} 4083
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.025",query_type="select",service="db-demo"} 4108
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.05",query_type="select",service="db-demo"} 4113
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.075",query_type="select",service="db-demo"} 4115
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.1",query_type="select",service="db-demo"} 4115
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.25",query_type="select",service="db-demo"} 4118
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.5",query_type="select",service="db-demo"} 4118
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.75",query_type="select",service="db-demo"} 4118
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="1.0",query_type="select",service="db-demo"} 4118
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="2.5",query_type="select",service="db-demo"} 4118
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="5.0",query_type="select",service="db-demo"} 4118
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="7.5",query_type="select",service="db-demo"} 4118
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="10.0",query_type="select",service="db-demo"} 4118
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="+Inf",query_type="select",service="db-demo"} 4118
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.005",query_type="insert",service="db-demo"} 3797
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.01",query_type="insert",service="db-demo"} 3984
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.025",query_type="insert",service="db-demo"} 4046
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.05",query_type="insert",service="db-demo"} 4061
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.075",query_type="insert",service="db-demo"} 4066
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.1",query_type="insert",service="db-demo"} 4068
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.25",query_type="insert",service="db-demo"} 4069
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.5",query_type="insert",service="db-demo"} 4069
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.75",query_type="insert",service="db-demo"} 4069
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="1.0",query_type="insert",service="db-demo"} 4069
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="2.5",query_type="insert",service="db-demo"} 4069
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="5.0",query_type="insert",service="db-demo"} 4069
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="7.5",query_type="insert",service="db-demo"} 4069
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="10.0",query_type="insert",service="db-demo"} 4069
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="+Inf",query_type="insert",service="db-demo"} 4069
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.005",query_type="update",service="db-demo"} 1883
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.01",query_type="update",service="db-demo"} 1973
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.025",query_type="update",service="db-demo"} 2000
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.05",query_type="update",service="db-demo"} 2002
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.075",query_type="update",service="db-demo"} 2003
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.1",query_type="update",service="db-demo"} 2005
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.25",query_type="update",service="db-demo"} 2005
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.5",query_type="update",service="db-demo"} 2005
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.75",query_type="update",service="db-demo"} 2005
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="1.0",query_type="update",service="db-demo"} 2005
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="2.5",query_type="update",service="db-demo"} 2005
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="5.0",query_type="update",service="db-demo"} 2005
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="7.5",query_type="update",service="db-demo"} 2005
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="10.0",query_type="update",service="db-demo"} 2005
+banking_db_query_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="+Inf",query_type="update",service="db-demo"} 2005
+
+## banking_db_query_duration_seconds_count
+banking_db_query_duration_seconds_count{instance="banking-db-connection-demo:5006",job="banking-db-demo",query_type="select",service="db-demo"} 4118
+banking_db_query_duration_seconds_count{instance="banking-db-connection-demo:5006",job="banking-db-demo",query_type="insert",service="db-demo"} 4069
+banking_db_query_duration_seconds_count{instance="banking-db-connection-demo:5006",job="banking-db-demo",query_type="update",service="db-demo"} 2005
+
+## banking_db_query_duration_seconds_created
+banking_db_query_duration_seconds_created{instance="banking-db-connection-demo:5006",job="banking-db-demo",query_type="select",service="db-demo"} 1751429130.8889055
+banking_db_query_duration_seconds_created{instance="banking-db-connection-demo:5006",job="banking-db-demo",query_type="insert",service="db-demo"} 1751429131.9980822
+banking_db_query_duration_seconds_created{instance="banking-db-connection-demo:5006",job="banking-db-demo",query_type="update",service="db-demo"} 1751429134.9542835
+
+## banking_db_query_duration_seconds_sum
+banking_db_query_duration_seconds_sum{instance="banking-db-connection-demo:5006",job="banking-db-demo",query_type="select",service="db-demo"} 6.027606018006054
+banking_db_query_duration_seconds_sum{instance="banking-db-connection-demo:5006",job="banking-db-demo",query_type="insert",service="db-demo"} 12.049857910980108
+banking_db_query_duration_seconds_sum{instance="banking-db-connection-demo:5006",job="banking-db-demo",query_type="update",service="db-demo"} 5.331051659003492
+
+## db_connection_demo_exporter_info
+db_connection_demo_exporter_info{instance="banking-db-connection-demo:5006",job="banking-db-demo",version="0.21.0"} 1
+
+## db_connection_demo_http_request_created
+db_connection_demo_http_request_created{instance="banking-db-connection-demo:5006",job="banking-db-demo",method="GET",status="200"} 1751429199.7824507
+
+## db_connection_demo_http_request_duration_seconds_bucket
+db_connection_demo_http_request_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.005",method="GET",path="/health",status="200"} 1
+db_connection_demo_http_request_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.01",method="GET",path="/health",status="200"} 1
+db_connection_demo_http_request_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.025",method="GET",path="/health",status="200"} 1
+db_connection_demo_http_request_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.05",method="GET",path="/health",status="200"} 1
+db_connection_demo_http_request_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.075",method="GET",path="/health",status="200"} 1
+db_connection_demo_http_request_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.1",method="GET",path="/health",status="200"} 1
+db_connection_demo_http_request_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.25",method="GET",path="/health",status="200"} 1
+db_connection_demo_http_request_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.5",method="GET",path="/health",status="200"} 1
+db_connection_demo_http_request_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="0.75",method="GET",path="/health",status="200"} 1
+db_connection_demo_http_request_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="1.0",method="GET",path="/health",status="200"} 1
+db_connection_demo_http_request_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="2.5",method="GET",path="/health",status="200"} 1
+db_connection_demo_http_request_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="5.0",method="GET",path="/health",status="200"} 1
+db_connection_demo_http_request_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="7.5",method="GET",path="/health",status="200"} 1
+db_connection_demo_http_request_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="10.0",method="GET",path="/health",status="200"} 1
+db_connection_demo_http_request_duration_seconds_bucket{instance="banking-db-connection-demo:5006",job="banking-db-demo",le="+Inf",method="GET",path="/health",status="200"} 1
+
+## db_connection_demo_http_request_duration_seconds_count
+db_connection_demo_http_request_duration_seconds_count{instance="banking-db-connection-demo:5006",job="banking-db-demo",method="GET",path="/health",status="200"} 1
+
+## db_connection_demo_http_request_duration_seconds_created
+db_connection_demo_http_request_duration_seconds_created{instance="banking-db-connection-demo:5006",job="banking-db-demo",method="GET",path="/health",status="200"} 1751429199.7823808
+
+## db_connection_demo_http_request_duration_seconds_sum
+db_connection_demo_http_request_duration_seconds_sum{instance="banking-db-connection-demo:5006",job="banking-db-demo",method="GET",path="/health",status="200"} 0.0012609999999995125
+
+## db_connection_demo_http_request_total
+db_connection_demo_http_request_total{instance="banking-db-connection-demo:5006",job="banking-db-demo",method="GET",status="200"} 1
+
+## process_cpu_seconds_total
+process_cpu_seconds_total{instance="banking-db-connection-demo:5006",job="banking-db-demo"} 18.42
+
+## process_max_fds
+process_max_fds{instance="banking-db-connection-demo:5006",job="banking-db-demo"} 1048576
+
+## process_open_fds
+process_open_fds{instance="banking-db-connection-demo:5006",job="banking-db-demo"} 11
+
+## process_resident_memory_bytes
+process_resident_memory_bytes{instance="banking-db-connection-demo:5006",job="banking-db-demo"} 35360768
+
+## process_start_time_seconds
+process_start_time_seconds{instance="banking-db-connection-demo:5006",job="banking-db-demo"} 1751429114.18
+
+## process_virtual_memory_bytes
+process_virtual_memory_bytes{instance="banking-db-connection-demo:5006",job="banking-db-demo"} 276148224
+
+## python_gc_collections_total
+python_gc_collections_total{generation="0",instance="banking-db-connection-demo:5006",job="banking-db-demo"} 107
+python_gc_collections_total{generation="1",instance="banking-db-connection-demo:5006",job="banking-db-demo"} 9
+python_gc_collections_total{generation="2",instance="banking-db-connection-demo:5006",job="banking-db-demo"} 0
+
+## python_gc_objects_collected_total
+python_gc_objects_collected_total{generation="0",instance="banking-db-connection-demo:5006",job="banking-db-demo"} 7688
+python_gc_objects_collected_total{generation="1",instance="banking-db-connection-demo:5006",job="banking-db-demo"} 869
+python_gc_objects_collected_total{generation="2",instance="banking-db-connection-demo:5006",job="banking-db-demo"} 0
+
+## python_gc_objects_uncollectable_total
+python_gc_objects_uncollectable_total{generation="0",instance="banking-db-connection-demo:5006",job="banking-db-demo"} 0
+python_gc_objects_uncollectable_total{generation="1",instance="banking-db-connection-demo:5006",job="banking-db-demo"} 0
+python_gc_objects_uncollectable_total{generation="2",instance="banking-db-connection-demo:5006",job="banking-db-demo"} 0
+
+## python_info
+python_info{implementation="CPython",instance="banking-db-connection-demo:5006",job="banking-db-demo",major="3",minor="9",patchlevel="23",version="3.9.23"} 1
+
+## scrape_duration_seconds
+scrape_duration_seconds{instance="banking-db-connection-demo:5006",job="banking-db-demo"} 0.016755417
+
+## scrape_samples_post_metric_relabeling
+scrape_samples_post_metric_relabeling{instance="banking-db-connection-demo:5006",job="banking-db-demo"} 116
+
+## scrape_samples_scraped
+scrape_samples_scraped{instance="banking-db-connection-demo:5006",job="banking-db-demo"} 116
+
+## scrape_series_added
+scrape_series_added{instance="banking-db-connection-demo:5006",job="banking-db-demo"} 0
+
+## up
+up{instance="banking-db-connection-demo:5006",job="banking-db-demo"} 1
+

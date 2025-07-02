@@ -1,56 +1,38 @@
-// Set environment variables before requiring newrelic
-process.env.NEW_RELIC_ENABLED = true;
-process.env.NEW_RELIC_APP_NAME = 'Banking API Gateway';
-process.env.NEW_RELIC_LICENSE_KEY = '59829ffc48a17aa6783a0ee3cd15e230FFFFNRAL';
-
-// Require New Relic agent
-const newrelic = require('newrelic');
-
 const express = require('express');
 const { createProxyMiddleware } = require('http-proxy-middleware');
 const morgan = require('morgan');
 const prometheus = require('prom-client');
 
-// Force New Relic to be enabled
-newrelic.agent.config.enabled = true;
+const app = express();
+const PORT = 8080;
 
-console.log('New Relic enabled status:', newrelic.agent.config.enabled);
-
-// Create a Registry to register metrics
+// Prometheus setup
 const register = new prometheus.Registry();
 prometheus.collectDefaultMetrics({ register });
 
-// Create custom metrics
 const httpRequestDurationMicroseconds = new prometheus.Histogram({
   name: 'http_request_duration_seconds',
   help: 'Duration of HTTP requests in seconds',
   labelNames: ['method', 'route', 'code'],
   buckets: [0.1, 0.3, 0.5, 0.7, 1, 3, 5, 7, 10]
 });
-
-// Register the metrics
 register.registerMetric(httpRequestDurationMicroseconds);
 
-const app = express();
-const PORT = 8080;
+// Cache-proxy toggle
+const CACHE_PROXY_URL   = process.env.CACHE_PROXY_URL   || 'http://cache-proxy-service:5020';
+const USE_CACHE_PROXY   = process.env.USE_CACHE_PROXY === 'true';
 
-// Logging middleware
+console.log('=================================');
+console.log('API Gateway Configuration:');
+console.log(`Port: ${PORT}`);
+console.log(`Cache Proxy: ${USE_CACHE_PROXY ? 'ENABLED' : 'DISABLED'}`);
+if (USE_CACHE_PROXY) console.log(`Cache Proxy URL: ${CACHE_PROXY_URL}`);
+console.log('=================================');
+
+// Logging
 app.use(morgan('combined'));
 
-// Force transaction creation for every request
-app.use((req, res, next) => {
-  try {
-    const path = req.path || 'unknown';
-    const segment = newrelic.getTransaction().getSegment();
-    newrelic.setTransactionName('WebTransaction/Custom/' + path);
-    console.log('Set transaction name for path:', path);
-  } catch (err) {
-    console.error('New Relic transaction error:', err);
-  }
-  next();
-});
-
-// Prometheus middleware to measure request duration
+// Measure request durations
 app.use((req, res, next) => {
   const end = httpRequestDurationMicroseconds.startTimer();
   res.on('finish', () => {
@@ -59,59 +41,103 @@ app.use((req, res, next) => {
   next();
 });
 
-// Expose metrics endpoint for Prometheus
+// Expose metrics
 app.get('/metrics', async (req, res) => {
   res.set('Content-Type', register.contentType);
   res.end(await register.metrics());
 });
 
-// Account Service Proxy
+// Helpers
+function getTargetUrl(serviceUrl) {
+  return USE_CACHE_PROXY ? CACHE_PROXY_URL : serviceUrl;
+}
+
+// Account Service
 app.use('/accounts', createProxyMiddleware({
-  target: process.env.ACCOUNT_SERVICE_URL || 'http://localhost:8081',
+  target: getTargetUrl(process.env.ACCOUNT_SERVICE_URL || 'http://banking-account-service:8081'),
   changeOrigin: true,
-  pathRewrite: {'^/accounts': '/'}
-}));
-
-// Transaction Service Proxy
-app.use('/transactions', createProxyMiddleware({
-  target: process.env.TRANSACTION_SERVICE_URL || 'http://localhost:8082',
-  changeOrigin: true,
-  pathRewrite: {'^/transactions': '/'}
-}));
-
-// Auth Service Proxy
-app.use('/auth', createProxyMiddleware({
-  target: process.env.AUTH_SERVICE_URL || 'http://localhost:8083',
-  changeOrigin: true,
-  pathRewrite: {'^/auth': '/'}
-}));
-
-// Notification Service Proxy
-app.use('/notifications', createProxyMiddleware({
-  target: process.env.NOTIFICATION_SERVICE_URL || 'http://localhost:8084',
-  changeOrigin: true,
-  pathRewrite: {'^/notifications': '/'}
-}));
-
-// Fraud Detection Service Proxy
-app.use('/fraud', createProxyMiddleware({
-  target: process.env.FRAUD_SERVICE_URL || 'http://localhost:8085',
-  changeOrigin: true,
-  pathRewrite: {'^/fraud': '/'}
-}));
-
-// Health check endpoint
-app.get('/health', (req, res) => {
-  try {
-    newrelic.recordCustomEvent('HealthCheck', {status: 'UP', timestamp: Date.now()});
-    console.log('Recorded custom event for health check');
-  } catch (err) {
-    console.error('New Relic event error:', err);
+  pathRewrite: {},  // FIXED: Stop rewriting paths
+  onProxyReq: (proxyReq, req) => {
+    console.log(`Routing ${req.method} /accounts${req.url}`);
+  },
+  onError: (err, req, res) => {
+    console.error(`Proxy error for /accounts${req.url}:`, err.message);
+    res.status(503).json({ error: 'Service unavailable' });
   }
-  res.status(200).json({ status: 'UP' });
+}));
+
+// Transaction Service
+app.use('/transactions', createProxyMiddleware({
+  target: getTargetUrl(process.env.TRANSACTION_SERVICE_URL || 'http://banking-transaction-service:8082'),
+  changeOrigin: true,
+  pathRewrite: {},  // FIXED: Stop rewriting paths
+  onProxyReq: (proxyReq, req) => {
+    console.log(`Routing ${req.method} /transactions${req.url}`);
+  },
+  onError: (err, req, res) => {
+    console.error(`Proxy error for /transactions${req.url}:`, err.message);
+    res.status(503).json({ error: 'Service unavailable' });
+  }
+}));
+
+// Auth Service
+app.use('/auth', createProxyMiddleware({
+  target: getTargetUrl(process.env.AUTH_SERVICE_URL || 'http://banking-auth-service:8083'),
+  changeOrigin: true,
+  pathRewrite: {},  // FIXED: Stop rewriting paths
+  onProxyReq: (proxyReq, req) => {
+    console.log(`Routing ${req.method} /auth${req.url}`);
+  },
+  onError: (err, req, res) => {
+    console.error(`Proxy error for /auth${req.url}:`, err.message);
+    res.status(503).json({ error: 'Service unavailable' });
+  }
+}));
+
+// Notification Service
+app.use('/notifications', createProxyMiddleware({
+  target: getTargetUrl(process.env.NOTIFICATION_SERVICE_URL || 'http://banking-notification-service:8084'),
+  changeOrigin: true,
+  pathRewrite: {},  // FIXED: Stop rewriting paths
+  onProxyReq: (proxyReq, req) => {
+    console.log(`Routing ${req.method} /notifications${req.url}`);
+  },
+  onError: (err, req, res) => {
+    console.error(`Proxy error for /notifications${req.url}:`, err.message);
+    res.status(503).json({ error: 'Service unavailable' });
+  }
+}));
+
+// Fraud Detection Service
+app.use('/fraud', createProxyMiddleware({
+  target: getTargetUrl(process.env.FRAUD_SERVICE_URL || 'http://banking-fraud-detection:8085'),
+  changeOrigin: true,
+  pathRewrite: {},  // FIXED: Stop rewriting paths
+  onProxyReq: (proxyReq, req) => {
+    console.log(`Routing ${req.method} /fraud${req.url}`);
+  },
+  onError: (err, req, res) => {
+    console.error(`Proxy error for /fraud${req.url}:`, err.message);
+    res.status(503).json({ error: 'Service unavailable' });
+  }
+}));
+
+// Gateway health check
+app.get('/health', (req, res) => {
+  res.status(200).json({
+    status: 'UP',
+    cache_proxy_enabled: USE_CACHE_PROXY,
+    cache_proxy_url: USE_CACHE_PROXY ? CACHE_PROXY_URL : 'disabled',
+    timestamp: new Date().toISOString()
+  });
+});
+
+// Fallback error handler
+app.use((err, req, res, next) => {
+  console.error('Unhandled error:', err);
+  res.status(500).json({ error: 'Internal server error' });
 });
 
 app.listen(PORT, () => {
-  console.log(`API Gateway running on port ${PORT}`);
-  console.log('New Relic status:', newrelic.agent.config.enabled ? 'ENABLED' : 'DISABLED');
+  console.log(`✅ API Gateway running on port ${PORT}`);
 });

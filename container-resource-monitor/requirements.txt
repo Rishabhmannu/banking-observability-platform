@@ -23,3 +23,5 @@ python-dotenv==1.0.0
 
 # Statistics
 scipy==1.11.1
+
+docker>=6.0.0

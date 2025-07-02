@@ -1,0 +1,565 @@
+# Metrics for banking-kafka
+# Job: banking-kafka
+# Category: messaging
+# Exported at: 2025-07-02T11:09:54.024292
+# Total metrics: 432
+# Unique metric types: 63
+
+## go_gc_duration_seconds
+go_gc_duration_seconds{instance="banking-kafka-exporter:9308",job="banking-kafka",quantile="0.0"} 0.000025833
+go_gc_duration_seconds{instance="banking-kafka-exporter:9308",job="banking-kafka",quantile="0.25"} 0.000305667
+go_gc_duration_seconds{instance="banking-kafka-exporter:9308",job="banking-kafka",quantile="0.5"} 0.000518667
+go_gc_duration_seconds{instance="banking-kafka-exporter:9308",job="banking-kafka",quantile="0.75"} 0.001033083
+go_gc_duration_seconds{instance="banking-kafka-exporter:9308",job="banking-kafka",quantile="1.0"} 0.015903083
+
+## go_gc_duration_seconds_count
+go_gc_duration_seconds_count{instance="banking-kafka-exporter:9308",job="banking-kafka"} 385
+
+## go_gc_duration_seconds_sum
+go_gc_duration_seconds_sum{instance="banking-kafka-exporter:9308",job="banking-kafka"} 0.312724627
+
+## go_gc_gogc_percent
+go_gc_gogc_percent{instance="banking-kafka-exporter:9308",job="banking-kafka"} 100
+
+## go_gc_gomemlimit_bytes
+go_gc_gomemlimit_bytes{instance="banking-kafka-exporter:9308",job="banking-kafka"} 9223372036854776000
+
+## go_goroutines
+go_goroutines{instance="banking-kafka-exporter:9308",job="banking-kafka"} 9
+
+## go_info
+go_info{instance="banking-kafka-exporter:9308",job="banking-kafka",version="go1.24.0"} 1
+
+## go_memstats_alloc_bytes
+go_memstats_alloc_bytes{instance="banking-kafka-exporter:9308",job="banking-kafka"} 2076496
+
+## go_memstats_alloc_bytes_total
+go_memstats_alloc_bytes_total{instance="banking-kafka-exporter:9308",job="banking-kafka"} 518542720
+
+## go_memstats_buck_hash_sys_bytes
+go_memstats_buck_hash_sys_bytes{instance="banking-kafka-exporter:9308",job="banking-kafka"} 1495342
+
+## go_memstats_frees_total
+go_memstats_frees_total{instance="banking-kafka-exporter:9308",job="banking-kafka"} 3987617
+
+## go_memstats_gc_sys_bytes
+go_memstats_gc_sys_bytes{instance="banking-kafka-exporter:9308",job="banking-kafka"} 2818072
+
+## go_memstats_heap_alloc_bytes
+go_memstats_heap_alloc_bytes{instance="banking-kafka-exporter:9308",job="banking-kafka"} 2076496
+
+## go_memstats_heap_idle_bytes
+go_memstats_heap_idle_bytes{instance="banking-kafka-exporter:9308",job="banking-kafka"} 7905280
+
+## go_memstats_heap_inuse_bytes
+go_memstats_heap_inuse_bytes{instance="banking-kafka-exporter:9308",job="banking-kafka"} 3661824
+
+## go_memstats_heap_objects
+go_memstats_heap_objects{instance="banking-kafka-exporter:9308",job="banking-kafka"} 8616
+
+## go_memstats_heap_released_bytes
+go_memstats_heap_released_bytes{instance="banking-kafka-exporter:9308",job="banking-kafka"} 6168576
+
+## go_memstats_heap_sys_bytes
+go_memstats_heap_sys_bytes{instance="banking-kafka-exporter:9308",job="banking-kafka"} 11567104
+
+## go_memstats_last_gc_time_seconds
+go_memstats_last_gc_time_seconds{instance="banking-kafka-exporter:9308",job="banking-kafka"} 1751434771.3189487
+
+## go_memstats_mallocs_total
+go_memstats_mallocs_total{instance="banking-kafka-exporter:9308",job="banking-kafka"} 3996233
+
+## go_memstats_mcache_inuse_bytes
+go_memstats_mcache_inuse_bytes{instance="banking-kafka-exporter:9308",job="banking-kafka"} 12080
+
+## go_memstats_mcache_sys_bytes
+go_memstats_mcache_sys_bytes{instance="banking-kafka-exporter:9308",job="banking-kafka"} 15704
+
+## go_memstats_mspan_inuse_bytes
+go_memstats_mspan_inuse_bytes{instance="banking-kafka-exporter:9308",job="banking-kafka"} 169920
+
+## go_memstats_mspan_sys_bytes
+go_memstats_mspan_sys_bytes{instance="banking-kafka-exporter:9308",job="banking-kafka"} 195840
+
+## go_memstats_next_gc_bytes
+go_memstats_next_gc_bytes{instance="banking-kafka-exporter:9308",job="banking-kafka"} 4441378
+
+## go_memstats_other_sys_bytes
+go_memstats_other_sys_bytes{instance="banking-kafka-exporter:9308",job="banking-kafka"} 2115946
+
+## go_memstats_stack_inuse_bytes
+go_memstats_stack_inuse_bytes{instance="banking-kafka-exporter:9308",job="banking-kafka"} 1015808
+
+## go_memstats_stack_sys_bytes
+go_memstats_stack_sys_bytes{instance="banking-kafka-exporter:9308",job="banking-kafka"} 1015808
+
+## go_memstats_sys_bytes
+go_memstats_sys_bytes{instance="banking-kafka-exporter:9308",job="banking-kafka"} 19223816
+
+## go_sched_gomaxprocs_threads
+go_sched_gomaxprocs_threads{instance="banking-kafka-exporter:9308",job="banking-kafka"} 10
+
+## go_threads
+go_threads{instance="banking-kafka-exporter:9308",job="banking-kafka"} 12
+
+## kafka_broker_info
+kafka_broker_info{address="kafka:29092",id="1",instance="banking-kafka-exporter:9308",job="banking-kafka"} 1
+
+## kafka_brokers
+kafka_brokers{instance="banking-kafka-exporter:9308",job="banking-kafka"} 1
+
+## kafka_consumergroup_current_offset
+kafka_consumergroup_current_offset{consumergroup="banking-audit-group",instance="banking-kafka-exporter:9308",job="banking-kafka",partition="0",topic="audit-logs"} 13001
+kafka_consumergroup_current_offset{consumergroup="banking-consumer-group",instance="banking-kafka-exporter:9308",job="banking-kafka",partition="0",topic="transaction-events"} 26315
+
+## kafka_consumergroup_current_offset_sum
+kafka_consumergroup_current_offset_sum{consumergroup="banking-audit-group",instance="banking-kafka-exporter:9308",job="banking-kafka",topic="audit-logs"} 13001
+kafka_consumergroup_current_offset_sum{consumergroup="banking-consumer-group",instance="banking-kafka-exporter:9308",job="banking-kafka",topic="transaction-events"} 26315
+
+## kafka_consumergroup_lag
+kafka_consumergroup_lag{consumergroup="banking-audit-group",instance="banking-kafka-exporter:9308",job="banking-kafka",partition="0",topic="audit-logs"} 0
+kafka_consumergroup_lag{consumergroup="banking-consumer-group",instance="banking-kafka-exporter:9308",job="banking-kafka",partition="0",topic="transaction-events"} 0
+
+## kafka_consumergroup_lag_sum
+kafka_consumergroup_lag_sum{consumergroup="banking-consumer-group",instance="banking-kafka-exporter:9308",job="banking-kafka",topic="transaction-events"} 0
+
+## kafka_consumergroup_members
+kafka_consumergroup_members{consumergroup="banking-audit-group",instance="banking-kafka-exporter:9308",job="banking-kafka"} 1
+kafka_consumergroup_members{consumergroup="banking-consumer-group",instance="banking-kafka-exporter:9308",job="banking-kafka"} 1
+
+## kafka_exporter_build_info
+kafka_exporter_build_info{branch="master",goarch="arm64",goos="linux",goversion="go1.24.0",instance="banking-kafka-exporter:9308",job="banking-kafka",revision="8ec24078707d4d3b349e71522ebd7f179746072d",tags="netgo",version="1.9.0"} 1
+
+## kafka_topic_partition_current_offset
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="0",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="0",topic="audit-logs"} 13001
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="0",topic="transaction-events"} 26315
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="1",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="10",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="11",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="12",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="13",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="14",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="15",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="16",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="17",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="18",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="19",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="2",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="20",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="21",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="22",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="23",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="24",topic="__consumer_offsets"} 32638
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="25",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="26",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="27",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="28",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="29",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="3",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="30",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="31",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="32",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="33",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="34",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="35",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="36",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="37",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="38",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="39",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="4",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="40",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="41",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="42",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="43",topic="__consumer_offsets"} 32567
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="44",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="45",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="46",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="47",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="48",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="49",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="5",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="6",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="7",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="8",topic="__consumer_offsets"} 0
+kafka_topic_partition_current_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="9",topic="__consumer_offsets"} 0
+
+## kafka_topic_partition_in_sync_replica
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="0",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="0",topic="audit-logs"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="0",topic="transaction-events"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="1",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="10",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="11",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="12",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="13",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="14",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="15",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="16",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="17",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="18",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="19",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="2",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="20",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="21",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="22",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="23",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="24",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="25",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="26",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="27",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="28",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="29",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="3",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="30",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="31",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="32",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="33",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="34",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="35",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="36",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="37",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="38",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="39",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="4",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="40",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="41",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="42",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="43",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="44",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="45",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="46",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="47",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="48",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="49",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="5",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="6",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="7",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="8",topic="__consumer_offsets"} 1
+kafka_topic_partition_in_sync_replica{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="9",topic="__consumer_offsets"} 1
+
+## kafka_topic_partition_leader
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="0",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="0",topic="audit-logs"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="0",topic="transaction-events"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="1",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="10",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="11",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="12",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="13",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="14",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="15",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="16",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="17",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="18",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="19",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="2",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="20",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="21",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="22",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="23",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="24",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="25",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="26",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="27",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="28",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="29",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="3",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="30",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="31",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="32",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="33",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="34",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="35",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="36",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="37",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="38",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="39",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="4",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="40",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="41",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="42",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="43",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="44",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="45",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="46",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="47",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="48",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="49",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="5",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="6",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="7",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="8",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="9",topic="__consumer_offsets"} 1
+
+## kafka_topic_partition_leader_is_preferred
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="0",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="0",topic="audit-logs"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="0",topic="transaction-events"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="1",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="10",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="11",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="12",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="13",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="14",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="15",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="16",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="17",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="18",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="19",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="2",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="20",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="21",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="22",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="23",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="24",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="25",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="26",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="27",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="28",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="29",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="3",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="30",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="31",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="32",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="33",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="34",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="35",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="36",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="37",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="38",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="39",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="4",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="40",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="41",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="42",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="43",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="44",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="45",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="46",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="47",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="48",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="49",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="5",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="6",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="7",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="8",topic="__consumer_offsets"} 1
+kafka_topic_partition_leader_is_preferred{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="9",topic="__consumer_offsets"} 1
+
+## kafka_topic_partition_oldest_offset
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="0",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="0",topic="audit-logs"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="0",topic="transaction-events"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="1",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="10",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="11",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="12",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="13",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="14",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="15",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="16",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="17",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="18",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="19",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="2",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="20",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="21",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="22",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="23",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="24",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="25",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="26",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="27",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="28",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="29",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="3",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="30",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="31",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="32",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="33",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="34",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="35",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="36",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="37",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="38",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="39",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="4",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="40",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="41",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="42",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="43",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="44",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="45",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="46",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="47",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="48",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="49",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="5",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="6",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="7",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="8",topic="__consumer_offsets"} 0
+kafka_topic_partition_oldest_offset{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="9",topic="__consumer_offsets"} 0
+
+## kafka_topic_partition_replicas
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="0",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="0",topic="audit-logs"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="0",topic="transaction-events"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="1",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="10",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="11",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="12",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="13",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="14",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="15",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="16",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="17",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="18",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="19",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="2",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="20",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="21",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="22",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="23",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="24",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="25",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="26",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="27",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="28",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="29",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="3",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="30",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="31",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="32",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="33",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="34",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="35",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="36",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="37",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="38",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="39",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="4",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="40",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="41",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="42",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="43",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="44",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="45",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="46",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="47",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="48",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="49",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="5",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="6",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="7",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="8",topic="__consumer_offsets"} 1
+kafka_topic_partition_replicas{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="9",topic="__consumer_offsets"} 1
+
+## kafka_topic_partition_under_replicated_partition
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="0",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="0",topic="audit-logs"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="0",topic="transaction-events"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="1",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="10",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="11",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="12",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="13",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="14",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="15",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="16",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="17",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="18",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="19",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="2",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="20",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="21",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="22",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="23",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="24",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="25",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="26",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="27",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="28",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="29",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="3",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="30",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="31",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="32",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="33",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="34",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="35",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="36",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="37",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="38",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="39",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="4",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="40",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="41",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="42",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="43",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="44",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="45",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="46",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="47",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="48",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="49",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="5",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="6",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="7",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="8",topic="__consumer_offsets"} 0
+kafka_topic_partition_under_replicated_partition{instance="banking-kafka-exporter:9308",job="banking-kafka",partition="9",topic="__consumer_offsets"} 0
+
+## kafka_topic_partitions
+kafka_topic_partitions{instance="banking-kafka-exporter:9308",job="banking-kafka",topic="__consumer_offsets"} 50
+kafka_topic_partitions{instance="banking-kafka-exporter:9308",job="banking-kafka",topic="audit-logs"} 1
+kafka_topic_partitions{instance="banking-kafka-exporter:9308",job="banking-kafka",topic="transaction-events"} 1
+
+## process_cpu_seconds_total
+process_cpu_seconds_total{instance="banking-kafka-exporter:9308",job="banking-kafka"} 14.97
+
+## process_max_fds
+process_max_fds{instance="banking-kafka-exporter:9308",job="banking-kafka"} 1048576
+
+## process_network_receive_bytes_total
+process_network_receive_bytes_total{instance="banking-kafka-exporter:9308",job="banking-kafka"} 6534941
+
+## process_network_transmit_bytes_total
+process_network_transmit_bytes_total{instance="banking-kafka-exporter:9308",job="banking-kafka"} 7433227
+
+## process_open_fds
+process_open_fds{instance="banking-kafka-exporter:9308",job="banking-kafka"} 9
+
+## process_resident_memory_bytes
+process_resident_memory_bytes{instance="banking-kafka-exporter:9308",job="banking-kafka"} 27709440
+
+## process_start_time_seconds
+process_start_time_seconds{instance="banking-kafka-exporter:9308",job="banking-kafka"} 1751429047.46
+
+## process_virtual_memory_bytes
+process_virtual_memory_bytes{instance="banking-kafka-exporter:9308",job="banking-kafka"} 1274109952
+
+## process_virtual_memory_max_bytes
+process_virtual_memory_max_bytes{instance="banking-kafka-exporter:9308",job="banking-kafka"} 18446744073709552000
+
+## promhttp_metric_handler_requests_in_flight
+promhttp_metric_handler_requests_in_flight{instance="banking-kafka-exporter:9308",job="banking-kafka"} 1
+
+## promhttp_metric_handler_requests_total
+promhttp_metric_handler_requests_total{code="200",instance="banking-kafka-exporter:9308",job="banking-kafka"} 382
+promhttp_metric_handler_requests_total{code="500",instance="banking-kafka-exporter:9308",job="banking-kafka"} 0
+promhttp_metric_handler_requests_total{code="503",instance="banking-kafka-exporter:9308",job="banking-kafka"} 0
+
+## scrape_duration_seconds
+scrape_duration_seconds{instance="banking-kafka-exporter:9308",job="banking-kafka"} 0.048308
+
+## scrape_samples_post_metric_relabeling
+scrape_samples_post_metric_relabeling{instance="banking-kafka-exporter:9308",job="banking-kafka"} 427
+
+## scrape_samples_scraped
+scrape_samples_scraped{instance="banking-kafka-exporter:9308",job="banking-kafka"} 427
+
+## scrape_series_added
+scrape_series_added{instance="banking-kafka-exporter:9308",job="banking-kafka"} 0
+
+## up
+up{instance="banking-kafka-exporter:9308",job="banking-kafka"} 1
+

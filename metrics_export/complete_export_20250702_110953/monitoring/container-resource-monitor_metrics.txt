@@ -1,0 +1,213 @@
+# Metrics for container-resource-monitor
+# Job: container-resource-monitor
+# Category: monitoring
+# Exported at: 2025-07-02T11:09:53.946625
+# Total metrics: 150
+# Unique metric types: 28
+
+## container_analysis_duration_seconds_bucket
+container_analysis_duration_seconds_bucket{instance="banking-container-monitor:5010",job="container-resource-monitor",le="0.005"} 0
+container_analysis_duration_seconds_bucket{instance="banking-container-monitor:5010",job="container-resource-monitor",le="0.01"} 0
+container_analysis_duration_seconds_bucket{instance="banking-container-monitor:5010",job="container-resource-monitor",le="0.025"} 0
+container_analysis_duration_seconds_bucket{instance="banking-container-monitor:5010",job="container-resource-monitor",le="0.05"} 0
+container_analysis_duration_seconds_bucket{instance="banking-container-monitor:5010",job="container-resource-monitor",le="0.075"} 0
+container_analysis_duration_seconds_bucket{instance="banking-container-monitor:5010",job="container-resource-monitor",le="0.1"} 0
+container_analysis_duration_seconds_bucket{instance="banking-container-monitor:5010",job="container-resource-monitor",le="0.25"} 0
+container_analysis_duration_seconds_bucket{instance="banking-container-monitor:5010",job="container-resource-monitor",le="0.5"} 0
+container_analysis_duration_seconds_bucket{instance="banking-container-monitor:5010",job="container-resource-monitor",le="0.75"} 0
+container_analysis_duration_seconds_bucket{instance="banking-container-monitor:5010",job="container-resource-monitor",le="1.0"} 0
+container_analysis_duration_seconds_bucket{instance="banking-container-monitor:5010",job="container-resource-monitor",le="2.5"} 0
+container_analysis_duration_seconds_bucket{instance="banking-container-monitor:5010",job="container-resource-monitor",le="5.0"} 0
+container_analysis_duration_seconds_bucket{instance="banking-container-monitor:5010",job="container-resource-monitor",le="7.5"} 0
+container_analysis_duration_seconds_bucket{instance="banking-container-monitor:5010",job="container-resource-monitor",le="10.0"} 0
+container_analysis_duration_seconds_bucket{instance="banking-container-monitor:5010",job="container-resource-monitor",le="+Inf"} 30
+
+## container_analysis_duration_seconds_count
+container_analysis_duration_seconds_count{instance="banking-container-monitor:5010",job="container-resource-monitor"} 30
+
+## container_analysis_duration_seconds_created
+container_analysis_duration_seconds_created{instance="banking-container-monitor:5010",job="container-resource-monitor"} 1751432963.2644227
+
+## container_analysis_duration_seconds_sum
+container_analysis_duration_seconds_sum{instance="banking-container-monitor:5010",job="container-resource-monitor"} 1021.2072167396545
+
+## container_analysis_errors_created
+container_analysis_errors_created{instance="banking-container-monitor:5010",job="container-resource-monitor"} 1751432963.2644668
+
+## container_analysis_errors_total
+container_analysis_errors_total{instance="banking-container-monitor:5010",job="container-resource-monitor"} 0
+
+## container_cpu_usage_cores
+container_cpu_usage_cores{container_name="resource-anomaly-generator",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.005139826422372227
+container_cpu_usage_cores{container_name="cache-load-generator",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.0015384615384615382
+container_cpu_usage_cores{container_name="load-generator",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.032916666666666664
+container_cpu_usage_cores{container_name="api-gateway",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.10198801198801198
+container_cpu_usage_cores{container_name="cache-proxy-service",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.03865055387713998
+container_cpu_usage_cores{container_name="transaction-service",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.038251417769376184
+container_cpu_usage_cores{container_name="ddos-ml-detection",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.0019090009891196836
+container_cpu_usage_cores{container_name="transaction-monitor",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.36769929364278503
+container_cpu_usage_cores{container_name="auto-baselining",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.09373253493013972
+container_cpu_usage_cores{container_name="fraud-detection",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.04565868263473054
+container_cpu_usage_cores{container_name="account-service",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.06586206896551725
+container_cpu_usage_cores{container_name="notification-service",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.02127255460588794
+container_cpu_usage_cores{container_name="auth-service",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.06356999999999999
+container_cpu_usage_cores{container_name="redis-exporter",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0
+container_cpu_usage_cores{container_name="banking-redis",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.05391615541922291
+container_cpu_usage_cores{container_name="mysql-db",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.03728830645161291
+container_cpu_usage_cores{container_name="prometheus",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.0358273381294964
+container_cpu_usage_cores{container_name="grafana",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.02419900497512438
+
+## container_cpu_usage_percent
+container_cpu_usage_percent{container_name="resource-anomaly-generator",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.05139826422372227
+container_cpu_usage_percent{container_name="cache-load-generator",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.015384615384615382
+container_cpu_usage_percent{container_name="load-generator",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.32916666666666666
+container_cpu_usage_percent{container_name="api-gateway",instance="banking-container-monitor:5010",job="container-resource-monitor"} 1.0198801198801197
+container_cpu_usage_percent{container_name="cache-proxy-service",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.3865055387713998
+container_cpu_usage_percent{container_name="transaction-service",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.38251417769376184
+container_cpu_usage_percent{container_name="ddos-ml-detection",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.019090009891196837
+container_cpu_usage_percent{container_name="transaction-monitor",instance="banking-container-monitor:5010",job="container-resource-monitor"} 3.67699293642785
+container_cpu_usage_percent{container_name="auto-baselining",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.9373253493013971
+container_cpu_usage_percent{container_name="fraud-detection",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.4565868263473054
+container_cpu_usage_percent{container_name="account-service",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.6586206896551724
+container_cpu_usage_percent{container_name="notification-service",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.2127255460588794
+container_cpu_usage_percent{container_name="auth-service",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.6356999999999999
+container_cpu_usage_percent{container_name="redis-exporter",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0
+container_cpu_usage_percent{container_name="banking-redis",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.5391615541922291
+container_cpu_usage_percent{container_name="mysql-db",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.37288306451612907
+container_cpu_usage_percent{container_name="prometheus",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.358273381294964
+container_cpu_usage_percent{container_name="grafana",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.2419900497512438
+
+## container_memory_usage_mb
+container_memory_usage_mb{container_name="resource-anomaly-generator",instance="banking-container-monitor:5010",job="container-resource-monitor"} 33.5234375
+container_memory_usage_mb{container_name="cache-load-generator",instance="banking-container-monitor:5010",job="container-resource-monitor"} 55.3125
+container_memory_usage_mb{container_name="load-generator",instance="banking-container-monitor:5010",job="container-resource-monitor"} 18.29296875
+container_memory_usage_mb{container_name="api-gateway",instance="banking-container-monitor:5010",job="container-resource-monitor"} 96.25
+container_memory_usage_mb{container_name="cache-proxy-service",instance="banking-container-monitor:5010",job="container-resource-monitor"} 42.17578125
+container_memory_usage_mb{container_name="transaction-service",instance="banking-container-monitor:5010",job="container-resource-monitor"} 46.64453125
+container_memory_usage_mb{container_name="ddos-ml-detection",instance="banking-container-monitor:5010",job="container-resource-monitor"} 34.61328125
+container_memory_usage_mb{container_name="transaction-monitor",instance="banking-container-monitor:5010",job="container-resource-monitor"} 56.7890625
+container_memory_usage_mb{container_name="auto-baselining",instance="banking-container-monitor:5010",job="container-resource-monitor"} 216.25
+container_memory_usage_mb{container_name="fraud-detection",instance="banking-container-monitor:5010",job="container-resource-monitor"} 47.3984375
+container_memory_usage_mb{container_name="account-service",instance="banking-container-monitor:5010",job="container-resource-monitor"} 50.1953125
+container_memory_usage_mb{container_name="notification-service",instance="banking-container-monitor:5010",job="container-resource-monitor"} 45.86328125
+container_memory_usage_mb{container_name="auth-service",instance="banking-container-monitor:5010",job="container-resource-monitor"} 46.7890625
+container_memory_usage_mb{container_name="redis-exporter",instance="banking-container-monitor:5010",job="container-resource-monitor"} 25.78125
+container_memory_usage_mb{container_name="banking-redis",instance="banking-container-monitor:5010",job="container-resource-monitor"} 22.140625
+container_memory_usage_mb{container_name="mysql-db",instance="banking-container-monitor:5010",job="container-resource-monitor"} 459.015625
+container_memory_usage_mb{container_name="prometheus",instance="banking-container-monitor:5010",job="container-resource-monitor"} 244.4453125
+container_memory_usage_mb{container_name="grafana",instance="banking-container-monitor:5010",job="container-resource-monitor"} 404.66015625
+
+## container_memory_usage_percent
+container_memory_usage_percent{container_name="resource-anomaly-generator",instance="banking-container-monitor:5010",job="container-resource-monitor"} 1.6368865966796875
+container_memory_usage_percent{container_name="cache-load-generator",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.7057571039237304
+container_memory_usage_percent{container_name="load-generator",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.23340822864935237
+container_memory_usage_percent{container_name="api-gateway",instance="banking-container-monitor:5010",job="container-resource-monitor"} 1.228097107392706
+container_memory_usage_percent{container_name="cache-proxy-service",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.5381397917418445
+container_memory_usage_percent{container_name="transaction-service",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.5951585860136486
+container_memory_usage_percent{container_name="ddos-ml-detection",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.44164644758956034
+container_memory_usage_percent{container_name="transaction-monitor",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.7245972300030503
+container_memory_usage_percent{container_name="auto-baselining",instance="banking-container-monitor:5010",job="container-resource-monitor"} 2.759231163362833
+container_memory_usage_percent{container_name="fraud-detection",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.6047780154668464
+container_memory_usage_percent{container_name="account-service",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.6404646034901085
+container_memory_usage_percent{container_name="notification-service",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.5851902653367598
+container_memory_usage_percent{container_name="auth-service",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.597002725338873
+container_memory_usage_percent{container_name="redis-exporter",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.328954582337332
+container_memory_usage_percent{container_name="banking-redis",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.28250220798302994
+container_memory_usage_percent{container_name="mysql-db",instance="banking-container-monitor:5010",job="container-resource-monitor"} 5.856787130499273
+container_memory_usage_percent{container_name="prometheus",instance="banking-container-monitor:5010",job="container-resource-monitor"} 3.1189878565917515
+container_memory_usage_percent{container_name="grafana",instance="banking-container-monitor:5010",job="container-resource-monitor"} 5.163241219404732
+
+## container_monitored_total
+container_monitored_total{instance="banking-container-monitor:5010",job="container-resource-monitor"} 18
+
+## container_network_rx_mb
+container_network_rx_mb{container_name="resource-anomaly-generator",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.3019266128540039
+container_network_rx_mb{container_name="cache-load-generator",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.30448150634765625
+container_network_rx_mb{container_name="load-generator",instance="banking-container-monitor:5010",job="container-resource-monitor"} 5.474343299865723
+container_network_rx_mb{container_name="api-gateway",instance="banking-container-monitor:5010",job="container-resource-monitor"} 9.597692489624023
+container_network_rx_mb{container_name="cache-proxy-service",instance="banking-container-monitor:5010",job="container-resource-monitor"} 10.108959197998047
+container_network_rx_mb{container_name="transaction-service",instance="banking-container-monitor:5010",job="container-resource-monitor"} 2.2535457611083984
+container_network_rx_mb{container_name="ddos-ml-detection",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.30741405487060547
+container_network_rx_mb{container_name="transaction-monitor",instance="banking-container-monitor:5010",job="container-resource-monitor"} 1.0342302322387695
+container_network_rx_mb{container_name="auto-baselining",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.6148519515991211
+container_network_rx_mb{container_name="fraud-detection",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.4929771423339844
+container_network_rx_mb{container_name="account-service",instance="banking-container-monitor:5010",job="container-resource-monitor"} 2.148564338684082
+container_network_rx_mb{container_name="notification-service",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.4597454071044922
+container_network_rx_mb{container_name="auth-service",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.4615182876586914
+container_network_rx_mb{container_name="redis-exporter",instance="banking-container-monitor:5010",job="container-resource-monitor"} 6.446198463439941
+container_network_rx_mb{container_name="banking-redis",instance="banking-container-monitor:5010",job="container-resource-monitor"} 1.4523181915283203
+container_network_rx_mb{container_name="mysql-db",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.01140594482421875
+container_network_rx_mb{container_name="prometheus",instance="banking-container-monitor:5010",job="container-resource-monitor"} 96.6694688796997
+container_network_rx_mb{container_name="grafana",instance="banking-container-monitor:5010",job="container-resource-monitor"} 2.293818473815918
+
+## container_network_tx_mb
+container_network_tx_mb{container_name="resource-anomaly-generator",instance="banking-container-monitor:5010",job="container-resource-monitor"} 1.1910648345947266
+container_network_tx_mb{container_name="cache-load-generator",instance="banking-container-monitor:5010",job="container-resource-monitor"} 1.023244857788086
+container_network_tx_mb{container_name="load-generator",instance="banking-container-monitor:5010",job="container-resource-monitor"} 3.669412612915039
+container_network_tx_mb{container_name="api-gateway",instance="banking-container-monitor:5010",job="container-resource-monitor"} 20.77098560333252
+container_network_tx_mb{container_name="cache-proxy-service",instance="banking-container-monitor:5010",job="container-resource-monitor"} 12.681405067443848
+container_network_tx_mb{container_name="transaction-service",instance="banking-container-monitor:5010",job="container-resource-monitor"} 3.1324539184570312
+container_network_tx_mb{container_name="ddos-ml-detection",instance="banking-container-monitor:5010",job="container-resource-monitor"} 1.2058744430541992
+container_network_tx_mb{container_name="transaction-monitor",instance="banking-container-monitor:5010",job="container-resource-monitor"} 3.7506885528564453
+container_network_tx_mb{container_name="auto-baselining",instance="banking-container-monitor:5010",job="container-resource-monitor"} 1.4504661560058594
+container_network_tx_mb{container_name="fraud-detection",instance="banking-container-monitor:5010",job="container-resource-monitor"} 1.4405317306518555
+container_network_tx_mb{container_name="account-service",instance="banking-container-monitor:5010",job="container-resource-monitor"} 3.163144111633301
+container_network_tx_mb{container_name="notification-service",instance="banking-container-monitor:5010",job="container-resource-monitor"} 1.3518476486206055
+container_network_tx_mb{container_name="auth-service",instance="banking-container-monitor:5010",job="container-resource-monitor"} 1.353775978088379
+container_network_tx_mb{container_name="redis-exporter",instance="banking-container-monitor:5010",job="container-resource-monitor"} 5.434842109680176
+container_network_tx_mb{container_name="banking-redis",instance="banking-container-monitor:5010",job="container-resource-monitor"} 9.871628761291504
+container_network_tx_mb{container_name="mysql-db",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.0001201629638671875
+container_network_tx_mb{container_name="prometheus",instance="banking-container-monitor:5010",job="container-resource-monitor"} 36.16888999938965
+container_network_tx_mb{container_name="grafana",instance="banking-container-monitor:5010",job="container-resource-monitor"} 4.581174850463867
+
+## process_cpu_seconds_total
+process_cpu_seconds_total{instance="banking-container-monitor:5010",job="container-resource-monitor"} 7.54
+
+## process_max_fds
+process_max_fds{instance="banking-container-monitor:5010",job="container-resource-monitor"} 1048576
+
+## process_open_fds
+process_open_fds{instance="banking-container-monitor:5010",job="container-resource-monitor"} 31
+
+## process_resident_memory_bytes
+process_resident_memory_bytes{instance="banking-container-monitor:5010",job="container-resource-monitor"} 52248576
+
+## process_start_time_seconds
+process_start_time_seconds{instance="banking-container-monitor:5010",job="container-resource-monitor"} 1751432962.45
+
+## process_virtual_memory_bytes
+process_virtual_memory_bytes{instance="banking-container-monitor:5010",job="container-resource-monitor"} 358621184
+
+## python_gc_collections_total
+python_gc_collections_total{generation="0",instance="banking-container-monitor:5010",job="container-resource-monitor"} 230
+python_gc_collections_total{generation="1",instance="banking-container-monitor:5010",job="container-resource-monitor"} 20
+python_gc_collections_total{generation="2",instance="banking-container-monitor:5010",job="container-resource-monitor"} 1
+
+## python_gc_objects_collected_total
+python_gc_objects_collected_total{generation="0",instance="banking-container-monitor:5010",job="container-resource-monitor"} 19289
+python_gc_objects_collected_total{generation="1",instance="banking-container-monitor:5010",job="container-resource-monitor"} 3122
+python_gc_objects_collected_total{generation="2",instance="banking-container-monitor:5010",job="container-resource-monitor"} 893
+
+## python_gc_objects_uncollectable_total
+python_gc_objects_uncollectable_total{generation="0",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0
+python_gc_objects_uncollectable_total{generation="1",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0
+python_gc_objects_uncollectable_total{generation="2",instance="banking-container-monitor:5010",job="container-resource-monitor"} 0
+
+## python_info
+python_info{implementation="CPython",instance="banking-container-monitor:5010",job="container-resource-monitor",major="3",minor="9",patchlevel="23",version="3.9.23"} 1
+
+## scrape_duration_seconds
+scrape_duration_seconds{instance="banking-container-monitor:5010",job="container-resource-monitor"} 0.017625917
+
+## scrape_samples_post_metric_relabeling
+scrape_samples_post_metric_relabeling{instance="banking-container-monitor:5010",job="container-resource-monitor"} 145
+
+## scrape_samples_scraped
+scrape_samples_scraped{instance="banking-container-monitor:5010",job="container-resource-monitor"} 145
+
+## scrape_series_added
+scrape_series_added{instance="banking-container-monitor:5010",job="container-resource-monitor"} 0
+
+## up
+up{instance="banking-container-monitor:5010",job="container-resource-monitor"} 1
+

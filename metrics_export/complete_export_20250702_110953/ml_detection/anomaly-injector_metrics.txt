@@ -1,0 +1,58 @@
+# Metrics for anomaly-injector
+# Job: anomaly-injector
+# Category: ml_detection
+# Exported at: 2025-07-02T11:09:53.943865
+# Total metrics: 21
+# Unique metric types: 15
+
+## process_cpu_seconds_total
+process_cpu_seconds_total{instance="anomaly-injector-service:5005",job="anomaly-injector"} 12.41
+
+## process_max_fds
+process_max_fds{instance="anomaly-injector-service:5005",job="anomaly-injector"} 1048576
+
+## process_open_fds
+process_open_fds{instance="anomaly-injector-service:5005",job="anomaly-injector"} 6
+
+## process_resident_memory_bytes
+process_resident_memory_bytes{instance="anomaly-injector-service:5005",job="anomaly-injector"} 59699200
+
+## process_start_time_seconds
+process_start_time_seconds{instance="anomaly-injector-service:5005",job="anomaly-injector"} 1751429114.18
+
+## process_virtual_memory_bytes
+process_virtual_memory_bytes{instance="anomaly-injector-service:5005",job="anomaly-injector"} 624185344
+
+## python_gc_collections_total
+python_gc_collections_total{generation="0",instance="anomaly-injector-service:5005",job="anomaly-injector"} 148
+python_gc_collections_total{generation="1",instance="anomaly-injector-service:5005",job="anomaly-injector"} 13
+python_gc_collections_total{generation="2",instance="anomaly-injector-service:5005",job="anomaly-injector"} 1
+
+## python_gc_objects_collected_total
+python_gc_objects_collected_total{generation="0",instance="anomaly-injector-service:5005",job="anomaly-injector"} 7903
+python_gc_objects_collected_total{generation="1",instance="anomaly-injector-service:5005",job="anomaly-injector"} 1450
+python_gc_objects_collected_total{generation="2",instance="anomaly-injector-service:5005",job="anomaly-injector"} 8
+
+## python_gc_objects_uncollectable_total
+python_gc_objects_uncollectable_total{generation="0",instance="anomaly-injector-service:5005",job="anomaly-injector"} 0
+python_gc_objects_uncollectable_total{generation="1",instance="anomaly-injector-service:5005",job="anomaly-injector"} 0
+python_gc_objects_uncollectable_total{generation="2",instance="anomaly-injector-service:5005",job="anomaly-injector"} 0
+
+## python_info
+python_info{implementation="CPython",instance="anomaly-injector-service:5005",job="anomaly-injector",major="3",minor="9",patchlevel="23",version="3.9.23"} 1
+
+## scrape_duration_seconds
+scrape_duration_seconds{instance="anomaly-injector-service:5005",job="anomaly-injector"} 0.022711709
+
+## scrape_samples_post_metric_relabeling
+scrape_samples_post_metric_relabeling{instance="anomaly-injector-service:5005",job="anomaly-injector"} 16
+
+## scrape_samples_scraped
+scrape_samples_scraped{instance="anomaly-injector-service:5005",job="anomaly-injector"} 16
+
+## scrape_series_added
+scrape_series_added{instance="anomaly-injector-service:5005",job="anomaly-injector"} 0
+
+## up
+up{instance="anomaly-injector-service:5005",job="anomaly-injector"} 1
+

@@ -1,0 +1,186 @@
+{
+  "export_timestamp": "2025-07-02T11:09:54.036771",
+  "total_services": 29,
+  "total_metrics": 11936,
+  "services": {
+    "transaction-service": {
+      "category": "banking",
+      "metrics_count": 311,
+      "status": "success"
+    },
+    "api-gateway": {
+      "category": "banking",
+      "metrics_count": 311,
+      "status": "success"
+    },
+    "notification-service": {
+      "category": "banking",
+      "metrics_count": 311,
+      "status": "success"
+    },
+    "account-service": {
+      "category": "banking",
+      "metrics_count": 311,
+      "status": "success"
+    },
+    "auth-service": {
+      "category": "banking",
+      "metrics_count": 311,
+      "status": "success"
+    },
+    "fraud-detection": {
+      "category": "banking",
+      "metrics_count": 311,
+      "status": "success"
+    },
+    "anomaly-injector": {
+      "category": "ml_detection",
+      "metrics_count": 21,
+      "status": "success"
+    },
+    "ddos-ml-detection": {
+      "category": "ml_detection",
+      "metrics_count": 28,
+      "status": "success"
+    },
+    "auto-baselining": {
+      "category": "ml_detection",
+      "metrics_count": 28,
+      "status": "success"
+    },
+    "container-resource-monitor": {
+      "category": "monitoring",
+      "metrics_count": 150,
+      "status": "success"
+    },
+    "performance-aggregator": {
+      "category": "monitoring",
+      "metrics_count": 44,
+      "status": "success"
+    },
+    "transaction-monitor": {
+      "category": "monitoring",
+      "metrics_count": 52,
+      "status": "success"
+    },
+    "cache-load-generator": {
+      "category": "cache",
+      "metrics_count": 22,
+      "status": "success"
+    },
+    "cache-pattern-analyzer": {
+      "category": "cache",
+      "metrics_count": 32,
+      "status": "success"
+    },
+    "windows-exporter": {
+      "category": "monitoring",
+      "metrics_count": 215,
+      "status": "success"
+    },
+    "cache-proxy": {
+      "category": "cache",
+      "metrics_count": 134,
+      "status": "success"
+    },
+    "banking-db-demo": {
+      "category": "database",
+      "metrics_count": 121,
+      "status": "success"
+    },
+    "redis-exporter": {
+      "category": "cache",
+      "metrics_count": 675,
+      "status": "success"
+    },
+    "cadvisor": {
+      "category": "monitoring",
+      "metrics_count": 1384,
+      "status": "success"
+    },
+    "banking-postgresql": {
+      "category": "database",
+      "metrics_count": 629,
+      "status": "success"
+    },
+    "rabbitmq-queue-monitor": {
+      "category": "messaging",
+      "metrics_count": 50,
+      "status": "success"
+    },
+    "banking-message-consumer": {
+      "category": "messaging",
+      "metrics_count": 152,
+      "status": "success"
+    },
+    "banking-message-producer": {
+      "category": "messaging",
+      "metrics_count": 134,
+      "status": "success"
+    },
+    "node-exporter": {
+      "category": "monitoring",
+      "metrics_count": 2478,
+      "status": "success"
+    },
+    "trace-generator": {
+      "category": "testing",
+      "metrics_count": 34,
+      "status": "success"
+    },
+    "banking-kafka": {
+      "category": "messaging",
+      "metrics_count": 432,
+      "status": "success"
+    },
+    "resource-anomaly-generator": {
+      "category": "testing",
+      "metrics_count": 30,
+      "status": "success"
+    },
+    "banking-rabbitmq": {
+      "category": "messaging",
+      "metrics_count": 1883,
+      "status": "success"
+    },
+    "prometheus": {
+      "category": "infrastructure",
+      "metrics_count": 1342,
+      "status": "success"
+    }
+  },
+  "category_totals": {
+    "banking": {
+      "services": 6,
+      "metrics": 1866
+    },
+    "ml_detection": {
+      "services": 3,
+      "metrics": 77
+    },
+    "monitoring": {
+      "services": 6,
+      "metrics": 4323
+    },
+    "cache": {
+      "services": 4,
+      "metrics": 863
+    },
+    "database": {
+      "services": 2,
+      "metrics": 750
+    },
+    "messaging": {
+      "services": 5,
+      "metrics": 2651
+    },
+    "testing": {
+      "services": 2,
+      "metrics": 64
+    },
+    "infrastructure": {
+      "services": 1,
+      "metrics": 1342
+    }
+  }
+}

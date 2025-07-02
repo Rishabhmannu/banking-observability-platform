@@ -1,0 +1,406 @@
+# Metrics for account-service
+# Job: banking-services
+# Category: banking
+# Exported at: 2025-07-02T11:09:53.925590
+# Total metrics: 311
+# Unique metric types: 44
+
+## http_request_duration_seconds_bucket
+http_request_duration_seconds_bucket{code="200",instance="api-gateway:8080",job="banking-services",le="0.1",method="GET",route="/metrics"} 561
+http_request_duration_seconds_bucket{code="200",instance="api-gateway:8080",job="banking-services",le="0.3",method="GET",route="/metrics"} 562
+http_request_duration_seconds_bucket{code="200",instance="api-gateway:8080",job="banking-services",le="0.5",method="GET",route="/metrics"} 562
+http_request_duration_seconds_bucket{code="200",instance="api-gateway:8080",job="banking-services",le="0.7",method="GET",route="/metrics"} 562
+http_request_duration_seconds_bucket{code="200",instance="api-gateway:8080",job="banking-services",le="1.0",method="GET",route="/metrics"} 562
+http_request_duration_seconds_bucket{code="200",instance="api-gateway:8080",job="banking-services",le="3.0",method="GET",route="/metrics"} 562
+http_request_duration_seconds_bucket{code="200",instance="api-gateway:8080",job="banking-services",le="5.0",method="GET",route="/metrics"} 562
+http_request_duration_seconds_bucket{code="200",instance="api-gateway:8080",job="banking-services",le="7.0",method="GET",route="/metrics"} 562
+http_request_duration_seconds_bucket{code="200",instance="api-gateway:8080",job="banking-services",le="10.0",method="GET",route="/metrics"} 562
+http_request_duration_seconds_bucket{code="200",instance="api-gateway:8080",job="banking-services",le="+Inf",method="GET",route="/metrics"} 562
+http_request_duration_seconds_bucket{code="200",instance="api-gateway:8080",job="banking-services",le="0.1",method="GET",route="/health"} 2
+http_request_duration_seconds_bucket{code="200",instance="api-gateway:8080",job="banking-services",le="0.3",method="GET",route="/health"} 2
+http_request_duration_seconds_bucket{code="200",instance="api-gateway:8080",job="banking-services",le="0.5",method="GET",route="/health"} 2
+http_request_duration_seconds_bucket{code="200",instance="api-gateway:8080",job="banking-services",le="0.7",method="GET",route="/health"} 2
+http_request_duration_seconds_bucket{code="200",instance="api-gateway:8080",job="banking-services",le="1.0",method="GET",route="/health"} 2
+http_request_duration_seconds_bucket{code="200",instance="api-gateway:8080",job="banking-services",le="3.0",method="GET",route="/health"} 2
+http_request_duration_seconds_bucket{code="200",instance="api-gateway:8080",job="banking-services",le="5.0",method="GET",route="/health"} 2
+http_request_duration_seconds_bucket{code="200",instance="api-gateway:8080",job="banking-services",le="7.0",method="GET",route="/health"} 2
+http_request_duration_seconds_bucket{code="200",instance="api-gateway:8080",job="banking-services",le="10.0",method="GET",route="/health"} 2
+http_request_duration_seconds_bucket{code="200",instance="api-gateway:8080",job="banking-services",le="+Inf",method="GET",route="/health"} 2
+http_request_duration_seconds_bucket{code="200",instance="api-gateway:8080",job="banking-services",le="0.1",method="POST",route="/auth/login"} 3
+http_request_duration_seconds_bucket{code="200",instance="api-gateway:8080",job="banking-services",le="0.3",method="POST",route="/auth/login"} 3
+http_request_duration_seconds_bucket{code="200",instance="api-gateway:8080",job="banking-services",le="0.5",method="POST",route="/auth/login"} 3
+http_request_duration_seconds_bucket{code="200",instance="api-gateway:8080",job="banking-services",le="0.7",method="POST",route="/auth/login"} 3
+http_request_duration_seconds_bucket{code="200",instance="api-gateway:8080",job="banking-services",le="1.0",method="POST",route="/auth/login"} 3
+http_request_duration_seconds_bucket{code="200",instance="api-gateway:8080",job="banking-services",le="3.0",method="POST",route="/auth/login"} 3
+http_request_duration_seconds_bucket{code="200",instance="api-gateway:8080",job="banking-services",le="5.0",method="POST",route="/auth/login"} 3
+http_request_duration_seconds_bucket{code="200",instance="api-gateway:8080",job="banking-services",le="7.0",method="POST",route="/auth/login"} 3
+http_request_duration_seconds_bucket{code="200",instance="api-gateway:8080",job="banking-services",le="10.0",method="POST",route="/auth/login"} 3
+http_request_duration_seconds_bucket{code="200",instance="api-gateway:8080",job="banking-services",le="+Inf",method="POST",route="/auth/login"} 3
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="0.1",method="GET",route="/accounts/accounts"} 1077
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="0.3",method="GET",route="/accounts/accounts"} 1080
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="0.5",method="GET",route="/accounts/accounts"} 1081
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="0.7",method="GET",route="/accounts/accounts"} 1081
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="1.0",method="GET",route="/accounts/accounts"} 1081
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="3.0",method="GET",route="/accounts/accounts"} 1081
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="5.0",method="GET",route="/accounts/accounts"} 1081
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="7.0",method="GET",route="/accounts/accounts"} 1081
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="10.0",method="GET",route="/accounts/accounts"} 1081
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="+Inf",method="GET",route="/accounts/accounts"} 1081
+http_request_duration_seconds_bucket{code="200",instance="api-gateway:8080",job="banking-services",le="0.1",method="GET",route="/fraud/alerts"} 1142
+http_request_duration_seconds_bucket{code="200",instance="api-gateway:8080",job="banking-services",le="0.3",method="GET",route="/fraud/alerts"} 1142
+http_request_duration_seconds_bucket{code="200",instance="api-gateway:8080",job="banking-services",le="0.5",method="GET",route="/fraud/alerts"} 1142
+http_request_duration_seconds_bucket{code="200",instance="api-gateway:8080",job="banking-services",le="0.7",method="GET",route="/fraud/alerts"} 1142
+http_request_duration_seconds_bucket{code="200",instance="api-gateway:8080",job="banking-services",le="1.0",method="GET",route="/fraud/alerts"} 1142
+http_request_duration_seconds_bucket{code="200",instance="api-gateway:8080",job="banking-services",le="3.0",method="GET",route="/fraud/alerts"} 1142
+http_request_duration_seconds_bucket{code="200",instance="api-gateway:8080",job="banking-services",le="5.0",method="GET",route="/fraud/alerts"} 1142
+http_request_duration_seconds_bucket{code="200",instance="api-gateway:8080",job="banking-services",le="7.0",method="GET",route="/fraud/alerts"} 1142
+http_request_duration_seconds_bucket{code="200",instance="api-gateway:8080",job="banking-services",le="10.0",method="GET",route="/fraud/alerts"} 1142
+http_request_duration_seconds_bucket{code="200",instance="api-gateway:8080",job="banking-services",le="+Inf",method="GET",route="/fraud/alerts"} 1142
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="0.1",method="GET",route="/accounts/accounts/1"} 382
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="0.3",method="GET",route="/accounts/accounts/1"} 383
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="0.5",method="GET",route="/accounts/accounts/1"} 383
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="0.7",method="GET",route="/accounts/accounts/1"} 383
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="1.0",method="GET",route="/accounts/accounts/1"} 383
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="3.0",method="GET",route="/accounts/accounts/1"} 383
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="5.0",method="GET",route="/accounts/accounts/1"} 383
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="7.0",method="GET",route="/accounts/accounts/1"} 383
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="10.0",method="GET",route="/accounts/accounts/1"} 383
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="+Inf",method="GET",route="/accounts/accounts/1"} 383
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="0.1",method="GET",route="/transactions/transactions"} 1081
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="0.3",method="GET",route="/transactions/transactions"} 1085
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="0.5",method="GET",route="/transactions/transactions"} 1085
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="0.7",method="GET",route="/transactions/transactions"} 1085
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="1.0",method="GET",route="/transactions/transactions"} 1085
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="3.0",method="GET",route="/transactions/transactions"} 1085
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="5.0",method="GET",route="/transactions/transactions"} 1085
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="7.0",method="GET",route="/transactions/transactions"} 1085
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="10.0",method="GET",route="/transactions/transactions"} 1085
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="+Inf",method="GET",route="/transactions/transactions"} 1085
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="0.1",method="GET",route="/accounts/accounts/3"} 388
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="0.3",method="GET",route="/accounts/accounts/3"} 388
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="0.5",method="GET",route="/accounts/accounts/3"} 388
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="0.7",method="GET",route="/accounts/accounts/3"} 388
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="1.0",method="GET",route="/accounts/accounts/3"} 388
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="3.0",method="GET",route="/accounts/accounts/3"} 388
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="5.0",method="GET",route="/accounts/accounts/3"} 388
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="7.0",method="GET",route="/accounts/accounts/3"} 388
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="10.0",method="GET",route="/accounts/accounts/3"} 388
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="+Inf",method="GET",route="/accounts/accounts/3"} 388
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="0.1",method="POST",route="/transactions/transactions"} 1026
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="0.3",method="POST",route="/transactions/transactions"} 1030
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="0.5",method="POST",route="/transactions/transactions"} 1030
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="0.7",method="POST",route="/transactions/transactions"} 1030
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="1.0",method="POST",route="/transactions/transactions"} 1030
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="3.0",method="POST",route="/transactions/transactions"} 1030
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="5.0",method="POST",route="/transactions/transactions"} 1030
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="7.0",method="POST",route="/transactions/transactions"} 1030
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="10.0",method="POST",route="/transactions/transactions"} 1030
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="+Inf",method="POST",route="/transactions/transactions"} 1030
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="0.1",method="GET",route="/accounts/accounts/2"} 380
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="0.3",method="GET",route="/accounts/accounts/2"} 382
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="0.5",method="GET",route="/accounts/accounts/2"} 382
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="0.7",method="GET",route="/accounts/accounts/2"} 382
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="1.0",method="GET",route="/accounts/accounts/2"} 382
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="3.0",method="GET",route="/accounts/accounts/2"} 382
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="5.0",method="GET",route="/accounts/accounts/2"} 382
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="7.0",method="GET",route="/accounts/accounts/2"} 382
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="10.0",method="GET",route="/accounts/accounts/2"} 382
+http_request_duration_seconds_bucket{code="404",instance="api-gateway:8080",job="banking-services",le="+Inf",method="GET",route="/accounts/accounts/2"} 382
+
+## http_request_duration_seconds_count
+http_request_duration_seconds_count{code="200",instance="api-gateway:8080",job="banking-services",method="GET",route="/metrics"} 562
+http_request_duration_seconds_count{code="200",instance="api-gateway:8080",job="banking-services",method="GET",route="/health"} 2
+http_request_duration_seconds_count{code="200",instance="api-gateway:8080",job="banking-services",method="POST",route="/auth/login"} 3
+http_request_duration_seconds_count{code="404",instance="api-gateway:8080",job="banking-services",method="GET",route="/accounts/accounts"} 1081
+http_request_duration_seconds_count{code="200",instance="api-gateway:8080",job="banking-services",method="GET",route="/fraud/alerts"} 1142
+http_request_duration_seconds_count{code="404",instance="api-gateway:8080",job="banking-services",method="GET",route="/accounts/accounts/1"} 383
+http_request_duration_seconds_count{code="404",instance="api-gateway:8080",job="banking-services",method="GET",route="/transactions/transactions"} 1085
+http_request_duration_seconds_count{code="404",instance="api-gateway:8080",job="banking-services",method="GET",route="/accounts/accounts/3"} 388
+http_request_duration_seconds_count{code="404",instance="api-gateway:8080",job="banking-services",method="POST",route="/transactions/transactions"} 1030
+http_request_duration_seconds_count{code="404",instance="api-gateway:8080",job="banking-services",method="GET",route="/accounts/accounts/2"} 382
+
+## http_request_duration_seconds_sum
+http_request_duration_seconds_sum{code="200",instance="api-gateway:8080",job="banking-services",method="GET",route="/metrics"} 4.384815175000003
+http_request_duration_seconds_sum{code="200",instance="api-gateway:8080",job="banking-services",method="GET",route="/health"} 0.007864791999999999
+http_request_duration_seconds_sum{code="200",instance="api-gateway:8080",job="banking-services",method="POST",route="/auth/login"} 0.058383417
+http_request_duration_seconds_sum{code="404",instance="api-gateway:8080",job="banking-services",method="GET",route="/accounts/accounts"} 13.079620844000003
+http_request_duration_seconds_sum{code="200",instance="api-gateway:8080",job="banking-services",method="GET",route="/fraud/alerts"} 8.006556954999995
+http_request_duration_seconds_sum{code="404",instance="api-gateway:8080",job="banking-services",method="GET",route="/accounts/accounts/1"} 4.582653119
+http_request_duration_seconds_sum{code="404",instance="api-gateway:8080",job="banking-services",method="GET",route="/transactions/transactions"} 12.79649180499998
+http_request_duration_seconds_sum{code="404",instance="api-gateway:8080",job="banking-services",method="GET",route="/accounts/accounts/3"} 4.714458873000001
+http_request_duration_seconds_sum{code="404",instance="api-gateway:8080",job="banking-services",method="POST",route="/transactions/transactions"} 13.193028023999993
+http_request_duration_seconds_sum{code="404",instance="api-gateway:8080",job="banking-services",method="GET",route="/accounts/accounts/2"} 4.275949876999999
+
+## nodejs_active_handles
+nodejs_active_handles{instance="api-gateway:8080",job="banking-services",type="Socket"} 3
+nodejs_active_handles{instance="api-gateway:8080",job="banking-services",type="Server"} 1
+
+## nodejs_active_handles_total
+nodejs_active_handles_total{instance="api-gateway:8080",job="banking-services"} 4
+
+## nodejs_active_requests_total
+nodejs_active_requests_total{instance="api-gateway:8080",job="banking-services"} 0
+
+## nodejs_active_resources
+nodejs_active_resources{instance="api-gateway:8080",job="banking-services",type="PipeWrap"} 2
+nodejs_active_resources{instance="api-gateway:8080",job="banking-services",type="TCPServerWrap"} 1
+nodejs_active_resources{instance="api-gateway:8080",job="banking-services",type="TCPSocketWrap"} 1
+nodejs_active_resources{instance="api-gateway:8080",job="banking-services",type="Immediate"} 1
+
+## nodejs_active_resources_total
+nodejs_active_resources_total{instance="api-gateway:8080",job="banking-services"} 5
+
+## nodejs_eventloop_lag_max_seconds
+nodejs_eventloop_lag_max_seconds{instance="api-gateway:8080",job="banking-services"} 0.045350911
+
+## nodejs_eventloop_lag_mean_seconds
+nodejs_eventloop_lag_mean_seconds{instance="api-gateway:8080",job="banking-services"} 0.011785442077922079
+
+## nodejs_eventloop_lag_min_seconds
+nodejs_eventloop_lag_min_seconds{instance="api-gateway:8080",job="banking-services"} 0.005750784
+
+## nodejs_eventloop_lag_p50_seconds
+nodejs_eventloop_lag_p50_seconds{instance="api-gateway:8080",job="banking-services"} 0.011288575
+
+## nodejs_eventloop_lag_p90_seconds
+nodejs_eventloop_lag_p90_seconds{instance="api-gateway:8080",job="banking-services"} 0.013164543
+
+## nodejs_eventloop_lag_p99_seconds
+nodejs_eventloop_lag_p99_seconds{instance="api-gateway:8080",job="banking-services"} 0.017317887
+
+## nodejs_eventloop_lag_seconds
+nodejs_eventloop_lag_seconds{instance="api-gateway:8080",job="banking-services"} 0.013699333
+
+## nodejs_eventloop_lag_stddev_seconds
+nodejs_eventloop_lag_stddev_seconds{instance="api-gateway:8080",job="banking-services"} 0.0023233314353506254
+
+## nodejs_external_memory_bytes
+nodejs_external_memory_bytes{instance="api-gateway:8080",job="banking-services"} 1363150
+
+## nodejs_gc_duration_seconds_bucket
+nodejs_gc_duration_seconds_bucket{instance="api-gateway:8080",job="banking-services",kind="incremental",le="0.001"} 20
+nodejs_gc_duration_seconds_bucket{instance="api-gateway:8080",job="banking-services",kind="incremental",le="0.01"} 28
+nodejs_gc_duration_seconds_bucket{instance="api-gateway:8080",job="banking-services",kind="incremental",le="0.1"} 28
+nodejs_gc_duration_seconds_bucket{instance="api-gateway:8080",job="banking-services",kind="incremental",le="1.0"} 28
+nodejs_gc_duration_seconds_bucket{instance="api-gateway:8080",job="banking-services",kind="incremental",le="2.0"} 28
+nodejs_gc_duration_seconds_bucket{instance="api-gateway:8080",job="banking-services",kind="incremental",le="5.0"} 28
+nodejs_gc_duration_seconds_bucket{instance="api-gateway:8080",job="banking-services",kind="incremental",le="+Inf"} 28
+nodejs_gc_duration_seconds_bucket{instance="api-gateway:8080",job="banking-services",kind="major",le="0.001"} 0
+nodejs_gc_duration_seconds_bucket{instance="api-gateway:8080",job="banking-services",kind="major",le="0.01"} 12
+nodejs_gc_duration_seconds_bucket{instance="api-gateway:8080",job="banking-services",kind="major",le="0.1"} 14
+nodejs_gc_duration_seconds_bucket{instance="api-gateway:8080",job="banking-services",kind="major",le="1.0"} 14
+nodejs_gc_duration_seconds_bucket{instance="api-gateway:8080",job="banking-services",kind="major",le="2.0"} 14
+nodejs_gc_duration_seconds_bucket{instance="api-gateway:8080",job="banking-services",kind="major",le="5.0"} 14
+nodejs_gc_duration_seconds_bucket{instance="api-gateway:8080",job="banking-services",kind="major",le="+Inf"} 14
+nodejs_gc_duration_seconds_bucket{instance="api-gateway:8080",job="banking-services",kind="minor",le="0.001"} 94
+nodejs_gc_duration_seconds_bucket{instance="api-gateway:8080",job="banking-services",kind="minor",le="0.01"} 857
+nodejs_gc_duration_seconds_bucket{instance="api-gateway:8080",job="banking-services",kind="minor",le="0.1"} 877
+nodejs_gc_duration_seconds_bucket{instance="api-gateway:8080",job="banking-services",kind="minor",le="1.0"} 878
+nodejs_gc_duration_seconds_bucket{instance="api-gateway:8080",job="banking-services",kind="minor",le="2.0"} 878
+nodejs_gc_duration_seconds_bucket{instance="api-gateway:8080",job="banking-services",kind="minor",le="5.0"} 878
+nodejs_gc_duration_seconds_bucket{instance="api-gateway:8080",job="banking-services",kind="minor",le="+Inf"} 878
+
+## nodejs_gc_duration_seconds_count
+nodejs_gc_duration_seconds_count{instance="api-gateway:8080",job="banking-services",kind="incremental"} 28
+nodejs_gc_duration_seconds_count{instance="api-gateway:8080",job="banking-services",kind="major"} 14
+nodejs_gc_duration_seconds_count{instance="api-gateway:8080",job="banking-services",kind="minor"} 878
+
+## nodejs_gc_duration_seconds_sum
+nodejs_gc_duration_seconds_sum{instance="api-gateway:8080",job="banking-services",kind="incremental"} 0.018784627998946236
+nodejs_gc_duration_seconds_sum{instance="api-gateway:8080",job="banking-services",kind="major"} 0.06996683599974494
+nodejs_gc_duration_seconds_sum{instance="api-gateway:8080",job="banking-services",kind="minor"} 2.503103909004771
+
+## nodejs_heap_size_total_bytes
+nodejs_heap_size_total_bytes{instance="api-gateway:8080",job="banking-services"} 21282816
+
+## nodejs_heap_size_used_bytes
+nodejs_heap_size_used_bytes{instance="api-gateway:8080",job="banking-services"} 17450776
+
+## nodejs_heap_space_size_available_bytes
+nodejs_heap_space_size_available_bytes{instance="api-gateway:8080",job="banking-services",space="read_only"} 0
+nodejs_heap_space_size_available_bytes{instance="api-gateway:8080",job="banking-services",space="old"} 2128000
+nodejs_heap_space_size_available_bytes{instance="api-gateway:8080",job="banking-services",space="code"} 228960
+nodejs_heap_space_size_available_bytes{instance="api-gateway:8080",job="banking-services",space="map"} 187272
+nodejs_heap_space_size_available_bytes{instance="api-gateway:8080",job="banking-services",space="large_object"} 0
+nodejs_heap_space_size_available_bytes{instance="api-gateway:8080",job="banking-services",space="code_large_object"} 0
+nodejs_heap_space_size_available_bytes{instance="api-gateway:8080",job="banking-services",space="new_large_object"} 1030976
+nodejs_heap_space_size_available_bytes{instance="api-gateway:8080",job="banking-services",space="new"} 783144
+
+## nodejs_heap_space_size_total_bytes
+nodejs_heap_space_size_total_bytes{instance="api-gateway:8080",job="banking-services",space="read_only"} 0
+nodejs_heap_space_size_total_bytes{instance="api-gateway:8080",job="banking-services",space="old"} 16666624
+nodejs_heap_space_size_total_bytes{instance="api-gateway:8080",job="banking-services",space="code"} 2240512
+nodejs_heap_space_size_total_bytes{instance="api-gateway:8080",job="banking-services",space="map"} 1056768
+nodejs_heap_space_size_total_bytes{instance="api-gateway:8080",job="banking-services",space="large_object"} 270336
+nodejs_heap_space_size_total_bytes{instance="api-gateway:8080",job="banking-services",space="code_large_object"} 0
+nodejs_heap_space_size_total_bytes{instance="api-gateway:8080",job="banking-services",space="new_large_object"} 0
+nodejs_heap_space_size_total_bytes{instance="api-gateway:8080",job="banking-services",space="new"} 1048576
+
+## nodejs_heap_space_size_used_bytes
+nodejs_heap_space_size_used_bytes{instance="api-gateway:8080",job="banking-services",space="read_only"} 0
+nodejs_heap_space_size_used_bytes{instance="api-gateway:8080",job="banking-services",space="old"} 14233480
+nodejs_heap_space_size_used_bytes{instance="api-gateway:8080",job="banking-services",space="code"} 1864096
+nodejs_heap_space_size_used_bytes{instance="api-gateway:8080",job="banking-services",space="map"} 847496
+nodejs_heap_space_size_used_bytes{instance="api-gateway:8080",job="banking-services",space="large_object"} 262160
+nodejs_heap_space_size_used_bytes{instance="api-gateway:8080",job="banking-services",space="code_large_object"} 0
+nodejs_heap_space_size_used_bytes{instance="api-gateway:8080",job="banking-services",space="new_large_object"} 0
+nodejs_heap_space_size_used_bytes{instance="api-gateway:8080",job="banking-services",space="new"} 247832
+
+## nodejs_version_info
+nodejs_version_info{instance="api-gateway:8080",job="banking-services",major="18",minor="20",patch="8",version="v18.20.8"} 1
+
+## process_cpu_seconds_total
+process_cpu_seconds_total{instance="fraud-detection:8085",job="banking-services"} 38.010000000000005
+process_cpu_seconds_total{instance="transaction-service:8082",job="banking-services"} 42.99
+process_cpu_seconds_total{instance="auth-service:8083",job="banking-services"} 38.13
+process_cpu_seconds_total{instance="notification-service:8084",job="banking-services"} 38.22
+process_cpu_seconds_total{instance="account-service:8081",job="banking-services"} 41.95
+process_cpu_seconds_total{instance="api-gateway:8080",job="banking-services"} 63.203287000000024
+
+## process_cpu_system_seconds_total
+process_cpu_system_seconds_total{instance="api-gateway:8080",job="banking-services"} 15.055408
+
+## process_cpu_user_seconds_total
+process_cpu_user_seconds_total{instance="api-gateway:8080",job="banking-services"} 48.147878999999996
+
+## process_heap_bytes
+process_heap_bytes{instance="api-gateway:8080",job="banking-services"} 101736448
+
+## process_max_fds
+process_max_fds{instance="fraud-detection:8085",job="banking-services"} 1048576
+process_max_fds{instance="transaction-service:8082",job="banking-services"} 1048576
+process_max_fds{instance="auth-service:8083",job="banking-services"} 1048576
+process_max_fds{instance="notification-service:8084",job="banking-services"} 1048576
+process_max_fds{instance="account-service:8081",job="banking-services"} 1048576
+process_max_fds{instance="api-gateway:8080",job="banking-services"} 1048576
+
+## process_open_fds
+process_open_fds{instance="fraud-detection:8085",job="banking-services"} 7
+process_open_fds{instance="transaction-service:8082",job="banking-services"} 7
+process_open_fds{instance="auth-service:8083",job="banking-services"} 7
+process_open_fds{instance="notification-service:8084",job="banking-services"} 7
+process_open_fds{instance="account-service:8081",job="banking-services"} 7
+process_open_fds{instance="api-gateway:8080",job="banking-services"} 20
+
+## process_resident_memory_bytes
+process_resident_memory_bytes{instance="fraud-detection:8085",job="banking-services"} 29376512
+process_resident_memory_bytes{instance="transaction-service:8082",job="banking-services"} 31543296
+process_resident_memory_bytes{instance="auth-service:8083",job="banking-services"} 29016064
+process_resident_memory_bytes{instance="notification-service:8084",job="banking-services"} 28762112
+process_resident_memory_bytes{instance="account-service:8081",job="banking-services"} 31019008
+process_resident_memory_bytes{instance="api-gateway:8080",job="banking-services"} 87236608
+
+## process_start_time_seconds
+process_start_time_seconds{instance="fraud-detection:8085",job="banking-services"} 1751429115.72
+process_start_time_seconds{instance="transaction-service:8082",job="banking-services"} 1751429116.07
+process_start_time_seconds{instance="auth-service:8083",job="banking-services"} 1751429115.7
+process_start_time_seconds{instance="notification-service:8084",job="banking-services"} 1751429115.79
+process_start_time_seconds{instance="account-service:8081",job="banking-services"} 1751429116
+process_start_time_seconds{instance="api-gateway:8080",job="banking-services"} 1751429163
+
+## process_virtual_memory_bytes
+process_virtual_memory_bytes{instance="fraud-detection:8085",job="banking-services"} 339312640
+process_virtual_memory_bytes{instance="transaction-service:8082",job="banking-services"} 266579968
+process_virtual_memory_bytes{instance="auth-service:8083",job="banking-services"} 188207104
+process_virtual_memory_bytes{instance="notification-service:8084",job="banking-services"} 188182528
+process_virtual_memory_bytes{instance="account-service:8081",job="banking-services"} 265854976
+process_virtual_memory_bytes{instance="api-gateway:8080",job="banking-services"} 328560640
+
+## python_gc_collections_total
+python_gc_collections_total{generation="0",instance="fraud-detection:8085",job="banking-services"} 95
+python_gc_collections_total{generation="1",instance="fraud-detection:8085",job="banking-services"} 8
+python_gc_collections_total{generation="2",instance="fraud-detection:8085",job="banking-services"} 0
+python_gc_collections_total{generation="0",instance="transaction-service:8082",job="banking-services"} 315
+python_gc_collections_total{generation="1",instance="transaction-service:8082",job="banking-services"} 28
+python_gc_collections_total{generation="2",instance="transaction-service:8082",job="banking-services"} 1
+python_gc_collections_total{generation="0",instance="auth-service:8083",job="banking-services"} 93
+python_gc_collections_total{generation="1",instance="auth-service:8083",job="banking-services"} 8
+python_gc_collections_total{generation="2",instance="auth-service:8083",job="banking-services"} 0
+python_gc_collections_total{generation="0",instance="notification-service:8084",job="banking-services"} 92
+python_gc_collections_total{generation="1",instance="notification-service:8084",job="banking-services"} 8
+python_gc_collections_total{generation="2",instance="notification-service:8084",job="banking-services"} 0
+python_gc_collections_total{generation="0",instance="account-service:8081",job="banking-services"} 323
+python_gc_collections_total{generation="1",instance="account-service:8081",job="banking-services"} 29
+python_gc_collections_total{generation="2",instance="account-service:8081",job="banking-services"} 1
+
+## python_gc_objects_collected_total
+python_gc_objects_collected_total{generation="0",instance="fraud-detection:8085",job="banking-services"} 14434
+python_gc_objects_collected_total{generation="1",instance="fraud-detection:8085",job="banking-services"} 1090
+python_gc_objects_collected_total{generation="2",instance="fraud-detection:8085",job="banking-services"} 0
+python_gc_objects_collected_total{generation="0",instance="transaction-service:8082",job="banking-services"} 205527
+python_gc_objects_collected_total{generation="1",instance="transaction-service:8082",job="banking-services"} 32014
+python_gc_objects_collected_total{generation="2",instance="transaction-service:8082",job="banking-services"} 981
+python_gc_objects_collected_total{generation="0",instance="auth-service:8083",job="banking-services"} 12211
+python_gc_objects_collected_total{generation="1",instance="auth-service:8083",job="banking-services"} 1142
+python_gc_objects_collected_total{generation="2",instance="auth-service:8083",job="banking-services"} 0
+python_gc_objects_collected_total{generation="0",instance="notification-service:8084",job="banking-services"} 12057
+python_gc_objects_collected_total{generation="1",instance="notification-service:8084",job="banking-services"} 1025
+python_gc_objects_collected_total{generation="2",instance="notification-service:8084",job="banking-services"} 0
+python_gc_objects_collected_total{generation="0",instance="account-service:8081",job="banking-services"} 214500
+python_gc_objects_collected_total{generation="1",instance="account-service:8081",job="banking-services"} 34415
+python_gc_objects_collected_total{generation="2",instance="account-service:8081",job="banking-services"} 1247
+
+## python_gc_objects_uncollectable_total
+python_gc_objects_uncollectable_total{generation="0",instance="fraud-detection:8085",job="banking-services"} 0
+python_gc_objects_uncollectable_total{generation="1",instance="fraud-detection:8085",job="banking-services"} 0
+python_gc_objects_uncollectable_total{generation="2",instance="fraud-detection:8085",job="banking-services"} 0
+python_gc_objects_uncollectable_total{generation="0",instance="transaction-service:8082",job="banking-services"} 0
+python_gc_objects_uncollectable_total{generation="1",instance="transaction-service:8082",job="banking-services"} 0
+python_gc_objects_uncollectable_total{generation="2",instance="transaction-service:8082",job="banking-services"} 0
+python_gc_objects_uncollectable_total{generation="0",instance="auth-service:8083",job="banking-services"} 0
+python_gc_objects_uncollectable_total{generation="1",instance="auth-service:8083",job="banking-services"} 0
+python_gc_objects_uncollectable_total{generation="2",instance="auth-service:8083",job="banking-services"} 0
+python_gc_objects_uncollectable_total{generation="0",instance="notification-service:8084",job="banking-services"} 0
+python_gc_objects_uncollectable_total{generation="1",instance="notification-service:8084",job="banking-services"} 0
+python_gc_objects_uncollectable_total{generation="2",instance="notification-service:8084",job="banking-services"} 0
+python_gc_objects_uncollectable_total{generation="0",instance="account-service:8081",job="banking-services"} 0
+python_gc_objects_uncollectable_total{generation="1",instance="account-service:8081",job="banking-services"} 0
+python_gc_objects_uncollectable_total{generation="2",instance="account-service:8081",job="banking-services"} 0
+
+## python_info
+python_info{implementation="CPython",instance="fraud-detection:8085",job="banking-services",major="3",minor="9",patchlevel="23",version="3.9.23"} 1
+python_info{implementation="CPython",instance="transaction-service:8082",job="banking-services",major="3",minor="9",patchlevel="23",version="3.9.23"} 1
+python_info{implementation="CPython",instance="auth-service:8083",job="banking-services",major="3",minor="9",patchlevel="23",version="3.9.23"} 1
+python_info{implementation="CPython",instance="notification-service:8084",job="banking-services",major="3",minor="9",patchlevel="23",version="3.9.23"} 1
+python_info{implementation="CPython",instance="account-service:8081",job="banking-services",major="3",minor="9",patchlevel="23",version="3.9.23"} 1
+
+## scrape_duration_seconds
+scrape_duration_seconds{instance="auth-service:8083",job="banking-services"} 0.004762125
+scrape_duration_seconds{instance="notification-service:8084",job="banking-services"} 0.018968208
+scrape_duration_seconds{instance="account-service:8081",job="banking-services"} 0.011193417
+scrape_duration_seconds{instance="fraud-detection:8085",job="banking-services"} 0.018165917
+scrape_duration_seconds{instance="api-gateway:8080",job="banking-services"} 0.005958125
+scrape_duration_seconds{instance="transaction-service:8082",job="banking-services"} 0.003875542
+
+## scrape_samples_post_metric_relabeling
+scrape_samples_post_metric_relabeling{instance="auth-service:8083",job="banking-services"} 16
+scrape_samples_post_metric_relabeling{instance="notification-service:8084",job="banking-services"} 16
+scrape_samples_post_metric_relabeling{instance="account-service:8081",job="banking-services"} 16
+scrape_samples_post_metric_relabeling{instance="fraud-detection:8085",job="banking-services"} 16
+scrape_samples_post_metric_relabeling{instance="api-gateway:8080",job="banking-services"} 201
+scrape_samples_post_metric_relabeling{instance="transaction-service:8082",job="banking-services"} 16
+
+## scrape_samples_scraped
+scrape_samples_scraped{instance="auth-service:8083",job="banking-services"} 16
+scrape_samples_scraped{instance="notification-service:8084",job="banking-services"} 16
+scrape_samples_scraped{instance="account-service:8081",job="banking-services"} 16
+scrape_samples_scraped{instance="fraud-detection:8085",job="banking-services"} 16
+scrape_samples_scraped{instance="api-gateway:8080",job="banking-services"} 201
+scrape_samples_scraped{instance="transaction-service:8082",job="banking-services"} 16
+
+## scrape_series_added
+scrape_series_added{instance="auth-service:8083",job="banking-services"} 0
+scrape_series_added{instance="notification-service:8084",job="banking-services"} 0
+scrape_series_added{instance="account-service:8081",job="banking-services"} 0
+scrape_series_added{instance="fraud-detection:8085",job="banking-services"} 0
+scrape_series_added{instance="api-gateway:8080",job="banking-services"} 0
+scrape_series_added{instance="transaction-service:8082",job="banking-services"} 0
+
+## up
+up{instance="auth-service:8083",job="banking-services"} 1
+up{instance="notification-service:8084",job="banking-services"} 1
+up{instance="account-service:8081",job="banking-services"} 1
+up{instance="fraud-detection:8085",job="banking-services"} 1
+up{instance="api-gateway:8080",job="banking-services"} 1
+up{instance="transaction-service:8082",job="banking-services"} 1
+

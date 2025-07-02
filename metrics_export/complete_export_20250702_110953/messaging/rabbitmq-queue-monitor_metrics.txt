@@ -1,0 +1,101 @@
+# Metrics for rabbitmq-queue-monitor
+# Job: rabbitmq-queue-monitor
+# Category: messaging
+# Exported at: 2025-07-02T11:09:54.011020
+# Total metrics: 50
+# Unique metric types: 22
+
+## process_cpu_seconds_total
+process_cpu_seconds_total{instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor"} 17.01
+
+## process_max_fds
+process_max_fds{instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor"} 1048576
+
+## process_open_fds
+process_open_fds{instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor"} 7
+
+## process_resident_memory_bytes
+process_resident_memory_bytes{instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor"} 44011520
+
+## process_start_time_seconds
+process_start_time_seconds{instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor"} 1751429071.66
+
+## process_virtual_memory_bytes
+process_virtual_memory_bytes{instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor"} 278515712
+
+## python_gc_collections_total
+python_gc_collections_total{generation="0",instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor"} 139
+python_gc_collections_total{generation="1",instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor"} 12
+python_gc_collections_total{generation="2",instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor"} 1
+
+## python_gc_objects_collected_total
+python_gc_objects_collected_total{generation="0",instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor"} 20897
+python_gc_objects_collected_total{generation="1",instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor"} 3375
+python_gc_objects_collected_total{generation="2",instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor"} 994
+
+## python_gc_objects_uncollectable_total
+python_gc_objects_uncollectable_total{generation="0",instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor"} 0
+python_gc_objects_uncollectable_total{generation="1",instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor"} 0
+python_gc_objects_uncollectable_total{generation="2",instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor"} 0
+
+## python_info
+python_info{implementation="CPython",instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor",major="3",minor="9",patchlevel="23",version="3.9.23"} 1
+
+## rabbitmq_monitor_up
+rabbitmq_monitor_up{instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor"} 1
+
+## rabbitmq_queue_consumers
+rabbitmq_queue_consumers{instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor",queue="auth_token_q",vhost="/"} 1
+rabbitmq_queue_consumers{instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor",queue="core_banking_updates_q",vhost="/"} 0
+rabbitmq_queue_consumers{instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor",queue="fraud_check_q",vhost="/"} 1
+rabbitmq_queue_consumers{instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor",queue="notification_dispatch_q",vhost="/"} 1
+rabbitmq_queue_consumers{instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor",queue="transaction_processing_q",vhost="/"} 1
+
+## rabbitmq_queue_deliver_rate
+rabbitmq_queue_deliver_rate{instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor",queue="auth_token_q",vhost="/"} 0.2
+rabbitmq_queue_deliver_rate{instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor",queue="fraud_check_q",vhost="/"} 0
+rabbitmq_queue_deliver_rate{instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor",queue="notification_dispatch_q",vhost="/"} 0.4
+rabbitmq_queue_deliver_rate{instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor",queue="transaction_processing_q",vhost="/"} 0.4
+
+## rabbitmq_queue_messages_ready
+rabbitmq_queue_messages_ready{instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor",queue="auth_token_q",vhost="/"} 0
+rabbitmq_queue_messages_ready{instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor",queue="core_banking_updates_q",vhost="/"} 0
+rabbitmq_queue_messages_ready{instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor",queue="fraud_check_q",vhost="/"} 0
+rabbitmq_queue_messages_ready{instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor",queue="notification_dispatch_q",vhost="/"} 0
+rabbitmq_queue_messages_ready{instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor",queue="transaction_processing_q",vhost="/"} 0
+
+## rabbitmq_queue_messages_total
+rabbitmq_queue_messages_total{instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor",queue="auth_token_q",vhost="/"} 0
+rabbitmq_queue_messages_total{instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor",queue="core_banking_updates_q",vhost="/"} 0
+rabbitmq_queue_messages_total{instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor",queue="fraud_check_q",vhost="/"} 0
+rabbitmq_queue_messages_total{instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor",queue="notification_dispatch_q",vhost="/"} 0
+rabbitmq_queue_messages_total{instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor",queue="transaction_processing_q",vhost="/"} 0
+
+## rabbitmq_queue_messages_unacked
+rabbitmq_queue_messages_unacked{instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor",queue="auth_token_q",vhost="/"} 0
+rabbitmq_queue_messages_unacked{instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor",queue="core_banking_updates_q",vhost="/"} 0
+rabbitmq_queue_messages_unacked{instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor",queue="fraud_check_q",vhost="/"} 0
+rabbitmq_queue_messages_unacked{instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor",queue="notification_dispatch_q",vhost="/"} 0
+rabbitmq_queue_messages_unacked{instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor",queue="transaction_processing_q",vhost="/"} 0
+
+## rabbitmq_queue_publish_rate
+rabbitmq_queue_publish_rate{instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor",queue="auth_token_q",vhost="/"} 0.2
+rabbitmq_queue_publish_rate{instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor",queue="fraud_check_q",vhost="/"} 0
+rabbitmq_queue_publish_rate{instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor",queue="transaction_processing_q",vhost="/"} 0.2
+rabbitmq_queue_publish_rate{instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor",queue="notification_dispatch_q",vhost="/"} 0.4
+
+## scrape_duration_seconds
+scrape_duration_seconds{instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor"} 0.017190291
+
+## scrape_samples_post_metric_relabeling
+scrape_samples_post_metric_relabeling{instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor"} 45
+
+## scrape_samples_scraped
+scrape_samples_scraped{instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor"} 45
+
+## scrape_series_added
+scrape_series_added{instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor"} 0
+
+## up
+up{instance="banking-rabbitmq-monitor:9418",job="rabbitmq-queue-monitor"} 1
+

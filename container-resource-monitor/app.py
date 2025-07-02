@@ -1,18 +1,17 @@
 """
-Container Resource Monitor Service
-Monitors container resource usage and provides optimization recommendations
+Container Resource Monitor Service - Docker API Version
+Monitors container resource usage using Docker API directly
 """
 import time
 import logging
 import json
-import requests
-from datetime import datetime, timedelta
+import docker
+from datetime import datetime
 from collections import defaultdict
 from flask import Flask, jsonify
 from prometheus_client import Counter, Gauge, Histogram, generate_latest, CONTENT_TYPE_LATEST
 from apscheduler.schedulers.background import BackgroundScheduler
 from config import Config
-from optimizer import ResourceOptimizer, VPARecommender, MLBasedOptimizer, RightSizingAnalyzer
 
 # Configure logging
 logging.basicConfig(
@@ -24,46 +23,46 @@ logger = logging.getLogger(__name__)
 # Initialize Flask app
 app = Flask(__name__)
 
-# Prometheus metrics
-container_cpu_optimization_score = Gauge(
-    f'{Config.METRICS_PREFIX}cpu_optimization_score',
-    'CPU optimization score (0-100, higher means more optimization potential)',
+# Prometheus metrics - Simplified for usage only
+container_cpu_usage_cores = Gauge(
+    f'{Config.METRICS_PREFIX}cpu_usage_cores',
+    'Current CPU usage in cores',
     ['container_name']
 )
 
-container_memory_waste_percent = Gauge(
-    f'{Config.METRICS_PREFIX}memory_waste_percent',
-    'Percentage of wasted memory',
+container_memory_usage_mb = Gauge(
+    f'{Config.METRICS_PREFIX}memory_usage_mb',
+    'Current memory usage in MB',
     ['container_name']
 )
 
-container_recommended_cpu_cores = Gauge(
-    f'{Config.METRICS_PREFIX}recommended_cpu_cores',
-    'Recommended CPU cores',
+container_cpu_percent = Gauge(
+    f'{Config.METRICS_PREFIX}cpu_usage_percent',
+    'CPU usage percentage',
     ['container_name']
 )
 
-container_recommended_memory_mb = Gauge(
-    f'{Config.METRICS_PREFIX}recommended_memory_mb',
-    'Recommended memory in MB',
+container_memory_percent = Gauge(
+    f'{Config.METRICS_PREFIX}memory_usage_percent',
+    'Memory usage percentage of container',
     ['container_name']
 )
 
-container_stability_score = Gauge(
-    f'{Config.METRICS_PREFIX}stability_score',
-    'Container stability score (0-100)',
+container_network_rx_mb = Gauge(
+    f'{Config.METRICS_PREFIX}network_rx_mb',
+    'Network received in MB',
     ['container_name']
 )
 
-container_cost_savings_potential = Gauge(
-    f'{Config.METRICS_PREFIX}cost_savings_potential_dollars',
-    'Potential monthly cost savings in USD',
+container_network_tx_mb = Gauge(
+    f'{Config.METRICS_PREFIX}network_tx_mb',
+    'Network transmitted in MB',
     ['container_name']
 )
 
-total_optimization_potential = Gauge(
-    f'{Config.METRICS_PREFIX}total_optimization_potential_dollars',
-    'Total potential monthly savings across all containers'
+containers_monitored_total = Gauge(
+    f'{Config.METRICS_PREFIX}monitored_total',
+    'Total number of containers being monitored'
 )
 
 analysis_duration = Histogram(
@@ -76,221 +75,247 @@ analysis_errors = Counter(
     'Total number of analysis errors'
 )
 
+
 class ContainerResourceMonitor:
-    """Monitors and analyzes container resource usage"""
-    
+    """Monitors container resource usage using Docker API"""
+
     def __init__(self):
-        self.cadvisor_url = Config.CADVISOR_URL
-        self.optimizer = ResourceOptimizer(Config)
         self.scheduler = BackgroundScheduler()
-        self.metrics_history = defaultdict(list)
-        self.recommendations = {}
         self.is_running = False
-        
+        self.container_stats = defaultdict(list)
+
+        # Initialize Docker client
+        try:
+            self.docker_client = docker.from_env()
+            logger.info("✅ Docker client initialized successfully")
+        except Exception as e:
+            logger.error(f"❌ Failed to initialize Docker client: {e}")
+            raise
+
     def fetch_container_metrics(self):
-        """Fetch current metrics from cAdvisor"""
+        """Fetch metrics directly from Docker API"""
         try:
-            # Log the URL we're trying to connect to
-            logger.info(f"Attempting to connect to cAdvisor at: {self.cadvisor_url}")
-            
-            # Get all containers
-            response = requests.get(f"{self.cadvisor_url}/api/v1.3/containers/docker", 
-                                  timeout=10)
-            response.raise_for_status()
-            data = response.json()
-            
+            logger.info("Fetching containers from Docker API...")
+
+            # Get all running containers
+            all_containers = self.docker_client.containers.list()
             containers = []
-            for subcontainer in data.get('subcontainers', []):
-                # Get detailed stats for each container
-                container_response = requests.get(
-                    f"{self.cadvisor_url}/api/v1.3/containers{subcontainer['name']}",
-                    timeout=10
-                )
-                if container_response.status_code == 200:
-                    container_data = container_response.json()
-                    containers.append(container_data)
-            
+
+            for container in all_containers:
+                try:
+                    # Get container name (try different sources)
+                    container_name = self._extract_container_name(container)
+
+                    if container_name and Config.should_monitor_container(container_name):
+                        # Get container stats
+                        stats = container.stats(stream=False)
+
+                        containers.append({
+                            'name': container_name,
+                            'id': container.id,
+                            'stats': stats,
+                            'container': container
+                        })
+                        logger.debug(f"Monitoring container: {container_name}")
+
+                except Exception as e:
+                    logger.error(
+                        f"Error processing container {container.name}: {e}")
+                    continue
+
+            logger.info(f"Found {len(containers)} containers to monitor")
             return containers
-            
+
         except Exception as e:
-            logger.error(f"Error fetching metrics from cAdvisor: {e}")
-            analysis_errors.inc()
+            logger.error(f"Error fetching container metrics: {e}")
             return []
-    
-    def process_container_metrics(self, container_data):
-        """Process raw container metrics"""
+
+    def _extract_container_name(self, container):
+        """Extract container name from Docker container object"""
         try:
-            # Extract container name
-            container_name = container_data.get('name', '').split('/')[-1]
-            if not container_name or container_name == 'docker':
-                return None
-            
-            # Get latest stats
-            stats = container_data.get('stats', [])
-            if not stats:
-                return None
-            
-            latest_stat = stats[-1]
-            
-            # Extract metrics
-            metrics = {
-                'timestamp': datetime.now(),
-                'container_name': container_name,
-                'cpu_usage_cores': self._calculate_cpu_cores(latest_stat),
-                'memory_usage_bytes': latest_stat.get('memory', {}).get('usage', 0),
-                'memory_limit_bytes': container_data.get('spec', {}).get('memory', {}).get('limit', 0),
-                'cpu_limit_cores': self._get_cpu_limit(container_data),
-                'restart_count': container_data.get('spec', {}).get('labels', {}).get('restartCount', 0),
-                'cpu_throttled_periods': latest_stat.get('cpu', {}).get('cfs', {}).get('throttled_periods', 0),
-            }
-            
-            # Store in history
-            self.metrics_history[container_name].append(metrics)
-            
-            # Keep only recent history (1 hour)
-            cutoff_time = datetime.now() - timedelta(hours=1)
-            self.metrics_history[container_name] = [
-                m for m in self.metrics_history[container_name]
-                if m['timestamp'] > cutoff_time
-            ]
-            
-            return metrics
-            
+            # Method 1: From Docker Compose labels
+            labels = container.labels or {}
+            compose_service = labels.get('com.docker.compose.service', '')
+            if compose_service:
+                return compose_service
+
+            # Method 2: From container name (remove leading slash)
+            name = container.name
+            if name.startswith('/'):
+                name = name[1:]
+
+            return name
+
         except Exception as e:
-            logger.error(f"Error processing container metrics: {e}")
+            logger.error(f"Error extracting container name: {e}")
             return None
-    
-    def _calculate_cpu_cores(self, stat):
-        """Calculate CPU usage in cores"""
-        cpu_usage = stat.get('cpu', {}).get('usage', {})
-        total_usage = cpu_usage.get('total', 0)
-        
-        # Convert from nanoseconds to cores
-        # Assuming 1 second interval between measurements
-        cores = total_usage / 1e9
-        
-        return cores
-    
-    def _get_cpu_limit(self, container_data):
-        """Get CPU limit in cores"""
-        cpu_spec = container_data.get('spec', {}).get('cpu', {})
-        quota = cpu_spec.get('quota', 0)
-        period = cpu_spec.get('period', 100000)
-        
-        if quota > 0 and period > 0:
-            return quota / period
-        
-        return None
-    
-    def analyze_all_containers(self):
-        """Analyze all containers and generate recommendations"""
-        start_time = time.time()
-        
+
+    def update_metrics(self, containers):
+        """Update Prometheus metrics with container data"""
         try:
-            # Fetch current metrics
-            containers = self.fetch_container_metrics()
-            
-            total_savings = 0
-            all_recommendations = []
-            
+            monitored_count = 0
+
             for container_data in containers:
-                # Process metrics
-                metrics = self.process_container_metrics(container_data)
-                if not metrics:
-                    continue
-                
-                container_name = metrics['container_name']
-                
-                # Skip non-banking containers
-                if not any(svc in container_name for svc in Config.SERVICE_PRIORITIES.keys()):
-                    continue
-                
-                # Generate recommendation
-                history = self.metrics_history.get(container_name, [])
-                if len(history) >= 10:  # Need minimum data points
-                    recommendation = self.optimizer.analyze_container_resources(
-                        container_name, history
-                    )
-                    
-                    if recommendation:
-                        # Update metrics
-                        container_cpu_optimization_score.labels(
-                            container_name=container_name
-                        ).set(recommendation['cpu']['waste_percent'])
-                        
-                        container_memory_waste_percent.labels(
-                            container_name=container_name
-                        ).set(recommendation['memory']['waste_percent'])
-                        
-                        container_recommended_cpu_cores.labels(
-                            container_name=container_name
-                        ).set(recommendation['cpu']['recommended_limit'])
-                        
-                        container_recommended_memory_mb.labels(
-                            container_name=container_name
-                        ).set(recommendation['memory']['recommended_limit_mb'])
-                        
-                        container_stability_score.labels(
-                            container_name=container_name
-                        ).set(recommendation['stability_score'])
-                        
-                        container_cost_savings_potential.labels(
-                            container_name=container_name
-                        ).set(recommendation['estimated_monthly_savings_usd'])
-                        
-                        # Store recommendation
-                        self.recommendations[container_name] = recommendation
-                        all_recommendations.append(recommendation)
-                        
-                        total_savings += recommendation['estimated_monthly_savings_usd']
-            
-            # Update total savings metric
-            total_optimization_potential.set(total_savings)
-            
-            # Prioritize recommendations
-            if all_recommendations:
-                prioritized = RightSizingAnalyzer.prioritize_optimizations(
-                    all_recommendations,
-                    Config.SERVICE_PRIORITIES
-                )
-                self.recommendations['_prioritized'] = prioritized
-            
+                name = container_data['name']
+                stats = container_data['stats']
+                container = container_data['container']
+
+                # CPU metrics
+                cpu_usage = self._calculate_cpu_usage(stats)
+                container_cpu_usage_cores.labels(
+                    container_name=name).set(cpu_usage)
+
+                # CPU percentage (calculate based on system CPU count)
+                cpu_percent = self._calculate_cpu_percentage(stats)
+                container_cpu_percent.labels(
+                    container_name=name).set(cpu_percent)
+
+                # Memory metrics
+                memory_usage = stats.get('memory_stats', {}).get('usage', 0)
+                memory_mb = memory_usage / (1024 * 1024)
+                container_memory_usage_mb.labels(
+                    container_name=name).set(memory_mb)
+
+                # Memory percentage
+                memory_limit = stats.get('memory_stats', {}).get('limit', 0)
+                if memory_limit > 0:
+                    memory_percent = (memory_usage / memory_limit) * 100
+                    container_memory_percent.labels(
+                        container_name=name).set(memory_percent)
+
+                # Network metrics
+                networks = stats.get('networks', {})
+                total_rx = sum(net.get('rx_bytes', 0)
+                               for net in networks.values()) / (1024 * 1024)
+                total_tx = sum(net.get('tx_bytes', 0)
+                               for net in networks.values()) / (1024 * 1024)
+
+                container_network_rx_mb.labels(
+                    container_name=name).set(total_rx)
+                container_network_tx_mb.labels(
+                    container_name=name).set(total_tx)
+
+                monitored_count += 1
+
+            containers_monitored_total.set(monitored_count)
+            logger.info(f"Updated metrics for {monitored_count} containers")
+
+        except Exception as e:
+            logger.error(f"Error updating metrics: {e}")
+            analysis_errors.inc()
+
+    def _calculate_cpu_usage(self, stats):
+        """Calculate CPU usage in cores from Docker stats"""
+        try:
+            cpu_stats = stats.get('cpu_stats', {})
+            precpu_stats = stats.get('precpu_stats', {})
+
+            # Get CPU usage
+            cpu_usage = cpu_stats.get('cpu_usage', {})
+            precpu_usage = precpu_stats.get('cpu_usage', {})
+
+            total_usage = cpu_usage.get('total_usage', 0)
+            prev_total_usage = precpu_usage.get('total_usage', 0)
+
+            # Get system CPU usage
+            system_usage = cpu_stats.get('system_cpu_usage', 0)
+            prev_system_usage = precpu_stats.get('system_cpu_usage', 0)
+
+            # Calculate CPU usage percentage
+            cpu_delta = total_usage - prev_total_usage
+            system_delta = system_usage - prev_system_usage
+
+            if system_delta > 0:
+                # Get number of online CPUs
+                online_cpus = cpu_stats.get('online_cpus', 1)
+                cpu_usage_percent = (
+                    cpu_delta / system_delta) * online_cpus * 100
+                # Convert percentage to cores (e.g., 50% of 4 cores = 2 cores)
+                return (cpu_usage_percent / 100) * online_cpus
+
+            return 0
+
+        except Exception as e:
+            logger.error(f"Error calculating CPU usage: {e}")
+            return 0
+
+    def _calculate_cpu_percentage(self, stats):
+        """Calculate CPU usage percentage"""
+        try:
+            cpu_stats = stats.get('cpu_stats', {})
+            precpu_stats = stats.get('precpu_stats', {})
+
+            cpu_usage = cpu_stats.get('cpu_usage', {})
+            precpu_usage = precpu_stats.get('cpu_usage', {})
+
+            total_usage = cpu_usage.get('total_usage', 0)
+            prev_total_usage = precpu_usage.get('total_usage', 0)
+
+            system_usage = cpu_stats.get('system_cpu_usage', 0)
+            prev_system_usage = precpu_stats.get('system_cpu_usage', 0)
+
+            cpu_delta = total_usage - prev_total_usage
+            system_delta = system_usage - prev_system_usage
+
+            if system_delta > 0:
+                online_cpus = cpu_stats.get('online_cpus', 1)
+                return (cpu_delta / system_delta) * online_cpus * 100
+
+            return 0
+
+        except Exception as e:
+            logger.error(f"Error calculating CPU percentage: {e}")
+            return 0
+
+    def analyze_containers(self):
+        """Main analysis loop"""
+        start_time = time.time()
+
+        try:
+            # Fetch container metrics
+            containers = self.fetch_container_metrics()
+
+            if containers:
+                # Update Prometheus metrics
+                self.update_metrics(containers)
+            else:
+                logger.warning("No containers found to monitor")
+
             # Record analysis duration
             duration = time.time() - start_time
             analysis_duration.observe(duration)
-            
-            logger.info(f"Analyzed {len(all_recommendations)} containers in {duration:.2f}s")
-            logger.info(f"Total potential savings: ${total_savings:.2f}/month")
-            
+
         except Exception as e:
             logger.error(f"Error during container analysis: {e}")
             analysis_errors.inc()
-    
+
     def start(self):
         """Start the monitor"""
         self.is_running = True
-        
+
         # Schedule periodic analysis
         self.scheduler.add_job(
-            func=self.analyze_all_containers,
+            func=self.analyze_containers,
             trigger="interval",
             seconds=Config.SCRAPE_INTERVAL_SECONDS,
             id='container_analysis'
         )
         self.scheduler.start()
-        
-        logger.info("✅ Container Resource Monitor started")
-        
+
+        logger.info("✅ Container Resource Monitor started (Docker API mode)")
+
         # Run initial analysis
-        self.analyze_all_containers()
-    
+        self.analyze_containers()
+
     def stop(self):
         """Stop the monitor"""
         self.is_running = False
         self.scheduler.shutdown()
 
+
 # Initialize monitor
 monitor = ContainerResourceMonitor()
+
 
 @app.route('/health')
 def health():
@@ -298,83 +323,36 @@ def health():
     return jsonify({
         'status': 'healthy',
         'service': Config.SERVICE_NAME,
+        'mode': 'docker-api',
         'is_running': monitor.is_running,
-        'containers_tracked': len(monitor.metrics_history),
         'timestamp': datetime.now().isoformat()
     })
+
 
 @app.route('/metrics')
 def metrics():
     """Prometheus metrics endpoint"""
     return generate_latest(), 200, {'Content-Type': CONTENT_TYPE_LATEST}
 
-@app.route('/recommendations')
-def get_recommendations():
-    """Get all optimization recommendations"""
+
+@app.route('/containers')
+def get_containers():
+    """Get list of monitored containers"""
+    containers = monitor.fetch_container_metrics()
     return jsonify({
-        'recommendations': monitor.recommendations,
-        'total_potential_savings': total_optimization_potential._value.get() or 0,
-        'timestamp': datetime.now().isoformat()
+        'total': len(containers),
+        'containers': [c['name'] for c in containers]
     })
 
-@app.route('/recommendations/<container_name>')
-def get_container_recommendation(container_name):
-    """Get recommendation for specific container"""
-    if container_name in monitor.recommendations:
-        return jsonify(monitor.recommendations[container_name])
-    else:
-        return jsonify({'error': 'No recommendation available for this container'}), 404
-
-@app.route('/top-optimizations')
-def get_top_optimizations():
-    """Get top optimization opportunities"""
-    prioritized = monitor.recommendations.get('_prioritized', [])
-    
-    # Get top 10
-    top_10 = prioritized[:10]
-    
-    return jsonify({
-        'top_optimizations': [
-            {
-                'container': item['recommendation']['container_name'],
-                'category': RightSizingAnalyzer.categorize_container(item['recommendation']),
-                'potential_savings': item['recommendation']['estimated_monthly_savings_usd'],
-                'optimization_score': item['optimization_score'],
-                'cpu_waste': item['recommendation']['cpu']['waste_percent'],
-                'memory_waste': item['recommendation']['memory']['waste_percent']
-            }
-            for item in top_10
-        ],
-        'total_containers_analyzed': len(monitor.recommendations) - 1,  # Exclude _prioritized
-        'timestamp': datetime.now().isoformat()
-    })
-
-@app.route('/predictions/<container_name>')
-def get_predictions(container_name):
-    """Get ML-based predictions for a container"""
-    if container_name not in monitor.metrics_history:
-        return jsonify({'error': 'No data available for this container'}), 404
-    
-    history = monitor.metrics_history[container_name]
-    
-    # Get VPA-style recommendation
-    vpa_rec = VPARecommender.calculate_recommendation(history)
-    
-    # Get ML prediction
-    ml_pred = MLBasedOptimizer.predict_future_usage(history)
-    
-    return jsonify({
-        'container_name': container_name,
-        'vpa_recommendation': vpa_rec,
-        'ml_prediction': ml_pred,
-        'data_points': len(history),
-        'timestamp': datetime.now().isoformat()
-    })
 
 if __name__ == '__main__':
-    # Start the monitor
+    logger.info("🚀 Starting Container Resource Monitor (Docker API Mode)...")
+    logger.info(f"📊 Metrics available at /metrics")
+    logger.info(f"🏥 Health check at /health")
+    logger.info(f"📦 Container list at /containers")
+
+    # Start monitoring
     monitor.start()
-    
-    # Run Flask app
-    logger.info(f"Starting {Config.SERVICE_NAME} on port {Config.SERVICE_PORT}")
+
+    # Start Flask app
     app.run(host='0.0.0.0', port=Config.SERVICE_PORT, debug=False)

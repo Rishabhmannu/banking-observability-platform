@@ -1,0 +1,103 @@
+# Metrics for transaction-monitor
+# Job: transaction-monitor
+# Category: monitoring
+# Exported at: 2025-07-02T11:09:53.960108
+# Total metrics: 52
+# Unique metric types: 22
+
+## process_cpu_seconds_total
+process_cpu_seconds_total{instance="transaction-performance-monitor:5003",job="transaction-monitor"} 19.4
+
+## process_max_fds
+process_max_fds{instance="transaction-performance-monitor:5003",job="transaction-monitor"} 1048576
+
+## process_open_fds
+process_open_fds{instance="transaction-performance-monitor:5003",job="transaction-monitor"} 10
+
+## process_resident_memory_bytes
+process_resident_memory_bytes{instance="transaction-performance-monitor:5003",job="transaction-monitor"} 51281920
+
+## process_start_time_seconds
+process_start_time_seconds{instance="transaction-performance-monitor:5003",job="transaction-monitor"} 1751429114.24
+
+## process_virtual_memory_bytes
+process_virtual_memory_bytes{instance="transaction-performance-monitor:5003",job="transaction-monitor"} 688041984
+
+## python_gc_collections_total
+python_gc_collections_total{generation="0",instance="transaction-performance-monitor:5003",job="transaction-monitor"} 124
+python_gc_collections_total{generation="1",instance="transaction-performance-monitor:5003",job="transaction-monitor"} 11
+python_gc_collections_total{generation="2",instance="transaction-performance-monitor:5003",job="transaction-monitor"} 1
+
+## python_gc_objects_collected_total
+python_gc_objects_collected_total{generation="0",instance="transaction-performance-monitor:5003",job="transaction-monitor"} 4881
+python_gc_objects_collected_total{generation="1",instance="transaction-performance-monitor:5003",job="transaction-monitor"} 753
+python_gc_objects_collected_total{generation="2",instance="transaction-performance-monitor:5003",job="transaction-monitor"} 480
+
+## python_gc_objects_uncollectable_total
+python_gc_objects_uncollectable_total{generation="0",instance="transaction-performance-monitor:5003",job="transaction-monitor"} 0
+python_gc_objects_uncollectable_total{generation="1",instance="transaction-performance-monitor:5003",job="transaction-monitor"} 0
+python_gc_objects_uncollectable_total{generation="2",instance="transaction-performance-monitor:5003",job="transaction-monitor"} 0
+
+## python_info
+python_info{implementation="CPython",instance="transaction-performance-monitor:5003",job="transaction-monitor",major="3",minor="9",patchlevel="23",version="3.9.23"} 1
+
+## scrape_duration_seconds
+scrape_duration_seconds{instance="transaction-performance-monitor:5003",job="transaction-monitor"} 0.028534708
+
+## scrape_samples_post_metric_relabeling
+scrape_samples_post_metric_relabeling{instance="transaction-performance-monitor:5003",job="transaction-monitor"} 47
+
+## scrape_samples_scraped
+scrape_samples_scraped{instance="transaction-performance-monitor:5003",job="transaction-monitor"} 47
+
+## scrape_series_added
+scrape_series_added{instance="transaction-performance-monitor:5003",job="transaction-monitor"} 0
+
+## slow_transaction_percentage
+slow_transaction_percentage{instance="transaction-performance-monitor:5003",job="transaction-monitor",threshold="0.5s"} 0
+slow_transaction_percentage{instance="transaction-performance-monitor:5003",job="transaction-monitor",threshold="1.0s"} 0
+slow_transaction_percentage{instance="transaction-performance-monitor:5003",job="transaction-monitor",threshold="2.0s"} 0
+
+## transaction_avg_response_time
+transaction_avg_response_time{instance="transaction-performance-monitor:5003",job="transaction-monitor",type="deposit"} 0.09942133887493572
+transaction_avg_response_time{instance="transaction-performance-monitor:5003",job="transaction-monitor",type="withdrawal"} 0.09638804482097346
+transaction_avg_response_time{instance="transaction-performance-monitor:5003",job="transaction-monitor",type="transfer"} 0.09345830465926845
+transaction_avg_response_time{instance="transaction-performance-monitor:5003",job="transaction-monitor",type="query"} 0.09196960504617706
+
+## transaction_health_status
+transaction_health_status{instance="transaction-performance-monitor:5003",job="transaction-monitor",status="healthy"} 1
+transaction_health_status{instance="transaction-performance-monitor:5003",job="transaction-monitor",status="degraded"} 0
+transaction_health_status{instance="transaction-performance-monitor:5003",job="transaction-monitor",status="critical"} 0
+
+## transaction_performance_score
+transaction_performance_score{instance="transaction-performance-monitor:5003",job="transaction-monitor"} 100
+
+## transaction_requests_created
+transaction_requests_created{instance="transaction-performance-monitor:5003",job="transaction-monitor",status="success",type="deposit"} 1751429116.9671915
+transaction_requests_created{instance="transaction-performance-monitor:5003",job="transaction-monitor",status="error",type="deposit"} 1751429116.9672327
+transaction_requests_created{instance="transaction-performance-monitor:5003",job="transaction-monitor",status="success",type="withdrawal"} 1751429116.9673154
+transaction_requests_created{instance="transaction-performance-monitor:5003",job="transaction-monitor",status="error",type="withdrawal"} 1751429116.9673414
+transaction_requests_created{instance="transaction-performance-monitor:5003",job="transaction-monitor",status="success",type="transfer"} 1751429116.9674041
+transaction_requests_created{instance="transaction-performance-monitor:5003",job="transaction-monitor",status="error",type="transfer"} 1751429116.967426
+transaction_requests_created{instance="transaction-performance-monitor:5003",job="transaction-monitor",status="success",type="query"} 1751429116.9674945
+transaction_requests_created{instance="transaction-performance-monitor:5003",job="transaction-monitor",status="error",type="query"} 1751429116.9675207
+
+## transaction_requests_per_minute
+transaction_requests_per_minute{instance="transaction-performance-monitor:5003",job="transaction-monitor",type="deposit"} 0
+transaction_requests_per_minute{instance="transaction-performance-monitor:5003",job="transaction-monitor",type="withdrawal"} 0
+transaction_requests_per_minute{instance="transaction-performance-monitor:5003",job="transaction-monitor",type="transfer"} 0
+transaction_requests_per_minute{instance="transaction-performance-monitor:5003",job="transaction-monitor",type="query"} 0
+
+## transaction_requests_total
+transaction_requests_total{instance="transaction-performance-monitor:5003",job="transaction-monitor",status="success",type="deposit"} 0
+transaction_requests_total{instance="transaction-performance-monitor:5003",job="transaction-monitor",status="error",type="deposit"} 0
+transaction_requests_total{instance="transaction-performance-monitor:5003",job="transaction-monitor",status="success",type="withdrawal"} 0
+transaction_requests_total{instance="transaction-performance-monitor:5003",job="transaction-monitor",status="error",type="withdrawal"} 0
+transaction_requests_total{instance="transaction-performance-monitor:5003",job="transaction-monitor",status="success",type="transfer"} 0
+transaction_requests_total{instance="transaction-performance-monitor:5003",job="transaction-monitor",status="error",type="transfer"} 0
+transaction_requests_total{instance="transaction-performance-monitor:5003",job="transaction-monitor",status="success",type="query"} 0
+transaction_requests_total{instance="transaction-performance-monitor:5003",job="transaction-monitor",status="error",type="query"} 0
+
+## up
+up{instance="transaction-performance-monitor:5003",job="transaction-monitor"} 1
+

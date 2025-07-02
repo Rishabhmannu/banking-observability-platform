@@ -1,0 +1,79 @@
+# Metrics for trace-generator
+# Job: trace-generator
+# Category: testing
+# Exported at: 2025-07-02T11:09:54.025689
+# Total metrics: 34
+# Unique metric types: 19
+
+## active_trace_generation
+active_trace_generation{instance="trace-generator:9414",job="trace-generator"} 1
+
+## process_cpu_seconds_total
+process_cpu_seconds_total{instance="trace-generator:9414",job="trace-generator"} 46.66
+
+## process_max_fds
+process_max_fds{instance="trace-generator:9414",job="trace-generator"} 1048576
+
+## process_open_fds
+process_open_fds{instance="trace-generator:9414",job="trace-generator"} 13
+
+## process_resident_memory_bytes
+process_resident_memory_bytes{instance="trace-generator:9414",job="trace-generator"} 49590272
+
+## process_start_time_seconds
+process_start_time_seconds{instance="trace-generator:9414",job="trace-generator"} 1751429183.33
+
+## process_virtual_memory_bytes
+process_virtual_memory_bytes{instance="trace-generator:9414",job="trace-generator"} 811069440
+
+## python_gc_collections_total
+python_gc_collections_total{generation="0",instance="trace-generator:9414",job="trace-generator"} 154
+python_gc_collections_total{generation="1",instance="trace-generator:9414",job="trace-generator"} 13
+python_gc_collections_total{generation="2",instance="trace-generator:9414",job="trace-generator"} 1
+
+## python_gc_objects_collected_total
+python_gc_objects_collected_total{generation="0",instance="trace-generator:9414",job="trace-generator"} 6549
+python_gc_objects_collected_total{generation="1",instance="trace-generator:9414",job="trace-generator"} 368
+python_gc_objects_collected_total{generation="2",instance="trace-generator:9414",job="trace-generator"} 41
+
+## python_gc_objects_uncollectable_total
+python_gc_objects_uncollectable_total{generation="0",instance="trace-generator:9414",job="trace-generator"} 0
+python_gc_objects_uncollectable_total{generation="1",instance="trace-generator:9414",job="trace-generator"} 0
+python_gc_objects_uncollectable_total{generation="2",instance="trace-generator:9414",job="trace-generator"} 0
+
+## python_info
+python_info{implementation="CPython",instance="trace-generator:9414",job="trace-generator",major="3",minor="9",patchlevel="23",version="3.9.23"} 1
+
+## scrape_duration_seconds
+scrape_duration_seconds{instance="trace-generator:9414",job="trace-generator"} 0.006909834
+
+## scrape_samples_post_metric_relabeling
+scrape_samples_post_metric_relabeling{instance="trace-generator:9414",job="trace-generator"} 29
+
+## scrape_samples_scraped
+scrape_samples_scraped{instance="trace-generator:9414",job="trace-generator"} 29
+
+## scrape_series_added
+scrape_series_added{instance="trace-generator:9414",job="trace-generator"} 0
+
+## trace_patterns_per_minute
+trace_patterns_per_minute{instance="trace-generator:9414",job="trace-generator",pattern_type="successful"} 30
+trace_patterns_per_minute{instance="trace-generator:9414",job="trace-generator",pattern_type="failed_auth"} 5
+trace_patterns_per_minute{instance="trace-generator:9414",job="trace-generator",pattern_type="slow"} 3
+trace_patterns_per_minute{instance="trace-generator:9414",job="trace-generator",pattern_type="insufficient_funds"} 5
+
+## traces_generated_created
+traces_generated_created{instance="trace-generator:9414",job="trace-generator",service="banking",trace_type="successful"} 1751429184.7684984
+traces_generated_created{instance="trace-generator:9414",job="trace-generator",service="banking",trace_type="failed_auth"} 1751429192.4461367
+traces_generated_created{instance="trace-generator:9414",job="trace-generator",service="banking",trace_type="slow"} 1751429212.2011337
+traces_generated_created{instance="trace-generator:9414",job="trace-generator",service="banking",trace_type="insufficient_funds"} 1751429222.1393676
+
+## traces_generated_total
+traces_generated_total{instance="trace-generator:9414",job="trace-generator",service="banking",trace_type="successful"} 2297
+traces_generated_total{instance="trace-generator:9414",job="trace-generator",service="banking",trace_type="failed_auth"} 412
+traces_generated_total{instance="trace-generator:9414",job="trace-generator",service="banking",trace_type="slow"} 214
+traces_generated_total{instance="trace-generator:9414",job="trace-generator",service="banking",trace_type="insufficient_funds"} 391
+
+## up
+up{instance="trace-generator:9414",job="trace-generator"} 1
+

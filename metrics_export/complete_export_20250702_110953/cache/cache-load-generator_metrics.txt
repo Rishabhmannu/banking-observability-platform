@@ -1,0 +1,61 @@
+# Metrics for cache-load-generator
+# Job: cache-load-generator
+# Category: cache
+# Exported at: 2025-07-02T11:09:53.973106
+# Total metrics: 22
+# Unique metric types: 16
+
+## cache_load_generation_rate_ops
+cache_load_generation_rate_ops{instance="banking-cache-load-generator:5013",job="cache-load-generator"} 0
+
+## process_cpu_seconds_total
+process_cpu_seconds_total{instance="banking-cache-load-generator:5013",job="cache-load-generator"} 8.97
+
+## process_max_fds
+process_max_fds{instance="banking-cache-load-generator:5013",job="cache-load-generator"} 1048576
+
+## process_open_fds
+process_open_fds{instance="banking-cache-load-generator:5013",job="cache-load-generator"} 7
+
+## process_resident_memory_bytes
+process_resident_memory_bytes{instance="banking-cache-load-generator:5013",job="cache-load-generator"} 49082368
+
+## process_start_time_seconds
+process_start_time_seconds{instance="banking-cache-load-generator:5013",job="cache-load-generator"} 1751429183.33
+
+## process_virtual_memory_bytes
+process_virtual_memory_bytes{instance="banking-cache-load-generator:5013",job="cache-load-generator"} 205668352
+
+## python_gc_collections_total
+python_gc_collections_total{generation="0",instance="banking-cache-load-generator:5013",job="cache-load-generator"} 131
+python_gc_collections_total{generation="1",instance="banking-cache-load-generator:5013",job="cache-load-generator"} 11
+python_gc_collections_total{generation="2",instance="banking-cache-load-generator:5013",job="cache-load-generator"} 1
+
+## python_gc_objects_collected_total
+python_gc_objects_collected_total{generation="0",instance="banking-cache-load-generator:5013",job="cache-load-generator"} 6261
+python_gc_objects_collected_total{generation="1",instance="banking-cache-load-generator:5013",job="cache-load-generator"} 1224
+python_gc_objects_collected_total{generation="2",instance="banking-cache-load-generator:5013",job="cache-load-generator"} 80
+
+## python_gc_objects_uncollectable_total
+python_gc_objects_uncollectable_total{generation="0",instance="banking-cache-load-generator:5013",job="cache-load-generator"} 0
+python_gc_objects_uncollectable_total{generation="1",instance="banking-cache-load-generator:5013",job="cache-load-generator"} 0
+python_gc_objects_uncollectable_total{generation="2",instance="banking-cache-load-generator:5013",job="cache-load-generator"} 0
+
+## python_info
+python_info{implementation="CPython",instance="banking-cache-load-generator:5013",job="cache-load-generator",major="3",minor="9",patchlevel="23",version="3.9.23"} 1
+
+## scrape_duration_seconds
+scrape_duration_seconds{instance="banking-cache-load-generator:5013",job="cache-load-generator"} 0.010996167
+
+## scrape_samples_post_metric_relabeling
+scrape_samples_post_metric_relabeling{instance="banking-cache-load-generator:5013",job="cache-load-generator"} 17
+
+## scrape_samples_scraped
+scrape_samples_scraped{instance="banking-cache-load-generator:5013",job="cache-load-generator"} 17
+
+## scrape_series_added
+scrape_series_added{instance="banking-cache-load-generator:5013",job="cache-load-generator"} 0
+
+## up
+up{instance="banking-cache-load-generator:5013",job="cache-load-generator"} 1
+

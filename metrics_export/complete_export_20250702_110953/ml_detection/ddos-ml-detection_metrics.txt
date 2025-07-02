@@ -1,0 +1,79 @@
+# Metrics for ddos-ml-detection
+# Job: ddos-ml-detection
+# Category: ml_detection
+# Exported at: 2025-07-02T11:09:53.944811
+# Total metrics: 28
+# Unique metric types: 22
+
+## ddos_binary_prediction
+ddos_binary_prediction{instance="ddos-ml-detection:5001",job="ddos-ml-detection"} 0
+
+## ddos_confidence
+ddos_confidence{instance="ddos-ml-detection:5001",job="ddos-ml-detection"} 0.6264263180034981
+
+## ddos_detection_score
+ddos_detection_score{instance="ddos-ml-detection:5001",job="ddos-ml-detection"} 0.19186952332660062
+
+## ddos_model_predictions_created
+ddos_model_predictions_created{instance="ddos-ml-detection:5001",job="ddos-ml-detection"} 1751429116.188064
+
+## ddos_model_predictions_total
+ddos_model_predictions_total{instance="ddos-ml-detection:5001",job="ddos-ml-detection"} 189
+
+## detection_latency_seconds
+detection_latency_seconds{instance="ddos-ml-detection:5001",job="ddos-ml-detection"} 0.00020265579223632812
+
+## process_cpu_seconds_total
+process_cpu_seconds_total{instance="ddos-ml-detection:5001",job="ddos-ml-detection"} 10.54
+
+## process_max_fds
+process_max_fds{instance="ddos-ml-detection:5001",job="ddos-ml-detection"} 1048576
+
+## process_open_fds
+process_open_fds{instance="ddos-ml-detection:5001",job="ddos-ml-detection"} 6
+
+## process_resident_memory_bytes
+process_resident_memory_bytes{instance="ddos-ml-detection:5001",job="ddos-ml-detection"} 30666752
+
+## process_start_time_seconds
+process_start_time_seconds{instance="ddos-ml-detection:5001",job="ddos-ml-detection"} 1751429114.21
+
+## process_virtual_memory_bytes
+process_virtual_memory_bytes{instance="ddos-ml-detection:5001",job="ddos-ml-detection"} 189042688
+
+## python_gc_collections_total
+python_gc_collections_total{generation="0",instance="ddos-ml-detection:5001",job="ddos-ml-detection"} 84
+python_gc_collections_total{generation="1",instance="ddos-ml-detection:5001",job="ddos-ml-detection"} 7
+python_gc_collections_total{generation="2",instance="ddos-ml-detection:5001",job="ddos-ml-detection"} 0
+
+## python_gc_objects_collected_total
+python_gc_objects_collected_total{generation="0",instance="ddos-ml-detection:5001",job="ddos-ml-detection"} 4572
+python_gc_objects_collected_total{generation="1",instance="ddos-ml-detection:5001",job="ddos-ml-detection"} 11
+python_gc_objects_collected_total{generation="2",instance="ddos-ml-detection:5001",job="ddos-ml-detection"} 0
+
+## python_gc_objects_uncollectable_total
+python_gc_objects_uncollectable_total{generation="0",instance="ddos-ml-detection:5001",job="ddos-ml-detection"} 0
+python_gc_objects_uncollectable_total{generation="1",instance="ddos-ml-detection:5001",job="ddos-ml-detection"} 0
+python_gc_objects_uncollectable_total{generation="2",instance="ddos-ml-detection:5001",job="ddos-ml-detection"} 0
+
+## python_info
+python_info{implementation="CPython",instance="ddos-ml-detection:5001",job="ddos-ml-detection",major="3",minor="9",patchlevel="23",version="3.9.23"} 1
+
+## scrape_duration_seconds
+scrape_duration_seconds{instance="ddos-ml-detection:5001",job="ddos-ml-detection"} 0.013721125
+
+## scrape_samples_post_metric_relabeling
+scrape_samples_post_metric_relabeling{instance="ddos-ml-detection:5001",job="ddos-ml-detection"} 23
+
+## scrape_samples_scraped
+scrape_samples_scraped{instance="ddos-ml-detection:5001",job="ddos-ml-detection"} 23
+
+## scrape_series_added
+scrape_series_added{instance="ddos-ml-detection:5001",job="ddos-ml-detection"} 0
+
+## service_uptime_seconds
+service_uptime_seconds{instance="ddos-ml-detection:5001",job="ddos-ml-detection"} 5643.823940038681
+
+## up
+up{instance="ddos-ml-detection:5001",job="ddos-ml-detection"} 1
+

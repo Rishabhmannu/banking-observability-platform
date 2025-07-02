@@ -173,6 +173,13 @@ scrape_configs:
     scrape_interval: 15s
     metrics_path: '/metrics'
 
+# Cache Proxy metrics
+  - job_name: 'cache-proxy'
+    static_configs:
+      - targets: ['cache-proxy-service:5020']
+    metrics_path: '/metrics'
+    scrape_interval: 30s
+
 
 alerting:
   alertmanagers:
