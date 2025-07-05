@@ -1,0 +1,83 @@
+groups:
+  - name: kubernetes_pod_scaling
+    rules:
+    - alert: K8sPodScaledUp
+      expr: increase(k8s_scaling_events_total{direction="up",namespace="banking-k8s-test"}[5m]) > 0
+      for: 30s
+      labels:
+        severity: info
+        category: scaling
+        service: kubernetes
+        namespace: banking-k8s-test
+      annotations:
+        summary: "🚀 Banking Service Pods Scaled UP"
+        description: "Banking service scaled UP in namespace {{ $labels.namespace }}. HPA: {{ $labels.hpa }}"
+
+    - alert: K8sPodScaledDown
+      expr: increase(k8s_scaling_events_total{direction="down",namespace="banking-k8s-test"}[5m]) > 0
+      for: 30s
+      labels:
+        severity: info
+        category: scaling
+        service: kubernetes
+        namespace: banking-k8s-test
+      annotations:
+        summary: "📉 Banking Service Pods Scaled DOWN"
+        description: "Banking service scaled DOWN in namespace {{ $labels.namespace }}. HPA: {{ $labels.hpa }}"
+
+    - alert: K8sHPAReplicaMismatch
+      expr: k8s_hpa_replicas{type="current",namespace="banking-k8s-test"} != k8s_hpa_replicas{type="desired",namespace="banking-k8s-test"}
+      for: 2m
+      labels:
+        severity: warning
+        category: scaling
+        service: kubernetes
+        namespace: banking-k8s-test
+      annotations:
+        summary: "⚠️ HPA Replica Mismatch"
+        description: "HPA {{ $labels.hpa }} has current replicas != desired replicas for 2+ minutes"
+
+    - alert: K8sPodsStuckPending
+      expr: k8s_pod_count_total{namespace="banking-k8s-test",phase="Pending"} > 3
+      for: 3m
+      labels:
+        severity: warning
+        category: capacity
+        service: kubernetes
+        namespace: banking-k8s-test
+      annotations:
+        summary: "🔄 Multiple Pods Stuck in Pending State"
+        description: "{{ $value }} pods stuck in Pending state for 3+ minutes in namespace {{ $labels.namespace }}"
+
+    - alert: K8sNodeResourcePressure
+      expr: k8s_node_resource_pressure{condition=~"MemoryPressure|DiskPressure|PIDPressure"} == 1
+      for: 30s
+      labels:
+        severity: critical
+        category: capacity
+        service: kubernetes
+      annotations:
+        summary: "🚨 Node Resource Pressure Detected"
+        description: "Node {{ $labels.node }} experiencing {{ $labels.condition }} pressure"
+
+    - alert: K8sNodeMemoryUsageHigh
+      expr: 100 * (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) > 70
+      for: 45s
+      labels:
+        severity: warning
+        category: capacity
+        service: kubernetes
+      annotations:
+        summary: "⚠️ Node Memory Usage High"
+        description: "Node memory usage is {{ $value | humanize }}% (threshold: 70%)"
+
+    - alert: K8sNodeCPUUsageHigh
+      expr: 100 - (avg by (instance) (irate(node_cpu_seconds_total{mode="idle"}[5m]))) * 100 > 50
+      for: 45s
+      labels:
+        severity: warning
+        category: capacity
+        service: kubernetes
+      annotations:
+        summary: "⚠️ Node CPU Usage High"
+        description: "Node CPU usage is {{ $value | humanize }}% (threshold: 50%)"

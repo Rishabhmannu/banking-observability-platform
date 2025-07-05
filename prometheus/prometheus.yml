@@ -4,6 +4,8 @@ global:
 
 rule_files:
   - "alert_rules.yml"
+  - "k8s-alert-rules.yml"
+
 
 scrape_configs:
   # Core monitoring
@@ -179,6 +181,22 @@ scrape_configs:
       - targets: ['cache-proxy-service:5020']
     metrics_path: '/metrics'
     scrape_interval: 30s
+
+
+
+  # Kubernetes Resource Monitor (via port-forward)
+  - job_name: 'k8s-resource-monitor'
+    static_configs:
+      - targets: ['host.docker.internal:9419']
+    scrape_interval: 15s
+    metrics_path: '/metrics'
+
+  # Kubernetes State Metrics (via port-forward)
+  - job_name: 'kube-state-metrics'
+    static_configs:
+      - targets: ['host.docker.internal:8080']
+    scrape_interval: 30s
+    metrics_path: '/metrics'
 
 
 alerting:

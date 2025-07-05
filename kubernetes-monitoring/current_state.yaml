@@ -1,0 +1,1965 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2025-07-04T11:59:49Z"
+    generateName: banking-service-788fc6b69d-
+    labels:
+      app: banking-service
+      pod-template-hash: 788fc6b69d
+      tier: application
+    name: banking-service-788fc6b69d-4ztl6
+    namespace: banking-k8s-test
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: banking-service-788fc6b69d
+      uid: b53b5d14-6a99-4fe5-a7be-0a5ee20f97cb
+    resourceVersion: "44413"
+    uid: 0eadf579-4b04-432c-95f3-cb241e01be3b
+  spec:
+    containers:
+    - env:
+      - name: SERVICE_NAME
+        value: banking-service
+      - name: ENVIRONMENT
+        value: test
+      image: nginx:alpine
+      imagePullPolicy: IfNotPresent
+      livenessProbe:
+        failureThreshold: 3
+        httpGet:
+          path: /
+          port: 80
+          scheme: HTTP
+        initialDelaySeconds: 30
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 1
+      name: banking-service
+      ports:
+      - containerPort: 80
+        protocol: TCP
+      readinessProbe:
+        failureThreshold: 3
+        httpGet:
+          path: /
+          port: 80
+          scheme: HTTP
+        initialDelaySeconds: 5
+        periodSeconds: 5
+        successThreshold: 1
+        timeoutSeconds: 1
+      resources:
+        limits:
+          cpu: 200m
+          memory: 256Mi
+        requests:
+          cpu: 100m
+          memory: 128Mi
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-hp2tf
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: docker-desktop
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-hp2tf
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2025-07-04T11:59:53Z"
+      status: "True"
+      type: PodReadyToStartContainers
+    - lastProbeTime: null
+      lastTransitionTime: "2025-07-04T11:59:49Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2025-07-04T12:00:01Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2025-07-04T12:00:01Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2025-07-04T11:59:49Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://a686a93429760adbff2c5b2dd144a13f0596d3a0eb4bbb25e2eed38a34e92f1e
+      image: nginx:alpine
+      imageID: docker-pullable://nginx@sha256:b2e814d28359e77bd0aa5fed1939620075e4ffa0eb20423cc557b375bd5c14ad
+      lastState: {}
+      name: banking-service
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2025-07-04T11:59:52Z"
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-hp2tf
+        readOnly: true
+        recursiveReadOnly: Disabled
+    hostIP: 192.168.65.3
+    hostIPs:
+    - ip: 192.168.65.3
+    phase: Running
+    podIP: 10.1.0.112
+    podIPs:
+    - ip: 10.1.0.112
+    qosClass: Burstable
+    startTime: "2025-07-04T11:59:49Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2025-07-04T11:59:49Z"
+    generateName: banking-service-788fc6b69d-
+    labels:
+      app: banking-service
+      pod-template-hash: 788fc6b69d
+      tier: application
+    name: banking-service-788fc6b69d-52jbz
+    namespace: banking-k8s-test
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: banking-service-788fc6b69d
+      uid: b53b5d14-6a99-4fe5-a7be-0a5ee20f97cb
+    resourceVersion: "44410"
+    uid: da15d6a7-5c41-484a-889a-3ed5eb1e024b
+  spec:
+    containers:
+    - env:
+      - name: SERVICE_NAME
+        value: banking-service
+      - name: ENVIRONMENT
+        value: test
+      image: nginx:alpine
+      imagePullPolicy: IfNotPresent
+      livenessProbe:
+        failureThreshold: 3
+        httpGet:
+          path: /
+          port: 80
+          scheme: HTTP
+        initialDelaySeconds: 30
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 1
+      name: banking-service
+      ports:
+      - containerPort: 80
+        protocol: TCP
+      readinessProbe:
+        failureThreshold: 3
+        httpGet:
+          path: /
+          port: 80
+          scheme: HTTP
+        initialDelaySeconds: 5
+        periodSeconds: 5
+        successThreshold: 1
+        timeoutSeconds: 1
+      resources:
+        limits:
+          cpu: 200m
+          memory: 256Mi
+        requests:
+          cpu: 100m
+          memory: 128Mi
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-rlhvz
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: docker-desktop
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-rlhvz
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2025-07-04T11:59:53Z"
+      status: "True"
+      type: PodReadyToStartContainers
+    - lastProbeTime: null
+      lastTransitionTime: "2025-07-04T11:59:49Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2025-07-04T12:00:01Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2025-07-04T12:00:01Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2025-07-04T11:59:49Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://adaf3899c0ccdc114305743948ce8c481a5d645af7430eeb161058fb037d05c4
+      image: nginx:alpine
+      imageID: docker-pullable://nginx@sha256:b2e814d28359e77bd0aa5fed1939620075e4ffa0eb20423cc557b375bd5c14ad
+      lastState: {}
+      name: banking-service
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2025-07-04T11:59:52Z"
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-rlhvz
+        readOnly: true
+        recursiveReadOnly: Disabled
+    hostIP: 192.168.65.3
+    hostIPs:
+    - ip: 192.168.65.3
+    phase: Running
+    podIP: 10.1.0.111
+    podIPs:
+    - ip: 10.1.0.111
+    qosClass: Burstable
+    startTime: "2025-07-04T11:59:49Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2025-07-03T11:34:01Z"
+    generateName: banking-service-788fc6b69d-
+    labels:
+      app: banking-service
+      pod-template-hash: 788fc6b69d
+      tier: application
+    name: banking-service-788fc6b69d-kclgf
+    namespace: banking-k8s-test
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: banking-service-788fc6b69d
+      uid: b53b5d14-6a99-4fe5-a7be-0a5ee20f97cb
+    resourceVersion: "4428"
+    uid: a27cc507-1b05-422c-8f59-d9213d3a31bf
+  spec:
+    containers:
+    - env:
+      - name: SERVICE_NAME
+        value: banking-service
+      - name: ENVIRONMENT
+        value: test
+      image: nginx:alpine
+      imagePullPolicy: IfNotPresent
+      livenessProbe:
+        failureThreshold: 3
+        httpGet:
+          path: /
+          port: 80
+          scheme: HTTP
+        initialDelaySeconds: 30
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 1
+      name: banking-service
+      ports:
+      - containerPort: 80
+        protocol: TCP
+      readinessProbe:
+        failureThreshold: 3
+        httpGet:
+          path: /
+          port: 80
+          scheme: HTTP
+        initialDelaySeconds: 5
+        periodSeconds: 5
+        successThreshold: 1
+        timeoutSeconds: 1
+      resources:
+        limits:
+          cpu: 200m
+          memory: 256Mi
+        requests:
+          cpu: 100m
+          memory: 128Mi
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-lrtb8
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: docker-desktop
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-lrtb8
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2025-07-04T04:16:26Z"
+      status: "True"
+      type: PodReadyToStartContainers
+    - lastProbeTime: null
+      lastTransitionTime: "2025-07-03T11:34:01Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2025-07-04T04:16:33Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2025-07-04T04:16:33Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2025-07-03T11:34:01Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://d0a205d8eaf96d1d4c8f97ee7fe2e46034decdc7db6bf0800290c4f17d789b7e
+      image: nginx:alpine
+      imageID: docker-pullable://nginx@sha256:b2e814d28359e77bd0aa5fed1939620075e4ffa0eb20423cc557b375bd5c14ad
+      lastState:
+        terminated:
+          containerID: docker://86477ed51318ed185f718f4151351a5232e3a3eb87a2c5d6366b0bd95617c91e
+          exitCode: 255
+          finishedAt: "2025-07-04T04:16:12Z"
+          reason: Error
+          startedAt: "2025-07-03T11:34:10Z"
+      name: banking-service
+      ready: true
+      restartCount: 1
+      started: true
+      state:
+        running:
+          startedAt: "2025-07-04T04:16:24Z"
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-lrtb8
+        readOnly: true
+        recursiveReadOnly: Disabled
+    hostIP: 192.168.65.3
+    hostIPs:
+    - ip: 192.168.65.3
+    phase: Running
+    podIP: 10.1.0.26
+    podIPs:
+    - ip: 10.1.0.26
+    qosClass: Burstable
+    startTime: "2025-07-03T11:34:01Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2025-07-04T04:34:29Z"
+    generateName: banking-service-788fc6b69d-
+    labels:
+      app: banking-service
+      pod-template-hash: 788fc6b69d
+      tier: application
+    name: banking-service-788fc6b69d-pkckf
+    namespace: banking-k8s-test
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: banking-service-788fc6b69d
+      uid: b53b5d14-6a99-4fe5-a7be-0a5ee20f97cb
+    resourceVersion: "5980"
+    uid: 95c7055b-a979-485e-8251-bd2dd12006e5
+  spec:
+    containers:
+    - env:
+      - name: SERVICE_NAME
+        value: banking-service
+      - name: ENVIRONMENT
+        value: test
+      image: nginx:alpine
+      imagePullPolicy: IfNotPresent
+      livenessProbe:
+        failureThreshold: 3
+        httpGet:
+          path: /
+          port: 80
+          scheme: HTTP
+        initialDelaySeconds: 30
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 1
+      name: banking-service
+      ports:
+      - containerPort: 80
+        protocol: TCP
+      readinessProbe:
+        failureThreshold: 3
+        httpGet:
+          path: /
+          port: 80
+          scheme: HTTP
+        initialDelaySeconds: 5
+        periodSeconds: 5
+        successThreshold: 1
+        timeoutSeconds: 1
+      resources:
+        limits:
+          cpu: 200m
+          memory: 256Mi
+        requests:
+          cpu: 100m
+          memory: 128Mi
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-2glrf
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: docker-desktop
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-2glrf
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2025-07-04T04:34:30Z"
+      status: "True"
+      type: PodReadyToStartContainers
+    - lastProbeTime: null
+      lastTransitionTime: "2025-07-04T04:34:29Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2025-07-04T04:34:37Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2025-07-04T04:34:37Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2025-07-04T04:34:29Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://51bd4daf4274455a4960580740bb56bbadde3f731b298d793479f0e74d545fd3
+      image: nginx:alpine
+      imageID: docker-pullable://nginx@sha256:b2e814d28359e77bd0aa5fed1939620075e4ffa0eb20423cc557b375bd5c14ad
+      lastState: {}
+      name: banking-service
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2025-07-04T04:34:30Z"
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-2glrf
+        readOnly: true
+        recursiveReadOnly: Disabled
+    hostIP: 192.168.65.3
+    hostIPs:
+    - ip: 192.168.65.3
+    phase: Running
+    podIP: 10.1.0.33
+    podIPs:
+    - ip: 10.1.0.33
+    qosClass: Burstable
+    startTime: "2025-07-04T04:34:29Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2025-07-04T11:58:48Z"
+    generateName: banking-service-788fc6b69d-
+    labels:
+      app: banking-service
+      pod-template-hash: 788fc6b69d
+      tier: application
+    name: banking-service-788fc6b69d-x6b6n
+    namespace: banking-k8s-test
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: banking-service-788fc6b69d
+      uid: b53b5d14-6a99-4fe5-a7be-0a5ee20f97cb
+    resourceVersion: "44290"
+    uid: e17e58c2-8b09-4511-a59c-ff0e4f0bd218
+  spec:
+    containers:
+    - env:
+      - name: SERVICE_NAME
+        value: banking-service
+      - name: ENVIRONMENT
+        value: test
+      image: nginx:alpine
+      imagePullPolicy: IfNotPresent
+      livenessProbe:
+        failureThreshold: 3
+        httpGet:
+          path: /
+          port: 80
+          scheme: HTTP
+        initialDelaySeconds: 30
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 1
+      name: banking-service
+      ports:
+      - containerPort: 80
+        protocol: TCP
+      readinessProbe:
+        failureThreshold: 3
+        httpGet:
+          path: /
+          port: 80
+          scheme: HTTP
+        initialDelaySeconds: 5
+        periodSeconds: 5
+        successThreshold: 1
+        timeoutSeconds: 1
+      resources:
+        limits:
+          cpu: 200m
+          memory: 256Mi
+        requests:
+          cpu: 100m
+          memory: 128Mi
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-rh5xc
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: docker-desktop
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-rh5xc
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2025-07-04T11:58:51Z"
+      status: "True"
+      type: PodReadyToStartContainers
+    - lastProbeTime: null
+      lastTransitionTime: "2025-07-04T11:58:48Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2025-07-04T11:58:58Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2025-07-04T11:58:58Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2025-07-04T11:58:48Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://13f9d6e48373c8d094ed54fdd95606863dc970996a00a54c64bfe3bf6304be58
+      image: nginx:alpine
+      imageID: docker-pullable://nginx@sha256:b2e814d28359e77bd0aa5fed1939620075e4ffa0eb20423cc557b375bd5c14ad
+      lastState: {}
+      name: banking-service
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2025-07-04T11:58:50Z"
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-rh5xc
+        readOnly: true
+        recursiveReadOnly: Disabled
+    hostIP: 192.168.65.3
+    hostIPs:
+    - ip: 192.168.65.3
+    phase: Running
+    podIP: 10.1.0.110
+    podIPs:
+    - ip: 10.1.0.110
+    qosClass: Burstable
+    startTime: "2025-07-04T11:58:48Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/restartedAt: "2025-07-04T10:45:24+05:30"
+      prometheus.io/path: /metrics
+      prometheus.io/port: "9419"
+      prometheus.io/scrape: "true"
+    creationTimestamp: "2025-07-04T05:15:24Z"
+    generateName: k8s-resource-monitor-5574dfc4d7-
+    labels:
+      app: k8s-resource-monitor
+      pod-template-hash: 5574dfc4d7
+      tier: monitoring
+    name: k8s-resource-monitor-5574dfc4d7-2whps
+    namespace: banking-k8s-test
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: k8s-resource-monitor-5574dfc4d7
+      uid: e67edb1d-8d0f-4314-a43e-c7a244b298c6
+    resourceVersion: "9457"
+    uid: 20024f48-9742-48b7-bafb-fb78bd06b7b0
+  spec:
+    containers:
+    - env:
+      - name: TARGET_NAMESPACE
+        value: banking-k8s-test
+      - name: COLLECTION_INTERVAL
+        value: "15"
+      image: k8s-resource-monitor:latest
+      imagePullPolicy: Never
+      livenessProbe:
+        failureThreshold: 3
+        httpGet:
+          path: /metrics
+          port: 9419
+          scheme: HTTP
+        initialDelaySeconds: 60
+        periodSeconds: 30
+        successThreshold: 1
+        timeoutSeconds: 1
+      name: k8s-resource-monitor
+      ports:
+      - containerPort: 9419
+        name: metrics
+        protocol: TCP
+      readinessProbe:
+        failureThreshold: 3
+        httpGet:
+          path: /metrics
+          port: 9419
+          scheme: HTTP
+        initialDelaySeconds: 10
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 1
+      resources:
+        limits:
+          cpu: 200m
+          memory: 256Mi
+        requests:
+          cpu: 50m
+          memory: 128Mi
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-flx6z
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: docker-desktop
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-flx6z
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2025-07-04T05:15:26Z"
+      status: "True"
+      type: PodReadyToStartContainers
+    - lastProbeTime: null
+      lastTransitionTime: "2025-07-04T05:15:24Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2025-07-04T05:15:37Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2025-07-04T05:15:37Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2025-07-04T05:15:24Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://2445892f5dc35fd130a3103d3296beb8f256078675f7d8e184bd12373bf4f064
+      image: k8s-resource-monitor:latest
+      imageID: docker-pullable://k8s-resource-monitor@sha256:60c3e3f87a1387ce1dcafa30af06ba266792b7e2881eb23e95cf2217d2a6e9e8
+      lastState: {}
+      name: k8s-resource-monitor
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2025-07-04T05:15:25Z"
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-flx6z
+        readOnly: true
+        recursiveReadOnly: Disabled
+    hostIP: 192.168.65.3
+    hostIPs:
+    - ip: 192.168.65.3
+    phase: Running
+    podIP: 10.1.0.38
+    podIPs:
+    - ip: 10.1.0.38
+    qosClass: Burstable
+    startTime: "2025-07-04T05:15:24Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2025-07-04T09:52:29Z"
+    generateName: load-generator-78dd8c69b8-
+    labels:
+      app: load-generator
+      pod-template-hash: 78dd8c69b8
+      tier: testing
+    name: load-generator-78dd8c69b8-5zpm4
+    namespace: banking-k8s-test
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: load-generator-78dd8c69b8
+      uid: 0dfe17c3-b764-4a1b-bdba-b75f957d9b03
+    resourceVersion: "32898"
+    uid: e737b0eb-0f55-46a5-91ce-ea89ca6beb1c
+  spec:
+    containers:
+    - env:
+      - name: TARGET_SERVICE
+        value: http://banking-service.banking-k8s-test.svc.cluster.local
+      - name: REQUESTS_PER_SECOND
+        value: "50"
+      - name: WORKERS
+        value: "10"
+      image: load-generator:latest
+      imagePullPolicy: Never
+      name: load-generator
+      resources:
+        limits:
+          cpu: 100m
+          memory: 128Mi
+        requests:
+          cpu: 50m
+          memory: 64Mi
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-csbkx
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: docker-desktop
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-csbkx
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2025-07-04T09:52:32Z"
+      status: "True"
+      type: PodReadyToStartContainers
+    - lastProbeTime: null
+      lastTransitionTime: "2025-07-04T09:52:29Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2025-07-04T09:52:32Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2025-07-04T09:52:32Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2025-07-04T09:52:29Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://a357cb8741df819374af2488ae5dff10a3114cd0a7c261f5ea685f41f78dc4c9
+      image: load-generator:latest
+      imageID: docker-pullable://load-generator@sha256:772aa57cc8fc9df90710b339949306e68f862011d9cc1771cc3bd1d4522ce9fd
+      lastState: {}
+      name: load-generator
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2025-07-04T09:52:30Z"
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-csbkx
+        readOnly: true
+        recursiveReadOnly: Disabled
+    hostIP: 192.168.65.3
+    hostIPs:
+    - ip: 192.168.65.3
+    phase: Running
+    podIP: 10.1.0.79
+    podIPs:
+    - ip: 10.1.0.79
+    qosClass: Burstable
+    startTime: "2025-07-04T09:52:29Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2025-07-04T04:22:55Z"
+    generateName: load-generator-78dd8c69b8-
+    labels:
+      app: load-generator
+      pod-template-hash: 78dd8c69b8
+      tier: testing
+    name: load-generator-78dd8c69b8-ng9q7
+    namespace: banking-k8s-test
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: load-generator-78dd8c69b8
+      uid: 0dfe17c3-b764-4a1b-bdba-b75f957d9b03
+    resourceVersion: "4963"
+    uid: 9ec843df-3174-4a15-926a-e22cb49e37fa
+  spec:
+    containers:
+    - env:
+      - name: TARGET_SERVICE
+        value: http://banking-service.banking-k8s-test.svc.cluster.local
+      - name: REQUESTS_PER_SECOND
+        value: "50"
+      - name: WORKERS
+        value: "10"
+      image: load-generator:latest
+      imagePullPolicy: Never
+      name: load-generator
+      resources:
+        limits:
+          cpu: 100m
+          memory: 128Mi
+        requests:
+          cpu: 50m
+          memory: 64Mi
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-nhc9h
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: docker-desktop
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-nhc9h
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2025-07-04T04:22:56Z"
+      status: "True"
+      type: PodReadyToStartContainers
+    - lastProbeTime: null
+      lastTransitionTime: "2025-07-04T04:22:55Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2025-07-04T04:22:56Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2025-07-04T04:22:56Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2025-07-04T04:22:55Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://b25ed5f8a3676bd353ec3c1344a0d8b8ca073851e2cf552def1bbf79a4d39767
+      image: load-generator:latest
+      imageID: docker-pullable://load-generator@sha256:772aa57cc8fc9df90710b339949306e68f862011d9cc1771cc3bd1d4522ce9fd
+      lastState: {}
+      name: load-generator
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2025-07-04T04:22:55Z"
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-nhc9h
+        readOnly: true
+        recursiveReadOnly: Disabled
+    hostIP: 192.168.65.3
+    hostIPs:
+    - ip: 192.168.65.3
+    phase: Running
+    podIP: 10.1.0.29
+    podIPs:
+    - ip: 10.1.0.29
+    qosClass: Burstable
+    startTime: "2025-07-04T04:22:55Z"
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"app":"banking-service"},"name":"banking-service","namespace":"banking-k8s-test"},"spec":{"ports":[{"name":"http","port":80,"protocol":"TCP","targetPort":80}],"selector":{"app":"banking-service"},"type":"ClusterIP"}}
+    creationTimestamp: "2025-07-03T12:06:48Z"
+    labels:
+      app: banking-service
+    name: banking-service
+    namespace: banking-k8s-test
+    resourceVersion: "3935"
+    uid: 54774e66-34c7-456f-b453-9b6e7bdde4c3
+  spec:
+    clusterIP: 10.106.191.57
+    clusterIPs:
+    - 10.106.191.57
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: http
+      port: 80
+      protocol: TCP
+      targetPort: 80
+    selector:
+      app: banking-service
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{"prometheus.io/port":"9419","prometheus.io/scrape":"true"},"labels":{"app":"k8s-resource-monitor"},"name":"k8s-resource-monitor","namespace":"banking-k8s-test"},"spec":{"ports":[{"name":"metrics","port":9419,"protocol":"TCP","targetPort":9419}],"selector":{"app":"k8s-resource-monitor"},"type":"ClusterIP"}}
+      prometheus.io/port: "9419"
+      prometheus.io/scrape: "true"
+    creationTimestamp: "2025-07-04T05:06:35Z"
+    labels:
+      app: k8s-resource-monitor
+    name: k8s-resource-monitor
+    namespace: banking-k8s-test
+    resourceVersion: "8666"
+    uid: 811e986a-8979-417c-8e04-a5b6be67cdac
+  spec:
+    clusterIP: 10.102.172.67
+    clusterIPs:
+    - 10.102.172.67
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: metrics
+      port: 9419
+      protocol: TCP
+      targetPort: 9419
+    selector:
+      app: k8s-resource-monitor
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    annotations:
+      deployment.kubernetes.io/revision: "1"
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"labels":{"app":"banking-service","tier":"application"},"name":"banking-service","namespace":"banking-k8s-test"},"spec":{"replicas":2,"selector":{"matchLabels":{"app":"banking-service"}},"template":{"metadata":{"labels":{"app":"banking-service","tier":"application"}},"spec":{"containers":[{"env":[{"name":"SERVICE_NAME","value":"banking-service"},{"name":"ENVIRONMENT","value":"test"}],"image":"nginx:alpine","livenessProbe":{"httpGet":{"path":"/","port":80},"initialDelaySeconds":30,"periodSeconds":10},"name":"banking-service","ports":[{"containerPort":80}],"readinessProbe":{"httpGet":{"path":"/","port":80},"initialDelaySeconds":5,"periodSeconds":5},"resources":{"limits":{"cpu":"200m","memory":"256Mi"},"requests":{"cpu":"100m","memory":"128Mi"}}}]}}}}
+    creationTimestamp: "2025-07-03T11:34:01Z"
+    generation: 67
+    labels:
+      app: banking-service
+      tier: application
+    name: banking-service
+    namespace: banking-k8s-test
+    resourceVersion: "44419"
+    uid: 7f0f28d8-fe72-466a-94b1-391f771990f2
+  spec:
+    progressDeadlineSeconds: 600
+    replicas: 5
+    revisionHistoryLimit: 10
+    selector:
+      matchLabels:
+        app: banking-service
+    strategy:
+      rollingUpdate:
+        maxSurge: 25%
+        maxUnavailable: 25%
+      type: RollingUpdate
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          app: banking-service
+          tier: application
+      spec:
+        containers:
+        - env:
+          - name: SERVICE_NAME
+            value: banking-service
+          - name: ENVIRONMENT
+            value: test
+          image: nginx:alpine
+          imagePullPolicy: IfNotPresent
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /
+              port: 80
+              scheme: HTTP
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+          name: banking-service
+          ports:
+          - containerPort: 80
+            protocol: TCP
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /
+              port: 80
+              scheme: HTTP
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            successThreshold: 1
+            timeoutSeconds: 1
+          resources:
+            limits:
+              cpu: 200m
+              memory: 256Mi
+            requests:
+              cpu: 100m
+              memory: 128Mi
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    availableReplicas: 5
+    conditions:
+    - lastTransitionTime: "2025-07-03T11:34:01Z"
+      lastUpdateTime: "2025-07-03T11:34:19Z"
+      message: ReplicaSet "banking-service-788fc6b69d" has successfully progressed.
+      reason: NewReplicaSetAvailable
+      status: "True"
+      type: Progressing
+    - lastTransitionTime: "2025-07-04T12:00:01Z"
+      lastUpdateTime: "2025-07-04T12:00:01Z"
+      message: Deployment has minimum availability.
+      reason: MinimumReplicasAvailable
+      status: "True"
+      type: Available
+    observedGeneration: 67
+    readyReplicas: 5
+    replicas: 5
+    updatedReplicas: 5
+- apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    annotations:
+      deployment.kubernetes.io/revision: "2"
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"labels":{"app":"k8s-resource-monitor","tier":"monitoring"},"name":"k8s-resource-monitor","namespace":"banking-k8s-test"},"spec":{"replicas":1,"selector":{"matchLabels":{"app":"k8s-resource-monitor"}},"template":{"metadata":{"annotations":{"prometheus.io/path":"/metrics","prometheus.io/port":"9419","prometheus.io/scrape":"true"},"labels":{"app":"k8s-resource-monitor","tier":"monitoring"}},"spec":{"containers":[{"env":[{"name":"TARGET_NAMESPACE","value":"banking-k8s-test"},{"name":"COLLECTION_INTERVAL","value":"15"}],"image":"k8s-resource-monitor:latest","imagePullPolicy":"Never","livenessProbe":{"httpGet":{"path":"/metrics","port":9419},"initialDelaySeconds":60,"periodSeconds":30},"name":"k8s-resource-monitor","ports":[{"containerPort":9419,"name":"metrics"}],"readinessProbe":{"httpGet":{"path":"/metrics","port":9419},"initialDelaySeconds":10,"periodSeconds":10},"resources":{"limits":{"cpu":"200m","memory":"256Mi"},"requests":{"cpu":"50m","memory":"128Mi"}}}]}}}}
+    creationTimestamp: "2025-07-04T05:06:35Z"
+    generation: 2
+    labels:
+      app: k8s-resource-monitor
+      tier: monitoring
+    name: k8s-resource-monitor
+    namespace: banking-k8s-test
+    resourceVersion: "9466"
+    uid: cdedcb3d-9dbc-4bac-92ee-bf2fa35c178e
+  spec:
+    progressDeadlineSeconds: 600
+    replicas: 1
+    revisionHistoryLimit: 10
+    selector:
+      matchLabels:
+        app: k8s-resource-monitor
+    strategy:
+      rollingUpdate:
+        maxSurge: 25%
+        maxUnavailable: 25%
+      type: RollingUpdate
+    template:
+      metadata:
+        annotations:
+          kubectl.kubernetes.io/restartedAt: "2025-07-04T10:45:24+05:30"
+          prometheus.io/path: /metrics
+          prometheus.io/port: "9419"
+          prometheus.io/scrape: "true"
+        creationTimestamp: null
+        labels:
+          app: k8s-resource-monitor
+          tier: monitoring
+      spec:
+        containers:
+        - env:
+          - name: TARGET_NAMESPACE
+            value: banking-k8s-test
+          - name: COLLECTION_INTERVAL
+            value: "15"
+          image: k8s-resource-monitor:latest
+          imagePullPolicy: Never
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /metrics
+              port: 9419
+              scheme: HTTP
+            initialDelaySeconds: 60
+            periodSeconds: 30
+            successThreshold: 1
+            timeoutSeconds: 1
+          name: k8s-resource-monitor
+          ports:
+          - containerPort: 9419
+            name: metrics
+            protocol: TCP
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /metrics
+              port: 9419
+              scheme: HTTP
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+          resources:
+            limits:
+              cpu: 200m
+              memory: 256Mi
+            requests:
+              cpu: 50m
+              memory: 128Mi
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    availableReplicas: 1
+    conditions:
+    - lastTransitionTime: "2025-07-04T05:15:37Z"
+      lastUpdateTime: "2025-07-04T05:15:37Z"
+      message: Deployment has minimum availability.
+      reason: MinimumReplicasAvailable
+      status: "True"
+      type: Available
+    - lastTransitionTime: "2025-07-04T05:06:35Z"
+      lastUpdateTime: "2025-07-04T05:15:37Z"
+      message: ReplicaSet "k8s-resource-monitor-5574dfc4d7" has successfully progressed.
+      reason: NewReplicaSetAvailable
+      status: "True"
+      type: Progressing
+    observedGeneration: 2
+    readyReplicas: 1
+    replicas: 1
+    updatedReplicas: 1
+- apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    annotations:
+      deployment.kubernetes.io/revision: "1"
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"labels":{"app":"load-generator","tier":"testing"},"name":"load-generator","namespace":"banking-k8s-test"},"spec":{"replicas":1,"selector":{"matchLabels":{"app":"load-generator"}},"template":{"metadata":{"labels":{"app":"load-generator","tier":"testing"}},"spec":{"containers":[{"env":[{"name":"TARGET_SERVICE","value":"http://banking-service.banking-k8s-test.svc.cluster.local"},{"name":"REQUESTS_PER_SECOND","value":"50"},{"name":"WORKERS","value":"10"}],"image":"load-generator:latest","imagePullPolicy":"Never","name":"load-generator","resources":{"limits":{"cpu":"100m","memory":"128Mi"},"requests":{"cpu":"50m","memory":"64Mi"}}}],"restartPolicy":"Always"}}}}
+    creationTimestamp: "2025-07-04T04:22:55Z"
+    generation: 29
+    labels:
+      app: load-generator
+      tier: testing
+    name: load-generator
+    namespace: banking-k8s-test
+    resourceVersion: "33705"
+    uid: 8921f36c-1bd1-4ae2-bc0c-d95d947c4788
+  spec:
+    progressDeadlineSeconds: 600
+    replicas: 2
+    revisionHistoryLimit: 10
+    selector:
+      matchLabels:
+        app: load-generator
+    strategy:
+      rollingUpdate:
+        maxSurge: 25%
+        maxUnavailable: 25%
+      type: RollingUpdate
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          app: load-generator
+          tier: testing
+      spec:
+        containers:
+        - env:
+          - name: TARGET_SERVICE
+            value: http://banking-service.banking-k8s-test.svc.cluster.local
+          - name: REQUESTS_PER_SECOND
+            value: "50"
+          - name: WORKERS
+            value: "10"
+          image: load-generator:latest
+          imagePullPolicy: Never
+          name: load-generator
+          resources:
+            limits:
+              cpu: 100m
+              memory: 128Mi
+            requests:
+              cpu: 50m
+              memory: 64Mi
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    availableReplicas: 2
+    conditions:
+    - lastTransitionTime: "2025-07-04T04:22:55Z"
+      lastUpdateTime: "2025-07-04T04:22:56Z"
+      message: ReplicaSet "load-generator-78dd8c69b8" has successfully progressed.
+      reason: NewReplicaSetAvailable
+      status: "True"
+      type: Progressing
+    - lastTransitionTime: "2025-07-04T09:59:12Z"
+      lastUpdateTime: "2025-07-04T09:59:12Z"
+      message: Deployment has minimum availability.
+      reason: MinimumReplicasAvailable
+      status: "True"
+      type: Available
+    observedGeneration: 29
+    readyReplicas: 2
+    replicas: 2
+    updatedReplicas: 2
+- apiVersion: apps/v1
+  kind: ReplicaSet
+  metadata:
+    annotations:
+      deployment.kubernetes.io/desired-replicas: "5"
+      deployment.kubernetes.io/max-replicas: "7"
+      deployment.kubernetes.io/revision: "1"
+    creationTimestamp: "2025-07-03T11:34:01Z"
+    generation: 67
+    labels:
+      app: banking-service
+      pod-template-hash: 788fc6b69d
+      tier: application
+    name: banking-service-788fc6b69d
+    namespace: banking-k8s-test
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Deployment
+      name: banking-service
+      uid: 7f0f28d8-fe72-466a-94b1-391f771990f2
+    resourceVersion: "44417"
+    uid: b53b5d14-6a99-4fe5-a7be-0a5ee20f97cb
+  spec:
+    replicas: 5
+    selector:
+      matchLabels:
+        app: banking-service
+        pod-template-hash: 788fc6b69d
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          app: banking-service
+          pod-template-hash: 788fc6b69d
+          tier: application
+      spec:
+        containers:
+        - env:
+          - name: SERVICE_NAME
+            value: banking-service
+          - name: ENVIRONMENT
+            value: test
+          image: nginx:alpine
+          imagePullPolicy: IfNotPresent
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /
+              port: 80
+              scheme: HTTP
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+          name: banking-service
+          ports:
+          - containerPort: 80
+            protocol: TCP
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /
+              port: 80
+              scheme: HTTP
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            successThreshold: 1
+            timeoutSeconds: 1
+          resources:
+            limits:
+              cpu: 200m
+              memory: 256Mi
+            requests:
+              cpu: 100m
+              memory: 128Mi
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    availableReplicas: 5
+    fullyLabeledReplicas: 5
+    observedGeneration: 67
+    readyReplicas: 5
+    replicas: 5
+- apiVersion: apps/v1
+  kind: ReplicaSet
+  metadata:
+    annotations:
+      deployment.kubernetes.io/desired-replicas: "1"
+      deployment.kubernetes.io/max-replicas: "2"
+      deployment.kubernetes.io/revision: "2"
+    creationTimestamp: "2025-07-04T05:15:24Z"
+    generation: 1
+    labels:
+      app: k8s-resource-monitor
+      pod-template-hash: 5574dfc4d7
+      tier: monitoring
+    name: k8s-resource-monitor-5574dfc4d7
+    namespace: banking-k8s-test
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Deployment
+      name: k8s-resource-monitor
+      uid: cdedcb3d-9dbc-4bac-92ee-bf2fa35c178e
+    resourceVersion: "9460"
+    uid: e67edb1d-8d0f-4314-a43e-c7a244b298c6
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        app: k8s-resource-monitor
+        pod-template-hash: 5574dfc4d7
+    template:
+      metadata:
+        annotations:
+          kubectl.kubernetes.io/restartedAt: "2025-07-04T10:45:24+05:30"
+          prometheus.io/path: /metrics
+          prometheus.io/port: "9419"
+          prometheus.io/scrape: "true"
+        creationTimestamp: null
+        labels:
+          app: k8s-resource-monitor
+          pod-template-hash: 5574dfc4d7
+          tier: monitoring
+      spec:
+        containers:
+        - env:
+          - name: TARGET_NAMESPACE
+            value: banking-k8s-test
+          - name: COLLECTION_INTERVAL
+            value: "15"
+          image: k8s-resource-monitor:latest
+          imagePullPolicy: Never
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /metrics
+              port: 9419
+              scheme: HTTP
+            initialDelaySeconds: 60
+            periodSeconds: 30
+            successThreshold: 1
+            timeoutSeconds: 1
+          name: k8s-resource-monitor
+          ports:
+          - containerPort: 9419
+            name: metrics
+            protocol: TCP
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /metrics
+              port: 9419
+              scheme: HTTP
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+          resources:
+            limits:
+              cpu: 200m
+              memory: 256Mi
+            requests:
+              cpu: 50m
+              memory: 128Mi
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    availableReplicas: 1
+    fullyLabeledReplicas: 1
+    observedGeneration: 1
+    readyReplicas: 1
+    replicas: 1
+- apiVersion: apps/v1
+  kind: ReplicaSet
+  metadata:
+    annotations:
+      deployment.kubernetes.io/desired-replicas: "1"
+      deployment.kubernetes.io/max-replicas: "2"
+      deployment.kubernetes.io/revision: "1"
+    creationTimestamp: "2025-07-04T05:06:35Z"
+    generation: 2
+    labels:
+      app: k8s-resource-monitor
+      pod-template-hash: 7b98984fd8
+      tier: monitoring
+    name: k8s-resource-monitor-7b98984fd8
+    namespace: banking-k8s-test
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Deployment
+      name: k8s-resource-monitor
+      uid: cdedcb3d-9dbc-4bac-92ee-bf2fa35c178e
+    resourceVersion: "9464"
+    uid: 2a44f646-6eb8-4137-b86a-a4246ed4ad8a
+  spec:
+    replicas: 0
+    selector:
+      matchLabels:
+        app: k8s-resource-monitor
+        pod-template-hash: 7b98984fd8
+    template:
+      metadata:
+        annotations:
+          prometheus.io/path: /metrics
+          prometheus.io/port: "9419"
+          prometheus.io/scrape: "true"
+        creationTimestamp: null
+        labels:
+          app: k8s-resource-monitor
+          pod-template-hash: 7b98984fd8
+          tier: monitoring
+      spec:
+        containers:
+        - env:
+          - name: TARGET_NAMESPACE
+            value: banking-k8s-test
+          - name: COLLECTION_INTERVAL
+            value: "15"
+          image: k8s-resource-monitor:latest
+          imagePullPolicy: Never
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /metrics
+              port: 9419
+              scheme: HTTP
+            initialDelaySeconds: 60
+            periodSeconds: 30
+            successThreshold: 1
+            timeoutSeconds: 1
+          name: k8s-resource-monitor
+          ports:
+          - containerPort: 9419
+            name: metrics
+            protocol: TCP
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /metrics
+              port: 9419
+              scheme: HTTP
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+          resources:
+            limits:
+              cpu: 200m
+              memory: 256Mi
+            requests:
+              cpu: 50m
+              memory: 128Mi
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    observedGeneration: 2
+    replicas: 0
+- apiVersion: apps/v1
+  kind: ReplicaSet
+  metadata:
+    annotations:
+      deployment.kubernetes.io/desired-replicas: "2"
+      deployment.kubernetes.io/max-replicas: "3"
+      deployment.kubernetes.io/revision: "1"
+    creationTimestamp: "2025-07-04T04:22:55Z"
+    generation: 29
+    labels:
+      app: load-generator
+      pod-template-hash: 78dd8c69b8
+      tier: testing
+    name: load-generator-78dd8c69b8
+    namespace: banking-k8s-test
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Deployment
+      name: load-generator
+      uid: 8921f36c-1bd1-4ae2-bc0c-d95d947c4788
+    resourceVersion: "33700"
+    uid: 0dfe17c3-b764-4a1b-bdba-b75f957d9b03
+  spec:
+    replicas: 2
+    selector:
+      matchLabels:
+        app: load-generator
+        pod-template-hash: 78dd8c69b8
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          app: load-generator
+          pod-template-hash: 78dd8c69b8
+          tier: testing
+      spec:
+        containers:
+        - env:
+          - name: TARGET_SERVICE
+            value: http://banking-service.banking-k8s-test.svc.cluster.local
+          - name: REQUESTS_PER_SECOND
+            value: "50"
+          - name: WORKERS
+            value: "10"
+          image: load-generator:latest
+          imagePullPolicy: Never
+          name: load-generator
+          resources:
+            limits:
+              cpu: 100m
+              memory: 128Mi
+            requests:
+              cpu: 50m
+              memory: 64Mi
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    availableReplicas: 2
+    fullyLabeledReplicas: 2
+    observedGeneration: 29
+    readyReplicas: 2
+    replicas: 2
+- apiVersion: autoscaling/v2
+  kind: HorizontalPodAutoscaler
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"autoscaling/v2","kind":"HorizontalPodAutoscaler","metadata":{"annotations":{},"name":"banking-service-hpa","namespace":"banking-k8s-test"},"spec":{"behavior":{"scaleDown":{"policies":[{"periodSeconds":10,"type":"Percent","value":100}],"stabilizationWindowSeconds":15},"scaleUp":{"policies":[{"periodSeconds":10,"type":"Percent","value":100}],"stabilizationWindowSeconds":0}},"maxReplicas":5,"metrics":[{"resource":{"name":"cpu","target":{"averageUtilization":6,"type":"Utilization"}},"type":"Resource"}],"minReplicas":2,"scaleTargetRef":{"apiVersion":"apps/v1","kind":"Deployment","name":"banking-service"}}}
+    creationTimestamp: "2025-07-04T09:14:39Z"
+    name: banking-service-hpa
+    namespace: banking-k8s-test
+    resourceVersion: "44361"
+    uid: 63c692f9-c30b-4cef-9765-aa8d389d05ce
+  spec:
+    behavior:
+      scaleDown:
+        policies:
+        - periodSeconds: 10
+          type: Percent
+          value: 100
+        selectPolicy: Max
+        stabilizationWindowSeconds: 15
+      scaleUp:
+        policies:
+        - periodSeconds: 10
+          type: Percent
+          value: 100
+        selectPolicy: Max
+        stabilizationWindowSeconds: 0
+    maxReplicas: 5
+    metrics:
+    - resource:
+        name: cpu
+        target:
+          averageUtilization: 6
+          type: Utilization
+      type: Resource
+    minReplicas: 2
+    scaleTargetRef:
+      apiVersion: apps/v1
+      kind: Deployment
+      name: banking-service
+  status:
+    conditions:
+    - lastTransitionTime: "2025-07-04T09:14:40Z"
+      message: the HPA controller was able to update the target scale to 5
+      reason: SucceededRescale
+      status: "True"
+      type: AbleToScale
+    - lastTransitionTime: "2025-07-04T09:14:40Z"
+      message: the HPA was able to successfully calculate a replica count from cpu
+        resource utilization (percentage of request)
+      reason: ValidMetricFound
+      status: "True"
+      type: ScalingActive
+    - lastTransitionTime: "2025-07-04T10:00:42Z"
+      message: the desired count is within the acceptable range
+      reason: DesiredWithinRange
+      status: "False"
+      type: ScalingLimited
+    currentMetrics:
+    - resource:
+        current:
+          averageUtilization: 9
+          averageValue: 9m
+        name: cpu
+      type: Resource
+    currentReplicas: 3
+    desiredReplicas: 5
+    lastScaleTime: "2025-07-04T11:59:49Z"
+kind: List
+metadata:
+  resourceVersion: ""

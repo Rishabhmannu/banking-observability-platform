@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: banking-k8s-test
+  labels:
+    name: banking-k8s-test
+    purpose: monitoring-demo
+    environment: test
+---
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: banking-k8s-test-quota
+  namespace: banking-k8s-test
+spec:
+  hard:
+    requests.cpu: "2"
+    requests.memory: 2Gi
+    limits.cpu: "4"
+    limits.memory: 4Gi
+    pods: "10"
+    services: "5"
+    persistentvolumeclaims: "2"

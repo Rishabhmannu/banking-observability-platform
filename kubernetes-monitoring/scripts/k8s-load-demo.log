@@ -1,0 +1,205 @@
+2025-07-04 14:58:46,000 - INFO - 🚀 Starting Kubernetes Auto-scaling Demo
+2025-07-04 14:58:46,000 - INFO - ==================================================
+2025-07-04 14:58:46,205 - INFO - 📊 Initial Status: 4 replicas, CPU: 5%
+2025-07-04 14:58:46,206 - INFO - 
+🎯 === Scenario 1: Light Load (Scale Down Test) ===
+2025-07-04 14:58:46,206 - INFO - 📈 Target: 1 load generators → 2 banking pods
+2025-07-04 14:58:46,206 - INFO - 🔄 Scaling load generators to 1 replicas...
+2025-07-04 14:58:46,277 - INFO - ✅ Load generators scaled to 1
+2025-07-04 14:58:46,277 - INFO - ⏳ Waiting for load to stabilize...
+2025-07-04 14:59:16,288 - INFO - ⏳ Waiting for banking service to scale to 2 replicas...
+2025-07-04 14:59:16,600 - INFO - 📊 Current: 4 replicas, Desired: 4, CPU: 5%
+2025-07-04 14:59:16,601 - INFO - ✅ Banking service scaled to 4 replicas!
+2025-07-04 14:59:16,666 - INFO - 📊 Final Status: 4 replicas, CPU: 5%
+2025-07-04 14:59:16,667 - INFO - ✅ Scenario 1: Light Load (Scale Down Test) - SUCCESS
+2025-07-04 14:59:16,667 - INFO - ⏳ Waiting before next scenario...
+2025-07-04 14:59:46,670 - INFO - 
+🎯 === Scenario 2: Medium Load (Scale Up Test) ===
+2025-07-04 14:59:46,671 - INFO - 📈 Target: 4 load generators → 3 banking pods
+2025-07-04 14:59:46,671 - INFO - 🔄 Scaling load generators to 4 replicas...
+2025-07-04 14:59:46,886 - INFO - ✅ Load generators scaled to 4
+2025-07-04 14:59:46,887 - INFO - ⏳ Waiting for load to stabilize...
+2025-07-04 15:00:16,893 - INFO - ⏳ Waiting for banking service to scale to 3 replicas...
+2025-07-04 15:00:17,167 - INFO - 📊 Current: 2 replicas, Desired: 2, CPU: 2%
+2025-07-04 15:00:27,345 - INFO - 📊 Current: 2 replicas, Desired: 2, CPU: 2%
+2025-07-04 15:00:37,634 - INFO - 📊 Current: 2 replicas, Desired: 2, CPU: 2%
+2025-07-04 15:00:47,925 - INFO - 📊 Current: 2 replicas, Desired: 4, CPU: 10%
+2025-07-04 15:00:58,170 - INFO - 📊 Current: 4 replicas, Desired: 4, CPU: 10%
+2025-07-04 15:00:58,171 - INFO - ✅ Banking service scaled to 4 replicas!
+2025-07-04 15:00:58,214 - INFO - 📊 Final Status: 2 replicas, CPU: 10%
+2025-07-04 15:00:58,214 - INFO - ✅ Scenario 2: Medium Load (Scale Up Test) - SUCCESS
+2025-07-04 15:00:58,214 - INFO - ⏳ Waiting before next scenario...
+2025-07-04 15:01:28,221 - INFO - 
+🎯 === Scenario 3: Heavy Load (Maximum Scale) ===
+2025-07-04 15:01:28,225 - INFO - 📈 Target: 6 load generators → 5 banking pods
+2025-07-04 15:01:28,225 - INFO - 🔄 Scaling load generators to 6 replicas...
+2025-07-04 15:01:28,407 - INFO - ✅ Load generators scaled to 6
+2025-07-04 15:01:28,407 - INFO - ⏳ Waiting for load to stabilize...
+2025-07-04 15:01:58,410 - INFO - ⏳ Waiting for banking service to scale to 5 replicas...
+2025-07-04 15:01:58,718 - INFO - 📊 Current: 5 replicas, Desired: 5, CPU: 9%
+2025-07-04 15:01:58,718 - INFO - ✅ Banking service scaled to 5 replicas!
+2025-07-04 15:01:58,770 - INFO - 📊 Final Status: 4 replicas, CPU: 9%
+2025-07-04 15:01:58,770 - INFO - ✅ Scenario 3: Heavy Load (Maximum Scale) - SUCCESS
+2025-07-04 15:01:58,770 - INFO - ⏳ Waiting before next scenario...
+2025-07-04 15:02:28,772 - INFO - 
+🎯 === Scenario 4: Load Reduction (Scale Down) ===
+2025-07-04 15:02:28,774 - INFO - 📈 Target: 2 load generators → 2 banking pods
+2025-07-04 15:02:28,774 - INFO - 🔄 Scaling load generators to 2 replicas...
+2025-07-04 15:02:28,997 - INFO - ✅ Load generators scaled to 2
+2025-07-04 15:02:28,998 - INFO - ⏳ Waiting for load to stabilize...
+2025-07-04 15:02:59,001 - INFO - ⏳ Waiting for banking service to scale to 2 replicas...
+2025-07-04 15:02:59,339 - INFO - 📊 Current: 5 replicas, Desired: 5, CPU: 6%
+2025-07-04 15:02:59,339 - INFO - ✅ Banking service scaled to 5 replicas!
+2025-07-04 15:02:59,410 - INFO - 📊 Final Status: 5 replicas, CPU: 6%
+2025-07-04 15:02:59,410 - INFO - ✅ Scenario 4: Load Reduction (Scale Down) - SUCCESS
+2025-07-04 15:02:59,410 - INFO - ⏳ Waiting before next scenario...
+2025-07-04 15:03:29,416 - INFO - 
+🎉 Demo completed! Check your Grafana dashboards for results.
+2025-07-04 15:03:29,417 - INFO - 📊 Key metrics to observe:
+2025-07-04 15:03:29,417 - INFO -    - Dashboard 1: Pod count changes and HPA replica trends
+2025-07-04 15:03:29,417 - INFO -    - Dashboard 2: Scaling events and CPU utilization
+2025-07-04 15:03:29,417 - INFO -    - Dashboard 3: Node resource consumption correlation
+2025-07-05 09:56:03,896 - INFO - 🚀 Starting Kubernetes Auto-scaling Demo
+2025-07-05 09:56:03,896 - INFO - ==================================================
+2025-07-05 09:56:03,969 - INFO - 📊 Initial Status: 4 replicas, CPU: 9%
+2025-07-05 09:56:03,969 - INFO - 
+🎯 === Scenario 1: Light Load (Scale Down Test) ===
+2025-07-05 09:56:03,969 - INFO - 📈 Target: 1 load generators → 2 banking pods
+2025-07-05 09:56:03,969 - INFO - 🔄 Scaling load generators to 1 replicas...
+2025-07-05 09:56:04,049 - INFO - ✅ Load generators scaled to 1
+2025-07-05 09:56:04,049 - INFO - ⏳ Waiting for load to stabilize...
+2025-07-05 09:56:34,061 - INFO - ⏳ Waiting for banking service to scale to 2 replicas...
+2025-07-05 09:56:34,256 - INFO - 📊 Current: 5 replicas, Desired: 5, CPU: 9%
+2025-07-05 09:56:34,257 - INFO - ✅ Banking service scaled to 5 replicas!
+2025-07-05 09:56:34,361 - INFO - 📊 Final Status: 4 replicas, CPU: 9%
+2025-07-05 09:56:34,361 - INFO - ✅ Scenario 1: Light Load (Scale Down Test) - SUCCESS
+2025-07-05 09:56:34,361 - INFO - ⏳ Waiting before next scenario...
+2025-07-05 09:57:04,366 - INFO - 
+🎯 === Scenario 2: Medium Load (Scale Up Test) ===
+2025-07-05 09:57:04,369 - INFO - 📈 Target: 4 load generators → 3 banking pods
+2025-07-05 09:57:04,369 - INFO - 🔄 Scaling load generators to 4 replicas...
+2025-07-05 09:57:04,483 - INFO - ✅ Load generators scaled to 4
+2025-07-05 09:57:04,483 - INFO - ⏳ Waiting for load to stabilize...
+2025-07-05 09:57:34,485 - INFO - ⏳ Waiting for banking service to scale to 3 replicas...
+2025-07-05 09:57:34,632 - INFO - 📊 Current: 4 replicas, Desired: 4, CPU: 6%
+2025-07-05 09:57:34,632 - INFO - ✅ Banking service scaled to 4 replicas!
+2025-07-05 09:57:34,692 - INFO - 📊 Final Status: 5 replicas, CPU: 6%
+2025-07-05 09:57:34,692 - INFO - ✅ Scenario 2: Medium Load (Scale Up Test) - SUCCESS
+2025-07-05 09:57:34,692 - INFO - ⏳ Waiting before next scenario...
+2025-07-05 09:58:04,699 - INFO - 
+🎯 === Scenario 3: Heavy Load (Maximum Scale) ===
+2025-07-05 09:58:04,701 - INFO - 📈 Target: 6 load generators → 5 banking pods
+2025-07-05 09:58:04,701 - INFO - 🔄 Scaling load generators to 6 replicas...
+2025-07-05 09:58:04,807 - INFO - ✅ Load generators scaled to 6
+2025-07-05 09:58:04,807 - INFO - ⏳ Waiting for load to stabilize...
+2025-07-05 09:58:34,814 - INFO - ⏳ Waiting for banking service to scale to 5 replicas...
+2025-07-05 09:58:34,954 - INFO - 📊 Current: 4 replicas, Desired: 4, CPU: 8%
+2025-07-05 09:58:45,091 - INFO - 📊 Current: 4 replicas, Desired: 4, CPU: 7%
+2025-07-05 09:58:55,266 - INFO - 📊 Current: 4 replicas, Desired: 4, CPU: 7%
+2025-07-05 09:59:05,413 - INFO - 📊 Current: 4 replicas, Desired: 4, CPU: 7%
+2025-07-05 09:59:15,573 - INFO - 📊 Current: 4 replicas, Desired: 4, CPU: 7%
+2025-07-05 09:59:25,718 - INFO - 📊 Current: 4 replicas, Desired: 4, CPU: 7%
+2025-07-05 09:59:35,865 - INFO - 📊 Current: 4 replicas, Desired: 4, CPU: 7%
+2025-07-05 09:59:46,005 - INFO - 📊 Current: 3 replicas, Desired: 3, CPU: 6%
+2025-07-05 09:59:56,150 - INFO - 📊 Current: 3 replicas, Desired: 3, CPU: 6%
+2025-07-05 10:00:06,295 - INFO - 📊 Current: 3 replicas, Desired: 3, CPU: 6%
+2025-07-05 10:00:16,425 - INFO - 📊 Current: 3 replicas, Desired: 3, CPU: 6%
+2025-07-05 10:00:26,558 - INFO - 📊 Current: 3 replicas, Desired: 3, CPU: 6%
+2025-07-05 10:00:36,713 - INFO - 📊 Current: 3 replicas, Desired: 3, CPU: 6%
+2025-07-05 10:00:46,846 - INFO - 📊 Current: 4 replicas, Desired: 4, CPU: 9%
+2025-07-05 10:00:56,986 - INFO - 📊 Current: 4 replicas, Desired: 4, CPU: 9%
+2025-07-05 10:01:07,129 - INFO - 📊 Current: 4 replicas, Desired: 4, CPU: 9%
+2025-07-05 10:01:17,337 - INFO - 📊 Current: 4 replicas, Desired: 4, CPU: 9%
+2025-07-05 10:01:27,482 - INFO - 📊 Current: 4 replicas, Desired: 4, CPU: 9%
+2025-07-05 10:01:37,489 - WARNING - ⚠️ Timeout waiting for scaling to 5 replicas
+2025-07-05 10:01:37,595 - INFO - 📊 Final Status: 3 replicas, CPU: 9%
+2025-07-05 10:01:37,595 - WARNING - ⚠️ Scenario 3: Heavy Load (Maximum Scale) - PARTIAL SUCCESS
+2025-07-05 10:01:37,595 - INFO - ⏳ Waiting before next scenario...
+2025-07-05 10:02:07,601 - INFO - 
+🎯 === Scenario 4: Load Reduction (Scale Down) ===
+2025-07-05 10:02:07,603 - INFO - 📈 Target: 2 load generators → 2 banking pods
+2025-07-05 10:02:07,603 - INFO - 🔄 Scaling load generators to 2 replicas...
+2025-07-05 10:02:07,696 - INFO - ✅ Load generators scaled to 2
+2025-07-05 10:02:07,696 - INFO - ⏳ Waiting for load to stabilize...
+2025-07-05 10:02:37,699 - INFO - ⏳ Waiting for banking service to scale to 2 replicas...
+2025-07-05 10:02:37,844 - INFO - 📊 Current: 4 replicas, Desired: 4, CPU: 7%
+2025-07-05 10:02:37,844 - INFO - ✅ Banking service scaled to 4 replicas!
+2025-07-05 10:02:37,909 - INFO - 📊 Final Status: 4 replicas, CPU: 7%
+2025-07-05 10:02:37,909 - INFO - ✅ Scenario 4: Load Reduction (Scale Down) - SUCCESS
+2025-07-05 10:02:37,909 - INFO - ⏳ Waiting before next scenario...
+2025-07-05 10:03:07,913 - INFO - 
+🎉 Demo completed! Check your Grafana dashboards for results.
+2025-07-05 10:03:07,914 - INFO - 📊 Key metrics to observe:
+2025-07-05 10:03:07,914 - INFO -    - Dashboard 1: Pod count changes and HPA replica trends
+2025-07-05 10:03:07,914 - INFO -    - Dashboard 2: Scaling events and CPU utilization
+2025-07-05 10:03:07,914 - INFO -    - Dashboard 3: Node resource consumption correlation
+2025-07-05 11:24:12,641 - INFO - 🚀 Starting Kubernetes Auto-scaling Demo
+2025-07-05 11:24:12,642 - INFO - ==================================================
+2025-07-05 11:24:12,862 - INFO - 📊 Initial Status: 2 replicas, CPU: 7%
+2025-07-05 11:24:12,862 - INFO - 
+🎯 === Scenario 1: Light Load (Scale Down Test) ===
+2025-07-05 11:24:12,862 - INFO - 📈 Target: 1 load generators → 2 banking pods
+2025-07-05 11:24:12,862 - INFO - 🔄 Scaling load generators to 1 replicas...
+2025-07-05 11:24:12,939 - INFO - ✅ Load generators scaled to 1
+2025-07-05 11:24:12,939 - INFO - ⏳ Waiting for load to stabilize...
+2025-07-05 11:24:42,940 - INFO - ⏳ Waiting for banking service to scale to 2 replicas...
+2025-07-05 11:24:43,163 - INFO - 📊 Current: 2 replicas, Desired: 2, CPU: 7%
+2025-07-05 11:24:43,163 - INFO - ✅ Banking service scaled to 2 replicas!
+2025-07-05 11:24:43,262 - INFO - 📊 Final Status: 2 replicas, CPU: 7%
+2025-07-05 11:24:43,262 - INFO - ✅ Scenario 1: Light Load (Scale Down Test) - SUCCESS
+2025-07-05 11:24:43,262 - INFO - ⏳ Waiting before next scenario...
+2025-07-05 11:25:13,265 - INFO - 
+🎯 === Scenario 2: Medium Load (Scale Up Test) ===
+2025-07-05 11:25:13,266 - INFO - 📈 Target: 4 load generators → 3 banking pods
+2025-07-05 11:25:13,266 - INFO - 🔄 Scaling load generators to 4 replicas...
+2025-07-05 11:25:13,345 - INFO - ✅ Load generators scaled to 4
+2025-07-05 11:25:13,345 - INFO - ⏳ Waiting for load to stabilize...
+2025-07-05 11:25:43,347 - INFO - ⏳ Waiting for banking service to scale to 3 replicas...
+2025-07-05 11:25:43,544 - INFO - 📊 Current: 2 replicas, Desired: 3, CPU: 11%
+2025-07-05 11:25:53,695 - INFO - 📊 Current: 3 replicas, Desired: 3, CPU: 11%
+2025-07-05 11:25:53,696 - INFO - ✅ Banking service scaled to 3 replicas!
+2025-07-05 11:25:53,762 - INFO - 📊 Final Status: 2 replicas, CPU: 11%
+2025-07-05 11:25:53,762 - INFO - ✅ Scenario 2: Medium Load (Scale Up Test) - SUCCESS
+2025-07-05 11:25:53,762 - INFO - ⏳ Waiting before next scenario...
+2025-07-05 11:26:23,765 - INFO - 
+🎯 === Scenario 3: Heavy Load (Maximum Scale) ===
+2025-07-05 11:26:23,766 - INFO - 📈 Target: 6 load generators → 5 banking pods
+2025-07-05 11:26:23,766 - INFO - 🔄 Scaling load generators to 6 replicas...
+2025-07-05 11:26:23,903 - INFO - ✅ Load generators scaled to 6
+2025-07-05 11:26:23,903 - INFO - ⏳ Waiting for load to stabilize...
+2025-07-05 11:26:53,904 - INFO - ⏳ Waiting for banking service to scale to 5 replicas...
+2025-07-05 11:26:54,094 - INFO - 📊 Current: 3 replicas, Desired: 3, CPU: 8%
+2025-07-05 11:27:04,298 - INFO - 📊 Current: 3 replicas, Desired: 3, CPU: 8%
+2025-07-05 11:27:14,434 - INFO - 📊 Current: 3 replicas, Desired: 3, CPU: 8%
+2025-07-05 11:27:24,588 - INFO - 📊 Current: 3 replicas, Desired: 3, CPU: 8%
+2025-07-05 11:27:34,735 - INFO - 📊 Current: 3 replicas, Desired: 3, CPU: 8%
+2025-07-05 11:27:44,910 - INFO - 📊 Current: 3 replicas, Desired: 4, CPU: 9%
+2025-07-05 11:27:55,225 - INFO - 📊 Current: 4 replicas, Desired: 4, CPU: 9%
+2025-07-05 11:28:05,354 - INFO - 📊 Current: 4 replicas, Desired: 4, CPU: 9%
+2025-07-05 11:28:15,484 - INFO - 📊 Current: 4 replicas, Desired: 4, CPU: 9%
+2025-07-05 11:28:25,620 - INFO - 📊 Current: 4 replicas, Desired: 4, CPU: 9%
+2025-07-05 11:28:35,775 - INFO - 📊 Current: 4 replicas, Desired: 4, CPU: 9%
+2025-07-05 11:28:45,968 - INFO - 📊 Current: 4 replicas, Desired: 5, CPU: 9%
+2025-07-05 11:28:56,126 - INFO - 📊 Current: 5 replicas, Desired: 5, CPU: 9%
+2025-07-05 11:28:56,126 - INFO - ✅ Banking service scaled to 5 replicas!
+2025-07-05 11:28:56,209 - INFO - 📊 Final Status: 4 replicas, CPU: 9%
+2025-07-05 11:28:56,209 - INFO - ✅ Scenario 3: Heavy Load (Maximum Scale) - SUCCESS
+2025-07-05 11:28:56,209 - INFO - ⏳ Waiting before next scenario...
+2025-07-05 11:29:26,220 - INFO - 
+🎯 === Scenario 4: Load Reduction (Scale Down) ===
+2025-07-05 11:29:26,221 - INFO - 📈 Target: 2 load generators → 2 banking pods
+2025-07-05 11:29:26,221 - INFO - 🔄 Scaling load generators to 2 replicas...
+2025-07-05 11:29:26,336 - INFO - ✅ Load generators scaled to 2
+2025-07-05 11:29:26,336 - INFO - ⏳ Waiting for load to stabilize...
+2025-07-05 11:29:56,342 - INFO - ⏳ Waiting for banking service to scale to 2 replicas...
+2025-07-05 11:29:56,561 - INFO - 📊 Current: 5 replicas, Desired: 5, CPU: 8%
+2025-07-05 11:29:56,562 - INFO - ✅ Banking service scaled to 5 replicas!
+2025-07-05 11:29:56,638 - INFO - 📊 Final Status: 5 replicas, CPU: 8%
+2025-07-05 11:29:56,639 - INFO - ✅ Scenario 4: Load Reduction (Scale Down) - SUCCESS
+2025-07-05 11:29:56,639 - INFO - ⏳ Waiting before next scenario...
+2025-07-05 11:30:26,645 - INFO - 
+🎉 Demo completed! Check your Grafana dashboards for results.
+2025-07-05 11:30:26,646 - INFO - 📊 Key metrics to observe:
+2025-07-05 11:30:26,646 - INFO -    - Dashboard 1: Pod count changes and HPA replica trends
+2025-07-05 11:30:26,646 - INFO -    - Dashboard 2: Scaling events and CPU utilization
+2025-07-05 11:30:26,646 - INFO -    - Dashboard 3: Node resource consumption correlation

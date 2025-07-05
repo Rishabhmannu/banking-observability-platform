@@ -1,0 +1,66 @@
+Kubernetes Metrics State - Fri Jul  4 17:30:37 IST 2025
+================================
+
+### Pod Status ###
+NAME                                    READY   STATUS    RESTARTS        AGE     IP           NODE             NOMINATED NODE   READINESS GATES
+banking-service-788fc6b69d-4ztl6        1/1     Running   0               48s     10.1.0.112   docker-desktop   <none>           <none>
+banking-service-788fc6b69d-52jbz        1/1     Running   0               48s     10.1.0.111   docker-desktop   <none>           <none>
+banking-service-788fc6b69d-kclgf        1/1     Running   1 (7h44m ago)   24h     10.1.0.26    docker-desktop   <none>           <none>
+banking-service-788fc6b69d-pkckf        1/1     Running   0               7h26m   10.1.0.33    docker-desktop   <none>           <none>
+banking-service-788fc6b69d-x6b6n        1/1     Running   0               109s    10.1.0.110   docker-desktop   <none>           <none>
+k8s-resource-monitor-5574dfc4d7-2whps   1/1     Running   0               6h45m   10.1.0.38    docker-desktop   <none>           <none>
+load-generator-78dd8c69b8-5zpm4         1/1     Running   0               128m    10.1.0.79    docker-desktop   <none>           <none>
+load-generator-78dd8c69b8-ng9q7         1/1     Running   0               7h37m   10.1.0.29    docker-desktop   <none>           <none>
+
+### HPA Status ###
+NAME                  REFERENCE                    TARGETS      MINPODS   MAXPODS   REPLICAS   AGE
+banking-service-hpa   Deployment/banking-service   cpu: 9%/6%   2         5         3          165m
+
+### Node Resources ###
+NAME             CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%   
+docker-desktop   2077m        20%    5138Mi          66%       
+
+### Pod Resources ###
+NAME                                    CPU(cores)   MEMORY(bytes)   
+banking-service-788fc6b69d-4ztl6        2m           8Mi             
+banking-service-788fc6b69d-52jbz        1m           8Mi             
+banking-service-788fc6b69d-kclgf        4m           11Mi            
+banking-service-788fc6b69d-pkckf        9m           8Mi             
+banking-service-788fc6b69d-x6b6n        1m           8Mi             
+k8s-resource-monitor-5574dfc4d7-2whps   4m           24Mi            
+load-generator-78dd8c69b8-5zpm4         21m          19Mi            
+load-generator-78dd8c69b8-ng9q7         20m          30Mi            
+
+### Recent Events ###
+108s        Normal    Started             pod/banking-service-788fc6b69d-x6b6n          Started container banking-service
+108s        Normal    Pulled              pod/banking-service-788fc6b69d-x6b6n          Container image "nginx:alpine" already present on machine
+49s         Normal    SuccessfulRescale   horizontalpodautoscaler/banking-service-hpa   New size: 5; reason: cpu resource utilization (percentage of request) above target
+49s         Normal    ScalingReplicaSet   deployment/banking-service                    Scaled up replica set banking-service-788fc6b69d from 3 to 5
+47s         Normal    Pulled              pod/banking-service-788fc6b69d-4ztl6          Container image "nginx:alpine" already present on machine
+47s         Normal    Pulled              pod/banking-service-788fc6b69d-52jbz          Container image "nginx:alpine" already present on machine
+46s         Normal    Started             pod/banking-service-788fc6b69d-52jbz          Started container banking-service
+46s         Normal    Created             pod/banking-service-788fc6b69d-4ztl6          Created container: banking-service
+46s         Normal    Started             pod/banking-service-788fc6b69d-4ztl6          Started container banking-service
+46s         Normal    Created             pod/banking-service-788fc6b69d-52jbz          Created container: banking-service
+
+### K8s Resource Monitor Metrics ###
+# HELP python_gc_objects_collected_total Objects collected during gc
+# TYPE python_gc_objects_collected_total counter
+python_gc_objects_collected_total{generation="0"} 12841.0
+python_gc_objects_collected_total{generation="1"} 1707.0
+python_gc_objects_collected_total{generation="2"} 88.0
+# HELP python_gc_objects_uncollectable_total Uncollectable objects found during GC
+# TYPE python_gc_objects_uncollectable_total counter
+python_gc_objects_uncollectable_total{generation="0"} 0.0
+python_gc_objects_uncollectable_total{generation="1"} 0.0
+python_gc_objects_uncollectable_total{generation="2"} 0.0
+# HELP python_gc_collections_total Number of times this generation was collected
+# TYPE python_gc_collections_total counter
+python_gc_collections_total{generation="0"} 4130.0
+python_gc_collections_total{generation="1"} 375.0
+python_gc_collections_total{generation="2"} 30.0
+# HELP python_info Python platform information
+# TYPE python_info gauge
+python_info{implementation="CPython",major="3",minor="11",patchlevel="13",version="3.11.13"} 1.0
+# HELP process_virtual_memory_bytes Virtual memory size in bytes.
+# TYPE process_virtual_memory_bytes gauge

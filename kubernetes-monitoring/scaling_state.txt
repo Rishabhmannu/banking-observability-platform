@@ -1,0 +1,7 @@
+Current Scaling State - Fri Jul  4 17:30:38 IST 2025
+==============================
+Banking Service Replicas: 5
+Load Generator Replicas: 2
+HPA Min Replicas: 2
+HPA Max Replicas: 5
+HPA Target CPU: 6%

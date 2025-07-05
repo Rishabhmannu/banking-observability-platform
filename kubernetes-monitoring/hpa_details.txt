@@ -1,0 +1,35 @@
+Name:                                                  banking-service-hpa
+Namespace:                                             banking-k8s-test
+Labels:                                                <none>
+Annotations:                                           <none>
+CreationTimestamp:                                     Fri, 04 Jul 2025 14:44:39 +0530
+Reference:                                             Deployment/banking-service
+Metrics:                                               ( current / target )
+  resource cpu on pods  (as a percentage of request):  9% (9m) / 6%
+Min replicas:                                          2
+Max replicas:                                          5
+Behavior:
+  Scale Up:
+    Stabilization Window: 0 seconds
+    Select Policy: Max
+    Policies:
+      - Type: Percent  Value: 100  Period: 10 seconds
+  Scale Down:
+    Stabilization Window: 15 seconds
+    Select Policy: Max
+    Policies:
+      - Type: Percent  Value: 100  Period: 10 seconds
+Deployment pods:       3 current / 5 desired
+Conditions:
+  Type            Status  Reason              Message
+  ----            ------  ------              -------
+  AbleToScale     True    SucceededRescale    the HPA controller was able to update the target scale to 5
+  ScalingActive   True    ValidMetricFound    the HPA was able to successfully calculate a replica count from cpu resource utilization (percentage of request)
+  ScalingLimited  False   DesiredWithinRange  the desired count is within the acceptable range
+Events:
+  Type    Reason             Age                    From                       Message
+  ----    ------             ----                   ----                       -------
+  Normal  SuccessfulRescale  5m49s (x6 over 165m)   horizontal-pod-autoscaler  New size: 4; reason: cpu resource utilization (percentage of request) above target
+  Normal  SuccessfulRescale  3m49s (x23 over 164m)  horizontal-pod-autoscaler  New size: 2; reason: All metrics below target
+  Normal  SuccessfulRescale  109s (x20 over 159m)   horizontal-pod-autoscaler  New size: 3; reason: cpu resource utilization (percentage of request) above target
+  Normal  SuccessfulRescale  48s (x4 over 148m)     horizontal-pod-autoscaler  New size: 5; reason: cpu resource utilization (percentage of request) above target

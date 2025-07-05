@@ -1,0 +1,3937 @@
+===== container_cpu_usage_percent =====
+{
+  "status": "success",
+  "data": {
+    "resultType": "vector",
+    "result": [
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "redis-exporter",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "banking-redis",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "13.278240190249704"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "mysql-db",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0.3349072512647555"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "prometheus",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0.44999999999999996"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "grafana",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0.1668041237113402"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-ng9q7_banking-k8s-test_9ec843df-3174-4a15-926a-e22cb49e37fa_1",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "3.7884199134199132"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-ng9q7_banking-k8s-test_9ec843df-3174-4a15-926a-e22cb49e37fa_1",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "transaction-service",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0.2914572864321608"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "auto-baselining",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0.01285140562248996"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "notification-service",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0.298284561049445"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "auth-service",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0.8331313131313132"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "transaction-monitor",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "7.79324200913242"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "ddos-ml-detection",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0.025922233300099705"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "fraud-detection",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0.6698284561049446"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "account-service",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "3.0067540322580646"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "cache-proxy-service",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "2.356052141527002"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "cache-load-generator",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0.010885045778229909"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "load-generator",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0.2287575150300601"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "resource-anomaly-generator",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0.01608040201005025"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "api-gateway",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0.471309963099631"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-rjhnz_banking-k8s-test_928d35d8-dfa5-48b7-85cc-fac375451061_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-8wpz8_banking-k8s-test_a287d0a6-b376-424b-8bbd-18580f28f7bc_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-8wpz8_banking-k8s-test_a287d0a6-b376-424b-8bbd-18580f28f7bc_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-rjhnz_banking-k8s-test_928d35d8-dfa5-48b7-85cc-fac375451061_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-sdnvt_banking-k8s-test_c061ac20-2d5c-46b5-bb67-a814c36ac832_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "1.7800207039337477"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-sdnvt_banking-k8s-test_c061ac20-2d5c-46b5-bb67-a814c36ac832_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-tz4q5_banking-k8s-test_7e2e6480-3790-4505-93e5-d350b7fe602a_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "1.273459244532803"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-7gpkn_banking-k8s-test_fb496f1c-60dc-47e0-a35f-a3064c61b0b9_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "1.4551526717557253"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-fwx7b_banking-k8s-test_45efb369-239b-474a-aa4b-2e31ba0df11f_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "1.396370582617001"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-fwx7b_banking-k8s-test_45efb369-239b-474a-aa4b-2e31ba0df11f_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-tz4q5_banking-k8s-test_7e2e6480-3790-4505-93e5-d350b7fe602a_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-7gpkn_banking-k8s-test_fb496f1c-60dc-47e0-a35f-a3064c61b0b9_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-5gf42_banking-k8s-test_be1df481-7fbf-4fe4-97c3-3defce3bcdb2_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "1.521153846153846"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-5gf42_banking-k8s-test_be1df481-7fbf-4fe4-97c3-3defce3bcdb2_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-cjwzn_banking-k8s-test_245bd355-1d51-4979-b85d-e39dda707775_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "1.84967919340055"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-2mtpj_banking-k8s-test_04e7d2f8-360a-48ae-986f-e60d18436d05_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "2.1085714285714285"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-4frvk_banking-k8s-test_7f6ff384-ad46-4da6-a7cd-43ef36beaff9_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "1.482196634189548"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-q688k_banking-k8s-test_c49a90f5-abbd-4620-beb5-4103f4d71a58_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "1.3847983453981385"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-2mtpj_banking-k8s-test_04e7d2f8-360a-48ae-986f-e60d18436d05_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-4frvk_banking-k8s-test_7f6ff384-ad46-4da6-a7cd-43ef36beaff9_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-q688k_banking-k8s-test_c49a90f5-abbd-4620-beb5-4103f4d71a58_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-cjwzn_banking-k8s-test_245bd355-1d51-4979-b85d-e39dda707775_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-xr5tc_banking-k8s-test_fbe13dfb-8061-4a20-a2d5-402e94c0972a_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "1.4600568585643214"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-65wnv_banking-k8s-test_b2c0896d-1e8c-42d5-840c-0ca9d9f9f721_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "1.3155645981688706"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-pdp8l_banking-k8s-test_0a9fe8fa-e064-4001-af9f-1ef8251eeca8_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "1.8891078838174271"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-65wnv_banking-k8s-test_b2c0896d-1e8c-42d5-840c-0ca9d9f9f721_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-pdp8l_banking-k8s-test_0a9fe8fa-e064-4001-af9f-1ef8251eeca8_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-xr5tc_banking-k8s-test_fbe13dfb-8061-4a20-a2d5-402e94c0972a_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-x5jv7_banking-k8s-test_e13ee472-fd70-4265-9a6f-f416b6a418cd_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "3.6541394335511983"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-sjdtq_banking-k8s-test_a6345146-e289-4dfe-99cf-8cce37b52654_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "1.5509164969450102"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-x5jv7_banking-k8s-test_e13ee472-fd70-4265-9a6f-f416b6a418cd_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-sjdtq_banking-k8s-test_a6345146-e289-4dfe-99cf-8cce37b52654_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-2csx7_banking-k8s-test_e416b118-ddfb-4adf-8c5c-aa824b78fc9c_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "1.744954954954955"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-blxwd_banking-k8s-test_18c3dfac-914b-4dc1-9390-f4438cf04630_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "1.7641391614629793"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-v4kgd_banking-k8s-test_744439ff-3ef5-400d-b21b-4803cfbb041a_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "1.7367562380038386"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-lq6lv_banking-k8s-test_6d8cff5d-b8b9-45f0-b643-e2e93559b270_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "2.259043659043659"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-2csx7_banking-k8s-test_e416b118-ddfb-4adf-8c5c-aa824b78fc9c_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-v4kgd_banking-k8s-test_744439ff-3ef5-400d-b21b-4803cfbb041a_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-blxwd_banking-k8s-test_18c3dfac-914b-4dc1-9390-f4438cf04630_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-lq6lv_banking-k8s-test_6d8cff5d-b8b9-45f0-b643-e2e93559b270_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-2wzcm_banking-k8s-test_b6b5ba76-a062-4e4d-8e43-7a9a18c95292_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "1.253013910355487"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-8bv29_banking-k8s-test_48f48c28-3428-4034-9495-d98e25736231_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-47dsj_banking-k8s-test_c20641ad-2977-4e9d-884d-94996ce12c78_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-8bv29_banking-k8s-test_48f48c28-3428-4034-9495-d98e25736231_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-2wzcm_banking-k8s-test_b6b5ba76-a062-4e4d-8e43-7a9a18c95292_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-47dsj_banking-k8s-test_c20641ad-2977-4e9d-884d-94996ce12c78_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-lvrhs_banking-k8s-test_618fc2aa-c642-44e3-9e85-6bb8e5859cc9_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "1.9624493927125508"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-8b7hj_banking-k8s-test_487d93d6-48fd-41f0-ac21-e1574b45c8e7_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-n6lwv_banking-k8s-test_327a4c51-4f19-40d3-a3f6-e23a3cf007a8_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-45757_banking-k8s-test_d564ee9f-3964-41c2-ac79-c7281649f350_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-lvrhs_banking-k8s-test_618fc2aa-c642-44e3-9e85-6bb8e5859cc9_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-8b7hj_banking-k8s-test_487d93d6-48fd-41f0-ac21-e1574b45c8e7_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-n6lwv_banking-k8s-test_327a4c51-4f19-40d3-a3f6-e23a3cf007a8_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-45757_banking-k8s-test_d564ee9f-3964-41c2-ac79-c7281649f350_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-q4d2g_banking-k8s-test_92f36f39-9cdd-4301-a9e5-afd50a0278e8_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "3.904679376083189"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-4dgxw_banking-k8s-test_df607ecb-d9f8-4d9e-9679-b3f74adb4a33_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "2.132998996990973"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-69blf_banking-k8s-test_a84503c4-f057-45ed-bc9e-bbe7a8474e31_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "1.5325404376784015"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-595z8_banking-k8s-test_a25e7a0a-9ea0-49c1-957b-305f270ff816_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-q4d2g_banking-k8s-test_92f36f39-9cdd-4301-a9e5-afd50a0278e8_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-4dgxw_banking-k8s-test_df607ecb-d9f8-4d9e-9679-b3f74adb4a33_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-595z8_banking-k8s-test_a25e7a0a-9ea0-49c1-957b-305f270ff816_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-69blf_banking-k8s-test_a84503c4-f057-45ed-bc9e-bbe7a8474e31_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-ws4jv_banking-k8s-test_c12f940a-063d-4d60-ae09-374a23cbc6c7_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "3.722073921971253"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-ws4jv_banking-k8s-test_c12f940a-063d-4d60-ae09-374a23cbc6c7_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-zql64_banking-k8s-test_9c185f4e-a217-4b20-9698-c9c32aba3c14_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "2.303087478559177"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-zql64_banking-k8s-test_9c185f4e-a217-4b20-9698-c9c32aba3c14_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-gblkt_banking-k8s-test_65a827a1-549f-4cfe-89b2-a38271a23f67_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-gblkt_banking-k8s-test_65a827a1-549f-4cfe-89b2-a38271a23f67_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-4mpxp_banking-k8s-test_ac289ee6-7048-4a76-9464-9a63b03ebb3e_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "3.1350135013501346"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-4mpxp_banking-k8s-test_ac289ee6-7048-4a76-9464-9a63b03ebb3e_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-2clgn_banking-k8s-test_abc583b8-c0d1-4126-bc32-fa59be03ffb1_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-2clgn_banking-k8s-test_abc583b8-c0d1-4126-bc32-fa59be03ffb1_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-78jr8_banking-k8s-test_563ce35c-b06e-4792-8495-19cd17a8602f_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-78jr8_banking-k8s-test_563ce35c-b06e-4792-8495-19cd17a8602f_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-xnlcq_banking-k8s-test_db9550c5-5baf-41aa-bf5c-68249cedf278_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "2.9500738552437222"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-q29qh_banking-k8s-test_2ef28bfa-80e0-47f4-a5e8-f49ecb2e49b8_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "2.7566523605150217"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-2hgjl_banking-k8s-test_43747d30-9274-4273-ba02-53bd8a2f25ed_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "2.734658040665434"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-2hgjl_banking-k8s-test_43747d30-9274-4273-ba02-53bd8a2f25ed_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-xnlcq_banking-k8s-test_db9550c5-5baf-41aa-bf5c-68249cedf278_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-q29qh_banking-k8s-test_2ef28bfa-80e0-47f4-a5e8-f49ecb2e49b8_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-t2d8q_banking-k8s-test_11c18acf-9f8a-41fa-b3fb-81d349950eb3_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "3.208227848101266"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-wp7d7_banking-k8s-test_72d75564-efb2-4992-b6cb-a87a910bbb32_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "2.561764705882353"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-t2d8q_banking-k8s-test_11c18acf-9f8a-41fa-b3fb-81d349950eb3_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-wp7d7_banking-k8s-test_72d75564-efb2-4992-b6cb-a87a910bbb32_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-4dtr8_banking-k8s-test_e71e1b82-762f-47ac-9ce9-d660a76fba8a_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "2.864662447257384"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-6v4w4_banking-k8s-test_1f56758d-5d7d-495d-a5b6-bcc35f83f52e_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "2.1386918833727346"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-z6jdx_banking-k8s-test_7888dcb3-6448-43e3-8809-ae586b7eb1ad_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "2.2044554455445544"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-6z67d_banking-k8s-test_852cfb91-6874-478f-844c-3faf99dcdd74_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "2.3888319672131146"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-fzp46_banking-k8s-test_9f47efbe-f17c-4edb-9257-37c3acd9c681_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "2.544501541623844"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-4dtr8_banking-k8s-test_e71e1b82-762f-47ac-9ce9-d660a76fba8a_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-z6jdx_banking-k8s-test_7888dcb3-6448-43e3-8809-ae586b7eb1ad_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-6v4w4_banking-k8s-test_1f56758d-5d7d-495d-a5b6-bcc35f83f52e_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-fzp46_banking-k8s-test_9f47efbe-f17c-4edb-9257-37c3acd9c681_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-6z67d_banking-k8s-test_852cfb91-6874-478f-844c-3faf99dcdd74_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-lqncm_banking-k8s-test_f5157818-6106-497c-9a85-fb9f34b60d0f_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "2.4219256434699714"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-sff6r_banking-k8s-test_d75155ce-0a60-4936-ad66-7c143b6a8057_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "3.274709562109026"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-fnfs2_banking-k8s-test_5001163b-4c5b-4990-a43f-494d507ecdda_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "1.9466188524590164"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-6vcdr_banking-k8s-test_c4bd1700-8618-4f73-9ce2-169c930ce3ab_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "3.9491614255765195"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-p62lv_banking-k8s-test_1b1b6938-f3ef-4255-b0b1-07a984e4a64c_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "2.369373072970195"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-p62lv_banking-k8s-test_1b1b6938-f3ef-4255-b0b1-07a984e4a64c_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-lqncm_banking-k8s-test_f5157818-6106-497c-9a85-fb9f34b60d0f_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-6vcdr_banking-k8s-test_c4bd1700-8618-4f73-9ce2-169c930ce3ab_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-fnfs2_banking-k8s-test_5001163b-4c5b-4990-a43f-494d507ecdda_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-sff6r_banking-k8s-test_d75155ce-0a60-4936-ad66-7c143b6a8057_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-w2mw5_banking-k8s-test_499ff3ff-621b-4951-85de-f634a435a6ae_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "3.49634703196347"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-kxnpw_banking-k8s-test_165f8ce4-0aa4-49bd-9955-ab6b0a46c26e_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "4.571951219512195"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-mzfcc_banking-k8s-test_fdb76c9a-222a-4af7-a5ab-a4c0ffefbafe_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "1.6943718592964823"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-mzfcc_banking-k8s-test_fdb76c9a-222a-4af7-a5ab-a4c0ffefbafe_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-kxnpw_banking-k8s-test_165f8ce4-0aa4-49bd-9955-ab6b0a46c26e_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-w2mw5_banking-k8s-test_499ff3ff-621b-4951-85de-f634a435a6ae_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-s982c_banking-k8s-test_57b631f6-10ca-447a-b736-17e2030eccfd_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "1.7720747295968533"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-dtg45_banking-k8s-test_2f7a618e-cc0f-4bf6-97b3-87fc728c3728_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "1.576417004048583"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-rqrb6_banking-k8s-test_f9f0dc70-7002-4083-a45d-23f0538c3205_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "2.2265513733468976"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-5mcxc_banking-k8s-test_a721bfe8-c491-4b54-b70c-4899c849e2a1_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "1.197889447236181"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-kbgtx_banking-k8s-test_771b0f5b-44ca-4415-ae75-9ee37fc6dd4f_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "1.8080919080919082"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-5mcxc_banking-k8s-test_a721bfe8-c491-4b54-b70c-4899c849e2a1_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-s982c_banking-k8s-test_57b631f6-10ca-447a-b736-17e2030eccfd_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-dtg45_banking-k8s-test_2f7a618e-cc0f-4bf6-97b3-87fc728c3728_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-kbgtx_banking-k8s-test_771b0f5b-44ca-4415-ae75-9ee37fc6dd4f_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-rqrb6_banking-k8s-test_f9f0dc70-7002-4083-a45d-23f0538c3205_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-7dhn7_banking-k8s-test_cbc9acdf-84a2-4c67-a580-c9e26c80c30e_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-z8h5x_banking-k8s-test_b78e439c-c2bd-47a5-b6ba-b5a9fda20ec7_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-wk9zj_banking-k8s-test_a7cb1f44-aa03-4e6a-a094-fa4acbfcc799_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-5tjzm_banking-k8s-test_a114e108-ea0c-47b9-8f63-5891a31c6459_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-wb8ns_banking-k8s-test_7f7a0ebe-38a5-4043-b57c-e63eca06cb15_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-wk9zj_banking-k8s-test_a7cb1f44-aa03-4e6a-a094-fa4acbfcc799_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "2.3628145386766075"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-5tjzm_banking-k8s-test_a114e108-ea0c-47b9-8f63-5891a31c6459_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "1.3810590631364563"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-z8h5x_banking-k8s-test_b78e439c-c2bd-47a5-b6ba-b5a9fda20ec7_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "2.535359675785208"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-7dhn7_banking-k8s-test_cbc9acdf-84a2-4c67-a580-c9e26c80c30e_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "1.4048484848484848"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_percent",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-wb8ns_banking-k8s-test_7f7a0ebe-38a5-4043-b57c-e63eca06cb15_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.372,
+          "1.6666983824928638"
+        ]
+      }
+    ]
+  }
+}
+
+===== container_memory_usage_bytes =====
+{
+  "status": "success",
+  "data": {
+    "resultType": "vector",
+    "result": [
+      {
+        "metric": {
+          "__name__": "container_memory_usage_bytes",
+          "id": "/",
+          "instance": "cadvisor:8080",
+          "job": "cadvisor"
+        },
+        "value": [
+          1751711194.395,
+          "6656819200"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_memory_usage_bytes",
+          "id": "/docker",
+          "instance": "cadvisor:8080",
+          "job": "cadvisor"
+        },
+        "value": [
+          1751711194.395,
+          "3689541632"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_memory_usage_bytes",
+          "id": "/docker/buildx",
+          "instance": "cadvisor:8080",
+          "job": "cadvisor"
+        },
+        "value": [
+          1751711194.395,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_memory_usage_bytes",
+          "id": "/kubepods",
+          "instance": "cadvisor:8080",
+          "job": "cadvisor"
+        },
+        "value": [
+          1751711194.395,
+          "982769664"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_memory_usage_bytes",
+          "id": "/kubepods/kubepods",
+          "instance": "cadvisor:8080",
+          "job": "cadvisor"
+        },
+        "value": [
+          1751711194.395,
+          "982749184"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_memory_usage_bytes",
+          "id": "/kubepods/kubepods/besteffort",
+          "instance": "cadvisor:8080",
+          "job": "cadvisor"
+        },
+        "value": [
+          1751711194.395,
+          "150450176"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_memory_usage_bytes",
+          "id": "/kubepods/kubepods/besteffort/poda09ed959-60c3-44ab-aacc-dfae741f80c3",
+          "instance": "cadvisor:8080",
+          "job": "cadvisor"
+        },
+        "value": [
+          1751711194.395,
+          "26972160"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_memory_usage_bytes",
+          "id": "/kubepods/kubepods/besteffort/podc4f0b6d6-a9f6-4a93-9bbe-2f6c24bdddfa",
+          "instance": "cadvisor:8080",
+          "job": "cadvisor"
+        },
+        "value": [
+          1751711194.395,
+          "26710016"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_memory_usage_bytes",
+          "id": "/kubepods/kubepods/besteffort/podce6df40b-0af6-43e8-9506-7510811179a6",
+          "instance": "cadvisor:8080",
+          "job": "cadvisor"
+        },
+        "value": [
+          1751711194.395,
+          "54763520"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_memory_usage_bytes",
+          "id": "/kubepods/kubepods/besteffort/pode9f1d4c5-32bc-43a8-8c7e-db4e76a96406",
+          "instance": "cadvisor:8080",
+          "job": "cadvisor"
+        },
+        "value": [
+          1751711194.395,
+          "41922560"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_memory_usage_bytes",
+          "id": "/kubepods/kubepods/burstable",
+          "instance": "cadvisor:8080",
+          "job": "cadvisor"
+        },
+        "value": [
+          1751711194.395,
+          "833044480"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_memory_usage_bytes",
+          "id": "/kubepods/kubepods/burstable/pod1bf3548d-cc3b-486b-974f-82b2ac7955d4",
+          "instance": "cadvisor:8080",
+          "job": "cadvisor"
+        },
+        "value": [
+          1751711194.395,
+          "54345728"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_memory_usage_bytes",
+          "id": "/kubepods/kubepods/burstable/pod20024f48-9742-48b7-bafb-fb78bd06b7b0",
+          "instance": "cadvisor:8080",
+          "job": "cadvisor"
+        },
+        "value": [
+          1751711194.395,
+          "36114432"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_memory_usage_bytes",
+          "id": "/kubepods/kubepods/burstable/pod38e3e129a91e81f2dc5057507c3ced19",
+          "instance": "cadvisor:8080",
+          "job": "cadvisor"
+        },
+        "value": [
+          1751711194.395,
+          "318971904"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_memory_usage_bytes",
+          "id": "/kubepods/kubepods/burstable/pod41ad27c1-2651-4351-a3c9-d7a068b18a60",
+          "instance": "cadvisor:8080",
+          "job": "cadvisor"
+        },
+        "value": [
+          1751711194.395,
+          "37433344"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_memory_usage_bytes",
+          "id": "/kubepods/kubepods/burstable/pod5c23e636-1608-4cd7-b736-10d16bfbefa4",
+          "instance": "cadvisor:8080",
+          "job": "cadvisor"
+        },
+        "value": [
+          1751711194.395,
+          "36462592"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_memory_usage_bytes",
+          "id": "/kubepods/kubepods/burstable/pod7779af46bf0a91fe6ec7c175258b1edd",
+          "instance": "cadvisor:8080",
+          "job": "cadvisor"
+        },
+        "value": [
+          1751711194.395,
+          "116748288"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_memory_usage_bytes",
+          "id": "/kubepods/kubepods/burstable/pod91de249f0655ce84612a10ea4918cbe4",
+          "instance": "cadvisor:8080",
+          "job": "cadvisor"
+        },
+        "value": [
+          1751711194.395,
+          "117571584"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_memory_usage_bytes",
+          "id": "/kubepods/kubepods/burstable/pod95c7055b-a979-485e-8251-bd2dd12006e5",
+          "instance": "cadvisor:8080",
+          "job": "cadvisor"
+        },
+        "value": [
+          1751711194.395,
+          "13025280"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_memory_usage_bytes",
+          "id": "/kubepods/kubepods/burstable/poda27cc507-1b05-422c-8f59-d9213d3a31bf",
+          "instance": "cadvisor:8080",
+          "job": "cadvisor"
+        },
+        "value": [
+          1751711194.395,
+          "12120064"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_memory_usage_bytes",
+          "id": "/kubepods/kubepods/burstable/podbfe797ff5a3ebaafbe14820f2b118e22",
+          "instance": "cadvisor:8080",
+          "job": "cadvisor"
+        },
+        "value": [
+          1751711194.395,
+          "57757696"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_memory_usage_bytes",
+          "id": "/podruntime",
+          "instance": "cadvisor:8080",
+          "job": "cadvisor"
+        },
+        "value": [
+          1751711194.395,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_memory_usage_bytes",
+          "id": "/procd-paused",
+          "instance": "cadvisor:8080",
+          "job": "cadvisor"
+        },
+        "value": [
+          1751711194.395,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_memory_usage_bytes",
+          "id": "/restricted",
+          "instance": "cadvisor:8080",
+          "job": "cadvisor"
+        },
+        "value": [
+          1751711194.395,
+          "1146867712"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_memory_usage_bytes",
+          "id": "/kubepods/kubepods/burstable/podfb496f1c-60dc-47e0-a35f-a3064c61b0b9",
+          "instance": "cadvisor:8080",
+          "job": "cadvisor"
+        },
+        "value": [
+          1751711194.395,
+          "20799488"
+        ]
+      }
+    ]
+  }
+}
+
+===== container_cpu_usage_cores =====
+{
+  "status": "success",
+  "data": {
+    "resultType": "vector",
+    "result": [
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "redis-exporter",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "banking-redis",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "1.3278240190249704"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "mysql-db",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.03349072512647555"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "prometheus",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.045"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "grafana",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.01668041237113402"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-ng9q7_banking-k8s-test_9ec843df-3174-4a15-926a-e22cb49e37fa_1",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.3788419913419913"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-ng9q7_banking-k8s-test_9ec843df-3174-4a15-926a-e22cb49e37fa_1",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "transaction-service",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.02914572864321608"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "auto-baselining",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.0012851405622489962"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "notification-service",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.0298284561049445"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "auth-service",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.08331313131313133"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "transaction-monitor",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.779324200913242"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "ddos-ml-detection",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.00259222333000997"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "fraud-detection",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.06698284561049445"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "account-service",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.30067540322580644"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "cache-proxy-service",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.2356052141527002"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "cache-load-generator",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.001088504577822991"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "load-generator",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.02287575150300601"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "resource-anomaly-generator",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.001608040201005025"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "api-gateway",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.0471309963099631"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-rjhnz_banking-k8s-test_928d35d8-dfa5-48b7-85cc-fac375451061_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-8wpz8_banking-k8s-test_a287d0a6-b376-424b-8bbd-18580f28f7bc_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-8wpz8_banking-k8s-test_a287d0a6-b376-424b-8bbd-18580f28f7bc_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-rjhnz_banking-k8s-test_928d35d8-dfa5-48b7-85cc-fac375451061_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-sdnvt_banking-k8s-test_c061ac20-2d5c-46b5-bb67-a814c36ac832_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.17800207039337476"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-sdnvt_banking-k8s-test_c061ac20-2d5c-46b5-bb67-a814c36ac832_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-tz4q5_banking-k8s-test_7e2e6480-3790-4505-93e5-d350b7fe602a_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.1273459244532803"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-7gpkn_banking-k8s-test_fb496f1c-60dc-47e0-a35f-a3064c61b0b9_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.1455152671755725"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-fwx7b_banking-k8s-test_45efb369-239b-474a-aa4b-2e31ba0df11f_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.1396370582617001"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-fwx7b_banking-k8s-test_45efb369-239b-474a-aa4b-2e31ba0df11f_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-tz4q5_banking-k8s-test_7e2e6480-3790-4505-93e5-d350b7fe602a_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-7gpkn_banking-k8s-test_fb496f1c-60dc-47e0-a35f-a3064c61b0b9_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-5gf42_banking-k8s-test_be1df481-7fbf-4fe4-97c3-3defce3bcdb2_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.1521153846153846"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-5gf42_banking-k8s-test_be1df481-7fbf-4fe4-97c3-3defce3bcdb2_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-cjwzn_banking-k8s-test_245bd355-1d51-4979-b85d-e39dda707775_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.184967919340055"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-2mtpj_banking-k8s-test_04e7d2f8-360a-48ae-986f-e60d18436d05_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.21085714285714285"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-4frvk_banking-k8s-test_7f6ff384-ad46-4da6-a7cd-43ef36beaff9_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.14821966341895482"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-q688k_banking-k8s-test_c49a90f5-abbd-4620-beb5-4103f4d71a58_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.13847983453981386"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-2mtpj_banking-k8s-test_04e7d2f8-360a-48ae-986f-e60d18436d05_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-4frvk_banking-k8s-test_7f6ff384-ad46-4da6-a7cd-43ef36beaff9_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-q688k_banking-k8s-test_c49a90f5-abbd-4620-beb5-4103f4d71a58_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-cjwzn_banking-k8s-test_245bd355-1d51-4979-b85d-e39dda707775_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-xr5tc_banking-k8s-test_fbe13dfb-8061-4a20-a2d5-402e94c0972a_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.14600568585643214"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-65wnv_banking-k8s-test_b2c0896d-1e8c-42d5-840c-0ca9d9f9f721_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.13155645981688707"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-pdp8l_banking-k8s-test_0a9fe8fa-e064-4001-af9f-1ef8251eeca8_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.18891078838174272"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-65wnv_banking-k8s-test_b2c0896d-1e8c-42d5-840c-0ca9d9f9f721_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-pdp8l_banking-k8s-test_0a9fe8fa-e064-4001-af9f-1ef8251eeca8_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-xr5tc_banking-k8s-test_fbe13dfb-8061-4a20-a2d5-402e94c0972a_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-x5jv7_banking-k8s-test_e13ee472-fd70-4265-9a6f-f416b6a418cd_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.36541394335511984"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-sjdtq_banking-k8s-test_a6345146-e289-4dfe-99cf-8cce37b52654_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.155091649694501"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-x5jv7_banking-k8s-test_e13ee472-fd70-4265-9a6f-f416b6a418cd_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-sjdtq_banking-k8s-test_a6345146-e289-4dfe-99cf-8cce37b52654_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-2csx7_banking-k8s-test_e416b118-ddfb-4adf-8c5c-aa824b78fc9c_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.1744954954954955"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-blxwd_banking-k8s-test_18c3dfac-914b-4dc1-9390-f4438cf04630_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.17641391614629795"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-v4kgd_banking-k8s-test_744439ff-3ef5-400d-b21b-4803cfbb041a_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.17367562380038387"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-lq6lv_banking-k8s-test_6d8cff5d-b8b9-45f0-b643-e2e93559b270_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.2259043659043659"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-2csx7_banking-k8s-test_e416b118-ddfb-4adf-8c5c-aa824b78fc9c_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-v4kgd_banking-k8s-test_744439ff-3ef5-400d-b21b-4803cfbb041a_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-blxwd_banking-k8s-test_18c3dfac-914b-4dc1-9390-f4438cf04630_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-lq6lv_banking-k8s-test_6d8cff5d-b8b9-45f0-b643-e2e93559b270_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-2wzcm_banking-k8s-test_b6b5ba76-a062-4e4d-8e43-7a9a18c95292_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.1253013910355487"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-8bv29_banking-k8s-test_48f48c28-3428-4034-9495-d98e25736231_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-47dsj_banking-k8s-test_c20641ad-2977-4e9d-884d-94996ce12c78_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-8bv29_banking-k8s-test_48f48c28-3428-4034-9495-d98e25736231_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-2wzcm_banking-k8s-test_b6b5ba76-a062-4e4d-8e43-7a9a18c95292_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-47dsj_banking-k8s-test_c20641ad-2977-4e9d-884d-94996ce12c78_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-lvrhs_banking-k8s-test_618fc2aa-c642-44e3-9e85-6bb8e5859cc9_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.19624493927125508"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-8b7hj_banking-k8s-test_487d93d6-48fd-41f0-ac21-e1574b45c8e7_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-n6lwv_banking-k8s-test_327a4c51-4f19-40d3-a3f6-e23a3cf007a8_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-45757_banking-k8s-test_d564ee9f-3964-41c2-ac79-c7281649f350_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-lvrhs_banking-k8s-test_618fc2aa-c642-44e3-9e85-6bb8e5859cc9_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-8b7hj_banking-k8s-test_487d93d6-48fd-41f0-ac21-e1574b45c8e7_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-n6lwv_banking-k8s-test_327a4c51-4f19-40d3-a3f6-e23a3cf007a8_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-45757_banking-k8s-test_d564ee9f-3964-41c2-ac79-c7281649f350_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-q4d2g_banking-k8s-test_92f36f39-9cdd-4301-a9e5-afd50a0278e8_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.3904679376083189"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-4dgxw_banking-k8s-test_df607ecb-d9f8-4d9e-9679-b3f74adb4a33_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.2132998996990973"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-69blf_banking-k8s-test_a84503c4-f057-45ed-bc9e-bbe7a8474e31_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.15325404376784013"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-595z8_banking-k8s-test_a25e7a0a-9ea0-49c1-957b-305f270ff816_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-q4d2g_banking-k8s-test_92f36f39-9cdd-4301-a9e5-afd50a0278e8_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-4dgxw_banking-k8s-test_df607ecb-d9f8-4d9e-9679-b3f74adb4a33_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-595z8_banking-k8s-test_a25e7a0a-9ea0-49c1-957b-305f270ff816_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-69blf_banking-k8s-test_a84503c4-f057-45ed-bc9e-bbe7a8474e31_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-ws4jv_banking-k8s-test_c12f940a-063d-4d60-ae09-374a23cbc6c7_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.3722073921971253"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-ws4jv_banking-k8s-test_c12f940a-063d-4d60-ae09-374a23cbc6c7_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-zql64_banking-k8s-test_9c185f4e-a217-4b20-9698-c9c32aba3c14_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.23030874785591768"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-zql64_banking-k8s-test_9c185f4e-a217-4b20-9698-c9c32aba3c14_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-gblkt_banking-k8s-test_65a827a1-549f-4cfe-89b2-a38271a23f67_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-gblkt_banking-k8s-test_65a827a1-549f-4cfe-89b2-a38271a23f67_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-4mpxp_banking-k8s-test_ac289ee6-7048-4a76-9464-9a63b03ebb3e_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.31350135013501346"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-4mpxp_banking-k8s-test_ac289ee6-7048-4a76-9464-9a63b03ebb3e_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-2clgn_banking-k8s-test_abc583b8-c0d1-4126-bc32-fa59be03ffb1_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-2clgn_banking-k8s-test_abc583b8-c0d1-4126-bc32-fa59be03ffb1_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-78jr8_banking-k8s-test_563ce35c-b06e-4792-8495-19cd17a8602f_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-78jr8_banking-k8s-test_563ce35c-b06e-4792-8495-19cd17a8602f_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-xnlcq_banking-k8s-test_db9550c5-5baf-41aa-bf5c-68249cedf278_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.2950073855243722"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-q29qh_banking-k8s-test_2ef28bfa-80e0-47f4-a5e8-f49ecb2e49b8_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.27566523605150217"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-2hgjl_banking-k8s-test_43747d30-9274-4273-ba02-53bd8a2f25ed_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.2734658040665434"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-2hgjl_banking-k8s-test_43747d30-9274-4273-ba02-53bd8a2f25ed_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-xnlcq_banking-k8s-test_db9550c5-5baf-41aa-bf5c-68249cedf278_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-q29qh_banking-k8s-test_2ef28bfa-80e0-47f4-a5e8-f49ecb2e49b8_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-t2d8q_banking-k8s-test_11c18acf-9f8a-41fa-b3fb-81d349950eb3_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.3208227848101266"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-wp7d7_banking-k8s-test_72d75564-efb2-4992-b6cb-a87a910bbb32_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.25617647058823534"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-t2d8q_banking-k8s-test_11c18acf-9f8a-41fa-b3fb-81d349950eb3_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-wp7d7_banking-k8s-test_72d75564-efb2-4992-b6cb-a87a910bbb32_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-4dtr8_banking-k8s-test_e71e1b82-762f-47ac-9ce9-d660a76fba8a_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.2864662447257384"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-6v4w4_banking-k8s-test_1f56758d-5d7d-495d-a5b6-bcc35f83f52e_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.21386918833727345"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-z6jdx_banking-k8s-test_7888dcb3-6448-43e3-8809-ae586b7eb1ad_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.22044554455445542"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-6z67d_banking-k8s-test_852cfb91-6874-478f-844c-3faf99dcdd74_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.23888319672131147"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-fzp46_banking-k8s-test_9f47efbe-f17c-4edb-9257-37c3acd9c681_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.25445015416238437"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-4dtr8_banking-k8s-test_e71e1b82-762f-47ac-9ce9-d660a76fba8a_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-z6jdx_banking-k8s-test_7888dcb3-6448-43e3-8809-ae586b7eb1ad_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-6v4w4_banking-k8s-test_1f56758d-5d7d-495d-a5b6-bcc35f83f52e_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-fzp46_banking-k8s-test_9f47efbe-f17c-4edb-9257-37c3acd9c681_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-6z67d_banking-k8s-test_852cfb91-6874-478f-844c-3faf99dcdd74_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-lqncm_banking-k8s-test_f5157818-6106-497c-9a85-fb9f34b60d0f_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.24219256434699715"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-sff6r_banking-k8s-test_d75155ce-0a60-4936-ad66-7c143b6a8057_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.3274709562109026"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-fnfs2_banking-k8s-test_5001163b-4c5b-4990-a43f-494d507ecdda_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.19466188524590167"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-6vcdr_banking-k8s-test_c4bd1700-8618-4f73-9ce2-169c930ce3ab_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.39491614255765195"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-p62lv_banking-k8s-test_1b1b6938-f3ef-4255-b0b1-07a984e4a64c_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.2369373072970195"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-p62lv_banking-k8s-test_1b1b6938-f3ef-4255-b0b1-07a984e4a64c_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-lqncm_banking-k8s-test_f5157818-6106-497c-9a85-fb9f34b60d0f_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-6vcdr_banking-k8s-test_c4bd1700-8618-4f73-9ce2-169c930ce3ab_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-fnfs2_banking-k8s-test_5001163b-4c5b-4990-a43f-494d507ecdda_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-sff6r_banking-k8s-test_d75155ce-0a60-4936-ad66-7c143b6a8057_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-w2mw5_banking-k8s-test_499ff3ff-621b-4951-85de-f634a435a6ae_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.34963470319634704"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-kxnpw_banking-k8s-test_165f8ce4-0aa4-49bd-9955-ab6b0a46c26e_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.4571951219512196"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-mzfcc_banking-k8s-test_fdb76c9a-222a-4af7-a5ab-a4c0ffefbafe_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.16943718592964824"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-mzfcc_banking-k8s-test_fdb76c9a-222a-4af7-a5ab-a4c0ffefbafe_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-kxnpw_banking-k8s-test_165f8ce4-0aa4-49bd-9955-ab6b0a46c26e_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-w2mw5_banking-k8s-test_499ff3ff-621b-4951-85de-f634a435a6ae_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-s982c_banking-k8s-test_57b631f6-10ca-447a-b736-17e2030eccfd_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.17720747295968534"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-dtg45_banking-k8s-test_2f7a618e-cc0f-4bf6-97b3-87fc728c3728_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.1576417004048583"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-rqrb6_banking-k8s-test_f9f0dc70-7002-4083-a45d-23f0538c3205_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.22265513733468978"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-5mcxc_banking-k8s-test_a721bfe8-c491-4b54-b70c-4899c849e2a1_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.11978894472361809"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-kbgtx_banking-k8s-test_771b0f5b-44ca-4415-ae75-9ee37fc6dd4f_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.1808091908091908"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-5mcxc_banking-k8s-test_a721bfe8-c491-4b54-b70c-4899c849e2a1_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-s982c_banking-k8s-test_57b631f6-10ca-447a-b736-17e2030eccfd_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-dtg45_banking-k8s-test_2f7a618e-cc0f-4bf6-97b3-87fc728c3728_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-kbgtx_banking-k8s-test_771b0f5b-44ca-4415-ae75-9ee37fc6dd4f_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-rqrb6_banking-k8s-test_f9f0dc70-7002-4083-a45d-23f0538c3205_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-7dhn7_banking-k8s-test_cbc9acdf-84a2-4c67-a580-c9e26c80c30e_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-z8h5x_banking-k8s-test_b78e439c-c2bd-47a5-b6ba-b5a9fda20ec7_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-wk9zj_banking-k8s-test_a7cb1f44-aa03-4e6a-a094-fa4acbfcc799_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-5tjzm_banking-k8s-test_a114e108-ea0c-47b9-8f63-5891a31c6459_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_POD_load-generator-78dd8c69b8-wb8ns_banking-k8s-test_7f7a0ebe-38a5-4043-b57c-e63eca06cb15_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-wk9zj_banking-k8s-test_a7cb1f44-aa03-4e6a-a094-fa4acbfcc799_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.23628145386766075"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-5tjzm_banking-k8s-test_a114e108-ea0c-47b9-8f63-5891a31c6459_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.1381059063136456"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-z8h5x_banking-k8s-test_b78e439c-c2bd-47a5-b6ba-b5a9fda20ec7_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.2535359675785208"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-7dhn7_banking-k8s-test_cbc9acdf-84a2-4c67-a580-c9e26c80c30e_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.1404848484848485"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "container_cpu_usage_cores",
+          "container_name": "k8s_load-generator_load-generator-78dd8c69b8-wb8ns_banking-k8s-test_7f7a0ebe-38a5-4043-b57c-e63eca06cb15_0",
+          "instance": "banking-container-monitor:5010",
+          "job": "container-resource-monitor"
+        },
+        "value": [
+          1751711194.419,
+          "0.16666983824928638"
+        ]
+      }
+    ]
+  }
+}
+
+===== container_cpu_usage_percent (metrics only) =====
+{
+  "__name__": "container_cpu_usage_percent",
+  "container_name": "redis-exporter",
+  "instance": "banking-container-monitor:5010",
+  "job": "container-resource-monitor"
+}

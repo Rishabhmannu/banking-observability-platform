@@ -1,0 +1,73 @@
+apiVersion: v1
+items:
+- apiVersion: autoscaling/v2
+  kind: HorizontalPodAutoscaler
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"autoscaling/v2","kind":"HorizontalPodAutoscaler","metadata":{"annotations":{},"name":"banking-service-hpa","namespace":"banking-k8s-test"},"spec":{"behavior":{"scaleDown":{"policies":[{"periodSeconds":10,"type":"Percent","value":100}],"stabilizationWindowSeconds":15},"scaleUp":{"policies":[{"periodSeconds":10,"type":"Percent","value":100}],"stabilizationWindowSeconds":0}},"maxReplicas":5,"metrics":[{"resource":{"name":"cpu","target":{"averageUtilization":6,"type":"Utilization"}},"type":"Resource"}],"minReplicas":2,"scaleTargetRef":{"apiVersion":"apps/v1","kind":"Deployment","name":"banking-service"}}}
+    creationTimestamp: "2025-07-04T09:14:39Z"
+    name: banking-service-hpa
+    namespace: banking-k8s-test
+    resourceVersion: "44361"
+    uid: 63c692f9-c30b-4cef-9765-aa8d389d05ce
+  spec:
+    behavior:
+      scaleDown:
+        policies:
+        - periodSeconds: 10
+          type: Percent
+          value: 100
+        selectPolicy: Max
+        stabilizationWindowSeconds: 15
+      scaleUp:
+        policies:
+        - periodSeconds: 10
+          type: Percent
+          value: 100
+        selectPolicy: Max
+        stabilizationWindowSeconds: 0
+    maxReplicas: 5
+    metrics:
+    - resource:
+        name: cpu
+        target:
+          averageUtilization: 6
+          type: Utilization
+      type: Resource
+    minReplicas: 2
+    scaleTargetRef:
+      apiVersion: apps/v1
+      kind: Deployment
+      name: banking-service
+  status:
+    conditions:
+    - lastTransitionTime: "2025-07-04T09:14:40Z"
+      message: the HPA controller was able to update the target scale to 5
+      reason: SucceededRescale
+      status: "True"
+      type: AbleToScale
+    - lastTransitionTime: "2025-07-04T09:14:40Z"
+      message: the HPA was able to successfully calculate a replica count from cpu
+        resource utilization (percentage of request)
+      reason: ValidMetricFound
+      status: "True"
+      type: ScalingActive
+    - lastTransitionTime: "2025-07-04T10:00:42Z"
+      message: the desired count is within the acceptable range
+      reason: DesiredWithinRange
+      status: "False"
+      type: ScalingLimited
+    currentMetrics:
+    - resource:
+        current:
+          averageUtilization: 9
+          averageValue: 9m
+        name: cpu
+      type: Resource
+    currentReplicas: 3
+    desiredReplicas: 5
+    lastScaleTime: "2025-07-04T11:59:49Z"
+kind: List
+metadata:
+  resourceVersion: ""

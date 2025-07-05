@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: load-generator
+  namespace: banking-k8s-test
+  labels:
+    app: load-generator
+    tier: testing
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: load-generator
+  template:
+    metadata:
+      labels:
+        app: load-generator
+        tier: testing
+    spec:
+      containers:
+      - name: load-generator
+        image: load-generator:latest
+        imagePullPolicy: Never
+        resources:
+          requests:
+            cpu: 50m
+            memory: 64Mi
+          limits:
+            cpu: 100m
+            memory: 128Mi
+        env:
+        - name: TARGET_SERVICE
+          value: "http://banking-service.banking-k8s-test.svc.cluster.local"
+        - name: REQUESTS_PER_SECOND
+          value: "50"
+        - name: WORKERS
+          value: "10"
+      restartPolicy: Always
