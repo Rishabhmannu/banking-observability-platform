@@ -81,3 +81,15 @@ groups:
       annotations:
         summary: "⚠️ Node CPU Usage High"
         description: "Node CPU usage is {{ $value | humanize }}% (threshold: 50%)"
+
+    - alert: K8sHPAReplicaEfficiencyLow
+      expr: kube_horizontalpodautoscaler_status_current_replicas{namespace="banking-k8s-test"} / kube_horizontalpodautoscaler_status_desired_replicas{namespace="banking-k8s-test"} < 0.7
+      for: 30s
+      labels:
+        severity: warning
+        category: scaling
+        service: kubernetes
+        namespace: banking-k8s-test
+      annotations:
+        summary: "⚠️ HPA Replica Efficiency Low"
+        description: "HPA {{ $labels.horizontalpodautoscaler }} efficiency is {{ $value | humanizePercentage }} (threshold: 70%)"
