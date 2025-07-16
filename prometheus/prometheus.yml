@@ -198,6 +198,19 @@ scrape_configs:
     scrape_interval: 30s
     metrics_path: '/metrics'
 
+# Event Correlation Engine
+  - job_name: 'event-correlation-engine'
+    static_configs:
+      - targets: ['event-correlation-engine:5025']
+    scrape_interval: 15s
+    metrics_path: '/metrics'
+
+# RCA Insights Engine
+  - job_name: 'rca-insights-engine'
+    static_configs:
+      - targets: ['rca-insights-engine:5026']
+    scrape_interval: 15s
+    metrics_path: '/metrics'
 
 alerting:
   alertmanagers:

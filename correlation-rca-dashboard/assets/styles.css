@@ -1,0 +1,180 @@
+/* 
+ * Custom CSS styling for the Banking Correlation Dashboard 
+ * Separated for maintainability and clean code structure
+ */
+
+/* Main header styling */
+.main-header {
+  font-size: 3rem;
+  text-align: center;
+  color: #00d4aa;
+  margin-bottom: 2rem;
+  border-bottom: 3px solid #00d4aa;
+  padding-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Metric cards with gradient backgrounds */
+.metric-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 1.5rem;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  margin: 0.5rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Correlation cards with dark background */
+.correlation-card {
+  background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);
+  border-left: 4px solid #00d4aa;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+/* Correlation headers - bigger and bolder */
+.correlation-header {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #00d4aa;
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Health status colors */
+.health-good {
+  color: #00d4aa;
+  font-weight: bold;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.health-bad {
+  color: #ff6b6b;
+  font-weight: bold;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Confidence level colors with better contrast */
+.confidence-high {
+  color: #00d4aa;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.confidence-medium {
+  color: #ffd93d;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.confidence-low {
+  color: #ff6b6b;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Business impact styling */
+.impact-critical {
+  color: #ff6b6b;
+  font-weight: bold;
+  font-size: 1.1rem;
+  background: rgba(255, 107, 107, 0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.impact-high {
+  color: #ff9f43;
+  font-weight: bold;
+  font-size: 1.1rem;
+  background: rgba(255, 159, 67, 0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.impact-medium {
+  color: #ffd93d;
+  font-weight: bold;
+  font-size: 1.1rem;
+  background: rgba(255, 217, 61, 0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.impact-low {
+  color: #70a1ff;
+  font-weight: bold;
+  background: rgba(112, 161, 255, 0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+/* Scientific notation styling */
+.scientific-notation {
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* Expander styling for better visibility */
+.streamlit-expanderHeader {
+  background: linear-gradient(135deg, #2d2d2d 0%, #3d3d3d 100%);
+  color: #00d4aa !important;
+  font-weight: bold !important;
+  font-size: 1.2rem !important;
+  border-radius: 8px;
+}
+
+/* Alert styling */
+.stAlert>div {
+  border-radius: 10px;
+  border-left: 4px solid #00d4aa;
+}
+
+/* Sidebar styling */
+.css-1d391kg {
+  background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);
+}
+
+/*
+ * CORRECTED: AI Analysis Wide-Screen Dashboard Styles
+ * Scoped to a unique class to prevent affecting other tabs.
+ */
+
+.ai-results-dashboard .stMetric {
+    background-color: #262730;
+    border: 1px solid #444;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.ai-results-dashboard .stMetric .st-ax { /* Label */
+    color: #00d4aa !important;
+}
+
+.ai-results-dashboard .stMetric .st-b1 { /* Value */
+    font-size: 1.5rem !important;
+    color: #fff !important;
+}
+
+.rca-content-box {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    border-left: 4px solid #70a1ff;
+}
+
+.rca-content-box h5 {
+    color: #70a1ff;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}

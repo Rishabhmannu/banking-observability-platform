@@ -156,6 +156,67 @@ services:
       retries: 3
       start_period: 60s
 
+# Event Correlation Engine
+  event-correlation-engine:
+    build: ./event-correlation-engine
+    container_name: event-correlation-engine
+    ports:
+      - "5025:5025"
+    environment:
+      - PROMETHEUS_URL=http://prometheus:9090
+      - ANALYSIS_INTERVAL=60
+      - CONFIDENCE_THRESHOLD=0.7
+    depends_on:
+      - prometheus
+    networks:
+      - banking-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5025/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+# RCA Insights Engine
+  rca-insights-engine:
+    build: ./rca-insights-engine
+    container_name: rca-insights-engine
+    ports:
+      - "5026:5026"
+    environment:
+      - CORRELATION_ENGINE_URL=http://event-correlation-engine:5025
+      - PROMETHEUS_URL=http://prometheus:9090
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    depends_on:
+      - event-correlation-engine
+      - prometheus
+    networks:
+      - banking-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5026/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  correlation-rca-dashboard:
+    build: ./correlation-rca-dashboard
+    ports:
+      - "8501:8501"
+    depends_on:
+      - event-correlation-engine
+      - rca-insights-engine
+    networks:
+      - banking-network
+    environment:
+      - CORRELATION_API=http://event-correlation-engine:5025
+      - RCA_API=http://rca-insights-engine:5026
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
   # Monitoring Stack
   prometheus:
     image: prom/prometheus:latest
@@ -272,6 +333,7 @@ services:
       interval: 30s
       timeout: 10s
       retries: 3
+
 
 
 

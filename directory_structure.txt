@@ -2,6 +2,7 @@
     test-cache-proxy.py
     cpu_stress_test.sh
     emergency-fix.sh
+    system_status7.sh
     fix_windows_iis_monitoring.sh
     requirements-baselining.txt
     cleanup_docker.sh
@@ -33,9 +34,11 @@
     import_windows_iis_dashboard.sh
     verify-transaction-metrics.sh
     docker-compose-fixed.yml.backup.20250625_101640
+    safe_restart7.sh
     system_status2.sh
     safe_shutdown.sh
     requirements-ml.txt
+    docker-compose.k8s-monitoring.yml
     memory_stress_test.sh
     .DS_Store
     minimal_ml_service.py
@@ -81,6 +84,7 @@
     fix_tracing_dashboard.sh
     update_prometheus_config.sh
     docker_hub_readme.md
+    safe_shutdown7.sh
     simple_ml_detection_service.py
     OPTIMIZATION_GUIDE.md
     docker-compose.yml.backup.20250530_105554
@@ -143,6 +147,7 @@
     trace_patterns_fixed.py
     continuous-traffic-generator.sh
     test-redis-cache.py
+    save_backup5.sh
     setup_comprehensive_dashboards.sh
     provision-dashboards.sh
     docker-compose.messaging.yml.backup.20250625_101640
@@ -152,6 +157,7 @@
     safe_shutdown4.sh
     prometheus_diagnostics.sh
     fix-rabbitmq-connection.sh
+    kubernetes-metrics-output.txt
     docker-compose.yml
     docker-compose-smtp.yml
     manual_dashboard_import.sh
@@ -176,8 +182,10 @@
     start-optimization-services.py
     system_status4.sh
     fix_docker_compose.sh
+    fetch-k8s-metrics.sh
     restore_dashboards.sh
     update_smtp_config.sh
+    k8s-status-check.sh
     start_ml_service.sh
     import-messaging-dashboards.sh
     system_status.sh
@@ -847,15 +855,20 @@
                 dashboard.yml
         dashboards/
             transaction-tracing-dashboard.json
+            kubernetes-overview-v2.json
+            pod-autoscaling.json
             enhanced-cache-monitoring-dashboard.json
             auto-baselining-dashboard.json
             banking-system-overview-v2.json
             banking-overview-dashboard.json
             db-connection-dashboard.json
             container-resource-optimization.json
+            node-resource-consumption.json
+            kubernetes-overview.json
             message-queue-dashboard.json
             rabbitmq-monitor-dashboard.json
             container-monitoring-dashboard.json
+            pod-autoscaling-v2.json
             dashboard.yml
             redis-cache-performance.json
             ddos-detection-dashboard.json
@@ -981,6 +994,7 @@
         optimization_alert_rules.yml
         prometheus.yml.backup.20250528_141150
         prometheus.yml.backup.20250610_144034
+        k8s-alert-rules.yml
         prometheus.yml.backup.20250618_120445
         alert_rules.yml
         prometheus.yml
@@ -1005,9 +1019,11 @@
                 f1a5b41f6a5ae147bbaab7c0464443b7433fa5
                 736b9ab73d4958fe054e99aafd4f5fd41d42e8
             0d/
+                5513a610eda8b965916b9ba9442038ce6ef019
                 c6fa503c6093f7c821e190a35bf7cde00c4a68
                 6813a01e4c8ecb2fb4f0474689297f76638d27
             95/
+                871ed753faf727fa172b85f425a9d4f5045150
                 9a03773b937b8893d38c6d4661bc5cafa69fe2
                 b6f1010fc344c85b565b422f7dd1e496fd4c85
                 7a25c327b15181298f62eb917d4087c230c92f
@@ -1046,11 +1062,13 @@
                 72cff0f9870c9a8a25e47de8be8dc3531440be
                 cb25e093efcebf7d97eb835144022827ebb114
             50/
+                8e2cea88dd91c62b084a3c7d4296f6c9ecdef5
                 2844453dd8212d76b6e386ff608a75f1214200
                 2a727fb84064f2b4313e5d375c4cdc90ef9a15
             68/
                 71bf47d9b05acbbb1597148871211d8104eac8
                 4478121878ee63dc6df774b428043b76306b5e
+                9f42c8c0423004d2d647758fc8c292a2786a07
                 3d74a4c8a8dc4a2a26d47614de3e4af2158e0b
                 1618e2d60d99d30a86886df993d673150d5ed5
             57/
@@ -1065,12 +1083,17 @@
             03/
                 36ea293586a30a7fe3a931267fe2be65402ef2
                 9649cf47c1317f9d9ba1036268285e74eea1d9
+                52c6a2e9dafb379a04f5f865ed7187e7a119aa
+                0968c5ccc29737b78703a002babb017a20dc28
             9b/
                 7b55a8ab0672df9198b37eb89274fb58027781
+                f6b04e3d1408561ba7922b41edb750651515a8
                 57a66a098d1a1b17bdff08b91b99e921fdd9e9
                 648f14a0008e4bdcb35b6e0357c84bacf8d881
             9e/
+                6b1d9c55c3450bbd3ed1ed95a9d5abcc5cca0c
                 17252be515f96daf9e96485204a40dad92b8b1
+                8d7a8a3316285e55ee8e0a1ed3c2eb56154cc5
                 bf47672faffac1bb7ac5bb09052faeed426e9d
             04/
                 8da10110ae41319eaaa86833a388f63611fe31
@@ -1084,9 +1107,11 @@
             6a/
                 43921a37162baf9422be50f3bd0d1837888453
                 76b925676daa860e82ac786a4c03c4178b74fa
+                1f959d51b7d35f0318be666064b3d76e18ef2d
                 8d80ef395fce689e1b790b6c67ff6df7d143ff
                 1f935c4bd42fa64925f51c76315dbd29899436
             32/
+                70bdb797ec0ab339af2828fd7c8f5be2e47095
                 e6d9ed9d9eba33eb6358ef408996d5d91a4bf6
                 9b49e477349c2862330a87e691b343014ee1f0
                 048ecbaf23bdeb2995c78f32551dba3c655de5
@@ -1096,6 +1121,7 @@
                 938f603f9d8b5b1d0ac7d1dee78b25fe7c0902
                 508b1444dd7346febad8ce47159b747428176f
                 c703b726947fb3c72b99c8396c41ae7d9019f5
+                a297a0eb23ce090862f0da119a351a17d2ea9f
                 a020a80df191117abdc923a73a9fa0f8ae6fd1
                 6a1310ff4bcaeb8ca0cb95434b15f4770bfe35
             69/
@@ -1112,10 +1138,12 @@
             56/
                 165634605fd396969749c20f472b53f74893de
                 06e7a3350949862477be27b20cda53d311a4f8
+                5a537e5484ebfa454359a82a4ad77645e5a99d
                 1fda344fc3418528c33341616307c227eff69f
                 0fa1ac64372c573e659f65702c305b8759f6d0
                 99751e30e92b40f7f33ee60d42e019110896c7
                 744a7ff8d35cc29dd42c977cf09828b3f0b742
+                77baaf3a34881cbcde8b72452740700382e008
             51/
                 7194191529a0c2ee3939c1661ac497cc6665b1
                 22e99d206600b77f988bb5fdd50aeca463617b
@@ -1128,6 +1156,7 @@
                 7c55a8ade94568d046b33416108d00c32bc05b
                 f0088c6753dd0877bbcb2e0621e20f80bd9a16
             58/
+                7d1e7cc501144e62e8bbe009e6ab07e329e49d
                 c689c831ebc7e539e361021f62029d9321831c
                 9b7774487dcf60122d89d8f37a763621d9b8f0
             67/
@@ -1171,6 +1200,7 @@
                 68eab47fd8229cf969483dd03dfb8469077361
             05/
                 cc263c1b77e25ea9602e1ff2bd2bedfed43c83
+                bdd5542d3cffa09a355a97f9540ccf85043727
                 c97fdfec890c5cfbf9ad6506e2045762bca93a
                 b9a76306658da414019d240932b6289de9c861
                 c4142f1a98f9688225990981d009f1d858e597
@@ -1192,6 +1222,7 @@
             02/
                 de0c1ee8f0cd15c5b018e4b9242a3d1e754417
             a4/
+                ac6e4547e0fd9ccedaae6369ebe61a0c6c165b
                 cb4c3cda0eac46e31c243fb3d8bc2224f56c34
                 22e57781cc3b62926d0edaa464230c45031021
                 735c55c2bdaf81c25153cb70ea0cb25101983a
@@ -1223,7 +1254,9 @@
             ad/
                 5b8afd70efa7cbd708def91b1eefb27c78c49b
             bb/
+                2ac95e51604d6e7b82f4ff0bc006fbc3ee916f
                 d2467df31bd1a01b81a3ad9cc4eddad4c7b77a
+                7f37c4c740be17dc31e94ce8df558313800eb4
                 61d524c3b961b589b186402eaaf81e50e20419
             d7/
                 cf1a9b57e05af4cb20dfb55cfeafef8e6817eb
@@ -1239,6 +1272,7 @@
             be/
                 165c4bc26214399104151358ca40aaf8a3754e
                 49600f3b4e9735b01d1d4b577ea9c188fdb3dc
+                4c6b922fef6bfde0808a63df7fa4c53b603224
                 5badf07eaac063ecc1a32b90c1a056e53ccf5b
                 457e8b74e517e87e6f72e0f0b698d7ecccec87
             b3/
@@ -1250,23 +1284,30 @@
                 cc5b5a3dc0e2773d7d14d104090e9aef281b9a
             df/
                 35ef0d799c290658a6b13e3e0c17aec26d23c4
+                00d671e1150f541cec06760faf492fd66475a8
+            da/
+                62dbc92a7db5448dcf3dba87372d1e953f7aa1
             b4/
                 30e9008ae1522e2053c92be7511bee6d9dccc5
                 99bbc3c39ad224a1498c082a3fd1b3884011ca
                 4aafbdbad0989a92376152c3e716c924db4264
+                cfe5a579c35db281481e0ac4f19b5e197db9e6
                 4f9b3c954709976f9013d9bf248a562062a156
                 2e1a18de1e29f06143820ea00511ab6c1d2f79
             a2/
                 31eab5da39723b27b3e03aafbc709454b1e9d3
+                2aef953ae5be3e7870b260f0418a7b570af35d
                 36369ff20b3602b3e3689bfe5bc6d553ce0a2f
             a5/
                 73691e353521efe14de7f050ff1a4093c414f7
+                90a8f07c11310b8b85c3b12d0f8dbfc17485bd
                 02bc76de2919918c9a43b4b717b3e2b195ffca
                 602177abdf65d773c5156304b6af80a1832d7d
                 28a304729077f1625b914b554bf92f36cc6412
             bd/
                 9ca7c2744ad464c401c2e6e8aa40bed61a6ec2
                 ac18a9ece9632c101d3d5f3605933ea621942a
+                0f7f6bbd73d299bd8ea9dbf7e8e816987559bc
                 46ccc2d49e251a8da23d61d7c4be17b6dc38c3
                 2b6e35ae1bdbcf80f02b88fe87e2e5170fb915
                 a9c828e1a8da09cff71d9bf805c8ef361c9ade
@@ -1373,6 +1414,7 @@
             e3/
                 1018009075bc6c2ce4fe457ec781d045c70228
                 7b1b2ecd04ba75c51ba681374e50f65cf48049
+                d4c50881c86cd9b7db4e9aa0ae1244edbb763c
                 403137c448e4c8072fe3d25ac25d7b15d5e471
             cf/
                 5710643aea8a5997da85d43a5223fb3916eb2d
@@ -1394,6 +1436,7 @@
             fe/
                 cd9e27812a97be0e0dd6ab3cb31762d5db2ec7
             c8/
+                08b4a1be6212d713b891ab96b31cf3e8a2a389
                 a5d83982f4005d03da9ef53cce340084aabcad
                 a6d6e0fcbdba78b7491a5f0d04bdf47eb57ead
                 e3aacfe3da0f030f73f1ab5d13cb20d0ab4392
@@ -1415,6 +1458,7 @@
                 9908adfa2d4d4bd31fbd717835fc3d93e29d65
                 1cd6b2750735184f4d4f71fec885dd837ec41a
             c6/
+                e062c17833d8f0f461957a9b38ab5ecf92c33d
                 72a952a4177759baee25c1f5926fbdce9ef685
                 bf5a01002f09512510499bac06557d02b388dd
                 31e06c9f336c767ca84f684a59b9faacb98f3e
@@ -1432,6 +1476,7 @@
                 8909cf5eaabbc357ab08d07ae558d9ee8995e6
                 86a34bede65b54fadda3ac1da49ab7ba287738
                 d9204dc4a01af286b6ca0ec16d50b1d46ff9c8
+                447fb68d9b4799869c4a8503f21474000b4106
             18/
                 e66972ee5e123d0f25e13b2696abc102f3f73a
             27/
@@ -1493,6 +1538,7 @@
                 29c1449554fbf4f8e408f8055fa88fdc1d1cce
                 c682932c471e5109d5880df61807833e6bf095
                 bb9784dc864ddb7ab34f40aa3a5690b494bba5
+                d7ca94ec8d5233080eb8448eb0dabbd56499a6
             87/
                 6f1dd4456fcb4535fb64eb192a5823703c731b
                 bd7cc208156a13c4abdf4733d31e8727f127d0
@@ -1544,6 +1590,7 @@
                 6c417032acff60e6a659a8302d2ef4b02dcaa4
                 6beaf52f9e25e322ab82ac91f15cdf62b3797e
                 80342870c7296d6da5fe905c7644cb7aa3478d
+                a745bbc9ccb8398cfcfc4b56a6fccb192e5739
                 4c14cc37f09d26424923cce456e6f6b4ea0609
             10/
                 3a4cba43ba9f6ba692cbef1ca59a0c1812a9c0
@@ -1574,6 +1621,7 @@
                 72b998934cac4f47cc3a567394a2fa1ec32c92
                 fe12564b1e20e385e621beb6a9b62ea41ff593
                 b2e632e9a92e7efaf4431a8a78debc55449e4f
+                bf9ca5ab2c68ddb980fd1912177e6fbaa2f30d
                 78e0bf1416c431af05243ac1aaea3080a038e0
             21/
                 8c073f38eb95b75d3576f799fefc2e2c9f66f9
@@ -1594,8 +1642,10 @@
             81/
                 aa375c56743c4e4250d9e1ca4369ba6b61c262
                 c246478e021a1503bfe3011fe3aaff7c131b46
+                182110e5bc89123d794b8c79c3651663bd24b5
             86/
                 b69aeb00e6bb16ad3fbc037c59a822c7778133
+                64acce45d7a72cde44aefe83a748822ef26b8a
                 cfc5b831ab37604d03dc49d3ee6d97b49d2108
                 48a211fcd70e86a7756925b269333786078d35
                 9322362c1a86d9939d6abe3ce0f8ff4164cea7
@@ -1603,6 +1653,8 @@
                 9b9ad8761d7edbfc440d84f8799d3ac233b625
                 41d4837dd87b7b9fca8154e682602a08b8008a
                 d97d1715992560c29d08d0b9574051974581cc
+                b130ced9dbe2e83e3b8eeaeaf0dbbad1595613
+                29723ee68f18c1c6bc9d643f644d8ff5ef8b12
             44/
                 ca2b2d8dbc6db595c6c5ad36df32432a7124f7
                 d0b93820a91505a1c3774976a10d510b80f94f
@@ -1629,6 +1681,7 @@
             43/
                 f997fe7628eca8d6d7669d46cae654047a01d4
                 6161804645731e7c6abafd032265ff8bbd6a5d
+                0ac2b2e09a12062e6f847fd53ea8551e51b610
                 2cbceaf2f5b916c5b7d863a5542c7e9dd457c7
                 d44948ea92bc02e4c628af3501c124d7db16b7
                 945e1c7db9efa1c350eb569830372b72cedfaa
@@ -1654,6 +1707,7 @@
             07/
                 aa03aa9e59e5b4da7284c155bb05e40ffdf30f
                 e977899af4fd3c83c4219e7bfc32384ae747ae
+                7e8adf8bf8c33d130b8fb124c12c4a0af40324
                 fb6a986e6df2c0b082a64f888336ed3f53ada6
             38/
                 30f01ebcbd440e1af26d5cdbece3ce4b196fb8
@@ -1718,6 +1772,7 @@
             65/
                 630aa37b36cce5237863dd5322c305c9b6259b
                 4146749cc00349063745627ca8b31ea2d30f89
+                c4c5828dddf66717943e63abcfc526fae8e47d
                 98e07a62a792debfc09356a10e7b7fa775ded7
                 49b2ee20c0ddba54f9beb693cb448d00184fc1
                 38beb694044c7d6bfd771e0a78b8b6cf7987a5
@@ -1731,11 +1786,13 @@
                 b82ff78297ba17d8ac9a0830653841c2256bc8
                 a329cb73b21f5b4dfa99912addf18ec8e95a33
                 0c64833b71349659b6572c919c8f2448e53524
+                7669b5e103f239a15208905881e983ee708bc1
                 cb0655573f92fa1ae88df6e97ab6f8ef3f2130
                 cfae88ed32c34d2ebc263d057006577d33f83f
                 cf799c6e565fdaa42f4deb26e15fb3f6844495
             3a/
                 1345ea5d71ec8a59cf51869fe9e1522a7cfc71
+                6f0a644757ac87d337719bbc53c12cc053309d
                 d61912bbd1667d7cac9679f110fa438289b266
                 954329f82b84f9dd6e0b61fbc24e7222a250a8
             54/
@@ -1759,6 +1816,7 @@
                 ceddbab1ba2b290701dc3f7eca8d0cc4879eb7
             30/
                 f17080e7a08f98baced314c4ef3998803986a8
+                6b68b6e65cbeff4c81a69c05c15e7d73db2015
                 1cbd067a2dea56b14a77a3173cf19ece78b1a7
             5e/
                 7f3e35005b817c3b3e088eadda33cb5112e2ed
@@ -1828,6 +1886,7 @@
                 4f903ed62e5499e412e3cb8f0c0a8571c4a370
             99/
                 f9ec493a583d856114ef49210ec3cc255c0bb1
+                f7826ab404d6eee361cf76d13e194d0aeafee2
                 0e9db4367859eaef16f9ccc152fb51cf910e03
                 939d238ae3b78b40331d9c061e69f2a0792df7
                 e464cbc705167e8cc97eac3673c344f85c6b4c
@@ -1841,6 +1900,7 @@
                 5afedd04db06dd2c7bdf1edc43f15503655602
                 9c9b57cbaa6c36a352feb1507c3a5a798becfe
                 36bc0fde8d348d4bbd0b848de24d77bb3425f6
+                c180f531102f8b164b4954e1b6cc2b22b8868d
                 32be52cb684fc814afb524381e0dada19f90a2
             97/
                 023a6314dc3f9f364a507f1b1890b9d61c304e
@@ -1848,6 +1908,7 @@
                 db42a990bd36cba9b43e9a39ef30170ff0a89f
                 49f261bd93062dcec4312ee68f61d118bd9531
                 6d1b7577c452fac44e091aa4e8aa69489939ef
+                efc3e41e90a26d97304f3d664822de20e0209c
                 9fe1768f8de3b5733dee5110601a19c482d72c
             63/
                 031ad7ba20979fc10b61aa246e8dbf81986826
@@ -1855,6 +1916,7 @@
                 eea9a84b877941b7ef2a53988aea2ecbcd7b74
                 9188946a15957c63806cda17944453766ca1ea
                 8fc21c1a68b1b47722d0d9a0bdc9b17bceba73
+                0f36002b83d07e437fb8608de8c3269ac1d4dc
             0f/
                 cadfab7e21e2e144784ae5a32e636ab59552c3
                 65cf7ce6da529c13ff48a24cb5113651b73dd5
@@ -1864,6 +1926,7 @@
                 432f042f70aaf4768ba58e22c8b362131ab96d
                 42934accc861865908cac2fc292604d593f53c
             0a/
+                5e47465013b1922556a14eab01da20115495a5
                 69b010f28db0d1fa28eb1c1ecad35d90bba3c6
                 f1c954a0fc9b5bbb049d98c556ebb51d2fac0a
                 d106f5eae760d804212c7332299de821568583
@@ -1924,8 +1987,10 @@
             dc/
                 3869072bbdbcf69095ea1fbe08efa54c414a1d
                 32837547c9f773c61d17552ced4d709e81121e
+                e2bf694215230c21ceea787e48cd29deb45116
                 c9b31e660c82ad90c46bdc61944c971fc14896
             b6/
+                9a21a852ff5b6ed37fbb895d1c207750b426d4
                 1b67c1aaf1ef570eeff0dd2fd6e8129f6f473d
                 b199ce6e5b8dd1cf75b3638844d32785373b4a
                 a5613b3ca5566d9b36dc0f92697e636f5e4dd5
@@ -1954,8 +2019,10 @@
                 84f211ee4fffe2d20939ad43a001d81c39b0db
                 b663ecf300e433aafdaf3b48b1b73fdcf61bc3
             af/
+                e480be599d9885f0f96deb56ec3af8233e64a8
                 026303f46a23f155a114a68c9a69c196b5cacb
                 ef6f2a6a6aff28f42f82cc4b01de39e91ee216
+                fcfa41f41d5a1956fa42a13fa2e418f60ac7e5
             b7/
                 8749db585b42ed0fd10ee5a9abc88a494d25d5
                 e487db38ef32bc4606162c29be2c829547edb5
@@ -2032,6 +2099,7 @@
                 8d312798ef87663566e200f3497239fc46b9dd
                 1fa17b60ff0970db8acd0e828e900642e2cd8a
                 bc95b0364d69d4775ae870ec6486332993e22e
+                06ee95dac53282bb3bb17fee3f4dcbf3f6764b
                 ce86b64bd116407bd7c49f7dfa4a03484d1f8d
                 2624120db92fd5ff4cd1a8743a0ed08e222050
             cc/
@@ -2043,6 +2111,7 @@
             e6/
                 7268fc9ce6b36bedca30e1d769fefd1fc5779e
                 b8f414e183cfd3e213e9fc3bc1f2eb36f1224b
+                012c09824f0400fa0202103ae9ba1514af35ea
                 9de29bb2d1d6434b8b29ae775ad8c2e48c5391
             f9/
                 da50e3d0e2e6d3e06ae0977c23b33f68af8a78
@@ -2072,8 +2141,10 @@
                 72d6c646c0f2c08a295eca0b56995437d5c443
                 8d3fd2ed218f11269b0f0434b82506928e5f0f
                 3c62446b42b5dfdd14f8f32682a5a015ac1e88
+                ffacf3dc5ee414a3e03d69c2c9ccfd7cff3930
                 0e50774b45fde5162b6126b65169d966345732
             ff/
+                2c4f8cc8282fc9f8ed77fe0eec7f92b9d736f9
                 7c135dc522d6e41b06934f86760746536f45a5
                 768108fd8dfc0ea0505401e402652aee8cd907
                 adba7af09a32d6d104aa96e48b516209ddda23
@@ -2106,6 +2177,7 @@
             e7/
                 552c3c00187b6dea0b32f3861effcb9285e5e4
                 5b763c47f86518f798d54df45632a8856dab1e
+                99d75a5d67df4c798a13c8fe975890e7e03f5b
                 e7894ea3845ef22fad96fc0fb1b8aa080ca9df
             cb/
                 9970423a7a8b4395b89e139b4d7e2859eb9e1d
@@ -2148,6 +2220,7 @@
                 4ca69652daf3dd2ba70a2a0c77779cb5be69a0
                 93c51faba0256a862513b80e9852b586821e16
                 7d3fa6086c170cc70ae985895c78e8cee20cc8
+                21b8b8f0f8079560d7d9b0db43838bb8d4e2e6
                 564a8dc1861afd75ea2833e04e424e2130526f
             2d/
                 e7122c4cf3970a5b5269d50c357d28e6e8da0a
@@ -2164,6 +2237,7 @@
                 621a31ab664ac2521a152981ae8f4c04fec8ab
                 be29fc1d603abac10bbcfcb0d986b2ba7070f2
             1b/
+                f400525a4ee8d9d1b6cd795d78330f66827f41
                 72760a02158abcde6f3fcb83b0d7b485d579ee
                 45a1f1c5bf5927504c428aed976067288f1011
             77/
@@ -2177,6 +2251,7 @@
                 82c49323dc9526b0af97f826e68fbe5b3e6542
                 44782339af223c7ee142f8a96fec7bc2a30908
                 42b4e7654787d43d1d41383619b78f32d26e26
+                98648300c191206194da79e43f617a6a1a51f7
                 334aaaa4bd9cbab2e249a489e03f4214d4891a
                 b9bde5880e83bb838699d5bd2b0a3d25d8f71f
                 5fa1e8e92b4fceddf2622fc65b756e1d669a7e
@@ -2199,6 +2274,7 @@
                 6810d52406576f8616e5b49e85aeb135fbb415
             24/
                 48952f6e62fbaa7fb00c662ce2d2d7dc0bca63
+                a1a79eb98bbb48c50d61911154d84b1d437df0
                 6bfa02365bbdb424954af94d8433e67092036f
             23/
                 44f5f2c5b70e612a94bdcf6c034b07db1ef6d1
@@ -2207,6 +2283,7 @@
             4f/
                 967c8dc0b18aba8a05c0ca5af1e44c80b66322
                 903a3c5ab56a66407a5f7f881b90051452923e
+                57fc4706f44a2228ed3dfc51f5be86d2449c7b
                 f9494e1137db93e4a3f1eb0697e6940bda198d
                 abffc5abec2a565f712bee2e4d829f9192e5a5
             8d/
@@ -2214,6 +2291,8 @@
             15/
                 92b03b34a65dc8c03ee95aa973b3adfdad80a3
                 58c08087110677258ad6b737ef9e155e94a4b5
+                352f4d4a5b35fb1e43a7a4617af5c503178a6b
+                d7274bcbfbd54289d05533705e0f88ce86f0f6
                 697eb02f3c01878d2c485bb622fbc797809fcf
                 f700e83f4a2da6773bcf16b820fcfe06b9ad32
                 572db65fabd64fed0df8a3ecd15778b484ff4e
@@ -2244,6 +2323,7 @@
                 da4ebaccf1ae2d035a76f9f3da70250469dd55
                 c6b0171e07887ea85cba96ab7720c8609efa8f
             76/
+                377b2bbe95ccf0a69d9818b3715f8012388d8b
                 6f4bda2d3443e2c321d364bde881d2ae120f66
                 33775a73e9dc4aef3362d0d82584c943cf1749
                 b4535b8774e826d5f1aad423c3d4dc36def767
@@ -2256,6 +2336,7 @@
             82/
                 255870fbead2d56c2536b2c3cbabe8989c666c
                 6ee60026c647684afed047dc0e11ff650a1e7c
+                eece744cd22cbd17ada14501b4168670dc1043
                 528d40ef7a148195a7a984f852a5477dc6688b
             49/
                 a45df273b8c1faf4dc2ae66c77c6b72909b068
@@ -2278,6 +2359,7 @@
                 d9f94d1f34fc78506a99ea60e2f6532958f586
                 1680715a51210890470ab477733d3c4abf80c2
             47/
+                0eeb9cab4abf4cc76ce203988e063f96df65d0
                 98cef19d0bae1d61b45ecfa7bec213dc221d46
                 bfd46553520d0b878d1d3eb4288e975295192b
             78/
@@ -2292,6 +2374,7 @@
                 fdafae0c89a8656e1f45600124facfcc95e9bc
             8b/
                 6133b06006804592e5fdc60be67f2f8f9d84da
+                3e0958ce582ec1f737a26c9c9f89a84c85a355
                 e1961902266c4b5dc0b1773940e00ce05e1f82
                 642aa0da666c845a0f8e3f71945171fa51990b
             13/
@@ -4050,6 +4133,380 @@
                     ml_detection_service.py
                     __init__.py
                     auto_baselining_service.py
+        20250703_164907/
+            test-cache-proxy.py
+            cpu_stress_test.sh
+            emergency-fix.sh
+            fix_windows_iis_monitoring.sh
+            requirements-baselining.txt
+            cleanup_docker.sh
+            comprehensive_alert_test.sh
+            stop_system.sh
+            test-transaction-monitoring.sh
+            disaster_recovery.sh
+            toggle-issues.sh
+            verify_iis_monitoring.sh
+            test_system.sh
+            restart_system.sh
+            safe_restart3.sh
+            fix-prometheus-targets.sh
+            system_status3.sh
+            comparison_tracker.sh
+            docker-compose.transaction-monitoring.yml
+            docker_hub_setup_fixed.sh
+            stop_memory_test.sh
+            force-prometheus-reload.sh
+            docker-compose.messaging.yml
+            test_traffic.sh
+            update-prometheus-config.sh
+            transaction_traffic.sh
+            save_backup.sh
+            transaction-dashboard-url.txt
+            RESTORE_INSTRUCTIONS.md
+            import_windows_iis_dashboard.sh
+            verify-transaction-metrics.sh
+            system_status2.sh
+            safe_shutdown.sh
+            requirements-ml.txt
+            docker-compose.k8s-monitoring.yml
+            memory_stress_test.sh
+            minimal_ml_service.py
+            fix-db-pool-metrics.sh
+            docker-compose.container-monitor.yml
+            setup_unified_project.sh
+            docker-compose.override.yml
+            safe_restart6.sh
+            generate-cache-traffic.sh
+            banking-logs.txt
+            system_status6.sh
+            enable-rabbitmq-prometheus.sh
+            test-anomaly-injection.sh
+            check-cadvisor-connectivity.py
+            simulate-realistic-traffic.sh
+            auth_traffic.sh
+            docker-compose.hub.yml
+            backup.txt
+            setup_all_files.sh
+            IMPLEMENTATION_SUMMARY.md
+            docker-compose.redis-only.yml
+            running_services.txt
+            safe_restart2.sh
+            import-dashboards-fixed.sh
+            run_anomaly_tests.sh
+            deploy_auto_baselining.sh
+            message-queue-tester-v2.sh
+            check-metrics-status.sh
+            start-transaction-monitoring.sh
+            restore_system.sh
+            quick-demo.sh
+            test-container-resources.py
+            safe_shutdown3.sh
+            port-mapping.txt
+            complete_system_deployment.sh
+            stop_stress_test.sh
+            docker-compose.db-demo.yml
+            test_integration.sh
+            memory_remediation.sh
+            save_backup2.sh
+            fix_tracing_dashboard.sh
+            update_prometheus_config.sh
+            docker_hub_readme.md
+            simple_ml_detection_service.py
+            OPTIMIZATION_GUIDE.md
+            verify_iis_monitoring2.sh
+            docker-compose.tracing.yml
+            debug-prometheus-targets.sh
+            docker_hub_setup.sh
+            cleanup_system.sh
+            docker-info.txt
+            save_backup3.sh
+            fix_prometheus_integration.sh
+            notification_traffic.sh
+            quick_deploy_from_hub.sh
+            generate_structure.py
+            database-activity-generator.sh
+            docker-commands.txt
+            safe_shutdown6.sh
+            verify_all_metrics.sh
+            final_metrics_state.txt
+            generate_backup.py
+            cpu_remediation.sh
+            test_fixed_systems.sh
+            test_fixed_system.sh
+            docker-compose.optimization.yml
+            webhook_receiver.py
+            generate_normal_traffic.sh
+            safe_shutdown2.sh
+            docker-compose.tracing.hub.yml
+            import_tracing_dashboard.sh
+            trigger-SLO-calculations.txt
+            check-optimization-status.py
+            recovery_system.sh
+            README.md
+            test_windows_iis_anomalies_v2.sh
+            safe_shutdown5.sh
+            setup_init_files.sh
+            generate_test_data.sh
+            fix-optimization-setup.sh
+            message-queue-tester.sh
+            docker_hub_setup_fixed2.sh
+            fix_ddos_metrics_endpoint.sh
+            add_basic_metrics.py
+            complete_system_recovery.sh
+            save_backup4.sh
+            directory_structure.txt
+            quick_fixes.sh
+            test-cadvisor-connection.py
+            fix-docker-network.sh
+            test-container-analysis.py
+            import-transaction-dashboard.sh
+            latency_stress_test.sh
+            trace_patterns_fixed.py
+            continuous-traffic-generator.sh
+            test-redis-cache.py
+            setup_comprehensive_dashboards.sh
+            provision-dashboards.sh
+            test_auto_baselining.sh
+            comprehensive-fix.sh
+            .shutdown_complete
+            complete-metrics-exporter.py
+            safe_shutdown4.sh
+            prometheus_diagnostics.sh
+            fix-rabbitmq-connection.sh
+            docker-compose.yml
+            docker-compose-smtp.yml
+            manual_dashboard_import.sh
+            docker-compose-fixed.yml
+            debug-cadvisor.py
+            fix_prometheus_ddos_target.sh
+            docker-output-logs.txt
+            safe_restart5.sh
+            stop_ml_service.sh
+            generate-initial-metrics.sh
+            system_status5.sh
+            toggle-issues-fixed.sh
+            test_newrelic.sh
+            generate_significant_traffic.sh
+            safe_restart.sh
+            test_windows_iis_anomalies.sh
+            start-optimization-services.py
+            system_status4.sh
+            fix_docker_compose.sh
+            restore_dashboards.sh
+            update_smtp_config.sh
+            start_ml_service.sh
+            import-messaging-dashboards.sh
+            system_status.sh
+            stop_latency_test.sh
+            safe_restart4.sh
+            rabbitmq-monitor/
+                requirements.txt
+                Dockerfile
+                app.py
+            redis-cache-load-generator/
+                requirements.txt
+                Dockerfile
+                cache_patterns.py
+                app.py
+            message-producer/
+                requirements.txt
+                Dockerfile
+                app.py
+            performance-aggregator/
+                requirements.txt
+                Dockerfile
+                app.py
+            container-resource-monitor/
+                config.py
+                requirements.txt
+                Dockerfile
+                app.py
+                optimizer.py
+            redis/
+                redis.conf
+            mock-iis-application/
+                requirements.txt
+                Dockerfile
+                app.py
+            transaction-monitor/
+                requirements.txt
+                Dockerfile
+                app.py
+            message-brokers/
+                .DS_Store
+                rabbitmq/
+                    rabbitmq.conf
+                    Dockerfile
+                kafka/
+                    docker-compose.kafka.yml
+            mock-windows-exporter/
+                requirements.txt
+                Dockerfile
+                metrics-schema.md
+                app.py
+            grafana/
+                .DS_Store
+                datasources/
+                    datasource.yml
+                provisioning/
+                    .DS_Store
+                    datasources/
+                        datasource.yml
+                        prometheus.yml
+                    dashboards/
+                        all.yml
+                        dashboard.yml
+                dashboards/
+                    transaction-tracing-dashboard.json
+                    pod-autoscaling.json
+                    enhanced-cache-monitoring-dashboard.json
+                    auto-baselining-dashboard.json
+                    banking-system-overview-v2.json
+                    banking-overview-dashboard.json
+                    db-connection-dashboard.json
+                    container-resource-optimization.json
+                    kubernetes-overview.json
+                    message-queue-dashboard.json
+                    rabbitmq-monitor-dashboard.json
+                    container-monitoring-dashboard.json
+                    node-consumption.json
+                    dashboard.yml
+                    redis-cache-performance.json
+                    ddos-detection-dashboard.json
+                    windows-iis-dashboard.json
+                    transaction-performance-dashboard.json
+                    backup-20250625/
+                        transaction-tracing-dashboard.json
+                        auto-baselining-dashboard.json
+                        banking-overview-dashboard.json
+                        db-connection-dashboard.json
+                        message-queue-dashboard.json
+                        ddos-detection-dashboard.json
+                        windows-iis-dashboard.json
+                        transaction-performance-dashboard.json
+            grafana_exports/
+                banking-system-v2_complete.json
+                redis-cache-perf_complete.json
+                97273ee6-9d9a-4c11-a61a-3ecf5a9ce606_complete.json
+                97273ee6-9d9a-4c11-a61a-3ecf5a9ce605_complete.json
+                cbbaf7a3-680b-41b5-b5a3-284bde01bb03_complete.json
+                e28affb9-a049-4ab6-ac1f-182e50abfb56_complete.json
+                d833695a-6b75-4739-a240-541ad564bcb6_complete.json
+                container-optimization_complete.json
+                container-usage-monitoring_complete.json
+                banking-db-connection_complete.json
+                340b9a2d-71e5-482e-934b-68b10b4fb409_complete.json
+                rabbitmq-monitor-v1_complete.json
+                rabbitmq-monitor-v2_complete.json
+                banking-message-queue_complete.json
+                container-resource-monitoring-v2_complete.json
+                enhanced-auto-baselining-v2_complete.json
+                ddos-monitoring-v2-uid_complete.json
+                restore_dashboards.sh
+                05c84299-5312-46f5-a9f5-fe6762b2f6a2_complete.json
+            shared/
+                cache/
+                    redis_cache.py
+            db-connection-demo/
+                config.py
+                requirements.txt
+                Dockerfile
+                init.sql
+                app.py
+            trace-generator/
+                trace_patterns.py
+                requirements.txt
+                Dockerfile
+                trace_patterns_fixed.py
+                app.py
+            scripts/
+                train_simple_model.py
+                generate_synthetic_data.py
+                simulate_ddos.py
+                test_ddos_system.py
+                deploy_ddos_system.sh
+                deploy_ddos_detection.sh
+                data/
+                    synthetic/
+                        banking_ddos_dataset_20250528_105410.csv
+                        banking_ddos_labels_20250528_105412.npy
+                        banking_ddos_labels_20250528_105406.npy
+                        banking_ddos_labels_20250528_105410.npy
+                        banking_ddos_dataset_20250528_105412.csv
+                        banking_ddos_dataset_20250528_105406.csv
+                        metadata_20250528_105412.json
+                        metadata_20250528_105410.json
+                        metadata_20250528_105406.json
+                        attack_log_20250528_105410.csv
+                        attack_log_20250528_105406.csv
+                        attack_log_20250528_105412.csv
+            redis-cache-analyzer/
+                config.py
+                requirements.txt
+                Dockerfile
+                app.py
+            k6-scripts/
+                cache-load-tests.js
+            prometheus/
+                ddos_alert_rules.yml
+                optimization_alert_rules.yml
+                prometheus.yml.backup.20250528_141150
+                prometheus.yml.backup.20250610_144034
+                k8s-alert-rules.yml
+                prometheus.yml.backup.20250618_120445
+                alert_rules.yml
+                prometheus.yml
+                prometheus-transaction.yml
+                prometheus.yml.backup.20250610_143555
+            resource-anomaly-generator/
+                requirements.txt
+                Dockerfile
+                anomaly_patterns.py
+                app.py
+            message-consumer/
+                requirements.txt
+                Dockerfile
+                app.py
+            anomaly-injector/
+                requirements.txt
+                Dockerfile
+                app.py
+            src/
+                .DS_Store
+                __init.py__
+                __init__.py
+                utils/
+                    __init__.py
+                models/
+                    __init__.py
+                __pycache__/
+                    __init__.cpython-39.pyc
+                    __init__.cpython-312.pyc
+                data_preprocessing/
+                    __init__.py
+                data_generation/
+                    banking_metrics_schema.py
+                    normal_traffic_generator.py
+                    __init__.py
+                    master_dataset_generator.py
+                    ddos_attack_generator.py
+                    __pycache__/
+                        __init__.cpython-39.pyc
+                        ddos_attack_generator.cpython-39.pyc
+                        ddos_attack_generator.cpython-312.pyc
+                        normal_traffic_generator.cpython-39.pyc
+                        master_dataset_generator.cpython-39.pyc
+                        master_dataset_generator.cpython-312.pyc
+                        banking_metrics_schema.cpython-39.pyc
+                        normal_traffic_generator.cpython-312.pyc
+                        banking_metrics_schema.cpython-312.pyc
+                        __init__.cpython-312.pyc
+                services/
+                    ddos_ml_detection_fixed.py
+                    prometheus_collector.py
+                    ml_detection_service.py
+                    __init__.py
+                    auto_baselining_service.py
         20250627_173919/
             cpu_stress_test.sh
             emergency-fix.sh
@@ -4682,6 +5139,466 @@
                     ml_detection_service.py
                     __init__.py
                     auto_baselining_service.py
+        20250707_172029/
+            cpu_stress_test.sh
+            emergency-fix.sh
+            system_status7.sh
+            fix_windows_iis_monitoring.sh
+            cleanup_docker.sh
+            comprehensive_alert_test.sh
+            stop_system.sh
+            test-transaction-monitoring.sh
+            disaster_recovery.sh
+            toggle-issues.sh
+            verify_iis_monitoring.sh
+            test_system.sh
+            live_metrics_snapshot.txt
+            restart_system.sh
+            safe_restart3.sh
+            fix-prometheus-targets.sh
+            system_status3.sh
+            comparison_tracker.sh
+            docker-compose.transaction-monitoring.yml
+            docker_hub_setup_fixed.sh
+            stop_memory_test.sh
+            force-prometheus-reload.sh
+            docker-compose.messaging.yml
+            test_traffic.sh
+            update-prometheus-config.sh
+            transaction_traffic.sh
+            save_backup.sh
+            RESTORE_INSTRUCTIONS.md
+            import_windows_iis_dashboard.sh
+            verify-transaction-metrics.sh
+            safe_restart7.sh
+            system_status2.sh
+            safe_shutdown.sh
+            docker-compose.k8s-monitoring.yml
+            memory_stress_test.sh
+            fix-db-pool-metrics.sh
+            docker-compose.container-monitor.yml
+            setup_unified_project.sh
+            docker-compose.override.yml
+            safe_restart6.sh
+            generate-cache-traffic.sh
+            system_status6.sh
+            enable-rabbitmq-prometheus.sh
+            test-anomaly-injection.sh
+            simulate-realistic-traffic.sh
+            auth_traffic.sh
+            docker-compose.hub.yml
+            setup_all_files.sh
+            docker-compose.redis-only.yml
+            running_services.txt
+            safe_restart2.sh
+            import-dashboards-fixed.sh
+            run_anomaly_tests.sh
+            deploy_auto_baselining.sh
+            message-queue-tester-v2.sh
+            check-metrics-status.sh
+            start-transaction-monitoring.sh
+            restore_system.sh
+            quick-demo.sh
+            safe_shutdown3.sh
+            complete_system_deployment.sh
+            stop_stress_test.sh
+            docker-compose.db-demo.yml
+            test_integration.sh
+            memory_remediation.sh
+            save_backup2.sh
+            fix_tracing_dashboard.sh
+            update_prometheus_config.sh
+            safe_shutdown7.sh
+            verify_iis_monitoring2.sh
+            docker-compose.tracing.yml
+            debug-prometheus-targets.sh
+            docker_hub_setup.sh
+            cleanup_system.sh
+            save_backup3.sh
+            fix_prometheus_integration.sh
+            notification_traffic.sh
+            quick_deploy_from_hub.sh
+            database-activity-generator.sh
+            safe_shutdown6.sh
+            verify_all_metrics.sh
+            cpu_remediation.sh
+            test_fixed_systems.sh
+            test_fixed_system.sh
+            docker-compose.optimization.yml
+            generate_normal_traffic.sh
+            safe_shutdown2.sh
+            docker-compose.tracing.hub.yml
+            import_tracing_dashboard.sh
+            recovery_system.sh
+            test_windows_iis_anomalies_v2.sh
+            safe_shutdown5.sh
+            setup_init_files.sh
+            generate_test_data.sh
+            fix-optimization-setup.sh
+            message-queue-tester.sh
+            docker_hub_setup_fixed2.sh
+            fix_ddos_metrics_endpoint.sh
+            complete_system_recovery.sh
+            save_backup4.sh
+            quick_fixes.sh
+            fix-docker-network.sh
+            import-transaction-dashboard.sh
+            latency_stress_test.sh
+            continuous-traffic-generator.sh
+            save_backup5.sh
+            setup_comprehensive_dashboards.sh
+            provision-dashboards.sh
+            test_auto_baselining.sh
+            comprehensive-fix.sh
+            safe_shutdown4.sh
+            prometheus_diagnostics.sh
+            fix-rabbitmq-connection.sh
+            docker-compose.yml
+            docker-compose-smtp.yml
+            manual_dashboard_import.sh
+            docker-compose-fixed.yml
+            fix_prometheus_ddos_target.sh
+            .backup_complete
+            safe_restart5.sh
+            stop_ml_service.sh
+            generate-initial-metrics.sh
+            system_status5.sh
+            toggle-issues-fixed.sh
+            test_newrelic.sh
+            generate_significant_traffic.sh
+            safe_restart.sh
+            test_windows_iis_anomalies.sh
+            system_status4.sh
+            fix_docker_compose.sh
+            fetch-k8s-metrics.sh
+            restore_dashboards.sh
+            update_smtp_config.sh
+            k8s-status-check.sh
+            start_ml_service.sh
+            import-messaging-dashboards.sh
+            system_status.sh
+            stop_latency_test.sh
+            safe_restart4.sh
+            rabbitmq-monitor/
+                requirements.txt
+                Dockerfile
+                app.py
+            redis-cache-load-generator/
+                requirements.txt
+                Dockerfile
+                cache_patterns.py
+                app.py
+            kubernetes-state/
+                banking-namespace-state.yaml
+                hpa-description.txt
+                restore_k8s_state.sh
+                live-metrics.txt
+                hpa-state.yaml
+                namespaces.yaml
+                nodes.yaml
+            message-producer/
+                requirements.txt
+                Dockerfile
+                app.py
+            performance-aggregator/
+                requirements.txt
+                Dockerfile
+                app.py
+            container-resource-monitor/
+                config.py
+                requirements.txt
+                Dockerfile
+                app.py
+                optimizer.py
+            redis/
+                redis.conf
+            mock-iis-application/
+                requirements.txt
+                Dockerfile
+                app.py
+            transaction-monitor/
+                requirements.txt
+                Dockerfile
+                app.py
+            message-brokers/
+                .DS_Store
+                rabbitmq/
+                    rabbitmq.conf
+                    Dockerfile
+                kafka/
+                    docker-compose.kafka.yml
+            grafana-dashboards/
+                rabbitmq-monitor-dashboard.json
+            mock-windows-exporter/
+                requirements.txt
+                Dockerfile
+                metrics-schema.md
+                app.py
+            grafana/
+                .DS_Store
+                datasources/
+                    datasource.yml
+                provisioning/
+                    .DS_Store
+                    datasources/
+                        datasource.yml
+                        prometheus.yml
+                    dashboards/
+                        all.yml
+                        dashboard.yml
+                dashboards/
+                    transaction-tracing-dashboard.json
+                    kubernetes-overview-v2.json
+                    pod-autoscaling.json
+                    enhanced-cache-monitoring-dashboard.json
+                    auto-baselining-dashboard.json
+                    banking-system-overview-v2.json
+                    banking-overview-dashboard.json
+                    db-connection-dashboard.json
+                    container-resource-optimization.json
+                    node-resource-consumption.json
+                    kubernetes-overview.json
+                    message-queue-dashboard.json
+                    rabbitmq-monitor-dashboard.json
+                    container-monitoring-dashboard.json
+                    pod-autoscaling-v2.json
+                    dashboard.yml
+                    redis-cache-performance.json
+                    ddos-detection-dashboard.json
+                    windows-iis-dashboard.json
+                    transaction-performance-dashboard.json
+                    backup-20250625/
+                        transaction-tracing-dashboard.json
+                        auto-baselining-dashboard.json
+                        banking-overview-dashboard.json
+                        db-connection-dashboard.json
+                        message-queue-dashboard.json
+                        ddos-detection-dashboard.json
+                        windows-iis-dashboard.json
+                        transaction-performance-dashboard.json
+            grafana_exports/
+                k8s-node-resource-consumption_complete.json
+                Enhanced_Kubernetes_Cluster_Overview.json
+                05c84299-5312-46f5-a9f5-fe6762b2f6a2_metadata.json
+                RabbitMQ_Monitor_Comparison_Dashboard2.json
+                banking-system-v2_complete.json
+                redis-cache-perf_complete.json
+                k8s-pod-autoscaling-professional_complete.json
+                97273ee6-9d9a-4c11-a61a-3ecf5a9ce606_complete.json
+                k8s-cluster-overview-professional_metadata.json
+                Banking_Message_Queue_Dashboard.json
+                Container_Resource_Optimization.json
+                ddos-monitoring-v2-uid_metadata.json
+                97273ee6-9d9a-4c11-a61a-3ecf5a9ce605_complete.json
+                Kubernetes_Cluster_Overview_-_Fixed.json
+                🚀_Pod_Auto-scaling_Dashboard.json
+                enhanced-pod-autoscaling_metadata.json
+                cbbaf7a3-680b-41b5-b5a3-284bde01bb03_complete.json
+                Enhanced_Pod_Autoscaling_Dashboard.json
+                e28affb9-a049-4ab6-ac1f-182e50abfb56_complete.json
+                enhanced-auto-baselining-v2_metadata.json
+                enhanced-node-resource-consumption_metadata.json
+                d833695a-6b75-4739-a240-541ad564bcb6_complete.json
+                container-optimization_complete.json
+                container-usage-monitoring_complete.json
+                container-resource-monitoring-v2_metadata.json
+                banking-message-queue_metadata.json
+                Redis_Cache_Performance.json
+                k8s-pod-autoscaling_complete.json
+                k8s-cluster-overview-fixed_metadata.json
+                rabbitmq-monitor-v2_metadata.json
+                rabbitmq-monitor-v1_metadata.json
+                banking-db-connection_complete.json
+                enhanced-k8s-cluster-overview_metadata.json
+                Enhanced_Node_Resource_Consumption.json
+                💰_Transaction_Performance_Monitoring.json
+                340b9a2d-71e5-482e-934b-68b10b4fb409_metadata.json
+                Container_Resource_Usage.json
+                🪟_Windows_IIS_Server_Monitoring.json
+                340b9a2d-71e5-482e-934b-68b10b4fb409_complete.json
+                🚀_Pod_Auto-scaling_Dashboard_-_v2.json
+                enhanced-k8s-cluster-overview_complete.json
+                Container_Resource_Monitoring.json
+                banking-db-connection_metadata.json
+                🏦_Banking_System_Overview_v2.json
+                rabbitmq-monitor-v1_complete.json
+                🏦_Banking_System_Overview_v3.json
+                🏦_Banking_System_Overview.json
+                🚨_DDoS_Detection_&_Security_Monitoring_v2.json
+                rabbitmq-monitor-v2_complete.json
+                k8s-cluster-overview-fixed_complete.json
+                🎯_Auto-Baselining_&_Threshold_Optimization.json
+                k8s-pod-autoscaling_metadata.json
+                banking-message-queue_complete.json
+                container-resource-monitoring-v2_complete.json
+                Banking_Database_Connection_Pool_Dashboard.json
+                container-usage-monitoring_metadata.json
+                container-optimization_metadata.json
+                Kubernetes_Cluster_Overview_-_Professional.json
+                d833695a-6b75-4739-a240-541ad564bcb6_metadata.json
+                enhanced-node-resource-consumption_complete.json
+                🖥️_Node_Resource_Consumption_Dashboard.json
+                enhanced-auto-baselining-v2_complete.json
+                e28affb9-a049-4ab6-ac1f-182e50abfb56_metadata.json
+                RabbitMQ_Monitor_Comparison_Dashboard.json
+                cbbaf7a3-680b-41b5-b5a3-284bde01bb03_metadata.json
+                enhanced-pod-autoscaling_complete.json
+                97273ee6-9d9a-4c11-a61a-3ecf5a9ce605_metadata.json
+                🚨_DDoS_Detection_&_Security_Monitoring.json
+                ddos-monitoring-v2-uid_complete.json
+                🎯_Enhanced_Auto-Baselining_&_Threat_Detection.json
+                restore_dashboards.sh
+                k8s-cluster-overview-professional_complete.json
+                97273ee6-9d9a-4c11-a61a-3ecf5a9ce606_metadata.json
+                k8s-pod-autoscaling-professional_metadata.json
+                redis-cache-perf_metadata.json
+                banking-system-v2_metadata.json
+                🔍_Transaction_Tracing_Analytics.json
+                05c84299-5312-46f5-a9f5-fe6762b2f6a2_complete.json
+                k8s-node-resource-consumption_metadata.json
+            shared/
+                cache/
+                    redis_cache.py
+            db-connection-demo/
+                config.py
+                requirements.txt
+                Dockerfile
+                init.sql
+                app.py
+            trace-generator/
+                trace_patterns.py
+                requirements.txt
+                Dockerfile
+                trace_patterns_fixed.py
+                app.py
+            scripts/
+                train_simple_model.py
+                generate_synthetic_data.py
+                simulate_ddos.py
+                test_ddos_system.py
+                deploy_ddos_system.sh
+                deploy_ddos_detection.sh
+                data/
+                    synthetic/
+                        banking_ddos_dataset_20250528_105410.csv
+                        banking_ddos_labels_20250528_105412.npy
+                        banking_ddos_labels_20250528_105406.npy
+                        banking_ddos_labels_20250528_105410.npy
+                        banking_ddos_dataset_20250528_105412.csv
+                        banking_ddos_dataset_20250528_105406.csv
+                        metadata_20250528_105412.json
+                        metadata_20250528_105410.json
+                        metadata_20250528_105406.json
+                        attack_log_20250528_105410.csv
+                        attack_log_20250528_105406.csv
+                        attack_log_20250528_105412.csv
+            redis-cache-analyzer/
+                config.py
+                requirements.txt
+                Dockerfile
+                app.py
+            k6-scripts/
+                cache-load-tests.js
+            prometheus/
+                ddos_alert_rules.yml
+                optimization_alert_rules.yml
+                prometheus.yml.backup.20250528_141150
+                prometheus.yml.backup.20250610_144034
+                k8s-alert-rules.yml
+                prometheus.yml.backup.20250618_120445
+                alert_rules.yml
+                prometheus.yml
+                prometheus-transaction.yml
+                prometheus.yml.backup.20250610_143555
+            resource-anomaly-generator/
+                requirements.txt
+                Dockerfile
+                anomaly_patterns.py
+                app.py
+            message-consumer/
+                requirements.txt
+                Dockerfile
+                app.py
+            anomaly-injector/
+                requirements.txt
+                Dockerfile
+                app.py
+            kubernetes-monitoring/
+                hpa_details.txt
+                hpa_state.yaml
+                current_state.yaml
+                k8s_metrics_state.txt
+                scaling_state.txt
+                k8s-manifests/
+                    metrics-server-docker-desktop.yaml
+                    namespace.yaml
+                    rbac/
+                    hpa/
+                        banking-service-hpa.yaml
+                    services/
+                        banking-service-svc.yaml
+                    deployments/
+                        banking-service-deployment.yaml
+                        k8s-resource-monitor-deployment.yaml
+                        load-generator-deployment.yaml
+                scripts/
+                    load-testing-scaling-demo.py
+                    start-monitoring.sh
+                    k8s-anomaly-generator.log
+                    k8s-load-demo.log
+                    anomaly-generator.py
+                    real-time-monitoring.py
+                monitoring/
+                    k8s-resource-monitor/
+                        requirements.txt
+                        Dockerfile
+                        app.py
+                    kube-state-metrics/
+                        kube-state-metrics.yaml
+                    k8s-chaos-injector/
+                k8s-services/
+                    banking-service-k8s/
+                    chaos-generator-k8s/
+                    load-generator-k8s/
+                        requirements.txt
+                        Dockerfile
+                        app.py
+            src/
+                .DS_Store
+                __init.py__
+                __init__.py
+                utils/
+                    __init__.py
+                models/
+                    __init__.py
+                __pycache__/
+                    __init__.cpython-39.pyc
+                    __init__.cpython-312.pyc
+                data_preprocessing/
+                    __init__.py
+                data_generation/
+                    banking_metrics_schema.py
+                    normal_traffic_generator.py
+                    __init__.py
+                    master_dataset_generator.py
+                    ddos_attack_generator.py
+                    __pycache__/
+                        __init__.cpython-39.pyc
+                        ddos_attack_generator.cpython-39.pyc
+                        ddos_attack_generator.cpython-312.pyc
+                        normal_traffic_generator.cpython-39.pyc
+                        master_dataset_generator.cpython-39.pyc
+                        master_dataset_generator.cpython-312.pyc
+                        banking_metrics_schema.cpython-39.pyc
+                        normal_traffic_generator.cpython-312.pyc
+                        banking_metrics_schema.cpython-312.pyc
+                        __init__.cpython-312.pyc
+                services/
+                    ddos_ml_detection_fixed.py
+                    prometheus_collector.py
+                    ml_detection_service.py
+                    __init__.py
+                    auto_baselining_service.py
         20250623_174521/
             configuration_notes.txt
             docker-compose.transaction-monitoring.yml
@@ -4872,6 +5789,431 @@
                 requirements.txt
                 Dockerfile
                 app.py
+            src/
+                .DS_Store
+                __init.py__
+                __init__.py
+                utils/
+                    __init__.py
+                models/
+                    __init__.py
+                __pycache__/
+                    __init__.cpython-39.pyc
+                    __init__.cpython-312.pyc
+                data_preprocessing/
+                    __init__.py
+                data_generation/
+                    banking_metrics_schema.py
+                    normal_traffic_generator.py
+                    __init__.py
+                    master_dataset_generator.py
+                    ddos_attack_generator.py
+                    __pycache__/
+                        __init__.cpython-39.pyc
+                        ddos_attack_generator.cpython-39.pyc
+                        ddos_attack_generator.cpython-312.pyc
+                        normal_traffic_generator.cpython-39.pyc
+                        master_dataset_generator.cpython-39.pyc
+                        master_dataset_generator.cpython-312.pyc
+                        banking_metrics_schema.cpython-39.pyc
+                        normal_traffic_generator.cpython-312.pyc
+                        banking_metrics_schema.cpython-312.pyc
+                        __init__.cpython-312.pyc
+                services/
+                    ddos_ml_detection_fixed.py
+                    prometheus_collector.py
+                    ml_detection_service.py
+                    __init__.py
+                    auto_baselining_service.py
+        20250704_173036/
+            test-cache-proxy.py
+            cpu_stress_test.sh
+            emergency-fix.sh
+            system_status7.sh
+            fix_windows_iis_monitoring.sh
+            requirements-baselining.txt
+            cleanup_docker.sh
+            comprehensive_alert_test.sh
+            stop_system.sh
+            test-transaction-monitoring.sh
+            disaster_recovery.sh
+            toggle-issues.sh
+            verify_iis_monitoring.sh
+            test_system.sh
+            restart_system.sh
+            safe_restart3.sh
+            fix-prometheus-targets.sh
+            system_status3.sh
+            comparison_tracker.sh
+            docker-compose.transaction-monitoring.yml
+            docker_hub_setup_fixed.sh
+            stop_memory_test.sh
+            force-prometheus-reload.sh
+            docker-compose.messaging.yml
+            test_traffic.sh
+            update-prometheus-config.sh
+            transaction_traffic.sh
+            save_backup.sh
+            transaction-dashboard-url.txt
+            RESTORE_INSTRUCTIONS.md
+            import_windows_iis_dashboard.sh
+            verify-transaction-metrics.sh
+            safe_restart7.sh
+            system_status2.sh
+            safe_shutdown.sh
+            requirements-ml.txt
+            docker-compose.k8s-monitoring.yml
+            memory_stress_test.sh
+            minimal_ml_service.py
+            fix-db-pool-metrics.sh
+            docker-compose.container-monitor.yml
+            setup_unified_project.sh
+            docker-compose.override.yml
+            safe_restart6.sh
+            generate-cache-traffic.sh
+            banking-logs.txt
+            system_status6.sh
+            enable-rabbitmq-prometheus.sh
+            test-anomaly-injection.sh
+            check-cadvisor-connectivity.py
+            simulate-realistic-traffic.sh
+            auth_traffic.sh
+            docker-compose.hub.yml
+            backup.txt
+            setup_all_files.sh
+            IMPLEMENTATION_SUMMARY.md
+            docker-compose.redis-only.yml
+            running_services.txt
+            safe_restart2.sh
+            import-dashboards-fixed.sh
+            run_anomaly_tests.sh
+            deploy_auto_baselining.sh
+            message-queue-tester-v2.sh
+            check-metrics-status.sh
+            start-transaction-monitoring.sh
+            restore_system.sh
+            quick-demo.sh
+            test-container-resources.py
+            safe_shutdown3.sh
+            port-mapping.txt
+            complete_system_deployment.sh
+            stop_stress_test.sh
+            docker-compose.db-demo.yml
+            test_integration.sh
+            memory_remediation.sh
+            save_backup2.sh
+            fix_tracing_dashboard.sh
+            update_prometheus_config.sh
+            docker_hub_readme.md
+            safe_shutdown7.sh
+            simple_ml_detection_service.py
+            OPTIMIZATION_GUIDE.md
+            verify_iis_monitoring2.sh
+            docker-compose.tracing.yml
+            debug-prometheus-targets.sh
+            docker_hub_setup.sh
+            cleanup_system.sh
+            docker-info.txt
+            save_backup3.sh
+            fix_prometheus_integration.sh
+            notification_traffic.sh
+            quick_deploy_from_hub.sh
+            generate_structure.py
+            database-activity-generator.sh
+            docker-commands.txt
+            safe_shutdown6.sh
+            verify_all_metrics.sh
+            final_metrics_state.txt
+            generate_backup.py
+            cpu_remediation.sh
+            test_fixed_systems.sh
+            test_fixed_system.sh
+            docker-compose.optimization.yml
+            webhook_receiver.py
+            generate_normal_traffic.sh
+            safe_shutdown2.sh
+            docker-compose.tracing.hub.yml
+            import_tracing_dashboard.sh
+            trigger-SLO-calculations.txt
+            check-optimization-status.py
+            recovery_system.sh
+            README.md
+            test_windows_iis_anomalies_v2.sh
+            safe_shutdown5.sh
+            setup_init_files.sh
+            generate_test_data.sh
+            fix-optimization-setup.sh
+            message-queue-tester.sh
+            docker_hub_setup_fixed2.sh
+            fix_ddos_metrics_endpoint.sh
+            add_basic_metrics.py
+            complete_system_recovery.sh
+            save_backup4.sh
+            directory_structure.txt
+            quick_fixes.sh
+            test-cadvisor-connection.py
+            fix-docker-network.sh
+            test-container-analysis.py
+            import-transaction-dashboard.sh
+            latency_stress_test.sh
+            trace_patterns_fixed.py
+            continuous-traffic-generator.sh
+            test-redis-cache.py
+            save_backup5.sh
+            setup_comprehensive_dashboards.sh
+            provision-dashboards.sh
+            test_auto_baselining.sh
+            comprehensive-fix.sh
+            .shutdown_complete
+            complete-metrics-exporter.py
+            safe_shutdown4.sh
+            prometheus_diagnostics.sh
+            fix-rabbitmq-connection.sh
+            docker-compose.yml
+            docker-compose-smtp.yml
+            manual_dashboard_import.sh
+            docker-compose-fixed.yml
+            debug-cadvisor.py
+            fix_prometheus_ddos_target.sh
+            docker-output-logs.txt
+            safe_restart5.sh
+            stop_ml_service.sh
+            generate-initial-metrics.sh
+            system_status5.sh
+            toggle-issues-fixed.sh
+            test_newrelic.sh
+            generate_significant_traffic.sh
+            safe_restart.sh
+            test_windows_iis_anomalies.sh
+            start-optimization-services.py
+            system_status4.sh
+            fix_docker_compose.sh
+            restore_dashboards.sh
+            update_smtp_config.sh
+            start_ml_service.sh
+            import-messaging-dashboards.sh
+            system_status.sh
+            stop_latency_test.sh
+            safe_restart4.sh
+            rabbitmq-monitor/
+                requirements.txt
+                Dockerfile
+                app.py
+            redis-cache-load-generator/
+                requirements.txt
+                Dockerfile
+                cache_patterns.py
+                app.py
+            message-producer/
+                requirements.txt
+                Dockerfile
+                app.py
+            performance-aggregator/
+                requirements.txt
+                Dockerfile
+                app.py
+            container-resource-monitor/
+                config.py
+                requirements.txt
+                Dockerfile
+                app.py
+                optimizer.py
+            redis/
+                redis.conf
+            mock-iis-application/
+                requirements.txt
+                Dockerfile
+                app.py
+            transaction-monitor/
+                requirements.txt
+                Dockerfile
+                app.py
+            message-brokers/
+                .DS_Store
+                rabbitmq/
+                    rabbitmq.conf
+                    Dockerfile
+                kafka/
+                    docker-compose.kafka.yml
+            mock-windows-exporter/
+                requirements.txt
+                Dockerfile
+                metrics-schema.md
+                app.py
+            grafana/
+                .DS_Store
+                datasources/
+                    datasource.yml
+                provisioning/
+                    .DS_Store
+                    datasources/
+                        datasource.yml
+                        prometheus.yml
+                    dashboards/
+                        all.yml
+                        dashboard.yml
+                dashboards/
+                    transaction-tracing-dashboard.json
+                    kubernetes-overview-v2.json
+                    pod-autoscaling.json
+                    enhanced-cache-monitoring-dashboard.json
+                    auto-baselining-dashboard.json
+                    banking-system-overview-v2.json
+                    banking-overview-dashboard.json
+                    db-connection-dashboard.json
+                    container-resource-optimization.json
+                    node-resource-consumption.json
+                    kubernetes-overview.json
+                    message-queue-dashboard.json
+                    rabbitmq-monitor-dashboard.json
+                    container-monitoring-dashboard.json
+                    pod-autoscaling-v2.json
+                    dashboard.yml
+                    redis-cache-performance.json
+                    ddos-detection-dashboard.json
+                    windows-iis-dashboard.json
+                    transaction-performance-dashboard.json
+                    backup-20250625/
+                        transaction-tracing-dashboard.json
+                        auto-baselining-dashboard.json
+                        banking-overview-dashboard.json
+                        db-connection-dashboard.json
+                        message-queue-dashboard.json
+                        ddos-detection-dashboard.json
+                        windows-iis-dashboard.json
+                        transaction-performance-dashboard.json
+            grafana_exports/
+                k8s-node-resource-consumption_complete.json
+                banking-system-v2_complete.json
+                redis-cache-perf_complete.json
+                k8s-pod-autoscaling-professional_complete.json
+                97273ee6-9d9a-4c11-a61a-3ecf5a9ce606_complete.json
+                97273ee6-9d9a-4c11-a61a-3ecf5a9ce605_complete.json
+                cbbaf7a3-680b-41b5-b5a3-284bde01bb03_complete.json
+                e28affb9-a049-4ab6-ac1f-182e50abfb56_complete.json
+                d833695a-6b75-4739-a240-541ad564bcb6_complete.json
+                container-optimization_complete.json
+                container-usage-monitoring_complete.json
+                banking-db-connection_complete.json
+                340b9a2d-71e5-482e-934b-68b10b4fb409_complete.json
+                enhanced-k8s-cluster-overview_complete.json
+                rabbitmq-monitor-v1_complete.json
+                rabbitmq-monitor-v2_complete.json
+                k8s-cluster-overview-fixed_complete.json
+                banking-message-queue_complete.json
+                container-resource-monitoring-v2_complete.json
+                enhanced-node-resource-consumption_complete.json
+                enhanced-auto-baselining-v2_complete.json
+                enhanced-pod-autoscaling_complete.json
+                ddos-monitoring-v2-uid_complete.json
+                restore_dashboards.sh
+                05c84299-5312-46f5-a9f5-fe6762b2f6a2_complete.json
+            shared/
+                cache/
+                    redis_cache.py
+            db-connection-demo/
+                config.py
+                requirements.txt
+                Dockerfile
+                init.sql
+                app.py
+            trace-generator/
+                trace_patterns.py
+                requirements.txt
+                Dockerfile
+                trace_patterns_fixed.py
+                app.py
+            scripts/
+                train_simple_model.py
+                generate_synthetic_data.py
+                simulate_ddos.py
+                test_ddos_system.py
+                deploy_ddos_system.sh
+                deploy_ddos_detection.sh
+                data/
+                    synthetic/
+                        banking_ddos_dataset_20250528_105410.csv
+                        banking_ddos_labels_20250528_105412.npy
+                        banking_ddos_labels_20250528_105406.npy
+                        banking_ddos_labels_20250528_105410.npy
+                        banking_ddos_dataset_20250528_105412.csv
+                        banking_ddos_dataset_20250528_105406.csv
+                        metadata_20250528_105412.json
+                        metadata_20250528_105410.json
+                        metadata_20250528_105406.json
+                        attack_log_20250528_105410.csv
+                        attack_log_20250528_105406.csv
+                        attack_log_20250528_105412.csv
+            redis-cache-analyzer/
+                config.py
+                requirements.txt
+                Dockerfile
+                app.py
+            k6-scripts/
+                cache-load-tests.js
+            prometheus/
+                ddos_alert_rules.yml
+                optimization_alert_rules.yml
+                prometheus.yml.backup.20250528_141150
+                prometheus.yml.backup.20250610_144034
+                k8s-alert-rules.yml
+                prometheus.yml.backup.20250618_120445
+                alert_rules.yml
+                prometheus.yml
+                prometheus-transaction.yml
+                prometheus.yml.backup.20250610_143555
+            resource-anomaly-generator/
+                requirements.txt
+                Dockerfile
+                anomaly_patterns.py
+                app.py
+            message-consumer/
+                requirements.txt
+                Dockerfile
+                app.py
+            anomaly-injector/
+                requirements.txt
+                Dockerfile
+                app.py
+            kubernetes-monitoring/
+                hpa_details.txt
+                hpa_state.yaml
+                current_state.yaml
+                k8s_metrics_state.txt
+                scaling_state.txt
+                k8s-manifests/
+                    metrics-server-docker-desktop.yaml
+                    namespace.yaml
+                    rbac/
+                    hpa/
+                        banking-service-hpa.yaml
+                    services/
+                        banking-service-svc.yaml
+                    deployments/
+                        banking-service-deployment.yaml
+                        k8s-resource-monitor-deployment.yaml
+                        load-generator-deployment.yaml
+                scripts/
+                    load-testing-scaling-demo.py
+                    k8s-anomaly-generator.log
+                    k8s-load-demo.log
+                    anomaly-generator.py
+                    real-time-monitoring.py
+                monitoring/
+                    k8s-resource-monitor/
+                        requirements.txt
+                        Dockerfile
+                        app.py
+                    kube-state-metrics/
+                        kube-state-metrics.yaml
+                    k8s-chaos-injector/
+                k8s-services/
+                    banking-service-k8s/
+                    chaos-generator-k8s/
+                    load-generator-k8s/
+                        requirements.txt
+                        Dockerfile
+                        app.py
             src/
                 .DS_Store
                 __init.py__
@@ -5575,6 +6917,452 @@
                     ml_detection_service.py
                     __init__.py
                     auto_baselining_service.py
+        20250704_172856/
+            cpu_stress_test.sh
+            emergency-fix.sh
+            system_status7.sh
+            fix_windows_iis_monitoring.sh
+            cleanup_docker.sh
+            comprehensive_alert_test.sh
+            stop_system.sh
+            test-transaction-monitoring.sh
+            disaster_recovery.sh
+            toggle-issues.sh
+            verify_iis_monitoring.sh
+            test_system.sh
+            live_metrics_snapshot.txt
+            restart_system.sh
+            safe_restart3.sh
+            fix-prometheus-targets.sh
+            system_status3.sh
+            comparison_tracker.sh
+            docker-compose.transaction-monitoring.yml
+            docker_hub_setup_fixed.sh
+            stop_memory_test.sh
+            force-prometheus-reload.sh
+            docker-compose.messaging.yml
+            test_traffic.sh
+            update-prometheus-config.sh
+            transaction_traffic.sh
+            save_backup.sh
+            RESTORE_INSTRUCTIONS.md
+            import_windows_iis_dashboard.sh
+            verify-transaction-metrics.sh
+            safe_restart7.sh
+            system_status2.sh
+            safe_shutdown.sh
+            docker-compose.k8s-monitoring.yml
+            memory_stress_test.sh
+            fix-db-pool-metrics.sh
+            docker-compose.container-monitor.yml
+            setup_unified_project.sh
+            docker-compose.override.yml
+            safe_restart6.sh
+            generate-cache-traffic.sh
+            system_status6.sh
+            enable-rabbitmq-prometheus.sh
+            test-anomaly-injection.sh
+            simulate-realistic-traffic.sh
+            auth_traffic.sh
+            docker-compose.hub.yml
+            setup_all_files.sh
+            docker-compose.redis-only.yml
+            running_services.txt
+            safe_restart2.sh
+            import-dashboards-fixed.sh
+            run_anomaly_tests.sh
+            deploy_auto_baselining.sh
+            message-queue-tester-v2.sh
+            check-metrics-status.sh
+            start-transaction-monitoring.sh
+            restore_system.sh
+            quick-demo.sh
+            safe_shutdown3.sh
+            complete_system_deployment.sh
+            stop_stress_test.sh
+            docker-compose.db-demo.yml
+            test_integration.sh
+            memory_remediation.sh
+            save_backup2.sh
+            fix_tracing_dashboard.sh
+            update_prometheus_config.sh
+            safe_shutdown7.sh
+            verify_iis_monitoring2.sh
+            docker-compose.tracing.yml
+            debug-prometheus-targets.sh
+            docker_hub_setup.sh
+            cleanup_system.sh
+            save_backup3.sh
+            fix_prometheus_integration.sh
+            notification_traffic.sh
+            quick_deploy_from_hub.sh
+            database-activity-generator.sh
+            safe_shutdown6.sh
+            verify_all_metrics.sh
+            cpu_remediation.sh
+            test_fixed_systems.sh
+            test_fixed_system.sh
+            docker-compose.optimization.yml
+            generate_normal_traffic.sh
+            safe_shutdown2.sh
+            docker-compose.tracing.hub.yml
+            import_tracing_dashboard.sh
+            recovery_system.sh
+            test_windows_iis_anomalies_v2.sh
+            safe_shutdown5.sh
+            setup_init_files.sh
+            generate_test_data.sh
+            fix-optimization-setup.sh
+            message-queue-tester.sh
+            docker_hub_setup_fixed2.sh
+            fix_ddos_metrics_endpoint.sh
+            complete_system_recovery.sh
+            save_backup4.sh
+            quick_fixes.sh
+            fix-docker-network.sh
+            import-transaction-dashboard.sh
+            latency_stress_test.sh
+            continuous-traffic-generator.sh
+            save_backup5.sh
+            setup_comprehensive_dashboards.sh
+            provision-dashboards.sh
+            test_auto_baselining.sh
+            comprehensive-fix.sh
+            safe_shutdown4.sh
+            prometheus_diagnostics.sh
+            fix-rabbitmq-connection.sh
+            docker-compose.yml
+            docker-compose-smtp.yml
+            manual_dashboard_import.sh
+            docker-compose-fixed.yml
+            fix_prometheus_ddos_target.sh
+            .backup_complete
+            safe_restart5.sh
+            stop_ml_service.sh
+            generate-initial-metrics.sh
+            system_status5.sh
+            toggle-issues-fixed.sh
+            test_newrelic.sh
+            generate_significant_traffic.sh
+            safe_restart.sh
+            test_windows_iis_anomalies.sh
+            system_status4.sh
+            fix_docker_compose.sh
+            restore_dashboards.sh
+            update_smtp_config.sh
+            start_ml_service.sh
+            import-messaging-dashboards.sh
+            system_status.sh
+            stop_latency_test.sh
+            safe_restart4.sh
+            rabbitmq-monitor/
+                requirements.txt
+                Dockerfile
+                app.py
+            redis-cache-load-generator/
+                requirements.txt
+                Dockerfile
+                cache_patterns.py
+                app.py
+            kubernetes-state/
+                banking-namespace-state.yaml
+                hpa-description.txt
+                restore_k8s_state.sh
+                live-metrics.txt
+                hpa-state.yaml
+                namespaces.yaml
+                nodes.yaml
+            message-producer/
+                requirements.txt
+                Dockerfile
+                app.py
+            performance-aggregator/
+                requirements.txt
+                Dockerfile
+                app.py
+            container-resource-monitor/
+                config.py
+                requirements.txt
+                Dockerfile
+                app.py
+                optimizer.py
+            redis/
+                redis.conf
+            mock-iis-application/
+                requirements.txt
+                Dockerfile
+                app.py
+            transaction-monitor/
+                requirements.txt
+                Dockerfile
+                app.py
+            message-brokers/
+                .DS_Store
+                rabbitmq/
+                    rabbitmq.conf
+                    Dockerfile
+                kafka/
+                    docker-compose.kafka.yml
+            grafana-dashboards/
+                rabbitmq-monitor-dashboard.json
+            mock-windows-exporter/
+                requirements.txt
+                Dockerfile
+                metrics-schema.md
+                app.py
+            grafana/
+                .DS_Store
+                datasources/
+                    datasource.yml
+                provisioning/
+                    .DS_Store
+                    datasources/
+                        datasource.yml
+                        prometheus.yml
+                    dashboards/
+                        all.yml
+                        dashboard.yml
+                dashboards/
+                    transaction-tracing-dashboard.json
+                    kubernetes-overview-v2.json
+                    pod-autoscaling.json
+                    enhanced-cache-monitoring-dashboard.json
+                    auto-baselining-dashboard.json
+                    banking-system-overview-v2.json
+                    banking-overview-dashboard.json
+                    db-connection-dashboard.json
+                    container-resource-optimization.json
+                    node-resource-consumption.json
+                    kubernetes-overview.json
+                    message-queue-dashboard.json
+                    rabbitmq-monitor-dashboard.json
+                    container-monitoring-dashboard.json
+                    pod-autoscaling-v2.json
+                    dashboard.yml
+                    redis-cache-performance.json
+                    ddos-detection-dashboard.json
+                    windows-iis-dashboard.json
+                    transaction-performance-dashboard.json
+                    backup-20250625/
+                        transaction-tracing-dashboard.json
+                        auto-baselining-dashboard.json
+                        banking-overview-dashboard.json
+                        db-connection-dashboard.json
+                        message-queue-dashboard.json
+                        ddos-detection-dashboard.json
+                        windows-iis-dashboard.json
+                        transaction-performance-dashboard.json
+            grafana_exports/
+                k8s-node-resource-consumption_complete.json
+                Enhanced_Kubernetes_Cluster_Overview.json
+                05c84299-5312-46f5-a9f5-fe6762b2f6a2_metadata.json
+                RabbitMQ_Monitor_Comparison_Dashboard2.json
+                banking-system-v2_complete.json
+                redis-cache-perf_complete.json
+                k8s-pod-autoscaling-professional_complete.json
+                97273ee6-9d9a-4c11-a61a-3ecf5a9ce606_complete.json
+                Banking_Message_Queue_Dashboard.json
+                Container_Resource_Optimization.json
+                ddos-monitoring-v2-uid_metadata.json
+                97273ee6-9d9a-4c11-a61a-3ecf5a9ce605_complete.json
+                Kubernetes_Cluster_Overview_-_Fixed.json
+                enhanced-pod-autoscaling_metadata.json
+                cbbaf7a3-680b-41b5-b5a3-284bde01bb03_complete.json
+                Enhanced_Pod_Autoscaling_Dashboard.json
+                e28affb9-a049-4ab6-ac1f-182e50abfb56_complete.json
+                enhanced-auto-baselining-v2_metadata.json
+                enhanced-node-resource-consumption_metadata.json
+                d833695a-6b75-4739-a240-541ad564bcb6_complete.json
+                container-optimization_complete.json
+                container-usage-monitoring_complete.json
+                container-resource-monitoring-v2_metadata.json
+                banking-message-queue_metadata.json
+                Redis_Cache_Performance.json
+                k8s-cluster-overview-fixed_metadata.json
+                rabbitmq-monitor-v2_metadata.json
+                rabbitmq-monitor-v1_metadata.json
+                banking-db-connection_complete.json
+                enhanced-k8s-cluster-overview_metadata.json
+                Enhanced_Node_Resource_Consumption.json
+                💰_Transaction_Performance_Monitoring.json
+                340b9a2d-71e5-482e-934b-68b10b4fb409_metadata.json
+                Container_Resource_Usage.json
+                🪟_Windows_IIS_Server_Monitoring.json
+                340b9a2d-71e5-482e-934b-68b10b4fb409_complete.json
+                🚀_Pod_Auto-scaling_Dashboard_-_v2.json
+                enhanced-k8s-cluster-overview_complete.json
+                Container_Resource_Monitoring.json
+                banking-db-connection_metadata.json
+                🏦_Banking_System_Overview_v2.json
+                rabbitmq-monitor-v1_complete.json
+                🏦_Banking_System_Overview_v3.json
+                🏦_Banking_System_Overview.json
+                🚨_DDoS_Detection_&_Security_Monitoring_v2.json
+                rabbitmq-monitor-v2_complete.json
+                k8s-cluster-overview-fixed_complete.json
+                🎯_Auto-Baselining_&_Threshold_Optimization.json
+                banking-message-queue_complete.json
+                container-resource-monitoring-v2_complete.json
+                Banking_Database_Connection_Pool_Dashboard.json
+                container-usage-monitoring_metadata.json
+                container-optimization_metadata.json
+                d833695a-6b75-4739-a240-541ad564bcb6_metadata.json
+                enhanced-node-resource-consumption_complete.json
+                🖥️_Node_Resource_Consumption_Dashboard.json
+                enhanced-auto-baselining-v2_complete.json
+                e28affb9-a049-4ab6-ac1f-182e50abfb56_metadata.json
+                RabbitMQ_Monitor_Comparison_Dashboard.json
+                cbbaf7a3-680b-41b5-b5a3-284bde01bb03_metadata.json
+                enhanced-pod-autoscaling_complete.json
+                97273ee6-9d9a-4c11-a61a-3ecf5a9ce605_metadata.json
+                🚨_DDoS_Detection_&_Security_Monitoring.json
+                ddos-monitoring-v2-uid_complete.json
+                🎯_Enhanced_Auto-Baselining_&_Threat_Detection.json
+                restore_dashboards.sh
+                97273ee6-9d9a-4c11-a61a-3ecf5a9ce606_metadata.json
+                k8s-pod-autoscaling-professional_metadata.json
+                redis-cache-perf_metadata.json
+                banking-system-v2_metadata.json
+                🔍_Transaction_Tracing_Analytics.json
+                05c84299-5312-46f5-a9f5-fe6762b2f6a2_complete.json
+                k8s-node-resource-consumption_metadata.json
+            shared/
+                cache/
+                    redis_cache.py
+            db-connection-demo/
+                config.py
+                requirements.txt
+                Dockerfile
+                init.sql
+                app.py
+            trace-generator/
+                trace_patterns.py
+                requirements.txt
+                Dockerfile
+                trace_patterns_fixed.py
+                app.py
+            scripts/
+                train_simple_model.py
+                generate_synthetic_data.py
+                simulate_ddos.py
+                test_ddos_system.py
+                deploy_ddos_system.sh
+                deploy_ddos_detection.sh
+                data/
+                    synthetic/
+                        banking_ddos_dataset_20250528_105410.csv
+                        banking_ddos_labels_20250528_105412.npy
+                        banking_ddos_labels_20250528_105406.npy
+                        banking_ddos_labels_20250528_105410.npy
+                        banking_ddos_dataset_20250528_105412.csv
+                        banking_ddos_dataset_20250528_105406.csv
+                        metadata_20250528_105412.json
+                        metadata_20250528_105410.json
+                        metadata_20250528_105406.json
+                        attack_log_20250528_105410.csv
+                        attack_log_20250528_105406.csv
+                        attack_log_20250528_105412.csv
+            redis-cache-analyzer/
+                config.py
+                requirements.txt
+                Dockerfile
+                app.py
+            k6-scripts/
+                cache-load-tests.js
+            prometheus/
+                ddos_alert_rules.yml
+                optimization_alert_rules.yml
+                prometheus.yml.backup.20250528_141150
+                prometheus.yml.backup.20250610_144034
+                k8s-alert-rules.yml
+                prometheus.yml.backup.20250618_120445
+                alert_rules.yml
+                prometheus.yml
+                prometheus-transaction.yml
+                prometheus.yml.backup.20250610_143555
+            resource-anomaly-generator/
+                requirements.txt
+                Dockerfile
+                anomaly_patterns.py
+                app.py
+            message-consumer/
+                requirements.txt
+                Dockerfile
+                app.py
+            anomaly-injector/
+                requirements.txt
+                Dockerfile
+                app.py
+            kubernetes-monitoring/
+                k8s-manifests/
+                    metrics-server-docker-desktop.yaml
+                    namespace.yaml
+                    rbac/
+                    hpa/
+                        banking-service-hpa.yaml
+                    services/
+                        banking-service-svc.yaml
+                    deployments/
+                        banking-service-deployment.yaml
+                        k8s-resource-monitor-deployment.yaml
+                        load-generator-deployment.yaml
+                scripts/
+                    load-testing-scaling-demo.py
+                    k8s-anomaly-generator.log
+                    k8s-load-demo.log
+                    anomaly-generator.py
+                    real-time-monitoring.py
+                monitoring/
+                    k8s-resource-monitor/
+                        requirements.txt
+                        Dockerfile
+                        app.py
+                    kube-state-metrics/
+                        kube-state-metrics.yaml
+                    k8s-chaos-injector/
+                k8s-services/
+                    banking-service-k8s/
+                    chaos-generator-k8s/
+                    load-generator-k8s/
+                        requirements.txt
+                        Dockerfile
+                        app.py
+            src/
+                .DS_Store
+                __init.py__
+                __init__.py
+                utils/
+                    __init__.py
+                models/
+                    __init__.py
+                __pycache__/
+                    __init__.cpython-39.pyc
+                    __init__.cpython-312.pyc
+                data_preprocessing/
+                    __init__.py
+                data_generation/
+                    banking_metrics_schema.py
+                    normal_traffic_generator.py
+                    __init__.py
+                    master_dataset_generator.py
+                    ddos_attack_generator.py
+                    __pycache__/
+                        __init__.cpython-39.pyc
+                        ddos_attack_generator.cpython-39.pyc
+                        ddos_attack_generator.cpython-312.pyc
+                        normal_traffic_generator.cpython-39.pyc
+                        master_dataset_generator.cpython-39.pyc
+                        master_dataset_generator.cpython-312.pyc
+                        banking_metrics_schema.cpython-39.pyc
+                        normal_traffic_generator.cpython-312.pyc
+                        banking_metrics_schema.cpython-312.pyc
+                        __init__.cpython-312.pyc
+                services/
+                    ddos_ml_detection_fixed.py
+                    prometheus_collector.py
+                    ml_detection_service.py
+                    __init__.py
+                    auto_baselining_service.py
         shutdown_20250611_171046/
             requirements-baselining.txt
             docker-compose.transaction-monitoring.yml
@@ -6219,6 +8007,437 @@
                     ml_detection_service.py
                     __init__.py
                     auto_baselining_service.py
+        20250705_170329/
+            test-cache-proxy.py
+            cpu_stress_test.sh
+            emergency-fix.sh
+            system_status7.sh
+            fix_windows_iis_monitoring.sh
+            requirements-baselining.txt
+            cleanup_docker.sh
+            comprehensive_alert_test.sh
+            stop_system.sh
+            test-transaction-monitoring.sh
+            disaster_recovery.sh
+            toggle-issues.sh
+            verify_iis_monitoring.sh
+            test_system.sh
+            restart_system.sh
+            safe_restart3.sh
+            fix-prometheus-targets.sh
+            system_status3.sh
+            comparison_tracker.sh
+            docker-compose.transaction-monitoring.yml
+            docker_hub_setup_fixed.sh
+            stop_memory_test.sh
+            force-prometheus-reload.sh
+            docker-compose.messaging.yml
+            test_traffic.sh
+            update-prometheus-config.sh
+            transaction_traffic.sh
+            save_backup.sh
+            transaction-dashboard-url.txt
+            RESTORE_INSTRUCTIONS.md
+            import_windows_iis_dashboard.sh
+            verify-transaction-metrics.sh
+            safe_restart7.sh
+            system_status2.sh
+            safe_shutdown.sh
+            requirements-ml.txt
+            docker-compose.k8s-monitoring.yml
+            memory_stress_test.sh
+            minimal_ml_service.py
+            fix-db-pool-metrics.sh
+            docker-compose.container-monitor.yml
+            setup_unified_project.sh
+            docker-compose.override.yml
+            safe_restart6.sh
+            generate-cache-traffic.sh
+            banking-logs.txt
+            system_status6.sh
+            enable-rabbitmq-prometheus.sh
+            test-anomaly-injection.sh
+            check-cadvisor-connectivity.py
+            simulate-realistic-traffic.sh
+            auth_traffic.sh
+            docker-compose.hub.yml
+            backup.txt
+            setup_all_files.sh
+            IMPLEMENTATION_SUMMARY.md
+            docker-compose.redis-only.yml
+            running_services.txt
+            safe_restart2.sh
+            import-dashboards-fixed.sh
+            run_anomaly_tests.sh
+            deploy_auto_baselining.sh
+            message-queue-tester-v2.sh
+            check-metrics-status.sh
+            start-transaction-monitoring.sh
+            restore_system.sh
+            quick-demo.sh
+            test-container-resources.py
+            safe_shutdown3.sh
+            port-mapping.txt
+            complete_system_deployment.sh
+            stop_stress_test.sh
+            docker-compose.db-demo.yml
+            test_integration.sh
+            memory_remediation.sh
+            save_backup2.sh
+            fix_tracing_dashboard.sh
+            update_prometheus_config.sh
+            docker_hub_readme.md
+            safe_shutdown7.sh
+            simple_ml_detection_service.py
+            OPTIMIZATION_GUIDE.md
+            verify_iis_monitoring2.sh
+            docker-compose.tracing.yml
+            debug-prometheus-targets.sh
+            docker_hub_setup.sh
+            cleanup_system.sh
+            docker-info.txt
+            save_backup3.sh
+            fix_prometheus_integration.sh
+            notification_traffic.sh
+            quick_deploy_from_hub.sh
+            generate_structure.py
+            database-activity-generator.sh
+            docker-commands.txt
+            safe_shutdown6.sh
+            verify_all_metrics.sh
+            final_metrics_state.txt
+            generate_backup.py
+            cpu_remediation.sh
+            test_fixed_systems.sh
+            test_fixed_system.sh
+            docker-compose.optimization.yml
+            webhook_receiver.py
+            generate_normal_traffic.sh
+            safe_shutdown2.sh
+            docker-compose.tracing.hub.yml
+            import_tracing_dashboard.sh
+            trigger-SLO-calculations.txt
+            check-optimization-status.py
+            recovery_system.sh
+            README.md
+            test_windows_iis_anomalies_v2.sh
+            safe_shutdown5.sh
+            setup_init_files.sh
+            generate_test_data.sh
+            fix-optimization-setup.sh
+            message-queue-tester.sh
+            docker_hub_setup_fixed2.sh
+            fix_ddos_metrics_endpoint.sh
+            add_basic_metrics.py
+            complete_system_recovery.sh
+            save_backup4.sh
+            directory_structure.txt
+            quick_fixes.sh
+            test-cadvisor-connection.py
+            fix-docker-network.sh
+            test-container-analysis.py
+            import-transaction-dashboard.sh
+            latency_stress_test.sh
+            trace_patterns_fixed.py
+            continuous-traffic-generator.sh
+            test-redis-cache.py
+            save_backup5.sh
+            setup_comprehensive_dashboards.sh
+            provision-dashboards.sh
+            test_auto_baselining.sh
+            comprehensive-fix.sh
+            .shutdown_complete
+            complete-metrics-exporter.py
+            safe_shutdown4.sh
+            prometheus_diagnostics.sh
+            fix-rabbitmq-connection.sh
+            kubernetes-metrics-output.txt
+            docker-compose.yml
+            docker-compose-smtp.yml
+            manual_dashboard_import.sh
+            docker-compose-fixed.yml
+            debug-cadvisor.py
+            fix_prometheus_ddos_target.sh
+            docker-output-logs.txt
+            safe_restart5.sh
+            stop_ml_service.sh
+            generate-initial-metrics.sh
+            system_status5.sh
+            toggle-issues-fixed.sh
+            test_newrelic.sh
+            generate_significant_traffic.sh
+            safe_restart.sh
+            test_windows_iis_anomalies.sh
+            start-optimization-services.py
+            system_status4.sh
+            fix_docker_compose.sh
+            fetch-k8s-metrics.sh
+            restore_dashboards.sh
+            update_smtp_config.sh
+            k8s-status-check.sh
+            start_ml_service.sh
+            import-messaging-dashboards.sh
+            system_status.sh
+            stop_latency_test.sh
+            safe_restart4.sh
+            rabbitmq-monitor/
+                requirements.txt
+                Dockerfile
+                app.py
+            redis-cache-load-generator/
+                requirements.txt
+                Dockerfile
+                cache_patterns.py
+                app.py
+            message-producer/
+                requirements.txt
+                Dockerfile
+                app.py
+            performance-aggregator/
+                requirements.txt
+                Dockerfile
+                app.py
+            container-resource-monitor/
+                config.py
+                requirements.txt
+                Dockerfile
+                app.py
+                optimizer.py
+            redis/
+                redis.conf
+            mock-iis-application/
+                requirements.txt
+                Dockerfile
+                app.py
+            transaction-monitor/
+                requirements.txt
+                Dockerfile
+                app.py
+            message-brokers/
+                .DS_Store
+                rabbitmq/
+                    rabbitmq.conf
+                    Dockerfile
+                kafka/
+                    docker-compose.kafka.yml
+            mock-windows-exporter/
+                requirements.txt
+                Dockerfile
+                metrics-schema.md
+                app.py
+            grafana/
+                .DS_Store
+                datasources/
+                    datasource.yml
+                provisioning/
+                    .DS_Store
+                    datasources/
+                        datasource.yml
+                        prometheus.yml
+                    dashboards/
+                        all.yml
+                        dashboard.yml
+                dashboards/
+                    transaction-tracing-dashboard.json
+                    kubernetes-overview-v2.json
+                    pod-autoscaling.json
+                    enhanced-cache-monitoring-dashboard.json
+                    auto-baselining-dashboard.json
+                    banking-system-overview-v2.json
+                    banking-overview-dashboard.json
+                    db-connection-dashboard.json
+                    container-resource-optimization.json
+                    node-resource-consumption.json
+                    kubernetes-overview.json
+                    message-queue-dashboard.json
+                    rabbitmq-monitor-dashboard.json
+                    container-monitoring-dashboard.json
+                    pod-autoscaling-v2.json
+                    dashboard.yml
+                    redis-cache-performance.json
+                    ddos-detection-dashboard.json
+                    windows-iis-dashboard.json
+                    transaction-performance-dashboard.json
+                    backup-20250625/
+                        transaction-tracing-dashboard.json
+                        auto-baselining-dashboard.json
+                        banking-overview-dashboard.json
+                        db-connection-dashboard.json
+                        message-queue-dashboard.json
+                        ddos-detection-dashboard.json
+                        windows-iis-dashboard.json
+                        transaction-performance-dashboard.json
+            grafana_exports/
+                k8s-node-resource-consumption_complete.json
+                banking-system-v2_complete.json
+                redis-cache-perf_complete.json
+                k8s-pod-autoscaling-professional_complete.json
+                97273ee6-9d9a-4c11-a61a-3ecf5a9ce606_complete.json
+                97273ee6-9d9a-4c11-a61a-3ecf5a9ce605_complete.json
+                cbbaf7a3-680b-41b5-b5a3-284bde01bb03_complete.json
+                e28affb9-a049-4ab6-ac1f-182e50abfb56_complete.json
+                d833695a-6b75-4739-a240-541ad564bcb6_complete.json
+                container-optimization_complete.json
+                container-usage-monitoring_complete.json
+                k8s-pod-autoscaling_complete.json
+                banking-db-connection_complete.json
+                340b9a2d-71e5-482e-934b-68b10b4fb409_complete.json
+                enhanced-k8s-cluster-overview_complete.json
+                rabbitmq-monitor-v1_complete.json
+                rabbitmq-monitor-v2_complete.json
+                k8s-cluster-overview-fixed_complete.json
+                banking-message-queue_complete.json
+                container-resource-monitoring-v2_complete.json
+                enhanced-node-resource-consumption_complete.json
+                enhanced-auto-baselining-v2_complete.json
+                enhanced-pod-autoscaling_complete.json
+                ddos-monitoring-v2-uid_complete.json
+                restore_dashboards.sh
+                k8s-cluster-overview-professional_complete.json
+                05c84299-5312-46f5-a9f5-fe6762b2f6a2_complete.json
+            shared/
+                cache/
+                    redis_cache.py
+            db-connection-demo/
+                config.py
+                requirements.txt
+                Dockerfile
+                init.sql
+                app.py
+            trace-generator/
+                trace_patterns.py
+                requirements.txt
+                Dockerfile
+                trace_patterns_fixed.py
+                app.py
+            scripts/
+                train_simple_model.py
+                generate_synthetic_data.py
+                simulate_ddos.py
+                test_ddos_system.py
+                deploy_ddos_system.sh
+                deploy_ddos_detection.sh
+                data/
+                    synthetic/
+                        banking_ddos_dataset_20250528_105410.csv
+                        banking_ddos_labels_20250528_105412.npy
+                        banking_ddos_labels_20250528_105406.npy
+                        banking_ddos_labels_20250528_105410.npy
+                        banking_ddos_dataset_20250528_105412.csv
+                        banking_ddos_dataset_20250528_105406.csv
+                        metadata_20250528_105412.json
+                        metadata_20250528_105410.json
+                        metadata_20250528_105406.json
+                        attack_log_20250528_105410.csv
+                        attack_log_20250528_105406.csv
+                        attack_log_20250528_105412.csv
+            redis-cache-analyzer/
+                config.py
+                requirements.txt
+                Dockerfile
+                app.py
+            k6-scripts/
+                cache-load-tests.js
+            prometheus/
+                ddos_alert_rules.yml
+                optimization_alert_rules.yml
+                prometheus.yml.backup.20250528_141150
+                prometheus.yml.backup.20250610_144034
+                k8s-alert-rules.yml
+                prometheus.yml.backup.20250618_120445
+                alert_rules.yml
+                prometheus.yml
+                prometheus-transaction.yml
+                prometheus.yml.backup.20250610_143555
+            resource-anomaly-generator/
+                requirements.txt
+                Dockerfile
+                anomaly_patterns.py
+                app.py
+            message-consumer/
+                requirements.txt
+                Dockerfile
+                app.py
+            anomaly-injector/
+                requirements.txt
+                Dockerfile
+                app.py
+            kubernetes-monitoring/
+                hpa_details.txt
+                hpa_state.yaml
+                current_state.yaml
+                k8s_metrics_state.txt
+                scaling_state.txt
+                k8s-manifests/
+                    metrics-server-docker-desktop.yaml
+                    namespace.yaml
+                    rbac/
+                    hpa/
+                        banking-service-hpa.yaml
+                    services/
+                        banking-service-svc.yaml
+                    deployments/
+                        banking-service-deployment.yaml
+                        k8s-resource-monitor-deployment.yaml
+                        load-generator-deployment.yaml
+                scripts/
+                    load-testing-scaling-demo.py
+                    start-monitoring.sh
+                    k8s-anomaly-generator.log
+                    k8s-load-demo.log
+                    anomaly-generator.py
+                    real-time-monitoring.py
+                monitoring/
+                    k8s-resource-monitor/
+                        requirements.txt
+                        Dockerfile
+                        app.py
+                    kube-state-metrics/
+                        kube-state-metrics.yaml
+                    k8s-chaos-injector/
+                k8s-services/
+                    banking-service-k8s/
+                    chaos-generator-k8s/
+                    load-generator-k8s/
+                        requirements.txt
+                        Dockerfile
+                        app.py
+            src/
+                .DS_Store
+                __init.py__
+                __init__.py
+                utils/
+                    __init__.py
+                models/
+                    __init__.py
+                __pycache__/
+                    __init__.cpython-39.pyc
+                    __init__.cpython-312.pyc
+                data_preprocessing/
+                    __init__.py
+                data_generation/
+                    banking_metrics_schema.py
+                    normal_traffic_generator.py
+                    __init__.py
+                    master_dataset_generator.py
+                    ddos_attack_generator.py
+                    __pycache__/
+                        __init__.cpython-39.pyc
+                        ddos_attack_generator.cpython-39.pyc
+                        ddos_attack_generator.cpython-312.pyc
+                        normal_traffic_generator.cpython-39.pyc
+                        master_dataset_generator.cpython-39.pyc
+                        master_dataset_generator.cpython-312.pyc
+                        banking_metrics_schema.cpython-39.pyc
+                        normal_traffic_generator.cpython-312.pyc
+                        banking_metrics_schema.cpython-312.pyc
+                        __init__.cpython-312.pyc
+                services/
+                    ddos_ml_detection_fixed.py
+                    prometheus_collector.py
+                    ml_detection_service.py
+                    __init__.py
+                    auto_baselining_service.py
         20250626_124533/
             cpu_stress_test.sh
             emergency-fix.sh
@@ -6454,6 +8673,466 @@
                 requirements.txt
                 Dockerfile
                 app.py
+            src/
+                .DS_Store
+                __init.py__
+                __init__.py
+                utils/
+                    __init__.py
+                models/
+                    __init__.py
+                __pycache__/
+                    __init__.cpython-39.pyc
+                    __init__.cpython-312.pyc
+                data_preprocessing/
+                    __init__.py
+                data_generation/
+                    banking_metrics_schema.py
+                    normal_traffic_generator.py
+                    __init__.py
+                    master_dataset_generator.py
+                    ddos_attack_generator.py
+                    __pycache__/
+                        __init__.cpython-39.pyc
+                        ddos_attack_generator.cpython-39.pyc
+                        ddos_attack_generator.cpython-312.pyc
+                        normal_traffic_generator.cpython-39.pyc
+                        master_dataset_generator.cpython-39.pyc
+                        master_dataset_generator.cpython-312.pyc
+                        banking_metrics_schema.cpython-39.pyc
+                        normal_traffic_generator.cpython-312.pyc
+                        banking_metrics_schema.cpython-312.pyc
+                        __init__.cpython-312.pyc
+                services/
+                    ddos_ml_detection_fixed.py
+                    prometheus_collector.py
+                    ml_detection_service.py
+                    __init__.py
+                    auto_baselining_service.py
+        20250705_170318/
+            cpu_stress_test.sh
+            emergency-fix.sh
+            system_status7.sh
+            fix_windows_iis_monitoring.sh
+            cleanup_docker.sh
+            comprehensive_alert_test.sh
+            stop_system.sh
+            test-transaction-monitoring.sh
+            disaster_recovery.sh
+            toggle-issues.sh
+            verify_iis_monitoring.sh
+            test_system.sh
+            live_metrics_snapshot.txt
+            restart_system.sh
+            safe_restart3.sh
+            fix-prometheus-targets.sh
+            system_status3.sh
+            comparison_tracker.sh
+            docker-compose.transaction-monitoring.yml
+            docker_hub_setup_fixed.sh
+            stop_memory_test.sh
+            force-prometheus-reload.sh
+            docker-compose.messaging.yml
+            test_traffic.sh
+            update-prometheus-config.sh
+            transaction_traffic.sh
+            save_backup.sh
+            RESTORE_INSTRUCTIONS.md
+            import_windows_iis_dashboard.sh
+            verify-transaction-metrics.sh
+            safe_restart7.sh
+            system_status2.sh
+            safe_shutdown.sh
+            docker-compose.k8s-monitoring.yml
+            memory_stress_test.sh
+            fix-db-pool-metrics.sh
+            docker-compose.container-monitor.yml
+            setup_unified_project.sh
+            docker-compose.override.yml
+            safe_restart6.sh
+            generate-cache-traffic.sh
+            system_status6.sh
+            enable-rabbitmq-prometheus.sh
+            test-anomaly-injection.sh
+            simulate-realistic-traffic.sh
+            auth_traffic.sh
+            docker-compose.hub.yml
+            setup_all_files.sh
+            docker-compose.redis-only.yml
+            running_services.txt
+            safe_restart2.sh
+            import-dashboards-fixed.sh
+            run_anomaly_tests.sh
+            deploy_auto_baselining.sh
+            message-queue-tester-v2.sh
+            check-metrics-status.sh
+            start-transaction-monitoring.sh
+            restore_system.sh
+            quick-demo.sh
+            safe_shutdown3.sh
+            complete_system_deployment.sh
+            stop_stress_test.sh
+            docker-compose.db-demo.yml
+            test_integration.sh
+            memory_remediation.sh
+            save_backup2.sh
+            fix_tracing_dashboard.sh
+            update_prometheus_config.sh
+            safe_shutdown7.sh
+            verify_iis_monitoring2.sh
+            docker-compose.tracing.yml
+            debug-prometheus-targets.sh
+            docker_hub_setup.sh
+            cleanup_system.sh
+            save_backup3.sh
+            fix_prometheus_integration.sh
+            notification_traffic.sh
+            quick_deploy_from_hub.sh
+            database-activity-generator.sh
+            safe_shutdown6.sh
+            verify_all_metrics.sh
+            cpu_remediation.sh
+            test_fixed_systems.sh
+            test_fixed_system.sh
+            docker-compose.optimization.yml
+            generate_normal_traffic.sh
+            safe_shutdown2.sh
+            docker-compose.tracing.hub.yml
+            import_tracing_dashboard.sh
+            recovery_system.sh
+            test_windows_iis_anomalies_v2.sh
+            safe_shutdown5.sh
+            setup_init_files.sh
+            generate_test_data.sh
+            fix-optimization-setup.sh
+            message-queue-tester.sh
+            docker_hub_setup_fixed2.sh
+            fix_ddos_metrics_endpoint.sh
+            complete_system_recovery.sh
+            save_backup4.sh
+            quick_fixes.sh
+            fix-docker-network.sh
+            import-transaction-dashboard.sh
+            latency_stress_test.sh
+            continuous-traffic-generator.sh
+            save_backup5.sh
+            setup_comprehensive_dashboards.sh
+            provision-dashboards.sh
+            test_auto_baselining.sh
+            comprehensive-fix.sh
+            safe_shutdown4.sh
+            prometheus_diagnostics.sh
+            fix-rabbitmq-connection.sh
+            docker-compose.yml
+            docker-compose-smtp.yml
+            manual_dashboard_import.sh
+            docker-compose-fixed.yml
+            fix_prometheus_ddos_target.sh
+            .backup_complete
+            safe_restart5.sh
+            stop_ml_service.sh
+            generate-initial-metrics.sh
+            system_status5.sh
+            toggle-issues-fixed.sh
+            test_newrelic.sh
+            generate_significant_traffic.sh
+            safe_restart.sh
+            test_windows_iis_anomalies.sh
+            system_status4.sh
+            fix_docker_compose.sh
+            fetch-k8s-metrics.sh
+            restore_dashboards.sh
+            update_smtp_config.sh
+            k8s-status-check.sh
+            start_ml_service.sh
+            import-messaging-dashboards.sh
+            system_status.sh
+            stop_latency_test.sh
+            safe_restart4.sh
+            rabbitmq-monitor/
+                requirements.txt
+                Dockerfile
+                app.py
+            redis-cache-load-generator/
+                requirements.txt
+                Dockerfile
+                cache_patterns.py
+                app.py
+            kubernetes-state/
+                banking-namespace-state.yaml
+                hpa-description.txt
+                restore_k8s_state.sh
+                live-metrics.txt
+                hpa-state.yaml
+                namespaces.yaml
+                nodes.yaml
+            message-producer/
+                requirements.txt
+                Dockerfile
+                app.py
+            performance-aggregator/
+                requirements.txt
+                Dockerfile
+                app.py
+            container-resource-monitor/
+                config.py
+                requirements.txt
+                Dockerfile
+                app.py
+                optimizer.py
+            redis/
+                redis.conf
+            mock-iis-application/
+                requirements.txt
+                Dockerfile
+                app.py
+            transaction-monitor/
+                requirements.txt
+                Dockerfile
+                app.py
+            message-brokers/
+                .DS_Store
+                rabbitmq/
+                    rabbitmq.conf
+                    Dockerfile
+                kafka/
+                    docker-compose.kafka.yml
+            grafana-dashboards/
+                rabbitmq-monitor-dashboard.json
+            mock-windows-exporter/
+                requirements.txt
+                Dockerfile
+                metrics-schema.md
+                app.py
+            grafana/
+                .DS_Store
+                datasources/
+                    datasource.yml
+                provisioning/
+                    .DS_Store
+                    datasources/
+                        datasource.yml
+                        prometheus.yml
+                    dashboards/
+                        all.yml
+                        dashboard.yml
+                dashboards/
+                    transaction-tracing-dashboard.json
+                    kubernetes-overview-v2.json
+                    pod-autoscaling.json
+                    enhanced-cache-monitoring-dashboard.json
+                    auto-baselining-dashboard.json
+                    banking-system-overview-v2.json
+                    banking-overview-dashboard.json
+                    db-connection-dashboard.json
+                    container-resource-optimization.json
+                    node-resource-consumption.json
+                    kubernetes-overview.json
+                    message-queue-dashboard.json
+                    rabbitmq-monitor-dashboard.json
+                    container-monitoring-dashboard.json
+                    pod-autoscaling-v2.json
+                    dashboard.yml
+                    redis-cache-performance.json
+                    ddos-detection-dashboard.json
+                    windows-iis-dashboard.json
+                    transaction-performance-dashboard.json
+                    backup-20250625/
+                        transaction-tracing-dashboard.json
+                        auto-baselining-dashboard.json
+                        banking-overview-dashboard.json
+                        db-connection-dashboard.json
+                        message-queue-dashboard.json
+                        ddos-detection-dashboard.json
+                        windows-iis-dashboard.json
+                        transaction-performance-dashboard.json
+            grafana_exports/
+                k8s-node-resource-consumption_complete.json
+                Enhanced_Kubernetes_Cluster_Overview.json
+                05c84299-5312-46f5-a9f5-fe6762b2f6a2_metadata.json
+                RabbitMQ_Monitor_Comparison_Dashboard2.json
+                banking-system-v2_complete.json
+                redis-cache-perf_complete.json
+                k8s-pod-autoscaling-professional_complete.json
+                97273ee6-9d9a-4c11-a61a-3ecf5a9ce606_complete.json
+                k8s-cluster-overview-professional_metadata.json
+                Banking_Message_Queue_Dashboard.json
+                Container_Resource_Optimization.json
+                ddos-monitoring-v2-uid_metadata.json
+                97273ee6-9d9a-4c11-a61a-3ecf5a9ce605_complete.json
+                Kubernetes_Cluster_Overview_-_Fixed.json
+                🚀_Pod_Auto-scaling_Dashboard.json
+                enhanced-pod-autoscaling_metadata.json
+                cbbaf7a3-680b-41b5-b5a3-284bde01bb03_complete.json
+                Enhanced_Pod_Autoscaling_Dashboard.json
+                e28affb9-a049-4ab6-ac1f-182e50abfb56_complete.json
+                enhanced-auto-baselining-v2_metadata.json
+                enhanced-node-resource-consumption_metadata.json
+                d833695a-6b75-4739-a240-541ad564bcb6_complete.json
+                container-optimization_complete.json
+                container-usage-monitoring_complete.json
+                container-resource-monitoring-v2_metadata.json
+                banking-message-queue_metadata.json
+                Redis_Cache_Performance.json
+                k8s-pod-autoscaling_complete.json
+                k8s-cluster-overview-fixed_metadata.json
+                rabbitmq-monitor-v2_metadata.json
+                rabbitmq-monitor-v1_metadata.json
+                banking-db-connection_complete.json
+                enhanced-k8s-cluster-overview_metadata.json
+                Enhanced_Node_Resource_Consumption.json
+                💰_Transaction_Performance_Monitoring.json
+                340b9a2d-71e5-482e-934b-68b10b4fb409_metadata.json
+                Container_Resource_Usage.json
+                🪟_Windows_IIS_Server_Monitoring.json
+                340b9a2d-71e5-482e-934b-68b10b4fb409_complete.json
+                🚀_Pod_Auto-scaling_Dashboard_-_v2.json
+                enhanced-k8s-cluster-overview_complete.json
+                Container_Resource_Monitoring.json
+                banking-db-connection_metadata.json
+                🏦_Banking_System_Overview_v2.json
+                rabbitmq-monitor-v1_complete.json
+                🏦_Banking_System_Overview_v3.json
+                🏦_Banking_System_Overview.json
+                🚨_DDoS_Detection_&_Security_Monitoring_v2.json
+                rabbitmq-monitor-v2_complete.json
+                k8s-cluster-overview-fixed_complete.json
+                🎯_Auto-Baselining_&_Threshold_Optimization.json
+                k8s-pod-autoscaling_metadata.json
+                banking-message-queue_complete.json
+                container-resource-monitoring-v2_complete.json
+                Banking_Database_Connection_Pool_Dashboard.json
+                container-usage-monitoring_metadata.json
+                container-optimization_metadata.json
+                Kubernetes_Cluster_Overview_-_Professional.json
+                d833695a-6b75-4739-a240-541ad564bcb6_metadata.json
+                enhanced-node-resource-consumption_complete.json
+                🖥️_Node_Resource_Consumption_Dashboard.json
+                enhanced-auto-baselining-v2_complete.json
+                e28affb9-a049-4ab6-ac1f-182e50abfb56_metadata.json
+                RabbitMQ_Monitor_Comparison_Dashboard.json
+                cbbaf7a3-680b-41b5-b5a3-284bde01bb03_metadata.json
+                enhanced-pod-autoscaling_complete.json
+                97273ee6-9d9a-4c11-a61a-3ecf5a9ce605_metadata.json
+                🚨_DDoS_Detection_&_Security_Monitoring.json
+                ddos-monitoring-v2-uid_complete.json
+                🎯_Enhanced_Auto-Baselining_&_Threat_Detection.json
+                restore_dashboards.sh
+                k8s-cluster-overview-professional_complete.json
+                97273ee6-9d9a-4c11-a61a-3ecf5a9ce606_metadata.json
+                k8s-pod-autoscaling-professional_metadata.json
+                redis-cache-perf_metadata.json
+                banking-system-v2_metadata.json
+                🔍_Transaction_Tracing_Analytics.json
+                05c84299-5312-46f5-a9f5-fe6762b2f6a2_complete.json
+                k8s-node-resource-consumption_metadata.json
+            shared/
+                cache/
+                    redis_cache.py
+            db-connection-demo/
+                config.py
+                requirements.txt
+                Dockerfile
+                init.sql
+                app.py
+            trace-generator/
+                trace_patterns.py
+                requirements.txt
+                Dockerfile
+                trace_patterns_fixed.py
+                app.py
+            scripts/
+                train_simple_model.py
+                generate_synthetic_data.py
+                simulate_ddos.py
+                test_ddos_system.py
+                deploy_ddos_system.sh
+                deploy_ddos_detection.sh
+                data/
+                    synthetic/
+                        banking_ddos_dataset_20250528_105410.csv
+                        banking_ddos_labels_20250528_105412.npy
+                        banking_ddos_labels_20250528_105406.npy
+                        banking_ddos_labels_20250528_105410.npy
+                        banking_ddos_dataset_20250528_105412.csv
+                        banking_ddos_dataset_20250528_105406.csv
+                        metadata_20250528_105412.json
+                        metadata_20250528_105410.json
+                        metadata_20250528_105406.json
+                        attack_log_20250528_105410.csv
+                        attack_log_20250528_105406.csv
+                        attack_log_20250528_105412.csv
+            redis-cache-analyzer/
+                config.py
+                requirements.txt
+                Dockerfile
+                app.py
+            k6-scripts/
+                cache-load-tests.js
+            prometheus/
+                ddos_alert_rules.yml
+                optimization_alert_rules.yml
+                prometheus.yml.backup.20250528_141150
+                prometheus.yml.backup.20250610_144034
+                k8s-alert-rules.yml
+                prometheus.yml.backup.20250618_120445
+                alert_rules.yml
+                prometheus.yml
+                prometheus-transaction.yml
+                prometheus.yml.backup.20250610_143555
+            resource-anomaly-generator/
+                requirements.txt
+                Dockerfile
+                anomaly_patterns.py
+                app.py
+            message-consumer/
+                requirements.txt
+                Dockerfile
+                app.py
+            anomaly-injector/
+                requirements.txt
+                Dockerfile
+                app.py
+            kubernetes-monitoring/
+                hpa_details.txt
+                hpa_state.yaml
+                current_state.yaml
+                k8s_metrics_state.txt
+                scaling_state.txt
+                k8s-manifests/
+                    metrics-server-docker-desktop.yaml
+                    namespace.yaml
+                    rbac/
+                    hpa/
+                        banking-service-hpa.yaml
+                    services/
+                        banking-service-svc.yaml
+                    deployments/
+                        banking-service-deployment.yaml
+                        k8s-resource-monitor-deployment.yaml
+                        load-generator-deployment.yaml
+                scripts/
+                    load-testing-scaling-demo.py
+                    start-monitoring.sh
+                    k8s-anomaly-generator.log
+                    k8s-load-demo.log
+                    anomaly-generator.py
+                    real-time-monitoring.py
+                monitoring/
+                    k8s-resource-monitor/
+                        requirements.txt
+                        Dockerfile
+                        app.py
+                    kube-state-metrics/
+                        kube-state-metrics.yaml
+                    k8s-chaos-injector/
+                k8s-services/
+                    banking-service-k8s/
+                    chaos-generator-k8s/
+                    load-generator-k8s/
+                        requirements.txt
+                        Dockerfile
+                        app.py
             src/
                 .DS_Store
                 __init.py__
@@ -6939,6 +9618,883 @@
                 requirements.txt
                 Dockerfile
                 app.py
+            src/
+                .DS_Store
+                __init.py__
+                __init__.py
+                utils/
+                    __init__.py
+                models/
+                    __init__.py
+                __pycache__/
+                    __init__.cpython-39.pyc
+                    __init__.cpython-312.pyc
+                data_preprocessing/
+                    __init__.py
+                data_generation/
+                    banking_metrics_schema.py
+                    normal_traffic_generator.py
+                    __init__.py
+                    master_dataset_generator.py
+                    ddos_attack_generator.py
+                    __pycache__/
+                        __init__.cpython-39.pyc
+                        ddos_attack_generator.cpython-39.pyc
+                        ddos_attack_generator.cpython-312.pyc
+                        normal_traffic_generator.cpython-39.pyc
+                        master_dataset_generator.cpython-39.pyc
+                        master_dataset_generator.cpython-312.pyc
+                        banking_metrics_schema.cpython-39.pyc
+                        normal_traffic_generator.cpython-312.pyc
+                        banking_metrics_schema.cpython-312.pyc
+                        __init__.cpython-312.pyc
+                services/
+                    ddos_ml_detection_fixed.py
+                    prometheus_collector.py
+                    ml_detection_service.py
+                    __init__.py
+                    auto_baselining_service.py
+        20250704_173016/
+            cpu_stress_test.sh
+            emergency-fix.sh
+            system_status7.sh
+            fix_windows_iis_monitoring.sh
+            cleanup_docker.sh
+            comprehensive_alert_test.sh
+            stop_system.sh
+            test-transaction-monitoring.sh
+            disaster_recovery.sh
+            toggle-issues.sh
+            verify_iis_monitoring.sh
+            test_system.sh
+            live_metrics_snapshot.txt
+            restart_system.sh
+            safe_restart3.sh
+            fix-prometheus-targets.sh
+            system_status3.sh
+            comparison_tracker.sh
+            docker-compose.transaction-monitoring.yml
+            docker_hub_setup_fixed.sh
+            stop_memory_test.sh
+            force-prometheus-reload.sh
+            docker-compose.messaging.yml
+            test_traffic.sh
+            update-prometheus-config.sh
+            transaction_traffic.sh
+            save_backup.sh
+            RESTORE_INSTRUCTIONS.md
+            import_windows_iis_dashboard.sh
+            verify-transaction-metrics.sh
+            safe_restart7.sh
+            system_status2.sh
+            safe_shutdown.sh
+            docker-compose.k8s-monitoring.yml
+            memory_stress_test.sh
+            fix-db-pool-metrics.sh
+            docker-compose.container-monitor.yml
+            setup_unified_project.sh
+            docker-compose.override.yml
+            safe_restart6.sh
+            generate-cache-traffic.sh
+            system_status6.sh
+            enable-rabbitmq-prometheus.sh
+            test-anomaly-injection.sh
+            simulate-realistic-traffic.sh
+            auth_traffic.sh
+            docker-compose.hub.yml
+            setup_all_files.sh
+            docker-compose.redis-only.yml
+            running_services.txt
+            safe_restart2.sh
+            import-dashboards-fixed.sh
+            run_anomaly_tests.sh
+            deploy_auto_baselining.sh
+            message-queue-tester-v2.sh
+            check-metrics-status.sh
+            start-transaction-monitoring.sh
+            restore_system.sh
+            quick-demo.sh
+            safe_shutdown3.sh
+            complete_system_deployment.sh
+            stop_stress_test.sh
+            docker-compose.db-demo.yml
+            test_integration.sh
+            memory_remediation.sh
+            save_backup2.sh
+            fix_tracing_dashboard.sh
+            update_prometheus_config.sh
+            safe_shutdown7.sh
+            verify_iis_monitoring2.sh
+            docker-compose.tracing.yml
+            debug-prometheus-targets.sh
+            docker_hub_setup.sh
+            cleanup_system.sh
+            save_backup3.sh
+            fix_prometheus_integration.sh
+            notification_traffic.sh
+            quick_deploy_from_hub.sh
+            database-activity-generator.sh
+            safe_shutdown6.sh
+            verify_all_metrics.sh
+            cpu_remediation.sh
+            test_fixed_systems.sh
+            test_fixed_system.sh
+            docker-compose.optimization.yml
+            generate_normal_traffic.sh
+            safe_shutdown2.sh
+            docker-compose.tracing.hub.yml
+            import_tracing_dashboard.sh
+            recovery_system.sh
+            test_windows_iis_anomalies_v2.sh
+            safe_shutdown5.sh
+            setup_init_files.sh
+            generate_test_data.sh
+            fix-optimization-setup.sh
+            message-queue-tester.sh
+            docker_hub_setup_fixed2.sh
+            fix_ddos_metrics_endpoint.sh
+            complete_system_recovery.sh
+            save_backup4.sh
+            quick_fixes.sh
+            fix-docker-network.sh
+            import-transaction-dashboard.sh
+            latency_stress_test.sh
+            continuous-traffic-generator.sh
+            save_backup5.sh
+            setup_comprehensive_dashboards.sh
+            provision-dashboards.sh
+            test_auto_baselining.sh
+            comprehensive-fix.sh
+            safe_shutdown4.sh
+            prometheus_diagnostics.sh
+            fix-rabbitmq-connection.sh
+            docker-compose.yml
+            docker-compose-smtp.yml
+            manual_dashboard_import.sh
+            docker-compose-fixed.yml
+            fix_prometheus_ddos_target.sh
+            .backup_complete
+            safe_restart5.sh
+            stop_ml_service.sh
+            generate-initial-metrics.sh
+            system_status5.sh
+            toggle-issues-fixed.sh
+            test_newrelic.sh
+            generate_significant_traffic.sh
+            safe_restart.sh
+            test_windows_iis_anomalies.sh
+            system_status4.sh
+            fix_docker_compose.sh
+            restore_dashboards.sh
+            update_smtp_config.sh
+            start_ml_service.sh
+            import-messaging-dashboards.sh
+            system_status.sh
+            stop_latency_test.sh
+            safe_restart4.sh
+            rabbitmq-monitor/
+                requirements.txt
+                Dockerfile
+                app.py
+            redis-cache-load-generator/
+                requirements.txt
+                Dockerfile
+                cache_patterns.py
+                app.py
+            kubernetes-state/
+                banking-namespace-state.yaml
+                hpa-description.txt
+                restore_k8s_state.sh
+                live-metrics.txt
+                hpa-state.yaml
+                namespaces.yaml
+                nodes.yaml
+            message-producer/
+                requirements.txt
+                Dockerfile
+                app.py
+            performance-aggregator/
+                requirements.txt
+                Dockerfile
+                app.py
+            container-resource-monitor/
+                config.py
+                requirements.txt
+                Dockerfile
+                app.py
+                optimizer.py
+            redis/
+                redis.conf
+            mock-iis-application/
+                requirements.txt
+                Dockerfile
+                app.py
+            transaction-monitor/
+                requirements.txt
+                Dockerfile
+                app.py
+            message-brokers/
+                .DS_Store
+                rabbitmq/
+                    rabbitmq.conf
+                    Dockerfile
+                kafka/
+                    docker-compose.kafka.yml
+            grafana-dashboards/
+                rabbitmq-monitor-dashboard.json
+            mock-windows-exporter/
+                requirements.txt
+                Dockerfile
+                metrics-schema.md
+                app.py
+            grafana/
+                .DS_Store
+                datasources/
+                    datasource.yml
+                provisioning/
+                    .DS_Store
+                    datasources/
+                        datasource.yml
+                        prometheus.yml
+                    dashboards/
+                        all.yml
+                        dashboard.yml
+                dashboards/
+                    transaction-tracing-dashboard.json
+                    kubernetes-overview-v2.json
+                    pod-autoscaling.json
+                    enhanced-cache-monitoring-dashboard.json
+                    auto-baselining-dashboard.json
+                    banking-system-overview-v2.json
+                    banking-overview-dashboard.json
+                    db-connection-dashboard.json
+                    container-resource-optimization.json
+                    node-resource-consumption.json
+                    kubernetes-overview.json
+                    message-queue-dashboard.json
+                    rabbitmq-monitor-dashboard.json
+                    container-monitoring-dashboard.json
+                    pod-autoscaling-v2.json
+                    dashboard.yml
+                    redis-cache-performance.json
+                    ddos-detection-dashboard.json
+                    windows-iis-dashboard.json
+                    transaction-performance-dashboard.json
+                    backup-20250625/
+                        transaction-tracing-dashboard.json
+                        auto-baselining-dashboard.json
+                        banking-overview-dashboard.json
+                        db-connection-dashboard.json
+                        message-queue-dashboard.json
+                        ddos-detection-dashboard.json
+                        windows-iis-dashboard.json
+                        transaction-performance-dashboard.json
+            grafana_exports/
+                k8s-node-resource-consumption_complete.json
+                Enhanced_Kubernetes_Cluster_Overview.json
+                05c84299-5312-46f5-a9f5-fe6762b2f6a2_metadata.json
+                RabbitMQ_Monitor_Comparison_Dashboard2.json
+                banking-system-v2_complete.json
+                redis-cache-perf_complete.json
+                k8s-pod-autoscaling-professional_complete.json
+                97273ee6-9d9a-4c11-a61a-3ecf5a9ce606_complete.json
+                Banking_Message_Queue_Dashboard.json
+                Container_Resource_Optimization.json
+                ddos-monitoring-v2-uid_metadata.json
+                97273ee6-9d9a-4c11-a61a-3ecf5a9ce605_complete.json
+                Kubernetes_Cluster_Overview_-_Fixed.json
+                enhanced-pod-autoscaling_metadata.json
+                cbbaf7a3-680b-41b5-b5a3-284bde01bb03_complete.json
+                Enhanced_Pod_Autoscaling_Dashboard.json
+                e28affb9-a049-4ab6-ac1f-182e50abfb56_complete.json
+                enhanced-auto-baselining-v2_metadata.json
+                enhanced-node-resource-consumption_metadata.json
+                d833695a-6b75-4739-a240-541ad564bcb6_complete.json
+                container-optimization_complete.json
+                container-usage-monitoring_complete.json
+                container-resource-monitoring-v2_metadata.json
+                banking-message-queue_metadata.json
+                Redis_Cache_Performance.json
+                k8s-cluster-overview-fixed_metadata.json
+                rabbitmq-monitor-v2_metadata.json
+                rabbitmq-monitor-v1_metadata.json
+                banking-db-connection_complete.json
+                enhanced-k8s-cluster-overview_metadata.json
+                Enhanced_Node_Resource_Consumption.json
+                💰_Transaction_Performance_Monitoring.json
+                340b9a2d-71e5-482e-934b-68b10b4fb409_metadata.json
+                Container_Resource_Usage.json
+                🪟_Windows_IIS_Server_Monitoring.json
+                340b9a2d-71e5-482e-934b-68b10b4fb409_complete.json
+                🚀_Pod_Auto-scaling_Dashboard_-_v2.json
+                enhanced-k8s-cluster-overview_complete.json
+                Container_Resource_Monitoring.json
+                banking-db-connection_metadata.json
+                🏦_Banking_System_Overview_v2.json
+                rabbitmq-monitor-v1_complete.json
+                🏦_Banking_System_Overview_v3.json
+                🏦_Banking_System_Overview.json
+                🚨_DDoS_Detection_&_Security_Monitoring_v2.json
+                rabbitmq-monitor-v2_complete.json
+                k8s-cluster-overview-fixed_complete.json
+                🎯_Auto-Baselining_&_Threshold_Optimization.json
+                banking-message-queue_complete.json
+                container-resource-monitoring-v2_complete.json
+                Banking_Database_Connection_Pool_Dashboard.json
+                container-usage-monitoring_metadata.json
+                container-optimization_metadata.json
+                d833695a-6b75-4739-a240-541ad564bcb6_metadata.json
+                enhanced-node-resource-consumption_complete.json
+                🖥️_Node_Resource_Consumption_Dashboard.json
+                enhanced-auto-baselining-v2_complete.json
+                e28affb9-a049-4ab6-ac1f-182e50abfb56_metadata.json
+                RabbitMQ_Monitor_Comparison_Dashboard.json
+                cbbaf7a3-680b-41b5-b5a3-284bde01bb03_metadata.json
+                enhanced-pod-autoscaling_complete.json
+                97273ee6-9d9a-4c11-a61a-3ecf5a9ce605_metadata.json
+                🚨_DDoS_Detection_&_Security_Monitoring.json
+                ddos-monitoring-v2-uid_complete.json
+                🎯_Enhanced_Auto-Baselining_&_Threat_Detection.json
+                restore_dashboards.sh
+                97273ee6-9d9a-4c11-a61a-3ecf5a9ce606_metadata.json
+                k8s-pod-autoscaling-professional_metadata.json
+                redis-cache-perf_metadata.json
+                banking-system-v2_metadata.json
+                🔍_Transaction_Tracing_Analytics.json
+                05c84299-5312-46f5-a9f5-fe6762b2f6a2_complete.json
+                k8s-node-resource-consumption_metadata.json
+            shared/
+                cache/
+                    redis_cache.py
+            db-connection-demo/
+                config.py
+                requirements.txt
+                Dockerfile
+                init.sql
+                app.py
+            trace-generator/
+                trace_patterns.py
+                requirements.txt
+                Dockerfile
+                trace_patterns_fixed.py
+                app.py
+            scripts/
+                train_simple_model.py
+                generate_synthetic_data.py
+                simulate_ddos.py
+                test_ddos_system.py
+                deploy_ddos_system.sh
+                deploy_ddos_detection.sh
+                data/
+                    synthetic/
+                        banking_ddos_dataset_20250528_105410.csv
+                        banking_ddos_labels_20250528_105412.npy
+                        banking_ddos_labels_20250528_105406.npy
+                        banking_ddos_labels_20250528_105410.npy
+                        banking_ddos_dataset_20250528_105412.csv
+                        banking_ddos_dataset_20250528_105406.csv
+                        metadata_20250528_105412.json
+                        metadata_20250528_105410.json
+                        metadata_20250528_105406.json
+                        attack_log_20250528_105410.csv
+                        attack_log_20250528_105406.csv
+                        attack_log_20250528_105412.csv
+            redis-cache-analyzer/
+                config.py
+                requirements.txt
+                Dockerfile
+                app.py
+            k6-scripts/
+                cache-load-tests.js
+            prometheus/
+                ddos_alert_rules.yml
+                optimization_alert_rules.yml
+                prometheus.yml.backup.20250528_141150
+                prometheus.yml.backup.20250610_144034
+                k8s-alert-rules.yml
+                prometheus.yml.backup.20250618_120445
+                alert_rules.yml
+                prometheus.yml
+                prometheus-transaction.yml
+                prometheus.yml.backup.20250610_143555
+            resource-anomaly-generator/
+                requirements.txt
+                Dockerfile
+                anomaly_patterns.py
+                app.py
+            message-consumer/
+                requirements.txt
+                Dockerfile
+                app.py
+            anomaly-injector/
+                requirements.txt
+                Dockerfile
+                app.py
+            kubernetes-monitoring/
+                k8s-manifests/
+                    metrics-server-docker-desktop.yaml
+                    namespace.yaml
+                    rbac/
+                    hpa/
+                        banking-service-hpa.yaml
+                    services/
+                        banking-service-svc.yaml
+                    deployments/
+                        banking-service-deployment.yaml
+                        k8s-resource-monitor-deployment.yaml
+                        load-generator-deployment.yaml
+                scripts/
+                    load-testing-scaling-demo.py
+                    k8s-anomaly-generator.log
+                    k8s-load-demo.log
+                    anomaly-generator.py
+                    real-time-monitoring.py
+                monitoring/
+                    k8s-resource-monitor/
+                        requirements.txt
+                        Dockerfile
+                        app.py
+                    kube-state-metrics/
+                        kube-state-metrics.yaml
+                    k8s-chaos-injector/
+                k8s-services/
+                    banking-service-k8s/
+                    chaos-generator-k8s/
+                    load-generator-k8s/
+                        requirements.txt
+                        Dockerfile
+                        app.py
+            src/
+                .DS_Store
+                __init.py__
+                __init__.py
+                utils/
+                    __init__.py
+                models/
+                    __init__.py
+                __pycache__/
+                    __init__.cpython-39.pyc
+                    __init__.cpython-312.pyc
+                data_preprocessing/
+                    __init__.py
+                data_generation/
+                    banking_metrics_schema.py
+                    normal_traffic_generator.py
+                    __init__.py
+                    master_dataset_generator.py
+                    ddos_attack_generator.py
+                    __pycache__/
+                        __init__.cpython-39.pyc
+                        ddos_attack_generator.cpython-39.pyc
+                        ddos_attack_generator.cpython-312.pyc
+                        normal_traffic_generator.cpython-39.pyc
+                        master_dataset_generator.cpython-39.pyc
+                        master_dataset_generator.cpython-312.pyc
+                        banking_metrics_schema.cpython-39.pyc
+                        normal_traffic_generator.cpython-312.pyc
+                        banking_metrics_schema.cpython-312.pyc
+                        __init__.cpython-312.pyc
+                services/
+                    ddos_ml_detection_fixed.py
+                    prometheus_collector.py
+                    ml_detection_service.py
+                    __init__.py
+                    auto_baselining_service.py
+        20250707_172040/
+            test-cache-proxy.py
+            cpu_stress_test.sh
+            emergency-fix.sh
+            system_status7.sh
+            fix_windows_iis_monitoring.sh
+            requirements-baselining.txt
+            cleanup_docker.sh
+            comprehensive_alert_test.sh
+            stop_system.sh
+            test-transaction-monitoring.sh
+            disaster_recovery.sh
+            toggle-issues.sh
+            verify_iis_monitoring.sh
+            test_system.sh
+            restart_system.sh
+            safe_restart3.sh
+            fix-prometheus-targets.sh
+            system_status3.sh
+            comparison_tracker.sh
+            docker-compose.transaction-monitoring.yml
+            docker_hub_setup_fixed.sh
+            stop_memory_test.sh
+            force-prometheus-reload.sh
+            docker-compose.messaging.yml
+            test_traffic.sh
+            update-prometheus-config.sh
+            transaction_traffic.sh
+            save_backup.sh
+            transaction-dashboard-url.txt
+            RESTORE_INSTRUCTIONS.md
+            import_windows_iis_dashboard.sh
+            verify-transaction-metrics.sh
+            safe_restart7.sh
+            system_status2.sh
+            safe_shutdown.sh
+            requirements-ml.txt
+            docker-compose.k8s-monitoring.yml
+            memory_stress_test.sh
+            minimal_ml_service.py
+            fix-db-pool-metrics.sh
+            docker-compose.container-monitor.yml
+            setup_unified_project.sh
+            docker-compose.override.yml
+            safe_restart6.sh
+            generate-cache-traffic.sh
+            banking-logs.txt
+            system_status6.sh
+            enable-rabbitmq-prometheus.sh
+            test-anomaly-injection.sh
+            check-cadvisor-connectivity.py
+            simulate-realistic-traffic.sh
+            auth_traffic.sh
+            docker-compose.hub.yml
+            backup.txt
+            setup_all_files.sh
+            IMPLEMENTATION_SUMMARY.md
+            docker-compose.redis-only.yml
+            running_services.txt
+            safe_restart2.sh
+            import-dashboards-fixed.sh
+            run_anomaly_tests.sh
+            deploy_auto_baselining.sh
+            message-queue-tester-v2.sh
+            check-metrics-status.sh
+            start-transaction-monitoring.sh
+            restore_system.sh
+            quick-demo.sh
+            test-container-resources.py
+            safe_shutdown3.sh
+            port-mapping.txt
+            complete_system_deployment.sh
+            stop_stress_test.sh
+            docker-compose.db-demo.yml
+            test_integration.sh
+            memory_remediation.sh
+            save_backup2.sh
+            fix_tracing_dashboard.sh
+            update_prometheus_config.sh
+            docker_hub_readme.md
+            safe_shutdown7.sh
+            simple_ml_detection_service.py
+            OPTIMIZATION_GUIDE.md
+            verify_iis_monitoring2.sh
+            docker-compose.tracing.yml
+            debug-prometheus-targets.sh
+            docker_hub_setup.sh
+            cleanup_system.sh
+            docker-info.txt
+            save_backup3.sh
+            fix_prometheus_integration.sh
+            notification_traffic.sh
+            quick_deploy_from_hub.sh
+            generate_structure.py
+            database-activity-generator.sh
+            docker-commands.txt
+            safe_shutdown6.sh
+            verify_all_metrics.sh
+            final_metrics_state.txt
+            generate_backup.py
+            cpu_remediation.sh
+            test_fixed_systems.sh
+            test_fixed_system.sh
+            docker-compose.optimization.yml
+            webhook_receiver.py
+            generate_normal_traffic.sh
+            safe_shutdown2.sh
+            docker-compose.tracing.hub.yml
+            import_tracing_dashboard.sh
+            trigger-SLO-calculations.txt
+            check-optimization-status.py
+            recovery_system.sh
+            README.md
+            test_windows_iis_anomalies_v2.sh
+            safe_shutdown5.sh
+            setup_init_files.sh
+            generate_test_data.sh
+            fix-optimization-setup.sh
+            message-queue-tester.sh
+            docker_hub_setup_fixed2.sh
+            fix_ddos_metrics_endpoint.sh
+            add_basic_metrics.py
+            complete_system_recovery.sh
+            save_backup4.sh
+            directory_structure.txt
+            quick_fixes.sh
+            test-cadvisor-connection.py
+            fix-docker-network.sh
+            test-container-analysis.py
+            import-transaction-dashboard.sh
+            latency_stress_test.sh
+            trace_patterns_fixed.py
+            continuous-traffic-generator.sh
+            test-redis-cache.py
+            save_backup5.sh
+            setup_comprehensive_dashboards.sh
+            provision-dashboards.sh
+            test_auto_baselining.sh
+            comprehensive-fix.sh
+            .shutdown_complete
+            complete-metrics-exporter.py
+            safe_shutdown4.sh
+            prometheus_diagnostics.sh
+            fix-rabbitmq-connection.sh
+            kubernetes-metrics-output.txt
+            docker-compose.yml
+            docker-compose-smtp.yml
+            manual_dashboard_import.sh
+            docker-compose-fixed.yml
+            debug-cadvisor.py
+            fix_prometheus_ddos_target.sh
+            docker-output-logs.txt
+            safe_restart5.sh
+            stop_ml_service.sh
+            generate-initial-metrics.sh
+            system_status5.sh
+            toggle-issues-fixed.sh
+            test_newrelic.sh
+            generate_significant_traffic.sh
+            safe_restart.sh
+            test_windows_iis_anomalies.sh
+            start-optimization-services.py
+            system_status4.sh
+            fix_docker_compose.sh
+            fetch-k8s-metrics.sh
+            restore_dashboards.sh
+            update_smtp_config.sh
+            k8s-status-check.sh
+            start_ml_service.sh
+            import-messaging-dashboards.sh
+            system_status.sh
+            stop_latency_test.sh
+            safe_restart4.sh
+            rabbitmq-monitor/
+                requirements.txt
+                Dockerfile
+                app.py
+            redis-cache-load-generator/
+                requirements.txt
+                Dockerfile
+                cache_patterns.py
+                app.py
+            message-producer/
+                requirements.txt
+                Dockerfile
+                app.py
+            performance-aggregator/
+                requirements.txt
+                Dockerfile
+                app.py
+            container-resource-monitor/
+                config.py
+                requirements.txt
+                Dockerfile
+                app.py
+                optimizer.py
+            redis/
+                redis.conf
+            mock-iis-application/
+                requirements.txt
+                Dockerfile
+                app.py
+            transaction-monitor/
+                requirements.txt
+                Dockerfile
+                app.py
+            message-brokers/
+                .DS_Store
+                rabbitmq/
+                    rabbitmq.conf
+                    Dockerfile
+                kafka/
+                    docker-compose.kafka.yml
+            mock-windows-exporter/
+                requirements.txt
+                Dockerfile
+                metrics-schema.md
+                app.py
+            grafana/
+                .DS_Store
+                datasources/
+                    datasource.yml
+                provisioning/
+                    .DS_Store
+                    datasources/
+                        datasource.yml
+                        prometheus.yml
+                    dashboards/
+                        all.yml
+                        dashboard.yml
+                dashboards/
+                    transaction-tracing-dashboard.json
+                    kubernetes-overview-v2.json
+                    pod-autoscaling.json
+                    enhanced-cache-monitoring-dashboard.json
+                    auto-baselining-dashboard.json
+                    banking-system-overview-v2.json
+                    banking-overview-dashboard.json
+                    db-connection-dashboard.json
+                    container-resource-optimization.json
+                    node-resource-consumption.json
+                    kubernetes-overview.json
+                    message-queue-dashboard.json
+                    rabbitmq-monitor-dashboard.json
+                    container-monitoring-dashboard.json
+                    pod-autoscaling-v2.json
+                    dashboard.yml
+                    redis-cache-performance.json
+                    ddos-detection-dashboard.json
+                    windows-iis-dashboard.json
+                    transaction-performance-dashboard.json
+                    backup-20250625/
+                        transaction-tracing-dashboard.json
+                        auto-baselining-dashboard.json
+                        banking-overview-dashboard.json
+                        db-connection-dashboard.json
+                        message-queue-dashboard.json
+                        ddos-detection-dashboard.json
+                        windows-iis-dashboard.json
+                        transaction-performance-dashboard.json
+            grafana_exports/
+                k8s-node-resource-consumption_complete.json
+                banking-system-v2_complete.json
+                redis-cache-perf_complete.json
+                k8s-pod-autoscaling-professional_complete.json
+                97273ee6-9d9a-4c11-a61a-3ecf5a9ce606_complete.json
+                97273ee6-9d9a-4c11-a61a-3ecf5a9ce605_complete.json
+                cbbaf7a3-680b-41b5-b5a3-284bde01bb03_complete.json
+                e28affb9-a049-4ab6-ac1f-182e50abfb56_complete.json
+                d833695a-6b75-4739-a240-541ad564bcb6_complete.json
+                container-optimization_complete.json
+                container-usage-monitoring_complete.json
+                k8s-pod-autoscaling_complete.json
+                banking-db-connection_complete.json
+                340b9a2d-71e5-482e-934b-68b10b4fb409_complete.json
+                enhanced-k8s-cluster-overview_complete.json
+                rabbitmq-monitor-v1_complete.json
+                rabbitmq-monitor-v2_complete.json
+                k8s-cluster-overview-fixed_complete.json
+                banking-message-queue_complete.json
+                container-resource-monitoring-v2_complete.json
+                enhanced-node-resource-consumption_complete.json
+                enhanced-auto-baselining-v2_complete.json
+                enhanced-pod-autoscaling_complete.json
+                ddos-monitoring-v2-uid_complete.json
+                restore_dashboards.sh
+                k8s-cluster-overview-professional_complete.json
+                05c84299-5312-46f5-a9f5-fe6762b2f6a2_complete.json
+            shared/
+                cache/
+                    redis_cache.py
+            db-connection-demo/
+                config.py
+                requirements.txt
+                Dockerfile
+                init.sql
+                app.py
+            trace-generator/
+                trace_patterns.py
+                requirements.txt
+                Dockerfile
+                trace_patterns_fixed.py
+                app.py
+            scripts/
+                train_simple_model.py
+                generate_synthetic_data.py
+                simulate_ddos.py
+                test_ddos_system.py
+                deploy_ddos_system.sh
+                deploy_ddos_detection.sh
+                data/
+                    synthetic/
+                        banking_ddos_dataset_20250528_105410.csv
+                        banking_ddos_labels_20250528_105412.npy
+                        banking_ddos_labels_20250528_105406.npy
+                        banking_ddos_labels_20250528_105410.npy
+                        banking_ddos_dataset_20250528_105412.csv
+                        banking_ddos_dataset_20250528_105406.csv
+                        metadata_20250528_105412.json
+                        metadata_20250528_105410.json
+                        metadata_20250528_105406.json
+                        attack_log_20250528_105410.csv
+                        attack_log_20250528_105406.csv
+                        attack_log_20250528_105412.csv
+            redis-cache-analyzer/
+                config.py
+                requirements.txt
+                Dockerfile
+                app.py
+            k6-scripts/
+                cache-load-tests.js
+            prometheus/
+                ddos_alert_rules.yml
+                optimization_alert_rules.yml
+                prometheus.yml.backup.20250528_141150
+                prometheus.yml.backup.20250610_144034
+                k8s-alert-rules.yml
+                prometheus.yml.backup.20250618_120445
+                alert_rules.yml
+                prometheus.yml
+                prometheus-transaction.yml
+                prometheus.yml.backup.20250610_143555
+            resource-anomaly-generator/
+                requirements.txt
+                Dockerfile
+                anomaly_patterns.py
+                app.py
+            message-consumer/
+                requirements.txt
+                Dockerfile
+                app.py
+            anomaly-injector/
+                requirements.txt
+                Dockerfile
+                app.py
+            kubernetes-monitoring/
+                hpa_details.txt
+                hpa_state.yaml
+                current_state.yaml
+                k8s_metrics_state.txt
+                scaling_state.txt
+                k8s-manifests/
+                    metrics-server-docker-desktop.yaml
+                    namespace.yaml
+                    rbac/
+                    hpa/
+                        banking-service-hpa.yaml
+                    services/
+                        banking-service-svc.yaml
+                    deployments/
+                        banking-service-deployment.yaml
+                        k8s-resource-monitor-deployment.yaml
+                        load-generator-deployment.yaml
+                scripts/
+                    load-testing-scaling-demo.py
+                    start-monitoring.sh
+                    k8s-anomaly-generator.log
+                    k8s-load-demo.log
+                    anomaly-generator.py
+                    real-time-monitoring.py
+                monitoring/
+                    k8s-resource-monitor/
+                        requirements.txt
+                        Dockerfile
+                        app.py
+                    kube-state-metrics/
+                        kube-state-metrics.yaml
+                    k8s-chaos-injector/
+                k8s-services/
+                    banking-service-k8s/
+                    chaos-generator-k8s/
+                    load-generator-k8s/
+                        requirements.txt
+                        Dockerfile
+                        app.py
             src/
                 .DS_Store
                 __init.py__
@@ -10342,6 +13898,46 @@
         Dockerfile
         trace_patterns_fixed.py
         app.py
+    kubernetes-monitoring/
+        hpa_details.txt
+        hpa_state.yaml
+        current_state.yaml
+        k8s_metrics_state.txt
+        scaling_state.txt
+        k8s-manifests/
+            metrics-server-docker-desktop.yaml
+            namespace.yaml
+            rbac/
+            hpa/
+                banking-service-hpa.yaml
+            services/
+                banking-service-svc.yaml
+            deployments/
+                banking-service-deployment.yaml
+                k8s-resource-monitor-deployment.yaml
+                load-generator-deployment.yaml
+        scripts/
+            load-testing-scaling-demo.py
+            start-monitoring.sh
+            k8s-anomaly-generator.log
+            k8s-load-demo.log
+            anomaly-generator.py
+            real-time-monitoring.py
+        monitoring/
+            k8s-resource-monitor/
+                requirements.txt
+                Dockerfile
+                app.py
+            kube-state-metrics/
+                kube-state-metrics.yaml
+            k8s-chaos-injector/
+        k8s-services/
+            banking-service-k8s/
+            chaos-generator-k8s/
+            load-generator-k8s/
+                requirements.txt
+                Dockerfile
+                app.py
     src/
         .DS_Store
         __init.py__

@@ -1,0 +1,292 @@
+# Service Metadata Report
+# Generated: 2025-07-08T09:46:01Z
+
+Fields:
+  - Name
+  - Port
+  - Description
+  - Category
+  - Health endpoint
+  - Key metrics (sample)
+  - Docker image
+
+
+## anomaly-injector
+- **Port:** 5005
+- **Description:** n/a
+- **Category:** n/a
+- **Health endpoint:** http://anomaly-injector-service:5005/healthz
+- **Metrics (sample):** n/a
+- **Docker image:** ddos-detection-system-anomaly-injector
+
+
+## auto-baselining
+- **Port:** 5002
+- **Description:** n/a
+- **Category:** n/a
+- **Health endpoint:** http://auto-baselining:5002/healthz
+- **Metrics (sample):** n/a
+- **Docker image:** ddos-detection-system-auto-baselining
+
+
+## banking-db-demo
+- **Port:** 5006
+- **Description:** n/a
+- **Category:** n/a
+- **Health endpoint:** http://banking-db-connection-demo:5006/healthz
+- **Metrics (sample):** n/a
+- **Docker image:** ddos-detection-system-db-connection-demo
+
+
+## banking-kafka
+- **Port:** 9308
+- **Description:** n/a
+- **Category:** n/a
+- **Health endpoint:** http://banking-kafka-exporter:9308/healthz
+- **Metrics (sample):** n/a
+- **Docker image:** danielqsj/kafka-exporter:latest
+
+
+## banking-message-consumer
+- **Port:** 5008
+- **Description:** n/a
+- **Category:** n/a
+- **Health endpoint:** http://banking-message-consumer:5008/healthz
+- **Metrics (sample):** n/a
+- **Docker image:** ddos-detection-system-message-consumer
+
+
+## banking-message-producer
+- **Port:** 5007
+- **Description:** n/a
+- **Category:** n/a
+- **Health endpoint:** http://banking-message-producer:5007/healthz
+- **Metrics (sample):** n/a
+- **Docker image:** ddos-detection-system-message-producer
+
+
+## banking-postgresql
+- **Port:** 9187
+- **Description:** n/a
+- **Category:** n/a
+- **Health endpoint:** http://banking-postgres-exporter:9187/healthz
+- **Metrics (sample):** n/a
+- **Docker image:** prometheuscommunity/postgres-exporter:latest
+
+
+## banking-rabbitmq
+- **Port:** 15692
+- **Description:** n/a
+- **Category:** n/a
+- **Health endpoint:** http://banking-rabbitmq:15692/healthz
+- **Metrics (sample):** n/a
+- **Docker image:** ddos-detection-system-rabbitmq-monitor
+
+
+## banking-services
+- **Port:** 8081
+- **Description:** n/a
+- **Category:** n/a
+- **Health endpoint:** http://account-service:8081/healthz
+- **Metrics (sample):** n/a
+- **Docker image:** ddos-detection-system-account-service
+
+
+## banking-services
+- **Port:** 8082
+- **Description:** n/a
+- **Category:** n/a
+- **Health endpoint:** http://transaction-service:8082/healthz
+- **Metrics (sample):** n/a
+- **Docker image:** ddos-detection-system-transaction-service
+
+
+## banking-services
+- **Port:** 8083
+- **Description:** n/a
+- **Category:** n/a
+- **Health endpoint:** http://auth-service:8083/healthz
+- **Metrics (sample):** n/a
+- **Docker image:** ddos-detection-system-auth-service
+
+
+## banking-services
+- **Port:** 8084
+- **Description:** n/a
+- **Category:** n/a
+- **Health endpoint:** http://notification-service:8084/healthz
+- **Metrics (sample):** n/a
+- **Docker image:** ddos-detection-system-notification-service
+
+
+## banking-services
+- **Port:** 8085
+- **Description:** n/a
+- **Category:** n/a
+- **Health endpoint:** http://fraud-detection:8085/healthz
+- **Metrics (sample):** n/a
+- **Docker image:** ddos-detection-system-fraud-detection
+
+
+## banking-services
+- **Port:** 8080
+- **Description:** n/a
+- **Category:** n/a
+- **Health endpoint:** http://api-gateway:8080/healthz
+- **Metrics (sample):** n/a
+- **Docker image:** ddos-detection-system-api-gateway
+
+
+## cache-load-generator
+- **Port:** 5013
+- **Description:** n/a
+- **Category:** n/a
+- **Health endpoint:** http://banking-cache-load-generator:5013/healthz
+- **Metrics (sample):** n/a
+- **Docker image:** ddos-detection-system-cache-load-generator
+
+
+## cache-pattern-analyzer
+- **Port:** 5012
+- **Description:** n/a
+- **Category:** n/a
+- **Health endpoint:** http://banking-cache-analyzer:5012/healthz
+- **Metrics (sample):** n/a
+- **Docker image:** ddos-detection-system-cache-pattern-analyzer
+
+
+## cache-proxy
+- **Port:** 5020
+- **Description:** n/a
+- **Category:** n/a
+- **Health endpoint:** http://cache-proxy-service:5020/healthz
+- **Metrics (sample):** n/a
+- **Docker image:** ddos-detection-system-cache-proxy-service
+
+
+## cadvisor
+- **Port:** 8080
+- **Description:** n/a
+- **Category:** n/a
+- **Health endpoint:** http://cadvisor:8080/healthz
+- **Metrics (sample):** n/a
+- **Docker image:** gcr.io/cadvisor/cadvisor:latest
+
+
+## container-resource-monitor
+- **Port:** 5010
+- **Description:** n/a
+- **Category:** n/a
+- **Health endpoint:** http://banking-container-monitor:5010/healthz
+- **Metrics (sample):** n/a
+- **Docker image:** ddos-detection-system-container-resource-monitor
+
+
+## ddos-ml-detection
+- **Port:** 5001
+- **Description:** n/a
+- **Category:** n/a
+- **Health endpoint:** http://ddos-ml-detection:5001/healthz
+- **Metrics (sample):** n/a
+- **Docker image:** ddos-detection-system-ddos-ml-detection
+
+
+## k8s-resource-monitor
+- **Port:** 9419
+- **Description:** n/a
+- **Category:** n/a
+- **Health endpoint:** http://host.docker.internal:9419/healthz
+- **Metrics (sample):** n/a
+- **Docker image:** sha256:60c3e3f87a1387ce1dcafa30af06ba266792b7e2881eb23e95cf2217d2a6e9e8
+
+
+## kube-state-metrics
+- **Port:** 8080
+- **Description:** n/a
+- **Category:** n/a
+- **Health endpoint:** http://host.docker.internal:8080/healthz
+- **Metrics (sample):** n/a
+- **Docker image:** sha256:af8220f534938de121a694cb7314313a6195c9d494fc30bfa6885b08a276bb82
+
+
+## node-exporter
+- **Port:** 9100
+- **Description:** n/a
+- **Category:** n/a
+- **Health endpoint:** http://node-exporter:9100/healthz
+- **Metrics (sample):** n/a
+- **Docker image:** prom/node-exporter:latest
+
+
+## performance-aggregator
+- **Port:** 5004
+- **Description:** n/a
+- **Category:** n/a
+- **Health endpoint:** http://performance-aggregator-service:5004/healthz
+- **Metrics (sample):** n/a
+- **Docker image:** ddos-detection-system-performance-aggregator
+
+
+## prometheus
+- **Port:** 9090
+- **Description:** n/a
+- **Category:** n/a
+- **Health endpoint:** http://localhost:9090/healthz
+- **Metrics (sample):** go_gc_cycles_automatic_gc_cycles_total,go_gc_cycles_forced_gc_cycles_total,go_gc_cycles_total_gc_cycles_total,go_gc_duration_seconds_count,go_gc_duration_seconds_sum
+n/a
+- **Docker image:** prom/prometheus:latest
+
+
+## rabbitmq-queue-monitor
+- **Port:** 9418
+- **Description:** n/a
+- **Category:** n/a
+- **Health endpoint:** http://banking-rabbitmq-monitor:9418/healthz
+- **Metrics (sample):** n/a
+- **Docker image:** ddos-detection-system-rabbitmq-monitor
+
+
+## redis-exporter
+- **Port:** 9121
+- **Description:** n/a
+- **Category:** n/a
+- **Health endpoint:** http://banking-redis-exporter:9121/healthz
+- **Metrics (sample):** n/a
+- **Docker image:** oliver006/redis_exporter:latest
+
+
+## resource-anomaly-generator
+- **Port:** 5011
+- **Description:** n/a
+- **Category:** n/a
+- **Health endpoint:** http://banking-resource-anomaly:5011/healthz
+- **Metrics (sample):** n/a
+- **Docker image:** ddos-detection-system-resource-anomaly-generator
+
+
+## trace-generator
+- **Port:** 9414
+- **Description:** n/a
+- **Category:** n/a
+- **Health endpoint:** http://trace-generator:9414/healthz
+- **Metrics (sample):** n/a
+- **Docker image:** ddos-detection-system-trace-generator
+
+
+## transaction-monitor
+- **Port:** 5003
+- **Description:** n/a
+- **Category:** n/a
+- **Health endpoint:** http://transaction-performance-monitor:5003/healthz
+- **Metrics (sample):** n/a
+- **Docker image:** ddos-detection-system-transaction-monitor
+
+
+## windows-exporter
+- **Port:** 9182
+- **Description:** n/a
+- **Category:** n/a
+- **Health endpoint:** http://mock-windows-exporter:9182/healthz
+- **Metrics (sample):** n/a
+- **Docker image:** ddos-detection-system-mock-windows-exporter
+
